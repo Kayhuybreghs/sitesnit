@@ -881,8 +881,8 @@
 }
 
 /* ============ Wat Sitesnit doet ============ */
-.showcase { padding: 72px 48px 88px; background: var(--bg); overflow: hidden; }
-.showcase__inner { max-width: 1280px; min-height: 560px; margin: 0 auto; display: grid; grid-template-columns: 38% 62%; align-items: center; gap: 16px; }
+.showcase { padding: 88px 48px 110px; background: #fbf7f1; overflow: hidden; }
+.showcase__inner { max-width: 1340px; min-height: 720px; margin: 0 auto; display: grid; grid-template-columns: 36% 64%; align-items: center; gap: 12px; }
 .showcase__copy { position: relative; z-index: 3; padding: 0 18px 0 0; }
 .showcase__eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; color: var(--navy); font-size: 13px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .showcase__eyebrow span { display: grid; place-items: center; width: 43px; height: 38px; border: 1px solid #f5a47b; border-radius: 7px; color: var(--orange); font-size: 16px; letter-spacing: -.02em; }
@@ -901,16 +901,22 @@
 .showcase__primary { display: inline-flex; align-items: center; gap: 18px; padding: 13px 20px; border-radius: 7px; background: var(--orange); color: #fff; font-size: 14px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(240,90,42,.18); }
 .showcase__primary span { font-size: 22px; line-height: 1; }
 .showcase__secondary { color: var(--navy); font-size: 14px; font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--navy); padding-bottom: 4px; }
-.showcase__visual { position: relative; min-height: 520px; height: 100%; }
-.showcase__visual figure { position: absolute; margin: 0; overflow: hidden; border-radius: 10px; background: none; }
-.showcase__visual img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
-.showcase__browser { z-index: 2; left: 6%; top: 10px; width: 68%; height: 300px; transform: rotate(-1.2deg); }
-.showcase__phone { z-index: 4; right: 2%; top: 150px; width: 22%; height: 330px; transform: rotate(3deg); border: 5px solid #111827; border-radius: 22px !important; }
-.showcase__code { z-index: 3; left: 2%; bottom: 8px; width: 32%; height: 200px; }
-.showcase__smart { z-index: 4; left: 37%; bottom: 0; width: 28%; height: 220px; }
-@media (max-width: 1080px) { .showcase { padding-inline: 28px; } .showcase__inner { grid-template-columns: 42% 58%; } .showcase__title { font-size: 39px; } .showcase__visual { transform: scale(.9); transform-origin: center right; } }
-@media (max-width: 760px) { .showcase { padding: 56px 20px 64px; } .showcase__inner { display: block; min-height: 0; } .showcase__copy { padding: 0; } .showcase__title { font-size: clamp(36px, 10vw, 52px); } .showcase__visual { min-height: 460px; margin-top: 36px; transform: none; } .showcase__browser { left: 4%; width: 88%; height: 210px; } .showcase__phone { top: 130px; right: 0; width: 28%; height: 260px; } .showcase__code { bottom: 8px; width: 44%; height: 160px; } .showcase__smart { left: 48%; bottom: 0; width: 36%; height: 175px; } }
-@media (max-width: 480px) { .showcase__list div { display: block; } .showcase__list strong { display: block; margin-bottom: 2px; } .showcase__actions { gap: 22px; flex-wrap: wrap; } .showcase__visual { min-height: 340px; } .showcase__browser { height: 160px; } .showcase__phone { top: 100px; height: 190px; border-width: 3px; } .showcase__code { height: 120px; } .showcase__smart { height: 130px; } }
+.showcase__visual { position: relative; min-height: 700px; height: 100%; }
+.showcase__visual figure { position: absolute; margin: 0; overflow: hidden; border-radius: 15px; box-shadow: 0 16px 28px rgba(34, 34, 48, .16); background: #fff; }
+.showcase__visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.showcase__browser { z-index: 2; left: 4%; top: 18px; width: 75%; height: 420px; transform: rotate(-1.5deg); }
+.showcase__phone { z-index: 4; right: 0; top: 205px; width: 27%; height: 450px; transform: rotate(4deg); border: 7px solid #111827; border-radius: 30px !important; }
+.showcase__code { z-index: 3; left: 0; bottom: 20px; width: 36%; height: 275px; }
+.showcase__smart { z-index: 4; left: 39%; bottom: 0; width: 31%; height: 305px; }
+.showcase__line { position: absolute; z-index: 1; border-color: var(--orange); border-style: solid; opacity: .95; }
+.showcase__line--left { left: 0; top: 196px; width: 7%; height: 410px; border-width: 1px 0 1px 1px; border-radius: 8px 0 0 8px; }
+.showcase__line--left::before, .showcase__line--right::before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--orange); }
+.showcase__line--left::before { right: -4px; top: -5px; }
+.showcase__line--right { right: 15%; bottom: 156px; width: 12%; height: 1px; border-width: 1px 1px 0 0; }
+.showcase__line--right::before { right: -5px; top: -5px; }
+@media (max-width: 1080px) { .showcase { padding-inline: 28px; } .showcase__inner { grid-template-columns: 40% 60%; } .showcase__title { font-size: 39px; } .showcase__visual { transform: scale(.92); transform-origin: center right; } }
+@media (max-width: 760px) { .showcase { padding: 70px 20px 80px; } .showcase__inner { display: block; min-height: 0; } .showcase__copy { padding: 0; } .showcase__title { font-size: clamp(36px, 10vw, 52px); } .showcase__visual { min-height: 650px; margin-top: 42px; transform: none; } .showcase__browser { left: 4%; width: 88%; height: 300px; } .showcase__phone { top: 190px; right: 0; width: 31%; height: 360px; } .showcase__code { bottom: 12px; width: 45%; height: 220px; } .showcase__smart { left: 49%; bottom: 0; width: 37%; height: 240px; } .showcase__line--left { top: 180px; height: 320px; } .showcase__line--right { right: 11%; bottom: 122px; } }
+@media (max-width: 480px) { .showcase__list div { display: block; } .showcase__list strong { display: block; margin-bottom: 2px; } .showcase__actions { gap: 22px; flex-wrap: wrap; } .showcase__visual { min-height: 470px; } .showcase__browser { height: 220px; } .showcase__phone { top: 140px; height: 260px; border-width: 4px; } .showcase__code { height: 160px; } .showcase__smart { height: 175px; } .showcase__line--left { top: 145px; height: 225px; } }
 /* ============ Responsive ============ */
 @media (max-width: 980px) {
   .poss__inner {

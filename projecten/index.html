@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projecten — sitesnit</title>
+    <meta name="description" content="Bekijk projecten van sitesnit: bedrijfswebsites, webshops, one-pagers en redesigns. Klik een case aan voor het complete verhaal." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/sitesnit-favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/sitesnit-favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/sitesnit-favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/sitesnit-favicon-180x180.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/projecten.css" />
+    <link rel="stylesheet" href="../css/contact-footer.css" />
+  </head>
+  <body>
+    <div id="nav-slot"></div>
+    <script type="module" src="../js/components/nav.js"></script>
+
+    <!-- ==================== HERO ==================== -->
+    <main class="proj-hero">
+      <div class="proj-hero__grid" aria-hidden="true"></div>
+
+      <div class="proj-hero__content">
+        <div class="badge reveal" style="--d: 0.05s">
+          <span class="badge__strong">Projecten</span>
+          <span class="badge__muted">overzicht</span>
+        </div>
+        <h1 class="proj-hero__title" aria-label="Werk dat werkt">
+          <span class="line"><span class="line__inner" style="--d: 0.15s">WERK DAT</span></span>
+          <span class="line"><span class="line__inner" style="--d: 0.3s">WERKT<span class="dot">.</span></span></span>
+        </h1>
+        <p class="proj-hero__sub reveal" style="--d: 0.5s">
+          Websites die niet alleen mooi zijn, maar ook resultaat opleveren.
+          Filter op type en klik een case aan voor het verhaal erachter.
+        </p>
+      </div>
+    </main>
+
+    <!-- ==================== PROJECTEN GRID ==================== -->
+    <section class="proj-grid-section" id="portfolio">
+      <div class="proj-grid-head">
+        <span class="proj-grid-kicker">Projecten</span>
+        <h2>Werk dat voor zich spreekt.</h2>
+      </div>
+      <div class="proj-filters" id="projFilters">
+        <button class="proj-filter is-active" data-filter="all">Alle</button>
+        <button class="proj-filter" data-filter="bedrijf">Bedrijfswebsites</button>
+        <button class="proj-filter" data-filter="webshop">Webshops</button>
+        <button class="proj-filter" data-filter="onepager">One-pagers</button>
+        <button class="proj-filter" data-filter="redesign">Redesigns</button>
+      </div>
+      <div class="proj-grid" id="portfolioCards"></div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-photo" data-defer>
+        <picture>
+          <source data-srcset="/images/laptop-achtergond.webp" type="image/webp" />
+          <img data-src="/images/Schermafbeelding_2026-07-25_140353.png" alt="Website op laptop" />
+        </picture>
+      </div>
+      <div class="contact-container">
+        <div class="contact-intro">
+          <span class="ci-eyebrow">Contact</span>
+          <h2 class="ci-title">Jouw project<span class="dot">.</span><br />Ons volgende werk.</h2>
+          <p class="ci-lead">Vertel kort wat je nodig hebt. Je hoort snel persoonlijk terug met een helder advies.</p>
+          <div class="ci-rule"></div>
+          <div class="ci-note">
+            <span class="ci-note__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.9-7-11a7 7 0 0 1 14 0c0 5.1-7 11-7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg></span>
+            <div><span class="ci-note__lg">Venlo, Nederland</span><span class="ci-note__sub">Persoonlijk &amp; snel</span></div>
+          </div>
+        </div>
+        <div class="contact-form-card">
+          <form id="cf-form" novalidate>
+            <div class="cfx__grid2">
+              <div class="cfx__fld"><span>Naam</span><input name="first_name" type="text" placeholder="Je naam" /></div>
+              <div class="cfx__fld"><span>Bedrijf</span><input name="company" type="text" placeholder="Bedrijfsnaam" /></div>
+            </div>
+            <div class="cfx__fld"><span>E-mailadres</span><input name="email" type="email" placeholder="naam@bedrijf.nl" /></div>
+            <div class="cfx__group">
+              <span class="cfx__glabel">Wat heb je nodig?</span>
+              <div class="cfx__opts">
+                <label class="opt"><input type="radio" name="approach" value="Maatwerk website" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg></span>Maatwerk</label>
+                <label class="opt"><input type="radio" name="approach" value="Pakketwebsite" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5Z" /><path d="M3 8l9 5 9-5" /></svg></span>Pakket</label>
+                <label class="opt"><input type="radio" name="approach" value="Redesign" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" /></svg></span>Redesign</label>
+                <label class="opt"><input type="radio" name="approach" value="Webshop" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" /></svg></span>Webshop</label>
+              </div>
+            </div>
+            <div class="cfx__fld"><span>Bericht</span><textarea name="message" placeholder="Vertel kort over je project..."></textarea></div>
+            <button type="submit" class="cfx__cta"><span class="cfx__cta-label">Bespreek mijn website</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+            <div class="cfx__trust"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>Veilig</span><i></i><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>Binnen 24u reactie</span></div>
+            <div class="cfx__status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-slot"></div>
+    <script type="module" src="../js/components/footer.js"></script>
+    <script type="module" src="../js/site-footer.js"></script>
+    <script type="module" src="../js/projecten.js"></script>
+    <script type="module" src="../js/script.js"></script>
+
+    <script>
+      (function () {
+        requestAnimationFrame(function () {
+          document.body.classList.add('is-ready');
+        });
+      })();
+    </script>
+  </body>
+</html>

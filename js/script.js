@@ -300,4 +300,58 @@ window.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onCpScroll, { passive: true });
     onCpScroll();
   }
+
+  /* ---- Fotogalerij: scroll + pijltjes + dots ---- */
+  const galleryViewport = document.getElementById("galleryViewport");
+  if (galleryViewport) {
+    const track = galleryViewport.querySelector(".gallery__track");
+    const items = galleryViewport.querySelectorAll(".gallery__item");
+    const prevBtn = document.getElementById("galleryPrev");
+    const nextBtn = document.getElementById("galleryNext");
+    const dotsWrap = document.getElementById("galleryDots");
+
+    const step = () => items[0].getBoundingClientRect().width + 18;
+
+    let currentIdx = 0;
+
+    const updateDots = () => {
+      dotsWrap.querySelectorAll(".gallery__dot").forEach((d, i) => {
+        d.classList.toggle("is-active", i === currentIdx);
+      });
+    };
+
+    const updateButtons = () => {
+      const maxScroll = track.scrollWidth - galleryViewport.clientWidth;
+      prevBtn.disabled = galleryViewport.scrollLeft <= 2;
+      nextBtn.disabled = galleryViewport.scrollLeft >= maxScroll - 2;
+    };
+
+    const scrollToIdx = (idx) => {
+      const max = items.length - 1;
+      currentIdx = Math.max(0, Math.min(max, idx));
+      galleryViewport.scrollTo({ left: currentIdx * step(), behavior: "smooth" });
+    };
+
+    items.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "gallery__dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Foto ${i + 1}`);
+      dot.addEventListener("click", () => scrollToIdx(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    prevBtn.addEventListener("click", () => scrollToIdx(currentIdx - 1));
+    nextBtn.addEventListener("click", () => scrollToIdx(currentIdx + 1));
+
+    galleryViewport.addEventListener("scroll", () => {
+      currentIdx = Math.round(galleryViewport.scrollLeft / step());
+      updateDots();
+      updateButtons();
+    }, { passive: true });
+
+    window.addEventListener("resize", updateButtons, { passive: true });
+    updateDots();
+    updateButtons();
+  }
 });

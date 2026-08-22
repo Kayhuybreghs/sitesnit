@@ -893,8 +893,6 @@
 .showcase__list div { display: flex; gap: 9px; align-items: baseline; flex-wrap: wrap; font-size: 13px; line-height: 1.45; }
 .showcase__list strong { color: var(--navy); font-size: 16px; }
 .showcase__list span { max-width: 280px; }
-.showcase__result { display: flex; gap: 12px; max-width: 480px; padding: 16px 0; border-top: 1px solid #d7d0c6; color: #233660; font-size: 14px; line-height: 1.55; }
-.showcase__result svg { width: 25px; height: 25px; color: var(--orange); flex: none; }
 .showcase__actions { display: flex; align-items: center; gap: 40px; margin-top: 24px; }
 .showcase__primary { display: inline-flex; align-items: center; gap: 18px; padding: 13px 20px; border-radius: 7px; background: var(--orange); color: #fff; font-size: 14px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(240,90,42,.18); }
 .showcase__primary span { font-size: 22px; line-height: 1; }

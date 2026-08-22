@@ -881,15 +881,13 @@
 }
 
 /* ============ Wat Sitesnit doet ============ */
-.showcase { padding: 20px 48px 40px; background: #f8f1e9; overflow: hidden; }
-.showcase__inner { max-width: 1672px; min-height: 740px; margin: 0 auto; display: grid; grid-template-columns: 34% 66%; align-items: center; gap: 24px; }
+.showcase { padding: 28px 48px 36px; background: #f8f1e9; overflow: hidden; }
+.showcase__inner { max-width: 1672px; min-height: 680px; margin: 0 auto; display: grid; grid-template-columns: 34% 66%; align-items: center; gap: 24px; }
 .showcase__copy { position: relative; z-index: 3; padding: 0 18px 0 0; }
-.showcase__eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; color: var(--navy); font-size: 13px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.showcase__eyebrow span { display: grid; place-items: center; width: 43px; height: 38px; border: 1px solid #f5a47b; border-radius: 7px; color: var(--orange); font-size: 16px; letter-spacing: -.02em; }
-.showcase__title { color: var(--navy); font-size: clamp(34px, 3.7vw, 57px); line-height: .99; letter-spacing: -.045em; font-weight: 800; margin: 0 0 24px; }
+.showcase__title { color: var(--navy); font-size: clamp(34px, 3.7vw, 57px); line-height: .99; letter-spacing: -.045em; font-weight: 800; margin: 0 0 20px; }
 .showcase__title .dot { color: var(--orange); }
 .showcase__intro { max-width: 470px; color: #1c315c; font-size: 16px; line-height: 1.6; margin: 0 0 28px; }
-.showcase__list { display: grid; gap: 20px; list-style: none; padding: 0; margin: 0 0 28px; }
+.showcase__list { display: grid; gap: 16px; list-style: none; padding: 0; margin: 0 0 24px; }
 .showcase__list li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; color: #1d315b; }
 .showcase__list svg { width: 27px; height: 27px; color: var(--orange); margin-top: 1px; }
 .showcase__list div { display: flex; gap: 9px; align-items: baseline; flex-wrap: wrap; font-size: 13px; line-height: 1.45; }
@@ -901,15 +899,15 @@
 .showcase__primary { display: inline-flex; align-items: center; gap: 18px; padding: 13px 20px; border-radius: 7px; background: var(--orange); color: #fff; font-size: 14px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(240,90,42,.18); }
 .showcase__primary span { font-size: 22px; line-height: 1; }
 .showcase__secondary { color: var(--navy); font-size: 14px; font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--navy); padding-bottom: 4px; }
-.showcase__visual { position: relative; min-height: 740px; height: 100%; }
+.showcase__visual { position: relative; min-height: 680px; height: 100%; }
 .showcase__visual figure { position: absolute; margin: 0; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .showcase__visual img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
-.showcase__browser { z-index: 2; left: 6%; top: 0; width: 82%; height: 440px; }
-.showcase__phone { z-index: 4; right: -2%; top: 220px; width: 29%; height: 475px; transform: rotate(4deg); }
-.showcase__code { z-index: 3; left: 0; bottom: 0; width: 37%; height: 280px; }
-.showcase__smart { z-index: 4; left: 38.5%; bottom: 0; width: 31%; height: 305px; }
+.showcase__browser { z-index: 2; left: 6%; top: 0; width: 82%; height: 405px; }
+.showcase__phone { z-index: 4; right: -2%; top: 195px; width: 29%; height: 440px; transform: rotate(4deg); }
+.showcase__code { z-index: 3; left: 0; bottom: 0; width: 37%; height: 260px; }
+.showcase__smart { z-index: 4; left: 38.5%; bottom: 0; width: 31%; height: 280px; }
 .showcase__line { position: absolute; z-index: 1; border-color: var(--orange); border-style: solid; opacity: .95; }
-.showcase__line--left { left: -5%; top: 178px; width: 11%; height: 410px; border-width: 1px 0 1px 1px; border-radius: 8px 0 0 8px; }
+.showcase__line--left { left: -5%; top: 160px; width: 11%; height: 380px; border-width: 1px 0 1px 1px; border-radius: 8px 0 0 8px; }
 .showcase__line--left::before, .showcase__line--right::before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--orange); }
 .showcase__line--left::before { right: -4px; top: -5px; }
 .showcase__line--right { left: 64%; right: auto; bottom: 155px; width: 8%; height: 1px; border-width: 1px 1px 0 0; }

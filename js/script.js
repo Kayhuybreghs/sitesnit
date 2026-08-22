@@ -31,54 +31,6 @@ window.addEventListener("DOMContentLoaded", () => {
       caseCover.style.setProperty("--my", `${y}px`);
     }, { passive: true });
   }
-  const mock2 = document.querySelector(".mock2");
-  const aanpakSection = document.querySelector(".aanpak");
-  if (mock2) {
-    const tabs = mock2.querySelectorAll(".mtab");
-    const screens = mock2.querySelectorAll(".scr");
-    let currentTab = -1;
-
-    const showTab = (idx) => {
-      if (idx === currentTab) return;
-      currentTab = idx;
-      tabs.forEach((t) =>
-        t.classList.toggle("is-active", t.dataset.tab === String(idx))
-      );
-      screens.forEach((s) =>
-        s.classList.toggle("is-active", s.dataset.scr === String(idx))
-      );
-      if (idx === 3) mock2.classList.add("is-live");
-      else mock2.classList.remove("is-live");
-    };
-
-    if (tabs.length && screens.length) showTab(0);
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => showTab(Number(tab.dataset.tab)));
-    });
-
-    if (aanpakSection && !reduceMotion) {
-      const steps = aanpakSection.querySelectorAll(".ap__step");
-      const lineFill = aanpakSection.querySelector(".ap__line-fill");
-      const onAanpakScroll = () => {
-        const rect = aanpakSection.getBoundingClientRect();
-        const vh = window.innerHeight;
-        const total = aanpakSection.offsetHeight - vh;
-        if (total <= 0) return;
-        const progress = Math.max(0, Math.min(1, -rect.top / total));
-        const idx = Math.min(tabs.length - 1, Math.floor(progress * tabs.length));
-        showTab(idx);
-        steps.forEach((s, i) =>
-          s.classList.toggle("is-active", i === idx)
-        );
-        if (lineFill)
-          lineFill.style.height = `${(idx / (steps.length - 1)) * 100}%`;
-      };
-      window.addEventListener("scroll", onAanpakScroll, { passive: true });
-      onAanpakScroll();
-    }
-  }
-
   /* ---- Hero entrance ---- */
   const hero = document.querySelector(".hero, .proj-hero, .hero--diensten, .hero--dienst, .hero--contact");
   if (hero) {

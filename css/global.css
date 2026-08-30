@@ -1,0 +1,159 @@
+/* ============================================================
+   GLOBAL — shared across every page
+   Variables, reset, body, typography, buttons, utility classes
+   ============================================================ */
+
+:root {
+  --bg: #f0ede8;
+  --navy: #0d1b6e;
+  --orange: #f05a2a;
+  --orange-dark: #d94e22;
+  --ink: #1a1a1a;
+  --muted: #6b7280;
+  --card-shadow: 0 4px 14px rgba(13, 27, 110, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--navy);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(36px, 5.5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(28px, 3.5vw, 42px);
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 17px;
+}
+
+p {
+  line-height: 1.65;
+}
+
+/* ---------- Dot accent ---------- */
+.dot {
+  color: var(--orange);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn--solid {
+  background: var(--orange);
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 20px;
+}
+
+.btn--solid:hover {
+  background: var(--orange-dark);
+  transform: translateY(-1px);
+}
+
+.btn--outline {
+  border: 2px solid var(--orange);
+  color: var(--orange);
+  font-size: 16px;
+  padding: 15px 40px;
+}
+
+.btn--outline:hover {
+  background: var(--orange);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(240, 90, 42, 0.28);
+}
+
+/* ---------- Section badge (pill) ---------- */
+.sbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #f2c3b2;
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+
+.sbadge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------- Badge pill ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.badge__strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.badge__muted {
+  color: #9ca3af;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

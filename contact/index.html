@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — sitesnit</title>
+    <meta name="description" content="Vertel wat je nodig hebt. sitesnit helpt je aan een website die helder werkt en goed voelt." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/sitesnit-favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/contact-footer.css" />
+    <link rel="preload" as="image" href="/achtergond.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/kennismaken copy.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/plan-gesprek copy.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/snelle-reactie copy.webp" />
+    <link rel="preload" as="image" href="/images/telefoon-icon copy.webp" />
+    <link rel="preload" as="image" href="/images/meer-info copy.webp" />
+  </head>
+  <body>
+    <div id="nav-slot"></div>
+    <script type="module" src="../js/components/nav.js"></script>
+
+    <main>
+      <!-- Contact hero met de nieuwe beeldkaarten -->
+      <section class="hero hero--contact">
+        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="hero__content">
+          <h1 class="hero__title" aria-label="Laten we kennismaken.">
+            <span class="line"><span class="line__inner" style="--d: 0.15s">LATEN WE</span></span>
+            <span class="line"><span class="line__inner" style="--d: 0.3s">KENNISMAKEN<span class="dot">.</span></span></span>
+          </h1>
+          <p class="hero__sub reveal" style="--d: 0.6s">Een goede website begint met een goed gesprek. Vertel wat je voor ogen hebt.</p>
+        </div>
+        <div class="contact-hero-art" aria-label="Manieren om contact op te nemen">
+          <div class="contact-hero-network" aria-hidden="true">
+            <span class="network__box network__box--top"></span>
+            <span class="network__box network__box--main"></span>
+            <span class="network__box network__box--bottom"></span>
+            <span class="network__line network__line--top-left"></span>
+            <span class="network__line network__line--top-right"></span>
+            <span class="network__line network__line--bottom-left"></span>
+            <span class="network__line network__line--bottom-right"></span>
+            <span class="network__node network__node--top-left"></span>
+            <span class="network__node network__node--top-right"></span>
+            <span class="network__node network__node--bottom-left"></span>
+            <span class="network__node network__node--bottom-right"></span>
+            <span class="network__pixels"></span>
+          </div>
+          <img class="contact-hero-art__card contact-hero-art__card--intro" src="/images/kennismaken copy.webp" alt="Kennismaken: jouw wensen en doelen centraal" fetchpriority="high" decoding="async" loading="eager" />
+          <img class="contact-hero-art__card contact-hero-art__card--plan" src="/images/plan-gesprek copy.webp" alt="Plan een gesprek" fetchpriority="high" decoding="async" loading="eager" />
+          <img class="contact-hero-art__card contact-hero-art__card--reply" src="/images/snelle-reactie copy.webp" alt="Snelle reactie binnen één werkdag" decoding="async" loading="eager" />
+          <img class="contact-hero-art__icon contact-hero-art__icon--phone" src="/images/telefoon-icon copy.webp" alt="Telefoon" decoding="async" loading="eager" />
+          <img class="contact-hero-art__icon contact-hero-art__icon--more" src="/images/meer-info copy.webp" alt="Meer informatie" decoding="async" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Twee formulieren naast elkaar: aanvraag + belafspraak -->
+      <section class="contact-forms" id="contact" data-reveal>
+        <div class="contact-forms__inner">
+          <div class="contact-forms__head" data-hero-defer>
+            <h2>Stuur een bericht of plan een belafspraak<span class="dot">.</span></h2>
+            <p>Kies wat jou het beste uitkomt. Beide manieren zijn vrijblijvend — je zit nergens aan vast.</p>
+          </div>
+          <div class="contact-forms__grid">
+            <form class="contact-form-card contact-form-card--request" id="cf-form" novalidate>
+              <div class="cfx__head">
+                <span class="cfx__head-tag">Aanvraag</span>
+                <h3>Vertel over je project</h3>
+                <p>Met een paar antwoorden krijg ik een beeld van jouw bedrijf en waar je website naartoe moet.</p>
+              </div>
+              <div class="cfx__grid2">
+                <label class="cfx__fld"><span>Naam</span><input name="first_name" type="text" autocomplete="name" placeholder="Jouw naam" required /></label>
+                <label class="cfx__fld"><span>Bedrijfsnaam</span><input name="company" type="text" autocomplete="organization" placeholder="Jouw bedrijf" /></label>
+              </div>
+              <label class="cfx__fld"><span>E-mailadres</span><input name="email" type="email" autocomplete="email" placeholder="jouw@email.nl" required /></label>
+              <div class="cfx__group">
+                <span class="cfx__glabel">Wat wil je laten maken?</span>
+                <div class="cfx__opts">
+                  <label class="opt"><input type="radio" name="project_type" value="Nieuwe website" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__t">Nieuwe website</span></label>
+                  <label class="opt"><input type="radio" name="project_type" value="Bestaande website vernieuwen" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__t">Website vernieuwen</span></label>
+                </div>
+              </div>
+              <div class="cfx__group">
+                <span class="cfx__glabel">Welke aanpak past het best?</span>
+                <div class="cfx__opts">
+                  <label class="opt"><input type="radio" name="approach" value="Pakketwebsite" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__t">Pakketwebsite</span></label>
+                  <label class="opt"><input type="radio" name="approach" value="Maatwerkwebsite" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__t">Maatwerkwebsite</span></label>
+                </div>
+              </div>
+              <div class="cfx__group cfx__pkg">
+                <span class="cfx__glabel">Welk pakket past bij jou?</span>
+                <div class="cfx__opts">
+                  <label class="opt"><input type="radio" name="package_choice" value="Online Zichtbaar" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__t">Online Zichtbaar</span></label>
+                  <label class="opt"><input type="radio" name="package_choice" value="Volledige Bedrijfswebsite" /><span class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5" /></svg></span><span class="opt__t">Volledige Bedrijfswebsite</span></label>
+                </div>
+              </div>
+              <label class="cfx__fld"><span>Korte toelichting</span><textarea name="message" rows="4" placeholder="Waar wil je naartoe met je website?"></textarea></label>
+              <button class="cfx__cta" type="submit"><span class="cfx__cta-label">Bespreek mijn website</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+              <p class="cfx__trust"><span>Vrijblijvende aanvraag</span><i></i><span>Persoonlijk antwoord</span></p>
+              <p class="cfx__status" role="status" aria-live="polite"></p>
+            </form>
+
+            <form class="contact-form-card contact-form-card--call" id="call-form" novalidate>
+              <div class="cfx__head">
+                <span class="cfx__head-tag cfx__head-tag--call">Belafspraak</span>
+                <h3>Plan een telefoongesprek</h3>
+                <p>Ik bel alleen op afspraak — ik ben niet zomaar telefonisch bereikbaar. Plan hieronder een moment dat jou uitkomt en ik bel je op het afgesproken tijdstip.</p>
+              </div>
+              <div class="cfx__call-info">
+                <div class="cfx__call-info-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.5a2.5 2.5 0 0 1-5 0V6a4 4 0 0 1 8 0v3.5a2.5 2.5 0 0 1-5 0"/><path d="M5 21h14"/><path d="M12 16v5"/></svg>
+                  <span><b>Alleen op afspraak</b> — plan een moment, ik bel jou.</span>
+                </div>
+                <div class="cfx__call-info-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <span><b>15–20 minuten</b> — genoeg voor een eerste beeld.</span>
+                </div>
+                <div class="cfx__call-info-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <span><b>Bevestiging per mail</b> — je krijgt direct een bevestiging.</span>
+                </div>
+              </div>
+              <label class="cfx__fld"><span>Naam</span><input name="call_name" type="text" autocomplete="name" placeholder="Jouw naam" required /></label>
+              <label class="cfx__fld"><span>Telefoonnummer</span><input name="call_phone" type="tel" autocomplete="tel" placeholder="06 12 34 56 78" required /></label>
+              <div class="cfx__grid2">
+                <label class="cfx__fld"><span>Datum</span><input name="call_date" type="date" required /></label>
+                <label class="cfx__fld"><span>Tijd</span>
+                  <select name="call_time" required>
+                    <option value="" disabled selected>Kies een tijd</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                    <option value="21:30">21:30</option>
+                  </select>
+                </label>
+              </div>
+              <label class="cfx__fld"><span>Onderwerp (optioneel)</span><input name="call_subject" type="text" placeholder="Waar wil je het over hebben?" /></label>
+              <button class="cfx__cta cfx__cta--call" type="submit"><span class="cfx__cta-label">Plan mijn belafspraak</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+              <p class="cfx__trust"><span>Geen wachttijd</span><i></i><span>Ik bel jou</span></p>
+              <p class="cfx__status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Compacte contactbalk: bereikbaarheid in één blik -->
+      <section class="contact-bar" data-reveal id="direct-contact">
+        <div class="contact-bar__inner">
+          <a class="cb-item cb-item--link" href="https://wa.me/31612345678" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp voor sitesnit">
+            <span class="cb-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.21 0 4.28.86 5.84 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.54-3.7 8.24-8.26 8.24-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.26-8.24z"/></svg></span>
+            <span class="cb-text">
+              <span class="cb-label">WhatsApp</span>
+              <span class="cb-value">24/7 bereikbaar</span>
+            </span>
+          </a>
+          <a class="cb-item cb-item--link" href="mailto:info@sitesnit.nl" aria-label="Stuur een e-mail naar info@sitesnit.nl">
+            <span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span class="cb-text">
+              <span class="cb-label">E-mail</span>
+              <span class="cb-value">info@sitesnit.nl</span>
+            </span>
+          </a>
+          <div class="cb-item">
+            <span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.9-7-11a7 7 0 0 1 14 0c0 5.1-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div class="cb-text">
+              <span class="cb-label">Locatie</span>
+              <span class="cb-value">Venlo, Nederland</span>
+            </div>
+          </div>
+          <div class="cb-item">
+            <span class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            <div class="cb-text">
+              <span class="cb-label">Reactie</span>
+              <span class="cb-value">Binnen 24 uur</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Over mij: echt vertellen wie ik ben en wat ik doe -->
+      <section class="contact-about" data-reveal>
+        <div class="contact-about__inner">
+          <div class="contact-about__copy">
+            <span class="section-kicker">Over mij</span>
+            <h2>Hoi, ik bouw websites die eerlijk werken<span class="dot">.</span></h2>
+            <p>Ik ben Sem, de maker achter sitesnit. Ik help ondernemers aan een website die echt past bij hun bedrijf — niet een sjabloon dat iedereen al heeft, maar iets wat helder overbrengt wat jij doet en waarom mensen voor jou moeten kiezen.</p>
+            <p>Mijn aanpak is simpel: luisteren, kiezen wat telt, en de rest weglaten. Geen onnodige formulieren, geen modieuze franje. Een website moet werken voor jouw klant, niet voor mijn portfolio.</p>
+            <p>Of het nu gaat om een nieuwe website of het opfrissen van een bestaande site: je krijgt persoonlijk advies en een resultaat waar je trots op bent. Dat doe ik voor iedereen met een goed idee en de wil om online duidelijk voor de dag te komen.</p>
+            <div class="contact-about__facts">
+              <div><strong>24<span>u</span></strong><small>voor een eerste reactie</small></div>
+              <div><strong>1:1</strong><small>persoonlijk contact</small></div>
+            </div>
+          </div>
+          <div class="contact-about__photo" data-defer>
+            <picture>
+              <source media="(min-width: 900px)" data-srcset="/images/laptop-achtergond.webp" type="image/webp" />
+              <img data-src="/images/laptop-achtergond.webp" alt="Werkomgeving van sitesnit" width="480" height="560" />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <!-- Werkwijze: na je aanvraag — sticky scroll cards -->
+      <section class="contact-process" data-reveal>
+        <div class="cp__inner">
+          <aside class="cp__intro">
+            <span class="cp__badge">Na je aanvraag</span>
+            <h2 class="cp__title">Zo gaat het verder<span class="dot">.</span></h2>
+            <p class="cp__lead">Een duidelijk proces, zonder verrassingen. Je weet steeds waar we staan en wat de volgende stap is. Geen lange wachttijden, geen onduidelijke beloftes — gewoon helder wat er gebeurt en wanneer.</p>
+          </aside>
+          <div class="cp__cards">
+            <div class="cprow" style="--i:0">
+              <article class="cpcard">
+                <div class="cpcard__head">
+                  <span class="cpcard__bignum">01</span>
+                  <h3>We nemen contact op</h3>
+                  <p>Ik lees je aanvraag en neem persoonlijk contact op — meestal binnen 24 uur. We bespreken je wensen, doelen en wat je bedrijf online nodig heeft. Geen standaard verkooppraat, maar een gesprek waarin ik echt wil begrijpen waar je naartoe wilt.</p>
+                  <div class="cpcard__tags"><span>Eerst kennismaken</span><span>Geen verkooppraat</span><span>Jouw doelen centraal</span></div>
+                </div>
+                <div class="cpcard__vis cpcard__vis--chat">
+                  <div class="chat-mock">
+                    <div class="chat-mock__msg chat-mock__msg--in"><span>Hoi! Ik zoek een nieuwe website voor mijn bedrijf.</span></div>
+                    <div class="chat-mock__msg chat-mock__msg--out"><span>Leuk! Vertel me wat je doet en waar je naartoe wilt.</span></div>
+                    <div class="chat-mock__msg chat-mock__msg--in"><span>Een heldere site die meer aanvragen oplevert.</span></div>
+                    <div class="chat-mock__typing"><i></i><i></i><i></i></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="cprow" style="--i:1">
+              <article class="cpcard">
+                <div class="cpcard__head">
+                  <span class="cpcard__bignum">02</span>
+                  <h3>We bepalen de richting</h3>
+                  <p>Samen kiezen we de beste aanpak, structuur en uitstraling. Je krijgt een beeld van hoe je website eruit gaat zien en voelen — welke pagina's er komen, welke sfeer past en hoe bezoekers door de site worden geleid. Zo weet je wat je kunt verwachten.</p>
+                  <div class="cpcard__tags"><span>Structuur</span><span>Stijl &amp; uitstraling</span><span>Doelgroep</span></div>
+                </div>
+                <div class="cpcard__vis cpcard__vis--wire">
+                  <div class="wire-mock">
+                    <div class="wire-mock__row"><span class="wire-mock__logo"></span><span class="wire-mock__nav"></span><span class="wire-mock__nav"></span><span class="wire-mock__nav short"></span></div>
+                    <div class="wire-mock__hero"><span class="wire-mock__hline"></span><span class="wire-mock__hline short"></span><span class="wire-mock__btn"></span></div>
+                    <div class="wire-mock__cols"><div class="wire-mock__col"></div><div class="wire-mock__col"></div><div class="wire-mock__col"></div></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="cprow" style="--i:2">
+              <article class="cpcard">
+                <div class="cpcard__head">
+                  <span class="cpcard__bignum">03</span>
+                  <h3>Je ontvangt een voorstel</h3>
+                  <p>Een helder voorstel met scope, planning en investering. Geen kleine lettertjes — je weet precies wat je krijgt, wat het kost en wanneer het klaar is. Heb je vragen of wil je iets aanpassen? We passen het aan tot het klopt.</p>
+                  <div class="cpcard__tags"><span>Scope</span><span>Planning</span><span>Investering</span></div>
+                </div>
+                <div class="cpcard__vis cpcard__vis--doc">
+                  <div class="doc-mock">
+                    <div class="doc-mock__header"><span class="doc-mock__title"></span><span class="doc-mock__badge">Voorstel</span></div>
+                    <div class="doc-mock__line"></div>
+                    <div class="doc-mock__line short"></div>
+                    <div class="doc-mock__row"><div class="doc-mock__cell"><b>Scope</b><span></span></div><div class="doc-mock__cell"><b>Planning</b><span></span></div><div class="doc-mock__cell"><b>Kosten</b><span></span></div></div>
+                    <div class="doc-mock__sign"></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="cprow" style="--i:3">
+              <article class="cpcard">
+                <div class="cpcard__head">
+                  <span class="cpcard__bignum">04</span>
+                  <h3>We bouwen iets sterks</h3>
+                  <p>Na jouw akkoord ga ik aan de slag. Gedurende het project houden we de lijnen kort — je ziet tussentijds vorderingen en kunt meebeslissen. Na een paar feedbackrondes gaat je website live. En ook daarna blijf ik bereikbaar voor vragen of aanpassingen.</p>
+                  <div class="cpcard__tags"><span>Bouwen</span><span>Feedbackrondes</span><span>Live gaan</span></div>
+                </div>
+                <div class="cpcard__vis cpcard__vis--build">
+                  <div class="build-mock">
+                    <div class="build-mock__browser">
+                      <div class="build-mock__bar"><i></i><i></i><i></i><span></span></div>
+                      <div class="build-mock__progress"><span class="build-mock__bar-fill" style="width:100%"></span></div>
+                      <div class="build-mock__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Live!</b></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ: clean -->
+      <section class="contact-faq" data-reveal>
+        <div class="contact-faq__inner">
+          <div class="contact-faq__head"><span class="section-kicker">FAQ</span><h2>Veelgestelde vragen<span class="dot">.</span></h2><p>Staat je vraag er niet bij? Zet hem gerust in je aanvraag.</p></div>
+          <div class="faq__list contact-faq__list">
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Is een aanvraag vrijblijvend?</span><svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg></button><div class="faq__a"><div class="faq__a-inner"><p>Ja. Een aanvraag verplicht je nergens toe. We bespreken eerst rustig wat je nodig hebt en of sitesnit daarbij past.</p></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Hoe snel krijg ik een reactie?</span><svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg></button><div class="faq__a"><div class="faq__a-inner"><p>Op werkdagen hoor je meestal binnen 24 uur persoonlijk van mij.</p></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Werk je met vaste pakketten of maatwerk?</span><svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg></button><div class="faq__a"><div class="faq__a-inner"><p>Allebei. Een pakket is prettig als je snel en duidelijk wilt starten. Maatwerk past wanneer je specifieke wensen of functies nodig hebt.</p></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Werk je ook met bedrijven buiten Venlo?</span><svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg></button><div class="faq__a"><div class="faq__a-inner"><p>Ja. Vanuit Venlo werk ik met ondernemers door heel Nederland. We houden contact online, telefonisch of waar dat handig is.</p></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Wanneer begint het project?</span><svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg></button><div class="faq__a"><div class="faq__a-inner"><p>Na het voorstel en jouw akkoord plannen we de start in. Je ontvangt vooraf een duidelijke planning.</p></div></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-slot"></div>
+    <script type="module" src="../js/components/footer.js"></script>
+    <script type="module" src="../js/site-footer.js"></script>
+    <script type="module" src="../js/call-booking.js"></script>
+    <script type="module" src="../js/script.js"></script>
+  </body>
+</html>

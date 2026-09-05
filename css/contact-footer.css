@@ -102,3 +102,16 @@
   .ft__wrap{grid-template-columns:1fr}
   .ft__bar{flex-direction:column;align-items:flex-start;gap:14px}
 }
+
+/* === Injected footer (nav-footer.js) === */
+.site-footer{background:#f0ede8;padding:56px 24px 26px;font-family:'Inter',system-ui,sans-serif}
+.site-footer__inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr 1fr 1.1fr;gap:36px;align-items:start}
+.site-footer__brand img{height:28px;width:auto;display:block;margin-bottom:16px}
+.site-footer__brand p{font-size:14px;color:#5b6270;line-height:1.55;max-width:320px;margin:0}
+.site-footer__links{display:contents}
+.site-footer__col h4{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#10216F;margin:0 0 14px}
+.site-footer__col a{display:block;font-size:14.5px;color:#5b6270;text-decoration:none;margin-bottom:11px;transition:color .18s ease,transform .18s ease}
+.site-footer__col a:hover{color:#10216F;transform:translateX(3px)}
+.site-footer__bottom{max-width:1120px;margin:38px auto 0;padding-top:20px;border-top:1px solid #e4e0d8;font-size:13px;color:#8a8f9c;text-align:center}
+@media(max-width:900px){.site-footer__inner{grid-template-columns:1fr 1fr;gap:28px}.site-footer__brand{grid-column:1/-1}}
+@media(max-width:560px){.site-footer{padding:40px 20px 22px}.site-footer__inner{grid-template-columns:1fr}}

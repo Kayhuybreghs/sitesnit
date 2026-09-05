@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/sections.css" />
+    <link rel="stylesheet" href="./css/services.css" />
     <link rel="stylesheet" href="./css/contact-footer.css" />
     <meta property="og:image" content="https://bolt.new/static/og_default.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -26,7 +27,6 @@
 </head>
   <body>
     <div id="nav-slot"></div>
-    <script type="module" src="./js/components/nav.js"></script>
 
     <main class="hero">
       <div class="hero__grid" aria-hidden="true"></div>
@@ -218,149 +218,168 @@
       </div>
     </section>
 
-    <!-- Van sterk ontwerp tot slimme techniek -->
-    <section class="poss" id="mogelijkheden">
-      <div class="poss__inner">
-        <aside class="poss__intro">
-          <span class="poss__badge">Mogelijkheden</span>
-          <h2 class="poss__title">Van sterk ontwerp tot slimme techniek.</h2>
-          <p class="poss__lead">Ik bouw complete websites rondom jouw bedrijf. Van de eerste uitstraling en teksten tot slimme functies die aanvragen makkelijker maken.</p>
-          <a href="#" class="btn btn--outline poss__cta">Bekijk alle diensten
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
-        </aside>
+    <!-- Wat ik doe -->
+    <section class="shell" id="mogelijkheden" data-reveal>
+      <section class="section">
+        <h1 class="title">Wat ik <span class="scribble-word">doe
+          <svg viewBox="0 0 120 72" aria-hidden="true">
+            <path d="M12 47 C25 21, 86 12, 98 21 C106 28, 82 47, 47 50 C21 53, 9 48, 18 37 C31 20, 79 5, 98 10" fill="none" stroke="#ff5d61" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M25 54 C44 30, 71 15, 101 2" fill="none" stroke="#ff5d61" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span><span class="dot">.</span></h1>
+        <div class="rule"></div>
 
-        <div class="poss__cards">
-          <div class="prow" style="--i:0">
-            <article class="scard">
-              <div class="scard__head">
-                <span class="scard__bignum">01</span>
-                <h3>Webdesign op maat</h3>
-                <p>Een eigen ontwerp dat past bij jouw bedrijf en niet voelt als het zoveelste template.</p>
-                <div class="tags">
-                  <span>One-pagers</span><span>Bedrijfswebsites</span><span>Redesigns</span><span>Mobiel ontwerp</span>
+        <article class="service" data-service="design">
+          <div class="visual"><div class="card dev-showcase">
+            <div class="dev-topbar">
+              <div class="dev-brand"><span class="dev-dots"><i></i><i></i><i></i></span><b>Sitesnit</b><em>/ maatwerk website</em></div>
+              <div class="dev-mode"><span class="mode-code active">CODE</span><i></i><span class="mode-preview">PREVIEW</span></div>
+              <div class="dev-status"><i></i> LOCALHOST:3000</div>
+            </div>
+            <div class="dev-stage">
+              <div class="dev-editor-large">
+                <div class="dev-editor-head"><span><b>H</b> index.html</span><em>● opgeslagen</em></div>
+                <div class="dev-code">
+                  <div class="dev-line l1"><b>01</b><code><span class="c-tag">&lt;section</span> <span class="c-attr">class</span>=<span class="c-str">&quot;hero&quot;</span><span class="c-tag">&gt;</span></code></div>
+                  <div class="dev-line l2"><b>02</b><code>&nbsp;&nbsp;<span class="c-tag">&lt;p</span> <span class="c-attr">class</span>=<span class="c-str">&quot;eyebrow&quot;</span><span class="c-tag">&gt;</span>Scherp webdesign<span class="c-tag">&lt;/p&gt;</span></code></div>
+                  <div class="dev-line l3"><b>03</b><code>&nbsp;&nbsp;<span class="c-tag">&lt;h1&gt;</span>Een website die</code></div>
+                  <div class="dev-line l4 active"><b>04</b><code>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-tag">&lt;span&gt;</span>voor je werkt.<span class="c-tag">&lt;/span&gt;</span><span class="dev-caret"></span></code></div>
+                  <div class="dev-line l5"><b>05</b><code>&nbsp;&nbsp;<span class="c-tag">&lt;/h1&gt;</span></code></div>
+                  <div class="dev-line l6"><b>06</b><code>&nbsp;&nbsp;<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-str">&quot;#contact&quot;</span> <span class="c-attr">class</span>=<span class="c-str">&quot;cta&quot;</span><span class="c-tag">&gt;</span></code></div>
+                  <div class="dev-line l7"><b>07</b><code>&nbsp;&nbsp;&nbsp;&nbsp;Start je project <span class="c-tag">&lt;span&gt;</span>→<span class="c-tag">&lt;/span&gt;</span></code></div>
+                  <div class="dev-line l8"><b>08</b><code>&nbsp;&nbsp;<span class="c-tag">&lt;/a&gt;</span></code></div>
+                  <div class="dev-line l9"><b>09</b><code><span class="c-tag">&lt;/section&gt;</span></code></div>
+                  <div class="dev-line l10"><b>10</b><code><span class="c-com">// snel · responsive · SEO-ready</span></code></div>
                 </div>
+                <div class="dev-minimap"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
               </div>
-              <div class="scard__vis vis--web">
-                <div class="browser">
-                  <div class="browser__bar"><span class="bdots"><i></i><i></i><i></i></span><span class="browser__url"></span></div>
-                  <div class="browser__nav"><span class="browser__logo">LOGO</span><a>Home</a><a>Diensten</a><a>Over ons</a><a>Contact</a><span class="browser__cta">Offerte</span></div>
-                  <div class="browser__hero">
-                    <h4>Sterke websites voor groeiende bedrijven</h4>
-                    <p>Duidelijk design. Slimme functies. Meer aanvragen.</p>
-                    <span class="fakebtn">Plan een kennismaking</span>
-                    <div class="feats">
-                      <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z" /></svg>Snelle laadtijd</span>
-                      <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M11 18h2" /></svg>Mobile-first</span>
-                      <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Makkelijk in gebruik</span>
+              <div class="dev-live-preview">
+                <div class="dev-browser"><span></span><b>sitesnit.nl</b><i>↗</i></div>
+                <div class="dev-site dev-site-v10">
+                  <nav class="v10-nav"><b>S</b><div><span>Projecten</span><span>Diensten</span><span>Werkwijze</span></div><i>Start project ↗</i></nav>
+                  <div class="v10-page">
+                    <div class="v10-copy">
+                      <div class="v10-kicker"><span></span> HANDCODED WEBDESIGN</div>
+                      <h3>Geen template.<br><em>Gewoon raak.</em></h3>
+                      <p>Een sterke website begint niet bij effecten, maar bij structuur, ritme en code die klopt.</p>
+                      <div class="v10-actions"><button>Bekijk projecten <b>→</b></button><a>Hoe ik werk</a></div>
+                    </div>
+                    <div class="v10-art">
+                      <span class="v10-grid"></span>
+                      <div class="v10-poster">
+                        <div class="v10-poster-top"><small>PROJECT / 04</small><b>LIVE</b></div>
+                        <strong>STUDIO<br>NOORD.</strong>
+                        <div class="v10-poster-foot"><span>BRAND · WEB</span><i>↗</i></div>
+                      </div>
+                      <div class="v10-red-block"><b>01</b><span>custom<br>build</span></div>
+                      <div class="v10-linecard"><span></span><span></span><span></span><b>PERFORMANCE 100</b></div>
+                      <div class="v10-chip c1"><i></i><span><b>0.7s</b><small>load</small></span></div>
+                      <div class="v10-chip c2"><span><b>SEO</b><small>ready</small></span></div>
+                      <span class="v10-cursor"></span>
+                    </div>
+                    <div class="v10-bottom">
+                      <span><b>100%</b><small>custom code</small></span>
+                      <span><b>Responsive</b><small>mobile first</small></span>
+                      <span><b>Vercel</b><small>deploy ready</small></span>
                     </div>
                   </div>
                 </div>
-                <div class="phone">
-                  <div class="phone__notch"></div>
-                  <h5>Sterke websites voor groeiende bedrijven</h5>
-                  <p>Duidelijk design. Slimme functies.</p>
-                  <span class="fakebtn fakebtn--sm">Plan een kennismaking</span>
-                  <div class="phone__feats"><span></span><span></span><span></span></div>
-                </div>
               </div>
-            </article>
+            </div>
+            <div class="dev-footer"><div><span class="prompt">›</span><code>npm run build</code><i class="build-spin"></i><b class="build-done">✓ build klaar in 412ms</b></div><strong class="deploy-ready"><i></i> DEPLOY READY</strong></div>
+          </div></div>
+          <div class="copy">
+            <div class="platforms"><span class="pill"><b>&lt;/&gt;</b> Custom code</span><span class="pill"><b>V</b> Vercel</span><span class="pill"><b>SEO</b> Ready</span></div>
+            <h2>Webdesign &amp; ontwikkeling</h2>
+            <p>Maatwerk websites zonder templategevoel. Ontworpen en direct in code gebouwd voor snelheid, duidelijke conversie en een uitstraling die past bij je bedrijf.</p>
+            <a class="learn" href="/diensten/webdesign/">Bekijk webdesign <span class="arrow">→</span></a>
           </div>
+        </article>
 
-          <div class="prow" style="--i:1">
-            <article class="scard">
-              <div class="scard__head">
-                <span class="scard__bignum">02</span>
-                <h3>Techniek die werk uit handen neemt</h3>
-                <p>Niet alleen informatie tonen, maar bezoekers helpen om direct de juiste aanvraag te doen.</p>
-                <div class="tags">
-                  <span>Slimme formulieren</span><span>Foto-upload</span><span>Calculators</span><span>Keuzehulpen</span><span>Afspraakaanvragen</span><span>Lichte backend</span>
-                </div>
+        <article class="service reverse" data-service="seo">
+          <div class="visual"><div class="card seo-card">
+            <div class="searchbar"><span class="magnify"></span><span class="typed" aria-live="polite"></span><span class="caret"></span><span class="search-key">↵</span></div>
+            <div class="seo-main">
+              <div class="serp-panel">
+                <div class="serp-label">Google resultaat</div>
+                <div class="serp-result result"><div class="result-logo">S</div><div><div class="domain">sitesnit.nl</div><div class="r-title">Webdesigner Venlo — Sitesnit</div><div class="serp-copy">Maatwerk websites voor bedrijven die scherper online willen staan.</div></div><span class="rank">#1</span></div>
+                <div class="serp-sub result"><span>Lokale intentie</span><b>Venlo + regio</b><span class="match-dot"></span></div>
               </div>
-              <div class="scard__vis vis--tech">
-                <div class="wizard">
-                  <span class="wstep is-active"><i>1</i>Gegevens</span>
-                  <span class="wstep"><i>2</i>Voorkeuren</span>
-                  <span class="wstep"><i>3</i>Overzicht</span>
-                  <span class="wstep"><i>4</i>Bevestiging</span>
-                </div>
-                <div class="tgrid">
-                  <div class="tcard">
-                    <b>Aanvraagformulier</b>
-                    <label>Naam<span class="field"></span></label>
-                    <label>E-mailadres<span class="field"></span></label>
-                  </div>
-                  <div class="tcard">
-                    <b>Upload bestanden</b>
-                    <div class="drop">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V6M8 10l4-4 4 4" /><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" /></svg>
-                      <span>Sleep bestanden hierheen of klik om te uploaden</span>
-                    </div>
-                  </div>
-                  <div class="tcard">
-                    <b>Kies een optie</b>
-                    <span class="opt is-active"><i></i>Optie A</span>
-                    <span class="opt"><i></i>Optie B</span>
-                    <span class="opt"><i></i>Optie C</span>
-                  </div>
-                  <div class="tcard tcard--price">
-                    <b>Prijsindicatie</b>
-                    <span class="price">€ 1.250,-</span>
-                    <span class="price__ex">excl. btw</span>
-                    <span class="price__note">Indicatie op basis van geselecteerde opties</span>
-                  </div>
-                </div>
+              <div class="rank-panel">
+                <div class="rank-head"><span>Positie</span><b>#1</b></div>
+                <div class="rank-chart"><svg viewBox="0 0 220 105" preserveAspectRatio="none"><path class="rank-grid" d="M0 22H220 M0 52H220 M0 82H220"/><path class="rank-line" d="M4 88 C30 86,38 74,58 76 S88 58,107 61 S135 42,154 45 S183 18,216 20"/></svg><span class="rank-tracer"></span></div>
+                <div class="rank-foot"><span>30 dagen</span><span class="rank-up">↑ 11 posities</span></div>
               </div>
-            </article>
+            </div>
+            <div class="seo-metrics"><span><small>Techniek</small><b>98/100</b></span><span><small>Kliks</small><b>+38%</b></span><span><small>Fouten</small><b>0</b></span></div>
+            <div class="seo-score"><span class="seo-ring"></span><span>SEO-check voltooid</span></div>
+            <span class="seo-scan"></span>
+          </div></div>
+          <div class="copy">
+            <p class="kicker">Lokaal · technisch · on-page</p><h2>SEO &amp; sterke teksten</h2>
+            <p>Niet alleen mooi bouwen, maar zorgen dat Google en je bezoeker direct begrijpen wat je aanbiedt. Inclusief structuur, copy en technische basis.</p>
+            <a class="learn" href="/diensten/tekst-seo/">Bekijk SEO &amp; copy <span class="arrow">→</span></a>
           </div>
+        </article>
 
-          <div class="prow" style="--i:2">
-            <article class="scard">
-              <div class="scard__head">
-                <span class="scard__bignum">03</span>
-                <h3>Structuur, teksten en groei</h3>
-                <p>Een duidelijke websitebasis die goed gevuld is en later verder kan worden uitgebreid.</p>
-                <div class="tags">
-                  <span>Webteksten</span><span>SEO-pagina's</span><span>Blogs</span><span>Extra landingspagina's</span><span>Onderhoud</span>
-                </div>
+        <article class="service" data-service="smart">
+          <div class="visual"><div class="card smart-feature">
+            <div class="sf-topbar">
+              <div><span class="sf-live"></span><b>Offertecalculator</b><em>live op je website</em></div>
+              <strong><i></i> API CONNECTED</strong>
+            </div>
+            <div class="sf-body">
+              <div class="sf-form">
+                <div class="sf-label">BEZOEKER VULT IN</div><div class="sf-steps"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span><b>direct resultaat</b></div>
+                <label><span>Type website</span><strong class="sf-choice c1">Bedrijfswebsite <b>⌄</b></strong></label>
+                <label><span>Aantal pagina's</span><div class="sf-range"><i></i><b></b><em>6</em></div></label>
+                <label><span>Extra functie</span><strong class="sf-choice c2">Offerteformulier <i>✓</i></strong></label>
+                <button class="sf-button">Bereken indicatie <b>→</b></button>
               </div>
-              <div class="scard__vis vis--seo">
-                <div class="sitemap">
-                  <span class="smnode smnode--root">Home</span>
-                  <svg class="smlines" viewBox="0 0 260 34" preserveAspectRatio="none" fill="none"><path d="M130 0V10M130 10H30M130 10H97M130 10H163M130 10H230M30 10V34M97 10V34M163 10V34M230 10V34" stroke="#c9d4f2" stroke-width="1.5" /></svg>
-                  <div class="smrow">
-                    <span class="smnode">Diensten</span>
-                    <span class="smnode">Over ons</span>
-                    <span class="smnode">Cases</span>
-                    <span class="smnode">Contact</span>
-                  </div>
-                </div>
-                <div class="sgrid">
-                  <div class="scell">
-                    <b>Nieuwe blog</b>
-                    <div class="scell__img"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="8" cy="9" r="1.4" /><path d="m5 18 5-5 4 4 5-5" /></svg></div>
-                    <span class="sline"></span><span class="sline short"></span>
-                  </div>
-                  <div class="scell scell--gauge">
-                    <b>SEO-score</b>
-                    <div class="gauge" style="--val: 86">
-                      <span class="gauge__num">86<i>/100</i></span>
-                    </div>
-                    <span class="gauge__label">Goed bezig!</span>
-                  </div>
-                  <div class="scell scell--chart">
-                    <b>Bezoekersgroei</b>
-                    <span class="chart__val">+38%</span>
-                    <span class="chart__sub">vs. vorige maand</span>
-                    <svg class="chart" viewBox="0 0 120 44" preserveAspectRatio="none" fill="none"><path d="M2 40 L26 30 L50 33 L74 18 L98 20 L118 4" stroke="#22a45d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2 40 L26 30 L50 33 L74 18 L98 20 L118 4 L118 44 L2 44 Z" fill="#22a45d" fill-opacity="0.1" /></svg>
-                  </div>
-                </div>
+              <div class="sf-result">
+                <div class="sf-result-head"><span>LIVE RESULTAAT</span><em>84 ms</em></div>
+                <small>Indicatie vanaf</small>
+                <div class="sf-price">€ <span class="sf-price-number">799</span></div>
+                <p>Volledige bedrijfswebsite<br>+ slimme aanvraagfunctie</p>
+                <div class="sf-result-meta"><span><small>Oplevering</small><b>2–3 weken</b></span><span><small>Pagina's</small><b>6</b></span></div>
+                <div class="sf-success"><i>✓</i><span><b>Aanvraag verwerkt</b><small>Automatisch doorgestuurd</small></span><em>18 min bespaard</em></div>
               </div>
-            </article>
+            </div>
+            <div class="sf-automation">
+              <div class="sf-auto-title"><span class="sf-pulse"></span><b>Daarna automatisch</b><em>3 acties · 0.8s</em></div><span class="sf-flow-dot"></span>
+              <div class="sf-auto-step a1"><i>01</i><span><small>CRM</small><b>Lead aangemaakt</b></span><em>✓</em></div>
+              <span class="sf-connector"></span>
+              <div class="sf-auto-step a2"><i>02</i><span><small>MAIL</small><b>Bevestiging verstuurd</b></span><em>✓</em></div>
+              <span class="sf-connector"></span>
+              <div class="sf-auto-step a3"><i>03</i><span><small>ANALYTICS</small><b>Conversie gemeten</b></span><em>✓</em></div>
+            </div>
+            <div class="sf-log"><span><i></i> 14:32:08</span><b class="sf-log-text">Nieuwe aanvraag ontvangen</b><strong>0 errors</strong></div>
+          </div></div>
+          <div class="copy">
+            <p class="kicker">Functies · integraties · automatisering</p><h2>Slimme functies</h2>
+            <p>Van calculators en klantportalen tot API-koppelingen en automatiseringen. Functionaliteit die data verwerkt, handwerk wegneemt en je website echt onderdeel maakt van je bedrijfsproces.</p>
+            <a class="learn" href="/diensten/slimme-functies/">Bekijk slimme functies <span class="arrow">→</span></a>
           </div>
-        </div>
+        </article>
 
-      </div>
+        <article class="service reverse" data-service="hosting">
+          <div class="visual"><div class="card uptime-card">
+            <div class="status-row"><div class="status-left"><span class="status-dot"></span>Alle systemen operationeel</div><span class="shield"></span></div>
+            <div class="uptime-number"><span class="uptime-value">99.00</span><span class="pct">%</span></div><div class="uptime-label">Uptime · 90 dagen</div>
+            <div class="chart">
+              <svg viewBox="0 0 620 130" preserveAspectRatio="none" aria-hidden="true"><path d="M0 76 L93 76 L102 75 L108 66 L115 76 L126 76 L132 28 L137 90 L143 52 L149 76 L190 76 C201 76 204 57 214 56 C224 56 228 76 240 76 L431 76 L438 66 L445 76 L458 76 L464 92 L470 16 L476 99 L483 76 L515 76 C528 76 531 58 540 58 C550 58 555 76 565 76 L620 76"/></svg>
+              <span class="chart-tracer"></span><span class="incident-tag">0 incidents</span>
+            </div>
+            <div class="uptime-footer"><span class="deploy"><i></i>deployed v3.1</span><span>SSL geldig</span></div>
+          </div></div>
+          <div class="copy">
+            <div class="platforms"><span class="pill">Vercel</span><span class="pill">Analytics</span><span class="pill">SSL</span><span class="pill">Updates</span></div>
+            <h2>Onderhoud &amp; hosting</h2>
+            <p>Je site snel, veilig en actueel houden. Hosting, kleine wijzigingen, technische controle en ondersteuning zonder dat jij er achteraan hoeft.</p>
+            <a class="learn" href="/diensten/onderhoud-groei/">Bekijk onderhoud <span class="arrow">→</span></a>
+          </div>
+        </article>
+      </section>
     </section>
 
     <!-- Case -->
@@ -627,8 +646,8 @@
     </section>
 
     <div id="footer-slot"></div>
-    <script type="module" src="./js/components/footer.js"></script>
     <script type="module" src="./js/script.js"></script>
     <script type="module" src="./js/site-footer.js"></script>
+    <script type="module" src="./js/services.js"></script>
   </body>
 </html>

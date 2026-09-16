@@ -9,7 +9,7 @@ export function PhotoStack() {
     const observe = () => {
       observer?.disconnect();
       // Fold while the photos are still visible, above the central reading area.
-      const top = Math.round(window.innerHeight * .32);
+      const top = Math.round(window.innerHeight * .39);
       const bottom = Math.round(window.innerHeight * .15);
       observer = new IntersectionObserver(([entry]) => setOpen(entry.isIntersecting), {
         rootMargin: `-${top}px 0px -${bottom}px 0px`, threshold: 0,

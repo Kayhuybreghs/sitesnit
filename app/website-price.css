@@ -1,0 +1,14 @@
+.website-price { display:grid; gap:7px; min-width:0; }
+.website-price-main { display:flex; flex-wrap:wrap; align-items:baseline; column-gap:9px; row-gap:3px; color:var(--ink); }
+.website-price-amount { display:inline-flex; align-items:baseline; gap:7px; white-space:nowrap; }
+.website-price-amount > span { font-size:14px; }
+.website-price-amount > strong { font-size:clamp(36px,3.3vw,48px); line-height:1.1; letter-spacing:-.06em; font-variant-numeric:tabular-nums; }
+.website-price-tax { font-size:13px; font-weight:650; white-space:nowrap; }
+.website-price .website-price-inclusive { margin:0; color:var(--ink); font-size:16px; font-weight:600; line-height:1.5; }
+.cost-package > .website-price { margin:6px 0 12px; }
+.cost-package > .price-total { margin:0 0 20px; font-size:14px!important; min-height:0; line-height:1.55; }
+.pricing-route-action .website-price { justify-items:end; }
+.website-price-overview .website-price { margin:18px 0; }
+@media(max-width:767px) {
+  .pricing-route-action .website-price { justify-items:start; }
+}

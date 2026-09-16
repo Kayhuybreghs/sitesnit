@@ -1,0 +1,10 @@
+/* Lightweight visual reconstruction of the supplied Beurswijzer homepage.
+   This is a decorative project preview, not an embedded financial tool. */
+export function BeurswijzerScreen() {
+  return <div className="bw-screen" aria-hidden="true">
+    <div className="bw-nav"><b><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#06352f"/><path d="M8 24V18M14 24V14M20 24V10M7 15L15 8L20 12L25 5M20 5H25V10" stroke="#cff48c" strokeWidth="2"/></svg>beurswijzer</b><span>Ontdek　 Geld uitgelegd　 Rekentools　 Mijn budget　 Over Beurswijzer</span><i>Ⅱ　♙　☰</i></div>
+    <div className="bw-copy"><p>—　DE CIJFERS ACHTER JOUW GELD</p><strong>Begrijp wat er met<br />je <em>geld</em> gebeurt.</strong><span>Wat houd je over? Wat past bij jou? En wat kun je opbouwen?<br />Van een goed verhaal naar jouw volgende stap.</span><div className="bw-actions"><b>Ontdek de inzichten　→</b><span>Bekijk mijn maandruimte　→</span></div></div>
+    <div className="bw-month"><small>Jouw maand, helder.</small><strong>€425</strong><span>ruimte / maand</span><div className="bw-bars">{[30,42,54,70,88].map(h=><i style={{height:`${h}%`}} key={h}/>)}</div><p>€3.000 inkomen − €2.575<br />lasten en geplande inleg.</p><small>Rekenvoorbeeld</small></div>
+    <div className="bw-future"><span>Een klein begin. Een lange adem.</span><strong>€81.161</strong><small>mogelijke waarde</small><svg viewBox="0 0 200 85" fill="none"><path d="M2 70H198M2 38H198M2 8H198" stroke="#dce5d1"/><path d="M3 69C56 67 124 52 197 22V70H3Z" fill="#d3dfc7"/><path d="M3 69C56 67 124 52 197 22" stroke="#1a5247" strokeWidth="2.4"/><circle cx="197" cy="22" r="3" fill="#1a5247"/></svg><div className="bw-chart-labels"><span>Vandaag</span><span>Over 20 jaar</span></div><div className="bw-invest"><span>Maandelijks inleggen</span><b>€ 200</b></div><div className="bw-slider"><i /></div><div className="bw-years"><span>5 jaar</span><span>10 jaar</span><b>20 jaar</b></div><small>Rekenvoorbeeld · 5% per jaar, geen kosten<br />of belasting. Geen voorspelling.</small></div>
+  </div>;
+}

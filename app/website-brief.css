@@ -1,0 +1,57 @@
+.price-website-brief {
+  margin-top: 35px;
+  border: 1px solid #d1d8c8;
+  background: #eef0e3;
+  border-radius: 24px;
+  padding: 25px;
+}
+.price-website-brief > div:not(.tool-actions) {
+  display: grid;
+  gap: 24px;
+  margin-top: 25px;
+}
+.price-website-brief h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+.price-website-brief ol,
+.price-website-brief ul {
+  padding-left: 20px;
+  font-size: 14px;
+}
+.price-website-brief li {
+  padding-bottom: 8px;
+}
+.price-website-brief p {
+  font-size: 13px;
+}
+.price-website-brief .tool-actions > div {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.price-website-brief .tool-actions button {
+  font-size: 12px;
+}
+.price-website-brief .tool-actions button.text-link {
+  background: none;
+  border: 0;
+  min-height: 44px;
+}
+.price-website-brief .tool-actions > p {
+  font-size: 12px;
+  min-height: 20px;
+}
+.price-website-brief > a {
+  font-size: 13px;
+}
+@media (min-width: 700px) {
+  .price-website-brief {
+    padding: 30px;
+  }
+  .price-website-brief > div:not(.tool-actions) {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 30px;
+  }
+}

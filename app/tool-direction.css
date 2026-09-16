@@ -1,0 +1,336 @@
+.tool-page {
+  background: transparent;
+}
+.tool-start-card {
+  border-radius: 32px;
+  border-color: var(--line);
+}
+.price-tool .tool-start-card {
+  border-color: #dfcf94;
+}
+.tool-card-no {
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+.tool-route-steps {
+  display: grid;
+  gap: 10px;
+  margin: 25px 0;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+.tool-route-steps span {
+  padding-block: 10px;
+  border-bottom: 1px solid #173e4220;
+}
+.question-card {
+  border-radius: 28px;
+}
+.answer-option {
+  border-radius: 16px;
+  border-color: var(--line);
+  transition:
+    background 0.16s,
+    border-color 0.16s,
+    transform 0.16s;
+}
+.answer-option:hover {
+  background: #f0f5f2;
+}
+.answer-option.selected {
+  border-color: var(--purple);
+  background: #e7efff;
+}
+.question-progress-track {
+  background: #dfe8e4;
+}
+.question-progress-fill {
+  background: var(--purple);
+}
+.answer-radio,
+.answer-box {
+  border-color: #748a8b;
+}
+.scan-status {
+  border-radius: 20px;
+  background: #edf3f0;
+  border-color: var(--line);
+}
+.scan-status.failed {
+  background: #fff2dc;
+  border-color: #d7b578;
+}
+.scan-status.complete {
+  background: #e7efdc;
+  border-color: #bccfaa;
+}
+.finding-card,
+.positive-section,
+.technical-details,
+.pending-section {
+  border-radius: 24px;
+}
+.finding-top > span:first-child {
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+}
+.price-result-card {
+  border-radius: 28px;
+  background: var(--lilac);
+  border: 0;
+}
+.price-result-card strong {
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  font-size: clamp(2.5rem, 4.6vw, 4.5rem);
+  line-height: 1.1;
+}
+.price-result-card .eyebrow {
+  font-size: 0.72rem;
+}
+.price-result-card > div > p {
+  font-size: 0.9rem;
+}
+.custom-average {
+  padding: 25px 30px;
+  background: var(--lime);
+  border-radius: 22px;
+  margin-top: 22px;
+  font-size: 0.9rem;
+  max-width: 100%;
+}
+.custom-average strong {
+  color: var(--ink);
+}
+.answers-review {
+  border-radius: 20px;
+  border-color: var(--line);
+}
+.technical-details pre,
+.context-box {
+  border-radius: 16px;
+}
+.technical-audit {
+  border-color: var(--line);
+}
+.field input,
+.field textarea,
+.field select {
+  border-radius: 14px;
+  border-color: #92a7a6;
+  background: #fffefa;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: var(--purple);
+}
+.field label {
+  font-weight: 700;
+}
+.field label small {
+  font-weight: 450;
+}
+.contact-form {
+  border-radius: 28px;
+  background: #fffdf7;
+  border-color: var(--line);
+}
+.contact-form > h2 {
+  font-size: 2rem;
+  line-height: 1.12;
+}
+.contact-form > p {
+  font-size: 0.88rem;
+}
+.contact-form textarea {
+  min-height: 120px;
+}
+.context-box {
+  background: var(--lilac);
+  border-color: var(--line);
+}
+.context-box pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.7rem;
+  max-height: 250px;
+  overflow: auto;
+}
+.check-consent {
+  font-size: 0.82rem;
+  align-items: flex-start;
+}
+.check-consent input {
+  flex-shrink: 0;
+  accent-color: var(--purple);
+  margin-top: 4px;
+}
+.tool-contact {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 65px;
+  padding-top: 75px;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  align-items: start;
+  scroll-margin-top: 110px;
+}
+.tool-contact[hidden] {
+  display: none;
+}
+.tool-contact-copy > p {
+  margin-top: 25px;
+  max-width: 440px;
+  font-size: 0.94rem;
+}
+.tool-contact-copy .text-link {
+  margin-top: 22px;
+  font-size: 0.86rem;
+}
+.tool-contact-copy .small {
+  font-size: 0.81rem;
+}
+.conversation-topics {
+  background: var(--peach);
+  border-radius: 24px;
+  padding: 25px;
+  margin-top: 28px;
+  font-size: 0.86rem;
+}
+.conversation-topics ul {
+  padding-left: 18px;
+  margin-bottom: 0;
+  display: grid;
+  gap: 12px;
+}
+.url-step {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding-block: 80px;
+}
+.url-step h1 {
+  font-size: clamp(2.5rem, 4.1vw, 4.2rem);
+}
+.url-step > div > p {
+  margin-top: 28px;
+  max-width: 490px;
+}
+.url-step-form {
+  padding: 35px;
+  background: var(--lilac);
+  border-radius: 28px;
+}
+.url-step-form > .button {
+  width: 100%;
+  margin-top: 25px;
+}
+.url-step-form > .quiet-button {
+  display: block;
+  margin-top: 15px;
+}
+.url-step-form .field {
+  margin-top: 0;
+}
+.tool-page .result-heading h1 {
+  max-width: 1100px;
+  font-size: clamp(2.5rem, 4.6vw, 4.8rem);
+}
+@media (max-width: 1000px) {
+  .tool-contact {
+    gap: 35px;
+  }
+  .url-step {
+    gap: 35px;
+  }
+  .tool-intro {
+    gap: 40px;
+  }
+  .question-layout {
+    gap: 40px;
+  }
+  .tool-contact .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .tool-start-card {
+    border-radius: 25px;
+  }
+  .tool-intro h1 {
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+  }
+  .tool-contact {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 45px;
+    margin-top: 20px;
+  }
+  .tool-contact .contact-form {
+    padding: 25px 20px;
+  }
+  .tool-contact .contact-form h2 {
+    font-size: 1.65rem;
+  }
+  .tool-contact-copy > p {
+    font-size: 0.9rem;
+  }
+  .conversation-topics {
+    padding: 22px;
+  }
+  .url-step {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-block: 45px;
+  }
+  .url-step h1 {
+    font-size: 2.55rem;
+  }
+  .url-step-form {
+    padding: 26px;
+  }
+  .url-step > div > p {
+    font-size: 0.92rem;
+    margin-top: 22px;
+  }
+  .tool-page .result-heading h1 {
+    font-size: clamp(2.3rem, 7.8vw, 3.2rem);
+  }
+  .price-result-card strong {
+    font-size: 2.65rem;
+  }
+  .custom-average {
+    padding: 23px;
+    font-size: 0.86rem;
+  }
+  .tool-contact .form-row {
+    grid-template-columns: 1fr;
+  }
+  .question-card {
+    border-radius: 23px;
+  }
+  .question-card h1 {
+    font-weight: 800;
+    line-height: 1.18;
+  }
+  .tool-page .question-controls .button {
+    padding-inline: 18px;
+  }
+  .tool-page .field input,
+  .tool-page .field select,
+  .tool-page .field textarea {
+    font-size: 16px;
+  }
+  .tool-contact .form-note {
+    font-size: 0.7rem;
+  }
+}
+
+.source-badge {
+  border-radius: 100px;
+  border-color: var(--line);
+}

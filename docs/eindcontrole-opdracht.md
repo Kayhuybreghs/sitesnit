@@ -1,0 +1,15 @@
+# Uitgevoerde opdracht voor de laatste controle
+
+Werk Sitesnit af als een samenhangende, mobiele website op https://sitesnit.nl. Gebruik Vercel als definitief platform en een standaard Next.js-productiebuild. Pas ook opslag, aanvragen, snelheidsmetingen en periodieke gegevensverwijdering aan; controleer niet alleen de voorkant.
+
+Controleer alle pagina's op begrijpelijke, unieke titels en beschrijvingen, correcte canonicals, passende JSON-LD, interne links, scherpe eigen OG-beelden, altteksten en echte 404-statussen. Houd lokale en Vercel-previewadressen buiten de index. Voeg volledige diensten toe voor webapps, inloggen, rollen en klantportalen én voor apps voor iPhone en Android, met voorbereiding voor App Store en Google Play. Geef beide een eigen inhoudelijke pagina en maak het onderscheid duidelijk in het dienstenoverzicht. Beloof geen automatische toelating door appwinkels of onbevestigde appprijzen.
+
+Werk voorwaarden, privacy, cookies en toestemmingsbeheer uit met de bevestigde informatie: Kay Huybreghs, Haammakerstraat 21, 5991 MZ Baarlo; zakelijke klanten en consumenten. KvK, btw-id, zakelijk e-mailadres, telefoon en GA4-ID volgen later. Verzin deze niet. Toon 21% btw inclusief naast de oorspronkelijke exclusieve bedragen. Betaling: 60% vooraf, 40% bij afronding; betaaltermijn 14 dagen. Hosting hoort bij nieuwe websites: minimaal €5 exclusief btw per maand gedurende het eerste jaar, daarna automatisch doorlopend en maandelijks opzegbaar. Maak een veilige overdracht naar een andere host mogelijk met voorafgaande technische afstemming en behoud van wettelijke rechten.
+
+Laat Google Analytics uitsluitend laden na geldige toestemming én volledig ingestelde privacyconfiguratie. Geef weigeren dezelfde aandacht als toestaan en maak intrekken eenvoudig. Beschrijf werkelijk gebruikte gegevensstromen. Bewaar aanvraaggegevens maximaal twaalf maanden en losse gebruiksregistraties negentig dagen, met een beveiligde, geplande verwijderfunctie.
+
+Optimaliseer de werkelijke laadvolgorde van HTML, JavaScript, CSS, fonts en beelden. Laat belangrijke tekst, navigatie en knoppen direct werken. Houd grote toolmodules op hun eigen routes, laad niet-zichtbare beelden uitgesteld en behoud scherpe responsieve bronnen. Gebruik Vercels caching voor gehashte bestanden zonder privéantwoorden of foutresultaten te cachen.
+
+Test de productiebuild, opslag en foutafhandeling, beide vijftienvragentools, ontwerpvoorbeeld, contactoverdracht, mobiel menu, toetsenbord en verminderde beweging. Beoordeel echte browserbeelden op 360, 390, 768, 1440 en 1920 pixels. Vermeld het verschil tussen browseremulatie en een echte telefoon, tussen lokale en gedeployde tests, en tussen voorbereide en werkelijk geactiveerde koppelingen.
+
+Lever de werkende lokale preview, controleverslagen en concrete resterende liveganggegevens op. Een technische controle is geen garantie op Google-posities of juridische immuniteit; laat ontbrekende zakelijke gegevens en ongeverifieerde leveranciersinstellingen zichtbaar in de oplevernotities staan.

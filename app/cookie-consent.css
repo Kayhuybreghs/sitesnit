@@ -1,0 +1,93 @@
+.cookie-banner,
+.cookie-dialog {
+  color: var(--ink, #173e42);
+  background: #f8f6ef;
+  border: 1px solid #9aafac;
+  border-radius: 22px;
+  box-shadow: 0 12px 48px #173e4224;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.cookie-banner {
+  position: fixed;
+  z-index: 200;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: max(12px, env(safe-area-inset-left));
+  right: max(12px, env(safe-area-inset-right));
+  padding: 20px;
+  max-height: min(78svh, 620px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.cookie-eyebrow { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 6px; }
+.cookie-banner h2,
+.cookie-dialog h2 { font-size: clamp(1.4rem, 3vw, 1.75rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.12; margin: 0 0 10px; }
+.cookie-banner p,
+.cookie-dialog p { margin: 0; }
+.cookie-banner .cookie-small,
+.cookie-dialog .cookie-small { margin-top: 10px; font-size: 12px; line-height: 1.6; }
+.cookie-banner a,
+.cookie-dialog a { text-decoration: underline; text-underline-offset: .2em; font-weight: 650; }
+.cookie-banner-actions,
+.cookie-dialog-actions { display: grid; gap: 8px; margin-top: 16px; }
+.cookie-choice-button {
+  min-height: 46px;
+  min-width: 44px;
+  padding: 11px 16px;
+  border: 1.5px solid #173e42;
+  border-radius: 999px;
+  color: #fff;
+  background: #173e42;
+  font: inherit;
+  font-weight: 750;
+  line-height: 1.35;
+  text-align: center;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+.cookie-choice-button:hover { background: #245c60; }
+.cookie-choice-button:active { transform: translateY(1px); }
+.cookie-settings-trigger { color: inherit; background: transparent; border: 0; padding: 10px 0; min-height: 44px; font: inherit; text-align: left; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
+.cookie-banner .cookie-details-button { text-align: center; padding: 8px; }
+.cookie-banner :focus-visible,
+.cookie-dialog :focus-visible,
+.cookie-settings-trigger:focus-visible { outline: 3px solid #164bbd; outline-offset: 3px; }
+.cookie-dialog {
+  width: min(620px, calc(100vw - 24px));
+  max-height: calc(100svh - 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 22px;
+  margin: auto;
+}
+.cookie-dialog::backdrop { background: #102e32b0; }
+.cookie-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.cookie-close { width: 44px; height: 44px; flex: 0 0 auto; border: 1px solid #bacac4; background: transparent; border-radius: 50%; font-size: 28px; line-height: 1; color: #173e42; }
+.cookie-setting-row { padding: 18px 0; border-bottom: 1px solid #c9d6d2; display: grid; gap: 12px; }
+.cookie-setting-row h3 { font-size: 16px; letter-spacing: -.02em; line-height: 1.3; margin-bottom: 6px; }
+.cookie-setting-row p { font-size: 13px; }
+.cookie-required { font-size: 12px; font-weight: 750; color: #355656; }
+.cookie-checkbox { display: flex; align-items: center; gap: 12px; min-height: 44px; width: fit-content; font-weight: 750; cursor: pointer; }
+.cookie-checkbox input { margin: 0; width: 24px; height: 24px; accent-color: #173e42; }
+.cookie-storage-notice { position: fixed; z-index: 201; bottom: 12px; left: 12px; right: 12px; max-width: 560px; margin-inline: auto; background: #f4df91; border: 1px solid #173e42; border-radius: 14px; padding: 14px; font-size: 13px; }
+.cookie-storage-notice button { min-height: 44px; background: transparent; border: 0; color: inherit; text-decoration: underline; font-weight: 750; padding-inline: 12px; }
+@media (min-width: 440px) {
+  .cookie-banner-actions,
+  .cookie-dialog-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cookie-details-button { grid-column: 1 / -1; }
+}
+@media (min-width: 800px) {
+  .cookie-banner { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr); gap: 30px; align-items: center; padding: 24px 28px; }
+  .cookie-banner-actions { margin-top: 0; }
+  .cookie-dialog { padding: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cookie-choice-button { transition: none; }
+}
+@media print {
+  .cookie-banner,
+  .cookie-dialog,
+  .cookie-settings-trigger,
+  .cookie-storage-notice { display: none !important; }
+}

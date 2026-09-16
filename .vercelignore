@@ -1,0 +1,14 @@
+.sites-runtime
+.wrangler
+dist
+reports
+tests
+docs
+scripts/og-fonts
+outputs
+work
+.env*
+.dev.vars*
+.openai
+.codex
+.agents

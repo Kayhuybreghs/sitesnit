@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "algemene-voorwaarden",
+    "route": "/algemene-voorwaarden",
+    "url": "/og/algemene-voorwaarden.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Heldere afspraken bij Sitesnit: 60% aanbetaling bij de start en 40% bij afronding van het project."
+  },
+  {
+    "slug": "cookies",
+    "route": "/cookies",
+    "url": "/og/cookies.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Jouw keuze: Sitesnit-cookie-instellingen met een voorbeeld van functionele opslag en optionele statistieken."
+  },
+  {
+    "slug": "webapps",
+    "route": "/diensten/webapps",
+    "url": "/og/webapps.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Webapps door Sitesnit: een schematisch portaal met inloggen, gebruikersrollen en gedeelde projecttaken, duidelijk gelabeld als voorbeeld."
+  },
+  {
+    "slug": "kosten",
+    "route": "/kosten",
+    "url": "/og/kosten.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Wat kost jouw website? Sitesnit maakt eenmalige bouw en hosting voor minimaal twaalf maanden apart inzichtelijk."
+  },
+  {
+    "slug": "prijscheck",
+    "route": "/prijscheck",
+    "url": "/og/prijscheck.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit-prijscheck: vijftien vragen leiden naar een passende route, met bouw en hosting apart in het voorbeeldresultaat."
+  },
+  {
+    "slug": "tools",
+    "route": "/tools",
+    "url": "/og/tools.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit-tools: verbeterpunten voor je website, een prijsindicatie voor bouw en hosting en een eerste ontwerp."
+  }
+]

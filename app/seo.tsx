@@ -54,7 +54,7 @@ export function PageData({ path, breadcrumb = false }: { path: string; breadcrum
   const isService = path === '/webdesign-venlo' || (path.startsWith('/diensten/') && path !== '/diensten/webdesign/pakketten');
   const type = path === '/contact' ? 'ContactPage' : path === '/over-sitesnit' ? 'AboutPage' :
     ['/diensten', '/projecten', '/tools'].includes(path) ? 'CollectionPage' : 'WebPage';
-  const entityId = isTool ? `${url}#tool` : isCase ? `${url}#work` : isService ? `${url}#service` : path === '/kosten' ? `${url}#websitepakketten` : path === '/over-sitesnit' ? `${site.origin}/#kay-huybreghs` : undefined;
+  const entityId = isTool ? `${url}#tool` : isCase ? `${url}#work` : isService ? `${url}#service` : path === '/kosten' ? `${url}#websitepakketten` : path === '/over-sitesnit' ? `${site.origin}/#kay` : undefined;
   return <>
     <JsonLd data={{
       '@context': 'https://schema.org', '@type': type, '@id': `${url}#webpage`,

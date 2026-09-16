@@ -53,8 +53,8 @@ export const pageSeo: Record<string, PageSeo> = {
     description: 'Een website voor je bedrijf in Venlo, ontworpen en gebouwd vanuit Baarlo. Bekijk het werk, vergelijk websitepakketten en bespreek wat jouw bedrijf nodig heeft.',
   },
   '/over-sitesnit': {
-    title: 'Kay Huybreghs — de maker achter Sitesnit in Baarlo',
-    description: 'Maak kennis met Kay Huybreghs, de maker achter Sitesnit in Baarlo. Lees hoe hij websites en apps ontwerpt, bouwt en met je meedenkt over de volgende stap.',
+    title: 'Kay — de jonge ondernemer achter Sitesnit in Baarlo',
+    description: 'Maak kennis met Kay, de jonge ondernemer achter Sitesnit in Baarlo. Ontdek zijn aanpak voor websites en apps, en ontmoet Nova, de kleinste collega.',
   },
   '/contact': {
     title: 'Contact — bespreek je website of plan een belafspraak',

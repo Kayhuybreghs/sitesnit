@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { withPageMetadata, Breadcrumbs, JsonLd } from '../seo';
 import { Eyebrow, Arrow } from '../ui';
 import { CaseLinks } from '../case-components';
-import { business } from '../../lib/business';
+import { PhotoStack } from './photo-stack';
 import { site } from '../site-data';
 import '../expansion.css';
 import './personal.css';
@@ -20,45 +20,28 @@ export default function Over() {
   return <div className="personal-about">
     <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Over Sitesnit', path: '/over-sitesnit' }]} />
     <JsonLd data={{
-      '@context': 'https://schema.org', '@type': 'Person', '@id': `${site.origin}/#kay-huybreghs`,
-      name: business.ownerName, url: `${site.origin}/over-sitesnit`, jobTitle: 'Webdesigner en ontwikkelaar',
+      '@context': 'https://schema.org', '@type': 'Person', '@id': `${site.origin}/#kay`,
+      name: 'Kay', url: `${site.origin}/over-sitesnit`, jobTitle: 'Webdesigner en ontwikkelaar',
       worksFor: { '@id': `${site.origin}/#organization` },
       mainEntityOfPage: { '@id': `${site.origin}/over-sitesnit#webpage` },
-      description: 'Kay Huybreghs is de maker achter Sitesnit in Baarlo. Hij ontwerpt en bouwt websites, webapps en apps.',
+      description: 'Kay is de maker achter Sitesnit in Baarlo. Hij ontwerpt en bouwt websites, webapps en apps.',
     }} />
     <section className="wrap personal-hero">
       <div className="personal-introduction">
         <Eyebrow>Even voorstellen / Achter Sitesnit</Eyebrow>
-        <h1>Kay Huybreghs.<br /><em>De maker achter<br />Sitesnit.</em></h1>
-        <p className="personal-lead">Aangenaam, ik ben Kay. Vanuit Baarlo ontwerp en bouw ik websites, webapps en apps. Met Sitesnit breng ik het verhaal van je bedrijf en de techniek erachter bij elkaar.</p>
+        <h1>Hoi, ik ben Kay.<br /><em>De maker achter Sitesnit.</em></h1>
+        <p className="personal-lead">Een jonge ondernemer uit Baarlo, met een oog voor ontwerp en een hoofd vol ideeën. Met Sitesnit help ik jouw bedrijf verder met een website of app die laat zien wie je bent én prettig werkt.</p>
         <p>Je kunt bij mij terecht met een nieuw idee, een website die beter kan of werk dat je slimmer wilt organiseren. We beginnen bij jouw vraag en maken samen duidelijk wat er nodig is.</p>
         <div className="personal-actions"><a className="button" href="/contact">Maak kennis met Kay <Arrow /></a><a className="text-link" href="#mijn-aanpak">Zo kijk ik naar je website <Arrow /></a></div>
         <p className="personal-location">Vanuit Baarlo, voor ondernemers in Limburg en daarbuiten.</p>
       </div>
-      {/* Replace these clearly labelled work images with approved personal photographs when supplied. */}
-      <div className="personal-collage" aria-label="Kay Huybreghs en twee voorbeelden van zijn werk">
-        <div className="personal-collage-shape" aria-hidden="true" />
-        <div className="personal-name-card">
-          <span className="personal-card-label">De naam achter Sitesnit</span>
-          <div><strong>Kay Huybreghs</strong><span>Ontwerp. Ontwikkeling. Sitesnit.</span></div>
-          <span className="personal-monogram" aria-hidden="true">kh.</span>
-        </div>
-        <figure className="personal-work-card personal-work-first">
-          <img src="/projects/beurswijzer/home-sharp-800.webp" alt="Eigen werk: het groene websiteontwerp van Beurswijzer" width="1410" height="754" decoding="async" />
-          <figcaption><span>Werk / Beurswijzer</span><strong>Een eigen gezicht.</strong></figcaption>
-        </figure>
-        <figure className="personal-work-card personal-work-second">
-          <img src="/projects/beurswatcher/calculator-640.webp" alt="Eigen werk: de interactieve rendementcalculator van Beurswatcher" width="1150" height="585" decoding="async" />
-          <figcaption><span>Werk / Beurswatcher</span><strong>Ook de werking klopt.</strong></figcaption>
-        </figure>
-        <p className="personal-collage-caption">De persoon. Het ontwerp. De techniek.</p>
-      </div>
+      <PhotoStack />
     </section>
 
     <section className="personal-purpose" id="mijn-aanpak">
       <div className="wrap personal-two-column">
         <div><Eyebrow>Wat ik met Sitesnit wil bereiken</Eyebrow><h2>Een website waar<br /><em>je mee vooruit kunt.</em></h2></div>
-        <div><p className="personal-statement">Ik wil dat je website laat zien wie je bent én het je bezoekers makkelijk maakt om de volgende stap te zetten.</p><p>Dat zit voor mij in concrete keuzes. Een opening die uitlegt wat je doet. Werk dat vertrouwen geeft. Een dienst die begrijpelijk wordt uitgelegd. En een contactknop die je ook op je telefoon meteen vindt.</p><p>Daarom werk ik inhoud, ontwerp en techniek samen uit. Een mooi detail krijgt een functie, een animatie helpt je verhaal en de website blijft prettig om te gebruiken.</p><div className="personal-signature"><span aria-hidden="true">kh.</span><div><strong>Kay Huybreghs</strong><small>Sitesnit · Baarlo</small></div></div></div>
+        <div><p className="personal-statement">Ik wil dat je website laat zien wie je bent én het je bezoekers makkelijk maakt om de volgende stap te zetten.</p><p>Dat zit voor mij in concrete keuzes. Een opening die uitlegt wat je doet. Werk dat vertrouwen geeft. Een dienst die begrijpelijk wordt uitgelegd. En een contactknop die je ook op je telefoon meteen vindt.</p><p>Daarom werk ik inhoud, ontwerp en techniek samen uit. Een mooi detail krijgt een functie, een animatie helpt je verhaal en de website blijft prettig om te gebruiken.</p><div className="personal-signature"><span aria-hidden="true">kh.</span><div><strong>Kay</strong><small>Sitesnit · Baarlo</small></div></div></div>
       </div>
     </section>
 
@@ -72,6 +55,7 @@ export default function Over() {
       <div><p>Soms begint het met een heldere website. Soms is een webshop, een app of een omgeving met een eigen login nodig. En soms zit de grootste verbetering achter de schermen: minder handwerk bij facturen, een koppeling tussen systemen of een AI-chatbot die vragen opvangt.</p><p>Ik kijk met je naar wat jouw bedrijf echt helpt. Ook SEO en content horen daarbij: welke vragen stellen je klanten en welke informatie moet je website daarop geven? Voor bedrijfsfotografie en video werk ik met een externe partner.</p><a className="text-link" href="/diensten">Bekijk waarmee ik je kan helpen <Arrow /></a></div>
     </section>
 
+    <section className="wrap nova-note"><img src="/about/nova-sitesnit-hond-320.webp" width="900" height="1600" alt="Nova kijkt nieuwsgierig omhoog" loading="lazy" /><div><Eyebrow>De kleinste collega</Eyebrow><h2>Dit is Nova.<br /><em>Hoofd gezelligheid.</em></h2><p>Websites bouwen laat Nova aan mij over. Haar specialiteit? Met één blik zorgen voor een glimlach. Een klein snoetje dat best een eigen plekje op de Sitesnit-website verdient.</p></div></section>
     <CaseLinks title="Bekijk wat die aanpak oplevert." />
 
     <section className="wrap personal-contact">

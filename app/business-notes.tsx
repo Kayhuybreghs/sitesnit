@@ -1,13 +1,15 @@
-import { business, hostingSummary, paymentSummary, grossPrice, minimumHostingYear } from '../lib/business';
+import { business, grossPrice, minimumHostingYear } from '../lib/business';
 import { euro } from './site-data';
 
 export function BusinessNotes({ compact = false, websitePrice }: { compact?: boolean; websitePrice?: number | null }) {
   return <div className={`business-notes ${compact ? 'business-notes-compact' : ''}`}>
-    <p><strong>Betaling.</strong> {paymentSummary}</p>
-    <p><strong>Hosting.</strong> {hostingSummary} Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.</p>
-    {websitePrice != null && <p><strong>Bouw + eerste hostingjaar: minimaal {euro(grossPrice(websitePrice + minimumHostingYear))} inclusief btw.</strong> Extra afgesproken functies of diensten komen daar afzonderlijk bij.</p>}
-    <p>Bij de bouwprijzen zie je het bedrag exclusief én inclusief 21% btw. Hosting loopt na het eerste jaar door en is daarna maandelijks opzegbaar.</p>
-    <a href="/algemene-voorwaarden">Lees de afspraken over bouw, betaling en hosting</a>
+    <div className="business-notes-heading"><span>Helder vooraf</span><strong>Zo spreken we het af.</strong></div>
+    <div className="business-notes-grid">
+      <div><span className="business-note-label">Betaling in twee delen</span><strong className="business-note-value">{business.depositPercent}% <small>bij de start</small></strong><p>Vóór we beginnen betaal je {business.depositPercent}%. De overige {business.finalPercent}% betaal je bij afronding van de afgesproken opdracht.</p></div>
+      <div><span className="business-note-label">Hosting bij je nieuwe website</span><strong className="business-note-value">Vanaf {euro(business.hostingMonthly)} <small>/ maand excl. btw</small></strong><span className="business-note-tax">{euro(grossPrice(business.hostingMonthly))} per maand inclusief 21% btw</span><p>Eerste looptijd: {business.hostingInitialMonths} maanden. Minimaal {euro(grossPrice(minimumHostingYear))} incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.</p></div>
+    </div>
+    {websitePrice != null && <p className="business-note-total"><strong>Bouw + eerste hostingjaar: minimaal {euro(grossPrice(websitePrice + minimumHostingYear))} inclusief btw.</strong> Extra afgesproken functies of diensten komen daar afzonderlijk bij.</p>}
+    <div className="business-notes-bottom"><p>Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.</p><a href="/algemene-voorwaarden">Alle afspraken <span aria-hidden="true">↗</span></a></div>
   </div>;
 }
 

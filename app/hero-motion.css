@@ -70,7 +70,9 @@
     .is-immersive .hero-intro-copy { opacity: calc(1 - var(--hero-intro-out)); translate: calc(var(--hero-intro-out) * -45px) 0; }
     .is-immersive .hero-project-label { bottom: 18%; }
     .is-immersive .hero-insights { position: absolute; inset: 0; padding: 0; opacity: var(--hero-details); transform: translateY(calc((1 - var(--hero-details)) * 12px)); }
-    .is-immersive .hero-insights-title { display: block; }
+    .is-immersive .hero-insights-title { display: block; top: 3%; }
+    .is-immersive .hero-insights-title p { font-size: clamp(1.6rem,2.2vw,2.15rem); line-height: 1.12; margin-top: 10px; }
+    .is-immersive .hero-insights-title em { font-family: inherit; font-weight: 750; font-style: normal; }
     .is-immersive .hero-insights-grid { position: absolute; bottom: 8%; inset-inline: 0; }
     .is-immersive .hero-scroll-cue { position: absolute; bottom: 32px; left: max(48px,calc((100vw - 1320px) / 2)); margin: 0; opacity: calc(1 - var(--hero-intro-out)); }
     .is-immersive .hero-intro-copy:focus-within,.is-immersive .hero-scroll-cue:focus-visible { opacity: 1; translate: 0 0; }

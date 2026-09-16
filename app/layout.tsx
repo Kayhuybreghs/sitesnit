@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       "Websites met een eigen gezicht en een helder verhaal. Sitesnit ontwerpt en bouwt voor ondernemers in Limburg.",
-    icons: { icon: "/favicon.svg" },
+    icons: { icon: [{ url: '/brand/sitesnit-favicon-32x32.png', sizes: '32x32', type: 'image/png' }, { url: '/brand/sitesnit-favicon-192x192.png', sizes: '192x192', type: 'image/png' }], apple: '/brand/sitesnit-favicon-180x180.png' },
     robots: { index: await canIndexRequest(), follow: true },
     verification: { google: runtime().GOOGLE_SITE_VERIFICATION },
   };
@@ -64,7 +64,7 @@ export default function RootLayout({
               name: site.name,
               url: site.origin,
               ...(site.email ? { email: site.email } : {}),
-              founder: { '@type': 'Person', '@id': site.origin + '/#kay-huybreghs', name: business.ownerName },
+              founder: { '@type': 'Person', '@id': site.origin + '/#kay', name: business.ownerName },
               address: {
                 "@type": "PostalAddress",
                 streetAddress: business.streetAddress,
@@ -73,7 +73,7 @@ export default function RootLayout({
                 addressRegion: "Limburg",
                 addressCountry: "NL",
               },
-              logo: site.origin + "/favicon.svg",
+              logo: site.origin + "/brand/sitesnit-favicon-512x512.png",
               areaServed: {
                 "@type": "AdministrativeArea",
                 name: "Limburg, Nederland",

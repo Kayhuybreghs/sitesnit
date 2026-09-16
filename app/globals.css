@@ -39,6 +39,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
+.sitesnit-logo-image{display:block;width:190px;height:auto;max-width:100%}
+.studio-footer .sitesnit-logo-image{width:220px}
+@media(max-width:699px){.sitesnit-logo-image{width:156px}.studio-footer .sitesnit-logo-image{width:190px}}
 body {
   margin: 0;
   background: var(--paper);

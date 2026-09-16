@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Arrow } from "./ui";
 import { toolCatalog } from "./tools/tool-catalog";
+import { BrandLogo } from './brand-logo';
 export function Navigation() {
   const [open, setOpen] = useState(false);
   const path = usePathname();
@@ -31,8 +32,7 @@ export function Navigation() {
       <header className="header">
         <div className="nav-inner wrap">
           <a className="logo" href="/" aria-label="Sitesnit home">
-            sitesnit
-            <span className="brand-mark" aria-hidden="true" />
+            <BrandLogo />
           </a>
           <nav className="desktop-nav" aria-label="Hoofdnavigatie">
             {links.map(([href, label]) => (
@@ -101,8 +101,7 @@ export function Navigation() {
       >
         <div className="mobile-menu-head">
           <a className="logo" href="/">
-            sitesnit
-            <span className="brand-mark" />
+            <BrandLogo />
           </a>
           <button
             className="close-menu"

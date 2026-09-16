@@ -1,26 +1,31 @@
 .personal-about { overflow-x: clip; }
+.kay-photo-stack{width:min(100%,360px);justify-self:center;margin-inline:auto}
+.kay-photo-stage{position:relative;height:315px;perspective:900px}
+.kay-photo{position:absolute;margin:0;padding:6px 6px 0;background:#fffdf7;border:1px solid #d3dcd3;border-radius:12px;box-shadow:0 8px 23px #173e4216;overflow:hidden;transition:transform 450ms cubic-bezier(.2,.7,.3,1)}
+.kay-photo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:7px}
+.kay-photo figcaption{font-size:11px;font-weight:650;padding:10px 4px;line-height:1.3;white-space:nowrap}
+.kay-photo-main{width:185px;left:18%;top:12px;z-index:2;transform:rotate(-4deg)}
+.kay-photo-main img{height:218px;object-position:50% 44%}
+.kay-photo-secondary{width:148px;left:19%;top:26px;transform:rotate(-10deg)}
+.kay-photo-secondary img{height:195px;object-position:48% 35%}
+.kay-photo-nova{width:125px;right:12%;top:106px;z-index:3;transform:rotate(5deg)}
+.kay-photo-nova img{height:137px;object-position:50% 52%}
+.is-open .kay-photo-secondary{transform:translate(-45px,0) rotate(-12deg)}
+.is-open .kay-photo-main{transform:translate(30px,-3px) rotate(3deg)}
+.is-open .kay-photo-nova{transform:translate(30px,23px) rotate(10deg)}
+.kay-photo-toggle{border:0;border-bottom:1px solid currentColor;background:none;color:var(--ink);font:inherit;font-size:13px;min-height:44px;margin:0 auto;display:flex;align-items:center;gap:22px;cursor:pointer}
+.nova-note{display:grid;grid-template-columns:100px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-block:35px}
+.nova-note>img{width:100px;height:135px;object-fit:cover;object-position:50% 55%;border-radius:45% 45% 14px 14px;transform:rotate(-5deg)}
+.personal-about .nova-note h2{font-size:clamp(25px,3vw,36px);margin:12px 0;line-height:1.1}
+.nova-note .eyebrow{font-size:11px}.nova-note p{font-size:15px;line-height:1.75;max-width:58ch}
+@media(min-width:700px){.nova-note{max-width:800px;grid-template-columns:130px 1fr;gap:36px}.nova-note>img{width:130px;height:165px}}
+@media(prefers-reduced-motion:reduce){.kay-photo{transition:none}}
 .personal-hero { display: grid; gap: 30px; align-items: center; padding-block: 26px 66px; }
 .personal-introduction h1 { font-size: clamp(38px, 8.8vw, 80px); line-height: 1.04; letter-spacing: -.06em; margin: 20px 0 0; }
 .personal-introduction p { max-width: 54ch; font-size: 15px; line-height: 1.8; }
 .personal-introduction .personal-lead { font-size: 18px; line-height: 1.65; margin-top: 27px; }
 .personal-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 28px; }
 .personal-introduction .personal-location { font-size: 13px; margin-top: 22px; }
-.personal-collage { position: relative; isolation: isolate; aspect-ratio: .97; width: 100%; max-width: 580px; margin-inline: auto; }
-.personal-collage-shape { position: absolute; inset: 8% 0 8% 2%; z-index: -1; border-radius: 44% 47% 29% 38%; background: #e3e9d2; transform: rotate(-8deg); }
-.personal-name-card { position: absolute; inset: 4% 14% 21% 13%; padding: 8%; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #c5d5db; border-radius: 19px; background: #e4ecef; box-shadow: 0 16px 35px #193d4612; transform: rotate(-7deg); }
-.personal-card-label { font-size: 12px; font-weight: 650; }
-.personal-name-card { justify-content: flex-start; gap: 18px; }
-.personal-monogram { font-size: clamp(96px, 20vw, 205px); font-weight: 800; line-height: .8; letter-spacing: -.1em; color: #235966; }
-.personal-name-card strong { display: block; font-size: clamp(17px, 2.4vw, 27px); line-height: 1.2; }
-.personal-name-card strong + span { display: block; font-size: 11px; margin-top: 7px; }
-.personal-work-card { position: absolute; width: 53%; padding: 7px; margin: 0; border: 1px solid #e2e4dc; border-radius: 12px; background: #fffef9; box-shadow: 0 12px 25px #193d461c; }
-.personal-work-first { left: 0; bottom: 7%; transform: rotate(-11deg); }
-.personal-work-second { right: 0; bottom: 16%; transform: rotate(10deg); }
-.personal-work-card img { display: block; width: 100%; height: auto; aspect-ratio: 1.87; object-fit: cover; border-radius: 6px; }
-.personal-work-card figcaption { padding: 9px 4px 5px; }
-.personal-work-card figcaption span { display: block; font-size: 10px; }
-.personal-work-card figcaption strong { display: block; margin-top: 4px; font-size: clamp(12px, 1vw, 14px); }
-.personal-collage-caption { position: absolute; bottom: -15px; right: 0; font-size: 12px; }
 .personal-purpose { background: #e4ece7; border-radius: 32px 32px 0 0; padding-block: 54px; }
 .personal-two-column { display: grid; gap: 27px; }
 .personal-about h2 { font-size: clamp(32px, 4.3vw, 57px); line-height: 1.1; letter-spacing: -.05em; margin: 18px 0 25px; }
@@ -46,23 +51,16 @@
 .personal-contact aside p { font-size: 15px; }
 .personal-contact aside .text-link { font-size: 14px; }
 @media (min-width: 600px) and (max-width: 899px) {
-  .personal-collage { max-width: 520px; }
+
   .personal-introduction h1 { font-size: 65px; }
-  .personal-monogram { font-size: 180px; }
+
   .personal-contact { padding: 40px; }
 }
 @media (min-width: 900px) {
-  .personal-hero { grid-template-columns: 1.12fr 1fr; gap: 5%; padding-block: 42px 80px; }
-  .personal-introduction h1 { font-size: clamp(46px, 5.4vw, 78px); }
-  .personal-monogram { font-size: clamp(145px, 15vw, 205px); }
+  .personal-hero { grid-template-columns: 1.35fr .85fr; gap: 5%; padding-block: 42px 80px; }
+  .personal-introduction h1 { font-size: clamp(42px, 4.6vw, 66px); }
+
   .personal-two-column { grid-template-columns: .85fr 1.15fr; gap: 10%; }
   .personal-working { padding-block: 90px; }
   .personal-contact { grid-template-columns: 1.1fr .9fr; gap: 10%; padding: 50px; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .personal-name-card { animation: personal-card-in .55s both; }
-  .personal-work-first { animation: personal-work-in .55s .08s both; }
-  .personal-work-second { animation: personal-work-in .55s .15s both; }
-  @keyframes personal-card-in { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
-  @keyframes personal-work-in { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
 }

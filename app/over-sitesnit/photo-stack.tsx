@@ -6,8 +6,9 @@ export function PhotoStack() {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setOpen(true); observer.disconnect(); }
-    }, { threshold: .65 });
+      if (entry.intersectionRatio >= .6) setOpen(true);
+      else if (entry.intersectionRatio <= .25) setOpen(false);
+    }, { threshold: [0, .25, .6], rootMargin: '0px 0px -8% 0px' });
     if (root.current) observer.observe(root.current);
     return () => observer.disconnect();
   }, []);

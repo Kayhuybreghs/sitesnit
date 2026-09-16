@@ -103,12 +103,16 @@ export default function Home() {
             <em>met goed luisteren.</em>
           </h2>
           <p>
-            Wat maakt jouw bedrijf bijzonder? En wat moet je website voor je
-            doen? Daar begint het gesprek. Met aandacht voor je verhaal en
-            heldere keuzes onderweg.
+            Ik ben Kay, de maker achter Sitesnit in Baarlo. Wat maakt jouw
+            bedrijf bijzonder? En wat moet je website voor je doen? Daar begint
+            ons gesprek. Met aandacht voor je verhaal en heldere keuzes onderweg.
           </p>
+          <div className="home-mascot">
+            <img src="/about/nova-sitesnit-hond-320.webp" alt="Nova, de mascotte van Sitesnit" width="900" height="1600" loading="lazy" decoding="async" />
+            <div><span>De kleinste collega</span><h3>Nova, de Sitesnit-mascotte.</h3><p>Kay bouwt. Nova bewaakt de gezelligheid.</p></div>
+          </div>
           <a className="text-link" href="/over-sitesnit">
-            Meer over Sitesnit <Arrow />
+            Maak kennis met Kay en Sitesnit <Arrow />
           </a>
         </div>
       </section>

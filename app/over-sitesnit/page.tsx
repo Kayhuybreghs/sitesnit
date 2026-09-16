@@ -55,7 +55,7 @@ export default function Over() {
       <div><p>Soms begint het met een heldere website. Soms is een webshop, een app of een omgeving met een eigen login nodig. En soms zit de grootste verbetering achter de schermen: minder handwerk bij facturen, een koppeling tussen systemen of een AI-chatbot die vragen opvangt.</p><p>Ik kijk met je naar wat jouw bedrijf echt helpt. Ook SEO en content horen daarbij: welke vragen stellen je klanten en welke informatie moet je website daarop geven? Voor bedrijfsfotografie en video werk ik met een externe partner.</p><a className="text-link" href="/diensten">Bekijk waarmee ik je kan helpen <Arrow /></a></div>
     </section>
 
-    <section className="wrap nova-note"><img src="/about/nova-sitesnit-hond-320.webp" width="900" height="1600" alt="Nova kijkt nieuwsgierig omhoog" loading="lazy" /><div><Eyebrow>De kleinste collega</Eyebrow><h2>Dit is Nova.<br /><em>Hoofd gezelligheid.</em></h2><p>Websites bouwen laat Nova aan mij over. Haar specialiteit? Met één blik zorgen voor een glimlach. Een klein snoetje dat best een eigen plekje op de Sitesnit-website verdient.</p></div></section>
+    <section className="wrap nova-note" id="nova"><img src="/about/nova-sitesnit-hond-320.webp" width="900" height="1600" alt="Nova, de kleine witte mascotte van Sitesnit" loading="lazy" /><div><Eyebrow>De kleinste collega</Eyebrow><h2>Nova. Mascotte.<br /><em>En hoofd gezelligheid.</em></h2><p>Ik bouw de websites. Nova bewaakt de gezelligheid. Met dat kleine snoetje heeft de Sitesnit-mascotte geen contactformulier nodig om aandacht te krijgen. Haar bijdrage aan de code? Nul regels. Aan de sfeer? Onmisbaar.</p></div></section>
     <CaseLinks title="Bekijk wat die aanpak oplevert." />
 
     <section className="wrap personal-contact">

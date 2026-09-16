@@ -32,7 +32,7 @@ export function Navigation() {
       <header className="header">
         <div className="nav-inner wrap">
           <a className="logo" href="/" aria-label="Sitesnit home">
-            <BrandLogo />
+            <BrandLogo tagline={false} />
           </a>
           <nav className="desktop-nav" aria-label="Hoofdnavigatie">
             {links.map(([href, label]) => (
@@ -101,7 +101,7 @@ export function Navigation() {
       >
         <div className="mobile-menu-head">
           <a className="logo" href="/">
-            <BrandLogo />
+            <BrandLogo tagline={false} />
           </a>
           <button
             className="close-menu"

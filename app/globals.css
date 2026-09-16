@@ -40,6 +40,7 @@ html {
   scroll-padding-top: 90px;
 }
 .sitesnit-logo-image{display:block;width:190px;height:auto;max-width:100%}
+.sitesnit-logo-wordmark{clip-path:polygon(0 0,100% 0,100% 75%,26% 75%,26% 100%,0 100%)}
 .studio-footer .sitesnit-logo-image{width:220px}
 @media(max-width:699px){.sitesnit-logo-image{width:156px}.studio-footer .sitesnit-logo-image{width:190px}}
 body {
@@ -1184,6 +1185,12 @@ button:hover > .arrow {
 .personal-strip .text-link {
   margin-top: 20px;
 }
+.home-mascot{display:flex;align-items:center;gap:18px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);max-width:450px}
+.home-mascot>img{flex:0 0 62px;width:62px;height:76px;object-fit:cover;object-position:50% 48%;border-radius:28px 28px 12px 12px;transform:rotate(-5deg)}
+.home-mascot>div{min-width:0}.home-mascot span{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:750;color:var(--ink)}
+.home-mascot h3{font-size:16px;line-height:1.4;letter-spacing:-.025em;margin:5px 0}
+.home-mascot p{font-size:13px;line-height:1.6;margin:0}
+@media(max-width:540px){.home-mascot{gap:14px}.home-mascot h3{font-size:15px}.personal-strip .text-link{font-size:14px}}
 .cta-section {
   background: var(--lilac);
   padding-block: 70px;

@@ -1,0 +1,17 @@
+'use client';
+import { useState } from 'react';
+
+const briefing = `Mijn bedrijf en doelgroep:\n\nWat de website moet helpen bereiken:\n\nGewenste pagina's:\n\nNoodzakelijke functies:\n\nBestaande teksten, beelden en logo:\n\nWat moet behouden blijven:\n\nVoorbeelden en waarom ze aanspreken:\n\nPlanning en reden voor de deadline:\n\nBudget en open vragen:\n`;
+const quoteItems = ['Pagina’s en verschillende paginatypes','Functies en koppelingen','Wie teksten en beelden aanlevert','Wijzigingen tijdens de opdracht','Eigendom, toegang en overdracht','Hosting, licenties en looptijden','Betaling en afronding','Werk na oplevering en uitzonderingen'];
+const auditItems = ['Belangrijke publieke pagina’s openen met de juiste inhoud','Bewuste en onbedoelde indexeringsuitsluitingen onderscheiden','Interne verwijzingen en bestemmingen controleren','Titels bij de werkelijke pagina-inhoud laten passen','Afbeeldingen en technische bestanden nalopen','Mobiele contactroute zelf doorlopen','Meetmoment en methode bij snelheid noteren','Herstel opnieuw controleren en bewijs bewaren'];
+
+export function GuideWidget({kind}:{kind:string}) {
+  const [notice,setNotice] = useState('');
+  const [text,setText] = useState(briefing);
+  async function copy() { try { await navigator.clipboard.writeText(text); setNotice('Je briefing is gekopieerd.'); } catch { setNotice('Kopiëren lukt hier niet. Selecteer de tekst in het veld en kopieer die zelf.'); } }
+  if (kind === 'brief') return <section className="guide-widget"><h2>Jouw lege briefing</h2><p>Vul alleen in wat je al weet. Je invoer blijft op dit scherm en wordt niet automatisch verzonden of bewaard.</p><label htmlFor="briefing">Werk je aanvraag uit</label><textarea id="briefing" value={text} onChange={e=>setText(e.target.value)} rows={14}/><button className="button" onClick={copy} type="button">Kopieer je briefing</button><p role="status">{notice}</p></section>;
+  if (kind === 'cost-inventory') return <section className="guide-widget"><h2>Maak je eigen kostenlijst</h2><p>Vul de bekende afspraken in. Dit is een notitiehulp, geen berekening of bestelling. Er wordt niets opgeslagen.</p>{['Domeinnaam','Hosting','Technisch onderhoud','Externe software','Inhoud en SEO-werk'].map(item=><fieldset key={item}><legend>{item}</legend><label>Bedrag en btw-basis<input placeholder="Bijvoorbeeld: bedrag incl. btw"/></label><label>Betaalritme<select defaultValue="unknown"><option value="unknown">Nog niet bekend</option><option>Maandelijks</option><option>Jaarlijks</option><option>Eenmalig</option></select></label><label>Looptijd / opzegmoment<input placeholder="Wat staat er in de afspraak?"/></label></fieldset>)}</section>;
+  const checklist = kind === 'quote-checklist' ? quoteItems : kind === 'audit-checklist' ? auditItems : null;
+  if (checklist) return <section className="guide-widget"><h2>{kind==='quote-checklist'?'Wat staat er in je offerte?':'Jouw controlelijst'}</h2><p>Gebruik dit als werkblad. Een vinkje is je eigen notitie, geen automatisch gecontroleerd resultaat. Je keuzes worden niet bewaard.</p>{checklist.map((label,index)=><div className="guide-check" key={label}>{kind==='quote-checklist'?<><label htmlFor={`check-${index}`}>{label}</label><select id={`check-${index}`} defaultValue="unknown"><option value="unknown">Nog niet beoordeeld</option><option>Aanwezig en duidelijk</option><option>Onduidelijk</option><option>Ontbreekt</option><option>Niet van toepassing</option></select></>:<label><input type="checkbox"/>{label}</label>}</div>)}</section>;
+  return null;
+}

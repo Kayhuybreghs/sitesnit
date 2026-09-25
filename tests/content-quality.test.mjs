@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { reviewBlockers, releaseApproved } from '../lib/content-quality.ts';
+import { indexingAllowed, privatePath } from '../lib/seo-policy.ts';
+import { guides } from '../lib/guides.ts';
+import { toolRedirects } from '../lib/tool-routes.ts';
+const hashes={contentHash:'content',businessHash:'business',sourcesHash:'sources',assetsHash:'assets'};
+const review={...hashes,path:'/voorbeeld',status:'ready_for_owner_review',reviewerType:'agent_editorial_review',technicalStatus:'pass',editorialStatus:'pass',similarityStatus:'reviewed',claimsStatus:'verified',ownerApproved:false,evidence:['passage A1-1'],openIssues:[]};
+test('agentreview is geen eigenaargoedkeuring',()=>{assert.equal(reviewBlockers(review,hashes).length,0);assert.equal(releaseApproved(review,hashes),false);});
+test('betekenisvolle afhankelijkheden maken review ongeldig',()=>{for(const key of Object.keys(hashes))assert.ok(reviewBlockers(review,{...hashes,[key]:'changed'}).length);});
+test('onbevestigde prijs, fictieve review, verkeerde bron of kapotte CTA blokkeren',()=>{for(const issue of ['Onbevestigde prijs','Fictieve klantreview','Bron ondersteunt claim niet','Bron niet geverifieerd','Kapotte CTA','Lege kop'])assert.equal(releaseApproved({...review,status:'approved_for_release',ownerApproved:true,openIssues:[issue]},hashes),false);});
+test('overlapbeoordeling is vereist ook wanneer woorden verschillen',()=>{assert.ok(reviewBlockers({...review,similarityStatus:'unresolved'},hashes).length);});
+test('geen minimumwoordenaantal als kwaliteitsoordeel',()=>{assert.equal(reviewBlockers({...review,contentHash:'short-substantive-page'},{...hashes,contentHash:'short-substantive-page'}).length,0);});
+test('18 onderscheiden pagina-identiteiten en geldige secties',()=>{assert.equal(guides.length,18);assert.equal(new Set(guides.map(g=>g.slug)).size,18);assert.equal(new Set(guides.map(g=>g.unique)).size,18);for(const g of guides){assert.ok(g.outcome&&g.audience&&g.description);assert.ok(g.sections.every(s=>s.heading.trim()&&(s.paragraphs?.length||s.table||s.checklist)));}});
+test('permanente redirects hebben elk een directe eindbestemming',()=>{const old=new Set(toolRedirects.map(r=>r.source));for(const r of toolRedirects){assert.equal(r.permanent,true);assert.ok(!old.has(r.destination));assert.ok(r.destination.startsWith('/tools/'));}});
+test('productieindexering vereist vertrouwde omgeving en definitieve host',()=>{for(const environment of [undefined,'preview','development'])assert.equal(indexingAllowed('www.sitesnit.nl',environment),false);assert.equal(indexingAllowed('www.sitesnit.nl','production'),true);for(const host of ['localhost:5184','sitesnit.nl.evil.test','sitesnit-git-main.vercel.app',null])assert.equal(indexingAllowed(host,'production'),false);});
+test('privéroutes blijven van publieke pagina’s gescheiden',()=>{for(const p of ['/account','/account/scans/x','/hub/site/x','/rapport/token','/api/contact','/inloggen','/registreren'])assert.equal(privatePath(p),true);for(const p of ['/tools/website-check','/kosten','/seo-venlo'])assert.equal(privatePath(p),false);});

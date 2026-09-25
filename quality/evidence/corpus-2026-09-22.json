@@ -1,0 +1,1728 @@
+{
+  "source": "reports/content-corpus.json",
+  "sourceHash": "3158017c2e1a0a8cc80859e65edf8743f4c0fb2da577f78e48574eb0a555eae2",
+  "method": "Actual local SSR main text, excluding navigation/aside/footer/script/style and marked shared blocks. No ranking score or automatic originality approval.",
+  "records": [
+    {
+      "path": "/",
+      "hash": "85b6e8fd61140b6d8bcd82f6aac7603c41b685fe58cd11edf4b2396541506add",
+      "status": 200
+    },
+    {
+      "path": "/diensten",
+      "hash": "092a4d90496a00325b10ef21962cde0e75599868de3ba8379b0b0f3fa3633f63",
+      "status": 200
+    },
+    {
+      "path": "/diensten/seo-onderhoud",
+      "hash": "83d739b21350c92aae4f9c3e0e03fed93a90c50420d60576c58d63d64b525cfa",
+      "status": 200
+    },
+    {
+      "path": "/diensten/apps",
+      "hash": "80762e7cbb434479cc328d2d754ed943a2f520beb1d744198195aec574277a76",
+      "status": 200
+    },
+    {
+      "path": "/diensten/webapps",
+      "hash": "de9d8433fe90521d021728ea524c1650fd6e68c61e4a2c52a29afcd5a69b92ce",
+      "status": 200
+    },
+    {
+      "path": "/diensten/seo-optimalisatie",
+      "hash": "e0394dcf791958a5fc922302005505fb2be84fe33da2e6385eb9bbf0a1667b0d",
+      "status": 200
+    },
+    {
+      "path": "/diensten/formulieren-rekentools",
+      "hash": "e33f3131bab68d446813e35ab894e9f4b645cb412f4a89494f13c5903684c10f",
+      "status": 200
+    },
+    {
+      "path": "/diensten/ai-koppelingen",
+      "hash": "135679a9e2cd30eaecce2a74bc53a314b24968a7a5afaea2cbd8fa32cf327cd1",
+      "status": 200
+    },
+    {
+      "path": "/diensten/webdesign",
+      "hash": "d023b8316c7652da8eae931fc7a22fc0599af3d1806de21639cd199cd155ea40",
+      "status": 200
+    },
+    {
+      "path": "/diensten/webshops",
+      "hash": "bd94d9c2d8db7dff93ec02eb706fe1c70b0c09835a578d0429d9a90a39b67a5d",
+      "status": 200
+    },
+    {
+      "path": "/diensten/branding",
+      "hash": "08cd0e9b7a5bca6a88c19259518c3c8218ce775ee0faed96c7e78eca0c111fce",
+      "status": 200
+    },
+    {
+      "path": "/diensten/seo",
+      "hash": "1710560b692b95a83554f4c8385821611ee93fa5410fd80a06fc6632b1002e32",
+      "status": 200
+    },
+    {
+      "path": "/diensten/content",
+      "hash": "d6ba06530368dddf3add775ab7691d20a5b98ad4108aa0468e9bf0963f11c5c1",
+      "status": 200
+    },
+    {
+      "path": "/diensten/social-media",
+      "hash": "c35cb1f7aa226d7766fcf8917dc99a2a6b4ed86d18fe53aa92c72a5030fbbfa3",
+      "status": 200
+    },
+    {
+      "path": "/diensten/onderhoud-hosting",
+      "hash": "390c61f851e44da3ccf7c128f4f91d3e684b265b3bed8bebde4602e7677dbc3d",
+      "status": 200
+    },
+    {
+      "path": "/diensten/ai-automatisering",
+      "hash": "5567c38f728e7504a607493d19a918a412d859d1169a048ccbf79f82440bd787",
+      "status": 200
+    },
+    {
+      "path": "/diensten/webdesign/pakketten",
+      "hash": "42131d1c78ac5c7d78f26a11f68de0345c97fe07fac9e0346be69279c092c285",
+      "status": 200
+    },
+    {
+      "path": "/projecten",
+      "hash": "5714c0797f641273fdc011c48e2a1594d6f520f2d1802e7e6de6a47f7c75f09f",
+      "status": 200
+    },
+    {
+      "path": "/projecten/beurswijzer",
+      "hash": "6398f551518f27f5a2b904372767740d36f1a976ddc6b597acc1c363256b4fc7",
+      "status": 200
+    },
+    {
+      "path": "/projecten/beurswatcher",
+      "hash": "24192ca805338eeb25ae2165c399237c912bf5fb9386e4636fdd7b2424200dc1",
+      "status": 200
+    },
+    {
+      "path": "/kosten",
+      "hash": "c7d74af9ff95dfac9aeb4daf7e2c5d01224e021c3f48811c8fcfefdc8ef3ad48",
+      "status": 200
+    },
+    {
+      "path": "/webdesign-venlo",
+      "hash": "98713836ed3bd6a4573c85d4e694b94a29bd417aa810d3748b9e16fd493663e2",
+      "status": 200
+    },
+    {
+      "path": "/seo-venlo",
+      "hash": "c9fedd595d25e197c11853bb181612a7b8834842000c3014f1f3e83260d9b97c",
+      "status": 200
+    },
+    {
+      "path": "/over-sitesnit",
+      "hash": "b019cb096645100b11d2ce8a9bc25de96bdc9d335ac4553a6991b809ae45fce8",
+      "status": 200
+    },
+    {
+      "path": "/contact",
+      "hash": "8ff1309f0a58e608ccfe9580756e76a4f848d99edc643c44e0226ba05a415697",
+      "status": 200
+    },
+    {
+      "path": "/tools/website-check",
+      "hash": "78afba0c328aa313384fba812cb56b6c097a8f1bc3b59aae858633352b7fa97e",
+      "status": 200
+    },
+    {
+      "path": "/tools/website-kosten-berekenen",
+      "hash": "d5db18320b3c9438ae272a077fa9a6042bbcb022aa93d743f5317f207b917c8f",
+      "status": 200
+    },
+    {
+      "path": "/tools",
+      "hash": "9885d71e9e3bfcf7807bffdf0a962f83e19aedf1966264b6a20e976e22cf1c8b",
+      "status": 200
+    },
+    {
+      "path": "/tools/website-ontwerp-tool",
+      "hash": "cafa540d9e542e10c4f55418a0d3baadb1138c4a108cf975e5b2dcc913d21c83",
+      "status": 200
+    },
+    {
+      "path": "/tools/website-offerte-vergelijken",
+      "hash": "4da3f4a22536f27aa8575b4cd890c62a6eac29e14173b784b8830b862fc519af",
+      "status": 200
+    },
+    {
+      "path": "/tools/automatiseringsplan",
+      "hash": "2c55e96c34b86117123dab78b441a7072c3d89604293c137429d5612cefdba43",
+      "status": 200
+    },
+    {
+      "path": "/privacy",
+      "hash": "9e3dc03d9e7932e9147616f7158f200873222511b2e0dd43b9d2b14d5e1fbaee",
+      "status": 200
+    },
+    {
+      "path": "/cookies",
+      "hash": "5c61f8f767cf45cec1486aeb9b2781c0203b75229448d55b73494cc586c3e2b8",
+      "status": 200
+    },
+    {
+      "path": "/algemene-voorwaarden",
+      "hash": "957622b8b0eec8b5b0558a4ae6bea1287eabaee2b188d10af36006970a22581c",
+      "status": 200
+    },
+    {
+      "path": "/website-levert-geen-aanvragen-op",
+      "hash": "8ca5b488a0b484fb4177086433f814259e6caedf1bd944c8c5df4635ebc0edb4",
+      "status": 200
+    },
+    {
+      "path": "/verouderde-website",
+      "hash": "d651954792fd1371ac77739e413a35f94b2819afa6c025323cad08c8aecff63c",
+      "status": 200
+    },
+    {
+      "path": "/website-niet-goed-op-mobiel",
+      "hash": "dc11f99a93f946492260d2e6576057acd499718aea74ca4b40d8efd6d7a4a93c",
+      "status": 200
+    },
+    {
+      "path": "/wat-kost-een-website",
+      "hash": "9824414fc2b4bd1fc83bb82a90a1389ab5ee92ac2bf4869d3fd61966a6fd43f0",
+      "status": 200
+    },
+    {
+      "path": "/maandelijkse-kosten-website",
+      "hash": "00ea592feb680fb3372b800463dba1458369fcc54357d094a86166131d6469fd",
+      "status": 200
+    },
+    {
+      "path": "/website-onderhoud-kosten",
+      "hash": "c93d65c9f05784d7dcad911a6217dfa547cf7c54fdc5da2b3c2265c49cc9e990",
+      "status": 200
+    },
+    {
+      "path": "/website-offerte-aanvragen",
+      "hash": "1aa5f49a5686683eed067071cb211c43b666c9f7a3867abef9caf32a822686d4",
+      "status": 200
+    },
+    {
+      "path": "/website-offerte-checklist",
+      "hash": "23d0ea464b39536e3deed10c69e8ecb99d2e038b9754e53de6fbb866185e4cd8",
+      "status": 200
+    },
+    {
+      "path": "/bedrijfsprocessen-automatiseren",
+      "hash": "3d669f23e49613f375dcfd34d732d9e97cefd41f7a86f579929d28e523dae37f",
+      "status": 200
+    },
+    {
+      "path": "/website-koppelen-aan-crm",
+      "hash": "4dd08c500d46f45e20eb3edaf7e4789c696cc678ca906efcfc59a1bd803502d6",
+      "status": 200
+    },
+    {
+      "path": "/afspraken-plannen-via-website",
+      "hash": "ba436fb33f1acca48e19412845d425f05b25aba2e5890c850f343315ac5e7c54",
+      "status": 200
+    },
+    {
+      "path": "/website-structuur",
+      "hash": "f59597342bc0345085a2b31058b528702a647130fb239581546d46d15ea2c1be",
+      "status": 200
+    },
+    {
+      "path": "/website-ontwerp-voorbeelden",
+      "hash": "556fbccd7782dd6eaaf49a64f0e3e6854a9770fdddf4dbb29cec327629bcd265",
+      "status": 200
+    },
+    {
+      "path": "/seo-audit-checklist",
+      "hash": "c53fbe408dc252363db409ce3edeef1227af4c43f3b57f40a173ea61d765c693",
+      "status": 200
+    },
+    {
+      "path": "/website-niet-gevonden-google",
+      "hash": "1f08ad574dc52ca936558e3b2245fe3e125cc1990d77061baf80c808dc0be67d",
+      "status": 200
+    },
+    {
+      "path": "/website-snelheid-testen",
+      "hash": "536d29634b2b8aa8ad5a05c318f24f1429d276c00ae057784391a7f2ebfb7a8f",
+      "status": 200
+    },
+    {
+      "path": "/404-fouten-oplossen",
+      "hash": "a63bd7de3b3cd7058766a4d0251a3dbe245aac6820ca7655939fc40c325c20eb",
+      "status": 200
+    },
+    {
+      "path": "/website-migratie-checklist",
+      "hash": "6d5c57187093d879a0aa75476fc1ace161802c065c07aca68bd7fbedcfef9851",
+      "status": 200
+    },
+    {
+      "path": "/projecten/atelier-vorm",
+      "hash": "17f62f6382ff912efcc01eb9a93b38633c14a4618a685b6db8a8cbe617955d4b",
+      "status": 200
+    },
+    {
+      "path": "/projecten/studio-matcha",
+      "hash": "aad538c612e5fc24f38838cf6d68374f31e98eec7483f181fa48fc7a13fea8c8",
+      "status": 200
+    },
+    {
+      "path": "/projecten/buiten-gewoon",
+      "hash": "8cc688a095fbda0e1f9c6f88ecb4a433ac79cb425a7942bf6c458f8428ecbc27",
+      "status": 200
+    }
+  ],
+  "similarityFlags": [
+    {
+      "a": "/projecten/studio-matcha",
+      "b": "/projecten/buiten-gewoon",
+      "shingleSimilarity": 0.3647,
+      "sharedParagraphs": [
+        "Dit is een ontwerpconcept. Er zijn geen gemeten conversie- of omzetresultaten aan verbonden.",
+        "Een eigen verhaal verdient aandacht.",
+        "Het doel van dit concept is een aanbod begrijpelijk maken, een herkenbare sfeer neerzetten en bezoekers naar een relevante vervolgstap begeleiden.",
+        "Het vertrekpunt",
+        "Op ieder scherm",
+        "Op mobiel krijgt het beeld een eigen uitsnede. Teksten worden korter in breedte, de volgorde blijft logisch en belangrijke acties zijn direct herkenbaar."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/projecten/atelier-vorm",
+      "b": "/projecten/buiten-gewoon",
+      "shingleSimilarity": 0.3612,
+      "sharedParagraphs": [
+        "Dit is een ontwerpconcept. Er zijn geen gemeten conversie- of omzetresultaten aan verbonden.",
+        "Een eigen verhaal verdient aandacht.",
+        "Het doel van dit concept is een aanbod begrijpelijk maken, een herkenbare sfeer neerzetten en bezoekers naar een relevante vervolgstap begeleiden.",
+        "Het vertrekpunt",
+        "Op ieder scherm",
+        "Op mobiel krijgt het beeld een eigen uitsnede. Teksten worden korter in breedte, de volgorde blijft logisch en belangrijke acties zijn direct herkenbaar."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/projecten/atelier-vorm",
+      "b": "/projecten/studio-matcha",
+      "shingleSimilarity": 0.3493,
+      "sharedParagraphs": [
+        "Dit is een ontwerpconcept. Er zijn geen gemeten conversie- of omzetresultaten aan verbonden.",
+        "Een eigen verhaal verdient aandacht.",
+        "Het doel van dit concept is een aanbod begrijpelijk maken, een herkenbare sfeer neerzetten en bezoekers naar een relevante vervolgstap begeleiden.",
+        "Het vertrekpunt",
+        "Op ieder scherm",
+        "Op mobiel krijgt het beeld een eigen uitsnede. Teksten worden korter in breedte, de volgorde blijft logisch en belangrijke acties zijn direct herkenbaar."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/",
+      "b": "/webdesign-venlo",
+      "shingleSimilarity": 0.1575,
+      "sharedParagraphs": [
+        "Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.",
+        "Een groter idee? Maatwerk begint vanaf €2.750 excl. btw (€ 3.327,50 incl.).Grotere maatwerkprojecten komen gemiddeld rond € 4.000,00 excl. btw (€ 4.840,00 incl.) uit. Dat geeft context; jouw wensen bepalen het voorstel.",
+        "Eerste looptijd: 12 maanden. Minimaal € 72,60 incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.",
+        "Geef je diensten, bedrijf en werk elk de ruimte die ze nodig hebben.",
+        "Je aanbod, verhaal en contact op één overzichtelijke pagina.",
+        "Met het eerste hostingjaar: minimaal € 1.155,55 incl. btw.",
+        "Met het eerste hostingjaar: minimaal € 2.365,55 incl. btw.",
+        "Met het eerste hostingjaar: vanaf € 3.400,10 incl. btw.",
+        "Vanaf € 3.327,50 incl. 21% btw",
+        "Voor een website waarvan omvang of functies een eigen aanpak vragen.",
+        "Vóór we beginnen betaal je 60%. De overige 40% betaal je bij afronding van de afgesproken opdracht.",
+        "— DE CIJFERS ACHTER JOUW GELD",
+        "€ 1.082,95 incl. 21% btw",
+        "€ 2.292,95 incl. 21% btw",
+        "€3.000 inkomen − €2.575lasten en geplande inleg."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/projecten",
+      "b": "/projecten/beurswatcher",
+      "shingleSimilarity": 0.1423,
+      "sharedParagraphs": [
+        "De beurs. Je geld. Jouw toekomst.Ontdek wat ertoe doet en reken zelf door wat bij jouw plannen past.",
+        "Diepblauw, geel en stevige typografie verbinden de artikelen en tools. Op mobiel krijgt de inhoud een eigen volgorde.",
+        "Een doel wordt concreter als je de cijfers begrijpt.",
+        "Een eigen identiteit.Ook op het kleinste scherm."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten",
+      "b": "/projecten",
+      "shingleSimilarity": 0.1314,
+      "sharedParagraphs": [
+        "De beurs. Je geld. Jouw toekomst.Ontdek wat ertoe doet en reken zelf door wat bij jouw plannen past.",
+        "Een doel wordt concreter als je de cijfers begrijpt.",
+        "Wat houd je over? Wat past bij jou? En wat kun je opbouwen? Van een goed verhaal naar jouw volgende stap."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/ai-koppelingen",
+      "shingleSimilarity": 0.1183,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Een koppeling geeft de aanvraag een plek. AI kan een concept voorbereiden. Waar nodig controleert een medewerker voordat er iets wordt verstuurd.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Gegevens controleren & koppelen",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Medewerker beoordeelt & verstuurt",
+        "Voor je begint",
+        "Vraag · contact · bijlage",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.0837,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/webshops",
+      "shingleSimilarity": 0.0803,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0802,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/projecten",
+      "b": "/projecten/beurswijzer",
+      "shingleSimilarity": 0.0788,
+      "sharedParagraphs": [
+        "Wat houd je over? Wat past bij jou? En wat kun je opbouwen? Van een goed verhaal naar jouw volgende stap."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/",
+      "b": "/projecten",
+      "shingleSimilarity": 0.0782,
+      "sharedParagraphs": [
+        "De beurs. Je geld. Jouw toekomst.Ontdek wat ertoe doet en reken zelf door wat bij jouw plannen past.",
+        "Een doel wordt concreter als je de cijfers begrijpt.",
+        "Wat houd je over? Wat past bij jou? En wat kun je opbouwen? Van een goed verhaal naar jouw volgende stap."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/branding",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0778,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webshops",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.077,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/projecten/beurswijzer",
+      "b": "/projecten/beurswatcher",
+      "shingleSimilarity": 0.077,
+      "sharedParagraphs": [
+        "Een platform, rekentool of website die je verder wilt laten groeien? Bespreek wat je wilt maken én wat je daarna wilt uitbesteden.",
+        "Een vergelijkbaar idee?",
+        "Het vertrekpunt",
+        "Ook na de bouw"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0744,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/seo-optimalisatie",
+      "shingleSimilarity": 0.074,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webshops",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0732,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.0721,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/",
+      "b": "/diensten/webdesign",
+      "shingleSimilarity": 0.071,
+      "sharedParagraphs": [
+        "Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.",
+        "Eerste looptijd: 12 maanden. Minimaal € 72,60 incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.",
+        "Geef je diensten, bedrijf en werk elk de ruimte die ze nodig hebben.",
+        "Je aanbod, verhaal en contact op één overzichtelijke pagina.",
+        "Sitesnit werkt vanuit Baarlo voor ondernemers in Limburg. Van een compacte bedrijfswebsite tot een uitgebreider platform: je aanbod en de vragen van je bezoekers bepalen de aanpak.",
+        "Vanaf € 3.327,50 incl. 21% btw",
+        "Vanuit Baarlo / Voor Limburg",
+        "Voor een website waarvan omvang of functies een eigen aanpak vragen.",
+        "Vóór we beginnen betaal je 60%. De overige 40% betaal je bij afronding van de afgesproken opdracht.",
+        "€ 1.082,95 incl. 21% btw",
+        "€ 2.292,95 incl. 21% btw"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.071,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0706,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/formulieren-rekentools",
+      "shingleSimilarity": 0.0704,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.0692,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/webshops",
+      "shingleSimilarity": 0.0687,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0686,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/",
+      "b": "/diensten",
+      "shingleSimilarity": 0.0683,
+      "sharedParagraphs": [
+        "De beurs. Je geld. Jouw toekomst.Ontdek wat ertoe doet en reken zelf door wat bij jouw plannen past.",
+        "Een doel wordt concreter als je de cijfers begrijpt.",
+        "Wat houd je over? Wat past bij jou? En wat kun je opbouwen? Van een goed verhaal naar jouw volgende stap."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.0679,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/webshops",
+      "shingleSimilarity": 0.067,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0669,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/branding",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0667,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/webapps",
+      "shingleSimilarity": 0.0666,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/webshops",
+      "shingleSimilarity": 0.0666,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.066,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "De mogelijkheden",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zelf alvast verkennen",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/kosten",
+      "b": "/webdesign-venlo",
+      "shingleSimilarity": 0.0645,
+      "sharedParagraphs": [
+        "Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.",
+        "Eerste looptijd: 12 maanden. Minimaal € 72,60 incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.",
+        "Vanaf € 3.327,50 incl. 21% btw",
+        "Vóór we beginnen betaal je 60%. De overige 40% betaal je bij afronding van de afgesproken opdracht.",
+        "€ 1.082,95 incl. 21% btw",
+        "€ 2.292,95 incl. 21% btw"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webshops",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0644,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/kosten",
+      "shingleSimilarity": 0.0635,
+      "sharedParagraphs": [
+        "Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.",
+        "Eerste looptijd: 12 maanden. Minimaal € 72,60 incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.",
+        "Vanaf € 3.327,50 incl. 21% btw",
+        "Vóór we beginnen betaal je 60%. De overige 40% betaal je bij afronding van de afgesproken opdracht.",
+        "€ 1.082,95 incl. 21% btw",
+        "€ 2.292,95 incl. 21% btw"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/webshops",
+      "shingleSimilarity": 0.0629,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0628,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/webdesign-venlo",
+      "shingleSimilarity": 0.0627,
+      "sharedParagraphs": [
+        "Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.",
+        "Eerste looptijd: 12 maanden. Minimaal € 72,60 incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.",
+        "Geef je diensten, bedrijf en werk elk de ruimte die ze nodig hebben.",
+        "Je aanbod, verhaal en contact op één overzichtelijke pagina.",
+        "Vanaf € 3.327,50 incl. 21% btw",
+        "Voor een website waarvan omvang of functies een eigen aanpak vragen.",
+        "Vóór we beginnen betaal je 60%. De overige 40% betaal je bij afronding van de afgesproken opdracht.",
+        "€ 1.082,95 incl. 21% btw",
+        "€ 2.292,95 incl. 21% btw"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/ai-koppelingen",
+      "shingleSimilarity": 0.0622,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0615,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/formulieren-rekentools",
+      "shingleSimilarity": 0.0611,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/formulieren-rekentools",
+      "shingleSimilarity": 0.061,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/ai-koppelingen",
+      "shingleSimilarity": 0.0607,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/ai-koppelingen",
+      "shingleSimilarity": 0.0606,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/seo-optimalisatie",
+      "shingleSimilarity": 0.0583,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0579,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/apps",
+      "shingleSimilarity": 0.057,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0569,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.0562,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten",
+      "b": "/projecten/beurswijzer",
+      "shingleSimilarity": 0.0555,
+      "sharedParagraphs": [
+        "Wat houd je over? Wat past bij jou? En wat kun je opbouwen? Van een goed verhaal naar jouw volgende stap."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/webshops",
+      "shingleSimilarity": 0.0549,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0542,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0542,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/webdesign",
+      "shingleSimilarity": 0.0539,
+      "sharedParagraphs": [
+        "Een aanvraag die logisch volgt.",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Meteen weten wat je doet.",
+        "Voor je begint",
+        "Werk en uitleg die vertrouwen geven.",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/formulieren-rekentools",
+      "shingleSimilarity": 0.052,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/",
+      "b": "/kosten",
+      "shingleSimilarity": 0.0518,
+      "sharedParagraphs": [
+        "Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.",
+        "Eerste looptijd: 12 maanden. Minimaal € 72,60 incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.",
+        "Vanaf € 3.327,50 incl. 21% btw",
+        "Vóór we beginnen betaal je 60%. De overige 40% betaal je bij afronding van de afgesproken opdracht.",
+        "€ 1.082,95 incl. 21% btw",
+        "€ 2.292,95 incl. 21% btw"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/webapps",
+      "shingleSimilarity": 0.0512,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/seo-optimalisatie",
+      "shingleSimilarity": 0.0508,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/ai-koppelingen",
+      "shingleSimilarity": 0.0504,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0469,
+      "sharedParagraphs": [
+        "De benodigde werkzaamheden bepalen de prijs. We maken de opdracht concreet en leggen de investering vast voordat we beginnen.",
+        "Eenmalig werk, eventuele externe gebruikskosten en onderhoud staan afzonderlijk in het voorstel.",
+        "Investering",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0376,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/branding",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0357,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/",
+      "b": "/projecten/beurswijzer",
+      "shingleSimilarity": 0.0356,
+      "sharedParagraphs": [
+        "Wat houd je over? Wat past bij jou? En wat kun je opbouwen? Van een goed verhaal naar jouw volgende stap."
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0355,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0351,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/branding",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0345,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-onderhoud",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0339,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/social-media",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0338,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webshops",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0327,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webshops",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0327,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/branding",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0326,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/content",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0326,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0324,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/diensten/seo",
+      "shingleSimilarity": 0.0323,
+      "sharedParagraphs": [
+        "De mogelijkheden",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zelf alvast verkennen",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webshops",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0323,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0322,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/content",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0319,
+      "sharedParagraphs": [
+        "De pakketten / Per maand",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0317,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/diensten/branding",
+      "shingleSimilarity": 0.0316,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/content",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0315,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0312,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0309,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0306,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/onderhoud-hosting",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0305,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.03,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/diensten/webshops",
+      "shingleSimilarity": 0.0298,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/diensten/ai-automatisering",
+      "shingleSimilarity": 0.0297,
+      "sharedParagraphs": [
+        "De mogelijkheden",
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zelf alvast verkennen",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0295,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0292,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/social-media",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0289,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0287,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0286,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0283,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/webdesign",
+      "shingleSimilarity": 0.0282,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/ai-koppelingen",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0281,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0281,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0277,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webdesign",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0274,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/seo-optimalisatie",
+      "b": "/diensten/webdesign",
+      "shingleSimilarity": 0.0272,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/formulieren-rekentools",
+      "b": "/diensten/webdesign",
+      "shingleSimilarity": 0.0269,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/webdesign",
+      "shingleSimilarity": 0.0267,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/webapps",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0265,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/social-media",
+      "shingleSimilarity": 0.0247,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/content",
+      "shingleSimilarity": 0.0245,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/webdesign",
+      "shingleSimilarity": 0.0239,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/diensten/apps",
+      "b": "/diensten/onderhoud-hosting",
+      "shingleSimilarity": 0.0235,
+      "sharedParagraphs": [
+        "Je hoeft geen uitgewerkt plan klaar te hebben. We maken stap voor stap duidelijk wat nodig is, wie wat verzorgt en wat je ontvangt.",
+        "Voor je begint",
+        "Wat erachter zit",
+        "Zo werken we samen"
+      ],
+      "disposition": "needs_context_review"
+    },
+    {
+      "a": "/website-offerte-checklist",
+      "b": "/seo-audit-checklist",
+      "shingleSimilarity": 0.0174,
+      "sharedParagraphs": [
+        "Gebruik dit als werkblad. Een vinkje is je eigen notitie, geen automatisch gecontroleerd resultaat. Je keuzes worden niet bewaard.",
+        "Sitesnit / Praktische uitleg"
+      ],
+      "disposition": "needs_context_review"
+    }
+  ],
+  "errors": [],
+  "notice": "Historical rendered snapshot; source review corrections happened later. Not a current complete corpus."
+}

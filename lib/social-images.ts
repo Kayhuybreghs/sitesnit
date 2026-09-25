@@ -1,5 +1,13 @@
+import {auditGuides} from './seo-audit/guides';
 // Reviewed static sharing assets. See scripts/render-final-og.cjs for final legal and price images.
+import { guides } from './guides';
 export const socialImages: Record<string, { url: string; width: number; height: number; alt: string }> = {
+  '/tools/seo-audit':{url:'/og/seo-audit.png',width:1200,height:630,alt:'Sitesnit SEO-audit: van URL naar concrete verbeterpunten'},
+  ...Object.fromEntries(auditGuides.map(g=>[`/tools/seo-audit/${g.slug}`,{url:`/og/audit-${g.slug}.png`,width:1200,height:630,alt:`Sitesnit — ${g.title}`} ])),
+  ...Object.fromEntries(guides.map(guide=>[`/${guide.slug}`,{url:`/og/guides/${guide.slug}.png`,width:1200,height:630,alt:`Sitesnit — ${guide.title}`} ])),
+  '/seo-venlo': {url:'/og/guides/seo-venlo.png',width:1200,height:630,alt:'SEO voor bedrijven in Venlo: vanuit Baarlo gericht werken aan inhoud en techniek'},
+  '/diensten/seo-onderhoud': {url:'/og/guides/seo-onderhoud.png',width:1200,height:630,alt:'SEO-onderhoud: prioriteiten kiezen, verbeteringen uitvoeren en opnieuw controleren'},
+  '/diensten/website-monitoring': {url:'/og/website-monitoring.png',width:1200,height:630,alt:'Sitesnit Hub: bezoekers, Google en werkzaamheden overzichtelijk bij elkaar, met bron en meetmoment'},
   "/diensten": {
     "url": "/og/diensten.png",
     "width": 1200,
@@ -22,7 +30,7 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "url": "/og/over-sitesnit.png",
     "width": 1200,
     "height": 630,
-    "alt": "Sitesnit: persoonlijk webdesign met aandacht voor merk, inhoud en techniek"
+    "alt": "Kay, de maker achter Sitesnit in Baarlo, met mascotte Nova — jouw verhaal, een eigen plek online"
   },
   "/projecten": {
     "url": "/og/projecten.png",
@@ -108,25 +116,25 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "height": 630,
     "alt": "Van invoer naar inzicht met een formulier of rekentool"
   },
-  "/websitecheck": {
+  "/tools/website-check": {
     "url": "/og/websitecheck.png",
     "width": 1200,
     "height": 630,
     "alt": "Websitecheck: 15 inhoudelijke vragen en een mobiele Lighthouse-analyse"
   },
-  "/prijscheck": {
+  "/tools/website-kosten-berekenen": {
     "url": "/og/prijscheck.png",
     "width": 1200,
     "height": 630,
     "alt": "Sitesnit-prijscheck: vijftien vragen leiden naar een passende route, met bouw en hosting apart in het voorbeeldresultaat."
   },
-  "/tools/ontwerp-je-website": {
+  "/tools/website-ontwerp-tool": {
     "url": "/og/ontwerp-je-website.png",
     "width": 1200,
     "height": 630,
     "alt": "Een eigen websitevoorbeeld samenstellen met inhoud, stijl en kleuren"
   },
-  "/tools/offertevergelijker": {
+  "/tools/website-offerte-vergelijken": {
     "url": "/og/offertevergelijker.png",
     "width": 1200,
     "height": 630,
@@ -167,24 +175,6 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "width": 1200,
     "height": 630,
     "alt": "Beurswatcher-case: een blauwgele compositie rond inleg, looptijd en scenario’s"
-  },
-  "/projecten/atelier-vorm": {
-    "url": "/og/atelier-vorm.png",
-    "width": 1200,
-    "height": 630,
-    "alt": "Concept Atelier Vorm: een grafisch ontworpen stoel voor een denkbeeldig interieurmerk"
-  },
-  "/projecten/studio-matcha": {
-    "url": "/og/studio-matcha.png",
-    "width": 1200,
-    "height": 630,
-    "alt": "Concept Studio Matcha: een grafische matchabeker voor een denkbeeldige matchabar"
-  },
-  "/projecten/buiten-gewoon": {
-    "url": "/og/buiten-gewoon.png",
-    "width": 1200,
-    "height": 630,
-    "alt": "Concept Buiten Gewoon: een lijnillustratie voor een denkbeeldige architectuurstudio"
   },
   "/algemene-voorwaarden": {
     "url": "/og/algemene-voorwaarden.png",

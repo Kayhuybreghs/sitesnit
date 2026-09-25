@@ -1,3 +1,8 @@
+# Lokale uitbreiding — 24 september 2026
+
+De huidige scope omvat nu de tools-/kennisstructuur en de Sitesnit Hub. Gebruik [de actuele overdracht](docs/hervatten-2026-09-24.md), [de lokale verificatie](docs/hub-verificatie-2026-09-24.md) en [het volledige restpuntenregister](docs/masterprompt-v2-restpunten.md). Hub is lokaal gebouwd en getest, maar echte providers/mail en productieactivering ontbreken. Inhoudelijke vrijgave is niet volledig afgerond. De rapporten hieronder zijn historisch en bewijzen geen actuele livewerking.
+
+---
 # Definitieve lokale controle — 15 september 2026
 
 De huidige build bevat ook een eigen dienst voor apps voor iPhone en Android, naast webapps, met een nieuw hoofdstuk op het dienstenoverzicht en eigen HTML/CSS-illustraties en OG-beeld. De definitieve crawl controleert 35 pagina’s en 2.248 interne links zonder bevindingen. De technische randgevallentest telt 535 geslaagde controles; de formulier-/opslagtest 14 geslaagde groepen.
@@ -190,4 +195,3 @@ De definitieve overzichtsversie is bovendien gecontroleerd op 320 pixels, 390 pi
 De interne linkcontrole volgde alle lokale HTML-links vanaf diensten en projecten: 23 pagina’s en 1.013 linkverwijzingen, zonder ontbrekende pagina of anker. Het rapport staat in `.sites-runtime/qa/internal-links-final.json`. Ook tekst tijdens de aanvraaganimatie behoudt nu volledig contrast; alleen de positie beweegt.
 
 Laatste mobiele Lighthouse-meting van de definitieve dienstenpagina: **97 prestaties / 100 toegankelijkheid / 100 best practices / 100 SEO**. FCP 1,8 s, LCP 2,3 s, TBT 60 ms en CLS 0. Rapport: `.sites-runtime/qa/mobile-diensten-accessible-final.html`. De eerdere scores van 94/96 en 98/96 horen bij tussenversies vóór de contrastcorrecties. Dit is een lokale mobiele labmeting, geen garantie voor iedere verbinding of apparaat. De browserpreview staat na het herstellen van de normale viewport op `/diensten` in tab 14; de oude foutmeldingstab 12 kon door het data-URL-beleid van de browsertool niet opnieuw worden gebruikt of gesloten.
-

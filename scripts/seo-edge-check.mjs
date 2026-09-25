@@ -127,12 +127,11 @@ check('Robots excludes API', /^Disallow:\s*\/api\/\s*$/m.test(robots.body));
 check('Preview robots does not advertise a sitemap', !/^Sitemap:/m.test(robots.body));
 const sitemap = await request('/sitemap.xml');
 check('Preview sitemap is XML without release URLs', sitemap.status === 200 && /xml/.test(sitemap.headers.get('content-type') || '') && !/<loc>/.test(sitemap.body));
-for (const [enabled, host, expected] of [
-  ['true', 'sitesnit.nl', true], ['true', 'SITESNIT.NL', true],
-  [undefined, 'sitesnit.nl', false], ['false', 'sitesnit.nl', false],
-  ['true', '127.0.0.1:5184', false], ['true', 'localhost:5184', false],
-  ['true', 'preview.example.com', false], ['true', 'sitesnit.nl.example.com', false], ['true', null, false],
-]) check('Indexing gate source logic', indexingAllowed(enabled, host) === expected, { enabled: enabled ?? null, host, expected });
+for (const [host, expected] of [
+  ['www.sitesnit.nl', true], ['WWW.SITESNIT.NL', true], ['sitesnit.nl', false],
+  ['127.0.0.1:5184', false], ['localhost:5184', false],
+  ['preview.example.com', false], ['www.sitesnit.nl.example.com', false], [null, false],
+]) check('Indexing gate source logic', indexingAllowed(host, 'production') === expected, { host, expected });
 
 const bodies = [
   ['empty object', '{}'], ['JSON null', 'null'], ['JSON array', '[]'], ['malformed JSON', '{'],

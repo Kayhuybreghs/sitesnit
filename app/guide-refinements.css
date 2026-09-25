@@ -1,0 +1,16 @@
+.guide-intro h1{margin-bottom:24px}
+.guide-trees{display:grid;gap:20px}
+.guide-trees>div{background:#fffdf7;border-radius:18px;padding:20px}
+.guide-trees h3{font-size:20px;margin:0 0 18px}
+.guide-trees ul{padding-left:20px;border-left:1px solid #bbcacc;list-style:none;margin-left:5px}
+.guide-trees li{padding-block:7px;font-size:15px}
+.guide-widget dt{font-weight:800;margin-top:18px;font-size:14px}
+.guide-widget dd{margin:5px 0 0;overflow-wrap:anywhere;line-height:1.6}
+.guide-case-grid li{font-size:15px;line-height:1.6;margin-block:12px}
+.guide-comparison .guide-comparison-head{display:grid;position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap;padding:0}
+@media(min-width:900px){.guide-comparison .guide-comparison-head{position:static;width:auto;height:auto;clip-path:none;overflow:visible;white-space:normal;padding:20px}}
+@media(min-width:1200px){.guide-trees{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.guide-case-illustration{margin:0 0 20px}.guide-case-illustration figcaption{margin-top:10px;font-size:.875rem;line-height:1.5;color:#465e65}
+
+.guide-intro>div{min-width:0}.guide-intro h1{overflow-wrap:anywhere;hyphens:auto}

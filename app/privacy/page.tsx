@@ -11,6 +11,7 @@ const contents = [
   ['verantwoordelijke', 'Wie is verantwoordelijk?'],
   ['aanvraag', 'Contact en belafspraken'],
   ['tools', 'Tools en technische websitecheck'],
+  ['hub', 'Sitesnit Hub: je klantomgeving'],
   ['gebruik', 'Gebruik en beveiliging'],
   ['analytics', 'Google Analytics en cookies'],
   ['bewaren', 'Hoe lang bewaren we gegevens?'],
@@ -43,7 +44,7 @@ export default function Privacy() {
         <h2>1. Wie is verantwoordelijk?</h2>
         <p>{business.ownerName}, handelend onder de naam Sitesnit, is verantwoordelijk voor de verwerking die in deze verklaring staat. Voor een privacyvraag of verzoek kun je het <a href="/contact">contactformulier</a> gebruiken of schrijven naar het onderstaande adres.</p>
         <BusinessIdentity />
-        <p>Deze verklaring gaat over Sitesnits eigen website, tools en aanvragen. Voor persoonsgegevens die Sitesnit namens een opdrachtgever in een klantwebsite verwerkt, worden afzonderlijke verwerkersafspraken gemaakt.</p>
+        <p>Deze verklaring gaat over Sitesnits eigen website, tools, aanvragen en de accounts in Sitesnit Hub. Voor persoonsgegevens die Sitesnit namens een opdrachtgever in een klantwebsite of de bijbehorende bronrapporten verwerkt, worden afzonderlijke verwerkersafspraken gemaakt.</p>
       </section>
 
       <section id="aanvraag">
@@ -54,7 +55,7 @@ export default function Privacy() {
         <p>Een tooloverzicht gaat alleen mee wanneer je kiest om het bij te voegen. Je kunt die keuze in het formulier aanpassen en de samenvatting bekijken voordat je verzendt.</p>
       </section>
 
-      <section id="tools">
+      <section id="tools"><h2>Afzonderlijke SEO-audit</h2><p>De SEO-audit bezoekt openbare HTML-pagina’s van de opgegeven website. De doelsite kan het IP-adres van onze server en de crawlernaam in haar logs zien. Het rapport wordt niet als klantdossier opgeslagen en blijft in je tabblad, totdat je zelf een samenvatting met je contactaanvraag meestuurt. We begrenzen pogingen met een gehasht afgeleid kenmerk van het netwerkadres; dit wordt als beveiligingsteller bewaard volgens de hieronder genoemde termijn. Mensen op hetzelfde netwerk delen de daglimiet. Er is geen account nodig en er wordt hiervoor geen analytische cookie geplaatst.</p>
         <h2>3. Tools en de technische websitecheck</h2>
         <h3>Je voortgang blijft bij jou</h3>
         <p>De websitecheck, prijscheck, offertevergelijker, het automatiseringsplan en de ontwerptool gebruiken sessieopslag in je browser. Daarmee kun je teruggaan, antwoorden aanpassen en je resultaat opnieuw bekijken. Deze antwoorden worden niet automatisch in de aanvraagdatabase opgeslagen. Je ontvangt geen openbare persoonlijke resultatenpagina.</p>
@@ -64,6 +65,19 @@ export default function Privacy() {
         <p>Gebruik geen pagina met vertrouwelijke informatie, toegangscodes of persoonsgegevens in het adres. Adressen met inloggegevens of extra URL-parameters worden niet geaccepteerd. De technische resultaten komen terug in je browser en worden alleen onderdeel van een aanvraag wanneer je ze meestuurt. De verwerking is nodig om de door jou gevraagde scan uit te voeren. Lees ook het <a href="https://policies.google.com/privacy?hl=nl" rel="noreferrer">privacybeleid van Google</a>.</p>
         <h3>Een advies, geen besluit over jou</h3>
         <p>De tools geven uitleg, ideeën of een prijsindicatie op basis van je invoer. De uitkomst sluit geen overeenkomst en bepaalt niet automatisch of je een dienst kunt afnemen. Een inhoudelijk antwoord verandert een technisch gemeten Lighthouse-resultaat niet. Je kunt de uitkomst met Sitesnit bespreken.</p>
+      </section>
+
+      <section id="hub">
+        <h2>3a. Sitesnit Hub: je klantomgeving</h2>
+        <h3>Account, uitnodiging en toegang</h3>
+        <p>Als Sitesnit Hub voor je is ingericht, kun je op uitnodiging een account aanmaken. We verwerken je naam, e-mailadres, bevestiging van je e-mailadres, beveiligde wachtwoordgegevens, sessiegegevens en de koppeling met jouw klantomgeving. Een uitnodiging bevat een persoonlijke, tijdelijke link. We registreren voor welk e-mailadres en welke klant die is bedoeld, de geldigheid en of de uitnodiging is gebruikt. Deel deze link niet met anderen.</p>
+        <p>Dit is nodig om je de afgesproken klantomgeving te bieden en te controleren wie gegevens mag bekijken. Toegang wordt gekoppeld aan een klant en kan meerdere websites van die klant omvatten. Beheerders kunnen onder hun eigen account een klantomgeving bekijken; die beheerhandeling wordt vastgelegd met account, website, handeling en tijdstip.</p>
+        <h3>Websitegegevens en werkzaamheden</h3>
+        <p>Na aansluiting van een bron kan Hub rapporten ophalen uit Google Analytics, Google Search Console en Vercel. Het gaat bijvoorbeeld om bezoekaantallen, herkomstkanalen, apparaten, land, instappagina’s, zoekopdrachten, vertoningen, klikken en de status van een websitepublicatie. Deze gegevens helpen om gebruik, vindbaarheid en technische wijzigingen te bespreken. Een aangesloten bereikbaarheidscontrole levert tijdstippen, HTTP-status en reactietijd aan. Werklogs en maandterugblikken bevatten de vastgelegde werkzaamheden, status, toelichting en controlebewijs.</p>
+        <p>De rapporten blijven in de afgeschermde klantomgeving. Zoekopdrachten, pagina-adressen of werknotities kunnen herkenbare of persoonlijke informatie bevatten; we behandelen ze daarom niet als openbare of gegarandeerd anonieme gegevens. De Hub vraagt geen individuele bezoekersprofielen op. Een telling van tool- of knopgebruik telt handelingen, geen unieke mensen of bevestigde aanvragen. Hub activeert zelf geen bezoekerstracking op een klantwebsite: de inrichting en privacy-uitleg van die website blijven afzonderlijk van toepassing.</p>
+        <h3>Beveiliging en accountberichten</h3>
+        <p>We gebruiken sessies, beperkte beveiligingstellers en toegangscontroles om de klantomgeving te beschermen. Beheerders gebruiken daarnaast een authenticatorcode of herstelcode. Deze beveiligingsgegevens zijn geen trackingmiddelen. Toegangssleutels voor aangesloten meetbronnen worden op de server gebruikt en niet als onderdeel van het dashboard naar je browser gestuurd.</p>
+        <p>Uitnodigingen, e-mailbevestigingen en wachtwoordherstel worden alleen verzonden wanneer de e-maildienst is aangesloten en ingeschakeld. Daarvoor is Resend voorbereid. Bij verzending ontvangt deze dienst het ontvangstadres, onderwerp en de inhoud van het accountbericht, inclusief de tijdelijke link waar die nodig is. Hub-accounts worden niet automatisch ingeschreven voor marketingmail. De private Hub- en accountpagina’s zijn uitgesloten van Sitesnits openbare Google Analytics-koppeling.</p>
       </section>
 
       <section id="gebruik">
@@ -76,7 +90,7 @@ export default function Privacy() {
         <h2>5. Google Analytics en cookies</h2>
         {analyticsActive ? (
           <>
-            <p>Alleen als je statistieken toestaat, gebruikt Sitesnit Google Analytics om te zien welke openbare pagina’s worden bezocht. Daarbij worden pagina-adres zonder extra parameters, het domein van de verwijzende website en technische gegevens over browser en apparaat verwerkt. Google gebruikt een willekeurige browsercode om statistieken samen te stellen.</p>
+            <p>Alleen als je statistieken toestaat, gebruikt Sitesnit Google Analytics om bezochte openbare pagina’s, starten en afronden van tools en belangrijke knoppen te meten. Voor die handelingen sturen we alleen vaste aanduidingen van de tool of knop mee. Daarbij worden pagina-adres zonder extra parameters, bij paginabezoek het domein van de verwijzende website en technische gegevens over browser en apparaat verwerkt. Google gebruikt een willekeurige browsercode om statistieken samen te stellen. De overzichten tellen gemeten handelingen; dat zijn geen unieke personen of ontvangen aanvragen. De afgeschermde Hub en accountpagina’s worden niet met deze koppeling gemeten.</p>
             <p>De grondslag is jouw toestemming. Vóór toestemming en na weigeren wordt de Google-tag niet geladen en sturen we ook geen meetverzoeken zonder cookies. Antwoorden, formulierinhoud, contactgegevens en persoonlijke toolresultaten worden niet aan Google Analytics doorgegeven. Sitesnit gebruikt deze koppeling niet voor advertentieprofielen.</p>
           </>
         ) : (
@@ -96,6 +110,12 @@ export default function Privacy() {
           <dd>Wat nodig is voor de uitvoering bewaren we zolang de opdracht en eventuele afgesproken nazorg lopen. Noodzakelijke bewijsstukken kunnen langer nodig zijn bij een concreet geschil of wettelijke verplichting. Fiscaal verplichte basisadministratie en facturen bewaren we doorgaans zeven jaar vanaf het moment waarop de wettelijke termijn begint.</dd>
           <dt>Gebeurtenistellingen van de checks</dt>
           <dd>Losse start- en voltooiingsgebeurtenissen maximaal negentig dagen.</dd>
+          <dt>Hub-account en klantgegevens</dt>
+          <dd>Accounts, toegangsrechten, bronrapporten, werklogs en maandterugblikken bewaren we voor de klantrelatie en afgesproken dienstverlening. Je kunt om verwijdering of aanpassing vragen. Dit beoordelen en verwerken we afzonderlijk; het intrekken van toegang verwijdert niet vanzelf het account of het klantdossier. De uitzonderingen voor noodzakelijke administratie en bewijsstukken staan hierboven.</dd>
+          <dt>Hub-sessies en uitnodigingen</dt>
+          <dd>Een inlogsessie is ingesteld op zeven dagen en kan bij actief gebruik worden vernieuwd. Een uitnodiging is 48 uur geldig. Het verlopen van een sessie of uitnodiging betekent niet dat alle bijbehorende administratieve registraties meteen uit de database verdwijnen.</dd>
+          <dt>Hub-bereikbaarheidsmetingen</dt>
+          <dd>Bij het inlezen van nieuwe meetgegevens verwijderen we ruwe metingen ouder dan negentig dagen. Als de aanlevering stopt, vindt deze opschoning pas bij de volgende aanlevering plaats. Bronrapporten worden bij verversing vervangen; een verlopen rapport kan nog als verouderd worden getoond en is daarmee niet automatisch verwijderd.</dd>
           <dt>Beveiligingstellers</dt>
           <dd>De tellers zijn maximaal tien minuten geldig. Een volgend tijdvak gebruikt een nieuwe teller. Verlopen tellers worden tijdens de dagelijkse opschoning verwijderd.</dd>
           <dt>Toolvoortgang in je browser</dt>
@@ -114,6 +134,7 @@ export default function Privacy() {
         <h2>7. Dienstverleners en verwerking</h2>
         <p>Voor de openbare website gebruikt Sitesnit Vercel voor hosting en verwerking van websiteverzoeken, en Neon voor de database met aanvragen en beperkte gebruiks- en beveiligingsgegevens. Neon maakt deel uit van Databricks. Deze dienstverleners verwerken de gegevens die nodig zijn om hun betreffende dienst te leveren.</p>
         <p>Google PageSpeed Insights ontvangt een pagina-adres wanneer je een scan aanvraagt. Google Analytics ontvangt alleen de hierboven beschreven statistische gegevens wanneer de koppeling actief is en je toestemming hebt gegeven. Je contactaanvraag wordt niet door deze website naar een advertentieplatform of generatieve AI-dienst gestuurd.</p>
+        <p>Voor een aangesloten Hub gebruikt Sitesnit de ingestelde database en hosting. Geautoriseerde rapporten worden via de betreffende Google- of Vercel-koppeling opgehaald. Resend verwerkt uitsluitend accountmail wanneer die verzending is geactiveerd. Welke bron beschikbaar is, hangt af van de aansluiting voor de betreffende klant; een voorbeeldweergave betekent niet dat een externe bron al is aangesloten.</p>
         <p>Dienstverleners kunnen gegevens ook buiten de Europese Economische Ruimte verwerken. Een Europese serverlocatie betekent niet dat iedere vorm van ondersteuning of verwerking uitsluitend daar plaatsvindt. Bij doorgifte gebruiken we de toepasselijke waarborgen, zoals een geldig adequaatheidsbesluit of de standaardcontractbepalingen van de Europese Commissie, met aanvullende maatregelen waar dat nodig is. Via het contactformulier kun je informatie vragen over de waarborgen die voor jouw gegevens gelden.</p>
         <p>Meer informatie vind je in de <a href="https://vercel.com/legal/dpa" rel="noreferrer">gegevensverwerkingsvoorwaarden van Vercel</a>, de <a href="https://neon.com/platform-terms" rel="noreferrer">voorwaarden van Neon</a> en het <a href="https://policies.google.com/privacy?hl=nl" rel="noreferrer">privacybeleid van Google</a>. Sitesnit verkoopt je aanvraaggegevens niet. Verstrekking aan andere partijen gebeurt alleen wanneer dat nodig is voor de met jou afgesproken dienstverlening of wettelijk verplicht is.</p>
       </section>
@@ -129,8 +150,9 @@ export default function Privacy() {
       <section id="beveiliging">
         <h2>9. Zorgvuldigheid en wijzigingen</h2>
         <p>We beperken toegang tot aanvraaggegevens tot wat nodig is, beveiligen verbindingen en controleren invoer en verzoeken. Deel geen medische informatie, identiteitsdocumenten, wachtwoorden of betaalkaartgegevens in de openbare formulieren en tools. Een technische controle is geen volledige beveiligingsaudit van jouw website.</p>
-        <p>Verandert de manier waarop we gegevens gebruiken, dan passen we deze uitleg aan en vragen we opnieuw toestemming wanneer dat nodig is. De huidige versie is van {business.termsVersion}.</p>
+        <p>Verandert de manier waarop we gegevens gebruiken, dan passen we deze uitleg aan en vragen we opnieuw toestemming wanneer dat nodig is. De huidige versie is van {business.privacyVersion}.</p>
       </section>
+      <section><h2>Gebruiksteller van de SEO-audit</h2><p>We tellen gestarte, afgeronde en mislukte scans om de werking en capaciteit te controleren. Deze teller bevat alleen het soort gebeurtenis en tijdstip, geen websiteadres, rapportinhoud, IP-adres of gebruikersprofiel. De gegevens worden maximaal 90 dagen bewaard. Dit staat los van Google Analytics en gebruikt geen cookies.</p><p>Vragen over je gegevens? Mail <a href={`mailto:${business.email}`}>{business.email}</a>.</p></section>
     </LegalLayout>
   );
 }

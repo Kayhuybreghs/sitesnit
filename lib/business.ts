@@ -8,8 +8,11 @@ export const business = {
   country: 'Nederland',
   chamberOfCommerce: null as string | null,
   vatId: null as string | null,
-  email: null as string | null,
-  phone: null as string | null,
+  email: 'contact@sitesnit.nl',
+  phone: '+31639430197',
+  phoneDisplay: '+31 6 39430197',
+  whatsapp: 'https://wa.me/31639430197',
+  linkedin: 'https://www.linkedin.com/company/sitesnit/',
   customers: 'both' as 'business' | 'both' | 'unconfirmed',
   websitePricesIncludeVat: false as boolean | null,
   vatRate: 0.21,
@@ -20,6 +23,7 @@ export const business = {
   hostingInitialMonths: 12,
   hostingRenewal: 'monthly' as 'monthly' | 'yearly' | 'unconfirmed',
   termsVersion: '2026-09-15',
+  privacyVersion: '2026-09-25',
 };
 
 export const minimumHostingYear = business.hostingMonthly * business.hostingInitialMonths;

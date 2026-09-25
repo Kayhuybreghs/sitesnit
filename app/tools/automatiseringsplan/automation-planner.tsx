@@ -1,5 +1,7 @@
 "use client";
+import { ToolHelp as ReadingHelp } from "../tool-help";
 import { useRef, useState } from "react";
+import { createToolEventTracker } from '../../../lib/analytics-events';
 import {
   automationTasks,
   automationPlan,
@@ -35,6 +37,7 @@ function valid(data: unknown): data is AutomationInput {
 const format = (n: number) =>
   new Intl.NumberFormat("nl-NL", { maximumFractionDigits: 1 }).format(n);
 export default function AutomationPlanner() {
+  const analytics = useRef(createToolEventTracker('automatiseringsplan'));
   const [input, setInput] = useToolDraft(
     "sitesnit-automation-v1",
     initial,
@@ -44,8 +47,10 @@ export default function AutomationPlanner() {
     [submitted, setSubmitted] = useState(false);
   const resultRef = useRef<HTMLElement>(null),
     plan = automationPlan(input);
-  const change = (update: Partial<AutomationInput>) =>
+  const change = (update: Partial<AutomationInput>) => {
+    analytics.current.start();
     setInput({ ...input, ...update });
+  };
   const duration =
     plan.hours === null
       ? "Nog niet berekend"
@@ -57,6 +62,8 @@ export default function AutomationPlanner() {
     e.preventDefault();
     setSubmitted(true);
     if (plan.invalid) return;
+    analytics.current.start();
+    analytics.current.complete();
     setShown(true);
     requestAnimationFrame(() => {
       resultRef.current?.scrollIntoView({
@@ -311,16 +318,9 @@ export default function AutomationPlanner() {
             )}
           </section>
         )}
-        {shown && (
-          <div hidden={plan.invalid}>
-            <ToolContact
-              summary={summary}
-              title="Maak dit proces werkbaar."
-              text="Bespreek welke stap slim te automatiseren is en wat daarvoor nodig is."
-            />
-          </div>
-        )}
+
       </div>
+      <ReadingHelp group="automatiseringsplan" />
       <ToolHelp
         title="Beginnen met automatiseren"
         items={[
@@ -338,6 +338,15 @@ export default function AutomationPlanner() {
           ],
         ]}
       />
+      <div className="wrap">        {shown && (
+          <div hidden={plan.invalid}>
+            <ToolContact
+              summary={summary}
+              title="Maak dit proces werkbaar."
+              text="Bespreek welke stap slim te automatiseren is en wat daarvoor nodig is."
+            />
+          </div>
+        )}</div>
     </div>
   );
 }

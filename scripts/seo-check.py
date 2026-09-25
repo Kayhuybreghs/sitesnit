@@ -127,16 +127,20 @@ for record in catalog:
                 target_id = page_node.get(relation,{}).get('@id')
                 if target_id and not any(x.get('@id') == target_id for x in doc.jsonld): fail(route,'Unresolved page JSON-LD '+relation)
         if route != '/' and not any(x.get('@type') == 'BreadcrumbList' for x in doc.jsonld): fail(route,'Missing page hierarchy')
-        canonical_matches = row['canonical'] in ('https://sitesnit.nl','https://sitesnit.nl/') if route=='/' else row['canonical']=='https://sitesnit.nl'+route
+        canonical_matches = row['canonical'] in ('https://www.sitesnit.nl','https://www.sitesnit.nl/') if route=='/' else row['canonical']=='https://www.sitesnit.nl'+route
         if not canonical_matches: fail(route,'Canonical does not match release URL')
         if row['preview_indexable']: fail(route,'Preview is indexable')
-        for key in ('og:title','og:description','og:url','og:image','og:image:alt','twitter:image'):
+        for key in ('og:title','og:description','og:url','og:image','og:image:alt','twitter:image','twitter:card','twitter:title','twitter:description','twitter:image:alt'):
             if not meta(key): fail(route,'Missing '+key)
-        og_matches = meta('og:url') in ('https://sitesnit.nl','https://sitesnit.nl/') if route=='/' else meta('og:url')=='https://sitesnit.nl'+route
+        if meta('twitter:card') != 'summary_large_image': fail(route,'Incorrect Twitter card')
+        if meta('twitter:description') != row['description']: fail(route,'Twitter description mismatch')
+        if meta('twitter:title') != row['title']: fail(route,'Twitter title mismatch')
+        if meta('twitter:image') != meta('og:image'): fail(route,'Social image mismatch')
+        og_matches = meta('og:url') in ('https://www.sitesnit.nl','https://www.sitesnit.nl/') if route=='/' else meta('og:url')=='https://www.sitesnit.nl'+route
         if not og_matches: fail(route,'OG URL mismatch')
         if meta('og:description') != row['description']: fail(route,'OG description mismatch')
         if not row['title'].startswith(meta('og:title').removesuffix(' | Sitesnit')): fail(route,'OG title mismatch')
-        if not meta('og:image').startswith('https://sitesnit.nl/'): fail(route,'Untrusted OG image origin')
+        if not meta('og:image').startswith('https://www.sitesnit.nl/'): fail(route,'Untrusted OG image origin')
         for data in doc.jsonld:
             if data.get('@type') in ('Review','AggregateRating','Product','LocalBusiness'): fail(route,'Unapproved schema type')
             if data.get('@type') == 'Organization' and data.get('address',{}).get('addressLocality') != facts['base']: fail(route,'Organization locality mismatch')
@@ -145,6 +149,11 @@ for record in catalog:
                 if not crumbs or crumbs[-1].get('item') != facts['origin']+route: fail(route,'Breadcrumb current route mismatch')
                 if [c.get('position') for c in crumbs] != list(range(1,len(crumbs)+1)): fail(route,'Breadcrumb sequence mismatch')
                 if any(urlsplit(c.get('item','')).path not in [r['path'] for r in catalog] for c in crumbs): fail(route,'Breadcrumb points outside route catalog')
+            if data.get('@type') == 'FAQPage':
+                visible=' '.join(' '.join(doc.main_text).split())
+                for question in data.get('mainEntity',[]):
+                    for text in (question.get('name',''),question.get('acceptedAnswer',{}).get('text','')):
+                        if not text or ' '.join(text.split()) not in visible: fail(route,'FAQ markup does not match visible content')
             if data.get('@type') == 'OfferCatalog':
                 offers=data.get('itemListElement',[])
                 if len(offers) != len(facts['packages']): fail(route,'Package catalog length mismatch')

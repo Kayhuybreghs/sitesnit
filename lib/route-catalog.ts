@@ -1,15 +1,20 @@
+import {auditGuides} from './seo-audit/guides';
 import { grossPrice } from './business';
 import { services } from '../app/diensten/service-data';
 import { clientCases } from '../app/portfolio-data';
 import { projects, site } from '../app/site-data';
+import { guides } from './guides';
+import { publicServicePages } from './public-service-pages';
 
 export const seoFacts = { origin: site.origin, base: site.base, packages: site.packages.map(p => ({...p, netPrice:p.price, price:grossPrice(p.price)})) };
 
 export const releaseRoutes = [
-  '/', '/diensten', ...services.map(s => `/diensten/${s.slug}`),
+  '/tools/seo-audit',...auditGuides.map(g=>`/tools/seo-audit/${g.slug}`),
+  '/', '/diensten', ...services.map(s => `/diensten/${s.slug}`), ...Object.keys(publicServicePages),
   '/diensten/webdesign/pakketten', '/projecten', ...clientCases.map(p => `/projecten/${p.slug}`),
-  '/kosten', '/webdesign-venlo', '/over-sitesnit', '/contact', '/websitecheck', '/prijscheck',
-  '/tools', '/tools/ontwerp-je-website', '/tools/offertevergelijker', '/tools/automatiseringsplan', '/privacy', '/cookies', '/algemene-voorwaarden',
+  '/kosten', '/webdesign-venlo', '/seo-venlo', '/over-sitesnit', '/contact', '/tools/website-check', '/tools/website-kosten-berekenen',
+  '/tools', '/tools/website-ontwerp-tool', '/tools/website-offerte-vergelijken', '/tools/automatiseringsplan', '/privacy', '/cookies', '/algemene-voorwaarden',
+  ...guides.map(guide => `/${guide.slug}`),
 ];
 export const conceptRoutes = projects.map(p => `/projecten/${p.slug}`);
 export const routeCatalog = [...releaseRoutes, ...conceptRoutes].map(path => ({

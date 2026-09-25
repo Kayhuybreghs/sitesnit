@@ -1,9 +1,10 @@
+import {auditGuides} from '../lib/seo-audit/guides';
 import { services } from './diensten/service-data';
 import { clientCases } from './portfolio-data';
-import { projects } from './site-data';
+import { guides } from '../lib/guides';
+import { publicServicePages } from '../lib/public-service-pages';
 
 export type PageSeo = { title: string; description: string };
-
 // One source for search snippets, share previews and the page's JSON-LD.
 const serviceTitles: Record<string, string> = {
   webdesign: 'Website laten maken — ontwerp, bouw en pakketten',
@@ -22,6 +23,10 @@ const serviceTitles: Record<string, string> = {
 };
 
 export const pageSeo: Record<string, PageSeo> = {
+  '/tools/seo-audit':{title:'Gratis SEO-audit — technische problemen per pagina',description:'Scan maximaal 20 pagina’s op noindex, kapotte links en metadata. Krijg bewijs en hersteladvies zonder vragenlijst of verplicht account.'},
+  ...Object.fromEntries(auditGuides.map(g=>[`/tools/seo-audit/${g.slug}`,{title:g.title,description:g.description}])),
+  ...Object.fromEntries(guides.map(guide => [`/${guide.slug}`, {title:guide.title,description:guide.description}])),
+  '/seo-venlo': { title:'SEO voor bedrijven in Venlo — verbeteren vanuit Baarlo', description:'Laat je vindbaarheid gericht verbeteren door Sitesnit vanuit Baarlo. Bespreek technische problemen, dienstenpagina’s en doorlopend SEO-werk voor je bedrijf in Venlo.' },
   '/': {
     title: 'Webdesign Limburg — websites op maat vanuit Baarlo',
     description: 'Een website laten maken in Limburg? Sitesnit ontwerpt en bouwt vanuit Baarlo. Bekijk projecten, vergelijk websitepakketten en bespreek je plannen.',
@@ -31,6 +36,7 @@ export const pageSeo: Record<string, PageSeo> = {
     description: 'Van websites en webapps tot apps voor iPhone en Android. Ontdek ook SEO en automatisering bij Sitesnit: de aanpak, mogelijkheden en een passende volgende stap.',
   },
   ...Object.fromEntries(services.map(s => [`/diensten/${s.slug}`, {title: serviceTitles[s.slug] || s.name, description: s.meta}])),
+  ...Object.fromEntries(Object.entries(publicServicePages).map(([path, service]) => [path, { title: service.title, description: service.description }])),
   '/diensten/webdesign/pakketten': {
     title: 'Onepager of meerdere pagina’s? Websitepakketten uitgelegd',
     description: 'Wanneer past één pagina, wanneer heb je vijf pagina’s nodig en wat vraagt maatwerk? Vergelijk de indeling, functies en voorbeelden voor jouw website.',
@@ -43,7 +49,6 @@ export const pageSeo: Record<string, PageSeo> = {
     title: p.slug === 'beurswijzer' ? 'Beurswijzer — webdesign en interactieve budgetplanner' : 'Beurswatcher — webdesign en rendementcalculator',
     description: p.meta,
   }])),
-  ...Object.fromEntries(projects.map(p => [`/projecten/${p.slug}`, {title: `${p.name} — webdesignconcept`, description: p.summary}])),
   '/kosten': {
     title: 'Kosten website — pakketprijzen, btw en hosting',
     description: 'Wat kost een website bij Sitesnit? Vergelijk onepager, vijf pagina’s en maatwerk, met prijzen inclusief btw, de hostingkosten en duidelijke betaalafspraken.',
@@ -60,11 +65,11 @@ export const pageSeo: Record<string, PageSeo> = {
     title: 'Contact — bespreek je website of plan een belafspraak',
     description: 'Bespreek je website, SEO of automatisering met Sitesnit. Vraag een gesprek aan: bellen kan op afspraak, op werkdagen tussen 18.00 en 21.30 uur of in het weekend.',
   },
-  '/websitecheck': {
+  '/tools/website-check': {
     title: 'Gratis websitecheck — snelheid, SEO en verbeterpunten',
     description: 'Check je website met 15 vragen en een mobiele Lighthouse-meting. Krijg uitleg over snelheid, toegankelijkheid, technische SEO en je belangrijkste verbeterpunten.',
   },
-  '/prijscheck': {
+  '/tools/website-kosten-berekenen': {
     title: 'Wat kost jouw website? Doe de gratis prijscheck',
     description: 'Beantwoord 15 vragen en ontdek welke websiteroute past. Bekijk de prijsbasis inclusief btw, hosting en openstaande keuzes, zonder eerst je e-mailadres te geven.',
   },
@@ -72,11 +77,11 @@ export const pageSeo: Record<string, PageSeo> = {
     title: 'Gratis websitetools — check, ontwerp en vergelijk',
     description: 'Check je website, maak een ontwerpvoorbeeld, verken de kosten of vergelijk offertes. Vijf gratis tools van Sitesnit om je websiteplannen concreet te maken.',
   },
-  '/tools/ontwerp-je-website': {
+  '/tools/website-ontwerp-tool': {
     title: 'Ontwerp je eigen website — gratis interactief voorbeeld',
     description: 'Kies je stijl, kleuren en inhoud. Bekijk en bewerk je eerste websitevoorbeeld op mobiel en desktop en bespreek je ontwerp en websiteplan met Sitesnit.',
   },
-  '/tools/offertevergelijker': {
+  '/tools/website-offerte-vergelijken': {
     title: 'Website-offertes vergelijken — inhoud en totale kosten',
     description: 'Vergelijk twee of drie websiteoffertes op inhoud, eenmalige prijs en maandkosten. Bekijk bekende kosten over 1 en 3 jaar en welke vragen nog openstaan.',
   },

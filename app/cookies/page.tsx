@@ -9,6 +9,7 @@ export const metadata = withPageMetadata({}, '/cookies');
 const contents = [
   ['keuze', 'Jouw keuze'],
   ['noodzakelijk', 'Noodzakelijke browseropslag'],
+  ['hub', 'Inloggen in Sitesnit Hub'],
   ['analytics', 'Google Analytics'],
   ['wijzigen', 'Aanpassen en verwijderen'],
   ['anders', 'Andere gegevensverwerking'],
@@ -61,10 +62,22 @@ export default function Cookies() {
         <p>Sessieopslag is bedoeld voor de huidige browsersessie. Omdat browsers een sessie kunnen herstellen, is een venster sluiten geen garantie dat de invoer definitief verdwijnt. Gebruik de resetmogelijkheid of verwijder de websitegegevens via je browser als je zeker wilt zijn dat de invoer op dit apparaat weg is.</p>
       </section>
 
+      <section id="hub">
+        <h2>2a. Inloggen in Sitesnit Hub</h2>
+        <p>Wanneer je de klantomgeving gebruikt, zijn cookies nodig om je inlogsessie en de beveiligingsstappen te laten werken. Deze staan los van je keuze voor statistieken. Ze worden niet gebruikt voor advertenties of om bezoeken aan de openbare website te volgen.</p>
+        <dl>
+          <dt>sitesnit-hub.session_token</dt>
+          <dd>Deze cookie koppelt je browser aan je ingelogde sessie. De sessie is ingesteld op zeven dagen en kan bij actief gebruik worden vernieuwd. Op de beveiligde website kan de cookienaam beginnen met __Secure-. De cookie is HttpOnly: gewone JavaScript-code op de pagina kan de inhoud niet uitlezen.</dd>
+          <dt>Tijdelijke beveiligingscookies van sitesnit-hub</dt>
+          <dd>Bij het controleren van een tweede factor kan een tijdelijke cookie de lopende inlogstap onthouden. Deze stap is maximaal tien minuten geldig. Authenticator- en herstelcodes dienen om toegang te controleren, niet om bezoekersgedrag te meten. De Hub biedt in het inlogformulier geen optie om de tweede factor op een vertrouwd apparaat over te slaan.</dd>
+        </dl>
+        <p>Uitloggen beëindigt je huidige sessie. Als je deze noodzakelijke cookies blokkeert of wist, moet je opnieuw inloggen of kun je de klantomgeving niet gebruiken. De openbare website blijft bereikbaar. Het uitschakelen van Analytics logt je niet uit en verwijdert geen Hub-account. Meer over accountgegevens en rapporten lees je in de <a href="/privacy#hub">Hub-privacyuitleg</a>.</p>
+      </section>
+
       <section id="analytics">
         <h2>3. Google Analytics</h2>
         <p><strong>{analyticsActive ? 'Status: alleen actief na jouw toestemming.' : 'Status: uitgeschakeld.'}</strong></p>
-        <p>Als je analyse toestaat wanneer de koppeling beschikbaar is, helpt Google Analytics ons begrijpen welke openbare pagina’s worden bezocht. We gebruiken die informatie om de website te verbeteren. De koppeling maakt geen advertentieprofielen en ontvangt geen ingevulde antwoorden, contactgegevens of persoonlijke resultaten.</p>
+        <p>Als je analyse toestaat wanneer de koppeling beschikbaar is, helpt Google Analytics ons begrijpen welke openbare pagina’s worden bezocht, welke tools worden gestart of afgerond en welke belangrijke knoppen worden gebruikt. We sturen daarvoor alleen vaste tool- en knopnamen mee, geen ingevoerde tekst of bedragen. De statistieken tonen gemeten handelingen, geen unieke personen of bevestigde aanvragen. De afgeschermde Hub en accountpagina’s vallen buiten deze meting. De koppeling maakt geen advertentieprofielen en ontvangt geen ingevulde antwoorden, contactgegevens of persoonlijke resultaten.</p>
         <dl>
           <dt>_ga en _ga_…</dt>
           <dd>Analytics-cookies van Google met een willekeurige browsercode en gegevens voor het samenstellen van bezoekstatistieken. Ze worden uitsluitend na toestemming geplaatst en zijn in deze inrichting ingesteld op maximaal {CONSENT_MAX_AGE_DAYS} dagen. Die cookieperiode is niet hetzelfde als de bewaartermijn van gegevens in Analytics.</dd>
@@ -87,7 +100,7 @@ export default function Cookies() {
       <section id="anders">
         <h2>5. Andere gegevensverwerking</h2>
         <p>Een contactaanvraag en de gevraagde Google PageSpeed-scan werken onafhankelijk van je keuze voor Analytics. De beperkte start- en voltooiingstellingen van de websitecheck en prijscheck gebruiken geen Analytics-cookies en bevatten geen blijvende bezoekerscode. Lees in de <a href="/privacy">privacyverklaring</a> wat daarvoor wordt verwerkt en hoe lang gegevens worden bewaard.</p>
-        <p>Heb je een vraag over cookies of opslag? Geef die door via het <a href="/contact">contactformulier</a>. Deze uitleg is bijgewerkt op {business.termsVersion}.</p>
+        <p>Heb je een vraag over cookies of opslag? Geef die door via het <a href="/contact">contactformulier</a>. Deze uitleg is bijgewerkt op {business.privacyVersion}.</p>
       </section>
     </LegalLayout>
   );

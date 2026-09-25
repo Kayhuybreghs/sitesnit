@@ -1,0 +1,3 @@
+import {getHubRuntime} from '../../../lib/hub/runtime';
+import {HubAuthForm} from '../auth-form';
+export default async function Page({searchParams}:{searchParams:Promise<{token?:string}>}){const hasResetToken=Boolean((await searchParams).token);return <section className="wrap section hub-auth"><span className="eyebrow">Sitesnit Hub / Toegang herstellen</span><h1>Weer verder.</h1><p>{hasResetToken?'Kies een nieuw wachtwoord van minimaal 12 tekens. Je oude sessies worden beëindigd.':'Vraag met je e-mailadres een tijdelijke herstellink aan.'}</p><HubAuthForm mode="reset" enabled={Boolean(await getHubRuntime())} hasResetToken={hasResetToken}/></section>;}

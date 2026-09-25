@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from 'next/headers';
 import { runtime } from "../lib/server";
 import "./globals.css";
 import "./pages.css";
@@ -28,11 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
     verification: { google: runtime().GOOGLE_SITE_VERIFICATION },
   };
 }
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const nonce = (await headers()).get('x-nonce') || undefined;
   return (
     <html lang="nl">
       <head>
@@ -55,6 +57,7 @@ export default function RootLayout({
         <Motion />
         <CookieConsent measurementId={runtime().GA4_MEASUREMENT_ID} privacyConfigurationVerified={runtime().GA4_PRIVACY_CONFIGURED === 'true'} publicPaths={routeCatalog.map(route => route.path)} />
         <script
+          nonce={nonce}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -63,12 +66,10 @@ export default function RootLayout({
               "@id": site.origin + "/#organization",
               name: site.name,
               url: site.origin,
-              ...(site.email ? { email: site.email } : {}),
+              email: business.email, telephone: business.phone, sameAs: [business.linkedin],
               founder: { '@type': 'Person', '@id': site.origin + '/#kay', name: business.ownerName },
               address: {
                 "@type": "PostalAddress",
-                streetAddress: business.streetAddress,
-                postalCode: business.postalCode,
                 addressLocality: "Baarlo",
                 addressRegion: "Limburg",
                 addressCountry: "NL",

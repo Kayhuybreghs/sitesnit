@@ -1,8 +1,19 @@
 import { AppCanvas } from './app-canvas';
 import { WebappCanvas } from './webapp-canvas';
 import { Arrow } from "./ui";
+import './seo-worklog.css';
 
 export function ServiceChapterBreak({kind}:{kind:string}) {
+  if (kind === 'seo-onderhoud') return <figure className="chapter-break break-seo-onderhoud"><div className="break-layout">
+    <figcaption className="break-copy"><span>Fictief voorbeeld / Zo lees je een werklog</span><strong>Van bevinding<br/><em>naar gecontroleerd werk.</em></strong><p>Je ziet welke pagina aandacht vroeg, wat is aangepast en wat de hercontrole laat zien. Een open punt blijft zichtbaar totdat het is afgehandeld.</p><p>Heb je al een onderhoudspakket? Dan kijken we eerst wat daarin is opgenomen. Extra SEO-werk spreken we alleen af voor taken buiten die bestaande dekking.</p><a className="text-link" href="/diensten/onderhoud-hosting#maandpakketten">Bekijk de onderhoudspakketten <Arrow/></a></figcaption>
+    <div className="seo-worklog"><span className="seo-worklog-label">Demonstratie · geen uitgevoerd klantwerk</span><h3>Een dienst weer bereikbaar maken</h3><dl>
+      <div><dt>Datum en pagina</dt><dd>15 september 2026 · example.com/diensten</dd></div>
+      <div><dt>Vastgesteld</dt><dd>De link ‘Onderhoud’ verwijst naar een verwijderd adres dat een 404 geeft.</dd></div>
+      <div><dt>Afgesproken wijziging</dt><dd>De interne verwijzing aanpassen naar de bestaande onderhoudspagina.</dd></div>
+      <div><dt>Hercontrole</dt><dd>De link opent de bedoelde pagina, die HTTP 200 teruggeeft. De contactroute is bereikbaar.</dd></div>
+      <div><dt>Nog open</dt><dd>Controleren of dezelfde oude verwijzing ook in andere dienstenpagina’s staat.</dd></div>
+    </dl><p>Dit voorbeeld toont een controleerbare wijziging. Een herstelde link is geen bewijs van meer bezoekers of een hogere positie.</p></div>
+  </div></figure>;
   const brand=kind==="branding",content=kind==="content",social=kind==="social-media",care=kind==="onderhoud-hosting",seo=kind==="seo-optimalisatie",shop=kind==="webshops";
   return <figure className={`chapter-break break-${kind}`} data-scroll-scene="unfold"><div className="break-layout">
     {kind === "apps" ? <><div className="break-copy"><span>Voorbeeld / Een taak op je telefoon</span><strong>Even openen.<br/><em>En verder kunnen.</em></strong><p>Een afspraak bekijken, een aanvraag doorgeven en de voortgang terugvinden. De schermen volgen de handeling die iemand wil afronden.</p></div><AppCanvas /></> : kind === "webapps" ? <><div className="break-copy"><span>Voorbeeld / Samenwerken met passende toegang</span><strong>Een eigen dossier.<br/><em>Een duidelijke volgende stap.</em></strong><p>Klanten leveren informatie aan en zien hun eigen voortgang. Een medewerker controleert wat binnenkomt. De toegangsrechten bepalen wie wat mag bekijken en wijzigen.</p></div><WebappCanvas /></> : brand?<>

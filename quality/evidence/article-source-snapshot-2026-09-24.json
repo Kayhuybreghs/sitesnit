@@ -1,0 +1,212 @@
+{
+  "reviewedAt": "2026-09-24T18:56:50.334Z",
+  "scope": "Source hashes after E2 illustration label correction. Asset inclusion does not claim new runtime measurement.",
+  "files": [
+    {
+      "path": "lib/guides.ts",
+      "sha256": "21653c23b70ec732520144929ac0434564a39bd89821a203d97fab8bf279b362"
+    },
+    {
+      "path": "app/guide-page.tsx",
+      "sha256": "170ad3cedc874ba96166d2cc438d2127c61365b793de5044dae14f1742c747b2"
+    },
+    {
+      "path": "app/guide-widgets.tsx",
+      "sha256": "11008118b558015a81ea99d3621f9fbdb40b2de4440d398d0229502c5da99fbb"
+    },
+    {
+      "path": "app/guide-refinements.css",
+      "sha256": "6b36a43c2f8a21c38f0b0314f0484396d205d0f574e549ebd173a0567ec88020"
+    },
+    {
+      "path": "lib/business.ts",
+      "sha256": "f2ddb14d6de4ec2c63855c6be804cb7d2b126227b50cd1daae81eca5f7fb5b58"
+    },
+    {
+      "path": "lib/price.ts",
+      "sha256": "1d9f307d7155769616829247a8e59326267a4dd95eb1cb1410aa5df17fa5b767"
+    },
+    {
+      "path": "app/service-pricing.tsx",
+      "sha256": "6ded88200009758799abd6d0991b06fd3e8820de5687c655238e414be2a48606"
+    },
+    {
+      "path": "app/diensten/service-data.ts",
+      "sha256": "5299b99cbf544927cb1acbcc04b9ace0aaf750aa2398af8e889542065f04ec2e"
+    },
+    {
+      "path": "app/diensten/specialist-data.ts",
+      "sha256": "13c0477170266b7e83d845bd58a53b9f2862a962c056aba1408813d1f00e192e"
+    },
+    {
+      "path": "app/check-tool.tsx",
+      "sha256": "9da1562709a92553d30e9ba868457f5364689719b8c7c33ff8b5e2b72b2675ec"
+    },
+    {
+      "path": "lib/tool-plans.ts",
+      "sha256": "80b0c0fd7ff76a960afd65185c39fc7bcb6f71ea5f3fd79ff1f0d80d4e002886"
+    },
+    {
+      "path": "public/og/beurswijzer.png",
+      "sha256": "e38d1fa3445555f167da970ff4c777b3fb33aa7e4e1fab6b72b41d041ba944b1"
+    },
+    {
+      "path": "public/og/beurswatcher.png",
+      "sha256": "23fac047f9d490c2a11ac3e0b0bee412e7649890c2f71b0302cfda2a699aac31"
+    },
+    {
+      "path": "public/projects/beurswijzer/home-sharp.webp",
+      "sha256": "bfea8cf7e25aa8c34c601f76b6040c9b13ff731544f44340d46d7eaad8e2b91b"
+    },
+    {
+      "path": "public/projects/beurswatcher/calculator.webp",
+      "sha256": "1536777fc33d13ee13a14c1cd9807f1f55031a6140fef79631bcaaaf1ca4de6a"
+    }
+  ],
+  "pages": [
+    {
+      "id": "A1",
+      "path": "/website-levert-geen-aanvragen-op",
+      "contentHash": "b54ea85eb167984510dba36bc53b0ecbe08b45e2c0a773270d34335196440809",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "4bf499df9d9a0ade2066fc89792fe026f8a5f86762c6e89345aa4aa978758893"
+    },
+    {
+      "id": "A2",
+      "path": "/verouderde-website",
+      "contentHash": "ff5262e2f1fbce22aec504c79cc68909b5e7d8f292bfa84992559b6a59d2a65a",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "9778281d563de3dd0f1474f7222675be1f4ea4f625fa6030ef777a5350626de5",
+      "assetsHash": "e694cc0b8247e5ddb7059e486cf24c5c8c717d255b1764e12e112760248b1179"
+    },
+    {
+      "id": "A3",
+      "path": "/website-niet-goed-op-mobiel",
+      "contentHash": "01dee6778343253685b0d8dcafbbd1a2f9aa99b61f275a7a5231e3e6a87c6d9e",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "2b3d7e03aee1b08d090b94c6840d73d30d7c7e9c81c57d075b444bb539def0ed"
+    },
+    {
+      "id": "B1",
+      "path": "/wat-kost-een-website",
+      "contentHash": "a84023aa4feb6318aba7963cb79b457004202abaf2c3d2aed5add8f726e64a01",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "c15c2499ad0feb03c66f819adc6aff869bb5d232894aa9e91cdecc43be467e81"
+    },
+    {
+      "id": "B2",
+      "path": "/maandelijkse-kosten-website",
+      "contentHash": "2bf7d7fdbbd802290e331d518431828725b0e577d150ca9b99bb5d1c1d4f680a",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "3a075487e2573d15d3534c4cf938bf99571861c46baeaa8876b9ab4b086c2296"
+    },
+    {
+      "id": "B3",
+      "path": "/website-onderhoud-kosten",
+      "contentHash": "bb98bd42d5afc145c02b815ae579e29ae002df05b18675ea6fd4507a394c9730",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "502670bf461ce8b7bf920266d8f53bfa6ef27d657daa873765aebbef54f5ae9a"
+    },
+    {
+      "id": "C1",
+      "path": "/website-offerte-aanvragen",
+      "contentHash": "717ad3f84bcd5ad83b9bc21d98ef92e99ccda7195d988d7793b32ef4a03dff37",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "966afd12baff120e4f4745c30c978bc5b7bd7ad54636ac5940c3d29c81494ac8"
+    },
+    {
+      "id": "C2",
+      "path": "/website-offerte-checklist",
+      "contentHash": "35dd9b575e9f4b8e2c522f7ad715460165cce7f9fdddb464cba3ae2726eb7ee2",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "90da38a3b2aa5137d60e2cf90a9fd7b2ec1a324e8f81e85b88f8e515e2064ba6"
+    },
+    {
+      "id": "D1",
+      "path": "/bedrijfsprocessen-automatiseren",
+      "contentHash": "64478cdcbf015bfd21059c6f5aa5d8b7873fa726db318f0c4abdf8ec89a77f8f",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "36fc4ab5dd55c1173676acbe72d5f406a98adcc8af23657e5a746e8c83e6d3cd"
+    },
+    {
+      "id": "D2",
+      "path": "/website-koppelen-aan-crm",
+      "contentHash": "70f8a604bf246553ecbb4091709ac5473ad439b0bb0e2dac8c62515af6d6f859",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "f3623882908391261701e377e99d87dbc70b6478432f8bcce2b65a2944b4a7d9"
+    },
+    {
+      "id": "D3",
+      "path": "/afspraken-plannen-via-website",
+      "contentHash": "e8adb85a1e971bce26d0742dd302033242b9bb19a63dbaeb4c7b3adb8735bdbb",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "d51c37f94d90245207c73119da3226fdad042dfc4a21cacf986c914af2f38fc8"
+    },
+    {
+      "id": "E1",
+      "path": "/website-structuur",
+      "contentHash": "8fce951070713581c966da75c408b037bac148ca7e1fe40dd7db8a76e74b495a",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "4f3a87ed525e63cb29f80ffab9d500c58b004704d2e6f219f4ad2f848c3eface"
+    },
+    {
+      "id": "E2",
+      "path": "/website-ontwerp-voorbeelden",
+      "contentHash": "d3c1eb73827d32badeac1b0f2ad82b5ee46dc189a5835e95fc09b0368f9198fc",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+      "assetsHash": "29d9e8ce7b6d5c578fb3a9c5b463ec35606f54ea510f65c516585748127503a8"
+    },
+    {
+      "id": "F1",
+      "path": "/seo-audit-checklist",
+      "contentHash": "35c1f34a8ab477bb4755596a68f48debbe7078303ec17d51d25786dbc1c7fc7f",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "7fb8087e1cf10739aa2a5182f9d0740c7e33828dd8d6953a8de3fc5a836b95ed",
+      "assetsHash": "830cbe144d5f3ee47bad00a811f48eeb1825de4ce96c4238550dc9d5be8d4afb"
+    },
+    {
+      "id": "F2",
+      "path": "/website-niet-gevonden-google",
+      "contentHash": "c7ca80c405d27c51610d647696a561cb56bb0372af0ef354388bab8427835e7d",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "b6e647d7ed2a2219553e654b72992f53daeabbdc9344f3eb35b187e7efb80adc",
+      "assetsHash": "5df3c9cc64e0cc7857b8a321b463c42543205b59aac68abbec116d9edf29a32d"
+    },
+    {
+      "id": "F3",
+      "path": "/website-snelheid-testen",
+      "contentHash": "914f6989b67bb4008eb07895c720d29057ed0fc487fe8c459032feed60434990",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "f79ba4308a343697510d367f453fe50e5bf46119f35a53fdd7e826bdc15dac70",
+      "assetsHash": "157fd3daf611bbd631af990f0c67b2769cfa0fb575997b2e0a6a5b976310a8f9"
+    },
+    {
+      "id": "F4",
+      "path": "/404-fouten-oplossen",
+      "contentHash": "bfea493c627bf51c369a8d751d8079b703b46f9de53a2a40f07b72ff69573d9b",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "1dfffb1699fdf659b458cab549e3fe6c5c75b793545f4212faa14f9dcb285f7f",
+      "assetsHash": "b74db1e59bda06b2461f6a39f81649d3c5d79f678f217c697d2a7ddf7ed00319"
+    },
+    {
+      "id": "F5",
+      "path": "/website-migratie-checklist",
+      "contentHash": "256f8a1f283e70e514411ac595a805f6414ff126caff8cb2aff86ed60b13cacf",
+      "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+      "sourcesHash": "9778281d563de3dd0f1474f7222675be1f4ea4f625fa6030ef777a5350626de5",
+      "assetsHash": "5f62357b8f2b2cf3276e5d147b3688a6bd938d9accc9c095867a4866cd6e6b9d"
+    }
+  ]
+}

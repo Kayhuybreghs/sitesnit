@@ -1,0 +1,1097 @@
+{
+  "notice": "Historical 22 September evidence; hashes were stale on 24 September. Not a current release approval.",
+  "reviews": [
+    {
+      "id": "A1",
+      "path": "/website-levert-geen-aanvragen-op",
+      "pageType": "supporting_article",
+      "audience": "Ondernemers met bezoekers maar weinig aanvragen",
+      "mainQuestion": "Waarom levert je website geen aanvragen op?",
+      "outcome": "Een eerste oorzaak kiezen op basis van signalen, voordat je een redesign bestelt.",
+      "queryFamily": "website levert geen aanvragen op",
+      "searchVolume": null,
+      "purpose": "Een eerste oorzaak kiezen op basis van signalen, voordat je een redesign bestelt.",
+      "subQuestions": [
+        "Begin bij bezoek, niet bij de kleur van je knop",
+        "Kies de controle die bij het signaal past",
+        "Maak je aanbod concreet",
+        "Test de hele aanvraag"
+      ],
+      "uniqueContribution": "Diagnosevolgorde plus vÃƒÂ³ÃƒÂ³r/na-dienstentekst; geen beloofde conversiewinst.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/webdesign",
+        "/website-niet-goed-op-mobiel",
+        "/verouderde-website",
+        "/projecten/beurswijzer"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "1539db880fde6b545bd5eae87eea0247f8465d306a870301550e85969afd2c3e",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "28af538600c989b9feac69c423fed2e208a1444525e1e00f238463ce43c4fb62",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "8ca5b488a0b484fb4177086433f814259e6caedf1bd944c8c5df4635ebc0edb4",
+      "incoming": [
+        "/tools/website-check",
+        "/website-niet-goed-op-mobiel"
+      ]
+    },
+    {
+      "id": "A2",
+      "path": "/verouderde-website",
+      "pageType": "supporting_article",
+      "audience": "Eigenaren die twijfelen over een redesign",
+      "mainQuestion": "Is je website verouderd, of kan hij nog mee?",
+      "outcome": "Bruikbare onderdelen behouden en onderbouwd bepalen wat moet veranderen.",
+      "queryFamily": "verouderde website",
+      "searchVolume": null,
+      "purpose": "Bruikbare onderdelen behouden en onderbouwd bepalen wat moet veranderen.",
+      "subQuestions": [
+        "Maak drie lijsten voordat je iets vervangt",
+        "Vier routes naar een betere website",
+        "Een nieuw uiterlijk lost niet elk probleem op",
+        "Leg vooraf vast wat niet verloren mag gaan"
+      ],
+      "uniqueContribution": "Beslismatrix met behoud van bestaande URLs, inhoud en werkende functies.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/webdesign",
+        "/wat-kost-een-website",
+        "/website-migratie-checklist",
+        "/projecten"
+      ],
+      "sourceIds": [
+        "migration"
+      ],
+      "sourceEvidence": [
+        {
+          "name": "Google: een website verhuizen",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "checked": "2026-09-22",
+          "supports": "URL mapping, relevant permanent redirects, direct internal links and post-move monitoring."
+        }
+      ],
+      "contentHash": "d03d9ede6d18803eb0849d88abb8d5e177a147020f26c7b6bd567ea660aad5f5",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "3ba1565eb58921048afb2f9b1c1fd3f973f4a4b12b44650b50da54c23eb045d5",
+      "assetsHash": "d23da47575ec071b41118b1fad2512300ba29d8a03cfb4e4d6173e4d30872c32",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "d651954792fd1371ac77739e413a35f94b2819afa6c025323cad08c8aecff63c",
+      "incoming": [
+        "/tools/website-check",
+        "/website-levert-geen-aanvragen-op",
+        "/404-fouten-oplossen"
+      ]
+    },
+    {
+      "id": "A3",
+      "path": "/website-niet-goed-op-mobiel",
+      "pageType": "supporting_article",
+      "audience": "Eigenaren met een lastig bruikbare mobiele website",
+      "mainQuestion": "Werkt je website niet goed op mobiel?",
+      "outcome": "Een concreet mobiel probleem reproduceerbaar beschrijven.",
+      "queryFamily": "website niet goed op mobiel",
+      "searchVolume": null,
+      "purpose": "Een concreet mobiel probleem reproduceerbaar beschrijven.",
+      "subQuestions": [
+        "Gebruik je echte telefoon als vertrekpunt",
+        "Zo vind je een verborgen blokkade",
+        "Kijk niet alleen naar snelheid",
+        "Van klacht naar een bruikbare reparatie"
+      ],
+      "uniqueContribution": "Handmatige telefoonroute met toetsenbord, rotatie en foutstatussen.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/webdesign",
+        "/website-levert-geen-aanvragen-op",
+        "/website-snelheid-testen",
+        "/projecten/beurswatcher"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "4f0447fda20d9ba48dc053b11553781fe55715c17ef6db298081ff2dd373b7b5",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "ef292e56c187a4c7994cf188c24439aae6607d0a81ea24f4e7d50065ac00b7cb",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "dc11f99a93f946492260d2e6576057acd499718aea74ca4b40d8efd6d7a4a93c",
+      "incoming": [
+        "/tools/website-check",
+        "/website-levert-geen-aanvragen-op",
+        "/website-snelheid-testen"
+      ]
+    },
+    {
+      "id": "B1",
+      "path": "/wat-kost-een-website",
+      "pageType": "supporting_article",
+      "audience": "Bedrijven die de omvang van een nieuwe website bepalen",
+      "mainQuestion": "Wat kost een website voor jouw bedrijf?",
+      "outcome": "Scope kiezen voordat offertes en bedragen worden vergeleken.",
+      "queryFamily": "wat kost een website",
+      "searchVolume": null,
+      "purpose": "Scope kiezen voordat offertes en bedragen worden vergeleken.",
+      "subQuestions": [
+        "Drie situaties, drie verschillende opdrachten",
+        "Welke wensen veranderen de omvang?",
+        "Normale websitekwaliteit is geen reden om alles maatwerk te noemen",
+        "Vergelijk het hele voorstel"
+      ],
+      "uniqueContribution": "Drie scopevoorbeelden gekoppeld aan centrale pakketprijzen.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-kosten-berekenen",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-kosten-berekenen",
+        "/diensten/webdesign",
+        "/kosten",
+        "/website-structuur",
+        "/website-offerte-checklist",
+        "/maandelijkse-kosten-website"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "a15de1d6444a8bf087b09cb5eaf386f236d9a7687469ba57d571dc3bb3f4c82b",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "1848679dab7f1ac4e658cda101df27f973b694154bcca877596a88436440f4e1",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "9824414fc2b4bd1fc83bb82a90a1389ab5ee92ac2bf4869d3fd61966a6fd43f0",
+      "incoming": [
+        "/tools/website-kosten-berekenen",
+        "/verouderde-website",
+        "/website-structuur"
+      ]
+    },
+    {
+      "id": "B2",
+      "path": "/maandelijkse-kosten-website",
+      "pageType": "supporting_article",
+      "audience": "Eigenaren die terugkerende kosten willen begrijpen",
+      "mainQuestion": "Welke maandelijkse kosten heeft een website?",
+      "outcome": "Een overzicht van verplichte en gekozen maand-/jaarposten maken.",
+      "queryFamily": "maandelijkse kosten website",
+      "searchVolume": null,
+      "purpose": "Een overzicht van verplichte en gekozen maand-/jaarposten maken.",
+      "subQuestions": [
+        "Hosting is niet hetzelfde als onderhoud",
+        "Welke posten horen op je lijst?",
+        "Vergelijk ook de verplichting"
+      ],
+      "uniqueContribution": "Invulbare kosteninventaris met looptijd en opzegmoment, geen nieuwe calculator.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-kosten-berekenen",
+      "service": "/diensten/onderhoud-hosting",
+      "outgoing": [
+        "/tools/website-kosten-berekenen",
+        "/diensten/onderhoud-hosting",
+        "/website-onderhoud-kosten",
+        "/kosten",
+        "/website-offerte-checklist"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "445ea3b34e2762d9545ab56f55bd9470d6c9b45762dd1da2bb7e11461ea9efd8",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "edbf1965fb250ab58d833e4490a040c29135c2965aa9f7f5e79ec1ec7cbf62f8",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "00ea592feb680fb3372b800463dba1458369fcc54357d094a86166131d6469fd",
+      "incoming": [
+        "/tools/website-kosten-berekenen",
+        "/wat-kost-een-website",
+        "/website-onderhoud-kosten",
+        "/website-offerte-checklist"
+      ]
+    },
+    {
+      "id": "B3",
+      "path": "/website-onderhoud-kosten",
+      "pageType": "supporting_article",
+      "audience": "Eigenaren die onderhoudsvoorstellen vergelijken",
+      "mainQuestion": "Websiteonderhoud: waarvoor betaal je?",
+      "outcome": "Betalen voor herkenbaar werk in plaats van een onduidelijk maandlabel.",
+      "queryFamily": "website onderhoud kosten",
+      "searchVolume": null,
+      "purpose": "Betalen voor herkenbaar werk in plaats van een onduidelijk maandlabel.",
+      "subQuestions": [
+        "Drie verschillende verantwoordelijkheden",
+        "Onderhoud hangt af van je website",
+        "Zo herken je bruikbare terugkoppeling",
+        "Stel deze vragen vÃƒÂ³ÃƒÂ³r je kiest"
+      ],
+      "uniqueContribution": "Onderhoudsmatrix en drie concrete acceptatievragen.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-kosten-berekenen",
+      "service": "/diensten/onderhoud-hosting",
+      "outgoing": [
+        "/tools/website-kosten-berekenen",
+        "/diensten/onderhoud-hosting",
+        "/maandelijkse-kosten-website",
+        "/diensten/seo-onderhoud",
+        "/website-offerte-checklist"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "5f9086b639952b90873006e0b1a2335b860498745667eee0b3abcb846979a0eb",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "a75bddbdef0f3af5393ed8109b23973ecf81e5e018c718269473e3eb0a33e5ea",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "c93d65c9f05784d7dcad911a6217dfa547cf7c54fdc5da2b3c2265c49cc9e990",
+      "incoming": [
+        "/tools/website-kosten-berekenen",
+        "/maandelijkse-kosten-website"
+      ]
+    },
+    {
+      "id": "C1",
+      "path": "/website-offerte-aanvragen",
+      "pageType": "supporting_article",
+      "audience": "Ondernemers die een websitevoorstel aanvragen",
+      "mainQuestion": "Een website-offerte aanvragen die echt iets zegt",
+      "outcome": "Een bruikbare briefing maken zonder alle technische keuzes vooraf te weten.",
+      "queryFamily": "website offerte aanvragen",
+      "searchVolume": null,
+      "purpose": "Een bruikbare briefing maken zonder alle technische keuzes vooraf te weten.",
+      "subQuestions": [
+        "Begin met de vraag van je bezoeker",
+        "Geef richting, maar laat twijfel staan",
+        "Vraag om een voorstel met grenzen"
+      ],
+      "uniqueContribution": "Kopieerbare lege briefing met onzekerheden, geen ingevulde fictieve opdracht.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-offerte-vergelijken",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-offerte-vergelijken",
+        "/diensten/webdesign",
+        "/website-offerte-checklist",
+        "/website-structuur",
+        "/contact"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "8d809d6318fa27458f9922aa4545d7188e971c6d8cb405763ea7ef5104b555f3",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "46d221dd823614fab26442534b5d4d9d22b744706ad022bf64aa4daf9d18e5e7",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "1aa5f49a5686683eed067071cb211c43b666c9f7a3867abef9caf32a822686d4",
+      "incoming": [
+        "/tools/website-offerte-vergelijken",
+        "/website-offerte-checklist",
+        "/website-koppelen-aan-crm",
+        "/website-migratie-checklist"
+      ]
+    },
+    {
+      "id": "C2",
+      "path": "/website-offerte-checklist",
+      "pageType": "supporting_article",
+      "audience": "Bedrijven met meerdere websitevoorstellen",
+      "mainQuestion": "Website-offertes vergelijken: de inhoud naast de prijs",
+      "outcome": "Ontbrekende afspraken herkennen zonder een juridisch of kwaliteitsvonnis over de leverancier.",
+      "queryFamily": "website offerte checklist",
+      "searchVolume": null,
+      "purpose": "Ontbrekende afspraken herkennen zonder een juridisch of kwaliteitsvonnis over de leverancier.",
+      "subQuestions": [
+        "Twee voorstellen kunnen allebei Ã¢â‚¬Ëœeen websiteÃ¢â‚¬â„¢ heten",
+        "Een ontbrekend antwoord is een vervolgvraag",
+        "Leg onzekerheden terug bij de aanbieder"
+      ],
+      "uniqueContribution": "Twee fictieve scopes plus aanwezig/onduidelijk/ontbreekt-controle.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-offerte-vergelijken",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-offerte-vergelijken",
+        "/diensten/webdesign",
+        "/website-offerte-aanvragen",
+        "/maandelijkse-kosten-website",
+        "/projecten"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "8f9d64c92e1ba4fa28419a42d568fced24395f29222a1361851d86741dac2579",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "e887ab5080a711a668e0369e42a0252d70edbed9d04ffddf0dd4edce16c76acf",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "needs_review",
+      "renderedHash": "23d0ea464b39536e3deed10c69e8ecb99d2e038b9754e53de6fbb866185e4cd8",
+      "incoming": [
+        "/tools/website-offerte-vergelijken",
+        "/wat-kost-een-website",
+        "/maandelijkse-kosten-website",
+        "/website-onderhoud-kosten",
+        "/website-offerte-aanvragen"
+      ]
+    },
+    {
+      "id": "D1",
+      "path": "/bedrijfsprocessen-automatiseren",
+      "pageType": "supporting_article",
+      "audience": "Ondernemers met herhaald administratief werk",
+      "mainQuestion": "Welk bedrijfsproces kun je het beste automatiseren?",
+      "outcome": "EÃƒÂ©n afgebakend proces selecteren dat eerst kan worden vereenvoudigd.",
+      "queryFamily": "bedrijfsprocessen automatiseren",
+      "searchVolume": null,
+      "purpose": "EÃƒÂ©n afgebakend proces selecteren dat eerst kan worden vereenvoudigd.",
+      "subQuestions": [
+        "Teken wat er nu echt gebeurt",
+        "Voorbeeld: van aanvraag naar opvolging",
+        "Schrap voordat je koppelt",
+        "Begin met een begrensde proef"
+      ],
+      "uniqueContribution": "Proceskaart aanvraagÃ¢â€ â€™controleÃ¢â€ â€™bevestigingÃ¢â€ â€™opvolging met fouttakken.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/automatiseringsplan",
+      "service": "/diensten/ai-automatisering",
+      "outgoing": [
+        "/tools/automatiseringsplan",
+        "/diensten/ai-automatisering",
+        "/website-koppelen-aan-crm",
+        "/afspraken-plannen-via-website",
+        "/diensten/ai-koppelingen"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "6529a58fe308c06210a67312027ae9e34b919d80fddc3b7c777103153d4c1ccb",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "0224f6ced43668ffa99674dfe1faf0f21e6f812f96153ed3bfe73d3667796098",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "3d669f23e49613f375dcfd34d732d9e97cefd41f7a86f579929d28e523dae37f",
+      "incoming": [
+        "/tools/automatiseringsplan",
+        "/website-koppelen-aan-crm",
+        "/afspraken-plannen-via-website"
+      ]
+    },
+    {
+      "id": "D2",
+      "path": "/website-koppelen-aan-crm",
+      "pageType": "supporting_article",
+      "audience": "Bedrijven die aanvragen in een CRM willen verwerken",
+      "mainQuestion": "Je website koppelen aan een CRM zonder losse eindjes",
+      "outcome": "Een controleerbare gegevensstroom beschrijven met fouten en eigenaarschap.",
+      "queryFamily": "website koppelen aan crm",
+      "searchVolume": null,
+      "purpose": "Een controleerbare gegevensstroom beschrijven met fouten en eigenaarschap.",
+      "subQuestions": [
+        "Bepaal welke gegevens echt nodig zijn",
+        "Voorkom dubbel werk bij dubbele verzoeken",
+        "Maak mislukte verwerking zichtbaar",
+        "Test met eigen voorbeeldgegevens"
+      ],
+      "uniqueContribution": "Veldmapping en fout-/retryroute; geen belofte dat elk CRM koppelbaar is.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/automatiseringsplan",
+      "service": "/diensten/ai-koppelingen",
+      "outgoing": [
+        "/tools/automatiseringsplan",
+        "/diensten/ai-koppelingen",
+        "/bedrijfsprocessen-automatiseren",
+        "/website-offerte-aanvragen",
+        "/diensten/formulieren-rekentools"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "d46919efd3d82495973cbaa6614e1138c2bd154a6683edc1f1469342ba09734f",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "9cacbbedcbed542af209bbde7e5a92370c59d3eaef605ea2959d3828557b3ee0",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "4dd08c500d46f45e20eb3edaf7e4789c696cc678ca906efcfc59a1bd803502d6",
+      "incoming": [
+        "/tools/automatiseringsplan",
+        "/bedrijfsprocessen-automatiseren",
+        "/afspraken-plannen-via-website"
+      ]
+    },
+    {
+      "id": "D3",
+      "path": "/afspraken-plannen-via-website",
+      "pageType": "supporting_article",
+      "audience": "Dienstverleners die afspraken online willen organiseren",
+      "mainQuestion": "Afspraken plannen via je website: wat moet er kloppen?",
+      "outcome": "Kiezen tussen een eenvoudige aanvraag en een echte boekingsfunctie.",
+      "queryFamily": "afspraken plannen via website",
+      "searchVolume": null,
+      "purpose": "Kiezen tussen een eenvoudige aanvraag en een echte boekingsfunctie.",
+      "subQuestions": [
+        "Belverzoek of direct boeken?",
+        "Beschikbaarheid is meer dan een agenda",
+        "Denk de route na het kiezen door",
+        "Gebruik bestaande software als die de vraag oplost"
+      ],
+      "uniqueContribution": "Boekingsketen met gelijktijdigheid, buffers en bevestigingsstatus.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/automatiseringsplan",
+      "service": "/diensten/formulieren-rekentools",
+      "outgoing": [
+        "/tools/automatiseringsplan",
+        "/diensten/formulieren-rekentools",
+        "/bedrijfsprocessen-automatiseren",
+        "/website-koppelen-aan-crm",
+        "/contact"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "ca0261457f224f344b477abb59576df54907ff4e3053ed04a7f3196da4c77a12",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "1c70c6e3e50fadd1254f08e026646eda127fe77c444bdfca72b2008b4c3b896f",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "ba436fb33f1acca48e19412845d425f05b25aba2e5890c850f343315ac5e7c54",
+      "incoming": [
+        "/tools/automatiseringsplan",
+        "/bedrijfsprocessen-automatiseren"
+      ]
+    },
+    {
+      "id": "E1",
+      "path": "/website-structuur",
+      "pageType": "supporting_article",
+      "audience": "Bedrijven die hun pagina-indeling voorbereiden",
+      "mainQuestion": "Een websitestructuur die past bij je bezoekers",
+      "outcome": "Een sitemap maken met een duidelijke taak per pagina.",
+      "queryFamily": "website structuur",
+      "searchVolume": null,
+      "purpose": "Een sitemap maken met een duidelijke taak per pagina.",
+      "subQuestions": [
+        "Drie bedrijven hebben niet dezelfde indeling nodig",
+        "Wanneer splits je een pagina?",
+        "Geef iedere pagina een opdracht",
+        "Structuur en ontwerp versterken elkaar"
+      ],
+      "uniqueContribution": "Drie verschillende sitetrees plus criteria voor splitsen en samenvoegen.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-ontwerp-tool",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-ontwerp-tool",
+        "/diensten/webdesign",
+        "/website-ontwerp-voorbeelden",
+        "/projecten/beurswijzer",
+        "/wat-kost-een-website"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "81f2a4c8c8a1be611b7ad227546e7d588e690eee716e04c6fb4c735d67f10556",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "5a5a25f9cb2454d1b7838fb889298b741aebd5b42c15c4add9b0a68f6486f142",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "f59597342bc0345085a2b31058b528702a647130fb239581546d46d15ea2c1be",
+      "incoming": [
+        "/tools/website-ontwerp-tool",
+        "/wat-kost-een-website",
+        "/website-offerte-aanvragen",
+        "/website-ontwerp-voorbeelden"
+      ]
+    },
+    {
+      "id": "E2",
+      "path": "/website-ontwerp-voorbeelden",
+      "pageType": "supporting_article",
+      "audience": "Ondernemers die een ontwerprichting zoeken",
+      "mainQuestion": "Website-ontwerpvoorbeelden: kijk naar de keuzes",
+      "outcome": "Voorkeuren onderbouwen in plaats van een andere website kopiÃƒÂ«ren.",
+      "queryFamily": "website ontwerp voorbeelden",
+      "searchVolume": null,
+      "purpose": "Voorkeuren onderbouwen in plaats van een andere website kopiÃƒÂ«ren.",
+      "subQuestions": [
+        "Beurswijzer: uitleg naast iets dat je zelf kunt doen",
+        "Beurswatcher: overzicht voor informatie en berekeningen",
+        "Maak je voorkeur bespreekbaar",
+        "Van voorbeeld naar jouw richting"
+      ],
+      "uniqueContribution": "Eigen cases met specifieke observatievragen en richtingkeuze.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-ontwerp-tool",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-ontwerp-tool",
+        "/diensten/webdesign",
+        "/website-structuur",
+        "/projecten/beurswatcher",
+        "/projecten"
+      ],
+      "sourceIds": [],
+      "sourceEvidence": [],
+      "contentHash": "f88b3364bb3a088f0e462524c7ccb13522fd17178e259b034813a619e9b157a7",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "assetsHash": "91c1c27f2ea1d2f33996880a8a2bbd99773bfe56771a84c969ae7d8e3118ccba",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "556fbccd7782dd6eaaf49a64f0e3e6854a9770fdddf4dbb29cec327629bcd265",
+      "incoming": [
+        "/tools/website-ontwerp-tool",
+        "/website-structuur"
+      ]
+    },
+    {
+      "id": "F1",
+      "path": "/seo-audit-checklist",
+      "pageType": "supporting_article",
+      "audience": "Website-eigenaren die technische bevindingen willen beoordelen",
+      "mainQuestion": "SEO-auditchecklist: van signaal naar onderbouwde actie",
+      "outcome": "Bewijs verzamelen en prioriteren zonder een scan als volledige SEO-beoordeling te zien.",
+      "queryFamily": "seo audit checklist",
+      "searchVolume": null,
+      "purpose": "Bewijs verzamelen en prioriteren zonder een scan als volledige SEO-beoordeling te zien.",
+      "subQuestions": [
+        "Begin met toegang en bestemming",
+        "Beoordeel bevindingen op bewijs",
+        "Voorbeeld: een link naar een verdwenen dienst",
+        "Een vragencheck en een audit vullen elkaar aan"
+      ],
+      "uniqueContribution": "Controlelijst plus uitgewerkt kapotte-linkvoorbeeld met herstel en hercontrole.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/seo-optimalisatie",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/seo-optimalisatie",
+        "/404-fouten-oplossen",
+        "/website-niet-gevonden-google",
+        "/website-snelheid-testen"
+      ],
+      "sourceIds": [
+        "robots"
+      ],
+      "sourceEvidence": [
+        {
+          "name": "Google: robots-instructies",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag",
+          "checked": "2026-09-22",
+          "supports": "Noindex requires accessible crawlable instructions; intentional exclusions are valid."
+        }
+      ],
+      "contentHash": "a41d3616004c4d2296cbcef52c979a2df07faaecad6625463eca83a2ac6dded4",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "0c25306033f4f4887b2ed64961c34fed1c4695f8b735f5bc1febfad217aff54f",
+      "assetsHash": "7e248b9df041624e1c2d8b4a4d918b21a8bb63fb4310f3d6a9560e058c9d73c1",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "needs_review",
+      "renderedHash": "c53fbe408dc252363db409ce3edeef1227af4c43f3b57f40a173ea61d765c693",
+      "incoming": [
+        "/tools/website-check",
+        "/website-niet-gevonden-google",
+        "/website-snelheid-testen",
+        "/404-fouten-oplossen"
+      ]
+    },
+    {
+      "id": "F2",
+      "path": "/website-niet-gevonden-google",
+      "pageType": "supporting_article",
+      "audience": "Eigenaren die een website of pagina niet terugvinden",
+      "mainQuestion": "Je website niet gevonden in Google: waar begin je?",
+      "outcome": "Indexeringsproblemen onderscheiden van bereik en relevantie.",
+      "queryFamily": "website niet gevonden google",
+      "searchVolume": null,
+      "purpose": "Indexeringsproblemen onderscheiden van bereik en relevantie.",
+      "subQuestions": [
+        "Welke situatie herken je?",
+        "Gebruik een exacte URL, geen gok op basis van ÃƒÂ©ÃƒÂ©n zoekopdracht",
+        "Controleer toegang voordat je meer tekst toevoegt",
+        "Vergelijk perioden zorgvuldig"
+      ],
+      "uniqueContribution": "Drie afzonderlijke onderzoeksroutes: nieuw, verdwenen en laag zichtbaar.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/seo-optimalisatie",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/seo-optimalisatie",
+        "/seo-audit-checklist",
+        "/website-migratie-checklist",
+        "/seo-venlo"
+      ],
+      "sourceIds": [
+        "inspection",
+        "traffic"
+      ],
+      "sourceEvidence": [
+        {
+          "name": "Google: URL-inspectie in Search Console",
+          "url": "https://support.google.com/webmasters/answer/9012289",
+          "checked": "2026-09-22",
+          "supports": "Indexed-version inspection differs from live eligibility; no guarantee of appearance."
+        },
+        {
+          "name": "Google: veranderingen in zoekverkeer onderzoeken",
+          "url": "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+          "checked": "2026-09-22",
+          "supports": "Compare traffic periods and distinguish technical issues from changing demand."
+        }
+      ],
+      "contentHash": "8fa34f9772e8e8d16b01ad34f07d9b1256c72cec61fa50b13329661306ff610c",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "b62b3dc5e49891eb5601f8ba37686e0620caaca1c72cfa632ab22b82cdaa9553",
+      "assetsHash": "c4e96e411f98322514e04be11db29fb11bf71f0cb7bb1b80cfc52fe06e27432d",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "1f08ad574dc52ca936558e3b2245fe3e125cc1990d77061baf80c808dc0be67d",
+      "incoming": [
+        "/seo-venlo",
+        "/tools/website-check",
+        "/seo-audit-checklist",
+        "/website-migratie-checklist"
+      ]
+    },
+    {
+      "id": "F3",
+      "path": "/website-snelheid-testen",
+      "pageType": "supporting_article",
+      "audience": "Ondernemers met een trage website of onduidelijke score",
+      "mainQuestion": "WebsiteÃ‚Â­snelheid testen: begrijp wat je meet",
+      "outcome": "Een snelheidsresultaat correct interpreteren en een gerichte vervolgmeting kiezen.",
+      "queryFamily": "website snelheid testen",
+      "searchVolume": null,
+      "purpose": "Een snelheidsresultaat correct interpreteren en een gerichte vervolgmeting kiezen.",
+      "subQuestions": [
+        "Labdata en bezoekersdata beantwoorden een andere vraag",
+        "Voorbeeld: zoek de oorzaak niet alleen in het cijfer",
+        "Vergelijk dezelfde pagina onder vergelijkbare omstandigheden",
+        "Je website bij Sitesnit laten bekijken"
+      ],
+      "uniqueContribution": "Gelabeld labvoorbeeld; geen tweede scanner of extra scanquota.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/seo-optimalisatie",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/seo-optimalisatie",
+        "/website-niet-goed-op-mobiel",
+        "/seo-audit-checklist",
+        "/diensten/onderhoud-hosting"
+      ],
+      "sourceIds": [
+        "lighthouse",
+        "labfield",
+        "pagespeed"
+      ],
+      "sourceEvidence": [
+        {
+          "name": "Chrome: Lighthouse-snelheidsscores",
+          "url": "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+          "checked": "2026-09-22",
+          "supports": "Weighted lab score and measurement variability; score is not a specific diagnosis."
+        },
+        {
+          "name": "web.dev: labgegevens en bezoekersgegevens",
+          "url": "https://web.dev/articles/lab-and-field-data-differences",
+          "checked": "2026-09-22",
+          "supports": "Lab vs field test conditions and interpretation; no interchangeable metrics."
+        },
+        {
+          "name": "Google PageSpeed Insights gebruiken",
+          "url": "https://pagespeed.web.dev/",
+          "checked": "2026-09-22",
+          "supports": "External standalone page speed tool; not a Sitesnit account or crawl."
+        }
+      ],
+      "contentHash": "2dd9409b23040f5550f0457328c7330a1a3508e44310e14c8d2d0f36f487a7b7",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "9c8bfb22926eb0fb04094ddcecf69ededbfbb620a12ec475fc90db4bc73cb014",
+      "assetsHash": "422aead041adca328dcc04f65b77a7769eb3a553700fd0e852447c8ae7449b83",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "536d29634b2b8aa8ad5a05c318f24f1429d276c00ae057784391a7f2ebfb7a8f",
+      "incoming": [
+        "/tools/website-check",
+        "/website-niet-goed-op-mobiel",
+        "/seo-audit-checklist"
+      ]
+    },
+    {
+      "id": "F4",
+      "path": "/404-fouten-oplossen",
+      "pageType": "supporting_article",
+      "audience": "Eigenaren met niet-gevonden paginaÃ¢â‚¬â„¢s of bestanden",
+      "mainQuestion": "404-fouten oplossen zonder alles door te sturen",
+      "outcome": "Per fout de juiste actie kiezen in plaats van een homepage-catchall.",
+      "queryFamily": "404 fouten oplossen",
+      "searchVolume": null,
+      "purpose": "Per fout de juiste actie kiezen in plaats van een homepage-catchall.",
+      "subQuestions": [
+        "Bepaal eerst wat ontbreekt",
+        "Een redirect moet inhoudelijk kloppen",
+        "Controleer bron ÃƒÂ©n bestemming",
+        "Bewaar een kleine lijst met beslissingen"
+      ],
+      "uniqueContribution": "Beslismatrix en voor/na-link-/redirectvoorbeeld.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/seo-optimalisatie",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/seo-optimalisatie",
+        "/website-migratie-checklist",
+        "/seo-audit-checklist",
+        "/verouderde-website"
+      ],
+      "sourceIds": [
+        "http",
+        "migration"
+      ],
+      "sourceEvidence": [
+        {
+          "name": "Google: HTTP-statuscodes",
+          "url": "https://developers.google.com/crawling/docs/troubleshooting/http-status-codes",
+          "checked": "2026-09-22",
+          "supports": "404/410 represent missing content; successful HTTP response does not guarantee indexing."
+        },
+        {
+          "name": "Google: een website verhuizen",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "checked": "2026-09-22",
+          "supports": "URL mapping, relevant permanent redirects, direct internal links and post-move monitoring."
+        }
+      ],
+      "contentHash": "a515f0cfe9c55e93afd4872591b88446b21abdd9738e51a3a609f442e8c5286f",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "58a0bcf7f15ad068d0d230c731901384631a84c3815227036aa27b8e112ed693",
+      "assetsHash": "83ff7ad3927cc9f92bb2e6694400e18ca4addb2d71852939b6d953535cde7d9b",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "a63bd7de3b3cd7058766a4d0251a3dbe245aac6820ca7655939fc40c325c20eb",
+      "incoming": [
+        "/tools/website-check",
+        "/seo-audit-checklist",
+        "/website-migratie-checklist"
+      ]
+    },
+    {
+      "id": "F5",
+      "path": "/website-migratie-checklist",
+      "pageType": "supporting_article",
+      "audience": "Bedrijven die website, domein of platform veranderen",
+      "mainQuestion": "Website verhuizen: controle vÃƒÂ³ÃƒÂ³r, tijdens en na de overstap",
+      "outcome": "Een uitvoerbare verhuislijst met oude en nieuwe bestemmingen maken.",
+      "queryFamily": "website migratie checklist",
+      "searchVolume": null,
+      "purpose": "Een uitvoerbare verhuislijst met oude en nieuwe bestemmingen maken.",
+      "subQuestions": [
+        "VÃƒÂ³ÃƒÂ³r de overstap: maak de bestemming expliciet",
+        "Tijdens de overstap: controleer de hele route",
+        "Na de overstap: blijf gericht controleren",
+        "Wat een checklist niet kan aftekenen"
+      ],
+      "uniqueContribution": "Driefasenplan plus downloadbare URL-mapping; geen schijn-acceptatiescan.",
+      "outOfScope": [
+        "Geen rang- of conversiegarantie",
+        "Geen vervanging van de bijbehorende tool",
+        "Geen verzonnen praktijkresultaten"
+      ],
+      "tool": "/tools/website-check",
+      "service": "/diensten/webdesign",
+      "outgoing": [
+        "/tools/website-check",
+        "/diensten/webdesign",
+        "/404-fouten-oplossen",
+        "/website-niet-gevonden-google",
+        "/website-offerte-aanvragen"
+      ],
+      "sourceIds": [
+        "migration"
+      ],
+      "sourceEvidence": [
+        {
+          "name": "Google: een website verhuizen",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "checked": "2026-09-22",
+          "supports": "URL mapping, relevant permanent redirects, direct internal links and post-move monitoring."
+        }
+      ],
+      "contentHash": "2699aa1efd40440cf443f7254a5517f5efd59c65077d490a71df21b584741da4",
+      "businessHash": "65444f89d31fb48f5817a5f5da0435c891dd874343401bb06e5696a630c4cde1",
+      "sourcesHash": "3ba1565eb58921048afb2f9b1c1fd3f973f4a4b12b44650b50da54c23eb045d5",
+      "assetsHash": "82cc5b8eef9bb4cbdb3246bb3de40d322b79d30f56abd364120e5485489b2fc9",
+      "dependencies": [
+        "lib/business.ts",
+        "app/site-data.ts",
+        "lib/content-sources.ts",
+        "app/guide-page.tsx"
+      ],
+      "reviewState": "ready_for_owner_review",
+      "reviewerType": "agent_editorial_review",
+      "ownerApproved": false,
+      "editorialEvidence": "reports/editorial-review.md",
+      "technicalStatus": "pass",
+      "similarityStatus": "manual_review_still_required",
+      "renderedHash": "6d5c57187093d879a0aa75476fc1ace161802c065c07aca68bd7fbedcfef9851",
+      "incoming": [
+        "/tools/website-check",
+        "/verouderde-website",
+        "/website-niet-gevonden-google",
+        "/404-fouten-oplossen"
+      ]
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
+import { toolRedirects } from './lib/tool-routes';
 
 const nextConfig: NextConfig = {
   // Keep metadata in the initial HTML head for every visitor.
   htmlLimitedBots: /.*/,
   poweredByHeader: false,
+  async redirects() { return toolRedirects; },
   outputFileTracingRoot: process.cwd(),
   serverExternalPackages: ['@neondatabase/serverless'],
   experimental: { cpus: 1, webpackMemoryOptimizations: true },

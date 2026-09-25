@@ -3,6 +3,7 @@ import { WebappCanvas } from './webapp-canvas';
 import { Arrow } from "./ui";
 
 const routeCopy:Record<string,{label:string;title:string;accent:string;steps:[string,string][]}>={
+  "seo-onderhoud":{label:"Een werklijst die verder komt",title:"Kiezen. Verbeteren.",accent:"Opnieuw controleren.",steps:[["Prioriteit bepalen","Welke bevinding verdient nu aandacht?"],["Afgesproken werk uitvoeren","Een gerichte wijziging aan inhoud of techniek."],["Bewijs vastleggen","Dezelfde pagina hercontroleren en het werklog bijwerken."]]},
   webdesign:{label:"De route van je bezoeker",title:"Begrijpen.",accent:"Vertrouwen. Contact.",steps:[["Je aanbod","Meteen weten wat je doet."],["Je verhaal","Werk en uitleg die vertrouwen geven."],["De volgende stap","Een aanvraag die logisch volgt."]]},
   webshops:{label:"Van product naar verwerking",title:"Een winkel die",accent:"samenhangt.",steps:[["Kiezen","Product, variant en beschikbaarheid."],["Bestellen","Winkelmand, bezorgen en betalen."],["Verwerken","Bevestiging, voorraad en ordergegevens."]]},
   seo:{label:"Zoekvraag → antwoord → volgende stap",title:"Een echte vraag.",accent:"Jouw antwoord.",steps:[["Zoeken","Wat wil je toekomstige klant weten?"],["Begrijpen","Een relevante pagina met duidelijke uitleg."],["Verder kunnen","Naar een dienst, voorbeeld of contact."]]},

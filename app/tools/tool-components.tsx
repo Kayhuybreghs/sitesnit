@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import ContactForm from "../contact/contact-form";
 import { Arrow, Eyebrow } from "../ui";
+import { ANALYTICS_TOOL_PATHS, trackPublicEvent } from '../../lib/analytics-events';
 export const money = (cents: number | null) =>
   cents === null
     ? "—"
@@ -148,6 +149,8 @@ export function ToolContact({
           aria-expanded={open}
           aria-controls={`${id}-form`}
           onClick={() => {
+            const tool = ANALYTICS_TOOL_PATHS[window.location.pathname];
+            if (!open && tool) trackPublicEvent({name:'cta_click', action_id:'discuss_result', tool_id:tool});
             setMounted(true);
             setOpen(!open);
           }}

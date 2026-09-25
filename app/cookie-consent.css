@@ -91,3 +91,4 @@
   .cookie-settings-trigger,
   .cookie-storage-notice { display: none !important; }
 }
+.cookie-dialog{box-sizing:border-box}

@@ -1,3 +1,4 @@
+import {SocialIcon} from './social-icon';
 import { business, grossPrice, minimumHostingYear } from '../lib/business';
 import { euro } from './site-data';
 
@@ -13,14 +14,14 @@ export function BusinessNotes({ compact = false, websitePrice }: { compact?: boo
   </div>;
 }
 
-export function BusinessIdentity() {
+export function BusinessIdentity({ showAddress = true }: { showAddress?: boolean }) {
   return <address className="business-identity">
     <strong>{business.legalName}</strong>
     {business.ownerName && <span>{business.ownerName}</span>}
-    {business.streetAddress && <span>{business.streetAddress}</span>}
-    <span>{business.postalCode ? `${business.postalCode} ` : ''}{business.locality}, {business.country}</span>
+    {showAddress && business.streetAddress && <span>{business.streetAddress}</span>}
+    <span>{showAddress && business.postalCode ? `${business.postalCode} ` : ''}{business.locality}, {business.country}</span>
     {business.email ? <a href={`mailto:${business.email}`}>{business.email}</a> : <span>E-mail: —</span>}
-    {business.phone ? <a href={`tel:${business.phone}`}>{business.phone}</a> : <span>Telefoon: —</span>}
+    <a href={`tel:${business.phone}`}>{business.phoneDisplay}</a><small>Bellen alleen op afspraak</small><div className="contact-social-links"><a href={business.whatsapp}><SocialIcon name="whatsapp"/> WhatsApp</a><a href={business.linkedin}><SocialIcon name="linkedin"/> LinkedIn</a></div>
     {business.chamberOfCommerce && <span>KvK {business.chamberOfCommerce}</span>}
     {business.vatId && <span>Btw-id {business.vatId}</span>}
   </address>;

@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+import { ToolHelp as ReadingHelp } from "../tool-help";
+import { useRef, useState } from "react";
+import { createToolEventTracker } from '../../../lib/analytics-events';
 import {
   emptyOffer,
   offerTotals,
@@ -55,6 +57,7 @@ function valid(data: unknown): data is Offer[] {
   );
 }
 export default function OfferComparer() {
+  const analytics = useRef(createToolEventTracker('offertevergelijker'));
   const [offers, setOffers, ready] = useToolDraft(
     "sitesnit-offers-v1",
     initial,
@@ -67,6 +70,7 @@ export default function OfferComparer() {
   const example = offers.some((o) => o.example);
   const openQuestions = offerQuestions(offers);
   const update = (change: Partial<Offer>) => {
+    analytics.current.start();
     setOffers(
       offers.map((o) => (o.id === current.id ? { ...o, ...change } : o)),
     );
@@ -307,7 +311,9 @@ export default function OfferComparer() {
             </p>
           )}
           <div className="workbench-bottom">
-            <a className="button" href="#vergelijking">
+            <a className="button" href="#vergelijking" onClick={() => {
+              if (comparable && !example) { analytics.current.start(); analytics.current.complete(); }
+            }}>
               Bekijk je vergelijking ↓
             </a>
             {offers.length === 3 && current.id === "c" && (
@@ -405,13 +411,7 @@ export default function OfferComparer() {
           <ToolActions summary={summary} filename="offertevergelijking" print />
         </section>
       </div>
-      <div className="wrap">
-        <ToolContact
-          summary={summary}
-          title="Een voorstel dat je begrijpt."
-          text="Vertel wat je wilt laten maken en welke onderdelen je belangrijk vindt."
-        />
-      </div>
+      <ReadingHelp group="offertevergelijker" />
       <ToolHelp
         title="Website-offertes vergelijken: waar let je op?"
         items={[
@@ -429,6 +429,13 @@ export default function OfferComparer() {
           ],
         ]}
       />
+      <div className="wrap">
+        <ToolContact
+          summary={summary}
+          title="Een voorstel dat je begrijpt."
+          text="Vertel wat je wilt laten maken en welke onderdelen je belangrijk vindt."
+        />
+      </div>
     </div>
   );
 }

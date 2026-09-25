@@ -1,5 +1,7 @@
 "use client";
+import { ToolHelp as ReadingHelp } from "../tool-help";
 import { useRef, useState } from "react";
+import { createToolEventTracker } from '../../../lib/analytics-events';
 import {
   emptyDesign,
   designPlan,
@@ -99,6 +101,7 @@ const titles = [
   "Hoeveel ruimte heeft je verhaal nodig?",
 ];
 export default function WebsiteDesigner() {
+  const analytics = useRef(createToolEventTracker('ontwerp_website'));
   const [draft, setDraft, ready] = useToolDraft(
     "sitesnit-designer-v1",
     initial,
@@ -113,8 +116,10 @@ export default function WebsiteDesigner() {
   // Mount the result on first use; preserve its navigation when editing answers.
   const [hasShownResult, setHasShownResult] = useState(false);
   const renderResult = done || hasShownResult;
-  const change = (update: Partial<DesignInput>) =>
+  const change = (update: Partial<DesignInput>) => {
+    analytics.current.start();
     setDraft({ ...draft, input: { ...input, ...update } });
+  };
   function focusQuestion() {
     questionRef.current
       ?.closest("form")
@@ -131,7 +136,9 @@ export default function WebsiteDesigner() {
       return;
     }
     setError("");
+    analytics.current.start();
     if (step === 5) {
+      analytics.current.complete();
       setHasShownResult(true);
       setDraft({ ...draft, done: true });
       requestAnimationFrame(() => {
@@ -646,7 +653,7 @@ export default function WebsiteDesigner() {
               </div>
             </div>
             <ToolActions summary={summary} filename="mijn-websiteplan" print />
-            <a className="text-link" href="/prijscheck">
+            <a className="text-link" href="/tools/website-kosten-berekenen">
               Ook weten welk pakket bij je wensen past? Doe de prijscheck ↗
             </a>
             </div>
@@ -654,6 +661,7 @@ export default function WebsiteDesigner() {
           </>}
         </section>
       </div>
+      <ReadingHelp group="ontwerp-je-website" />
       <ToolHelp
         title="Zelf je website ontwerpen: begin met richting"
         items={[

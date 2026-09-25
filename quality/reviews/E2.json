@@ -1,0 +1,45 @@
+{
+  "path": "/website-ontwerp-voorbeelden",
+  "status": "needs_revision",
+  "reviewerType": "agent_editorial_review",
+  "reviewedAt": "2026-09-24T18:56:50.334Z",
+  "assessmentScope": "Actual current source/editorial and material-claims review for E2, including targeted overlap with adjacent articles, tools and services. No fresh rendered/browser pass or owner approval is inferred. See per-ID evidence.",
+  "contentHash": "d3c1eb73827d32badeac1b0f2ad82b5ee46dc189a5835e95fc09b0368f9198fc",
+  "businessHash": "b8726219c5485187c0dd97c6632f218d7299ca03540b19a37a08e41ccf621331",
+  "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+  "assetsHash": "29d9e8ce7b6d5c578fb3a9c5b463ec35606f54ea510f65c516585748127503a8",
+  "technicalStatus": "not_run",
+  "editorialStatus": "pass",
+  "similarityStatus": "reviewed",
+  "claimsStatus": "verified",
+  "ownerApproved": false,
+  "evidence": [
+    "quality/evidence/articles-current-2026-09-24.md",
+    "quality/evidence/article-claims-2026-09-24.json",
+    "quality/evidence/article-source-snapshot-2026-09-24.json",
+    "quality/evidence/article-browser-2026-09-24.md"
+  ],
+  "evidenceFiles": [
+    {
+      "path": "quality/evidence/articles-current-2026-09-24.md",
+      "sha256": "e9f99406b145bb5599b68f5fcdf6033a5081d79beec37f736cceb4323a6c200c"
+    },
+    {
+      "path": "quality/evidence/article-claims-2026-09-24.json",
+      "sha256": "384e302e0266d9174b0ccbdadfbfac9ef191a7ca8b5113bdf8ed16c644047f9a"
+    },
+    {
+      "path": "quality/evidence/article-source-snapshot-2026-09-24.json",
+      "sha256": "9b26e63167e339b3807af940deab4fde035d3802c0d8dda76f259d2bd18f44da"
+    },
+    {
+      "path": "quality/evidence/article-browser-2026-09-24.md",
+      "sha256": "18353ecbc38a8d886344f40f9441ff4e44bfa8d181d3f597f2415538a4eff2fb"
+    }
+  ],
+  "openIssues": [
+    "Complete and attach current-version interactive widget/CTA and accessibility checks before marking the broad technicalStatus pass. Responsive render evidence is attached with its limited scope.",
+    "No owner release approval has been recorded."
+  ],
+  "technicalScope": "Current source version has root-provided browser evidence: 18 article routes at 360/390/768/1440/1920 pixels (90 observations), no horizontal overflow; E2 illustration label visually checked. This does not establish complete widget/CTA, accessibility, performance or physical-phone verification."
+}

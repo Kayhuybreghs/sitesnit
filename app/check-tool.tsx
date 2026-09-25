@@ -1,6 +1,7 @@
 "use client";
 /* eslint-disable react-hooks/set-state-in-effect -- Restore browser session data after server hydration; it is unavailable during the server render. */
 import { useCheckTools } from "../lib/webmcp";
+import { createToolEventTracker } from '../lib/analytics-events';
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   websiteQuestions,
@@ -18,6 +19,7 @@ import { Eyebrow, Arrow } from "./ui";
 import { euro, site } from "./site-data";
 import { grossPrice, hostingSummary, minimumHostingYear, paymentSummary } from "../lib/business";
 import { BusinessNotes } from "./business-notes";
+import { ToolHelp as ReadingHelp } from "./tools/tool-help";
 import ContactForm from "./contact/contact-form";
 import "./tools.css";
 import "./tool-direction.css";
@@ -38,6 +40,7 @@ function track(type: string) {
   }).catch(() => {});
 }
 export default function CheckTool({ kind }: { kind: Kind }) {
+  const analytics = useRef(createToolEventTracker(kind));
   const isWeb = kind === "websitecheck";
   const questions = isWeb ? websiteQuestions : priceQuestions;
   const storageKey = `sitesnit-${kind}-v3`;
@@ -94,7 +97,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
   }, [ready, storageKey, stage, step, answers, url, scan]);
   useEffect(() => {
     if (!ready) return;
-    const target = `/${kind}${stage === "result" ? "?resultaat=1" : ""}`;
+    const target = `${kind === 'websitecheck' ? '/tools/website-check' : '/tools/website-kosten-berekenen'}${stage === "result" ? "?resultaat=1" : ""}`;
     history.replaceState(null, "", target);
     if (stage === "result") setContactMounted(true);
     const view = `${kind}:${stage}:${step}`;
@@ -158,6 +161,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
     setError("");
     setStage("questions");
     track(`${kind}_start`);
+    analytics.current.start();
   }
   function choose(value: string) {
     setError("");
@@ -201,10 +205,11 @@ export default function CheckTool({ kind }: { kind: Kind }) {
       }
       setStage(isWeb && !(editing && url) ? "url" : "result");
       setEditing(false);
-      if (!isWeb) track(`${kind}_complete`);
+      if (!isWeb) { track(`${kind}_complete`); analytics.current.complete(); }
     } else setStep((n) => n + 1);
   }
   function reset() {
+    analytics.current.reset();
     controller.current?.abort();
     scanNumber.current++;
     setStage("intro");
@@ -379,7 +384,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
         <>
           <div className="wrap tool-topbar">
             <a
-              href={`/${kind}`}
+              href={isWeb ? '/tools/website-check' : '/tools/website-kosten-berekenen'}
               onClick={(e) => {
                 e.preventDefault();
                 setResetConfirm(true);
@@ -441,6 +446,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                     void startScan(normalized);
                     setStage("result");
                     track(`${kind}_complete`);
+                    analytics.current.complete();
                   } catch (e) {
                     setError((e as Error).message);
                   }
@@ -798,7 +804,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                   )}
                 </>
               )}
-              {!isWeb&&<section className="price-website-brief" aria-labelledby="brief-title"><Eyebrow>Je wensen, vertaald naar inhoud</Eyebrow><h2 id="brief-title">Je eerste websiteplan.</h2><div><div><h3>{websiteBrief(answers).label}</h3><ol>{websiteBrief(answers).pages.map(p=><li key={p}>{p}</li>)}</ol><p>{websiteBrief(answers).note}</p></div><div><h3>Dit verzamelen we voor je website</h3><ul>{websiteBrief(answers).content.map(p=><li key={p}>{p}</li>)}</ul></div></div><ToolActions summary={summaryText()} filename="prijscheck-en-websiteplan"/><a className="text-link" href="/tools/ontwerp-je-website">Alvast een visuele richting proberen <Arrow/></a></section>}
+              {!isWeb&&<section className="price-website-brief" aria-labelledby="brief-title"><Eyebrow>Je wensen, vertaald naar inhoud</Eyebrow><h2 id="brief-title">Je eerste websiteplan.</h2><div><div><h3>{websiteBrief(answers).label}</h3><ol>{websiteBrief(answers).pages.map(p=><li key={p}>{p}</li>)}</ol><p>{websiteBrief(answers).note}</p></div><div><h3>Dit verzamelen we voor je website</h3><ul>{websiteBrief(answers).content.map(p=><li key={p}>{p}</li>)}</ul></div></div><ToolActions summary={summaryText()} filename="prijscheck-en-websiteplan"/><a className="text-link" href="/tools/website-ontwerp-tool">Alvast een visuele richting proberen <Arrow/></a></section>}
               <details className="answers-review" id="antwoorden">
                 <summary>
                   Bekijk en wijzig je 15 antwoorden <span>+</span>
@@ -838,6 +844,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
           )}
         </>
       )}
+      {(stage === "result" || stage === "intro") && <ReadingHelp group={isWeb ? "websitecheck" : "prijscheck"} />}
       {contactMounted && (
         <section
           id="bespreek-uitkomst"

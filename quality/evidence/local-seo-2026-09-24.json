@@ -1,0 +1,21 @@
+{
+  "source": "reports/seo/hub-resume/summary.json",
+  "sourceHash": "fa0b944ab0bbe166f827a69519b2900f22b1099dc996a9150ec1191297ce9b28",
+  "measuredAt": "2026-09-24T18:23:06.724304+00:00",
+  "origin": "http://127.0.0.1:5184",
+  "nativeBuild": {
+    "framework": "nextjs",
+    "diskBuildId": "_hHvAHzL_W2T0wbblIjf6",
+    "artifact": ".next/server/app/page.js",
+    "artifactSha256": "acfc62561a45a339a6f920784f0e6b7c21836c3a4722d2fbdb4e0dd05fb4ecbe",
+    "homepageBuildIds": [
+      "_hHvAHzL_W2T0wbblIjf6"
+    ],
+    "verified": true,
+    "scope": "Homepage Flight build ID matches BUILD_ID; the native server page entry hash and BUILD_ID stayed unchanged during this crawl. This is not a hash of every dependency or deployment attestation."
+  },
+  "routes": 56,
+  "links": 3766,
+  "issues": [],
+  "note": "Local technical snapshot only. No per-page content-hash match or editorial approval inferred."
+}

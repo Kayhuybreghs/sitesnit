@@ -2,7 +2,6 @@ import { ProjectPhoneScreen } from "./project-phone-screen";
 import { Arrow, Eyebrow } from "./ui";
 import { clientCases, type ClientCase } from "./portfolio-data";
 import { WorkVisual } from "./work-visual";
-import { caseFeedbackPlaceholders } from "./case-feedback-placeholders";
 import "./case-feedback.css";
 
 export function CaseLinks({title = "Van plan naar praktijk."}: {title?: string}) {
@@ -24,7 +23,6 @@ export function PortfolioCard({project, index}: {project:ClientCase;index:number
 }
 export function ClientCasePage({project:p}: {project:ClientCase}) {
   const isWijzer = p.slug === "beurswijzer";
-  const feedback = caseFeedbackPlaceholders[isWijzer?"beurswijzer":"beurswatcher"];
   return <div className={`client-case case-${p.theme}`}>
     <section className="wrap case-hero">
       <a className="back-link" href="/projecten">← Alle projecten</a>
@@ -40,7 +38,6 @@ export function ClientCasePage({project:p}: {project:ClientCase}) {
       <div className="case-picture-copy"><Eyebrow>{isWijzer?"03":"02"} / Mobile first</Eyebrow><h2>Dezelfde identiteit.<br/><em>Een eigen indeling.</em></h2><p>{p.choices[3][1]}</p>{!isWijzer&&<p>{p.choices[0][1]}</p>}<a className="text-link" href="/diensten/webdesign">Meer over ons webdesign<Arrow/></a></div>
     </section>
     <section className="case-continuity-band"><div className="wrap case-continuity-inner"><div><Eyebrow>Ook na de bouw</Eyebrow><h2>Een levend platform.<br /><em>Iedere week aandacht.</em></h2><p>{p.maintenance}</p></div><div className="case-maintenance-list"><a href="/diensten/content"><b>01 / Content</b>Iedere week een nieuw blog <Arrow /></a><a href="/diensten/seo"><b>02 / Vindbaarheid</b>SEO-basis en inhoud bijhouden <Arrow /></a><a href="/diensten/onderhoud-hosting"><b>03 / Beheer</b>Hosting en websiteonderhoud <Arrow /></a></div></div></section>
-    <section className="wrap case-feedback-example"><div><Eyebrow>{feedback.label}</Eyebrow><h2>{feedback.heading}</h2><p>{feedback.note}</p></div><blockquote>{feedback.paragraphs.map(text=><p key={text}>{text}</p>)}</blockquote></section>
     <section className="wrap case-next"><Eyebrow>Een vergelijkbaar idee?</Eyebrow><h2>Van jouw vraag.<br /><em>Naar een eigen oplossing.</em></h2><p>Een platform, rekentool of website die je verder wilt laten groeien? Bespreek wat je wilt maken én wat je daarna wilt uitbesteden.</p><a className="button" href={`/contact?project=${p.slug}`}>Bespreek jouw project <Arrow /></a></section>
   </div>;
 }

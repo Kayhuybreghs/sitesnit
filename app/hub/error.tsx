@@ -1,0 +1,2 @@
+'use client';
+export default function HubError({reset}:{reset:()=>void}){return <section className="wrap section hub-auth"><span className="eyebrow">Sitesnit Hub</span><h1>Dit overzicht laadt even niet.</h1><p>Je gegevens zijn niet aangepast. Probeer het opnieuw of neem contact op als dit blijft gebeuren.</p><button className="button" onClick={reset}>Opnieuw laden</button><a className="text-link" href="/contact">Contact met Sitesnit</a></section>;}

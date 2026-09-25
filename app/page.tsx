@@ -33,7 +33,7 @@ export default function Home() {
             verhaal en klantpad. Ontdek wat goed gaat en welke verbeteringen
             aandacht verdienen.
           </p>
-          <a className="button" href="/websitecheck">
+          <a className="button" href="/tools/website-check">
             Check je website <Arrow />
           </a>
           <p className="small">Je resultaat bekijken kan zonder e-mailadres.</p>

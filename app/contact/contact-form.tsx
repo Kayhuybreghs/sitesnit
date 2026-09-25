@@ -77,10 +77,12 @@ export default function ContactForm({
       ai: "AI & automatisering",
       "ai-automatisering": "Tools & automatisering",
       "seo-optimalisatie": "SEO-optimalisatie",
+      "seo-onderhoud": "SEO-onderhoud",
+      "website-monitoring": "Website-monitoring · Sitesnit Hub",
       "formulieren-rekentools": "Formulieren & rekentools",
       "ai-koppelingen": "AI & softwarekoppelingen",
     };
-    setService(serviceNames[p.get("dienst") ?? ""] ?? "");
+    setService(serviceNames[p.get("dienst") ?? ""] ?? (p.get('onderwerp') ?? '').slice(0,180));
     if (!embedded) {
       const chosenPlan = p.get("maandpakket") ?? "";
       const chosenService = p.get("dienst") ?? "";

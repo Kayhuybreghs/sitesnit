@@ -1,0 +1,2491 @@
+{
+  "kind": "local-original-html-crawl-evidence",
+  "assessedAt": "2026-09-24T19:02:16.136Z",
+  "note": "Read with local-html-crawl-hub-final-2026-09-24.md. Self-contained measurement snapshot; original report artifacts are hashed but not copied. Does not approve release or assert current per-page review-hash binding.",
+  "sourceFiles": [
+    {
+      "path": "reports/seo/hub-final/summary.json",
+      "sha256": "1d8b34f7958c58b63252b6e63b75d97f4b446570d0b9c6541f335a47cf68de79"
+    },
+    {
+      "path": "reports/seo/hub-final/routes.csv",
+      "sha256": "ad5db39cf0996f3f5af3b12495723c062f92cce726be834f623eea9052ecaad1"
+    },
+    {
+      "path": "reports/seo/hub-final/internal-links.csv",
+      "sha256": "030c5b2ed7da64379a78ceaad032f5d13bab54cc1c4eb0075819c5b03f066699"
+    }
+  ],
+  "inspectedScript": {
+    "path": "scripts/seo-check.py",
+    "sha256": "89088959db99dc4ede1a597ef399b2f5c47cc2cb039d99aa90b1718c130efe1d",
+    "scope": "Script inspected during evidence assessment; original crawl did not record a script hash."
+  },
+  "summary": {
+    "phase": "hub-final",
+    "measuredAt": "2026-09-24T19:00:07.250659+00:00",
+    "origin": "http://127.0.0.1:5184",
+    "builtCodeHash": "acfc62561a45a339a6f920784f0e6b7c21836c3a4722d2fbdb4e0dd05fb4ecbe",
+    "nativeBuild": {
+      "framework": "nextjs",
+      "diskBuildId": "OS2gl1D-6G1eScLpJ_0zr",
+      "artifact": ".next/server/app/page.js",
+      "artifactSha256": "acfc62561a45a339a6f920784f0e6b7c21836c3a4722d2fbdb4e0dd05fb4ecbe",
+      "homepageBuildIds": [
+        "OS2gl1D-6G1eScLpJ_0zr"
+      ],
+      "verified": true,
+      "scope": "Homepage Flight build ID matches BUILD_ID; the native server page entry hash and BUILD_ID stayed unchanged during this crawl. This is not a hash of every dependency or deployment attestation."
+    },
+    "routes": 56,
+    "links": 3769,
+    "assets": {
+      "/brand/sitesnit-logo-white.webp": {
+        "status": 200,
+        "bytes": 21760,
+        "type": "image/webp"
+      },
+      "/_next/static/css/ec6a7a142cd39828.css": {
+        "status": 200,
+        "bytes": 3742,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/50632fe19aadafa9.css": {
+        "status": 200,
+        "bytes": 77773,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/f4520283b1250eab.css": {
+        "status": 200,
+        "bytes": 6375,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/a58d2885ade90db3.css": {
+        "status": 200,
+        "bytes": 944,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/12a9e1d06953f311.css": {
+        "status": 200,
+        "bytes": 20642,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/1b6621bfd90bc4b5.css": {
+        "status": 200,
+        "bytes": 5124,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/b2deafe4732360c2.css": {
+        "status": 200,
+        "bytes": 7705,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/chunks/webpack-134f15fd2ee04bb3.js": {
+        "status": 200,
+        "bytes": 3684,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/4bd1b696-93bf506b236d6248.js": {
+        "status": 200,
+        "bytes": 201055,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/3794-3679f1c05160977c.js": {
+        "status": 200,
+        "bytes": 240796,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/main-app-81bcf79ccd33a4ac.js": {
+        "status": 200,
+        "bytes": 516,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/9183-f4b5847e44f605d1.js": {
+        "status": 200,
+        "bytes": 4711,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/6313-2f6f3ecffffddd23.js": {
+        "status": 200,
+        "bytes": 12035,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/layout-9b2d3ba2e4309746.js": {
+        "status": 200,
+        "bytes": 8257,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/page-83afe0126e54e811.js": {
+        "status": 200,
+        "bytes": 15645,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/favicon.ico?682bd06a38173a6a": {
+        "status": 200,
+        "bytes": 936,
+        "type": ""
+      },
+      "/brand/sitesnit-favicon-32x32.png": {
+        "status": 200,
+        "bytes": 914,
+        "type": "image/png"
+      },
+      "/brand/sitesnit-favicon-192x192.png": {
+        "status": 200,
+        "bytes": 9148,
+        "type": "image/png"
+      },
+      "/fonts/manrope.woff2": {
+        "status": 200,
+        "bytes": 24836,
+        "type": "font/woff2"
+      },
+      "/_next/static/chunks/polyfills-42372ed130431b0a.js": {
+        "status": 200,
+        "bytes": 112594,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/brand/sitesnit-logo-black.webp": {
+        "status": 200,
+        "bytes": 20864,
+        "type": "image/webp"
+      },
+      "/projects/beurswijzer/growth.webp": {
+        "status": 200,
+        "bytes": 174518,
+        "type": "image/webp"
+      },
+      "/projects/beurswatcher/calculator.webp": {
+        "status": 200,
+        "bytes": 107600,
+        "type": "image/webp"
+      },
+      "/images/architecture-480.webp": {
+        "status": 200,
+        "bytes": 48902,
+        "type": "image/webp"
+      },
+      "/about/nova-sitesnit-hond-320.webp": {
+        "status": 200,
+        "bytes": 33048,
+        "type": "image/webp"
+      },
+      "/og.png": {
+        "status": 200,
+        "bytes": 64075,
+        "type": "image/png"
+      },
+      "/_next/static/css/c0de07ce00f382b7.css": {
+        "status": 200,
+        "bytes": 8324,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/c2bb29d8fb0c088a.css": {
+        "status": 200,
+        "bytes": 21852,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/9ef8c49672003fdf.css": {
+        "status": 200,
+        "bytes": 28597,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/dd0e89b767d93c46.css": {
+        "status": 200,
+        "bytes": 30991,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/og/diensten.png": {
+        "status": 200,
+        "bytes": 68985,
+        "type": "image/png"
+      },
+      "/_next/static/css/db566042ce7b56b5.css": {
+        "status": 200,
+        "bytes": 902,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/og/guides/seo-onderhoud.png": {
+        "status": 200,
+        "bytes": 61338,
+        "type": "image/png"
+      },
+      "/og/apps.png": {
+        "status": 200,
+        "bytes": 122654,
+        "type": "image/png"
+      },
+      "/og/webapps.png": {
+        "status": 200,
+        "bytes": 68307,
+        "type": "image/png"
+      },
+      "/og/seo-optimalisatie.png": {
+        "status": 200,
+        "bytes": 92396,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/diensten/%5Bdienst%5D/page-77cc52210b75104c.js": {
+        "status": 200,
+        "bytes": 2111,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/formulieren-rekentools.png": {
+        "status": 200,
+        "bytes": 104215,
+        "type": "image/png"
+      },
+      "/og/ai-koppelingen.png": {
+        "status": 200,
+        "bytes": 103912,
+        "type": "image/png"
+      },
+      "/og/webdesign.png": {
+        "status": 200,
+        "bytes": 109119,
+        "type": "image/png"
+      },
+      "/og/webshops.png": {
+        "status": 200,
+        "bytes": 72188,
+        "type": "image/png"
+      },
+      "/og/branding.png": {
+        "status": 200,
+        "bytes": 73163,
+        "type": "image/png"
+      },
+      "/og/seo.png": {
+        "status": 200,
+        "bytes": 84091,
+        "type": "image/png"
+      },
+      "/og/content.png": {
+        "status": 200,
+        "bytes": 114004,
+        "type": "image/png"
+      },
+      "/og/social-media.png": {
+        "status": 200,
+        "bytes": 108831,
+        "type": "image/png"
+      },
+      "/og/onderhoud-hosting.png": {
+        "status": 200,
+        "bytes": 107011,
+        "type": "image/png"
+      },
+      "/og/ai-automatisering.png": {
+        "status": 200,
+        "bytes": 93449,
+        "type": "image/png"
+      },
+      "/_next/static/css/3c8f75ee8d401a88.css": {
+        "status": 200,
+        "bytes": 12322,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/og/website-monitoring.png": {
+        "status": 200,
+        "bytes": 71811,
+        "type": "image/png"
+      },
+      "/og/pakketten.png": {
+        "status": 200,
+        "bytes": 71163,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/projecten/page-a755ea621c8e0808.js": {
+        "status": 200,
+        "bytes": 4602,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/projects/beurswijzer/home-sharp-800.webp": {
+        "status": 200,
+        "bytes": 27074,
+        "type": "image/webp"
+      },
+      "/images/chair-960.webp": {
+        "status": 200,
+        "bytes": 32506,
+        "type": "image/webp"
+      },
+      "/images/matcha-960.webp": {
+        "status": 200,
+        "bytes": 63972,
+        "type": "image/webp"
+      },
+      "/images/architecture-960.webp": {
+        "status": 200,
+        "bytes": 182860,
+        "type": "image/webp"
+      },
+      "/og/projecten.png": {
+        "status": 200,
+        "bytes": 62022,
+        "type": "image/png"
+      },
+      "/_next/static/css/e17c96e0022b8b34.css": {
+        "status": 200,
+        "bytes": 1009,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/projects/beurswijzer/insights-800.webp": {
+        "status": 200,
+        "bytes": 29418,
+        "type": "image/webp"
+      },
+      "/projects/beurswijzer/planner-800.webp": {
+        "status": 200,
+        "bytes": 21608,
+        "type": "image/webp"
+      },
+      "/og/beurswijzer.png": {
+        "status": 200,
+        "bytes": 58921,
+        "type": "image/png"
+      },
+      "/projects/beurswatcher/calculator-640.webp": {
+        "status": 200,
+        "bytes": 10454,
+        "type": "image/webp"
+      },
+      "/og/beurswatcher.png": {
+        "status": 200,
+        "bytes": 58637,
+        "type": "image/png"
+      },
+      "/og/kosten.png": {
+        "status": 200,
+        "bytes": 67983,
+        "type": "image/png"
+      },
+      "/_next/static/css/8f810887f682c5c0.css": {
+        "status": 200,
+        "bytes": 8187,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/og/webdesign-venlo.png": {
+        "status": 200,
+        "bytes": 73152,
+        "type": "image/png"
+      },
+      "/_next/static/css/755c43d889b4e346.css": {
+        "status": 200,
+        "bytes": 5086,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/og/guides/seo-venlo.png": {
+        "status": 200,
+        "bytes": 57064,
+        "type": "image/png"
+      },
+      "/_next/static/css/06d14adfe9d05c2d.css": {
+        "status": 200,
+        "bytes": 4684,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/over-sitesnit/page-c9e0bdb8f825f081.js": {
+        "status": 200,
+        "bytes": 2305,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/about/kay-persoonlijk-320.webp": {
+        "status": 200,
+        "bytes": 24030,
+        "type": "image/webp"
+      },
+      "/about/kay-portret-320.webp": {
+        "status": 200,
+        "bytes": 20676,
+        "type": "image/webp"
+      },
+      "/og/over-sitesnit.png": {
+        "status": 200,
+        "bytes": 80866,
+        "type": "image/png"
+      },
+      "/_next/static/css/5f916499e9bd2e15.css": {
+        "status": 200,
+        "bytes": 7349,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/chunks/5706-45ee379cbf888b76.js": {
+        "status": 200,
+        "bytes": 11527,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/contact/page-f8e63439624fb291.js": {
+        "status": 200,
+        "bytes": 258,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/contact.png": {
+        "status": 200,
+        "bytes": 69392,
+        "type": "image/png"
+      },
+      "/_next/static/css/fc6872581ac2a8c7.css": {
+        "status": 200,
+        "bytes": 2577,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/00b99325a2ceded6.css": {
+        "status": 200,
+        "bytes": 14316,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/chunks/3619-09accb95d0fac669.js": {
+        "status": 200,
+        "bytes": 15885,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/3406-2b6cf4fe097a4a52.js": {
+        "status": 200,
+        "bytes": 46934,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/tools/website-check/page-7cdd5d4b0ef630f4.js": {
+        "status": 200,
+        "bytes": 164,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/websitecheck.png": {
+        "status": 200,
+        "bytes": 91353,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/tools/website-kosten-berekenen/page-d0f4ab503375ebf7.js": {
+        "status": 200,
+        "bytes": 164,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/prijscheck.png": {
+        "status": 200,
+        "bytes": 70670,
+        "type": "image/png"
+      },
+      "/_next/static/css/537cb0405bf1d232.css": {
+        "status": 200,
+        "bytes": 271,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/css/47a605a90bf169ec.css": {
+        "status": 200,
+        "bytes": 40041,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/tools/page-202438b702bc6c58.js": {
+        "status": 200,
+        "bytes": 7522,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/tools.png": {
+        "status": 200,
+        "bytes": 62529,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/4091-512b8148b3b79974.js": {
+        "status": 200,
+        "bytes": 25391,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/tools/website-ontwerp-tool/page-a0e06892dd6a1d01.js": {
+        "status": 200,
+        "bytes": 159,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/ontwerp-je-website.png": {
+        "status": 200,
+        "bytes": 79394,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/1256-f8a868090d8db89a.js": {
+        "status": 200,
+        "bytes": 9790,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/_next/static/chunks/app/tools/website-offerte-vergelijken/page-5ab541f1a52a5ffc.js": {
+        "status": 200,
+        "bytes": 159,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/offertevergelijker.png": {
+        "status": 200,
+        "bytes": 82642,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/tools/automatiseringsplan/page-61988376212ae33f.js": {
+        "status": 200,
+        "bytes": 9317,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/automatiseringsplan.png": {
+        "status": 200,
+        "bytes": 92438,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/privacy/page-403488ae5461d3a7.js": {
+        "status": 200,
+        "bytes": 457,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/privacy.png": {
+        "status": 200,
+        "bytes": 52370,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/cookies/page-403488ae5461d3a7.js": {
+        "status": 200,
+        "bytes": 457,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/cookies.png": {
+        "status": 200,
+        "bytes": 57415,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/algemene-voorwaarden/page-76481c03dd9d11f4.js": {
+        "status": 200,
+        "bytes": 401,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/algemene-voorwaarden.png": {
+        "status": 200,
+        "bytes": 63896,
+        "type": "image/png"
+      },
+      "/_next/static/css/10470c91609496e9.css": {
+        "status": 200,
+        "bytes": 1169,
+        "type": "text/css; charset=UTF-8"
+      },
+      "/og/guides/website-levert-geen-aanvragen-op.png": {
+        "status": 200,
+        "bytes": 71732,
+        "type": "image/png"
+      },
+      "/og/guides/verouderde-website.png": {
+        "status": 200,
+        "bytes": 70470,
+        "type": "image/png"
+      },
+      "/og/guides/website-niet-goed-op-mobiel.png": {
+        "status": 200,
+        "bytes": 67253,
+        "type": "image/png"
+      },
+      "/_next/static/chunks/app/%5Bguide%5D/page-ae4c27f22630d4c1.js": {
+        "status": 200,
+        "bytes": 4141,
+        "type": "application/javascript; charset=UTF-8"
+      },
+      "/og/guides/wat-kost-een-website.png": {
+        "status": 200,
+        "bytes": 73009,
+        "type": "image/png"
+      },
+      "/og/guides/maandelijkse-kosten-website.png": {
+        "status": 200,
+        "bytes": 70377,
+        "type": "image/png"
+      },
+      "/og/guides/website-onderhoud-kosten.png": {
+        "status": 200,
+        "bytes": 69671,
+        "type": "image/png"
+      },
+      "/og/guides/website-offerte-aanvragen.png": {
+        "status": 200,
+        "bytes": 71326,
+        "type": "image/png"
+      },
+      "/og/guides/website-offerte-checklist.png": {
+        "status": 200,
+        "bytes": 75984,
+        "type": "image/png"
+      },
+      "/og/guides/bedrijfsprocessen-automatiseren.png": {
+        "status": 200,
+        "bytes": 72140,
+        "type": "image/png"
+      },
+      "/og/guides/website-koppelen-aan-crm.png": {
+        "status": 200,
+        "bytes": 75242,
+        "type": "image/png"
+      },
+      "/og/guides/afspraken-plannen-via-website.png": {
+        "status": 200,
+        "bytes": 72509,
+        "type": "image/png"
+      },
+      "/og/guides/website-structuur.png": {
+        "status": 200,
+        "bytes": 68344,
+        "type": "image/png"
+      },
+      "/og/guides/website-ontwerp-voorbeelden.png": {
+        "status": 200,
+        "bytes": 74753,
+        "type": "image/png"
+      },
+      "/og/guides/seo-audit-checklist.png": {
+        "status": 200,
+        "bytes": 75560,
+        "type": "image/png"
+      },
+      "/og/guides/website-niet-gevonden-google.png": {
+        "status": 200,
+        "bytes": 77889,
+        "type": "image/png"
+      },
+      "/og/guides/website-snelheid-testen.png": {
+        "status": 200,
+        "bytes": 77221,
+        "type": "image/png"
+      },
+      "/og/guides/404-fouten-oplossen.png": {
+        "status": 200,
+        "bytes": 68923,
+        "type": "image/png"
+      },
+      "/og/guides/website-migratie-checklist.png": {
+        "status": 200,
+        "bytes": 77671,
+        "type": "image/png"
+      },
+      "/images/chair-480.webp": {
+        "status": 200,
+        "bytes": 7166,
+        "type": "image/webp"
+      },
+      "/og/atelier-vorm.png": {
+        "status": 200,
+        "bytes": 53550,
+        "type": "image/png"
+      },
+      "/images/matcha-480.webp": {
+        "status": 200,
+        "bytes": 22104,
+        "type": "image/webp"
+      },
+      "/og/studio-matcha.png": {
+        "status": 200,
+        "bytes": 65520,
+        "type": "image/png"
+      },
+      "/og/buiten-gewoon.png": {
+        "status": 200,
+        "bytes": 47025,
+        "type": "image/png"
+      }
+    },
+    "issues": [],
+    "checks": {
+      "real_404": true,
+      "preview_sitemap_empty": true,
+      "robots_can_read_noindex": true,
+      "robots_text": "User-Agent: *\nAllow: /\nDisallow: /api/\n\n",
+      "/prijscheck?resultaat=1": {
+        "status": 200,
+        "canonical": [
+          "https://sitesnit.nl/tools/website-kosten-berekenen"
+        ],
+        "robots": [
+          "noindex, follow"
+        ]
+      },
+      "/websitecheck?resultaat=1": {
+        "status": 200,
+        "canonical": [
+          "https://sitesnit.nl/tools/website-check"
+        ],
+        "robots": [
+          "noindex, follow"
+        ]
+      },
+      "/kosten?utm_source=seo-audit": {
+        "status": 200,
+        "canonical": [
+          "https://sitesnit.nl/kosten"
+        ],
+        "robots": [
+          "noindex, follow"
+        ]
+      },
+      "/contact?pakket=onepager": {
+        "status": 200,
+        "canonical": [
+          "https://sitesnit.nl/contact"
+        ],
+        "robots": [
+          "noindex, follow"
+        ]
+      },
+      "trailing_slash": {
+        "status": 200,
+        "final_url": "http://127.0.0.1:5184/kosten"
+      },
+      "index_html_status": 404
+    },
+    "releaseCandidates": [
+      "/",
+      "/diensten",
+      "/diensten/seo-onderhoud",
+      "/diensten/apps",
+      "/diensten/webapps",
+      "/diensten/seo-optimalisatie",
+      "/diensten/formulieren-rekentools",
+      "/diensten/ai-koppelingen",
+      "/diensten/webdesign",
+      "/diensten/webshops",
+      "/diensten/branding",
+      "/diensten/seo",
+      "/diensten/content",
+      "/diensten/social-media",
+      "/diensten/onderhoud-hosting",
+      "/diensten/ai-automatisering",
+      "/diensten/website-monitoring",
+      "/diensten/webdesign/pakketten",
+      "/projecten",
+      "/projecten/beurswijzer",
+      "/projecten/beurswatcher",
+      "/kosten",
+      "/webdesign-venlo",
+      "/seo-venlo",
+      "/over-sitesnit",
+      "/contact",
+      "/tools/website-check",
+      "/tools/website-kosten-berekenen",
+      "/tools",
+      "/tools/website-ontwerp-tool",
+      "/tools/website-offerte-vergelijken",
+      "/tools/automatiseringsplan",
+      "/privacy",
+      "/cookies",
+      "/algemene-voorwaarden",
+      "/website-levert-geen-aanvragen-op",
+      "/verouderde-website",
+      "/website-niet-goed-op-mobiel",
+      "/wat-kost-een-website",
+      "/maandelijkse-kosten-website",
+      "/website-onderhoud-kosten",
+      "/website-offerte-aanvragen",
+      "/website-offerte-checklist",
+      "/bedrijfsprocessen-automatiseren",
+      "/website-koppelen-aan-crm",
+      "/afspraken-plannen-via-website",
+      "/website-structuur",
+      "/website-ontwerp-voorbeelden",
+      "/seo-audit-checklist",
+      "/website-niet-gevonden-google",
+      "/website-snelheid-testen",
+      "/404-fouten-oplossen",
+      "/website-migratie-checklist"
+    ],
+    "note": "Local original-HTML checks of native Next only. Previous dist-hashed reports remain historical. Does not prove public hosting, Google indexing or search rankings."
+  },
+  "aggregate": {
+    "routes": 56,
+    "routeStatus": {
+      "200": 56
+    },
+    "linkOccurrences": 3769,
+    "uniqueTargetPaths": 58,
+    "uniqueTargetPathQueryFragmentCombinations": 293,
+    "linkStatus": {
+      "200": 3769
+    },
+    "missingFragmentOccurrences": 0,
+    "queryLinkOccurrences": 65,
+    "h1Counts": {
+      "1": 56
+    },
+    "metaRobots": {
+      "noindex, follow": 56
+    },
+    "recordedXRobotsTag": {
+      "": 56
+    },
+    "clickDepth": {
+      "0": 1,
+      "1": 28,
+      "2": 27
+    },
+    "resources": 128,
+    "resourceStatus": {
+      "200": 128
+    }
+  },
+  "routes": [
+    {
+      "path": "/",
+      "releaseCandidate": "True",
+      "intent": "Webdesign Limburg / merk en aanbod",
+      "status": "200",
+      "title": "Webdesign Limburg — websites op maat vanuit Baarlo | Sitesnit",
+      "description": "Een website laten maken in Limburg? Sitesnit ontwerpt en bouwt vanuit Baarlo. Bekijk projecten, vergelijk websitepakketten en bespreek je plannen.",
+      "h1": "WE BUILDBRANDS.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Webdesign Limburg — websites op maat vanuit Baarlo | Sitesnit",
+      "og_description": "Een website laten maken in Limburg? Sitesnit ontwerpt en bouwt vanuit Baarlo. Bekijk projecten, vergelijk websitepakketten en bespreek je plannen.",
+      "og_image": "https://sitesnit.nl/og.png",
+      "jsonld_types": "WebPage | WebSite | Organization",
+      "html_bytes": "116910",
+      "original_html_words": "1710",
+      "preview_indexable": "False",
+      "click_depth": "0",
+      "inlinks_main": "0",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/home.html",
+        "sha256": "4c228a807e1f051a3f97e1715a5702bfca1d91bc335e25a5ce3edef22f2a3c2d"
+      }
+    },
+    {
+      "path": "/diensten",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Diensten — websites, apps, SEO en automatisering | Sitesnit",
+      "description": "Van websites en webapps tot apps voor iPhone en Android. Ontdek ook SEO en automatisering bij Sitesnit: de aanpak, mogelijkheden en een passende volgende stap.",
+      "h1": "Jouw volgende stap.Goed ontworpen.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Diensten — websites, apps, SEO en automatisering | Sitesnit",
+      "og_description": "Van websites en webapps tot apps voor iPhone en Android. Ontdek ook SEO en automatisering bij Sitesnit: de aanpak, mogelijkheden en een passende volgende stap.",
+      "og_image": "https://sitesnit.nl/og/diensten.png",
+      "jsonld_types": "CollectionPage | BreadcrumbList | Organization",
+      "html_bytes": "88025",
+      "original_html_words": "895",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten.html",
+        "sha256": "dd1e0f9e08716a9271440e20dc1a8932fa5fcf511b0ac5ea43aa585e13f3bbfa"
+      }
+    },
+    {
+      "path": "/diensten/seo-onderhoud",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "SEO-onderhoud | Sitesnit",
+      "description": "Laat afgesproken SEO-verbeteringen uitvoeren en controleren. Sitesnit maakt prioriteiten, werkzaamheden en open keuzes inzichtelijk; inzet en prijs op voorstel.",
+      "h1": "Verbeteren houdt niet opbij een rapport.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/seo-onderhoud",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "SEO-onderhoud | Sitesnit",
+      "og_description": "Laat afgesproken SEO-verbeteringen uitvoeren en controleren. Sitesnit maakt prioriteiten, werkzaamheden en open keuzes inzichtelijk; inzet en prijs op voorstel.",
+      "og_image": "https://sitesnit.nl/og/guides/seo-onderhoud.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "66429",
+      "original_html_words": "759",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "5",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__seo-onderhoud.html",
+        "sha256": "b9a8c75a7bcd0d99d13ddf998d24823f9e187fdb79eedece3b01e698b4975744"
+      }
+    },
+    {
+      "path": "/diensten/apps",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "App laten maken voor iPhone en Android | Sitesnit",
+      "description": "Laat een app maken voor iPhone of Android. Sitesnit verzorgt ontwerp, ontwikkeling en voorbereiding voor de App Store of Google Play. Bespreek je idee.",
+      "h1": "Een app laten maken.Voor iPhone en Android.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/apps",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "App laten maken voor iPhone en Android | Sitesnit",
+      "og_description": "Laat een app maken voor iPhone of Android. Sitesnit verzorgt ontwerp, ontwikkeling en voorbereiding voor de App Store of Google Play. Bespreek je idee.",
+      "og_image": "https://sitesnit.nl/og/apps.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "90483",
+      "original_html_words": "1290",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__apps.html",
+        "sha256": "27d730c5339f42a0706f892652b99c24efe6d5c336c06fbc8b9f4931e46349a4"
+      }
+    },
+    {
+      "path": "/diensten/webapps",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Webapp laten maken — klantportaal of dashboard | Sitesnit",
+      "description": "Laat een webapp bouwen voor je klanten of dagelijkse werk. Sitesnit ontwerpt klantportalen, dashboards en aanvraagprocessen die ook op mobiel prettig werken.",
+      "h1": "Een webapp laten maken.Voor het werk dat verder moet.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/webapps",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Webapp laten maken — klantportaal of dashboard | Sitesnit",
+      "og_description": "Laat een webapp bouwen voor je klanten of dagelijkse werk. Sitesnit ontwerpt klantportalen, dashboards en aanvraagprocessen die ook op mobiel prettig werken.",
+      "og_image": "https://sitesnit.nl/og/webapps.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "72347",
+      "original_html_words": "1045",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__webapps.html",
+        "sha256": "52e56777dc6e611eed130c2d5b1596349d96037d8e874cf0379b3d4ca84115fe"
+      }
+    },
+    {
+      "path": "/diensten/seo-optimalisatie",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "SEO laten verbeteren — inhoud, techniek en lokaal | Sitesnit",
+      "description": "Laat je bestaande website verbeteren voor Google en je bezoekers. Sitesnit onderzoekt zoekvragen, teksten, interne links, techniek en lokale vindbaarheid.",
+      "h1": "Een echte zoekvraag.Een passend antwoord.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/seo-optimalisatie",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "SEO laten verbeteren — inhoud, techniek en lokaal | Sitesnit",
+      "og_description": "Laat je bestaande website verbeteren voor Google en je bezoekers. Sitesnit onderzoekt zoekvragen, teksten, interne links, techniek en lokale vindbaarheid.",
+      "og_image": "https://sitesnit.nl/og/seo-optimalisatie.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "66491",
+      "original_html_words": "852",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "10",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__seo-optimalisatie.html",
+        "sha256": "093a52a621d9ee7947a687c0d57f290836a090ff8f409b6fb5842c247acf893a"
+      }
+    },
+    {
+      "path": "/diensten/formulieren-rekentools",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Formulier of rekentool laten maken voor je website | Sitesnit",
+      "description": "Laat een intake, offerteformulier of calculator bouwen. Van begrijpelijke vragen en geteste berekeningen tot het doorgeven en opvolgen van een aanvraag.",
+      "h1": "De juiste vragen.Een bruikbare uitkomst.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/formulieren-rekentools",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Formulier of rekentool laten maken voor je website | Sitesnit",
+      "og_description": "Laat een intake, offerteformulier of calculator bouwen. Van begrijpelijke vragen en geteste berekeningen tot het doorgeven en opvolgen van een aanvraag.",
+      "og_image": "https://sitesnit.nl/og/formulieren-rekentools.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "66997",
+      "original_html_words": "918",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "6",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__formulieren-rekentools.html",
+        "sha256": "244963ff2eea9e4d4ed17f733ff5d88bf1833cc955dbe266104d7d3451c390a0"
+      }
+    },
+    {
+      "path": "/diensten/ai-koppelingen",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "AI-chatbots, documentverwerking en API-koppelingen | Sitesnit",
+      "description": "Laat een AI-chatbot, documentverwerking of softwarekoppeling uitwerken. Bekijk hoe bronnen, gegevens en menselijke controle onderdeel worden van de oplossing.",
+      "h1": "Minder handelingen.Meer overzicht.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/ai-koppelingen",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "AI-chatbots, documentverwerking en API-koppelingen | Sitesnit",
+      "og_description": "Laat een AI-chatbot, documentverwerking of softwarekoppeling uitwerken. Bekijk hoe bronnen, gegevens en menselijke controle onderdeel worden van de oplossing.",
+      "og_image": "https://sitesnit.nl/og/ai-koppelingen.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "67741",
+      "original_html_words": "875",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "9",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__ai-koppelingen.html",
+        "sha256": "56bce52193f545cc8888962a42ab76d1748891da42403c241e92c0a6f07afe78"
+      }
+    },
+    {
+      "path": "/diensten/webdesign",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Website laten maken — ontwerp, bouw en pakketten | Sitesnit",
+      "description": "Laat een website maken die je aanbod duidelijk uitlegt. Sitesnit verzorgt ontwerp en bouw, vanaf één pagina tot maatwerk. Bekijk de aanpak en pakketten.",
+      "h1": "Jouw verhaal.Sterk gebouwd.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/webdesign",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website laten maken — ontwerp, bouw en pakketten | Sitesnit",
+      "og_description": "Laat een website maken die je aanbod duidelijk uitlegt. Sitesnit verzorgt ontwerp en bouw, vanaf één pagina tot maatwerk. Bekijk de aanpak en pakketten.",
+      "og_image": "https://sitesnit.nl/og/webdesign.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "81361",
+      "original_html_words": "1069",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "20",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__webdesign.html",
+        "sha256": "0bd2d75e5c42ad0a84b982c46bbf51b82427e06dae077c3c10fadff3c483f96e"
+      }
+    },
+    {
+      "path": "/diensten/webshops",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Webshop laten maken — producten, betalen en beheer | Sitesnit",
+      "description": "Een webshop laten maken? Bekijk hoe Sitesnit producten, categorieën, mobiel afrekenen en koppelingen uitwerkt. Bespreek je assortiment en de benodigde functies.",
+      "h1": "Van eerste blik.Naar bestellen.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/webshops",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Webshop laten maken — producten, betalen en beheer | Sitesnit",
+      "og_description": "Een webshop laten maken? Bekijk hoe Sitesnit producten, categorieën, mobiel afrekenen en koppelingen uitwerkt. Bespreek je assortiment en de benodigde functies.",
+      "og_image": "https://sitesnit.nl/og/webshops.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "66589",
+      "original_html_words": "757",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__webshops.html",
+        "sha256": "8ea45a2fb3558c32c20d238f08e17c26a0e740fab3b0cf0d272542380458a194"
+      }
+    },
+    {
+      "path": "/diensten/branding",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Logo en huisstijl laten ontwerpen voor je bedrijf | Sitesnit",
+      "description": "Laat je logo, kleuren en typografie als één huisstijl uitwerken. Sitesnit vertaalt je merk naar je website, met eigen fotografie en video via een partner.",
+      "h1": "Een eigen gezicht.Overal herkenbaar.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/branding",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Logo en huisstijl laten ontwerpen voor je bedrijf | Sitesnit",
+      "og_description": "Laat je logo, kleuren en typografie als één huisstijl uitwerken. Sitesnit vertaalt je merk naar je website, met eigen fotografie en video via een partner.",
+      "og_image": "https://sitesnit.nl/og/branding.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "61828",
+      "original_html_words": "698",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "5",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__branding.html",
+        "sha256": "1ef5daed3bdfe564f99c51ca6233e75238a61a9c7da6331c5a202f8ccfe010a0"
+      }
+    },
+    {
+      "path": "/diensten/seo",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Online vindbaarheid — SEO, blogs en social media | Sitesnit",
+      "description": "Wil je meer aandacht voor je bedrijf online? Vergelijk SEO-verbeteringen, blogs en socialmediabeheer en bekijk welke aanpak past bij je klanten en aanbod.",
+      "h1": "Laat je vinden.Geef het juiste antwoord.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/seo",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Online vindbaarheid — SEO, blogs en social media | Sitesnit",
+      "og_description": "Wil je meer aandacht voor je bedrijf online? Vergelijk SEO-verbeteringen, blogs en socialmediabeheer en bekijk welke aanpak past bij je klanten en aanbod.",
+      "og_image": "https://sitesnit.nl/og/seo.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "69376",
+      "original_html_words": "830",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__seo.html",
+        "sha256": "38d0da30c23456266dbfaf1bc1baf5a862aaa3ef928e34d7ea52f06fa83fa044"
+      }
+    },
+    {
+      "path": "/diensten/content",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Blogs en websiteteksten laten schrijven | Sitesnit",
+      "description": "Laat webteksten en blogs schrijven vanuit jouw vakkennis en klantvragen. Bekijk de aanpak, inhoud en maandpakketten voor twee of vier nieuwe blogs per maand.",
+      "h1": "Jouw kennis.Goed verwoord.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/content",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Blogs en websiteteksten laten schrijven | Sitesnit",
+      "og_description": "Laat webteksten en blogs schrijven vanuit jouw vakkennis en klantvragen. Bekijk de aanpak, inhoud en maandpakketten voor twee of vier nieuwe blogs per maand.",
+      "og_image": "https://sitesnit.nl/og/content.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "68803",
+      "original_html_words": "884",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "14",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__content.html",
+        "sha256": "ea281e1a3701b99e433d570100ff50920358fd36199c8feec0bcc0530b830a38"
+      }
+    },
+    {
+      "path": "/diensten/social-media",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Social media uitbesteden — aanpak en maandprijzen | Sitesnit",
+      "description": "Besteed Instagram, Facebook of LinkedIn uit aan Sitesnit. Bekijk de aanpak en pakketten met 4, 6 of 8 posts per platform per maand, met heldere prijzen inclusief en exclusief btw.",
+      "h1": "Blijf in beeld.Met een eigen verhaal.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/social-media",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Social media uitbesteden — aanpak en maandprijzen | Sitesnit",
+      "og_description": "Besteed Instagram, Facebook of LinkedIn uit aan Sitesnit. Bekijk de aanpak en pakketten met 4, 6 of 8 posts per platform per maand, met heldere prijzen inclusief en exclusief btw.",
+      "og_image": "https://sitesnit.nl/og/social-media.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "71323",
+      "original_html_words": "875",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "8",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__social-media.html",
+        "sha256": "60f8177c2f397fc59ac812f8f7c482e92ba1218d683b0ae5dfb6a6164df418e0"
+      }
+    },
+    {
+      "path": "/diensten/onderhoud-hosting",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Websiteonderhoud en hosting — maandpakketten | Sitesnit",
+      "description": "Vergelijk hosting, technisch onderhoud en onderhoud met SEO. Bekijk maandprijzen inclusief btw, de eerste looptijd en welke werkzaamheden erbij horen.",
+      "h1": "Online is het begin.Daarna blijven we zorgen.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/onderhoud-hosting",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Websiteonderhoud en hosting — maandpakketten | Sitesnit",
+      "og_description": "Vergelijk hosting, technisch onderhoud en onderhoud met SEO. Bekijk maandprijzen inclusief btw, de eerste looptijd en welke werkzaamheden erbij horen.",
+      "og_image": "https://sitesnit.nl/og/onderhoud-hosting.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "72418",
+      "original_html_words": "941",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "17",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__onderhoud-hosting.html",
+        "sha256": "ee28842b12c9f12c60350b69b7b9d745f913be6684dbe61c4ee0ee2d897c4fe0"
+      }
+    },
+    {
+      "path": "/diensten/ai-automatisering",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Bedrijfsprocessen automatiseren met AI en tools | Sitesnit",
+      "description": "Minder aanvragen overtypen of facturen voorbereiden? Ontdek hoe formulieren, rekentools en AI terugkerend werk kunnen overnemen, met controle waar die nodig is.",
+      "h1": "Minder handwerk.Meer ruimte voor je bedrijf.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/ai-automatisering",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Bedrijfsprocessen automatiseren met AI en tools | Sitesnit",
+      "og_description": "Minder aanvragen overtypen of facturen voorbereiden? Ontdek hoe formulieren, rekentools en AI terugkerend werk kunnen overnemen, met controle waar die nodig is.",
+      "og_image": "https://sitesnit.nl/og/ai-automatisering.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "66521",
+      "original_html_words": "740",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "5",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__ai-automatisering.html",
+        "sha256": "5db2a9e7157b000a85c41634c39341ee81963b2b7165c03d03a65598ef38b931"
+      }
+    },
+    {
+      "path": "/diensten/website-monitoring",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Website-monitoring — bezoekers, Google en Sitesnit Hub",
+      "description": "Bekijk wat Sitesnit Hub kan tonen over bezoekers, Google, bereikbaarheid en uitgevoerd werk. Lees welke koppelingen nodig zijn en bespreek je websitebeheer.",
+      "h1": "Je website draait.Weet wat er gebeurt.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/website-monitoring",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website-monitoring — bezoekers, Google en Sitesnit Hub",
+      "og_description": "Bekijk wat Sitesnit Hub kan tonen over bezoekers, Google, bereikbaarheid en uitgevoerd werk. Lees welke koppelingen nodig zijn en bespreek je websitebeheer.",
+      "og_image": "https://sitesnit.nl/og/website-monitoring.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "61361",
+      "original_html_words": "755",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__website-monitoring.html",
+        "sha256": "14803998d4ecbd8e24371671e7ac78b5248a37c60e03f60e9bc793e339601da8"
+      }
+    },
+    {
+      "path": "/diensten/webdesign/pakketten",
+      "releaseCandidate": "True",
+      "intent": "Dienst, aanpak en mogelijkheden verkennen",
+      "status": "200",
+      "title": "Onepager of meerdere pagina’s? Websitepakketten uitgelegd | Sitesnit",
+      "description": "Wanneer past één pagina, wanneer heb je vijf pagina’s nodig en wat vraagt maatwerk? Vergelijk de indeling, functies en voorbeelden voor jouw website.",
+      "h1": "De juiste ruimte.Voor jouw verhaal.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/diensten/webdesign/pakketten",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Onepager of meerdere pagina’s? Websitepakketten uitgelegd | Sitesnit",
+      "og_description": "Wanneer past één pagina, wanneer heb je vijf pagina’s nodig en wat vraagt maatwerk? Vergelijk de indeling, functies en voorbeelden voor jouw website.",
+      "og_image": "https://sitesnit.nl/og/pakketten.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "59475",
+      "original_html_words": "572",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "7",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/diensten__webdesign__pakketten.html",
+        "sha256": "6f2295603131483e6f5b953c7ae098a9612ecc7d9ab9a69f3149aed2f1993b59"
+      }
+    },
+    {
+      "path": "/projecten",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Webdesignprojecten — Beurswijzer en Beurswatcher | Sitesnit",
+      "description": "Bekijk hoe Sitesnit Beurswijzer en Beurswatcher ontwierp en bouwde: mobiele websites, eigen rekentools en doorlopend werk aan blogs, SEO en onderhoud.",
+      "h1": "Een eigen verhaal.Tot in de uitwerking.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/projecten",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Webdesignprojecten — Beurswijzer en Beurswatcher | Sitesnit",
+      "og_description": "Bekijk hoe Sitesnit Beurswijzer en Beurswatcher ontwierp en bouwde: mobiele websites, eigen rekentools en doorlopend werk aan blogs, SEO en onderhoud.",
+      "og_image": "https://sitesnit.nl/og/projecten.png",
+      "jsonld_types": "CollectionPage | BreadcrumbList | Organization",
+      "html_bytes": "72841",
+      "original_html_words": "516",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "10",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/projecten.html",
+        "sha256": "d9c3e64c5b3e0595d7c545a3ea931d42a0d302030cebd57c2dea4866d88a9029"
+      }
+    },
+    {
+      "path": "/projecten/beurswijzer",
+      "releaseCandidate": "True",
+      "intent": "Werk en ontwerpkeuzes beoordelen",
+      "status": "200",
+      "title": "Beurswijzer — webdesign en interactieve budgetplanner | Sitesnit",
+      "description": "Beurswijzer-case van Sitesnit: webdesign, mobiele budgetplanner en interactieve grafieken. Met wekelijkse blogs, SEO-basis, onderhoud en hosting.",
+      "h1": "Van cijfersnaar overzicht.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/projecten/beurswijzer",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Beurswijzer — webdesign en interactieve budgetplanner | Sitesnit",
+      "og_description": "Beurswijzer-case van Sitesnit: webdesign, mobiele budgetplanner en interactieve grafieken. Met wekelijkse blogs, SEO-basis, onderhoud en hosting.",
+      "og_image": "https://sitesnit.nl/og/beurswijzer.png",
+      "jsonld_types": "WebPage | CreativeWork | BreadcrumbList | Organization",
+      "html_bytes": "68737",
+      "original_html_words": "553",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "8",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/projecten__beurswijzer.html",
+        "sha256": "b66e4deec833947ea4b531db8ad52281bdc6441856ba9376d09a2657a3786430"
+      }
+    },
+    {
+      "path": "/projecten/beurswatcher",
+      "releaseCandidate": "True",
+      "intent": "Werk en ontwerpkeuzes beoordelen",
+      "status": "200",
+      "title": "Beurswatcher — webdesign en rendementcalculator | Sitesnit",
+      "description": "Beurswatcher-case van Sitesnit: een eigen merk, mobiele website en rente-op-rente-calculator. Doorlopend verzorgd met wekelijkse blogs, SEO, hosting en onderhoud.",
+      "h1": "Verder kijken.Beter begrijpen.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/projecten/beurswatcher",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Beurswatcher — webdesign en rendementcalculator | Sitesnit",
+      "og_description": "Beurswatcher-case van Sitesnit: een eigen merk, mobiele website en rente-op-rente-calculator. Doorlopend verzorgd met wekelijkse blogs, SEO, hosting en onderhoud.",
+      "og_image": "https://sitesnit.nl/og/beurswatcher.png",
+      "jsonld_types": "WebPage | CreativeWork | BreadcrumbList | Organization",
+      "html_bytes": "63127",
+      "original_html_words": "505",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "7",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/projecten__beurswatcher.html",
+        "sha256": "a659e000a705649a649a9002f13dbb7f967a1d4f1cce797df3a04a321d4ed78f"
+      }
+    },
+    {
+      "path": "/kosten",
+      "releaseCandidate": "True",
+      "intent": "Pakketprijzen vergelijken",
+      "status": "200",
+      "title": "Kosten website — pakketprijzen, btw en hosting | Sitesnit",
+      "description": "Wat kost een website bij Sitesnit? Vergelijk onepager, vijf pagina’s en maatwerk, met prijzen inclusief btw, de hostingkosten en duidelijke betaalafspraken.",
+      "h1": "Een passende website.Een heldere investering.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/kosten",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Kosten website — pakketprijzen, btw en hosting | Sitesnit",
+      "og_description": "Wat kost een website bij Sitesnit? Vergelijk onepager, vijf pagina’s en maatwerk, met prijzen inclusief btw, de hostingkosten en duidelijke betaalafspraken.",
+      "og_image": "https://sitesnit.nl/og/kosten.png",
+      "jsonld_types": "WebPage | BreadcrumbList | OfferCatalog | Organization",
+      "html_bytes": "77585",
+      "original_html_words": "927",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "14",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/kosten.html",
+        "sha256": "f52deb93f3c98ead113ca3560be0ca352446baffa871689c717a0b8a63892d25"
+      }
+    },
+    {
+      "path": "/webdesign-venlo",
+      "releaseCandidate": "True",
+      "intent": "Website laten maken Venlo / regionale keuze",
+      "status": "200",
+      "title": "Website laten maken in Venlo | Sitesnit",
+      "description": "Een website voor je bedrijf in Venlo, ontworpen en gebouwd vanuit Baarlo. Bekijk het werk, vergelijk websitepakketten en bespreek wat jouw bedrijf nodig heeft.",
+      "h1": "Website laten makenin Venlo.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/webdesign-venlo",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website laten maken in Venlo | Sitesnit",
+      "og_description": "Een website voor je bedrijf in Venlo, ontworpen en gebouwd vanuit Baarlo. Bekijk het werk, vergelijk websitepakketten en bespreek wat jouw bedrijf nodig heeft.",
+      "og_image": "https://sitesnit.nl/og/webdesign-venlo.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "91299",
+      "original_html_words": "1260",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/webdesign-venlo.html",
+        "sha256": "90b069ac8d2e7c4f0f8c09c001a6113be29be0d613dd27c0d29d81061ca9a461"
+      }
+    },
+    {
+      "path": "/seo-venlo",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "SEO voor bedrijven in Venlo — verbeteren vanuit Baarlo | Sitesnit",
+      "description": "Laat je vindbaarheid gericht verbeteren door Sitesnit vanuit Baarlo. Bespreek technische problemen, dienstenpagina’s en doorlopend SEO-werk voor je bedrijf in Venlo.",
+      "h1": "Vindbaar voor de vraag die bij jouw bedrijf past.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/seo-venlo",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "SEO voor bedrijven in Venlo — verbeteren vanuit Baarlo | Sitesnit",
+      "og_description": "Laat je vindbaarheid gericht verbeteren door Sitesnit vanuit Baarlo. Bespreek technische problemen, dienstenpagina’s en doorlopend SEO-werk voor je bedrijf in Venlo.",
+      "og_image": "https://sitesnit.nl/og/guides/seo-venlo.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Service | Organization",
+      "html_bytes": "53963",
+      "original_html_words": "605",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/seo-venlo.html",
+        "sha256": "61ad6611091502a735a9960be1d1fd8556325e80eef48825642bf38cc028a04e"
+      }
+    },
+    {
+      "path": "/over-sitesnit",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Kay — de jonge ondernemer achter Sitesnit in Baarlo",
+      "description": "Maak kennis met Kay, de jonge ondernemer achter Sitesnit in Baarlo. Ontdek zijn aanpak voor websites en apps, en ontmoet Nova, de kleinste collega.",
+      "h1": "Hoi, ik ben Kay.De maker achter Sitesnit.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/over-sitesnit",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Kay — de jonge ondernemer achter Sitesnit in Baarlo",
+      "og_description": "Maak kennis met Kay, de jonge ondernemer achter Sitesnit in Baarlo. Ontdek zijn aanpak voor websites en apps, en ontmoet Nova, de kleinste collega.",
+      "og_image": "https://sitesnit.nl/og/over-sitesnit.png",
+      "jsonld_types": "AboutPage | BreadcrumbList | Person | Organization",
+      "html_bytes": "58825",
+      "original_html_words": "672",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "1",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/over-sitesnit.html",
+        "sha256": "bc2febd266f43e012cd54ff24b3ebb1dd35a8a6faefab484dec01475efdd54e1"
+      }
+    },
+    {
+      "path": "/contact",
+      "releaseCandidate": "True",
+      "intent": "Aanvraag of belafspraak",
+      "status": "200",
+      "title": "Contact — bespreek je website of plan een belafspraak | Sitesnit",
+      "description": "Bespreek je website, SEO of automatisering met Sitesnit. Vraag een gesprek aan: bellen kan op afspraak, op werkdagen tussen 18.00 en 21.30 uur of in het weekend.",
+      "h1": "Vertel je idee.We denken mee.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/contact",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Contact — bespreek je website of plan een belafspraak | Sitesnit",
+      "og_description": "Bespreek je website, SEO of automatisering met Sitesnit. Vraag een gesprek aan: bellen kan op afspraak, op werkdagen tussen 18.00 en 21.30 uur of in het weekend.",
+      "og_image": "https://sitesnit.nl/og/contact.png",
+      "jsonld_types": "ContactPage | BreadcrumbList | Organization",
+      "html_bytes": "44054",
+      "original_html_words": "316",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "92",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/contact.html",
+        "sha256": "93a9dfadea80d01c1be9d911dd55c6f9da5010c58b9dde0061ce1be72eb6a610"
+      }
+    },
+    {
+      "path": "/tools/website-check",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Gratis websitecheck — snelheid, SEO en verbeterpunten | Sitesnit",
+      "description": "Check je website met 15 vragen en een mobiele Lighthouse-meting. Krijg uitleg over snelheid, toegankelijkheid, technische SEO en je belangrijkste verbeterpunten.",
+      "h1": "Een frisse blikop je website.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/tools/website-check",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Gratis websitecheck — snelheid, SEO en verbeterpunten | Sitesnit",
+      "og_description": "Check je website met 15 vragen en een mobiele Lighthouse-meting. Krijg uitleg over snelheid, toegankelijkheid, technische SEO en je belangrijkste verbeterpunten.",
+      "og_image": "https://sitesnit.nl/og/websitecheck.png",
+      "jsonld_types": "WebPage | WebApplication | BreadcrumbList | Organization",
+      "html_bytes": "47824",
+      "original_html_words": "354",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "24",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/tools__website-check.html",
+        "sha256": "f2ffd07431591d76e5642195b9e98136c680af35d17bbf2940115780e2bee1d6"
+      }
+    },
+    {
+      "path": "/tools/website-kosten-berekenen",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Wat kost jouw website? Doe de gratis prijscheck | Sitesnit",
+      "description": "Beantwoord 15 vragen en ontdek welke websiteroute past. Bekijk de prijsbasis inclusief btw, hosting en openstaande keuzes, zonder eerst je e-mailadres te geven.",
+      "h1": "Jouw plannen.Een passende prijs.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/tools/website-kosten-berekenen",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Wat kost jouw website? Doe de gratis prijscheck | Sitesnit",
+      "og_description": "Beantwoord 15 vragen en ontdek welke websiteroute past. Bekijk de prijsbasis inclusief btw, hosting en openstaande keuzes, zonder eerst je e-mailadres te geven.",
+      "og_image": "https://sitesnit.nl/og/prijscheck.png",
+      "jsonld_types": "WebPage | WebApplication | BreadcrumbList | Organization",
+      "html_bytes": "44506",
+      "original_html_words": "339",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "13",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/tools__website-kosten-berekenen.html",
+        "sha256": "731b18137239a19b3de99d689f1588f06a456b6105c2a3e9cdbb619016560f73"
+      }
+    },
+    {
+      "path": "/tools",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Gratis websitetools — check, ontwerp en vergelijk | Sitesnit",
+      "description": "Check je website, maak een ontwerpvoorbeeld, verken de kosten of vergelijk offertes. Vijf gratis tools van Sitesnit om je websiteplannen concreet te maken.",
+      "h1": "Van een vraag.Naar een helder plan.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/tools",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Gratis websitetools — check, ontwerp en vergelijk | Sitesnit",
+      "og_description": "Check je website, maak een ontwerpvoorbeeld, verken de kosten of vergelijk offertes. Vijf gratis tools van Sitesnit om je websiteplannen concreet te maken.",
+      "og_image": "https://sitesnit.nl/og/tools.png",
+      "jsonld_types": "CollectionPage | BreadcrumbList | Organization",
+      "html_bytes": "65466",
+      "original_html_words": "779",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "1",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/tools.html",
+        "sha256": "7815a9c600a7b29b89f2b5a24ab6fceb8a39adc5d14b4cf1557fe3ba97ecc885"
+      }
+    },
+    {
+      "path": "/tools/website-ontwerp-tool",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Ontwerp je eigen website — gratis interactief voorbeeld | Sitesnit",
+      "description": "Kies je stijl, kleuren en inhoud. Bekijk en bewerk je eerste websitevoorbeeld op mobiel en desktop en bespreek je ontwerp en websiteplan met Sitesnit.",
+      "h1": "Ontwerp je website.Maak je idee bespreekbaar.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/tools/website-ontwerp-tool",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Ontwerp je eigen website — gratis interactief voorbeeld | Sitesnit",
+      "og_description": "Kies je stijl, kleuren en inhoud. Bekijk en bewerk je eerste websitevoorbeeld op mobiel en desktop en bespreek je ontwerp en websiteplan met Sitesnit.",
+      "og_image": "https://sitesnit.nl/og/ontwerp-je-website.png",
+      "jsonld_types": "WebPage | WebApplication | BreadcrumbList | Organization",
+      "html_bytes": "48508",
+      "original_html_words": "505",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "10",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/tools__website-ontwerp-tool.html",
+        "sha256": "cc3d2e45572fecffc4f4235f3353dbd6989951ca73e5d7cb2ccc1be1b381e3b7"
+      }
+    },
+    {
+      "path": "/tools/website-offerte-vergelijken",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Website-offertes vergelijken — inhoud en totale kosten | Sitesnit",
+      "description": "Vergelijk twee of drie websiteoffertes op inhoud, eenmalige prijs en maandkosten. Bekijk bekende kosten over 1 en 3 jaar en welke vragen nog openstaan.",
+      "h1": "Twee voorstellen.Een helder verschil.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/tools/website-offerte-vergelijken",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website-offertes vergelijken — inhoud en totale kosten | Sitesnit",
+      "og_description": "Vergelijk twee of drie websiteoffertes op inhoud, eenmalige prijs en maandkosten. Bekijk bekende kosten over 1 en 3 jaar en welke vragen nog openstaan.",
+      "og_image": "https://sitesnit.nl/og/offertevergelijker.png",
+      "jsonld_types": "WebPage | WebApplication | BreadcrumbList | Organization",
+      "html_bytes": "49215",
+      "original_html_words": "561",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "7",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/tools__website-offerte-vergelijken.html",
+        "sha256": "6c56a05c64a5839113a9bca4aca6627be33a825ebc0a8c2ce88811db84533d4b"
+      }
+    },
+    {
+      "path": "/tools/automatiseringsplan",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Wat kun je automatiseren? Maak je automatiseringsplan | Sitesnit",
+      "description": "Breng terugkerend werk in kaart, van factuurconcepten tot klantvragen. Bereken je huidige tijdsbesteding en maak een concreet automatiseringsplan.",
+      "h1": "Minder overtypen.Meer overzicht.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/tools/automatiseringsplan",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Wat kun je automatiseren? Maak je automatiseringsplan | Sitesnit",
+      "og_description": "Breng terugkerend werk in kaart, van factuurconcepten tot klantvragen. Bereken je huidige tijdsbesteding en maak een concreet automatiseringsplan.",
+      "og_image": "https://sitesnit.nl/og/automatiseringsplan.png",
+      "jsonld_types": "WebPage | WebApplication | BreadcrumbList | Organization",
+      "html_bytes": "45018",
+      "original_html_words": "340",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "10",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/tools__automatiseringsplan.html",
+        "sha256": "95851c4ff38f2616d6cb8ef4a99854a280bd54f1f3b3118fa62f1c5fd43e24dd"
+      }
+    },
+    {
+      "path": "/privacy",
+      "releaseCandidate": "True",
+      "intent": "Verwerking persoonsgegevens",
+      "status": "200",
+      "title": "Privacy en je gegevens | Sitesnit",
+      "description": "Hoe Sitesnit omgaat met contactaanvragen, toolantwoorden en websitechecks. Lees welke gegevens worden gebruikt en hoe je contact opneemt over je privacy.",
+      "h1": "Je gegevens.Helder uitgelegd.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/privacy",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Privacy en je gegevens | Sitesnit",
+      "og_description": "Hoe Sitesnit omgaat met contactaanvragen, toolantwoorden en websitechecks. Lees welke gegevens worden gebruikt en hoe je contact opneemt over je privacy.",
+      "og_image": "https://sitesnit.nl/og/privacy.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "73861",
+      "original_html_words": "2171",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "10",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/privacy.html",
+        "sha256": "c7e6c8099fb0a0b9d03579c0a5a9a75ff974574c46f77ba3159c49f31e62ff1c"
+      }
+    },
+    {
+      "path": "/cookies",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Cookies en je keuze voor statistieken | Sitesnit",
+      "description": "Lees welke browseropslag Sitesnit gebruikt voor de tools en hoe je zelf kiest voor websiteanalyse. Pas je cookievoorkeur aan of trek je toestemming in.",
+      "h1": "Jij kiest.De website werkt door.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/cookies",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Cookies en je keuze voor statistieken | Sitesnit",
+      "og_description": "Lees welke browseropslag Sitesnit gebruikt voor de tools en hoe je zelf kiest voor websiteanalyse. Pas je cookievoorkeur aan of trek je toestemming in.",
+      "og_image": "https://sitesnit.nl/og/cookies.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "54350",
+      "original_html_words": "1020",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "1",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/cookies.html",
+        "sha256": "84ca4df44ab8277aa5fc7b5798023de3695f8e0d6f1b806eb73eb0569bf3ce98"
+      }
+    },
+    {
+      "path": "/algemene-voorwaarden",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Algemene voorwaarden — bouwen, betalen en hosting | Sitesnit",
+      "description": "Lees de afspraken van Sitesnit over je opdracht, 60% aanbetaling, oplevering, hosting, overdracht en je rechten als zakelijke klant of consument.",
+      "h1": "Goed afgesproken.Prettig samenwerken.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/algemene-voorwaarden",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Algemene voorwaarden — bouwen, betalen en hosting | Sitesnit",
+      "og_description": "Lees de afspraken van Sitesnit over je opdracht, 60% aanbetaling, oplevering, hosting, overdracht en je rechten als zakelijke klant of consument.",
+      "og_image": "https://sitesnit.nl/og/algemene-voorwaarden.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "75482",
+      "original_html_words": "2275",
+      "preview_indexable": "False",
+      "click_depth": "1",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/algemene-voorwaarden.html",
+        "sha256": "79140a508c2d691c7d0a05ee9cee58014b344b78d00007780d57c5b887cda71e"
+      }
+    },
+    {
+      "path": "/website-levert-geen-aanvragen-op",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Waarom levert je website geen aanvragen op? | Sitesnit",
+      "description": "Zoek uit waar aanvragen vastlopen: bereik, boodschap, vertrouwen of contact. Met een concrete controlevolgorde en een voorbeeld van betere dienstentekst.",
+      "h1": "Waarom levert je website geen aanvragen op?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-levert-geen-aanvragen-op",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Waarom levert je website geen aanvragen op? | Sitesnit",
+      "og_description": "Zoek uit waar aanvragen vastlopen: bereik, boodschap, vertrouwen of contact. Met een concrete controlevolgorde en een voorbeeld van betere dienstentekst.",
+      "og_image": "https://sitesnit.nl/og/guides/website-levert-geen-aanvragen-op.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "54975",
+      "original_html_words": "585",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "2",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-levert-geen-aanvragen-op.html",
+        "sha256": "01ff9a7abd70dd16f89496612e822cf4d0190ba531112dc63302e442fd3b46a5"
+      }
+    },
+    {
+      "path": "/verouderde-website",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Is je website verouderd, of kan hij nog mee? | Sitesnit",
+      "description": "Beoordeel je website op inhoud, techniek en gebruik. Kies bewust tussen behouden, verbeteren, gefaseerd vernieuwen of opnieuw bouwen.",
+      "h1": "Is je website verouderd, of kan hij nog mee?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/verouderde-website",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Is je website verouderd, of kan hij nog mee? | Sitesnit",
+      "og_description": "Beoordeel je website op inhoud, techniek en gebruik. Kies bewust tussen behouden, verbeteren, gefaseerd vernieuwen of opnieuw bouwen.",
+      "og_image": "https://sitesnit.nl/og/guides/verouderde-website.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "54555",
+      "original_html_words": "535",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/verouderde-website.html",
+        "sha256": "d1f2698d21e43546e5a0cc7b4e1eff1ece19ca3b3ea2d688a64a5b277cc7702b"
+      }
+    },
+    {
+      "path": "/website-niet-goed-op-mobiel",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Werkt je website niet goed op mobiel? | Sitesnit",
+      "description": "Controleer tekst, menu, beelden, formulieren en vaste knoppen op je telefoon. Een praktische testvolgorde voor problemen die bezoekers echt hinderen.",
+      "h1": "Werkt je website niet goed op mobiel?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-niet-goed-op-mobiel",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Werkt je website niet goed op mobiel? | Sitesnit",
+      "og_description": "Controleer tekst, menu, beelden, formulieren en vaste knoppen op je telefoon. Een praktische testvolgorde voor problemen die bezoekers echt hinderen.",
+      "og_image": "https://sitesnit.nl/og/guides/website-niet-goed-op-mobiel.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "53777",
+      "original_html_words": "492",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-niet-goed-op-mobiel.html",
+        "sha256": "e575b78b63fe5153d0b5b56cc683052212d75cbc5297581db55ac9a6d341530d"
+      }
+    },
+    {
+      "path": "/wat-kost-een-website",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Wat kost een website voor jouw bedrijf? | Sitesnit",
+      "description": "Begrijp wat pagina’s, functies, inhoud en maatwerk met de websiteprijs doen. Met drie afgebakende voorbeelden en de actuele Sitesnit-pakketbasis.",
+      "h1": "Wat kost een website voor jouw bedrijf?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/wat-kost-een-website",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Wat kost een website voor jouw bedrijf? | Sitesnit",
+      "og_description": "Begrijp wat pagina’s, functies, inhoud en maatwerk met de websiteprijs doen. Met drie afgebakende voorbeelden en de actuele Sitesnit-pakketbasis.",
+      "og_image": "https://sitesnit.nl/og/guides/wat-kost-een-website.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "57004",
+      "original_html_words": "549",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/wat-kost-een-website.html",
+        "sha256": "13d4161df4a27c6bbd5e40b7c79df150ae2ea34f9d990dc2b4d3f156bd0e1da4"
+      }
+    },
+    {
+      "path": "/maandelijkse-kosten-website",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Welke maandelijkse kosten heeft een website? | Sitesnit",
+      "description": "Maak onderscheid tussen hosting, domein, onderhoud, inhoud en externe software. Gebruik de kostenlijst om verplichte en optionele posten te controleren.",
+      "h1": "Welke maandelijkse kosten heeft een website?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/maandelijkse-kosten-website",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Welke maandelijkse kosten heeft een website? | Sitesnit",
+      "og_description": "Maak onderscheid tussen hosting, domein, onderhoud, inhoud en externe software. Gebruik de kostenlijst om verplichte en optionele posten te controleren.",
+      "og_image": "https://sitesnit.nl/og/guides/maandelijkse-kosten-website.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "56528",
+      "original_html_words": "566",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/maandelijkse-kosten-website.html",
+        "sha256": "3601f3e4007084e2748bfdd55c0177922df6001955a58053664fa9a331f2a40a"
+      }
+    },
+    {
+      "path": "/website-onderhoud-kosten",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Websiteonderhoud: waarvoor betaal je? | Sitesnit",
+      "description": "Vergelijk onderhoud op werkzaamheden, grenzen en terugkoppeling. Leer het verschil tussen hosting, signaleren en daadwerkelijk herstel.",
+      "h1": "Websiteonderhoud: waarvoor betaal je?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-onderhoud-kosten",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Websiteonderhoud: waarvoor betaal je? | Sitesnit",
+      "og_description": "Vergelijk onderhoud op werkzaamheden, grenzen en terugkoppeling. Leer het verschil tussen hosting, signaleren en daadwerkelijk herstel.",
+      "og_image": "https://sitesnit.nl/og/guides/website-onderhoud-kosten.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "53310",
+      "original_html_words": "475",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "2",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-onderhoud-kosten.html",
+        "sha256": "fe147a33aa4f75314cab746d71554acef58e124a6dfbfa14794ebaf7aa5a39b7"
+      }
+    },
+    {
+      "path": "/website-offerte-aanvragen",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Een website-offerte aanvragen die echt iets zegt | Sitesnit",
+      "description": "Bereid je aanvraag voor met doelen, pagina’s, functies en open vragen. Gebruik de voorbeeldbriefing om voorstellen beter te kunnen vergelijken.",
+      "h1": "Een website-offerte aanvragen die echt iets zegt",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-offerte-aanvragen",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Een website-offerte aanvragen die echt iets zegt | Sitesnit",
+      "og_description": "Bereid je aanvraag voor met doelen, pagina’s, functies en open vragen. Gebruik de voorbeeldbriefing om voorstellen beter te kunnen vergelijken.",
+      "og_image": "https://sitesnit.nl/og/guides/website-offerte-aanvragen.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "50029",
+      "original_html_words": "497",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-offerte-aanvragen.html",
+        "sha256": "78752c65a84317fa29519ebe19385c53766877de3d58986d905049dd880c25eb"
+      }
+    },
+    {
+      "path": "/website-offerte-checklist",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Website-offertes vergelijken: de inhoud naast de prijs | Sitesnit",
+      "description": "Controleer scope, eigendom, overdracht en doorlopende kosten. Met een afvinklijst en twee fictieve voorstellen die laten zien waarom alleen prijs niet genoeg is.",
+      "h1": "Website-offertes vergelijken: de inhoud naast de prijs",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-offerte-checklist",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website-offertes vergelijken: de inhoud naast de prijs | Sitesnit",
+      "og_description": "Controleer scope, eigendom, overdracht en doorlopende kosten. Met een afvinklijst en twee fictieve voorstellen die laten zien waarom alleen prijs niet genoeg is.",
+      "og_image": "https://sitesnit.nl/og/guides/website-offerte-checklist.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "56132",
+      "original_html_words": "570",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "5",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-offerte-checklist.html",
+        "sha256": "d1823ffc6a6712e0b87732798a1f56088b540ce3839c3663a8e2fdbb0e267c08"
+      }
+    },
+    {
+      "path": "/bedrijfsprocessen-automatiseren",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Welk bedrijfsproces kun je het beste automatiseren? | Sitesnit",
+      "description": "Begin met één terugkerende taak. Breng invoer, uitzonderingen en verantwoordelijkheid in kaart voordat je software of AI kiest.",
+      "h1": "Welk bedrijfsproces kun je het beste automatiseren?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/bedrijfsprocessen-automatiseren",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Welk bedrijfsproces kun je het beste automatiseren? | Sitesnit",
+      "og_description": "Begin met één terugkerende taak. Breng invoer, uitzonderingen en verantwoordelijkheid in kaart voordat je software of AI kiest.",
+      "og_image": "https://sitesnit.nl/og/guides/bedrijfsprocessen-automatiseren.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "53606",
+      "original_html_words": "455",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/bedrijfsprocessen-automatiseren.html",
+        "sha256": "59c4e6fe876985630525faf55e58daf7fc38238beeecf49c16cc75c8a55ded57"
+      }
+    },
+    {
+      "path": "/website-koppelen-aan-crm",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Je website koppelen aan een CRM zonder losse eindjes | Sitesnit",
+      "description": "Denk verder dan het doorsturen van een formulier. Bekijk veldmapping, dubbele contacten, toestemming en herstel als de CRM-koppeling mislukt.",
+      "h1": "Je website koppelen aan een CRM zonder losse eindjes",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-koppelen-aan-crm",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Je website koppelen aan een CRM zonder losse eindjes | Sitesnit",
+      "og_description": "Denk verder dan het doorsturen van een formulier. Bekijk veldmapping, dubbele contacten, toestemming en herstel als de CRM-koppeling mislukt.",
+      "og_image": "https://sitesnit.nl/og/guides/website-koppelen-aan-crm.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "55121",
+      "original_html_words": "469",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-koppelen-aan-crm.html",
+        "sha256": "e557a1f6a10ca0daf7549c043d1e8a5de74b578b31c36cebe5c3da7b447b1d88"
+      }
+    },
+    {
+      "path": "/afspraken-plannen-via-website",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Afspraken plannen via je website: wat moet er kloppen? | Sitesnit",
+      "description": "Kies tussen een belverzoek en direct boeken. Denk aan beschikbaarheid, tijdzones, buffers, bevestiging, verplaatsen en foutafhandeling.",
+      "h1": "Afspraken plannen via je website: wat moet er kloppen?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/afspraken-plannen-via-website",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Afspraken plannen via je website: wat moet er kloppen? | Sitesnit",
+      "og_description": "Kies tussen een belverzoek en direct boeken. Denk aan beschikbaarheid, tijdzones, buffers, bevestiging, verplaatsen en foutafhandeling.",
+      "og_image": "https://sitesnit.nl/og/guides/afspraken-plannen-via-website.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "53512",
+      "original_html_words": "472",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "2",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/afspraken-plannen-via-website.html",
+        "sha256": "9e5ee5400294a2a5cf6bfa7ac64fd5a4d9d477886547447eda1f0fb36d476297"
+      }
+    },
+    {
+      "path": "/website-structuur",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Een websitestructuur die past bij je bezoekers | Sitesnit",
+      "description": "Kies pagina’s vanuit vragen en taken, niet vanuit een standaard menu. Met drie voorbeeldstructuren voor een vakbedrijf, adviseur en inhoudelijk platform.",
+      "h1": "Een websitestructuur die past bij je bezoekers",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-structuur",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Een websitestructuur die past bij je bezoekers | Sitesnit",
+      "og_description": "Kies pagina’s vanuit vragen en taken, niet vanuit een standaard menu. Met drie voorbeeldstructuren voor een vakbedrijf, adviseur en inhoudelijk platform.",
+      "og_image": "https://sitesnit.nl/og/guides/website-structuur.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "56931",
+      "original_html_words": "521",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-structuur.html",
+        "sha256": "d6889b0ea3de7be05d63ef0928a8104ab1cba5f3bf6c0d4e72b966976270b802"
+      }
+    },
+    {
+      "path": "/website-ontwerp-voorbeelden",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Website-ontwerpvoorbeelden: kijk naar de keuzes | Sitesnit",
+      "description": "Bekijk eigen Sitesnit-projecten en leer waarop je kunt letten: inhoudshiërarchie, typografie, kleur, mobiel gebruik en contact.",
+      "h1": "Website-ontwerpvoorbeelden: kijk naar de keuzes",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-ontwerp-voorbeelden",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website-ontwerpvoorbeelden: kijk naar de keuzes | Sitesnit",
+      "og_description": "Bekijk eigen Sitesnit-projecten en leer waarop je kunt letten: inhoudshiërarchie, typografie, kleur, mobiel gebruik en contact.",
+      "og_image": "https://sitesnit.nl/og/guides/website-ontwerp-voorbeelden.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "57794",
+      "original_html_words": "545",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "2",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-ontwerp-voorbeelden.html",
+        "sha256": "c430e09f981043ac0c1071e56e89430175e6042c9a697b0cd86f59f79ea55c6d"
+      }
+    },
+    {
+      "path": "/seo-audit-checklist",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "SEO-auditchecklist: van signaal naar onderbouwde actie | Sitesnit",
+      "description": "Controleer bereikbaarheid, indexering, interne links, metadata en snelheid. Maak onderscheid tussen gemeten fouten en punten die context nodig hebben.",
+      "h1": "SEO-auditchecklist: van signaal naar onderbouwde actie",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/seo-audit-checklist",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "SEO-auditchecklist: van signaal naar onderbouwde actie | Sitesnit",
+      "og_description": "Controleer bereikbaarheid, indexering, interne links, metadata en snelheid. Maak onderscheid tussen gemeten fouten en punten die context nodig hebben.",
+      "og_image": "https://sitesnit.nl/og/guides/seo-audit-checklist.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "56496",
+      "original_html_words": "594",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/seo-audit-checklist.html",
+        "sha256": "a7b45bceedc9fd67d947f5920ba108947cefe54aa4c36efaec062cc194bd2d79"
+      }
+    },
+    {
+      "path": "/website-niet-gevonden-google",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Je website niet gevonden in Google: waar begin je? | Sitesnit",
+      "description": "Maak onderscheid tussen niet geïndexeerd en niet zichtbaar op de gewenste zoekvraag. Gebruik Search Console en de juiste controlevolgorde.",
+      "h1": "Je website niet gevonden in Google: waar begin je?",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-niet-gevonden-google",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Je website niet gevonden in Google: waar begin je? | Sitesnit",
+      "og_description": "Maak onderscheid tussen niet geïndexeerd en niet zichtbaar op de gewenste zoekvraag. Gebruik Search Console en de juiste controlevolgorde.",
+      "og_image": "https://sitesnit.nl/og/guides/website-niet-gevonden-google.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "53893",
+      "original_html_words": "484",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-niet-gevonden-google.html",
+        "sha256": "1d18c81fe2a01fc1c743898d9289b153c59bb1d44c3c96cfc8d5fd19e012ebe3"
+      }
+    },
+    {
+      "path": "/website-snelheid-testen",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "Website­snelheid testen: begrijp wat je meet | Sitesnit",
+      "description": "Lees een mobiele Lighthouse-meting met de juiste context. Ontdek het verschil tussen labdata en echte bezoekersdata en controleer verbeteringen eerlijk.",
+      "h1": "Website­snelheid testen: begrijp wat je meet",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-snelheid-testen",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website­snelheid testen: begrijp wat je meet | Sitesnit",
+      "og_description": "Lees een mobiele Lighthouse-meting met de juiste context. Ontdek het verschil tussen labdata en echte bezoekersdata en controleer verbeteringen eerlijk.",
+      "og_image": "https://sitesnit.nl/og/guides/website-snelheid-testen.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "58407",
+      "original_html_words": "601",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-snelheid-testen.html",
+        "sha256": "68ca5348409ed6678b554a51ffccac367fefb56704be72574564aaebd23cf5a0"
+      }
+    },
+    {
+      "path": "/404-fouten-oplossen",
+      "releaseCandidate": "True",
+      "intent": "Oriënteren",
+      "status": "200",
+      "title": "404-fouten oplossen zonder alles door te sturen | Sitesnit",
+      "description": "Bepaal of een 404 een kapotte link, bewuste verwijdering of ontbrekend bestand is. Kies herstel, een passende redirect of een echte 404 en controleer opnieuw.",
+      "h1": "404-fouten oplossen zonder alles door te sturen",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/404-fouten-oplossen",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "404-fouten oplossen zonder alles door te sturen | Sitesnit",
+      "og_description": "Bepaal of een 404 een kapotte link, bewuste verwijdering of ontbrekend bestand is. Kies herstel, een passende redirect of een echte 404 en controleer opnieuw.",
+      "og_image": "https://sitesnit.nl/og/guides/404-fouten-oplossen.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "55477",
+      "original_html_words": "511",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "3",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/404-fouten-oplossen.html",
+        "sha256": "72046f6f285ff9e0aeaa540476c4029599f6a0f1d4a2857df68be3bdae1a82e4"
+      }
+    },
+    {
+      "path": "/website-migratie-checklist",
+      "releaseCandidate": "True",
+      "intent": "Zelf verkennen en uitkomst bespreken",
+      "status": "200",
+      "title": "Website verhuizen: controle vóór, tijdens en na de overstap | Sitesnit",
+      "description": "Bereid een websiteverhuizing voor met URL-mapping, redirects, inhoud en testbare contactroutes. Download een lege mapping en controleer de live omgeving.",
+      "h1": "Website verhuizen: controle vóór, tijdens en na de overstap",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/website-migratie-checklist",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Website verhuizen: controle vóór, tijdens en na de overstap | Sitesnit",
+      "og_description": "Bereid een websiteverhuizing voor met URL-mapping, redirects, inhoud en testbare contactroutes. Download een lege mapping en controleer de live omgeving.",
+      "og_image": "https://sitesnit.nl/og/guides/website-migratie-checklist.png",
+      "jsonld_types": "WebPage | BreadcrumbList | Organization",
+      "html_bytes": "53224",
+      "original_html_words": "500",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "4",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/website-migratie-checklist.html",
+        "sha256": "16e339ebe3e35188fc5b7356ae51c504eba5f2d717f1a32f054ca092ae7a88a9"
+      }
+    },
+    {
+      "path": "/projecten/atelier-vorm",
+      "releaseCandidate": "False",
+      "intent": "Werk en ontwerpkeuzes beoordelen",
+      "status": "200",
+      "title": "Atelier Vorm — webdesignconcept | Sitesnit",
+      "description": "Een rustige, beeldgedreven website voor een denkbeeldig interieurmerk.",
+      "h1": "Atelier VormRuimte voor karakter.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/projecten/atelier-vorm",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Atelier Vorm — webdesignconcept | Sitesnit",
+      "og_description": "Een rustige, beeldgedreven website voor een denkbeeldig interieurmerk.",
+      "og_image": "https://sitesnit.nl/og/atelier-vorm.png",
+      "jsonld_types": "WebPage | CreativeWork | BreadcrumbList | Organization",
+      "html_bytes": "47091",
+      "original_html_words": "245",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "1",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/projecten__atelier-vorm.html",
+        "sha256": "7b7f00c810d78d7af2c933f3d08c0add2f383edabfb8fd6dbf19a99da880cb06"
+      }
+    },
+    {
+      "path": "/projecten/studio-matcha",
+      "releaseCandidate": "False",
+      "intent": "Werk en ontwerpkeuzes beoordelen",
+      "status": "200",
+      "title": "Studio Matcha — webdesignconcept | Sitesnit",
+      "description": "Een frisse digitale ontmoetingsplek voor een denkbeeldige matchabar.",
+      "h1": "Studio MatchaEen moment voor jezelf.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/projecten/studio-matcha",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Studio Matcha — webdesignconcept | Sitesnit",
+      "og_description": "Een frisse digitale ontmoetingsplek voor een denkbeeldige matchabar.",
+      "og_image": "https://sitesnit.nl/og/studio-matcha.png",
+      "jsonld_types": "WebPage | CreativeWork | BreadcrumbList | Organization",
+      "html_bytes": "47224",
+      "original_html_words": "265",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "1",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/projecten__studio-matcha.html",
+        "sha256": "adb6f39811cbde882009b44814a6031cbd767d183f8235a103a1b71caee01375"
+      }
+    },
+    {
+      "path": "/projecten/buiten-gewoon",
+      "releaseCandidate": "False",
+      "intent": "Werk en ontwerpkeuzes beoordelen",
+      "status": "200",
+      "title": "Buiten Gewoon — webdesignconcept | Sitesnit",
+      "description": "Een open, redactioneel portfolio voor een denkbeeldige architectuurstudio.",
+      "h1": "Buiten GewoonWonen begint met ruimte.",
+      "h1_count": "1",
+      "canonical": "https://sitesnit.nl/projecten/buiten-gewoon",
+      "robots": "noindex, follow",
+      "x_robots_tag": "",
+      "og_title": "Buiten Gewoon — webdesignconcept | Sitesnit",
+      "og_description": "Een open, redactioneel portfolio voor een denkbeeldige architectuurstudio.",
+      "og_image": "https://sitesnit.nl/og/buiten-gewoon.png",
+      "jsonld_types": "WebPage | CreativeWork | BreadcrumbList | Organization",
+      "html_bytes": "47494",
+      "original_html_words": "273",
+      "preview_indexable": "False",
+      "click_depth": "2",
+      "inlinks_main": "1",
+      "htmlArtifact": {
+        "path": "reports/seo/hub-final/projecten__buiten-gewoon.html",
+        "sha256": "9dedc6bf65d099f67b93d159ec5b405df2d1db9db0b4db29634fc19bce09eceb"
+      }
+    }
+  ],
+  "reviewAssociations": [
+    {
+      "review": "quality/reviews/PAGE-algemene-voorwaarden.json",
+      "path": "/algemene-voorwaarden",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-contact.json",
+      "path": "/contact",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-cookies.json",
+      "path": "/cookies",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--ai-automatisering.json",
+      "path": "/diensten/ai-automatisering",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--ai-koppelingen.json",
+      "path": "/diensten/ai-koppelingen",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--apps.json",
+      "path": "/diensten/apps",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--branding.json",
+      "path": "/diensten/branding",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--content.json",
+      "path": "/diensten/content",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--formulieren-rekentools.json",
+      "path": "/diensten/formulieren-rekentools",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--onderhoud-hosting.json",
+      "path": "/diensten/onderhoud-hosting",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--seo-optimalisatie.json",
+      "path": "/diensten/seo-optimalisatie",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--seo.json",
+      "path": "/diensten/seo",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--social-media.json",
+      "path": "/diensten/social-media",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--webapps.json",
+      "path": "/diensten/webapps",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--webdesign--pakketten.json",
+      "path": "/diensten/webdesign/pakketten",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--webdesign.json",
+      "path": "/diensten/webdesign",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten--webshops.json",
+      "path": "/diensten/webshops",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-diensten.json",
+      "path": "/diensten",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-home.json",
+      "path": "/",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-kosten.json",
+      "path": "/kosten",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-over-sitesnit.json",
+      "path": "/over-sitesnit",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-privacy.json",
+      "path": "/privacy",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-projecten--atelier-vorm.json",
+      "path": "/projecten/atelier-vorm",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-projecten--beurswatcher.json",
+      "path": "/projecten/beurswatcher",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-projecten--beurswijzer.json",
+      "path": "/projecten/beurswijzer",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-projecten--buiten-gewoon.json",
+      "path": "/projecten/buiten-gewoon",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-projecten--studio-matcha.json",
+      "path": "/projecten/studio-matcha",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-projecten.json",
+      "path": "/projecten",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-tools--automatiseringsplan.json",
+      "path": "/tools/automatiseringsplan",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-tools--website-check.json",
+      "path": "/tools/website-check",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-tools--website-kosten-berekenen.json",
+      "path": "/tools/website-kosten-berekenen",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-tools--website-offerte-vergelijken.json",
+      "path": "/tools/website-offerte-vergelijken",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-tools--website-ontwerp-tool.json",
+      "path": "/tools/website-ontwerp-tool",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-tools.json",
+      "path": "/tools",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    },
+    {
+      "review": "quality/reviews/PAGE-webdesign-venlo.json",
+      "path": "/webdesign-venlo",
+      "technicalStatus": "not_run",
+      "scope": "Route coverage only; no binding to review hashes or complete user journey approval."
+    }
+  ]
+}

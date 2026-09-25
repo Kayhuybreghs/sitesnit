@@ -1,0 +1,447 @@
+{
+  "reviewer": "agent_editorial_review",
+  "reviewedAt": "2026-09-24T18:56:50.334Z",
+  "scope": "Material claims and labels in the 18 current knowledge articles; advice separated from measured facts. Not an exhaustive sentence-level legal review or external uniqueness guarantee.",
+  "sources": [
+    {
+      "id": "migration",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "noindex",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "drops",
+      "url": "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "inspection",
+      "url": "https://support.google.com/webmasters/answer/9012289",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "lighthouse",
+      "url": "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "labfield",
+      "url": "https://web.dev/articles/lab-and-field-data-differences",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "http",
+      "url": "https://developers.google.com/crawling/docs/troubleshooting/http-status-codes",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "pagespeed",
+      "url": "https://pagespeed.web.dev/",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "siteoperator",
+      "url": "https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "decorative",
+      "url": "https://www.w3.org/WAI/tutorials/images/decorative/",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    },
+    {
+      "id": "psi",
+      "url": "https://developers.google.com/speed/docs/insights/v5/about",
+      "accessedOn": "2026-09-24",
+      "method": "Opened primary page with web tool; relevant sections read. PageSpeed tool opened without starting a scan."
+    }
+  ],
+  "claims": [
+    {
+      "id": "A1",
+      "classification": "advice/example",
+      "claim": "Weinig contact bewijst niet dat het ontwerp de oorzaak is; onderzoek bereik, intentie, boodschap en ontvangst afzonderlijk. Het kozijnvoorbeeld is geen gemeten resultaat.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "De tekst presenteert controles en mogelijke verklaringen, geen causale prestatieclaim."
+    },
+    {
+      "id": "A2",
+      "classification": "external/advice",
+      "claim": "Behoud waardevolle URLs en functies; koppel veranderde adressen aan relevante doelen, niet standaard aan home.",
+      "evidence": [
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Migratieadvies gecontroleerd; geen belofte van behoud van rankings."
+    },
+    {
+      "id": "A3",
+      "classification": "advice",
+      "claim": "Test echte telefoonbediening, teruggaan, rotatie en toetsenbord; noteer reproduceerbare foutcontext.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Dit is een uitvoerbare handmatige checklist, geen claim dat Sitesnit alle toestellen heeft getest."
+    },
+    {
+      "id": "B1",
+      "classification": "business/runtime",
+      "claim": "Onepager 895, vijf paginas 1895 en maatwerk vanaf 2750 exclusief btw; 60/40 en hosting afzonderlijk. Budget bepaalt niet dezelfde scopeprijs.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/business.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/price.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-page.tsx"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/kosten/page.tsx"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Centrale prijsdata en berekeningsbron gelezen; normale formulieren/responsive alleen activeren geen maatwerk. Geen nieuwe end-to-end berekeningstest in deze review."
+    },
+    {
+      "id": "B2",
+      "classification": "business/widget",
+      "claim": "Eerste hostingtermijn twaalf maanden, vervolgens maandelijkse opzegbaarheid. De terugkerende-kostenlijst is een niet-opgeslagen inventaris.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/business.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-widgets.tsx"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Kostenwidget heeft geen storage/fetch; de uitspraak geldt niet voor contactaanvragen elders. Btw en facturatieritme worden gevraagd, niet ingevuld met fictieve bedragen."
+    },
+    {
+      "id": "B3",
+      "classification": "business/example",
+      "claim": "Hosting, signalering en herstel zijn verschillende afspraken; houd rekening met bestaande onderhoud/SEO-dekking. Werklog is een voorbeeld.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "app/service-pricing.tsx"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/diensten/service-data.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/diensten/specialist-data.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Geen nieuw tarief, fictieve uitvoering of SLA. Hosting/onderhoudpakketten zijn als bestaande tegenhanger beoordeeld."
+    },
+    {
+      "id": "C1",
+      "classification": "business/widget",
+      "claim": "Belvoorkeur op werkdagen 18:00 tot 21:30 of weekend is een voorkeur, geen boeking. Briefing kan worden samengesteld en gekopieerd.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/business.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-widgets.tsx"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Kopieeractie en foutpad in bron aanwezig; zelfstandige browser-/clipboardcontrole nog niet door deze reviewer uitgevoerd."
+    },
+    {
+      "id": "C2",
+      "classification": "example/advice",
+      "claim": "De vergeleken offertes zijn fictief. Checklist helpt vragen formuleren; geen juridische beoordeling of automatische winnaar.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-widgets.tsx"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/tool-plans.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Voorbeeldlabels, keuzestaten en begrenzing gelezen; werkbladclaim klopt met getoonde mogelijkheden."
+    },
+    {
+      "id": "D1",
+      "classification": "example/advice",
+      "claim": "Een procesinventaris en begrensde proef kunnen automatiseringskansen onderzoeken; schattingen zijn geen gemeten tijdwinst.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/tool-plans.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Geen specifieke compatibiliteit, rendement of reeds werkende klantintegratie geclaimd."
+    },
+    {
+      "id": "D2",
+      "classification": "example/advice",
+      "claim": "Veldmapping is generiek; onderscheid dubbele bezorging van nieuwe aanvragen en invoerfouten van tijdelijke storingen.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Ontwerpaanbevelingen met begrensde retries en eerlijke ontvangstbevestiging, geen garantie dat ieder CRM dezelfde velden/API heeft."
+    },
+    {
+      "id": "D3",
+      "classification": "business/advice",
+      "claim": "Een afspraakvoorkeur is geen direct gereserveerd tijdslot. Beschikbaarheid, buffers, tijdzones en bevestiging moeten expliciet worden ingericht.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/business.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Eigen Sitesnit-contactroute wordt niet als live boekingssysteem verkocht; mailbezorging wordt niet gegarandeerd."
+    },
+    {
+      "id": "E1",
+      "classification": "example/widget",
+      "claim": "Drie voorbeeldbedrijven hebben eigen paginataken en echte geneste structuurbomen; vijf paginas is geen universele eis.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-page.tsx"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Bomen in renderer gelezen; voorbeelden zijn beslisondersteuning, niet nieuwe klantcases."
+    },
+    {
+      "id": "E2",
+      "classification": "observation/illustration",
+      "claim": "Groene uitleg/hulpmiddelen bij Beurswijzer; blauw/geel en afzonderlijke inleg/groei/koopkracht bij Beurswatcher. OG-afbeeldingen zijn schematische illustraties.",
+      "evidence": [
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-page.tsx"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "public/og/beurswijzer.png"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "public/og/beurswatcher.png"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "public/projects/beurswijzer/home-sharp.webp"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "public/projects/beurswatcher/calculator.webp"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Alle genoemde beelden daadwerkelijk geopend. Alt en zichtbare figcaption na bronfix herlezen. Geen bewijs van commerciële resultaten of live functioneren afgeleid uit screenshots."
+    },
+    {
+      "id": "F1",
+      "classification": "external/widget",
+      "claim": "Noindex moet leesbaar zijn voor de crawler en vervangt geen toegangsbeveiliging. Altgebruik hangt af van beeldfunctie. Auditwerkblad is geen uitgevoerde crawler; websitecheck meet een pagina.",
+      "evidence": [
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://www.w3.org/WAI/tutorials/images/decorative/",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/check-tool.tsx"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-widgets.tsx"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Robots- en altcontext primair geverifieerd. Werkblad en feitelijke toolvolgorde/onderscheid vragen versus techniek gelezen."
+    },
+    {
+      "id": "F2",
+      "classification": "external",
+      "claim": "Indexstatus of live URLtest garandeert geen zichtbaarheid; site-zoekopdracht is onvolledig; vergelijk perioden en seizoenen.",
+      "evidence": [
+        {
+          "type": "primary_source",
+          "url": "https://support.google.com/webmasters/answer/9012289",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+          "accessedOn": "2026-09-24"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Primair gecontroleerd; geen indexeringsdatum of rankingbelofte."
+    },
+    {
+      "id": "F3",
+      "classification": "external/example",
+      "claim": "Lighthouse is labdata en varieert; TBT is geen veld-INP. Velddata kan originbreed of afwezig zijn. LCP 3,8-voorbeeld is fictief en bewijst geen specifieke oorzaak.",
+      "evidence": [
+        {
+          "type": "primary_source",
+          "url": "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://web.dev/articles/lab-and-field-data-differences",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/speed/docs/insights/v5/about",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://pagespeed.web.dev/",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "app/guide-page.tsx"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Primaire bronnen geopend. Geen PageSpeed-scan uitgevoerd in deze review; getallen/URL/tijd zijn expliciet voorbeeld."
+    },
+    {
+      "id": "F4",
+      "classification": "external/advice",
+      "claim": "404/410 kunnen passen bij bewust verwijderde pagina; verplaatsingen vragen relevante redirect en controle van bron/doel. Status 200 garandeert geen indexering.",
+      "evidence": [
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/crawling/docs/troubleshooting/http-status-codes",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "Geen proportioneel SEO-verlies uit aantal fouten geconcludeerd."
+    },
+    {
+      "id": "F5",
+      "classification": "external/download",
+      "claim": "Verhuizing vraagt URLmapping, canonicals, directe links en opvolging; download is een lege mapping, geen uitgevoerde technische audit.",
+      "evidence": [
+        {
+          "type": "primary_source",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "accessedOn": "2026-09-24"
+        },
+        {
+          "type": "local_source_or_asset",
+          "path": "lib/guides.ts"
+        }
+      ],
+      "verdict": "supported_with_stated_limits",
+      "limits": "CSV daadwerkelijk gelezen: zeven kolomkoppen; checklist claimt geen automatische acceptatie of juridische toets."
+    }
+  ]
+}

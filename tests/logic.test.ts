@@ -151,11 +151,13 @@ assert.throws(() => publicWebsiteUrl('http://printer.local./'));
 assert.throws(() => publicWebsiteUrl('http://localhost./'));
 assert.equal(publicWebsiteUrl('https://10.example.com/'), 'https://10.example.com/');
 assert.equal(publicWebsiteUrl('https://example.com./'), 'https://example.com/');
-assert.equal(indexingAllowed('true', 'sitesnit.nl'), true);
+assert.equal(indexingAllowed('www.sitesnit.nl', 'production'), true);
+assert.equal(indexingAllowed('www.sitesnit.nl', 'preview'), false);
+assert.equal(indexingAllowed('www.sitesnit.nl'), false);
 for (const host of ['127.0.0.1:5184', 'preview.example.com', null, 'sitesnit.nl.evil.example'])
-  assert.equal(indexingAllowed('true', host), false);
-assert.equal(indexingAllowed('false', 'sitesnit.nl'), false);
-assert.equal(indexingAllowed(undefined, 'sitesnit.nl'), false);
+  assert.equal(indexingAllowed(host), false);
+assert.equal(indexingAllowed('sitesnit.nl', 'production'), false);
+assert.equal(indexingAllowed(null, 'production'), false);
 for (const body of ['null', '[]', '42', 'invalid'])
   await assert.rejects(readObjectBody(new Request('http://localhost', { method: 'POST', body }), 40));
 assert.deepEqual(await readObjectBody(new Request('http://localhost', { method:'POST',body:'{"naam":"Zoë"}' }),40),{naam:'Zoë'});

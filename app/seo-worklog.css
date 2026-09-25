@@ -1,0 +1,6 @@
+.seo-worklog{min-width:0;background:var(--paper,#fffdf6);border:1px solid #16464b26;border-radius:24px;padding:clamp(20px,3vw,40px);box-shadow:0 16px 40px #16464b08}
+.seo-worklog-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;color:#36555b}
+.seo-worklog h3{font-size:clamp(1.4rem,2vw,2rem);line-height:1.15;margin:18px 0 24px}
+.seo-worklog dl{margin:0}.seo-worklog dl>div{padding:15px 0;border-top:1px solid #16464b26}.seo-worklog dt{font-size:.8rem;font-weight:800;margin-bottom:6px}.seo-worklog dd{margin:0;font-size:1rem;line-height:1.55;overflow-wrap:anywhere}.seo-worklog>p{font-size:.85rem;line-height:1.6;margin:18px 0 0;color:#36555b}
+.break-seo-onderhoud .break-copy p{max-width:48ch}.break-seo-onderhoud .text-link{margin-top:12px}
+@media(max-width:700px){.break-seo-onderhoud .break-layout{grid-template-columns:1fr;gap:28px}.seo-worklog{border-radius:18px}}

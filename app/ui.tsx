@@ -220,7 +220,7 @@ export function PriceCards({ compact = false }: { compact?: boolean }) {
           {euro(site.averageProjectCost)} excl. btw ({euro(grossPrice(site.averageProjectCost))} incl.) uit. Dat geeft context; jouw wensen
           bepalen het voorstel.
         </p>
-        <a className="text-link" href="/prijscheck">
+        <a className="text-link" href="/tools/website-kosten-berekenen">
           Wat past bij jouw idee? <Arrow />
         </a>
       </div>

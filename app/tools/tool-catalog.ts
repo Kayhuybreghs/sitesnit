@@ -1,7 +1,8 @@
 export const toolCatalog = [
+  {slug:"seo-audit",href:"/tools/seo-audit",name:"SEO-audit",label:"Techniek per pagina",description:"Laat maximaal 20 pagina’s doorlopen op noindex, kapotte links en metadata. Bekijk bewijs en hersteladvies zonder vragenlijst.",action:"Start je SEO-audit",type:"Beoordelen",tone:"blue",number:"06"},
   {
     slug: "ontwerp-je-website",
-    href: "/tools/ontwerp-je-website",
+    href: "/tools/website-ontwerp-tool",
     name: "Ontwerp je website",
     label: "Jouw voorbeeld, ons vertrekpunt",
     description:
@@ -13,7 +14,7 @@ export const toolCatalog = [
   },
   {
     slug: "websitecheck",
-    href: "/websitecheck",
+    href: "/tools/website-check",
     name: "Websitecheck",
     label: "Een bestaande website",
     description:
@@ -25,7 +26,7 @@ export const toolCatalog = [
   },
   {
     slug: "prijscheck",
-    href: "/prijscheck",
+    href: "/tools/website-kosten-berekenen",
     name: "Prijscheck & websiteplan",
     label: "Omvang & investering",
     description:
@@ -37,7 +38,7 @@ export const toolCatalog = [
   },
   {
     slug: "offertevergelijker",
-    href: "/tools/offertevergelijker",
+    href: "/tools/website-offerte-vergelijken",
     name: "Website-offertes vergelijken",
     label: "Van bedragen naar duidelijkheid",
     description:

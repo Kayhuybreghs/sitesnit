@@ -1,0 +1,30 @@
+{
+  "contentHash": "47de6e795bdbf01a845260845f82025b919b43f2ba25a41654e50c29b11dd3e2",
+  "businessHash": "b57f8e0e36b898e36c57f88aa6f75396fa92ba5a016203782e55866087256a45",
+  "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+  "assetsHash": "86af0a09e385c5728a164863236cad709fd9f16123cef43bdfad59573b52d62a",
+  "path": "/diensten/website-monitoring",
+  "status": "needs_revision",
+  "reviewerType": "agent_editorial_review",
+  "reviewedAt": "2026-09-24T18:38:01.6210733Z",
+  "assessmentScope": "Evidence-gap assessment only. This record does not claim current page approval or a complete editorial pass.",
+  "technicalStatus": "not_run",
+  "editorialStatus": "not_run",
+  "similarityStatus": "not_run",
+  "claimsStatus": "not_run",
+  "ownerApproved": false,
+  "evidence": [
+    "quality/evidence/local-seo-2026-09-24.json"
+  ],
+  "evidenceFiles": [
+    {
+      "path": "quality/evidence/local-seo-2026-09-24.json",
+      "sha256": "a69519ec7ff645f58a149c88bc8287ed71148370b6813506cfa7be6d522684f1"
+    }
+  ],
+  "openIssues": [
+    "A current per-page editorial and exact-claim review has not been registered.",
+    "Match current local technical and rendered-corpus evidence to this exact content version.",
+    "No owner release approval has been recorded."
+  ]
+}

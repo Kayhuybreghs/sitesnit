@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import { routeCatalog, seoFacts } from '../lib/route-catalog.ts';
+import { currentPages } from './content-quality-data.mjs';
+const manifest=currentPages();
+fs.mkdirSync('.sites-runtime',{recursive:true});
+fs.mkdirSync('reports/content-review',{recursive:true});
+fs.mkdirSync('quality',{recursive:true});
+fs.writeFileSync('.sites-runtime/route-catalog.json',JSON.stringify(routeCatalog));
+fs.writeFileSync('.sites-runtime/seo-facts.json',JSON.stringify(seoFacts));
+fs.writeFileSync('reports/content-manifest.json',JSON.stringify(manifest,null,2));
+fs.writeFileSync('quality/content-manifest.json',JSON.stringify({schemaVersion:2,generatedAt:new Date().toISOString(),scope:'All public catalog routes; private Hub routes are excluded.',pages:manifest},null,2)+'\n');
+console.log(`Manifest: ${manifest.length} public pages. Existing reviews and owner approvals are never created or updated by this command.`);

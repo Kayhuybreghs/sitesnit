@@ -1,0 +1,7 @@
+@media(min-width:800px){
+  .tool-category-cards>.tool-entry:only-child{grid-column:1/-1;max-width:none}
+  .tool-category-cards>.tool-entry:only-child dl{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:22px}
+  .tool-category-cards>.tool-entry:only-child>p{max-width:64ch}
+}
+
+.tool-reading-index{padding-top:40px;padding-bottom:50px}.tool-reading-index h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800}.tool-reading-index details{border-bottom:1px solid #c6d5cb;padding:12px 0}.tool-reading-index summary{cursor:pointer;font-weight:750;padding:15px 0;min-height:44px}.tool-reading-index li{margin:12px 0;line-height:1.6}.tool-reading-index ul{padding-left:22px}

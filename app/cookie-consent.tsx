@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { publicCtaForLink, setPublicAnalyticsRuntime, trackPublicEvent } from '../lib/analytics-events';
 import {
   CONSENT_KEY, CONSENT_MAX_AGE_DAYS, CONSENT_MAX_AGE_MS, CONSENT_SETTINGS_EVENT,
   analyticsConfigured, analyticsConfig, analyticsCookieNames, cookieDomains,
@@ -38,6 +39,7 @@ function clearAnalyticsCookies() {
 }
 
 function stopAnalytics(id: string): boolean {
+  setPublicAnalyticsRuntime(null);
   const analyticsWindow = window as unknown as AnalyticsWindow;
   const activeId = analyticsWindow.sitesnitAnalyticsId;
   if (validMeasurementId(id)) analyticsWindow[`ga-disable-${id}`] = true;
@@ -167,6 +169,28 @@ export function CookieConsent({ measurementId = "", privacyConfigurationVerified
   }, [ready, allowed, measurementId, pathname, publicPaths]);
 
   useEffect(() => {
+    if (!ready || !allowed || !choice) { setPublicAnalyticsRuntime(null); return; }
+    setPublicAnalyticsRuntime({
+      expiresAt: choice.decidedAt + CONSENT_MAX_AGE_MS,
+      href: () => window.location.href,
+      publicPaths,
+      send: (name, params) => {
+        const analyticsWindow = window as unknown as AnalyticsWindow;
+        if (!analyticsWindow[`ga-disable-${measurementId}`])
+          analyticsWindow.gtag?.('event', name, {...params, send_to: measurementId});
+      },
+    });
+    const click = (event: MouseEvent) => {
+      const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+      if (!link) return;
+      const payload = publicCtaForLink(link.getAttribute('href') || '', window.location.href);
+      if (payload) trackPublicEvent(payload);
+    };
+    document.addEventListener('click', click, true);
+    return () => { setPublicAnalyticsRuntime(null); document.removeEventListener('click', click, true); };
+  }, [ready, allowed, choice, measurementId, publicPaths]);
+
+  useEffect(() => {
     if (!ready || !choice) return;
     const expire = () => {
       // Also re-check when returning to a long-lived tab.
@@ -206,7 +230,7 @@ export function CookieConsent({ measurementId = "", privacyConfigurationVerified
       <div className="cookie-banner-copy">
         <span className="cookie-eyebrow">Jij kiest</span>
         <h2 id="cookie-banner-title">Mogen we je bezoek meten?</h2>
-        <p>Met jouw toestemming gebruikt Sitesnit Google Analytics om te zien welke pagina’s helpen. Je antwoorden en contactgegevens sturen we daar niet naartoe. We gebruiken geen advertentiecookies.</p>
+        <p>Met jouw toestemming gebruikt Sitesnit Google Analytics om pagina’s, gebruik van tools en belangrijke knoppen te meten. Je antwoorden en contactgegevens sturen we daar niet naartoe. We gebruiken geen advertentiecookies.</p>
         <p className="cookie-small">Noodzakelijke opslag houdt je toolvoortgang en cookiekeuze bij. <a href="/cookies">Lees over cookies</a>.</p>
       </div>
       <div className="cookie-banner-actions">
@@ -230,7 +254,7 @@ export function CookieConsent({ measurementId = "", privacyConfigurationVerified
         <span className="cookie-required">Altijd actief</span>
       </div>
       <div className="cookie-setting-row">
-        <div><h3>Analyse met Google Analytics</h3><p>{configured ? "Meet bezochte pagina’s. Geen advertentieprofielen, ingevulde antwoorden of contactgegevens." : "Analyse staat uit. Er worden geen Google Analytics-scripts geladen of analytische cookies geplaatst."}</p></div>
+        <div><h3>Analyse met Google Analytics</h3><p>{configured ? "Meet bezochte pagina’s, starten en afronden van tools en belangrijke knoppen. Geen advertentieprofielen, ingevulde antwoorden of contactgegevens." : "Analyse staat uit. Er worden geen Google Analytics-scripts geladen of analytische cookies geplaatst."}</p></div>
         {configured ? <label className="cookie-checkbox"><input type="checkbox" checked={draftAnalytics} onChange={event => setDraftAnalytics(event.target.checked)} /><span>Analyse toestaan</span></label> : <span className="cookie-required">Niet actief</span>}
       </div>
       <p className="cookie-small">{configured ? `We bewaren je keuze maximaal ${CONSENT_MAX_AGE_DAYS} dagen. Bij intrekken verwijderen we de Analytics-cookies en herladen we de pagina om de meting te stoppen. ` : "Je hoeft geen toestemming te geven voor analyse zolang die uitstaat. "}<a href="/privacy">Privacyverklaring</a> · <a href="/cookies">Cookie-uitleg</a></p>

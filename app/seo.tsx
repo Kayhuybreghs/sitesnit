@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import { runtime } from '../lib/server';
 import { indexingAllowed } from '../lib/seo-policy';
 import { socialImages } from '../lib/social-images';
 import { site } from './site-data';
 import { pageSeo } from './page-seo-data';
 
 export async function canIndexRequest() {
-  return indexingAllowed(runtime().SITESNIT_INDEXING_ENABLED, (await headers()).get('host'));
+  return indexingAllowed((await headers()).get('host'), process.env.VERCEL_ENV);
 }
 
 export function withPageMetadata(metadata: Metadata, path: string): Metadata {
@@ -31,8 +30,8 @@ export function withPageMetadata(metadata: Metadata, path: string): Metadata {
   };
 }
 
-export function JsonLd({ data }: { data: Record<string, unknown> }) {
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(data).replace(/</g, '\\u003c')}} />;
+export async function JsonLd({ data }: { data: Record<string, unknown> }) {
+  return <script nonce={(await headers()).get('x-nonce') || undefined} type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(data).replace(/</g, '\\u003c')}} />;
 }
 
 export function BreadcrumbData({ items }: { items: { name: string; path: string }[] }) {
@@ -49,7 +48,7 @@ export function PageData({ path, breadcrumb = false }: { path: string; breadcrum
   if (!content) return null;
   const url = site.origin + (path === '/' ? '' : path);
   const image = socialImages[path];
-  const isTool = ['/websitecheck', '/prijscheck'].includes(path) || path.startsWith('/tools/');
+  const isTool = path.startsWith('/tools/') && path.split('/').length === 3;
   const isCase = path.startsWith('/projecten/');
   const isService = path === '/webdesign-venlo' || (path.startsWith('/diensten/') && path !== '/diensten/webdesign/pakketten');
   const type = path === '/contact' ? 'ContactPage' : path === '/over-sitesnit' ? 'AboutPage' :
@@ -87,4 +86,9 @@ export function Breadcrumbs({ items }: { items: { name: string; path: string }[]
     )}</ol></nav>
     <BreadcrumbData items={items}/>
   </>;
+}
+
+export function FaqData({path,questions}:{path:string;questions:readonly (readonly [string,string])[]}){
+ if(!questions.length)return null;
+ return <JsonLd data={{'@context':'https://schema.org','@type':'FAQPage','@id':`${site.origin}${path}#vragen`,isPartOf:{'@id':`${site.origin}${path}#webpage`},mainEntity:questions.map(([name,text])=>({'@type':'Question',name,acceptedAnswer:{'@type':'Answer',text}}))}}/>;
 }

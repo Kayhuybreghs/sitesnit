@@ -1,6 +1,7 @@
 import { specialistServices } from "./specialist-data";
 import { webappsService } from './webapps-data';
 import { appsService } from './apps-data';
+import { seoMaintenanceService } from './seo-maintenance-data';
 export type Service = {
   slug: string; anchor: string; name: string; number: string; tone: "blue" | "green" | "peach"; group: string;
   title: string; accent: string; summary: string; tags: string[];
@@ -9,6 +10,7 @@ export type Service = {
   faqs: [string,string][]; cta: string; contact: string; meta: string;
 };
 export const services: Service[] = [
+  seoMaintenanceService,
   appsService,
   webappsService,
   ...specialistServices,
@@ -283,7 +285,7 @@ export const services: Service[] = [
         "Een bestaande website verbeteren",
         "Een technische meting plus vragen over je inhoud geven een eerste beeld van wat aandacht nodig heeft.",
         "Start de websitecheck",
-        "/websitecheck"
+        "/tools/website-check"
       ],
       [
         "Regelmatig nieuwe uitleg",
@@ -470,7 +472,7 @@ export const services: Service[] = [
     ],
     "cta": "Bespreek je social media",
     "contact": "/contact?dienst=social-media",
-    "meta": "Besteed Instagram, Facebook of LinkedIn uit aan Sitesnit. Bekijk de aanpak en pakketten met 4, 6 of 8 posts per platform per maand, met heldere prijzen inclusief en exclusief btw."
+    "meta": "Laat Sitesnit je Instagram, Facebook of LinkedIn verzorgen. Vergelijk maandpakketten met 4, 6 of 8 posts per platform, aanpak en prijzen met btw."
   },
   {
     "slug": "onderhoud-hosting",
@@ -525,7 +527,7 @@ export const services: Service[] = [
       ],
       [
         "Hosting, onderhoud & SEO / €84,69 incl. btw",
-        "De technische basis met doorlopende SEO-verbeteringen: bestaande teksten aanscherpen en code bijwerken waar nodig. Exclusief btw per maand.",
+        "De technische basis met doorlopende SEO-verbeteringen: bestaande teksten aanscherpen en code bijwerken waar nodig. €84,69 inclusief btw (€69,99 exclusief btw) per maand.",
         "Bespreek onderhoud & SEO",
         "/contact?dienst=onderhoud-hosting"
       ]

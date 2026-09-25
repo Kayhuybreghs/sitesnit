@@ -1,0 +1,40 @@
+{
+  "contentHash": "1a70bde9f43524d33a078d5ec3fafe6ed858a1c606f706f9bfd483e557f0d572",
+  "businessHash": "b57f8e0e36b898e36c57f88aa6f75396fa92ba5a016203782e55866087256a45",
+  "sourcesHash": "09bde6df9538ec2f18dee6e4d61f524e2fbb14e045ccad7408d63b2f03a1f7bb",
+  "assetsHash": "86af0a09e385c5728a164863236cad709fd9f16123cef43bdfad59573b52d62a",
+  "path": "/diensten/content",
+  "status": "needs_revision",
+  "reviewerType": "agent_editorial_review",
+  "reviewedAt": "2026-09-24T18:38:01.6210733Z",
+  "assessmentScope": "Evidence-gap assessment only. This record does not claim current page approval or a complete editorial pass.",
+  "technicalStatus": "not_run",
+  "editorialStatus": "not_run",
+  "similarityStatus": "not_run",
+  "claimsStatus": "not_run",
+  "ownerApproved": false,
+  "evidence": [
+    "quality/evidence/local-seo-2026-09-24.json",
+    "quality/evidence/local-html-crawl-hub-final-2026-09-24.md",
+    "quality/evidence/local-html-crawl-hub-final-2026-09-24.json"
+  ],
+  "evidenceFiles": [
+    {
+      "path": "quality/evidence/local-seo-2026-09-24.json",
+      "sha256": "a69519ec7ff645f58a149c88bc8287ed71148370b6813506cfa7be6d522684f1"
+    },
+    {
+      "path": "quality/evidence/local-html-crawl-hub-final-2026-09-24.md",
+      "sha256": "43af3f8c89dfc2514812ad7b0b94beb9baaa2f9941ca508645bacd075f6d6374"
+    },
+    {
+      "path": "quality/evidence/local-html-crawl-hub-final-2026-09-24.json",
+      "sha256": "04195f4f5e374a887409d43a7b76e44f0f1107d86fe0b8c0bab68448e7001137"
+    }
+  ],
+  "openIssues": [
+    "A current per-page editorial and exact-claim review has not been registered.",
+    "Match current local technical and rendered-corpus evidence to this exact content version.",
+    "No owner release approval has been recorded."
+  ]
+}

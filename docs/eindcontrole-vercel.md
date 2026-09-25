@@ -92,3 +92,8 @@ De vergelijking van acht Limburgse bureaus wees vooral op de waarde van echte kl
 6. Werkelijke revisie-, oplever- en scopeafspraken per voorstel vastleggen, definitieve bedrijfs-/leveranciersgegevens nalopen en alleen echte klantreacties publiceren. De uitgewerkte voorwaarden vervangen geen controle van de definitieve overeenkomst en bieden geen garantie tegen ieder juridisch risico.
 
 De uitvoerbare stappen staan in `docs/vercel-beheer.md`. De aangescherpte opdracht staat in `docs/eindcontrole-opdracht.md`. Er zijn in deze controle geen publieke deployment, DNS-wijziging, betaalde accountaankoop of verzonden klantmails uitgevoerd.
+
+## Eerste Vercel-build: fix 16 september 2026
+Deployment van a0f5120 compileerde, maar faalde bij TypeScript: vite.config.ts importeerde ontbrekend .openai/hosting.json. De legacy Vite-config is nu expliciet uitgesloten van de Next.js-typecontrole. Website-typecontrole blijft volledig aan. Getest met een schone kopie zonder .env.local, .openai, docs en tests; VERCEL=1: volledige Next-productiebouw geslaagd. GitHub-fix f15c7ea905dcfb825b4aed3cc35a6528f64f7e7e. Vercel startte automatisch een nieuwe deployment; eindstatus nog controleren. Lokale dependencies hergebruikt, dus dit is geen afzonderlijke Linux-installatietest.
+
+Bevestigde eindstatus: GitHub-statuscontext Vercel = success voor f15c7ea905dcfb825b4aed3cc35a6528f64f7e7e. Deployment 7GwXafVVbzeAmMeSuzzLC3anj5Y1 geslaagd. Dit bevestigt de deployment; productie-API's/database/analytics zijn in deze controle niet end-to-end getest.

@@ -58,6 +58,7 @@ test("Neon uses explicit parameterized HTTP queries, timeout, no-store and real 
 
 test("SQLite is opt-in locally and never a production fallback", () => {
   assert.equal(databaseMode({}), "unconfigured");
+  assert.equal(databaseMode({VERCEL:"1",POSTGRES_URL:"postgresql://test:test@pooler.supabase.com/postgres"}),"postgres");
   assert.equal(databaseMode({ DATABASE_URL: databaseUrl }), "neon");
   assert.equal(databaseMode({ SITESNIT_LOCAL_SQLITE: "true" }), "sqlite");
   assert.equal(databaseMode({ SITESNIT_LOCAL_SQLITE: "true", DATABASE_URL: databaseUrl }), "sqlite");

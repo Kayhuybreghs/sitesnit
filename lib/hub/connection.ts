@@ -1,5 +1,6 @@
 import { DatabaseSync } from 'node:sqlite';
 import { Pool } from 'pg';
+import {postgresPoolConfig} from '../postgres-config';
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { createDatabase, type AppDatabase, type QueryExecutor } from '../database-core';
 export type HubConnection = { authDatabase: DatabaseSync | Pool; db: AppDatabase; runExclusive:<T>(work:()=>Promise<T>)=>Promise<T>; transaction: <T>(work:(db:AppDatabase)=>Promise<T>)=>Promise<T>; executeSchema:(sql:string)=>Promise<void>; close:()=>Promise<void> };
@@ -33,7 +34,7 @@ export function sqliteHubConnection(filename:string):HubConnection {
   }),executeSchema:sql=>runExclusive(async()=>{connection.exec(sql);}),close:()=>runExclusive(async()=>{connection.close();})};
 }
 export function postgresHubConnection(url:string):HubConnection {
-  const pool=new Pool({connectionString:url,max:3,idleTimeoutMillis:10000,connectionTimeoutMillis:10000});
+  const pool=new Pool(postgresPoolConfig(url));
   const execute:QueryExecutor=async({text,values})=>{const result=await pool.query(text,values);return{rows:result.rows,changes:result.rowCount??0};};
   return {authDatabase:pool,db:createDatabase(execute),runExclusive:work=>work(),async transaction(work){
     const client=await pool.connect();

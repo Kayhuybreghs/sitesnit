@@ -104,8 +104,8 @@ export function calculatePrice(a: Answers): PriceResult {
           a.pages === "five"
             ? "Vijf pagina’s voor je bedrijf en aanbod"
             : a.pages === "unknown"
-              ? "Een compact verhaal kan binnen één pagina passen"
-              : "Je verhaal past op één pagina",
+              ? "Een compact verhaal kan binnen een pagina passen"
+              : "Je verhaal past op een pagina",
           "Je gekozen standaardfuncties vragen op zichzelf geen maatwerk",
         ],
     pending: Array.from(new Set(pending)),

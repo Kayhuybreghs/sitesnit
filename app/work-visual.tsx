@@ -4,8 +4,8 @@ import { Arrow } from "./ui";
 export type WorkKind = "design" | "editorial" | "tools" | "care" | "brand" | "social" | "shop" | "budget" | "watcher";
 const captions: Record<WorkKind,[string,string,string]> = {
   watcher: ["Beurswatcher / Mobiel merkontwerp", "Een uitgesproken eigen gezicht.", "Diepblauw, geel en stevige typografie verbinden de artikelen en tools. Op mobiel krijgt de inhoud een eigen volgorde."],
-  budget: ["Beurswijzer / Budgetplanner", "Cijfers die met elkaar samenhangen.", "Inkomsten, uitgaven en plannen komen samen in één overzicht. Je ziet wat er overblijft en waar je keuzes liggen."],
-  design: ["Beurswijzer / Webdesign", "Eén merk. Twee indelingen.", "Dezelfde identiteit, met navigatie en inhoud die op je telefoon een eigen plek krijgen."],
+  budget: ["Beurswijzer / Budgetplanner", "Cijfers die met elkaar samenhangen.", "Inkomsten, uitgaven en plannen komen samen in een overzicht. Je ziet wat er overblijft en waar je keuzes liggen."],
+  design: ["Beurswijzer / Webdesign", "Een merk. Twee indelingen.", "Dezelfde identiteit, met navigatie en inhoud die op je telefoon een eigen plek krijgen."],
   editorial: ["Beurswijzer / Redactionele inhoud", "Een echte vraag als vertrekpunt.", "Onderwerp, titel en artikel sluiten op elkaar aan. Zo vindt je bezoeker de uitleg die past."],
   tools: ["Beurswatcher / Rendementcalculator", "Van uitgangspunt naar inzicht.", "Inleg en looptijd worden een leesbaar scenario. De rekenregels bepalen de cijfers."],
   care: ["Beurswatcher / Doorlopend beheer", "Ook na de bouw gaat het door.", "Voor dit platform verzorgen we wekelijkse blogs, SEO-basis, websiteonderhoud en hosting."],

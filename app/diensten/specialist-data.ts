@@ -40,7 +40,7 @@ export const specialistServices: Service[] = [
   {
     slug:"ai-koppelingen",anchor:"ai-koppelingen",name:"AI & softwarekoppelingen",number:"03",tone:"peach",group:"Tools & automatisering",
     title:"Minder handelingen.",accent:"Meer overzicht.",
-    summary:"Gegevens overtypen, documenten nalopen of dezelfde vragen beantwoorden kost aandacht. We onderzoeken welke stappen software kan voorbereiden en waar jouw controle nodig blijft. Met een AI-assistent, documentverwerking of koppeling tussen bestaande systemen. We beginnen bij één concreet proces in jouw bedrijf.",
+    summary:"Gegevens overtypen, documenten nalopen of dezelfde vragen beantwoorden kost aandacht. We onderzoeken welke stappen software kan voorbereiden en waar jouw controle nodig blijft. Met een AI-assistent, documentverwerking of koppeling tussen bestaande systemen. We beginnen bij een concreet proces in jouw bedrijf.",
     tags:["AI-assistenten","Documentverwerking","API & backend"],introTitle:"Begin met de taak.",introAccent:"Bouw wat je helpt.",
     intro:"Een bruikbare automatisering past bij de mensen en systemen die ermee werken. We leggen invoer, toegang, verwerking en controle vast voordat we bouwen. Zo weet je welke handelingen worden overgenomen, welke uitzonderingen aandacht vragen en wie het resultaat gebruikt.",
     methods:[

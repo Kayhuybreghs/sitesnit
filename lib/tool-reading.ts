@@ -60,7 +60,7 @@ export const toolReading = [
     "slug": "bedrijfsprocessen-automatiseren",
     "title": "Welk bedrijfsproces kun je het beste automatiseren?",
     "group": "automatiseringsplan",
-    "outcome": "Eén afgebakend proces selecteren dat eerst kan worden vereenvoudigd."
+    "outcome": "Een afgebakend proces selecteren dat eerst kan worden vereenvoudigd."
   },
   {
     "id": "D2",
@@ -121,7 +121,7 @@ export const toolReading = [
   {
     "id": "F5",
     "slug": "website-migratie-checklist",
-    "title": "Website verhuizen: controle vóór, tijdens en na de overstap",
+    "title": "Website verhuizen: controle voor, tijdens en na de overstap",
     "group": "seo-audit",
     "outcome": "Een uitvoerbare verhuislijst met oude en nieuwe bestemmingen maken."
   }

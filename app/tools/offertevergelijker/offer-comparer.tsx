@@ -190,7 +190,7 @@ export default function OfferComparer() {
             />
           </div>
           <p className="field-help">
-            Vul ieder totaal één keer in. Zit hosting al in het maandbedrag? Tel
+            Vul ieder totaal een keer in. Zit hosting al in het maandbedrag? Tel
             het niet nogmaals mee. Vul 0 in als er geen kosten zijn; laat
             onbekende bedragen leeg.
           </p>

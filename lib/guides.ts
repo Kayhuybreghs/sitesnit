@@ -12,7 +12,7 @@ export const guides: Guide[] = [
     "service": "/diensten/webdesign",
     "audience": "Ondernemers met bezoekers maar weinig aanvragen",
     "outcome": "Een eerste oorzaak kiezen op basis van signalen, voordat je een redesign bestelt.",
-    "unique": "Diagnosevolgorde plus vóór/na-dienstentekst; geen beloofde conversiewinst.",
+    "unique": "Diagnosevolgorde plus voor/na-dienstentekst; geen beloofde conversiewinst.",
     "intro": "Weinig aanvragen betekenen niet automatisch dat je ontwerp verkeerd is. Misschien komen er nauwelijks passende bezoekers. Misschien begrijpen ze je aanbod niet, of komt een verstuurd formulier niet aan. Begin bij het punt waar je iets kunt vaststellen.",
     "sections": [
       {
@@ -58,14 +58,14 @@ export const guides: Guide[] = [
         "heading": "Maak je aanbod concreet",
         "paragraphs": [
           "Voorbeeld, geen gemeten klantresultaat: ‘Wij leveren totaaloplossingen met kwaliteit’ geeft weinig houvast. ‘We vervangen houten kozijnen in bestaande woningen. Je krijgt eerst een opname en een voorstel per gevel’ vertelt wat je doet, voor wie en wat volgt.",
-          "Zet er alleen bewijs bij dat je werkelijk hebt: een eigen project, uitleg over een keuze of een bevestigde klantreactie. Bedenk daarna één logische actie. Bij een ingewikkelde opdracht past ‘Bespreek je situatie’ beter dan een knop die direct een bestelling suggereert."
+          "Zet er alleen bewijs bij dat je werkelijk hebt: een eigen project, uitleg over een keuze of een bevestigde klantreactie. Bedenk daarna een logische actie. Bij een ingewikkelde opdracht past ‘Bespreek je situatie’ beter dan een knop die direct een bestelling suggereert."
         ]
       },
       {
         "heading": "Test de hele aanvraag",
         "paragraphs": [
-          "Doorloop het formulier op je telefoon. Maak bewust een fout, herstel die en controleer of je tekst behouden blijft. Verstuur één herkenbare test en volg die tot in de echte ontvangst. Een groen vinkje in de browser is geen bewijs dat iemand de aanvraag heeft ontvangen.",
-          "Noteer één verbeterpunt, voer dat uit en controleer opnieuw onder vergelijkbare omstandigheden. De websitecheck helpt je bevindingen ordenen; hij vervangt geen bezoekersonderzoek."
+          "Doorloop het formulier op je telefoon. Maak bewust een fout, herstel die en controleer of je tekst behouden blijft. Verstuur een herkenbare test en volg die tot in de echte ontvangst. Een groen vinkje in de browser is geen bewijs dat iemand de aanvraag heeft ontvangen.",
+          "Noteer een verbeterpunt, voer dat uit en controleer opnieuw onder vergelijkbare omstandigheden. De websitecheck helpt je bevindingen ordenen; hij vervangt geen bezoekersonderzoek."
         ]
       }
     ],
@@ -117,7 +117,7 @@ export const guides: Guide[] = [
             ],
             [
               "Gefaseerd vernieuwen",
-              "Eén belangrijk deel moet anders; de rest blijft bruikbaar",
+              "Een belangrijk deel moet anders; de rest blijft bruikbaar",
               "Samenhang, beheer en overgang tussen oud en nieuw"
             ],
             [
@@ -250,9 +250,9 @@ export const guides: Guide[] = [
           ],
           "rows": [
             [
-              "Zelfstandige met één helder aanbod",
+              "Zelfstandige met een helder aanbod",
               "Een doorlopend verhaal met dienst, bewijs en contact",
-              "Of alle inhoud op één pagina begrijpelijk blijft"
+              "Of alle inhoud op een pagina begrijpelijk blijft"
             ],
             [
               "Bedrijf met meerdere onderwerpen",
@@ -271,7 +271,7 @@ export const guides: Guide[] = [
         "heading": "Welke wensen veranderen de omvang?",
         "paragraphs": [
           "Meer pagina’s betekenen niet automatisch steeds een nieuw ontwerp. Een herhaald projecttype verschilt van een nieuwe boekingsfunctie. Bespreek daarom zowel het aantal pagina’s als de verschillende soorten pagina’s.",
-          "Content is een aparte vraag: lever je teksten en foto’s aan, worden bestaande teksten aangescherpt of moet alles worden gemaakt? Ook een CRM-koppeling kan uiteenlopen van een bestaand formulier naar één systeem tot een proces met foutafhandeling en meerdere databronnen."
+          "Content is een aparte vraag: lever je teksten en foto’s aan, worden bestaande teksten aangescherpt of moet alles worden gemaakt? Ook een CRM-koppeling kan uiteenlopen van een bestaand formulier naar een systeem tot een proces met foutafhandeling en meerdere databronnen."
         ]
       },
       {
@@ -284,7 +284,7 @@ export const guides: Guide[] = [
       {
         "heading": "Vergelijk het hele voorstel",
         "paragraphs": [
-          "Zet bouw, hosting, inhoud, aanvullende software en later werk los van elkaar. Bij Sitesnit betaal je 60% vóór de start en 40% bij afronding van de afgesproken opdracht. Bekijk bij de pakketten ook het eerste hostingjaar.",
+          "Zet bouw, hosting, inhoud, aanvullende software en later werk los van elkaar. Bij Sitesnit betaal je 60% voor de start en 40% bij afronding van de afgesproken opdracht. Bekijk bij de pakketten ook het eerste hostingjaar.",
           "Gebruik de prijscheck voor je wensen en de kostenpagina voor de actuele pakketbedragen. Bewaar het voorstel met de afgesproken scope; een uitkomst van een verkennende tool is geen bestelling."
         ]
       }
@@ -314,7 +314,7 @@ export const guides: Guide[] = [
       {
         "heading": "Hosting is niet hetzelfde als onderhoud",
         "paragraphs": [
-          "Hosting houdt de website beschikbaar op een server. Technisch onderhoud is het werk aan bijvoorbeeld updates of een storing. Nieuwe teksten en campagnes zijn weer ander werk. Eén maandbedrag kan meerdere zaken bevatten, maar dat moet dan wel worden uitgelegd.",
+          "Hosting houdt de website beschikbaar op een server. Technisch onderhoud is het werk aan bijvoorbeeld updates of een storing. Nieuwe teksten en campagnes zijn weer ander werk. Een maandbedrag kan meerdere zaken bevatten, maar dat moet dan wel worden uitgelegd.",
           "Bij een nieuwe Sitesnit-website hoort hosting met een eerste looptijd van twaalf maanden. Daarna loopt hosting door en is deze maandelijks opzegbaar. De actuele minimumbedragen staan hieronder; inhoud en technisch onderhoud kies je afzonderlijk."
         ]
       },
@@ -425,7 +425,7 @@ export const guides: Guide[] = [
         ]
       },
       {
-        "heading": "Stel deze vragen vóór je kiest",
+        "heading": "Stel deze vragen voor je kiest",
         "checklist": [
           "Welke concrete werkzaamheden zijn inbegrepen, en hoe vaak?",
           "Welke wijzigingen, storingen of externe licenties vallen erbuiten?",
@@ -523,7 +523,7 @@ export const guides: Guide[] = [
             ],
             [
               "Formulier",
-              "Eén contactformulier",
+              "Een contactformulier",
               "Intake met routes per dienst"
             ],
             [
@@ -568,12 +568,12 @@ export const guides: Guide[] = [
     "id": "D1",
     "slug": "bedrijfsprocessen-automatiseren",
     "title": "Welk bedrijfsproces kun je het beste automatiseren?",
-    "description": "Begin met één terugkerende taak. Breng invoer, uitzonderingen en verantwoordelijkheid in kaart voordat je software of AI kiest.",
+    "description": "Begin met een terugkerende taak. Breng invoer, uitzonderingen en verantwoordelijkheid in kaart voordat je software of AI kiest.",
     "group": "automatiseringsplan",
     "tool": "/tools/automatiseringsplan",
     "service": "/diensten/ai-automatisering",
     "audience": "Ondernemers met herhaald administratief werk",
-    "outcome": "Eén afgebakend proces selecteren dat eerst kan worden vereenvoudigd.",
+    "outcome": "Een afgebakend proces selecteren dat eerst kan worden vereenvoudigd.",
     "unique": "Proceskaart aanvraag→controle→bevestiging→opvolging met fouttakken.",
     "intro": "Begin niet bij ‘we moeten iets met AI’. Begin bij een taak die je vaak herhaalt: gegevens overtypen, een aanvraag doorzetten of iemand aan een vervolgstap herinneren. Maak die taak eerst begrijpelijk.",
     "sections": [
@@ -626,7 +626,7 @@ export const guides: Guide[] = [
       {
         "heading": "Begin met een begrensde proef",
         "paragraphs": [
-          "Kies één invoerbron en één vervolgactie. Test een normale aanvraag, ontbrekende informatie, een dubbele aanvraag en een tijdelijk onbereikbaar systeem. Laat fouten zichtbaar worden en bepaal wie ze oplost.",
+          "Kies een invoerbron en een vervolgactie. Test een normale aanvraag, ontbrekende informatie, een dubbele aanvraag en een tijdelijk onbereikbaar systeem. Laat fouten zichtbaar worden en bepaal wie ze oplost.",
           "Het automatiseringsplan zet je eigen antwoorden om in een procesvoorstel. Een koppeling is daarmee nog niet gebouwd. De uitvoerbaarheid hangt onder andere af van toegangen, beschikbare API’s en de regels van de betrokken systemen."
         ]
       }
@@ -764,7 +764,7 @@ export const guides: Guide[] = [
         "heading": "Beschikbaarheid is meer dan een agenda",
         "paragraphs": [
           "Leg afspraakduur, voorbereidingstijd, buffers en uitzonderingsdagen vast. Geef de tijdzone duidelijk aan als bezoekers buiten Nederland kunnen zitten. Houd rekening met zomer- en wintertijd in plaats van tijden alleen als losse tekst te bewaren.",
-          "Twee bezoekers kunnen hetzelfde slot tegelijk kiezen. De server moet bepalen wie werkelijk reserveert; een knop die in één browser verdwijnt voorkomt geen dubbele boeking."
+          "Twee bezoekers kunnen hetzelfde slot tegelijk kiezen. De server moet bepalen wie werkelijk reserveert; een knop die in een browser verdwijnt voorkomt geen dubbele boeking."
         ]
       },
       {
@@ -835,7 +835,7 @@ export const guides: Guide[] = [
           ]
         },
         "paragraphs": [
-          "Dit zijn startpunten, geen verplichte vijfpaginaformules. Een compact aanbod kan op één pagina passen. Een eigen dienstenpagina is nuttig als zij een duidelijke vraag zelfstandig kan beantwoorden."
+          "Dit zijn startpunten, geen verplichte vijfpaginaformules. Een compact aanbod kan op een pagina passen. Een eigen dienstenpagina is nuttig als zij een duidelijke vraag zelfstandig kan beantwoorden."
         ]
       },
       {
@@ -862,7 +862,7 @@ export const guides: Guide[] = [
         "heading": "Structuur en ontwerp versterken elkaar",
         "paragraphs": [
           "Een paginastructuur beschrijft wat waar hoort. Het ontwerp bepaalt hoe tekst, beeld en actie zichtbaar worden. Gebruik het ontwerpvoorbeeld om voorkeuren te onderzoeken; beoordeel het niet als een kant-en-klare website.",
-          "De Beurswijzer-case laat zien hoe uitleg en rekentools binnen één platform samenkomen. Gebruik de keuzes als inspiratie, niet als reden om dezelfde indeling voor ieder bedrijf te kopiëren."
+          "De Beurswijzer-case laat zien hoe uitleg en rekentools binnen een platform samenkomen. Gebruik de keuzes als inspiratie, niet als reden om dezelfde indeling voor ieder bedrijf te kopiëren."
         ]
       }
     ],
@@ -1050,7 +1050,7 @@ export const guides: Guide[] = [
             ],
             [
               "Een pagina die eerder zichtbaar was",
-              "Vergelijk de periode vóór en na de verandering",
+              "Vergelijk de periode voor en na de verandering",
               "Wijzigingen, redirects en beschikbaarheid onderzoeken"
             ],
             [
@@ -1062,7 +1062,7 @@ export const guides: Guide[] = [
         }
       },
       {
-        "heading": "Gebruik een exacte URL, geen gok op basis van één zoekopdracht",
+        "heading": "Gebruik een exacte URL, geen gok op basis van een zoekopdracht",
         "paragraphs": [
           "Bekijk in je eigen Search Console-property de status van de betreffende URL. Een zoekopdracht met site: kan helpen bij een snelle indruk, maar is geen volledige inventaris van je geïndexeerde pagina’s.",
           "Controleer of je dezelfde variant onderzoekt: http of https, met of zonder www en met het juiste pad. Een redirect of andere voorkeurs-URL kan verklaren waarom je oorspronkelijke adres niet afzonderlijk verschijnt."
@@ -1078,7 +1078,7 @@ export const guides: Guide[] = [
       {
         "heading": "Vergelijk perioden zorgvuldig",
         "paragraphs": [
-          "Kijk bij een daling naar vergelijkbare perioden en houd rekening met wijzigingen in vraag, seizoenen en je eigen site. Eén dag of één zoekwoord is te weinig om een hele website af te schrijven.",
+          "Kijk bij een daling naar vergelijkbare perioden en houd rekening met wijzigingen in vraag, seizoenen en je eigen site. Een dag of een zoekwoord is te weinig om een hele website af te schrijven.",
           "Leg vast wat je hebt veranderd en controleer later opnieuw. Sitesnit kan techniek en inhoud met je nalopen, maar niemand kan op basis van een checklist een positie of indexeringsdatum garanderen."
         ]
       }
@@ -1128,7 +1128,7 @@ export const guides: Guide[] = [
             [
               "Handmatig testen",
               "Wat jij op je toestel kunt lezen en bedienen",
-              "Eén toestel en situatie, geen volledige dataset"
+              "Een toestel en situatie, geen volledige dataset"
             ]
           ]
         },
@@ -1261,7 +1261,7 @@ export const guides: Guide[] = [
   {
     "id": "F5",
     "slug": "website-migratie-checklist",
-    "title": "Website verhuizen: controle vóór, tijdens en na de overstap",
+    "title": "Website verhuizen: controle voor, tijdens en na de overstap",
     "description": "Bereid een websiteverhuizing voor met URL-mapping, redirects, inhoud en testbare contactroutes. Download een lege mapping en controleer de live omgeving.",
     "group": "seo-audit",
     "tool": "/tools/seo-audit",
@@ -1273,7 +1273,7 @@ export const guides: Guide[] = [
     "widget": "migration",
     "sections": [
       {
-        "heading": "Vóór de overstap: maak de bestemming expliciet",
+        "heading": "Voor de overstap: maak de bestemming expliciet",
         "paragraphs": [
           "Verzamel bestaande pagina’s, belangrijke bestanden en bekende verwijzingen. Noteer per adres of de inhoud blijft, verhuist, wordt samengevoegd of bewust verdwijnt. Bewaar ook relevante teksten en meetinstellingen; een screenshot van de homepage is geen volledige inventaris.",
           "Test de nieuwe site in een afgeschermde omgeving. Leg vast hoe die afscherming bij livegang wordt gewijzigd, zonder de testomgeving zelf openbaar te maken. Controleer formulieren met eigen testgegevens."
@@ -1303,7 +1303,7 @@ export const guides: Guide[] = [
       {
         "heading": "Wat een checklist niet kan aftekenen",
         "paragraphs": [
-          "Deze lijst organiseert het werk; hij voert geen automatische acceptatietest of juridische controle uit. De websitecheck kan aanvullend één pagina technisch meten en je inhoudelijke aandachtspunten ordenen.",
+          "Deze lijst organiseert het werk; hij voert geen automatische acceptatietest of juridische controle uit. De websitecheck kan aanvullend een pagina technisch meten en je inhoudelijke aandachtspunten ordenen.",
           "Bij een Sitesnit-opdracht spreken we af welke inhoud, functies en adressen bij de migratie horen. Geef in je aanvraag aan of het domein blijft en welke bestaande functies absoluut moeten blijven werken."
         ]
       }

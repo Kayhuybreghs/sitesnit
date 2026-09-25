@@ -39,7 +39,7 @@ export const pageSeo: Record<string, PageSeo> = {
   ...Object.fromEntries(Object.entries(publicServicePages).map(([path, service]) => [path, { title: service.title, description: service.description }])),
   '/diensten/webdesign/pakketten': {
     title: 'Onepager of meerdere pagina’s? Websitepakketten uitgelegd',
-    description: 'Wanneer past één pagina, wanneer heb je vijf pagina’s nodig en wat vraagt maatwerk? Vergelijk de indeling, functies en voorbeelden voor jouw website.',
+    description: 'Wanneer past een pagina, wanneer heb je vijf pagina’s nodig en wat vraagt maatwerk? Vergelijk de indeling, functies en voorbeelden voor jouw website.',
   },
   '/projecten': {
     title: 'Webdesignprojecten — Beurswijzer en Beurswatcher',

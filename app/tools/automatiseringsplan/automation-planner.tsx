@@ -82,7 +82,7 @@ export default function AutomationPlanner() {
         title="Minder overtypen."
         accent="Meer overzicht."
       >
-        Kies één terugkerende taak. Je krijgt een voorstel voor het proces,
+        Kies een terugkerende taak. Je krijgt een voorstel voor het proces,
         inzicht in je huidige tijdsbesteding en de keuzes die we samen moeten
         uitwerken.
       </ToolLead>

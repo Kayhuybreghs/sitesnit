@@ -13,7 +13,7 @@ const featured = [
     desktop: "/projects/beurswijzer/growth.webp", desktopWidth: 1185, desktopHeight: 620,
     desktopAlt: "Beurswijzer-grafiek met drie beleggingsscenario’s uit het fictieve voorbeeldbudget",
     desktopTitle: "Cijfers die iets vertellen.",
-    desktopText: "Vergelijk scenario’s in één leesbare grafiek.",
+    desktopText: "Vergelijk scenario’s in een leesbare grafiek.",
     mobileTitle: "Mobile first.",
     mobileText: "De belangrijkste routes direct onder je duim.",
   },

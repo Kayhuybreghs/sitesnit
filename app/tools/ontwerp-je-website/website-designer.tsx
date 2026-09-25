@@ -73,7 +73,7 @@ const goals = [
 const pageOptions = [
   [
     "one",
-    "Eén overzichtelijke pagina",
+    "Een overzichtelijke pagina",
     "Een compact verhaal, met onderdelen op dezelfde pagina.",
   ],
   [
@@ -153,7 +153,7 @@ export default function WebsiteDesigner() {
       requestAnimationFrame(focusQuestion);
     }
   }
-  const summary = `JOUW WEBSITEPLAN — SITESNIT\n\nBedrijf: ${plan.name}\nActiviteit: ${input.activity || "Nog invullen"}\nVoor wie: ${input.audience || "Nog afstemmen"}\nAanbod: ${plan.services.join(", ")}\nDoel: ${goals.find((g) => g[0] === input.goal)?.[1]}\nStijl: ${designStyles[input.style]}\nKleuren: ${designPalettes[input.palette].name}\nOmvang: ${pageOptions.find((p) => p[0] === input.pages)?.[1]}\n\nOPENING VAN JE VOORBEELD\n${plan.headline}\n${plan.intro}\nKnop: ${plan.action}\n\n${input.pages === "one" ? "ONDERDELEN OP ÉÉN PAGINA" : "VOORGESTELDE PAGINA’S"}\n${plan.pages.map((p) => `• ${p}`).join("\n")}\n\nINHOUD OM TE VERZAMELEN\n${plan.content.map((p) => `• ${p}`).join("\n")}\n\nNOG AF TE STEMMEN\n${plan.pending.map((p) => `• ${p}`).join("\n")}\n\nDit is een bewerkbaar ontwerpvoorbeeld op basis van je keuzes. Geen complete website, offerte of technische beoordeling. Voorbeelden van projecten en formulieren zijn als zodanig gelabeld.`;
+  const summary = `JOUW WEBSITEPLAN — SITESNIT\n\nBedrijf: ${plan.name}\nActiviteit: ${input.activity || "Nog invullen"}\nVoor wie: ${input.audience || "Nog afstemmen"}\nAanbod: ${plan.services.join(", ")}\nDoel: ${goals.find((g) => g[0] === input.goal)?.[1]}\nStijl: ${designStyles[input.style]}\nKleuren: ${designPalettes[input.palette].name}\nOmvang: ${pageOptions.find((p) => p[0] === input.pages)?.[1]}\n\nOPENING VAN JE VOORBEELD\n${plan.headline}\n${plan.intro}\nKnop: ${plan.action}\n\n${input.pages === "one" ? "ONDERDELEN OP EEN PAGINA" : "VOORGESTELDE PAGINA’S"}\n${plan.pages.map((p) => `• ${p}`).join("\n")}\n\nINHOUD OM TE VERZAMELEN\n${plan.content.map((p) => `• ${p}`).join("\n")}\n\nNOG AF TE STEMMEN\n${plan.pending.map((p) => `• ${p}`).join("\n")}\n\nDit is een bewerkbaar ontwerpvoorbeeld op basis van je keuzes. Geen complete website, offerte of technische beoordeling. Voorbeelden van projecten en formulieren zijn als zodanig gelabeld.`;
   return (
     <div className="tool-workbench designer-workbench">
       <ToolLead
@@ -262,7 +262,7 @@ export default function WebsiteDesigner() {
                       }
                     />
                     <small>
-                      Één per regel, of gescheiden door komma’s. Leeg laten kan;
+                      Een per regel, of gescheiden door komma’s. Leeg laten kan;
                       je ziet dan herkenbare voorbeeldnamen.
                     </small>
                   </div>
@@ -580,7 +580,7 @@ export default function WebsiteDesigner() {
             <summary><span>Bekijk je websiteplan <small>Je keuzes, teksten en open punten</small></span><span aria-hidden="true">+</span></summary>
             <div className="designer-brief-content">
             <span className="eyebrow">Van voorbeeld naar websiteplan</span>
-            <h2>Je richting, op één plek.</h2>
+            <h2>Je richting, op een plek.</h2>
             <div className="brief-choices">
               <p>
                 <b>{plan.name}</b>
@@ -620,7 +620,7 @@ export default function WebsiteDesigner() {
               <div>
                 <h3>
                   {input.pages === "one"
-                    ? "Onderdelen op één pagina"
+                    ? "Onderdelen op een pagina"
                     : "Voorgestelde pagina’s"}
                 </h3>
                 <ol>

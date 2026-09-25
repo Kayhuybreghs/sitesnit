@@ -31,7 +31,7 @@ export function BeurswijzerPlannerPanel() {
         ["Inkomsten","Alles wat er binnenkomt","€3.138"],
         ["Lasten & aflossingen","Inclusief jaarrekeningen / 12","€2.260"],
         ["Naar sparen","Algemeen sparen + spaardoelen","€250"],
-        ["Naar beleggen","Totale inleg, één keer geteld","€250"],
+        ["Naar beleggen","Totale inleg, een keer geteld","€250"],
       ].map(([label,description,amount]) => <div key={label}><span>{label}<small>{description}</small></span><b>{amount}</b></div>)}</div><b className="bwp-month-link">Hoe ging mijn maand echt?　→</b></div>
       <div className="bwp-investment"><b>Jouw beleggingen <span>PLUS</span></b><span>Per belegging　 Extra inleg　 Koersverloop</span></div>
     </div>

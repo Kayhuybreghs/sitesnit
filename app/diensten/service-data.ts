@@ -39,7 +39,7 @@ export const services: Service[] = [
       ],
       [
         "Een herkenbaar merk",
-        "Logo, kleurenpalet en typografie vormen één geheel. Heb je nog geen huisstijl, dan kunnen we die ontwikkelen. Voor eigen bedrijfsfoto’s en video werken we met een externe partner; opdracht en kosten stemmen we vooraf af."
+        "Logo, kleurenpalet en typografie vormen een geheel. Heb je nog geen huisstijl, dan kunnen we die ontwikkelen. Voor eigen bedrijfsfoto’s en video werken we met een externe partner; opdracht en kosten stemmen we vooraf af."
       ],
       [
         "Mobiel als vertrekpunt",
@@ -54,8 +54,8 @@ export const services: Service[] = [
     "optionsAccent": "jouw verhaal nodig?",
     "options": [
       [
-        "Eén doorlopend verhaal",
-        "Een onepager voor een compact aanbod: je introductie, dienst, bewijs en contact op één pagina.",
+        "Een doorlopend verhaal",
+        "Een onepager voor een compact aanbod: je introductie, dienst, bewijs en contact op een pagina.",
         "Lees over de onepager",
         "/diensten/webdesign/pakketten#onepager"
       ],
@@ -88,7 +88,7 @@ export const services: Service[] = [
     ],
     "cta": "Bespreek je website",
     "contact": "/contact?dienst=webdesign",
-    "meta": "Laat een website maken die je aanbod duidelijk uitlegt. Sitesnit verzorgt ontwerp en bouw, vanaf één pagina tot maatwerk. Bekijk de aanpak en pakketten."
+    "meta": "Laat een website maken die je aanbod duidelijk uitlegt. Sitesnit verzorgt ontwerp en bouw, vanaf een pagina tot maatwerk. Bekijk de aanpak en pakketten."
   },
   {
     "slug": "webshops",
@@ -111,7 +111,7 @@ export const services: Service[] = [
     "methods": [
       [
         "Assortiment begrijpelijk maken",
-        "Categorieën, zoekfuncties en filters helpen bezoekers het juiste product vinden. Productpagina’s geven ruimte aan kenmerken, varianten, prijs, beelden en de informatie die vóór bestellen nodig is."
+        "Categorieën, zoekfuncties en filters helpen bezoekers het juiste product vinden. Productpagina’s geven ruimte aan kenmerken, varianten, prijs, beelden en de informatie die voor bestellen nodig is."
       ],
       [
         "Een duidelijke kooproute",
@@ -235,12 +235,12 @@ export const services: Service[] = [
       ],
       [
         "Wat als mijn logo nog goed is?",
-        "Dan kan het blijven. We kijken welke kleuren, typografie, beelden en toepassingen versterking nodig hebben om er één herkenbaar geheel van te maken."
+        "Dan kan het blijven. We kijken welke kleuren, typografie, beelden en toepassingen versterking nodig hebben om er een herkenbaar geheel van te maken."
       ]
     ],
     "cta": "Bespreek je merk",
     "contact": "/contact?dienst=branding",
-    "meta": "Laat je logo, kleuren en typografie als één huisstijl uitwerken. Sitesnit vertaalt je merk naar je website, met eigen fotografie en video via een partner."
+    "meta": "Laat je logo, kleuren en typografie als een huisstijl uitwerken. Sitesnit vertaalt je merk naar je website, met eigen fotografie en video via een partner."
   },
   {
     "slug": "seo",
@@ -343,7 +343,7 @@ export const services: Service[] = [
       ],
       [
         "Teksten die echt over jou gaan",
-        "We schrijven webcopy, diensten- en productteksten of blogs op basis van je expertise en beschikbare bronnen. Begrijpelijke uitleg en concrete voorbeelden gaan vóór algemene verkooppraatjes."
+        "We schrijven webcopy, diensten- en productteksten of blogs op basis van je expertise en beschikbare bronnen. Begrijpelijke uitleg en concrete voorbeelden gaan voor algemene verkooppraatjes."
       ],
       [
         "SEO meenemen in de uitwerking",
@@ -435,7 +435,7 @@ export const services: Service[] = [
     "options": [
       [
         "1, 2 of 3 platforms",
-        "Instagram, Facebook en LinkedIn: kies waar je zichtbaar wilt zijn. Eén platform betekent één van deze kanalen. Dezelfde onderwerpen worden per kanaal aangepast.",
+        "Instagram, Facebook en LinkedIn: kies waar je zichtbaar wilt zijn. Een platform betekent een van deze kanalen. Dezelfde onderwerpen worden per kanaal aangepast.",
         "Vergelijk de maandprijzen",
         "/kosten#social-media"
       ],
@@ -463,7 +463,7 @@ export const services: Service[] = [
       ],
       [
         "Wat kost socialmediaonderhoud?",
-        "Het aantal basisposts en het aantal platforms bepalen de maandprijs. Vier posts op één platform kosten €180,29 inclusief btw (€149 exclusief) per maand. Alle combinaties staan in het prijzenoverzicht op deze pagina. Dezelfde basisposts worden aangepast voor elk gekozen platform."
+        "Het aantal basisposts en het aantal platforms bepalen de maandprijs. Vier posts op een platform kosten €180,29 inclusief btw (€149 exclusief) per maand. Alle combinaties staan in het prijzenoverzicht op deze pagina. Dezelfde basisposts worden aangepast voor elk gekozen platform."
       ],
       [
         "Zijn vier posts op drie platforms twaalf verschillende onderwerpen?",

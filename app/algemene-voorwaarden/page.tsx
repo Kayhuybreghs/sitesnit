@@ -30,22 +30,22 @@ export default function Terms() {
       accent="Prettig samenwerken."
       intro="Een duidelijke opdracht geeft jou en Sitesnit houvast. Hier lees je hoe betaling, oplevering, hosting en je rechten zijn geregeld. Je voorstel beschrijft het werk en de kosten voor jouw situatie."
       points={[
-        '60% vóór de start, 40% bij afronding. Factuurtermijn: 14 dagen.',
+        '60% voor de start, 40% bij afronding. Factuurtermijn: 14 dagen.',
         'Hosting vanaf €6,05 per maand inclusief btw. Eerste termijn: 12 maanden.',
-        'Na het eerste hostingjaar opzegbaar met één maand opzegtermijn.',
+        'Na het eerste hostingjaar opzegbaar met een maand opzegtermijn.',
       ]}
       contents={contents}
     >
       <section id="opdracht">
         <h2>1. De opdracht en deze voorwaarden</h2>
         <p>Sitesnit wordt gevoerd door {business.ownerName}. Deze voorwaarden gelden voor overeengekomen werkzaamheden aan websites, mobiele apps, webapps, SEO, content, hosting, onderhoud en automatisering. Ze gelden voor zakelijke opdrachtgevers en consumenten, met behoud van de wettelijke bescherming die op de betreffende opdracht van toepassing is.</p>
-        <p>Een contactaanvraag, toolresultaat of belafspraak is vrijblijvend en vormt geen bestelling. Een opdracht ontstaat wanneer jij en Sitesnit schriftelijk akkoord zijn over het voorstel. Je krijgt deze voorwaarden vóór dat akkoord, zodat je ze kunt lezen en bewaren. Concrete afspraken in het voorstel gaan voor op deze voorwaarden, voor zover de wet dat toestaat.</p>
+        <p>Een contactaanvraag, toolresultaat of belafspraak is vrijblijvend en vormt geen bestelling. Een opdracht ontstaat wanneer jij en Sitesnit schriftelijk akkoord zijn over het voorstel. Je krijgt deze voorwaarden voor dat akkoord, zodat je ze kunt lezen en bewaren. Concrete afspraken in het voorstel gaan voor op deze voorwaarden, voor zover de wet dat toestaat.</p>
       </section>
 
       <section id="omvang">
         <h2>2. Wat we maken</h2>
         <p>Het voorstel beschrijft pagina’s of schermen, functies, ontwerpwerk, inhoud, koppelingen, gebruikersrollen en de afgesproken controles. We leggen vast wie teksten, beelden, toegangen en andere informatie aanlevert. Voorbeelden op de website en in de ontwerptool zijn geen volledige specificatie van je opdracht.</p>
-        <p>Een onepager omvat één pagina. Het websitepakket omvat vijf pagina’s. De omvang van maatwerk, mobiele apps en webapps spreken we afzonderlijk af. Bij een mobiele app leggen we ook vast welke platformen, publicatiestappen en updates bij de opdracht horen. Een websitepakket is geen vast appontwikkeltarief. Responsive ontwerp, een standaardcontactformulier of enkele verfijnde animaties maken een opdracht op zichzelf niet automatisch maatwerk.</p>
+        <p>Een onepager omvat een pagina. Het websitepakket omvat vijf pagina’s. De omvang van maatwerk, mobiele apps en webapps spreken we afzonderlijk af. Bij een mobiele app leggen we ook vast welke platformen, publicatiestappen en updates bij de opdracht horen. Een websitepakket is geen vast appontwikkeltarief. Responsive ontwerp, een standaardcontactformulier of enkele verfijnde animaties maken een opdracht op zichzelf niet automatisch maatwerk.</p>
         <p>Een extra functie, nieuwe inhoud of revisie buiten de overeengekomen omvang kan meerwerk zijn. Sitesnit legt het effect op prijs en planning uit en voert dit werk pas uit na jouw akkoord. Verplichte externe kosten en eventuele abonnementen, licenties of domeinkosten worden vooraf vermeld. Optionele diensten worden niet zonder jouw keuze toegevoegd.</p>
       </section>
 
@@ -73,15 +73,15 @@ export default function Terms() {
         <h2>4. Planning, feedback en oplevering</h2>
         <p>We spreken planning, feedbackmomenten en revisies af in het voorstel. Tijdige informatie, toegang en feedback zijn nodig om verder te werken. Bij vertraging bespreken we het gevolg en een aangepaste planning. Een datum is alleen een harde einddatum wanneer dat uitdrukkelijk is overeengekomen of uit de aard van de opdracht volgt.</p>
         <p>Je kunt het opgeleverde werk beoordelen op de afgesproken inhoud en werking. Meld concrete afwijkingen, zodat Sitesnit ze kan onderzoeken en herstellen. Stilte geldt niet automatisch als akkoord. Fouten in het afgesproken werk worden niet als een nieuwe wens behandeld. Wettelijke rechten bij een gebrek blijven bestaan na de beoordeling.</p>
-        <p>Bij oplevering leggen we vast welke toegang je krijgt, hoe je de website gebruikt en welke onderdelen Sitesnit blijft verzorgen. De afgesproken contactroutes en belangrijke functies worden vóór publicatie gecontroleerd. Nieuwe wensen na afronding vallen onder een aanvullende afspraak.</p>
+        <p>Bij oplevering leggen we vast welke toegang je krijgt, hoe je de website gebruikt en welke onderdelen Sitesnit blijft verzorgen. De afgesproken contactroutes en belangrijke functies worden voor publicatie gecontroleerd. Nieuwe wensen na afronding vallen onder een aanvullende afspraak.</p>
       </section>
 
       <section id="hosting">
         <h2>5. Hosting en doorlopende diensten</h2>
         <p>{hostingSummary} Een gekozen onderhoudspakket dat hosting bevat vervangt de basishosting; die wordt niet dubbel berekend. De eerste termijn begint op de afgesproken datum waarop de website op de hosting beschikbaar wordt gesteld. Het voorstel vermeldt het pakket, die startdatum en de factureringswijze.</p>
         <p>Basishosting stelt de website online beschikbaar. Nieuwe inhoud, wijzigingen, technisch onderhoud, mailboxen, domeinregistratie en betaalde externe koppelingen zijn alleen inbegrepen als dat bij het gekozen pakket staat. Afspraken over back-ups, herstel, capaciteit en ondersteuning leggen we vooraf vast. De minimumprijs geldt voor de beschreven basishosting; bijzondere technische eisen kunnen een ander, vooraf afgesproken pakket vragen.</p>
-        <p>Na de eerste twaalf maanden loopt hosting door voor onbepaalde tijd. Daarna kun je op ieder moment opzeggen met één maand opzegtermijn. Je kunt tijdens het eerste jaar al aangeven dat hosting op de einddatum moet stoppen. Opzeggen kan via het <a href="/contact">contactformulier</a> of via de contactroute uit je opdrachtbevestiging. Een opzegging hoeft geen reden te bevatten.</p>
-        <p>De afgesproken hostingprijs blijft gelijk tijdens de eerste twaalf maanden, behalve als een wettelijk gewijzigde belasting moet worden toegepast. Daarna kan Sitesnit de prijs aanpassen bij aantoonbaar gewijzigde kosten van hosting of noodzakelijke externe dienstverlening. Sitesnit legt de reden, nieuwe prijs en ingangsdatum ten minste één maand vooraf uit. De verhoging wordt niet vaker dan eenmaal per twaalf maanden doorgevoerd. Je kunt bij zo’n wijziging kosteloos opzeggen vóór de ingangsdatum, zodat je de hogere prijs niet hoeft te betalen.</p>
+        <p>Na de eerste twaalf maanden loopt hosting door voor onbepaalde tijd. Daarna kun je op ieder moment opzeggen met een maand opzegtermijn. Je kunt tijdens het eerste jaar al aangeven dat hosting op de einddatum moet stoppen. Opzeggen kan via het <a href="/contact">contactformulier</a> of via de contactroute uit je opdrachtbevestiging. Een opzegging hoeft geen reden te bevatten.</p>
+        <p>De afgesproken hostingprijs blijft gelijk tijdens de eerste twaalf maanden, behalve als een wettelijk gewijzigde belasting moet worden toegepast. Daarna kan Sitesnit de prijs aanpassen bij aantoonbaar gewijzigde kosten van hosting of noodzakelijke externe dienstverlening. Sitesnit legt de reden, nieuwe prijs en ingangsdatum ten minste een maand vooraf uit. De verhoging wordt niet vaker dan eenmaal per twaalf maanden doorgevoerd. Je kunt bij zo’n wijziging kosteloos opzeggen voor de ingangsdatum, zodat je de hogere prijs niet hoeft te betalen.</p>
         <p>Bij beëindiging stemmen we export, overdracht en het einde van de hosting af. Je krijgt gelegenheid beschikbare klantgegevens tijdig over te nemen. Na de einddatum kan de website offline gaan. Vooraf betaalde perioden na de geldige einddatum worden naar rato verrekend. Aanvullend verhuiswerk dat niet onder onze wettelijke of overeengekomen overdrachtsplichten valt, wordt alleen na prijsafspraak uitgevoerd.</p>
       </section>
 
@@ -97,7 +97,7 @@ export default function Terms() {
       <section id="privacy">
         <h2>7. Gegevens en vertrouwelijkheid</h2>
         <p>We gebruiken vertrouwelijke bedrijfsinformatie voor de opdracht en beperken toegang tot wat daarvoor nodig is. Deel wachtwoorden en gevoelige gegevens via een afgesproken beveiligde route, niet via een openbaar toolveld.</p>
-        <p>Als Sitesnit namens jou persoonsgegevens verwerkt, leggen we vóór die verwerking de benodigde verwerkersafspraken vast. Daarbij horen de gegevens en doelen, beveiliging, toegestane dienstverleners, bewaartermijnen en ondersteuning bij incidenten en privacyverzoeken. De <a href="/privacy">privacyverklaring van Sitesnit</a> beschrijft eigen bezoekers en aanvragen. Zij vervangt geen verwerkersovereenkomst voor jouw website of webapp.</p>
+        <p>Als Sitesnit namens jou persoonsgegevens verwerkt, leggen we voor die verwerking de benodigde verwerkersafspraken vast. Daarbij horen de gegevens en doelen, beveiliging, toegestane dienstverleners, bewaartermijnen en ondersteuning bij incidenten en privacyverzoeken. De <a href="/privacy">privacyverklaring van Sitesnit</a> beschrijft eigen bezoekers en aanvragen. Zij vervangt geen verwerkersovereenkomst voor jouw website of webapp.</p>
       </section>
 
       <section id="techniek">
@@ -123,7 +123,7 @@ export default function Terms() {
       <section id="consumenten">
         <h2>11. Bedenktijd voor consumenten</h2>
         <p>Een consument handelt buiten beroep of bedrijf. Op deze website vraag je vrijblijvend informatie of een gesprek aan; je sluit hier geen aankoop af. Bij een latere overeenkomst op afstand krijg je vooraf informatie over de volledige prijs, uitvoering, bedenktijd en opzegging, samen met een modelformulier voor herroeping.</p>
-        <p>Waar het wettelijke herroepingsrecht geldt, kun je een dienstenovereenkomst zonder reden herroepen tot veertien dagen na de dag waarop deze is gesloten. Stuur daarvoor vóór afloop van de termijn een duidelijke verklaring via het <a href="/contact">contactformulier</a>, de contactroute in je opdrachtbevestiging of per post aan het adres hieronder. Noem je naam, welke opdracht je herroept en hoe we de ontvangst kunnen bevestigen. Het modelformulier gebruiken is niet verplicht.</p>
+        <p>Waar het wettelijke herroepingsrecht geldt, kun je een dienstenovereenkomst zonder reden herroepen tot veertien dagen na de dag waarop deze is gesloten. Stuur daarvoor voor afloop van de termijn een duidelijke verklaring via het <a href="/contact">contactformulier</a>, de contactroute in je opdrachtbevestiging of per post aan het adres hieronder. Noem je naam, welke opdracht je herroept en hoe we de ontvangst kunnen bevestigen. Het modelformulier gebruiken is niet verplicht.</p>
         <p>Sitesnit start binnen die periode alleen na je uitdrukkelijke verzoek. Als je daarna herroept, kan uitsluitend de wettelijk toegestane evenredige vergoeding voor het al uitgevoerde deel gelden, mits je daarover vooraf correct bent geïnformeerd. Het herroepingsrecht vervalt na volledige uitvoering alleen wanneer je vooraf uitdrukkelijk hebt ingestemd met die uitvoering én hebt erkend dat je daardoor je herroepingsrecht verliest. Een website op maat betekent niet automatisch dat bedenktijd vervalt.</p>
         <p>Een verschuldigde terugbetaling na herroeping volgt binnen veertien dagen na je herroepingsbericht via hetzelfde betaalmiddel, tenzij je uitdrukkelijk met een andere kosteloze manier instemt. Dwingende consumentenrechten gaan altijd voor. Het toepasselijke Nederlandse recht ontneemt je geen bescherming waarop je volgens dwingend recht van je woonland recht hebt. Een geschil kan worden voorgelegd aan de volgens de wet bevoegde rechter.</p>
       </section>

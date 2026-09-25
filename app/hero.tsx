@@ -49,7 +49,7 @@ export function Hero() {
           <div className="hero-insights-grid">
             <div><span className="hero-note-number">02 / VERDIEPEN</span><h2>Een verhaal achter de cijfers.</h2><p>Artikelen over geld, wonen en beleggen. Herkenbare thema’s maken verder lezen vanzelfsprekend.</p></div>
             <div><span className="hero-note-number">01 / BINNENKOMEN</span><h2>Meteen weten waar je bent.</h2><p>Een heldere belofte, een eigen groene identiteit en twee logische routes: ontdekken of zelf rekenen.</p></div>
-            <div><span className="hero-note-number">03 / ZELF DOEN</span><h2>Van lezen naar eigen inzicht.</h2><p>De budgetplanner brengt inkomsten, uitgaven en plannen samen in één persoonlijk overzicht.</p></div>
+            <div><span className="hero-note-number">03 / ZELF DOEN</span><h2>Van lezen naar eigen inzicht.</h2><p>De budgetplanner brengt inkomsten, uitgaven en plannen samen in een persoonlijk overzicht.</p></div>
           </div>
         </div>
         <div className="hero-portal-veil" aria-hidden="true" />

@@ -353,7 +353,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
             </h2>
             <p>
               {isWeb
-                ? "Beantwoord eerst 15 vragen over je website. Daarna vul je het websiteadres in voor een echte mobiele Lighthouse-analyse. Je krijgt één overzicht met kansen voor verbetering."
+                ? "Beantwoord eerst 15 vragen over je website. Daarna vul je het websiteadres in voor een echte mobiele Lighthouse-analyse. Je krijgt een overzicht met kansen voor verbetering."
                 : "Een onepager, vijf pagina’s of maatwerk? We kijken naar omvang en functies. Normale websitewensen tellen niet onnodig op."}
             </p>
             <div className="tool-route-steps">
@@ -529,7 +529,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                 <div className="question-progress">
                   <span>Vraag {step + 1} van 15</span>
                   <span>
-                    {question.multiple ? "Meerdere antwoorden" : "Eén antwoord"}
+                    {question.multiple ? "Meerdere antwoorden" : "Een antwoord"}
                   </span>
                 </div>
                 <div

@@ -54,7 +54,7 @@ export const toolCatalog = [
     name: "Jouw automatiseringsplan",
     label: "Minder terugkerend handwerk",
     description:
-      "Breng één taak in kaart. Krijg een concreet procesvoorstel en inzicht in de tijd die je er nu aan besteedt.",
+      "Breng een taak in kaart. Krijg een concreet procesvoorstel en inzicht in de tijd die je er nu aan besteedt.",
     action: "Maak je procesplan",
     type: "Verbeteren",
     tone: "peach",

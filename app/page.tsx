@@ -49,7 +49,7 @@ export default function Home() {
             wat je bedrijf doet?
           </h3>
           {[
-            "Ja, in één oogopslag",
+            "Ja, in een oogopslag",
             "Je moet even verder lezen",
             "Dat weet ik niet zeker",
           ].map((t) => (

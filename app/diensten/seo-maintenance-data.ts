@@ -18,7 +18,7 @@ export const seoMaintenanceService: Service = {
     ['Doorlopend SEO-werk','Een gerichte werklijst voor bestaande inhoud en techniek. Inzet en prijs spreken we af; er is geen onbevestigde standaardomvang.','Bespreek SEO-onderhoud','/contact?dienst=seo-onderhoud'],
     ['Eenmalig verbeteren','Een afgebakend probleem of een eerste verbetertraject, zonder doorlopende opdracht.','Bekijk SEO-optimalisatie','/diensten/seo-optimalisatie'],
     ['Nieuwe inhoud','Nieuwe blogartikelen, uitgebreid onderzoek en nieuwe dienstenpagina’s zijn aparte inhoudsopdrachten, tenzij expliciet opgenomen.','Bekijk blogs en content','/diensten/content'],
-    ['Hosting en technisch beheer','Beschikbaarheid, hosting en algemeen onderhoud hebben hun eigen afspraken. Controleer overlap met een bestaand pakket vóór je extra werk afspreekt.','Bekijk hosting en onderhoud','/diensten/onderhoud-hosting'],
+    ['Hosting en technisch beheer','Beschikbaarheid, hosting en algemeen onderhoud hebben hun eigen afspraken. Controleer overlap met een bestaand pakket voor je extra werk afspreekt.','Bekijk hosting en onderhoud','/diensten/onderhoud-hosting'],
   ],
   faqs:[
     ['Wat kost SEO-onderhoud?','De prijs volgt uit de afgesproken inzet en website. Er is ook een bestaand combinatiepakket voor hosting, onderhoud en SEO; we bekijken eerst wat daarvan al past, zodat je niet dubbel betaalt. Een losse uitgebreidere opdracht wordt vooraf beschreven.'],

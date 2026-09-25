@@ -73,7 +73,7 @@ export function summarizeUptime(samples: readonly UptimeSample[], window: { from
   if (!Number.isSafeInteger(window.from) || !Number.isSafeInteger(window.to) || window.to < window.from || window.to > now) throw new Error('Ongeldig uptimebereik.');
   const expectedSlots = Math.max(0, Math.ceil(window.to / UPTIME_INTERVAL_MS) - Math.ceil(window.from / UPTIME_INTERVAL_MS));
   const relevant = samples.filter(sample => sample.scheduledAt >= window.from && sample.scheduledAt < window.to);
-  if (new Set(relevant.map(sample => sample.siteId)).size > 1) throw new Error('Analyseer één site tegelijk.');
+  if (new Set(relevant.map(sample => sample.siteId)).size > 1) throw new Error('Analyseer een site tegelijk.');
   const slots = new Map<number, UptimeSample>();
   for (const sample of relevant) {
     if (!Number.isSafeInteger(sample.scheduledAt) || sample.scheduledAt % UPTIME_INTERVAL_MS !== 0 || sample.checkedAt < sample.scheduledAt || sample.checkedAt > now) throw new Error('Ongeldige uptimemeting.');

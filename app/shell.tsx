@@ -53,6 +53,7 @@ export function Navigation() {
                 {toolCatalog.map(tool=><a key={tool.slug} href={tool.href}>{tool.name}<span>{tool.label}</span></a>)}
               </div>
             </details>
+            <a className="nav-hub" href="/hub/login" aria-current={path.startsWith("/hub") ? "page" : undefined}>Klantlogin</a>
           </nav>
           <a className="nav-contact" href="/contact">
             Laten we praten <Arrow />
@@ -71,7 +72,7 @@ export function Navigation() {
           </button>
         </div>
       </header>
-      <noscript><nav className="no-js-nav wrap" aria-label="Navigatie zonder JavaScript">{links.map(([href,label])=><a key={href} href={href}>{label}</a>)}<a href="/tools">Tools & checks</a><a href="/contact">Contact</a></nav></noscript>
+      <noscript><nav className="no-js-nav wrap" aria-label="Navigatie zonder JavaScript">{links.map(([href,label])=><a key={href} href={href}>{label}</a>)}<a href="/tools">Tools & checks</a><a href="/contact">Contact</a><a href="/hub/login">Klantlogin</a></nav></noscript>
       <dialog
         ref={dialog}
         className="mobile-menu"
@@ -112,7 +113,7 @@ export function Navigation() {
           </button>
         </div>
         <nav aria-label="Mobiele hoofdnavigatie">
-          {[...links, ["/contact", "Contact"]].map(([href, label], i) => (
+          {[...links, ["/contact", "Contact"], ["/hub/login", "Klantlogin"]].map(([href, label], i) => (
             <a key={href} href={href} onClick={() => setOpen(false)}>
               <span>0{i + 1}</span>
               {label}

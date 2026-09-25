@@ -12,7 +12,7 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "url": "/og/diensten.png",
     "width": 1200,
     "height": 630,
-    "alt": "Diensten: webdesign, vindbaarheid en automatisering in één overzicht"
+    "alt": "Diensten: webdesign, vindbaarheid en automatisering in een overzicht"
   },
   "/kosten": {
     "url": "/og/kosten.png",

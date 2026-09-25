@@ -8,7 +8,7 @@ export function CaseLinks({title = "Van plan naar praktijk."}: {title?: string})
   return <section className="wrap related-cases">
     <div className="section-head"><div><Eyebrow>Werk dat doorgaat</Eyebrow><h2>{title}</h2></div><a className="text-link" href="/projecten">Alle projecten <Arrow /></a></div>
     <div className="case-link-grid">{clientCases.map(item => <a className={`case-link case-${item.theme}`} href={`/projecten/${item.slug}`} key={item.slug}>
-      <span>Webdesign · tools · doorlopend beheer</span><h3>{item.name}</h3><p>Iedere week nieuwe blogs. SEO, hosting en onderhoud in één traject.</p><b>Bekijk de case <Arrow /></b>
+      <span>Webdesign · tools · doorlopend beheer</span><h3>{item.name}</h3><p>Iedere week nieuwe blogs. SEO, hosting en onderhoud in een traject.</p><b>Bekijk de case <Arrow /></b>
     </a>)}</div>
   </section>;
 }

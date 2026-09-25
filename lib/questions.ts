@@ -35,7 +35,7 @@ export const websiteQuestions: Question[] = [
   {
     id: "offer",
     title: "Zijn je diensten of producten makkelijk te vinden?",
-    help: "Eén overzichtelijke dienstenpagina kan prima voldoende zijn.",
+    help: "Een overzichtelijke dienstenpagina kan prima voldoende zijn.",
     topic: "Orden je aanbod vanuit de klant",
     action:
       "Geef je aanbod begrijpelijke namen en maak het direct bereikbaar vanuit de navigatie.",
@@ -57,7 +57,7 @@ export const websiteQuestions: Question[] = [
     help: "Bijvoorbeeld contact opnemen, een afspraak maken of bestellen.",
     topic: "Maak de volgende stap zichtbaar",
     action:
-      "Kies per belangrijke pagina één hoofdactie en geef de knop een concrete naam.",
+      "Kies per belangrijke pagina een hoofdactie en geef de knop een concrete naam.",
     why: "Een bezoeker die interesse heeft, moet eenvoudig verder kunnen.",
     priority: 10,
   },
@@ -102,9 +102,9 @@ export const websiteQuestions: Question[] = [
   },
   {
     id: "doubt",
-    title: "Beantwoordt je website vragen die iemand vóór contact heeft?",
+    title: "Beantwoordt je website vragen die iemand voor contact heeft?",
     help: "Denk aan kosten, samenwerking en wat er na een aanvraag gebeurt.",
-    topic: "Neem twijfel vóór contact weg",
+    topic: "Neem twijfel voor contact weg",
     action:
       "Beantwoord de meest gestelde vragen bij je dienst of contactactie.",
     why: "Duidelijke verwachtingen verlagen de drempel om een gesprek te beginnen.",
@@ -225,7 +225,7 @@ export const priceQuestions: Question[] = [
     id: "pages",
     title: "Hoeveel pagina’s heeft je verhaal nodig?",
     options: opts([
-      ["one", "Eén pagina", "Alles in één overzicht."],
+      ["one", "Een pagina", "Alles in een overzicht."],
       [
         "five",
         "Vijf pagina’s",
@@ -280,7 +280,7 @@ export const priceQuestions: Question[] = [
     id: "languages",
     title: "In hoeveel talen wil je de website aanbieden?",
     options: opts([
-      ["one", "Eén taal"],
+      ["one", "Een taal"],
       ["multiple", "Meerdere talen"],
       ["unknown", "Dat weet ik nog niet"],
     ]),

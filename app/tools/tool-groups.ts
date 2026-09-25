@@ -10,5 +10,5 @@ export const toolInputs: Record<string, {input: string; output: string}> = {
   'ontwerp-je-website': { input: 'Je bedrijfsverhaal, stijlvoorkeuren en kleuren.', output: 'Een aanpasbaar ontwerpvoorbeeld als vertrekpunt voor het gesprek.' },
   offertevergelijker: { input: 'De bekende bedragen en afspraken uit twee of drie offertes.', output: 'Een vergelijking met ontbrekende afspraken en gerichte vragen.' },
   websitecheck: { input: '15 antwoorden over je website, gevolgd door je websiteadres.', output: 'Inhoudelijke verbeterpunten naast de werkelijk ontvangen Lighthouse-meting.' },
-  automatiseringsplan: { input: 'Eén terugkerende taak, de stappen en uitzonderingen.', output: 'Een procesvoorstel en je eigen inschatting van het huidige tijdgebruik.' },
+  automatiseringsplan: { input: 'Een terugkerende taak, de stappen en uitzonderingen.', output: 'Een procesvoorstel en je eigen inschatting van het huidige tijdgebruik.' },
 };

@@ -13,9 +13,9 @@ export const site = {
       name: "Onepager",
       pages: "1 pagina",
       price: 895,
-      description: "Je aanbod, verhaal en contact op één overzichtelijke pagina.",
+      description: "Je aanbod, verhaal en contact op een overzichtelijke pagina.",
       points: [
-        "Eén doorlopend verhaal",
+        "Een doorlopend verhaal",
         "Een duidelijke route naar contact",
         "Voor een compact aanbod",
       ],

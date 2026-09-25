@@ -275,6 +275,12 @@ button:hover > .arrow {
 .desktop-nav > a[aria-current] {
   color: var(--purple);
 }
+.desktop-nav > .nav-hub {
+  border-left: 1px solid var(--line);
+  padding-left: 20px;
+  white-space: nowrap;
+  font-weight: 650;
+}
 .nav-contact {
   display: flex;
   align-items: center;

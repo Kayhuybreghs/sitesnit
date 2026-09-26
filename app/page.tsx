@@ -29,37 +29,37 @@ export default function Home() {
             <em>je website beter?</em>
           </h2>
           <p>
-            Combineer een echte mobiele Lighthouse-analyse met 15 vragen over je
-            verhaal en klantpad. Ontdek wat goed gaat en welke verbeteringen
-            aandacht verdienen.
+            Laat maximaal 20 pagina’s onderzoeken op technische aandachtspunten,
+            aangevuld met een mobiele Lighthouse-test van je startpagina.
+            Bekijk het bewijs en ontdek wat je gericht kunt verbeteren.
           </p>
-          <a className="button" href="/tools/website-check">
-            Check je website <Arrow />
+          <a className="button" href="/tools/seo-audit">
+            Start je gratis SEO-audit <Arrow />
           </a>
-          <p className="small">Je resultaat bekijken kan zonder e-mailadres.</p>
+          <p className="small">Alleen je websiteadres. Geen vragenlijst of account nodig.</p>
         </div>
         <div className="question-preview">
-          <span className="example-tag">Voorbeeldvraag</span>
+          <span className="example-tag">Zo werkt de SEO-audit</span>
           <p className="question-counter">
-            01 <span>/ 15</span>
+            100 <span>controlepunten</span>
           </p>
           <h3>
-            Is meteen duidelijk
+            Van je websiteadres
             <br />
-            wat je bedrijf doet?
+            naar concrete verbeterpunten.
           </h3>
           {[
-            "Ja, in een oogopslag",
-            "Je moet even verder lezen",
-            "Dat weet ik niet zeker",
-          ].map((t) => (
+            "Pagina’s en technische signalen onderzoeken",
+            "Je startpagina mobiel meten met Lighthouse",
+            "Bewijs bekijken en verbeteringen bespreken",
+          ].map((t,i) => (
             <div className="preview-answer" key={t}>
-              <span className="radio-mark" />
+              <b aria-hidden="true">0{i+1}</b>
               {t}
             </div>
           ))}
           <span className="preview-bottom">
-            Jouw antwoorden + echte metingen
+            Je ziet ook wat niet onderzocht kon worden.
           </span>
         </div>
       </section>

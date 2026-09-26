@@ -11,9 +11,9 @@ import {requireHubSite,isHubAdmin,requireHubAdmin,requiresAdminSetup,safeHubRetu
 import {hubMfaSchema,hasHubMfaProof} from '../lib/hub/mfa.ts';
 
 function totp(uri){const encoded=new URL(uri).searchParams.get('secret');let bits='';for(const c of encoded.replace(/=/g,''))bits+='ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'.indexOf(c).toString(2).padStart(5,'0');const bytes=[];for(let i=0;i+8<=bits.length;i+=8)bytes.push(parseInt(bits.slice(i,i+8),2));const count=Buffer.alloc(8);count.writeBigUInt64BE(BigInt(Math.floor(Date.now()/30000)));const digest=createHmac('sha1',Buffer.from(bytes)).update(count).digest();const at=digest[19]&15;return String((digest.readUInt32BE(at)&0x7fffffff)%1000000).padStart(6,'0');}
-async function fixture(){
+async function fixture(beforeSend=async()=>{}){
   const connection=sqliteHubConnection(':memory:');await connection.executeSchema(hubSchema+hubMfaSchema);const mail=[];
-  const auth=createHubAuth(connection,{secret:randomBytes(32).toString('hex'),baseURL:'https://hub.example.test',send:async m=>{mail.push(m);}});
+  const auth=createHubAuth(connection,{secret:randomBytes(32).toString('hex'),baseURL:'https://hub.example.test',send:async m=>{await beforeSend();mail.push(m);}});
   await(await getMigrations(auth.options)).runMigrations();
   for(const id of ['a','b']){await connection.db.prepare('INSERT INTO hub_clients(id,name,created_at) VALUES(?,?,?)').bind(id,`Client ${id}`,Date.now()).run();await connection.db.prepare('INSERT INTO hub_sites(id,client_id,name,origin,created_at) VALUES(?,?,?,?,?)').bind(`site-${id}`,id,`Website ${id}`,`https://${id}.example.test`,Date.now()).run();}
   const request=async(action,body,cookie='',extra={})=>{const response=await auth.handler(new Request(`https://hub.example.test/api/hub-auth/${action}`,{method:'POST',headers:{'Content-Type':'application/json',Origin:'https://hub.example.test',Cookie:cookie,...extra},body:JSON.stringify(body)}));const cookies=response.headers.getSetCookie().map(c=>c.split(';')[0]).join('; ');return {status:response.status,data:await response.json(),cookies,headers:response.headers};};
@@ -190,6 +190,29 @@ test('fixturemail password reset changes credentials, revokes old sessions and r
     const replayDestination=new URL(replayCallback.headers.get('location'),'https://hub.example.test');
     assert.equal(replayDestination.searchParams.get('error'),'INVALID_TOKEN');assert.equal(replayDestination.searchParams.has('token'),false);
     const unchanged=await f.request('sign-in/email',{email,password:newPassword});assert.equal(unchanged.status,200,'replay must not overwrite the accepted password');
+  }finally{await f.connection.close();}
+});
+
+test('mail rejection is reported honestly and an existing unverified account can recover by resending',async()=>{
+  let rejectMail=true;
+  const f=await fixture(async()=>{if(rejectMail)throw new Error('Fixture provider rejection');});
+  try{
+    const email='mail-recovery@example.test',password='Fixture-mail-password-7294';
+    const invitation=await issueInvitation(f.connection.db,email,'a');
+    const signup=await f.request('sign-up/email',{email,password,name:'Mail recovery'},'',{'x-sitesnit-invitation':invitation});
+    assert.equal(signup.status,503);assert.equal(signup.data.code,'EMAIL_SEND_FAILED');assert.equal(f.mail.length,0);
+    assert.equal(await f.auth.api.getSession({headers:new Headers({cookie:signup.cookies})}),null);
+    assert.equal(await findInvitation(f.connection.db,email,invitation),null,'registration consumed the invitation even though delivery failed');
+    const rejected=await f.request('send-verification-email',{email,callbackURL:'/hub/login'});
+    assert.equal(rejected.status,503);assert.equal(rejected.data.code,'EMAIL_SEND_FAILED');
+    rejectMail=false;
+    const retry=await f.request('send-verification-email',{email,callbackURL:'/hub/login'});
+    assert.equal(retry.status,200);assert.equal(f.mail.length,1);assert.equal(f.mail[0].to,email);
+    const verification=await f.auth.handler(new Request(f.mail[0].text.match(/https:\/\/\S+/)[0]));
+    assert.ok([200,302].includes(verification.status));
+    const login=await f.request('sign-in/email',{email,password});assert.equal(login.status,200);
+    const session=await f.auth.api.getSession({headers:new Headers({cookie:login.cookies})});
+    assert.equal(session.user.emailVerified,true);assert.equal(session.user.email,email);
   }finally{await f.connection.close();}
 });
 

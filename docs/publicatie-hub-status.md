@@ -54,3 +54,28 @@ Geheime bestanden uitsluitend lokaal in .sites-runtime; nooit committen. Bewaar 
 - Browseremulatie 360, 390, 900 en 1440 pixels gecontroleerd, geen horizontale overflow; startknop focust URL-invoer en mobiel menu opent de login.
 - Laatste lokale crawl: 60 openbare routes, 4409 verwijzingen, issues leeg. Geen fysieke telefoon getest.
 - Eerste accountregistratie, daadwerkelijke verificatiemail en MFA moeten nog door eigenaar worden afgerond/bevestigd.
+
+## 26 september: login en registratie verduidelijkt
+- cba20c8: Welkom terug vervangen door Inloggen op Sitesnit Hub. Naast het formulier een aparte uitleg en knop Account aanmaken.
+- /hub/uitnodiging zonder token toont uitleg en uitnodiging aanvragen; met token blijft de bestaande beveiligde registratie beschikbaar.
+- Productiebuild geslaagd, 7 auth-tests geslaagd. Mobiel 390px en desktop 1440px visueel gecontroleerd.
+- Persoonlijke beheeruitnodiging opnieuw geopend voor eigenaar. Geen wachtwoord door agent ingevoerd of ingesteld.
+
+## 26 september: verificatiemail geweigerd door Resend
+- Registratie in Vercel gaf 200; Resend POST /emails gaf 403 Domain not verified. Sitesnit.nl was nog niet toegevoegd in Resend. Better Auth slikt fouten van de mailcallback in runInBackgroundOrAwait; huidige UI meldt daardoor onterecht een ontvangen bericht.
+- sitesnit.nl nu als domein in Resend voorbereid, regio Ierland. DNS nog NIET opgeslagen: wacht op expliciete bevestiging voor afzenderautorisatie.
+- Vimexx sitesnit.nl (domein 1618992) in DNS-bewerkmodus. Drie nieuwe records ingevuld: TXT resend._domainkey met publieke Resend DKIM; CNAME rsend naar rsend-euw1.forge.rmta.net.; CNAME send naar send.forge.rmta.net. Nieuwe TTL 300. Alle 63 bestaande formulierwaarden ongewijzigd geverifieerd.
+- Browser tab 23 behouden met onopgeslagen formulier. Resend-tab kan door gebruiker zijn gesloten; herstel via bekende domein-URL, wijzig geen Zoho MX/SPF/DMARC of Vercelrecords.
+- Na toestemming: opslaan, DNS verifiëren, Resend-verificatie uitvoeren, een nieuwe verificatiemail via officiële Hub-flow laten sturen. Geen verificatiecode uit logs gebruiken om mailverificatie te omzeilen.
+- Nog verbeteren: mailfouten zichtbaar maken zonder persoonsgegevens/tokens te loggen; herverzendoptie met limiet. Geen wachtwoord of MFA door agent invoeren.
+
+## DNS na expliciete toestemming opgeslagen
+- Gebruiker gaf toestemming voor drie Resend-records, domeinverificatie en één nieuwe verificatiemail naar contact@sitesnit.nl.
+- Records opgeslagen in Vimexx en via authoritative ns.zxcs.nl bevestigd. Zoho MX en Vercel www CNAME ongewijzigd.
+- Resend domein 09451c6e-fa0e-486d-8ce4-b00dcb6b18fd: DNS verified, domeinverificatie nog bezig. Mail pas opnieuw sturen na Verified.
+
+## Verificatiemail afgeleverd
+- Resend bevestigt sitesnit.nl als Verified. Eén nieuwe verificatiemail via de officiële Hub-route verstuurd; Resend toont Delivered voor contact@sitesnit.nl met onderwerp Bevestig je e-mailadres voor Sitesnit Hub.
+- De eigenaar moet zelf de link uit de mailbox openen, met het zelf gekozen wachtwoord inloggen en MFA instellen. Er is geen verificatietoken uit logs gebruikt.
+- Mailcallback-fouten worden per request vastgelegd en als EMAIL_SEND_FAILED (503) teruggegeven. Login en registratie krijgen een herverzendknop; maximaal drie aanvragen per uur via de bestaande auth-rate-limit.
+- Acht auth-regressietests geslaagd, inclusief afgewezen mail, herverzending voor bestaand account en login na bevestiging. Geen extra echte testmails verstuurd.

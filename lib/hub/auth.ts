@@ -1,4 +1,5 @@
 import {betterAuth} from 'better-auth';
+import {AsyncLocalStorage} from 'node:async_hooks';
 import {twoFactor} from 'better-auth/plugins';
 import {APIError,createAuthMiddleware,getAuthoritativeSessionFromCtx,isAPIError} from 'better-auth/api';
 import type {HubConnection} from './connection';
@@ -9,17 +10,25 @@ import {hasHubMfaProof,recordHubMfaProof} from './mfa';
 export function createHubAuth(connection:HubConnection,config:{secret:string;baseURL:string;send:MailSender}){
   if(config.secret.length<32)throw new Error('Hub-authsecret is niet ingericht.');
   const secure=new URL(config.baseURL).protocol==='https:';
+  const mailAttempt=new AsyncLocalStorage<{failed:boolean}>();
+  const send:MailSender=async mail=>{
+    try{await config.send(mail);}catch(error){
+      const attempt=mailAttempt.getStore();if(attempt)attempt.failed=true;
+      console.error('[hub-mail] provider rejected or could not accept the message');
+      throw error;
+    }
+  };
   const auth=betterAuth({
     appName:'Sitesnit Hub',secret:config.secret,baseURL:config.baseURL,basePath:'/api/hub-auth',trustedOrigins:[new URL(config.baseURL).origin],
     database:connection.authDatabase,telemetry:{enabled:false},logger:{disabled:true},
     user:{modelName:'hub_auth_user'},account:{modelName:'hub_auth_account'},verification:{modelName:'hub_auth_verification'},
     session:{modelName:'hub_auth_session',expiresIn:60*60*24*7,updateAge:60*60*24,cookieCache:{enabled:false}},
     advanced:{cookiePrefix:'sitesnit-hub',useSecureCookies:secure,defaultCookieAttributes:{httpOnly:true,sameSite:'lax',secure}},
-    rateLimit:{enabled:true,storage:'database',modelName:'hub_auth_rate_limit',window:60,max:20,customRules:{'/sign-in/email':{window:60,max:5},'/sign-up/email':{window:3600,max:5},'/request-password-reset':{window:3600,max:3}}},
+    rateLimit:{enabled:true,storage:'database',modelName:'hub_auth_rate_limit',window:60,max:20,customRules:{'/sign-in/email':{window:60,max:5},'/sign-up/email':{window:3600,max:5},'/request-password-reset':{window:3600,max:3},'/send-verification-email':{window:3600,max:3}}},
     emailAndPassword:{enabled:true,minPasswordLength:12,requireEmailVerification:true,revokeSessionsOnPasswordReset:true,
-      sendResetPassword:async({user,url})=>config.send({to:user.email,subject:'Je Sitesnit Hub-wachtwoord instellen',text:`Gebruik deze tijdelijke link om je wachtwoord te wijzigen: ${url}\nNiet zelf aangevraagd? Je hoeft niets te doen.`})},
+      sendResetPassword:async({user,url})=>send({to:user.email,subject:'Je Sitesnit Hub-wachtwoord instellen',text:`Gebruik deze tijdelijke link om je wachtwoord te wijzigen: ${url}\nNiet zelf aangevraagd? Je hoeft niets te doen.`})},
     emailVerification:{sendOnSignUp:true,sendOnSignIn:true,autoSignInAfterVerification:false,
-      sendVerificationEmail:async({user,url})=>config.send({to:user.email,subject:'Bevestig je e-mailadres voor Sitesnit Hub',text:`Bevestig je e-mailadres via deze tijdelijke link: ${url}\nDaarna kun je inloggen in je klantomgeving.`})},
+      sendVerificationEmail:async({user,url})=>send({to:user.email,subject:'Bevestig je e-mailadres voor Sitesnit Hub',text:`Bevestig je e-mailadres via deze tijdelijke link: ${url}\nDaarna kun je inloggen in je klantomgeving.`})},
     plugins:[twoFactor({issuer:'Sitesnit Hub',schema:{twoFactor:{modelName:'hub_auth_two_factor'}}})],
     hooks:{
       before:createAuthMiddleware(async ctx=>{
@@ -56,7 +65,16 @@ export function createHubAuth(connection:HubConnection,config:{secret:string;bas
   // Better Auth accesses its adapter directly. Join the connection's reentrant
   // queue so local auth cannot accidentally participate in another SQLite transaction.
   // PostgreSQL uses independent pool connections; runExclusive is a pass-through there.
-  const handler:typeof auth.handler=(...args)=>connection.runExclusive(()=>auth.handler(...args));
+  // Better Auth catches mail callback errors. Preserve that outcome per request,
+  // so a rejected email cannot be presented as a successful send.
+  const handler:typeof auth.handler=(...args)=>connection.runExclusive(()=>mailAttempt.run({failed:false},async()=>{
+    const response=await auth.handler(...args);
+    if(mailAttempt.getStore()?.failed){
+      const headers=new Headers(response.headers);headers.delete('content-length');
+      return Response.json({code:'EMAIL_SEND_FAILED',message:'De e-mail kon niet worden verstuurd. Probeer later opnieuw.'},{status:503,headers});
+    }
+    return response;
+  }));
   const api=new Proxy(auth.api,{
     get(target,key,receiver){
       const endpoint=Reflect.get(target,key,receiver);

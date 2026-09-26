@@ -1506,7 +1506,7 @@ details.designer-brief { padding:0; }
   text-align: right;
 }
 .ds-style-editorial {
-  font-family: Manrope, Arial, sans-serif;
+  font-family: var(--font-manrope), Arial, sans-serif;
 }
 .ds-style-editorial .ds-nav {
   border: 0;

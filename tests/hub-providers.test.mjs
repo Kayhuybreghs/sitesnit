@@ -156,3 +156,13 @@ test("Snapshot cache returns fresh snapshots without provider calls and preserve
   assert.equal(stale.refreshCode, "quota"); assert.equal(saved, 0);
   assert.notEqual(config.key, snapshotKey({ tenantId: "t2", siteId: "s1", integrationId: "g1", report: "totals", ...period }));
 });
+
+test("GA4 accepts Google's metadata-only empty aggregate without inventing zero totals", async () => {
+  const actual = await fetchGa4({propertyId:'1234',period}, deps(async () => json({kind:'analyticsData#runReport',metadata:{currencyCode:'EUR',timeZone:'Europe/Amsterdam'}})));
+  assert.equal(actual.totals.code,'no-data');
+  assert.equal(actual.totals.state,'unavailable');
+  assert.equal(actual.totals.timeZone,'Europe/Amsterdam');
+  assert.equal(actual.totals.data,null);
+  const malformed = await fetchGa4({propertyId:'1234',period}, deps(async () => json({})));
+  assert.equal(malformed.totals.code,'invalid-response');
+});

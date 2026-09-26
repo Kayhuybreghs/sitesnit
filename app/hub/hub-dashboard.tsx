@@ -49,13 +49,14 @@ function periodLabel(period: Period | null | undefined) { return period ? `${per
 function displayOrigin(value: string) { try { return new URL(value).hostname; } catch { return 'Websiteadres niet beschikbaar'; } }
 function availability(report: ProviderResult<unknown> | null | undefined) {
   if (!report || report.code === 'not-configured') return 'Nog niet gekoppeld';
-  if (report.code === 'no-data') return 'Geen gegevens voor deze periode';
+  if (report.code === 'no-data') return 'Gekoppeld · nog geen gegevens voor deze periode';
   if (report.state === 'error') return report.code === 'quota' ? 'Bronlimiet bereikt' : report.code === 'authentication' ? 'Toegang tot de bron controleren' : 'Ophalen niet gelukt';
   if (report.state !== 'ready' || report.data === null) return 'Gegevens niet beschikbaar';
   return 'Gegevens beschikbaar';
 }
 function SourceMeta({ report, source, stale = false }: { report?: ProviderResult<unknown> | null; source: keyof typeof sourceNames; stale?: boolean }) {
-  return <div className="hub-source-meta"><p><span className={`hub-badge ${stale ? 'is-warning' : report?.state === 'ready' ? 'is-ready' : 'is-muted'}`}>{stale ? 'Oudere gegevens' : availability(report)}</span><span>{sourceNames[source]}</span></p><dl><div><dt>Periode</dt><dd>{periodLabel(report?.period)}</dd></div><div><dt>Brontijdzone</dt><dd>{report?.timeZone || 'Niet doorgegeven'}</dd></div><div><dt>Opgehaald</dt><dd>{time(report?.fetchedAt)}{report?.fetchedAt ? ' · Amsterdam' : ''}</dd></div></dl>{stale && <p className="hub-note">Dit is een eerdere meting. Verversen is nodig; lees deze cijfers niet als de actuele stand.</p>}{report?.warnings.length ? <details><summary>Beperkingen van deze bron</summary><ul>{report.warnings.map((warning, i) => <li key={i}>{warning}</li>)}</ul></details> : null}</div>;
+  const hasOldData = stale && report?.state === 'ready';
+  return <div className="hub-source-meta"><p><span className={`hub-badge ${hasOldData ? 'is-warning' : report?.state === 'ready' ? 'is-ready' : 'is-muted'}`}>{hasOldData ? 'Oudere gegevens' : availability(report)}</span><span>{sourceNames[source]}</span></p><dl><div><dt>Periode</dt><dd>{periodLabel(report?.period)}</dd></div><div><dt>Brontijdzone</dt><dd>{report?.timeZone || 'Niet doorgegeven'}</dd></div><div><dt>Opgehaald</dt><dd>{time(report?.fetchedAt)}{report?.fetchedAt ? ' · Amsterdam' : ''}</dd></div></dl>{hasOldData && <p className="hub-note">Dit is een eerdere meting. Verversen is nodig; lees deze cijfers niet als de actuele stand.</p>}{report?.warnings.length ? <details><summary>Beperkingen van deze bron</summary><ul>{report.warnings.map((warning, i) => <li key={i}>{warning}</li>)}</ul></details> : null}</div>;
 }
 function Panel({ title, eyebrow, children, className = '' }: { title: string; eyebrow?: string; children: ReactNode; className?: string }) {
   return <section className={`hub-panel ${className}`}>{eyebrow && <p className="hub-kicker">{eyebrow}</p>}<h2>{title}</h2>{children}</section>;

@@ -1,6 +1,6 @@
 /* Dimensions follow the inspected 1250 × 710 panels. cqw keeps text vector-sharp
    at the actual panel width; surrounding hero transforms supply all animation. */
-.bwp-panel{container-type:inline-size;width:100%;aspect-ratio:1250/710;overflow:hidden;background:#f7faf3;color:#123e33;pointer-events:none;user-select:none;font-family:Manrope,Arial,sans-serif;font-weight:500;line-height:1.4}
+.bwp-panel{container-type:inline-size;width:100%;aspect-ratio:1250/710;overflow:hidden;background:#f7faf3;color:#123e33;pointer-events:none;user-select:none;font-family: var(--font-manrope),Arial,sans-serif;font-weight:500;line-height:1.4}
 .bwp-panel *{box-sizing:border-box;margin:0;padding:0;font-family:inherit;line-height:inherit;letter-spacing:normal}
 .bwp-panel .bwp-surface{font-size:1.18cqw;min-width:0}
 .bwp-panel strong,.bwp-panel b{font-weight:750}

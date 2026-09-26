@@ -1,6 +1,6 @@
 /* Vector project previews. 360:811 matches the source compositions at any DPR.
    Scoped styles; no animation, bitmap, fonts, JavaScript or external requests. */
-.pps-screen{container-type:inline-size;position:relative;display:block;width:100%;aspect-ratio:360/811;overflow:hidden;isolation:isolate;background:#06372f;pointer-events:none;user-select:none;text-align:left;font-family:Manrope,Arial,sans-serif}
+.pps-screen{container-type:inline-size;position:relative;display:block;width:100%;aspect-ratio:360/811;overflow:hidden;isolation:isolate;background:#06372f;pointer-events:none;user-select:none;text-align:left;font-family: var(--font-manrope),Arial,sans-serif}
 .pps-screen *{box-sizing:border-box;margin:0;padding:0;font-family:inherit;line-height:inherit;letter-spacing:normal}
 .pps-screen .pps-content{position:relative;width:100%;height:225.278cqw;font-size:3.7cqw;line-height:1.5}
 .pair-device .pps-screen{border-radius:13px}

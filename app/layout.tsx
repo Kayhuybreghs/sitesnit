@@ -37,15 +37,7 @@ export default async function RootLayout({
   const nonce = (await headers()).get('x-nonce') || undefined;
   return (
     <html lang="nl">
-      <head>
-        <link
-          rel="preload"
-          href="/fonts/manrope.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head><link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head>
       <body>
         <a className="skip-link" href="#main">
           Naar de inhoud

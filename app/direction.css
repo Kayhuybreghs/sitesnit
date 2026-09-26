@@ -98,7 +98,7 @@ em {
   transform: rotate(7deg);
 }
 .art-caption {
-  font-family: Manrope, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-weight: 750;
   font-style: normal;
   font-size: 0.93rem;
@@ -116,7 +116,7 @@ em {
   border-radius: 24px;
 }
 .back-panel > span {
-  font-family: Manrope;
+  font-family: var(--font-manrope);
   font-weight: 800;
 }
 .mobile-panel {
@@ -178,7 +178,7 @@ em {
   border-radius: 12px;
 }
 .question-counter {
-  font-family: Manrope;
+  font-family: var(--font-manrope);
   font-weight: 800;
 }
 .personal-mark {
@@ -196,7 +196,7 @@ em {
   background: #edf0e5;
 }
 .process-number {
-  font-family: Manrope;
+  font-family: var(--font-manrope);
   font-weight: 800;
   color: var(--purple);
 }

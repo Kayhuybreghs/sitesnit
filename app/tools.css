@@ -61,7 +61,7 @@
   line-height: 1;
 }
 .tool-card-no > span {
-  font-family: Manrope;
+  font-family: var(--font-manrope);
   font-size: 0.73rem;
   color: var(--muted);
 }

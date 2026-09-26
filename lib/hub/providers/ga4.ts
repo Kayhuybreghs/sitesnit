@@ -23,7 +23,14 @@ export function completedMonths(endDate: string): Period {
 
 function parseReport(value: unknown, dimensions: readonly string[], metrics: readonly string[]) {
   const payload = record(value);
+  // Google can omit even the headers for an empty aggregate report.
+  // Require its response identity and metadata, so malformed {} is still rejected.
+  const metadataOnly = payload.kind === 'analyticsData#runReport'
+    && payload.rows === undefined && (payload.rowCount === undefined || payload.rowCount === 0)
+    && payload.dimensionHeaders === undefined && payload.metricHeaders === undefined
+    && typeof record(payload.metadata).timeZone === 'string';
   const headers = (value: unknown, expected: readonly string[]) => {
+    if (metadataOnly && value === undefined) return;
     if (value === undefined && expected.length === 0) return;
     if (!Array.isArray(value) || value.length !== expected.length || value.some((item, i) => record(item).name !== expected[i])) throw new Error("invalid-response");
   };

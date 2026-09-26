@@ -1,10 +1,7 @@
-@font-face {
-  font-family: Manrope;
-  src: url("/fonts/manrope.woff2") format("woff2");
-  font-weight: 200 800;
-  /* Keep the first paint stable when the local font misses the short load window. */
-  font-display: optional;
-}
+/* Keep the small, preloaded variable font consistent from first paint. */
+@font-face { font-family: Manrope; src: url('/fonts/manrope.woff2') format('woff2'); font-style: normal; font-weight: 200 800; font-display: block; }
+@font-face { font-family: 'Manrope Fallback'; src: local('Arial'); ascent-override: 106.45%; descent-override: 29.96%; line-gap-override: 0%; size-adjust: 100.14%; }
+:root { --font-manrope: Manrope, 'Manrope Fallback'; }
 @font-face {
   font-family: Instrument;
   src: url("/fonts/instrument-serif.woff2") format("woff2");
@@ -48,7 +45,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Manrope, Arial, sans-serif;
+  font-family: var(--font-manrope), Arial, sans-serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;

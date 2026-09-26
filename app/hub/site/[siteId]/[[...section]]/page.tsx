@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {requireHubUser} from '../../../../../lib/hub/session';
-import {requireHubSite,type HubSite} from '../../../../../lib/hub/access';
+import {requireHubSite,isHubAdmin,type HubSite} from '../../../../../lib/hub/access';
 import {readAdminPreview} from '../../../../../lib/hub/store';
 import {dashboardData} from '../../../../../lib/hub/dashboard-data';
 import {HubDashboard,type HubSection} from '../../../hub-dashboard';
 export default async function HubSitePage({params,searchParams}:{params:Promise<{siteId:string;section?:string[]}>;searchParams:Promise<{preview?:string}>}){
-  const context=await requireHubUser();const{siteId,section=[]}=await params;const preview=(await searchParams).preview==='1';
+  const context=await requireHubUser();const{siteId,section=[]}=await params;const preview=await isHubAdmin(context.runtime.connection.db,context.user)||(await searchParams).preview==='1';
   if(section.length>1||!['overzicht','bezoekers','google','status','werkzaamheden'].includes(section[0]||'overzicht'))notFound();
   const db=context.runtime.connection.db;let site:HubSite;
   try{

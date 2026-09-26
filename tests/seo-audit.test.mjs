@@ -25,6 +25,27 @@ test('blocked robots and cross-domain redirect produce no fabricated report',asy
  await assert.rejects(()=>crawlSite('https://example.com',async url=>({...html('User-agent: *\nDisallow: /',url),headers:{'content-type':'text/plain'}})),/Robots/);
  await assert.rejects(()=>crawlSite('https://example.com',async url=>url.endsWith('/robots.txt')?{...html('',url),status:404}:{...html('',url),status:302,headers:{location:'https://other.com/'}}),/ander domein/);
 });
+
+test('valid robots directives with an HTML MIME type are respected instead of rejecting the site',async()=>{
+ const requested=[];const read=async url=>{requested.push(url);return url.endsWith('/robots.txt')?html('User-agent: *\nDisallow: /cms/\nDisallow: /edit/\nSitemap: https://example.com/sitemap.xml',url):html('<title>Installateur</title><a href="/cms/">CMS</a><a href="/edit/">Edit</a>',url);};
+ const result=await crawlSite('https://example.com/',read);
+ assert.equal(result.pages.length,1);assert.equal(result.skipped,2);assert.ok(result.notes.some(n=>n.includes('text/html')));
+ assert.deepEqual(requested,['https://example.com/robots.txt','https://example.com/']);
+ await assert.rejects(()=>crawlSite('https://example.com/',async url=>html('User-agent: *\nDisallow: /',url)),/staat deze crawl niet toe/);
+ await assert.rejects(()=>crawlSite('https://example.com/',async url=>html('<html><title>Verify you are human</title></html>',url)),/zonder leesbare crawlregels/);
+});
+
+test('audit retains bounded real evidence, including empty-feature qualifications',()=>{
+ const page=analyze(html('<title>Een echte titel</title><meta name="robots" content="index, follow"><link rel="canonical" href="https://example.com/"><img src="work.webp" alt="Ons werk"><script type="application/ld+json">{"@type":"Organization","name":"Example"}</script>'));
+ assert.equal(page.checks.find(c=>c.code==='title').snippet,'<title>Een echte titel</title>');
+ assert.ok(page.checks.find(c=>c.code==='alt').evidence.includes('1 afbeelding'));
+ assert.ok(page.checks.find(c=>c.code==='json').snippet.includes('Organization'));
+ assert.ok(page.checks.every(c=>typeof c.evidence==='string'));
+ const empty=analyze(html('<title>Alleen titel</title>'));
+ assert.ok(empty.checks.find(c=>c.code==='json').evidence.includes('Geen JSON-LD'));
+ assert.equal(empty.checks.find(c=>c.code==='json').snippet,undefined);
+ const long=analyze(html('<title>'+ 'x'.repeat(2000)+'</title>'));assert.ok(long.checks.find(c=>c.code==='title').snippet.length<=700);
+});
 test('monthly periods cross year boundaries and source/medium is requested independently',async()=>{
  assert.deepEqual(completedMonths('2026-01-20'),{startDate:'2025-07-01',endDate:'2025-12-31'});
  const bodies=[];await fetchGa4({propertyId:'123',period:{startDate:'2026-09-01',endDate:'2026-09-20'}},{now:()=>new Date('2026-09-25T12:00:00Z'),getAccessToken:async()=> 'fixture',fetch:async(_url,init)=>{const b=JSON.parse(init.body);bodies.push(b);return Response.json({dimensionHeaders:b.dimensions,metricHeaders:b.metrics,rows:[],rowCount:0});}});

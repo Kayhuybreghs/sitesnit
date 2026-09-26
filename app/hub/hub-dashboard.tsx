@@ -112,7 +112,7 @@ export function HubDashboard({ site, section, snapshots, workItems, uptime, isDe
   const searchTotal = search?.totals?.state === 'ready' ? search.totals.data?.rows[0] : null;
   return <div className="hub-dashboard">
     {isDemo && <p className="hub-demo-banner"><strong>Fictieve demonstratie.</strong> Dit zijn voorbeeldgegevens, geen gekoppelde klantwebsite of echte prestaties.</p>}
-    {preview && <p className="hub-demo-banner"><strong>Beheerweergave.</strong> Je kijkt onder je eigen beheerdersaccount.</p>}
+    {preview && <nav className="hub-admin-return" aria-label="Beheerdersnavigatie"><a href="/hub">← Alle websites</a><span>Je bekijkt {site.name} als beheerder</span><a href="/hub/admin">Klanten & koppelingen</a><a href="/hub/admin/seo-audit">SEO-audits</a></nav>}
     <header className="hub-heading"><div><p className="hub-kicker">Sitesnit Hub / {site.name}</p><h1>{title[0]}</h1><p>{title[1]}</p></div><div className="hub-site-label"><span aria-hidden="true">↗</span><div><strong>{site.name}</strong><span>{displayOrigin(site.origin)}</span></div></div></header>
     <p className="hub-note">{isDemo ? 'Deze demo bevat uitsluitend fictieve cijfers.' : 'Je bekijkt het hierboven genoemde websitedossier.'} <a href={isDemo ? "/hub/demo/sitesnit" : "/hub"}>{isDemo ? 'Bekijk Sitesnit in de demo' : 'Andere website kiezen'}</a></p><nav className="hub-section-nav" aria-label="Onderdelen van je websiteoverzicht">{tabs.map(([id, label]) => <a key={id} href={`${id === 'overzicht' ? base : `${base}/${id}`}${preview ? '?preview=1' : ''}`} aria-current={section === id ? 'page' : undefined}>{label}</a>)}</nav>
     <div className="hub-content" id={isDemo ? 'hub-demo' : undefined}>

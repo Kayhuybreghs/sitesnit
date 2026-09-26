@@ -47,3 +47,10 @@ Geheime bestanden uitsluitend lokaal in .sites-runtime; nooit committen. Bewaar 
 - Onnodige nadrukaccenten uit openbare teksten verwijderd.
 - Klantlogin toegevoegd in desktopnavigatie, mobiel menu, navigatie zonder JavaScript en footer.
 - Publieke daglimiet in browser bevestigd; bestaande auditresultaten blijven zichtbaar.
+
+## Publicatie laatste wijzigingen bevestigd
+- GitHub main f3fed59. Nieuwe hero, Klantlogin in navigatie en footer live bevestigd op www.sitesnit.nl.
+- Live navigatie naar /hub/login doorlopen: inlogknop actief. Productieopslag HTTP 200.
+- Browseremulatie 360, 390, 900 en 1440 pixels gecontroleerd, geen horizontale overflow; startknop focust URL-invoer en mobiel menu opent de login.
+- Laatste lokale crawl: 60 openbare routes, 4409 verwijzingen, issues leeg. Geen fysieke telefoon getest.
+- Eerste accountregistratie, daadwerkelijke verificatiemail en MFA moeten nog door eigenaar worden afgerond/bevestigd.

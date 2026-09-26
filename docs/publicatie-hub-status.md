@@ -79,3 +79,10 @@ Geheime bestanden uitsluitend lokaal in .sites-runtime; nooit committen. Bewaar 
 - De eigenaar moet zelf de link uit de mailbox openen, met het zelf gekozen wachtwoord inloggen en MFA instellen. Er is geen verificatietoken uit logs gebruikt.
 - Mailcallback-fouten worden per request vastgelegd en als EMAIL_SEND_FAILED (503) teruggegeven. Login en registratie krijgen een herverzendknop; maximaal drie aanvragen per uur via de bestaande auth-rate-limit.
 - Acht auth-regressietests geslaagd, inclusief afgewezen mail, herverzending voor bestaand account en login na bevestiging. Geen extra echte testmails verstuurd.
+
+## Nieuwe mailopmaak en optionele tweestapsbeveiliging
+- Op verzoek van eigenaar krijgen verificatie, wachtwoordherstel en uitnodiging een Sitesnit HTML-mail met logo, actieknop, geldigheid en persoonlijke afzendertekst. Plain-text alternatief blijft beschikbaar; geen tracking toegevoegd.
+- Beveiligingspagina toont QR-code (lokaal gegenereerd), handmatige sleutel en drie instelstappen. Herstelcodes zijn standaard dichtgeklapt en kunnen worden gekopieerd; bij activering moet de gebruiker bevestigen dat ze bewaard zijn.
+- Voor accounts zonder geactiveerde MFA: expliciete risicobevestiging en Voorlopig overslaan, alleen voor de actuele sessie. Vastgelegd als security_deferred in bestaande auditlog. Geen schemawijziging nodig.
+- Reeds geactiveerde MFA is niet over te slaan. Activering maakt eerdere uitstelkeuzes ongeldig. Verlopen/ingetrokken sessies en andere gebruikers krijgen hierdoor geen toegang. Adminrol blijft afzonderlijk vereist.
+- Negentien regressietests geslaagd. Desktop en mobiel (390px) visueel bekeken met fictieve codes. Mailopmaak getest in browser, niet in alle afzonderlijke mailclients. Geen nieuwe echte testmail verzonden.

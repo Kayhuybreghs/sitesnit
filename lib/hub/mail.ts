@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 import type {HubConnection} from './connection';
-export type HubMail={to:string;subject:string;text:string};
+export type HubMail={to:string;subject:string;text:string;html?:string};
 export type MailSender=(mail:HubMail)=>Promise<void>;
 /** Reserves under the free account caps, including failures. No automatic paid overage. */
 export function resendSender(connection:HubConnection,config:{apiKey?:string;from?:string;enabled:boolean},request:typeof fetch=fetch):MailSender{

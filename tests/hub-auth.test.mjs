@@ -8,7 +8,7 @@ import {hubSchema} from '../lib/hub/schema.ts';
 import {createHubAuth} from '../lib/hub/auth.ts';
 import {issueInvitation,findInvitation,acceptInvitation} from '../lib/hub/invitations.ts';
 import {requireHubSite,isHubAdmin,requireHubAdmin,requiresAdminSetup,safeHubReturn} from '../lib/hub/access.ts';
-import {hubMfaSchema,hasHubMfaProof} from '../lib/hub/mfa.ts';
+import {hubMfaSchema,hasHubMfaProof,deferHubMfa,hasHubMfaDeferral} from '../lib/hub/mfa.ts';
 
 function totp(uri){const encoded=new URL(uri).searchParams.get('secret');let bits='';for(const c of encoded.replace(/=/g,''))bits+='ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'.indexOf(c).toString(2).padStart(5,'0');const bytes=[];for(let i=0;i+8<=bits.length;i+=8)bytes.push(parseInt(bits.slice(i,i+8),2));const count=Buffer.alloc(8);count.writeBigUInt64BE(BigInt(Math.floor(Date.now()/30000)));const digest=createHmac('sha1',Buffer.from(bytes)).update(count).digest();const at=digest[19]&15;return String((digest.readUInt32BE(at)&0x7fffffff)%1000000).padStart(6,'0');}
 async function fixture(beforeSend=async()=>{}){
@@ -213,6 +213,37 @@ test('mail rejection is reported honestly and an existing unverified account can
     const login=await f.request('sign-in/email',{email,password});assert.equal(login.status,200);
     const session=await f.auth.api.getSession({headers:new Headers({cookie:login.cookies})});
     assert.equal(session.user.emailVerified,true);assert.equal(session.user.email,email);
+  }finally{await f.connection.close();}
+});
+
+test('optional MFA requires an explicit session-bound choice and cannot bypass an activated factor',async()=>{
+  const f=await fixture();try{
+    const email='optional-mfa@example.test',password='Fixture-optional-password-6729';
+    const invitation=await issueInvitation(f.connection.db,email,null,'admin');
+    const signup=await f.request('sign-up/email',{email,password,name:'Optional admin'},'',{'x-sitesnit-invitation':invitation});
+    assert.equal(signup.status,200);
+    await f.auth.handler(new Request(f.mail[0].text.match(/https:\/\/\S+/)[0]));
+    const login=await f.request('sign-in/email',{email,password});
+    const session=await f.auth.api.getSession({headers:new Headers({cookie:login.cookies})});
+    const user={...session.user,sessionId:session.session.id};
+    assert.equal(await isHubAdmin(f.connection.db,user),false);
+    await assert.rejects(()=>deferHubMfa(f.connection.db,user.id,undefined));
+    await assert.rejects(()=>deferHubMfa(f.connection.db,'another-user',user.sessionId));
+    await deferHubMfa(f.connection.db,user.id,user.sessionId);
+    assert.equal(await isHubAdmin(f.connection.db,user),true);
+    assert.equal(await requiresAdminSetup(f.connection.db,user),false);
+    assert.equal(await hasHubMfaProof(f.connection.db,user.id,user.sessionId),false,'deferral is not proof of MFA');
+    const secondLogin=await f.request('sign-in/email',{email,password});
+    const second=await f.auth.api.getSession({headers:new Headers({cookie:secondLogin.cookies})});
+    assert.equal(await isHubAdmin(f.connection.db,{...second.user,sessionId:second.session.id}),false,'another login needs its own choice');
+    assert.equal(await hasHubMfaDeferral(f.connection.db,user.id,user.sessionId,session.session.expiresAt.getTime()+1),false);
+    const enabled=await f.request('two-factor/enable',{password},login.cookies);
+    const verified=await f.request('two-factor/verify-totp',{code:totp(enabled.data.totpURI)},login.cookies);
+    assert.equal(verified.status,200);
+    assert.equal(await hasHubMfaDeferral(f.connection.db,user.id,user.sessionId),false);
+    await assert.rejects(()=>deferHubMfa(f.connection.db,user.id,second.session.id),'activated factors cannot be skipped');
+    assert.equal(await isHubAdmin(f.connection.db,user),false,'a stale password-only identity gains no access');
+    const challenge=await f.request('sign-in/email',{email,password});assert.equal(challenge.data.twoFactorRedirect,true);
   }finally{await f.connection.close();}
 });
 

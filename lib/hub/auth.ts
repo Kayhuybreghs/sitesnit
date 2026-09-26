@@ -4,6 +4,7 @@ import {twoFactor} from 'better-auth/plugins';
 import {APIError,createAuthMiddleware,getAuthoritativeSessionFromCtx,isAPIError} from 'better-auth/api';
 import type {HubConnection} from './connection';
 import type {MailSender} from './mail';
+import {hubActionEmail} from './email-template';
 import {findInvitation,acceptInvitation} from './invitations';
 import {hasHubMfaProof,recordHubMfaProof} from './mfa';
 
@@ -25,10 +26,10 @@ export function createHubAuth(connection:HubConnection,config:{secret:string;bas
     session:{modelName:'hub_auth_session',expiresIn:60*60*24*7,updateAge:60*60*24,cookieCache:{enabled:false}},
     advanced:{cookiePrefix:'sitesnit-hub',useSecureCookies:secure,defaultCookieAttributes:{httpOnly:true,sameSite:'lax',secure}},
     rateLimit:{enabled:true,storage:'database',modelName:'hub_auth_rate_limit',window:60,max:20,customRules:{'/sign-in/email':{window:60,max:5},'/sign-up/email':{window:3600,max:5},'/request-password-reset':{window:3600,max:3},'/send-verification-email':{window:3600,max:3}}},
-    emailAndPassword:{enabled:true,minPasswordLength:12,requireEmailVerification:true,revokeSessionsOnPasswordReset:true,
-      sendResetPassword:async({user,url})=>send({to:user.email,subject:'Je Sitesnit Hub-wachtwoord instellen',text:`Gebruik deze tijdelijke link om je wachtwoord te wijzigen: ${url}\nNiet zelf aangevraagd? Je hoeft niets te doen.`})},
-    emailVerification:{sendOnSignUp:true,sendOnSignIn:true,autoSignInAfterVerification:false,
-      sendVerificationEmail:async({user,url})=>send({to:user.email,subject:'Bevestig je e-mailadres voor Sitesnit Hub',text:`Bevestig je e-mailadres via deze tijdelijke link: ${url}\nDaarna kun je inloggen in je klantomgeving.`})},
+    emailAndPassword:{enabled:true,minPasswordLength:12,requireEmailVerification:true,revokeSessionsOnPasswordReset:true,resetPasswordTokenExpiresIn:3600,
+      sendResetPassword:async({user,url})=>send(hubActionEmail('reset',user.email,url))},
+    emailVerification:{sendOnSignUp:true,sendOnSignIn:true,autoSignInAfterVerification:false,expiresIn:3600,
+      sendVerificationEmail:async({user,url})=>send(hubActionEmail('verify',user.email,url))},
     plugins:[twoFactor({issuer:'Sitesnit Hub',schema:{twoFactor:{modelName:'hub_auth_two_factor'}}})],
     hooks:{
       before:createAuthMiddleware(async ctx=>{
@@ -58,6 +59,7 @@ export function createHubAuth(connection:HubConnection,config:{secret:string;bas
       after:async(user,context)=>acceptInvitation(connection,user.id,user.email,context?.headers?.get('x-sitesnit-invitation')||''),
     },update:{after:async user=>{
       if(user.twoFactorEnabled===false)await connection.db.prepare('DELETE FROM hub_mfa_session_proofs WHERE user_id=?').bind(user.id).run();
+      if(user.twoFactorEnabled===true)await connection.db.prepare('UPDATE hub_admin_log SET action=? WHERE user_id=? AND action=?').bind('security_defer_superseded',user.id,'security_deferred').run();
     }}},session:{delete:{after:async session=>{
       await connection.db.prepare('DELETE FROM hub_mfa_session_proofs WHERE session_id=?').bind(session.id).run();
     }}}},

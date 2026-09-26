@@ -13,6 +13,20 @@ CREATE INDEX IF NOT EXISTS hub_mfa_proofs_user ON hub_mfa_session_proofs(user_id
 
 export type HubSessionBinding = { id: string; userId: string; expiresAt: Date };
 
+/** A deliberate password-only choice for this session, never an MFA proof. */
+export async function deferHubMfa(db:AppDatabase,userId:string,sessionId:string|undefined,now=Date.now()){
+  if(!sessionId)throw new Error('Log opnieuw in.');
+  const row=await db.prepare('SELECT s."expiresAt" AS expires_at FROM hub_auth_session s INNER JOIN hub_auth_user u ON u.id=s."userId" WHERE s.id=? AND s."userId"=? AND u."emailVerified"=TRUE AND COALESCE(u."twoFactorEnabled",FALSE)=FALSE').bind(sessionId,userId).first<{expires_at:Date|string|number}>();
+  if(!row||!Number.isFinite(sessionExpiry(row.expires_at))||sessionExpiry(row.expires_at)<=now)throw new Error('Overslaan is niet beschikbaar voor deze sessie.');
+  await db.prepare('INSERT INTO hub_admin_log(id,user_id,action,site_id,created_at) VALUES(?,?,?,NULL,?) ON CONFLICT(id) DO NOTHING').bind(`security-deferred:${sessionId}`,userId,'security_deferred',now).run();
+}
+function sessionExpiry(value:Date|string|number){return value instanceof Date?value.getTime():typeof value==='number'?value:Date.parse(value);}
+export async function hasHubMfaDeferral(db:AppDatabase,userId:string,sessionId:string|undefined,now=Date.now()){
+  if(!sessionId)return false;
+  const row=await db.prepare('SELECT s."expiresAt" AS expires_at FROM hub_admin_log l INNER JOIN hub_auth_session s ON s."userId"=l.user_id INNER JOIN hub_auth_user u ON u.id=s."userId" WHERE l.id=? AND l.user_id=? AND l.action=? AND s.id=? AND u."emailVerified"=TRUE AND COALESCE(u."twoFactorEnabled",FALSE)=FALSE').bind(`security-deferred:${sessionId}`,userId,'security_deferred',sessionId).first<{expires_at:Date|string|number}>();
+  return Boolean(row&&sessionExpiry(row.expires_at)>now);
+}
+
 /** Call only after Better Auth has successfully verified a supported second factor.
  * Re-read the actual session, preventing a proof for a revoked/replaced session.
  */

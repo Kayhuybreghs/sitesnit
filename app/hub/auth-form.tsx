@@ -1,6 +1,8 @@
 'use client';
 /* eslint-disable @next/next/no-location-assign-relative-destination -- Authentication boundaries deliberately reload the document to discard cached private RSC and client state. */
 import {useState,type FormEvent,type MouseEvent} from 'react';
+import dynamic from 'next/dynamic';
+const AuthenticatorSetup=dynamic(()=>import('./authenticator-setup'),{loading:()=> <p>Instelstappen laden…</p>});
 type Mode='login'|'invite'|'reset'|'enroll'|'verify';
 export function HubAuthForm({mode='login',enabled=true,hasResetToken=false}:{mode?:Mode;enabled?:boolean;hasResetToken?:boolean}){
   const [stage,setStage]=useState<'form'|'totp'|'backup'>(mode==='verify'?'totp':'form');const [busy,setBusy]=useState(false);const [message,setMessage]=useState('');const [recovery,setRecovery]=useState<string[]>([]);const [totp,setTotp]=useState('');
@@ -37,13 +39,14 @@ export function HubAuthForm({mode='login',enabled=true,hasResetToken=false}:{mod
     {stage==='form'?<>
       {mode==='invite'&&<label>Je naam<input name="name" autoComplete="name" required maxLength={100}/></label>}
       {mode!=='enroll'&&!(mode==='reset'&&hasResetToken)&&<label>E-mailadres<input name="email" type="email" autoComplete="email" required maxLength={254}/></label>}
-      {(mode!=='reset'||hasResetToken)&&<label>{mode==='reset'?'Nieuw wachtwoord':'Wachtwoord'}<input name="password" type="password" autoComplete={mode==='login'||mode==='enroll'?'current-password':'new-password'} required minLength={mode==='invite'||mode==='reset'?12:undefined}/></label>}
+      {mode==='enroll'&&<div className="hub-enroll-intro"><h2>Tweestapsbeveiliging instellen</h2><p>Bevestig eerst je huidige wachtwoord. Daarna krijg je een QR-code om met je telefoon te scannen.</p></div>}
+      {(mode!=='reset'||hasResetToken)&&<label>{mode==='reset'?'Nieuw wachtwoord':mode==='enroll'?'Je huidige wachtwoord':'Wachtwoord'}<input name="password" type="password" autoComplete={mode==='login'||mode==='enroll'?'current-password':'new-password'} required minLength={mode==='invite'||mode==='reset'?12:undefined}/></label>}
       {mode==='invite'&&<p>Gebruik minimaal 12 tekens. Je uitnodiging en e-mailadres bepalen tot welke websites je toegang krijgt.</p>}
     </>:<>
-      {totp&&<div className="hub-auth-secret"><p>Voeg Sitesnit Hub toe in je authenticator met deze instelgegevens. Bewaar je herstelcodes op een veilige plek.</p><details><summary>Authenticator instellen</summary><code>{totp}</code></details><details><summary>Eenmalige herstelcodes</summary><ul>{recovery.map(code=><li key={code}><code>{code}</code></li>)}</ul></details></div>}
-      <label>{stage==='backup'?'Herstelcode':'Code uit je authenticator'}<input name="code" autoComplete="one-time-code" inputMode={stage==='backup'?'text':'numeric'} required/></label>
+      {totp&&<AuthenticatorSetup uri={totp} codes={recovery}/>}
+      <label>{stage==='backup'?'Eenmalige herstelcode':'Zescijferige code uit je authenticator'}<input name="code" autoComplete="one-time-code" inputMode={stage==='backup'?'text':'numeric'} pattern={stage==='backup'?undefined:'[0-9]{6}'} maxLength={stage==='backup'?100:6} placeholder={stage==='backup'?undefined:'123456'} required/></label>
     </>}
-    <button className="button" disabled={busy||!enabled}>{busy?'Even controleren…':stage!=='form'?'Code controleren':mode==='invite'?'Account aanmaken':mode==='enroll'?'Authenticator instellen':mode==='reset'?'Wachtwoord herstellen':'Inloggen'}</button>
+    <button className="button" disabled={busy||!enabled}>{busy?'Even controleren…':stage!=='form'?(mode==='enroll'?'Beveiliging aanzetten':'Code controleren'):mode==='invite'?'Account aanmaken':mode==='enroll'?'Verder naar de QR-code':mode==='reset'?'Wachtwoord herstellen':'Inloggen'}</button>
     <p role="status" aria-live="polite">{message}</p>
     {stage==='form'&&(mode==='login'||mode==='invite')&&<button type="button" className="text-link" disabled={busy||!enabled} onClick={resendVerification}>Verificatiemail opnieuw aanvragen</button>}
     {stage==='totp'&&mode!=='enroll'&&<button type="button" className="text-link" onClick={()=>setStage('backup')}>Gebruik een herstelcode</button>}

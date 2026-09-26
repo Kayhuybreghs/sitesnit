@@ -6,6 +6,7 @@ import {issueInvitation,invitationHash} from '../../../../lib/hub/invitations';
 import {synchronizeHubSite} from '../../../../lib/hub/sync';
 import {hubJson,sameHubOrigin} from '../../../../lib/hub/http';
 import {readObjectBody} from '../../../../lib/request-body';
+import {hubActionEmail} from '../../../../lib/hub/email-template';
 export const runtime='nodejs';
 export const maxDuration=60;
 export async function POST(request:Request){
@@ -21,7 +22,7 @@ export async function POST(request:Request){
       if(input.action==='invite'){
         if(typeof input.email!=='string')return hubJson({error:'Vul een e-mailadres in.'},400);
         const token=await issueInvitation(connection.db,input.email,site.client_id);
-        try{await context.runtime.send({to:input.email,subject:'Je uitnodiging voor Sitesnit Hub',text:`Je kunt de websitegegevens van je bedrijf bekijken in Sitesnit Hub. Open binnen 48 uur je persoonlijke uitnodiging: ${context.runtime.baseURL}/hub/uitnodiging?token=${token}\nHeb je al een account? Log eerst in en open daarna deze link opnieuw. Deel deze link niet.`});}
+        try{await context.runtime.send(hubActionEmail('invite',input.email,`${context.runtime.baseURL}/hub/uitnodiging?token=${token}`));}
         catch{await connection.db.prepare('DELETE FROM hub_invitations WHERE token_hash=? AND accepted_by IS NULL').bind(invitationHash(token)).run();return hubJson({error:'De uitnodiging is niet verzonden. Controleer de mailkoppeling of probeer later opnieuw.'},503);}
       }else await synchronizeHubSite(connection,site.id);
       await connection.db.prepare('INSERT INTO hub_admin_log(id,user_id,action,site_id,created_at) VALUES(?,?,?,?,?)').bind(randomUUID(),context.user.id,input.action,site.id,Date.now()).run();

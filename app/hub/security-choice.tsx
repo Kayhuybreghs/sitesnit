@@ -1,0 +1,7 @@
+'use client';
+/* eslint-disable @next/next/no-location-assign-relative-destination -- Reload authorization after recording the user's security choice. */
+import {useState} from 'react';
+export function SecurityChoice(){
+  const[accepted,setAccepted]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('');
+  return <aside className="hub-security-choice" id="later-beveiligen"><span className="hub-kicker">Jouw keuze</span><h2>Liever later instellen?</h2><p>Je kunt op eigen risico doorgaan zonder authenticator. Wie je wachtwoord bemachtigt, kan dan bij je account en de websitegegevens waarvoor je toegang hebt.</p><label><input type="checkbox" checked={accepted} onChange={event=>setAccepted(event.target.checked)}/><span>Ik begrijp het risico en kies voorlopig alleen een wachtwoord.</span></label><button type="button" className="hub-quiet-button" disabled={!accepted||busy} onClick={async()=>{setBusy(true);setError('');try{const response=await fetch('/api/hub/security',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'defer-mfa',acceptRisk:true})});if(!response.ok)throw new Error();location.assign('/hub');}catch{setError('Overslaan is niet gelukt. Vernieuw de pagina en probeer opnieuw.');setBusy(false);}}}>{busy?'Even opslaan…':'Voorlopig overslaan'}</button><small>Deze keuze geldt voor je huidige inlogsessie. Je kunt de extra beveiliging altijd alsnog aanzetten.</small><p role="status">{error}</p></aside>;
+}

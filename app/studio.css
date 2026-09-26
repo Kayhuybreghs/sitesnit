@@ -1,5 +1,5 @@
 /* Mobile first: fewer competing layers, clear type and compact compositions. */
-.hero-intro h1 { font-weight: 800; -webkit-text-stroke: .014em currentColor; letter-spacing: -.06em; }
+.hero-intro h1 { font-weight: 800; -webkit-text-stroke: 0; font-synthesis: none; letter-spacing: -.06em; }
 .hero-laptop { z-index: 2; }
 .hero-fragment { z-index: 1; }
 .hero-camera { isolation: isolate; }

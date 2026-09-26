@@ -66,7 +66,7 @@
     .hero-journey.is-immersive { height: 310svh; }
     .hero-journey.is-immersive .hero-pin { position: sticky; top: var(--sticky-header-height); height: calc(100svh - var(--sticky-header-height)); min-height: 0; }
     .is-immersive .hero-stage { inset: 0; }
-    .is-immersive .hero-intro { padding-top: clamp(65px,11svh,125px); }
+    .hero-intro { padding-top: clamp(65px,11svh,125px); }
     .is-immersive .hero-intro-copy { opacity: calc(1 - var(--hero-intro-out)); translate: calc(var(--hero-intro-out) * -45px) 0; }
     .is-immersive .hero-project-label { bottom: 18%; }
     .is-immersive .hero-insights { position: absolute; inset: 0; padding: 0; opacity: var(--hero-details); transform: translateY(calc((1 - var(--hero-details)) * 12px)); }

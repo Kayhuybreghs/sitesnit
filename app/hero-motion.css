@@ -52,6 +52,9 @@
 
 /* The screen fills the viewport before the matching project surface arrives. */
 @media (prefers-reduced-motion: no-preference) {
+  /* Keep the detailed preview surfaces composited only while this hero is nearby. */
+  .is-motion-visible :is(.hero-blob,.hero-rig,.hero-camera,.hero-laptop,.hero-fragment) { will-change: transform; }
+  .is-motion-visible :is(.hero-intro-copy,.hero-insights,.hero-portal-veil) { will-change: transform,opacity; }
   .hero-intro-copy { animation: hero-copy-arrive 400ms var(--ease); }
   .depth-enabled .hero-camera { transform-origin: 50% 41%; transform: scale(calc(1 + var(--hero-dive) * 1.7)); opacity: calc(1 - var(--hero-veil)); }
   .depth-enabled .hero-blob { transform: translate(calc(-8% - var(--hero-center) * 42%),-50%) rotate(calc(-10deg + var(--hero-center) * 7deg)) scale(calc(1 + var(--hero-center) * .2 + var(--hero-dive) * .55)); }
@@ -63,7 +66,7 @@
   .depth-enabled .hero-portal-veil { opacity: var(--hero-veil); }
   .depth-enabled .hero-project-label { opacity: calc(1 - var(--hero-intro-out)); }
   @media (min-width: 900px) and (min-height: 640px) {
-    .hero-journey.is-immersive { height: 310svh; }
+    .hero-journey.is-immersive { height: 285svh; }
     .hero-journey.is-immersive .hero-pin { position: sticky; top: var(--sticky-header-height); height: calc(100svh - var(--sticky-header-height)); min-height: 0; }
     .is-immersive .hero-stage { inset: 0; }
     .hero-intro { padding-top: clamp(65px,11svh,125px); }

@@ -31,6 +31,11 @@ function mountDepth() {
   let heroTravel = 1;
   let stageTop = 0;
   let stageHeight = 1;
+  let compact = false;
+  let progress = 0;
+  let targetProgress = 0;
+  let snapProgress = true;
+  let motionVisible = false;
   const previousValues = new Map<string, string>();
   root.classList.add("depth-enabled");
 
@@ -42,28 +47,45 @@ function mountDepth() {
     frame = 0;
     if (disposed) return;
     // Time-based easing feels the same on 60 Hz and high refresh rate displays.
-    const ease = 1 - Math.exp(-Math.min(time - previousTime, 64) / 85);
+    const elapsed = Math.min(time - previousTime, 64);
+    const ease = 1 - Math.exp(-elapsed / 85);
     previousTime = time;
     if (viewportDirty) {
       viewportDirty = false;
       if (layoutDirty) {
         layoutDirty = false;
-        // A static layout remains usable at short heights and enlarged text sizes.
+        // Measure the actual copy and cue instead of reserving an arbitrary 150px.
+        // Short windows and enlarged text still get the fully readable static layout.
         const headerHeight = document.querySelector<HTMLElement>(".header")?.offsetHeight ?? 0;
-        immersive = desktop.matches && Boolean(intro && intro.offsetHeight + headerHeight + 150 < innerHeight);
+        const introTop = intro?.offsetTop ?? 0;
+        const cueSpace = (cue?.offsetHeight ?? 44) + 16;
+        immersive = desktop.matches && Boolean(intro && introTop + intro.offsetHeight + headerHeight + cueSpace <= innerHeight);
+        compact = innerWidth < 900;
+        snapProgress = true;
         hero?.classList.toggle("is-immersive", immersive);
         const heroRect = hero?.getBoundingClientRect();
         const stageRect = stage?.getBoundingClientRect();
-        heroTop = (heroRect?.top ?? 0) + scrollY;
-        heroTravel = Math.max(1, (heroRect?.height ?? 0) - innerHeight);
+        heroTop = (heroRect?.top ?? 0) + scrollY - (immersive ? headerHeight : 0);
+        heroTravel = Math.max(1, (heroRect?.height ?? 0) - (stageRect?.height ?? innerHeight));
         stageTop = (stageRect?.top ?? 0) + scrollY;
         stageHeight = stageRect?.height ?? 1;
       }
       if (hero && stage) {
-        const compact = innerWidth < 900;
-        const progress = immersive
+        targetProgress = immersive
           ? clamp((scrollY - heroTop) / heroTravel)
           : clamp((innerHeight * .8 - stageTop + scrollY) / (innerHeight * .65 + stageHeight * .35));
+      }
+    }
+    let moving = false;
+    if (hero && stage) {
+        const distance = targetProgress - progress;
+        // Follow wheel steps without a long trailing animation. Anchor jumps and
+        // returning from another tab settle immediately at the right scene.
+        progress = snapProgress || !motionVisible || Math.abs(distance) > .16 || Math.abs(distance) < .0002
+          ? targetProgress
+          : progress + distance * (1 - Math.exp(-elapsed / 45));
+        snapProgress = false;
+        moving = progress !== targetProgress;
         const introOut = immersive ? ramp(progress, .035, .22) : 0;
         const values = {
           "--hero-center": immersive ? ramp(progress, .06, .28) : 0,
@@ -87,9 +109,7 @@ function mountDepth() {
         const cueInert = introOut > .99 && cue !== document.activeElement;
         if (intro && intro.inert !== introInert) intro.inert = introInert;
         if (cue && cue.inert !== cueInert) cue.inert = cueInert;
-      }
     }
-    let moving = false;
     surfaces.forEach((surface) => {
       const dx = surface.targetX - surface.x;
       const dy = surface.targetY - surface.y;
@@ -132,12 +152,20 @@ function mountDepth() {
   const resize = () => { layoutDirty = true; update(); };
   const sizeObserver = new ResizeObserver(resize);
   if (intro) sizeObserver.observe(intro);
+  const visibilityObserver = new IntersectionObserver(([entry]) => {
+    motionVisible = entry.isIntersecting;
+    hero?.classList.toggle("is-motion-visible", motionVisible);
+    update();
+  }, { rootMargin: "120px 0px" });
+  if (hero) visibilityObserver.observe(hero);
   const resetPointers = () => {
     surfaces.forEach((surface) => { surface.targetX = 0; surface.targetY = 0; });
+    snapProgress = true;
     update();
   };
   addEventListener("scroll", update, { passive: true });
   addEventListener("resize", resize);
+  addEventListener("pageshow", resize);
   addEventListener("blur", resetPointers);
   finePointer.addEventListener("change", resetPointers);
   document.addEventListener("visibilitychange", resetPointers);
@@ -150,14 +178,16 @@ function mountDepth() {
     cancelAnimationFrame(frame);
     removeEventListener("scroll", update);
     removeEventListener("resize", resize);
+    removeEventListener("pageshow", resize);
     removeEventListener("blur", resetPointers);
     finePointer.removeEventListener("change", resetPointers);
     document.removeEventListener("visibilitychange", resetPointers);
     document.removeEventListener("focusin", update);
     sizeObserver.disconnect();
+    visibilityObserver.disconnect();
     listeners.forEach((remove) => remove());
     root.classList.remove("depth-enabled");
-    hero?.classList.remove("is-immersive");
+    hero?.classList.remove("is-immersive", "is-motion-visible");
     if (hero) delete hero.dataset.heroPhase;
     ["--hero-center", "--hero-split", "--hero-dive", "--hero-intro-out", "--hero-details", "--hero-veil"].forEach((key) => hero?.style.removeProperty(key));
     if (intro) intro.inert = false;

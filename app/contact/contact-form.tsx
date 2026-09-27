@@ -1,6 +1,8 @@
 "use client";
 /* eslint-disable react-hooks/set-state-in-effect -- Read browser-only URL and session context once after hydration. */
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { ANALYTICS_TOOL_PATHS, trackPublicEvent } from '../../lib/analytics-events';
+import { contactServiceNames } from '../../lib/contact/options';
 import { Arrow } from "../ui";
 import { site } from "../site-data";
 import "../tool-direction.css";
@@ -48,10 +50,18 @@ export default function ContactForm({
   const [websiteValue, setWebsiteValue] = useState(website);
   const [savedSummary, setSummary] = useState("");
   const summary = toolSummary ?? savedSummary;
-  const [includeSummary, setIncludeSummary] = useState(true);
+  const [includeSummary, setIncludeSummary] = useState(false);
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
   const [id, setId] = useState("");
+  const uid = useId();
+  const fieldId = (name:string) => `${uid}-${name}`;
+  const inFlight = useRef(false);
+  const feedback = useRef<HTMLDivElement>(null);
+  const [pending, setPending] = useState<Record<string,unknown>|null>(null);
+  const [receipt, setReceipt] = useState({reference:'',confirmation:'pending',localOnly:false});
+  const [localPreview, setLocalPreview] = useState(false);
+  const pendingKey = useCallback(() => `sitesnit-contact-pending:${location.pathname}:${embedded?'tool':'contact'}`, [embedded]);
   const [service, setService] = useState("");
   const [projectContext, setProjectContext] = useState("");
   const [rhythm, setRhythm] = useState("");
@@ -62,27 +72,14 @@ export default function ContactForm({
   const [preferredTime, setPreferredTime] = useState("");
   const weekend = preferredDay === "Zaterdag" || preferredDay === "Zondag";
   useEffect(() => {
+    setLocalPreview(['localhost','127.0.0.1','[::1]'].includes(location.hostname));
     setId(crypto.randomUUID());
+    try {
+      const saved=JSON.parse(sessionStorage.getItem(pendingKey())??'null');
+      if(saved&&typeof saved.requestId==='string') {setPending(saved);setId(saved.requestId);}
+    } catch {}
     const p = new URLSearchParams(location.search);
-    const serviceNames: Record<string, string> = {
-      webdesign: "Webdesign & webshops",
-      webshops: "Webshops",
-      webapps: "Webapps & klantportalen",
-      apps: "Apps voor iPhone & Android",
-      branding: "Merk & identiteit",
-      seo: "SEO & vindbaarheid",
-      content: "Content & copywriting",
-      "social-media": "Social media",
-      "onderhoud-hosting": "Onderhoud & hosting",
-      ai: "AI & automatisering",
-      "ai-automatisering": "Tools & automatisering",
-      "seo-optimalisatie": "SEO-optimalisatie",
-      "seo-onderhoud": "SEO-onderhoud",
-      "website-monitoring": "Website-monitoring · Sitesnit Hub",
-      "formulieren-rekentools": "Formulieren & rekentools",
-      "ai-koppelingen": "AI & softwarekoppelingen",
-    };
-    setService(serviceNames[p.get("dienst") ?? ""] ?? (p.get('onderwerp') ?? '').slice(0,180));
+    setService(Object.hasOwn(contactServiceNames,p.get('dienst')??'') ? p.get('dienst')! : '');
     if (!embedded) {
       const chosenPlan = p.get("maandpakket") ?? "";
       const chosenService = p.get("dienst") ?? "";
@@ -123,88 +120,95 @@ export default function ContactForm({
         );
         if (c && typeof c.summary === "string") setSummary(c.summary);
       } catch {}
-  }, [embedded]);
+  }, [embedded,pendingKey]);
   useEffect(() => {
     if (embedded) setPackageId(selectedPackage);
   }, [embedded, selectedPackage]);
   useEffect(() => {
     if (embedded) setWebsiteValue(website);
   }, [embedded, website]);
+  useEffect(() => { if(error||status==='success') feedback.current?.focus(); }, [error,status]);
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if(inFlight.current) return;
+    inFlight.current=true;
     setStatus("sending");
     setError("");
     const fd = new FormData(e.currentTarget);
+    const payload=pending??{
+      name:fd.get('name'),email:fd.get('email'),website:websiteValue,phone:fd.get('phone'),
+      message:fd.get('message'),companyCheck:fd.get('companyCheck'),requestId:id,packageId,
+      serviceId:service,sourcePage:location.pathname,formId:embedded?'tool_contact':'contact',
+      project:projectContext.toLowerCase(),rhythm,careInterests,
+      monthlyPlan:careInterests.includes(monthlyPlans[monthlyPlan])?monthlyPlan:'',
+      appointment:appointmentWanted,preferredDay,preferredTime,includeSummary,
+      toolSummary:includeSummary?summary:'',
+    };
+    setPending(payload);
+    try {sessionStorage.setItem(pendingKey(),JSON.stringify(payload));} catch {}
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...Object.fromEntries(fd),
-          message:
-            (fd.get("appointment") === "yes"
-              ? "Voorkeur: belafspraak.\n\n"
-              : "") +
-            (service ? `Interesse: ${service}\n\n` : "") +
-            (projectContext ? `Voorbeeldproject: ${projectContext}\n\n` : "") +
-            (rhythm ? `Gewenst contentritme: ${rhythm}\n\n` : "") +
-            (careInterests.length
-              ? `Ook interesse in: ${careChoices
-                  .filter((choice) => careInterests.includes(choice.id))
-                  .map((choice) => choice.label)
-                  .join(", ")}\n\n`
-              : "") +
-            (monthlyPlan && careInterests.includes(monthlyPlans[monthlyPlan])
-              ? `Maandpakket om te bespreken: ${monthlyPlan}\n\n`
-              : "") +
-            String(fd.get("message")) +
-            (fd.get("phone") ? `\n\nTelefoon: ${fd.get("phone")}` : "") +
-            (fd.get("appointment") === "yes" && fd.get("preferredDay")
-              ? `\nVoorkeursmoment: ${fd.get("preferredDay")}${fd.get("preferredTime") ? ` om ${fd.get("preferredTime")}` : ""} (nog af te stemmen)`
-              : ""),
-          packageId,
-          includeSummary,
-          ...(includeSummary ? { toolSummary: summary } : {}),
-          requestId: id,
-        }),
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(25000),
       });
-      const body = (await response.json()) as { ok?: boolean; error?: string };
-      if (!response.ok || !body.ok)
+      const body = (await response.json()) as {ok?:boolean;error?:string;id?:string;reference?:string;mail?:{confirmation?:string};localOnly?:boolean};
+      if (!response.ok || !body.ok || body.id!==payload.requestId || !body.reference){
+        if([400,403,413,429].includes(response.status)){
+          setPending(null);try{sessionStorage.removeItem(pendingKey());}catch{}
+        }
         throw new Error(body.error ?? "Je aanvraag is niet verzonden.");
+      }
+      setReceipt({reference:body.reference,confirmation:body.mail?.confirmation??'pending',localOnly:body.localOnly===true});
       setStatus("success");
+      const leadKey=`sitesnit-lead-confirmed:${body.id}`;
       try {
         sessionStorage.removeItem("sitesnit-context-v1");
+        sessionStorage.removeItem(pendingKey());
+        if(!sessionStorage.getItem(leadKey)){
+          // Mark even without consent: never replay a past request after later consent.
+          sessionStorage.setItem(leadKey,'1');
+          trackPublicEvent({name:'generate_lead',form_id:embedded?'tool_contact':'contact',...(ANALYTICS_TOOL_PATHS[location.pathname]?{tool_id:ANALYTICS_TOOL_PATHS[location.pathname]}:{})});
+        }
       } catch {}
     } catch (e) {
-      setError((e as Error).message);
+      setError(e instanceof Error&&e.name!=='TimeoutError'&&e.name!=='TypeError'?e.message:'De verbinding is onderbroken. Probeer dezelfde aanvraag opnieuw; die wordt niet dubbel opgeslagen.');
       setStatus("idle");
-    }
+    } finally {inFlight.current=false;}
   }
   if (status === "success")
     return (
-      <div className="success-box" role="status">
-        <span className="eyebrow">Goed ontvangen</span>
+      <div className="success-box" role="status" ref={feedback} tabIndex={-1}>
+        <span className="eyebrow">{receipt.localOnly?'Lokale testaanvraag':'Goed ontvangen'}</span>
         <h2>
           Dank je.
           <br />
-          <em>Je verhaal ligt klaar.</em>
+          <em>{receipt.localOnly?'Je test is opgeslagen.':'Je verhaal ligt klaar.'}</em>
         </h2>
         <p>
-          Je aanvraag is opgeslagen bij Sitesnit. Je opgegeven e-mailadres is
-          het contactpunt voor het vervolg.
+          {receipt.localOnly?'Je aanvraag is alleen op deze computer opgeslagen. Hij staat niet in de live klantomgeving van Sitesnit.':'Je aanvraag is opgeslagen bij Sitesnit. Je opgegeven e-mailadres is het contactpunt voor het vervolg.'}
         </p>
         <p>
-          Je referentie: <strong>{id.slice(0, 8)}</strong>
+          Je referentie: <strong className="contact-reference">{receipt.reference}</strong>
         </p>
+        <p>{receipt.confirmation==='provider_accepted'
+          ?'De e-mailprovider heeft je bevestiging aangenomen. Controleer ook je spammap.'
+          :receipt.confirmation==='unavailable'
+            ?'Er is geen bevestigingsmail verstuurd: de mailkoppeling is hier niet actief of niet beschikbaar. Je hoeft de aanvraag niet opnieuw in te dienen.'
+            :receipt.confirmation==='needs_review'
+              ?'Je aanvraag is bewaard, maar de mailbezorging moet worden gecontroleerd. We kunnen de ontvangst van je bevestigingsmail nog niet bevestigen.'
+              :'Je aanvraag is veilig opgeslagen. De bevestigingsmail wordt afzonderlijk verwerkt en kan later aankomen.'}</p>
         <a className="text-link" href="/projecten">
           Bekijk ondertussen het werk <Arrow />
         </a>
       </div>
     );
   return (
-    <form className="contact-form" onSubmit={submit}>
+    <form className="contact-form" onSubmit={submit} aria-busy={status==='sending'}>
       <noscript><p className="no-js-note">Dit formulier heeft JavaScript nodig.{site.email && <> Mail je vraag naar <a href={`mailto:${site.email}`}>{site.email}</a>.</>}</p></noscript>
       <h2>{heading ?? (embedded ? "Bespreek je uitkomst" : "Bespreek je plannen")}</h2>
+      {localPreview&&<aside className="context-box"><strong>Je bekijkt een lokale testversie</strong><p>Een aanvraag hier is geen aanvraag via de live website. In deze testomgeving kan mailverzending uitstaan. De melding na het versturen vertelt of een bevestiging naar de mailprovider is gestuurd.</p></aside>}
       <p>
         {introduction ?? (embedded
           ? "Vertel wat je wilt bespreken. Wil je bellen? Kies dan hieronder optioneel een voorkeursdag. We stemmen het moment per e-mail af."
@@ -212,7 +216,7 @@ export default function ContactForm({
       </p>
       {service && (
         <p className="service-interest">
-          Je aanvraag gaat over <strong>{service}</strong>.
+          Je aanvraag gaat over <strong>{contactServiceNames[service]}</strong>.
         </p>
       )}
       {projectContext && (
@@ -225,12 +229,15 @@ export default function ContactForm({
           Je gekozen contentritme: <strong>{rhythm.toLowerCase()}</strong>.
         </p>
       )}
+      <fieldset className="contact-fields" disabled={Boolean(pending)}>
+      <legend className="sr-only">Je aanvraag</legend>
       <div className="form-row">
         <div className="field">
-          <label htmlFor="name">Je naam</label>
+          <label htmlFor={fieldId("name")}>Je naam</label>
           <input
-            id="name"
+            id={fieldId("name")}
             name="name"
+            defaultValue={pending ? String(pending.name) : undefined}
             autoComplete="name"
             required
             minLength={2}
@@ -238,10 +245,11 @@ export default function ContactForm({
           />
         </div>
         <div className="field">
-          <label htmlFor="email">Je e-mailadres</label>
+          <label htmlFor={fieldId("email")}>Je e-mailadres</label>
           <input
-            id="email"
+            id={fieldId("email")}
             name="email"
+            defaultValue={pending ? String(pending.email) : undefined}
             type="email"
             autoComplete="email"
             required
@@ -250,11 +258,11 @@ export default function ContactForm({
         </div>
       </div>
       <div className="field">
-        <label htmlFor="website">
+        <label htmlFor={fieldId("website")}>
           Bestaande website <small>(optioneel)</small>
         </label>
         <input
-          id="website"
+          id={fieldId("website")}
           name="website"
           inputMode="url"
           placeholder="jouwbedrijf.nl"
@@ -264,11 +272,11 @@ export default function ContactForm({
         />
       </div>
       <div className="field">
-        <label htmlFor="package">
+        <label htmlFor={fieldId("package")}>
           Websitepakket <small>(als dat al duidelijk is)</small>
         </label>
         <select
-          id="package"
+          id={fieldId("package")}
           value={packageId}
           onChange={(e) => setPackageId(e.target.value)}
         >
@@ -341,11 +349,11 @@ export default function ContactForm({
       </details>
       <div className="form-row">
         <div className="field">
-          <label htmlFor="phone">
+          <label htmlFor={fieldId("phone")}>
             Telefoonnummer <small>(optioneel)</small>
           </label>
           <input
-            id="phone"
+            id={fieldId("phone")}
             name="phone"
             type="tel"
             autoComplete="tel"
@@ -354,10 +362,11 @@ export default function ContactForm({
         </div>
       </div>
       <div className="field">
-        <label htmlFor="message">Vertel kort over je plannen</label>
+        <label htmlFor={fieldId("message")}>Vertel kort over je plannen</label>
         <textarea
-          id="message"
+          id={fieldId("message")}
           name="message"
+          defaultValue={pending ? String(pending.message) : undefined}
           required
           minLength={10}
           maxLength={3000}
@@ -387,9 +396,9 @@ export default function ContactForm({
           </p>
           <div className="form-row">
             <div className="field">
-              <label htmlFor="preferredDay">Voorkeursdag <small>(optioneel)</small></label>
+              <label htmlFor={fieldId("preferredDay")}>Voorkeursdag <small>(optioneel)</small></label>
               <select
-                id="preferredDay"
+                id={fieldId("preferredDay")}
                 name="preferredDay"
                 value={preferredDay}
                 onChange={(event) => {
@@ -412,12 +421,12 @@ export default function ContactForm({
               </select>
             </div>
             <div className="field">
-              <label htmlFor="preferredTime">
+              <label htmlFor={fieldId("preferredTime")}>
                 Voorkeurstijd <small>(optioneel)</small>
               </label>
               <input
                 type="time"
-                id="preferredTime"
+                id={fieldId("preferredTime")}
                 name="preferredTime"
                 min={weekend ? "00:00" : "18:00"}
                 max={weekend ? "23:59" : "21:30"}
@@ -425,11 +434,11 @@ export default function ContactForm({
                 disabled={!preferredDay}
                 onInput={(event) => setPreferredTime(event.currentTarget.value)}
                 onChange={(event) => setPreferredTime(event.target.value)}
-                aria-describedby="call-time-window"
+                aria-describedby={fieldId("call-time-window")}
               />
             </div>
           </div>
-          <p id="call-time-window">
+          <p id={fieldId("call-time-window")}>
             {!preferredDay
               ? "Kies eerst een dag om een tijd door te geven."
               : weekend
@@ -455,16 +464,18 @@ export default function ContactForm({
         </div>
       )}
       <div className="hp-field" aria-hidden="true">
-        <label htmlFor="companyCheck">Laat dit veld leeg</label>
+        <label htmlFor={fieldId("companyCheck")}>Laat dit veld leeg</label>
         <input
-          id="companyCheck"
+          id={fieldId("companyCheck")}
           name="companyCheck"
           tabIndex={-1}
           autoComplete="off"
         />
       </div>
+      </fieldset>
+      {pending && <div className="context-box"><strong>Deze aanvraag wordt gecontroleerd</strong><p>We versturen bij opnieuw proberen exact dezelfde gegevens. Zo ontstaat geen dubbele aanvraag.</p><details><summary>Je verzendpoging bekijken</summary><p>{String(pending.name)} · {String(pending.email)}</p><pre>{String(pending.message)}</pre></details></div>}
       {error && (
-        <div className="error-box" role="alert">
+        <div className="error-box" role="alert" ref={feedback} tabIndex={-1}>
           {error}
         </div>
       )}
@@ -473,7 +484,7 @@ export default function ContactForm({
         disabled={status === "sending" || !id}
         type="submit"
       >
-        {status === "sending" ? "Aanvraag versturen…" : "Verstuur je aanvraag"}
+        {status === "sending" ? "Aanvraag versturen…" : pending ? "Controleer en probeer opnieuw" : "Verstuur je aanvraag"}
         <Arrow />
       </button>
       <p className="form-note">

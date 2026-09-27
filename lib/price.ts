@@ -79,7 +79,7 @@ export function calculatePrice(a: Answers): PriceResult {
       "De precieze omvang en uitvoering van het maatwerk; daarmee bepalen we de bovengrens",
     );
   if (a.pages === "unknown")
-    pending.push(`Bij vijf pagina’s geldt ${priceLabel(grossPrice(1895))} inclusief btw (${priceLabel(1895)} exclusief btw) als bouwprijs; hosting komt daar apart bij`);
+    pending.push(`Bij vijf pagina’s geldt ${priceLabel(1895)} exclusief btw (${priceLabel(grossPrice(1895))} inclusief btw) als bouwprijs; hosting komt daar apart bij`);
   const fixed =
     !custom &&
     pending.length === 0 &&

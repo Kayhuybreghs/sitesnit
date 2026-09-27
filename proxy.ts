@@ -1,3 +1,4 @@
+import {publicAssetPaths} from './lib/public-asset-paths';
 import { NextResponse, type NextRequest } from 'next/server';
 import { services } from './app/diensten/service-data';
 import { projects } from './app/site-data';
@@ -14,6 +15,7 @@ const allowed = {
 // Next 16.3 can emit a client-only error shell for unknown dynamic slugs.
 // Route these to the ordinary server-rendered 404 before rendering starts.
 export function proxy(request: NextRequest) {
+  if(publicAssetPaths.has(request.nextUrl.pathname)) return NextResponse.next();
   const requestHeaders = new Headers(request.headers);
   const nonce = crypto.randomUUID().replaceAll('-', '');
   const csp = contentSecurityPolicy(nonce, process.env.NODE_ENV === 'development');

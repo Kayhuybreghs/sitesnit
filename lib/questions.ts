@@ -321,9 +321,9 @@ export const priceQuestions: Question[] = [
     title: "Welk investeringsniveau heb je in gedachten?",
     help: "Je budget verandert de prijs van dezelfde website niet.",
     options: opts([
-      ["low", "Rond €1.082,95 incl. btw (€895 excl.)"],
-      ["medium", "Rond €2.292,95 incl. btw (€1.895 excl.)"],
-      ["custom", "€3.327,50 of meer incl. btw (€2.750 excl.)"],
+      ["low", "Rond €895 exclusief btw", "€1.082,95 inclusief 21% btw"],
+      ["medium", "Rond €1.895 exclusief btw", "€2.292,95 inclusief 21% btw"],
+      ["custom", "€2.750 of meer exclusief btw", "Vanaf €3.327,50 inclusief 21% btw"],
       ["unknown", "Ik wil eerst begrijpen wat passend is"],
     ]),
   },

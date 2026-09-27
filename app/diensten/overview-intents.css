@@ -1,0 +1,14 @@
+/* This navigation belongs only to /diensten; it does not style the homepage. */
+.services-overview .services-intent-nav{display:grid;grid-template-columns:1fr;gap:0 30px;padding-block:0 64px;scroll-margin-top:115px}
+.services-overview .services-intent-nav a{display:grid;grid-template-columns:24px 1fr 24px;gap:14px;padding:24px 0;border-top:1px solid var(--line);align-items:start;min-width:0}
+.services-overview .services-intent-nav a>span{font-size:.75rem;color:var(--blue);padding-top:5px}
+.services-overview .services-intent-nav strong{display:block;font-size:1.08rem;line-height:1.4;letter-spacing:-.015em}
+.services-overview .services-intent-nav p{font-size:.9rem;line-height:1.65;color:var(--muted);margin-top:9px;max-width:340px}
+.services-overview .services-intent-nav svg{width:22px;margin-top:4px;transition:transform .2s ease}
+.services-overview .services-intent-nav a:hover strong{color:var(--blue)}
+.services-overview .services-intent-nav a:hover svg{transform:translate(3px,-3px)}
+.services-overview section[id]{scroll-margin-top:110px}
+.services-overview .service-fit{font-size:.88rem;line-height:1.7;padding-left:16px;border-left:2px solid var(--blue);margin-block:22px}
+@media(min-width:700px){.services-overview .services-intent-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}}
+@media(min-width:1150px){.services-overview .services-intent-nav{grid-template-columns:repeat(3,minmax(0,1fr));padding-bottom:85px}}
+@media(prefers-reduced-motion:reduce){.services-overview .services-intent-nav svg{transition:none}}

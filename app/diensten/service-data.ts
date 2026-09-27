@@ -351,7 +351,7 @@ export const services: Service[] = [
       ],
       [
         "Klaar voor publicatie",
-        "We verzorgen de SEO-opmaak: een passende titel, duidelijke koppen, interne links en een leesbare indeling. Vervolgens publiceren we het artikel. Je inhoudelijke controle en eventuele aanvullende beelden spreken we vooraf af."
+        "Je ontvangt de tekst voor inhoudelijke controle. Na jouw akkoord plannen we de publicatie, controleren we de links en bekijken we de pagina op mobiel. Correcties en eventuele aanvullende beelden stemmen we vooraf af."
       ]
     ],
     "optionsTitle": "Een goed ritme.",
@@ -359,13 +359,13 @@ export const services: Service[] = [
     "options": [
       [
         "4 blogs per maand",
-        "Een vaste stroom nieuwe inhoud voor de vragen van je klanten. Onderwerpenonderzoek, schrijven, SEO-opmaak en publiceren zijn inbegrepen. €393,25 inclusief btw (€325 exclusief) per maand.",
+        "Een vaste stroom nieuwe inhoud voor de vragen van je klanten. Onderwerpenonderzoek, schrijven, SEO-opmaak en publiceren zijn inbegrepen. €325 exclusief btw (€393,25 inclusief btw) per maand.",
         "Bespreek 4 blogs per maand",
         "/contact?dienst=content&blogs=4"
       ],
       [
         "2 blogs per maand",
-        "Een rustig publicatieritme met dezelfde aandacht voor inhoud en vindbaarheid. Onderwerpenonderzoek, schrijven, SEO-opmaak en publiceren zijn inbegrepen. €211,75 inclusief btw (€175 exclusief) per maand.",
+        "Een rustig publicatieritme met dezelfde aandacht voor inhoud en vindbaarheid. Onderwerpenonderzoek, schrijven, SEO-opmaak en publiceren zijn inbegrepen. €175 exclusief btw (€211,75 inclusief btw) per maand.",
         "Bespreek 2 blogs per maand",
         "/contact?dienst=content&blogs=2"
       ],
@@ -387,7 +387,7 @@ export const services: Service[] = [
       ],
       [
         "Wat kost content per maand?",
-        "Twee blogs per maand kosten €211,75 inclusief btw (€175 exclusief). Vier blogs kosten €393,25 inclusief btw (€325 exclusief), €30,25 inclusief btw voordeliger dan twee keer het kleinere pakket. Eenmalige webteksten of aanvullende foto- en videoproductie bespreken we apart."
+        "Twee blogs per maand kosten €175 exclusief btw (€211,75 inclusief btw). Vier blogs kosten €325 exclusief btw (€393,25 inclusief btw), €30,25 inclusief btw voordeliger dan twee keer het kleinere pakket. Eenmalige webteksten of aanvullende foto- en videoproductie bespreken we apart."
       ]
     ],
     "cta": "Bespreek je content",
@@ -463,7 +463,7 @@ export const services: Service[] = [
       ],
       [
         "Wat kost socialmediaonderhoud?",
-        "Het aantal basisposts en het aantal platforms bepalen de maandprijs. Vier posts op een platform kosten €180,29 inclusief btw (€149 exclusief) per maand. Alle combinaties staan in het prijzenoverzicht op deze pagina. Dezelfde basisposts worden aangepast voor elk gekozen platform."
+        "Het aantal basisposts en het aantal platforms bepalen de maandprijs. Vier posts op een platform kosten €149 exclusief btw (€180,29 inclusief btw) per maand. Alle combinaties staan in het prijzenoverzicht op deze pagina. Dezelfde basisposts worden aangepast voor elk gekozen platform."
       ],
       [
         "Zijn vier posts op drie platforms twaalf verschillende onderwerpen?",
@@ -527,7 +527,7 @@ export const services: Service[] = [
       ],
       [
         "Hosting, onderhoud & SEO / €84,69 incl. btw",
-        "De technische basis met doorlopende SEO-verbeteringen: bestaande teksten aanscherpen en code bijwerken waar nodig. €84,69 inclusief btw (€69,99 exclusief btw) per maand.",
+        "De technische basis met doorlopende SEO-verbeteringen: bestaande teksten aanscherpen en code bijwerken waar nodig. €69,99 exclusief btw (€84,69 inclusief btw) per maand.",
         "Bespreek onderhoud & SEO",
         "/contact?dienst=onderhoud-hosting"
       ]
@@ -539,7 +539,7 @@ export const services: Service[] = [
       ],
       [
         "Wat is de maandprijs?",
-        "Hosting begint bij €6,05 inclusief btw (€5 exclusief) per maand. Hosting met onderhoud kost €36,29 inclusief btw (€29,99 exclusief); met onderhoud en SEO €84,69 inclusief btw (€69,99 exclusief). Hosting heeft een eerste looptijd van twaalf maanden en is daarna maandelijks opzegbaar. Nieuwe blogs en socialmediacontent zijn aparte pakketten."
+        "Hosting begint bij €5 exclusief btw (€6,05 inclusief btw) per maand. Hosting met onderhoud kost €29,99 exclusief btw (€36,29 inclusief btw); met onderhoud en SEO €69,99 exclusief btw (€84,69 inclusief btw). Hosting heeft een eerste looptijd van twaalf maanden en is daarna maandelijks opzegbaar. Nieuwe blogs en socialmediacontent zijn aparte pakketten."
       ],
       [
         "Is alles onbeperkt inbegrepen?",

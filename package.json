@@ -20,10 +20,14 @@
     "dev:legacy": "node scripts/run-framework.mjs dev",
     "build:legacy": "node scripts/run-framework.mjs build",
     "start:legacy": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --env-file .env.local --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
-    "build:vercel": "next build --webpack",
+    "build:vercel": "node --experimental-strip-types scripts/release-contact.mjs && next build --webpack",
     "seo:edges": "node scripts/seo-edge-check.mjs",
     "db:migrate": "node --env-file=.env.local scripts/migrate-postgres.mjs",
-    "test:runtime": "node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs --test tests/database-runtime.test.mjs tests/consent.test.mjs"
+    "test:runtime": "node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs --test tests/database-runtime.test.mjs tests/consent.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:all": "node scripts/test-logic.mjs && node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs --test tests/*.test.mjs",
+    "test:routes": "node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs scripts/test-public-routes.mjs",
+    "db:migrate:contact": "node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs scripts/migrate-contact.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -54,6 +58,7 @@
     "recharts": "^3.8.0",
     "robots-parser": "^3.0.1",
     "sonner": "^2.0.8",
+    "svix": "^2.5.0",
     "tailwind-merge": "3.6.0",
     "vaul": "^1.1.2",
     "zod": "^3.25.76"

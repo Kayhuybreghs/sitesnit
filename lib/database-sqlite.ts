@@ -6,7 +6,7 @@ import { sqliteSchema } from "./database-schema";
 export function openLocalDatabase(filename: string) {
   if (process.env.VERCEL) throw new Error("Local SQLite is disabled on Vercel.");
   const connection = new DatabaseSync(filename);
-  connection.exec("PRAGMA busy_timeout = 5000;");
+  connection.exec("PRAGMA busy_timeout = 5000; PRAGMA foreign_keys = ON;");
   if (filename !== ":memory:") connection.exec("PRAGMA journal_mode = WAL;");
   connection.exec(sqliteSchema);
   const execute: QueryExecutor = async ({ text, values }) => {

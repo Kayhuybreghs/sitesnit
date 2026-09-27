@@ -7,7 +7,7 @@ export function AuditIntro(){
    <span className="audit-start-hint">Je gaat direct naar het invoerveld hieronder.</span>
    <ul className="audit-hero-facts"><li>Tot 20 pagina’s</li><li>Tot ongeveer 3 minuten</li><li>Geen account nodig</li></ul>
   </div>
-  <a className="audit-report-invite" href="#audit-url" aria-label="Start je gratis SEO-audit. Ontvang een technisch overzicht, problemen per pagina en verbeteracties.">
+  <a className="audit-report-invite" href="#audit-url">
    <div className="audit-report-top"><span className="audit-mini-brand" aria-hidden="true">S↗</span><span>Jouw website doorgelicht</span><span className="audit-report-arrow" aria-hidden="true">↗</span></div>
    <div className="audit-report-heading"><span>Dit krijg je terug</span><strong>Van een URL<br/>naar een actieplan.</strong></div>
    <div className="audit-deliverables">

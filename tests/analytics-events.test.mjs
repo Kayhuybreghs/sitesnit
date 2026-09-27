@@ -3,6 +3,15 @@ import assert from 'node:assert/strict';
 import { analyticsEventPayload, createToolEventTracker, publicCtaForLink, setPublicAnalyticsRuntime, trackPublicEvent } from '../lib/analytics-events.ts';
 
 afterEach(() => setPublicAnalyticsRuntime(null));
+test('lead metadata is allowlisted and contact clicks remain contact intention only',()=>{
+  const source='https://www.sitesnit.nl/contact?email=secret@example.test';
+  assert.deepEqual(analyticsEventPayload({name:'generate_lead',form_id:'contact',email:'secret',reference:'SN-private'}),{name:'generate_lead',params:{form_id:'contact'}});
+  assert.equal(analyticsEventPayload({name:'generate_lead',form_id:'arbitrary private input'}),null);
+  assert.deepEqual(publicCtaForLink('mailto:contact@sitesnit.nl?body=private',source),{name:'contact_intent',channel:'email'});
+  assert.deepEqual(publicCtaForLink('tel:+31639430197',source),{name:'contact_intent',channel:'phone'});
+  assert.deepEqual(publicCtaForLink('https://wa.me/31639430197?text=private',source),{name:'contact_intent',channel:'whatsapp'});
+  assert.equal(trackPublicEvent({name:'generate_lead',form_id:'contact'}),false);
+});
 function setup(href = 'https://sitesnit.nl/tools/website-check?url=https://private.example&email=secret#antwoord') {
   const events = [];
   setPublicAnalyticsRuntime({expiresAt:Date.now()+10000, href:()=>href,

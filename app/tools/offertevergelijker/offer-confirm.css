@@ -1,0 +1,6 @@
+.offer-confirm{width:min(560px,calc(100% - 32px));max-height:calc(100dvh - 48px);margin:auto;border:1px solid var(--line);border-radius:22px;padding:clamp(24px,4vw,38px);background:#f8f6ef;color:var(--ink);box-shadow:0 24px 80px #173e4230;overflow:auto}
+.offer-confirm::backdrop{background:#102c3d80}
+.offer-confirm h2{font-size:1.65rem;line-height:1.2;letter-spacing:-.03em}
+.offer-confirm p{margin:20px 0;line-height:1.7}
+.offer-confirm>div{display:flex;flex-wrap:wrap;gap:12px}
+.offer-confirm .button{white-space:normal;min-height:48px}

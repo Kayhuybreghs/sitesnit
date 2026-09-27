@@ -241,7 +241,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
       .join("\n\n");
     const summary = isWeb
       ? `Websitecheck: ${url}\nTechnische analyse: ${scan.status === "complete" ? "afgerond" : "onvolledig"}\n${scan.result ? `Pagina: ${scan.result.finalUrl}\nGemeten: ${scan.result.fetchTime}\nMobiele Lighthouse-labtest\n${scan.result.categories.map((c) => `${c.title}: ${c.score ?? "niet beschikbaar"}`).join("\n")}` : ""}\n\n${advice.priorities.map((p) => `${p.title} (${p.source})\n${p.what}\nActie: ${p.action}`).join("\n\n")}\n\nAntwoorden:\n${answerLines}`
-      : `Prijscheck: ${price.route}\n${price.fixed ? "Vaste bouwprijs" : price.packageId === "maatwerk" ? "Bouwprijs vanaf" : "Bevestigde bouwprijsbasis"}: ${price.basis === null ? "Nog te bepalen" : `${euro(grossPrice(price.basis))} inclusief 21% btw (${euro(price.basis)} exclusief btw)`}\n${price.reasons.join("\n")}\nNog afstemmen: ${price.pending.join("; ") || "exacte inhoud en planning"}${price.basis !== null ? `\n\nBETALING EN HOSTING\n${paymentSummary}\n${hostingSummary}\nBouw + eerste hostingjaar: minimaal ${euro(grossPrice(price.basis + minimumHostingYear))} inclusief btw (${euro(price.basis + minimumHostingYear)} exclusief btw). Aanvullende scope stemmen we apart af.` : ""}\n\nAntwoorden:\n${answerLines}`;
+      : `Prijscheck: ${price.route}\n${price.fixed ? "Vaste bouwprijs" : price.packageId === "maatwerk" ? "Bouwprijs vanaf" : "Bevestigde bouwprijsbasis"}: ${price.basis === null ? "Nog te bepalen" : `${euro(price.basis)} exclusief btw (${euro(grossPrice(price.basis))} inclusief 21% btw)`}\n${price.reasons.join("\n")}\nNog afstemmen: ${price.pending.join("; ") || "exacte inhoud en planning"}${price.basis !== null ? `\n\nBETALING EN HOSTING\n${paymentSummary}\n${hostingSummary}\nBouw + eerste hostingjaar: minimaal ${euro(price.basis + minimumHostingYear)} exclusief btw (${euro(grossPrice(price.basis + minimumHostingYear))} inclusief btw). Aanvullende scope stemmen we apart af.` : ""}\n\nAntwoorden:\n${answerLines}`;
     if (isWeb) return summary;
     const brief=websiteBrief(answers);
     return `${summary}\n\nWEBSITEPLAN\n${brief.label}: ${brief.pages.join(" / ")}\n${brief.content.join("\n")}\n${brief.note}`;
@@ -324,8 +324,8 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                 <p>Je antwoorden veranderen de gemeten scores niet. In je resultaat staat wat uit de meting komt en wat uit je antwoorden volgt. Mislukt de meting, dan blijven je antwoorden bewaard en kun je opnieuw proberen.</p>
                 <p>Je krijgt een korte conclusie en de belangrijkste verbeterpunten, met uitleg en een passende actie. Wil je hulp bij verbeteren of een redesign? Onder je resultaat kun je een belafspraak aanvragen en je uitkomst meesturen.</p>
               </> : <>
-                <p>De 15 vragen brengen je pagina’s, inhoud, functies en koppelingen in kaart. De bouwprijs voor een passende onepager is {euro(grossPrice(site.packages[0].price))} inclusief btw ({euro(site.packages[0].price)} exclusief btw). Bij vijf pagina’s is dat {euro(grossPrice(site.packages[1].price))} inclusief btw ({euro(site.packages[1].price)} exclusief btw). Responsive ontwerp en een standaardcontactformulier maken je aanvraag niet automatisch maatwerk.</p>
-                <p>Extra omvang of bijzondere functies kunnen een maatwerkroute vragen. De bouwprijs begint dan bij {euro(grossPrice(site.packages[2].price))} inclusief btw ({euro(site.packages[2].price)} exclusief btw). Je ziet welke wensen daarvoor de reden zijn en welke keuzes nog nodig zijn om een prijs af te spreken. Je budget verandert het tarief voor dezelfde wensen niet.</p>
+                <p>De 15 vragen brengen je pagina’s, inhoud, functies en koppelingen in kaart. De bouwprijs voor een passende onepager is {euro(site.packages[0].price)} exclusief btw ({euro(grossPrice(site.packages[0].price))} inclusief btw). Bij vijf pagina’s is dat {euro(site.packages[1].price)} exclusief btw ({euro(grossPrice(site.packages[1].price))} inclusief btw). Responsive ontwerp en een standaardcontactformulier maken je aanvraag niet automatisch maatwerk.</p>
+                <p>Extra omvang of bijzondere functies kunnen een maatwerkroute vragen. De bouwprijs begint dan bij {euro(site.packages[2].price)} exclusief btw ({euro(grossPrice(site.packages[2].price))} inclusief btw). Je ziet welke wensen daarvoor de reden zijn en welke keuzes nog nodig zijn om een prijs af te spreken. Je budget verandert het tarief voor dezelfde wensen niet.</p>
                 <p>{hostingSummary} {paymentSummary}</p>
                 <p>Je kunt antwoorden aanpassen en je websiteplan onder het resultaat meenemen naar een belaanvraag. De uitkomst helpt je kiezen; de precieze werkzaamheden worden in een voorstel vastgelegd. <a href="/kosten">Bekijk ook direct alle websitepakketten.</a></p>
               </>}
@@ -780,7 +780,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                     <p className="custom-average">
                       <strong>
                         Grotere maatwerkprojecten komen gemiddeld rond{" "}
-                        {euro(grossPrice(site.averageProjectCost))} inclusief btw uit ({euro(site.averageProjectCost)} exclusief btw).
+                        {euro(site.averageProjectCost)} exclusief btw uit ({euro(grossPrice(site.averageProjectCost))} inclusief btw).
                       </strong>{" "}
                       Dat is context, geen persoonlijke totaalprijs of
                       bovengrens. De omvang en functies van jouw project bepalen

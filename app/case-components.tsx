@@ -2,6 +2,7 @@ import { ProjectPhoneScreen } from "./project-phone-screen";
 import { Arrow, Eyebrow } from "./ui";
 import { clientCases, type ClientCase } from "./portfolio-data";
 import { WorkVisual } from "./work-visual";
+import { caseStories } from "./case-story-data";
 import "./case-feedback.css";
 
 export function CaseLinks({title = "Van plan naar praktijk."}: {title?: string}) {
@@ -23,21 +24,27 @@ export function PortfolioCard({project, index}: {project:ClientCase;index:number
 }
 export function ClientCasePage({project:p}: {project:ClientCase}) {
   const isWijzer = p.slug === "beurswijzer";
-  return <div className={`client-case case-${p.theme}`}>
-    <section className="wrap case-hero">
+  const story = caseStories[p.slug];
+  return <div className={`client-case case-study case-${p.theme}`}>
+    <section className="case-study-hero"><div className="wrap">
       <a className="back-link" href="/projecten">← Alle projecten</a>
-      <div className="case-hero-grid"><div><Eyebrow>{p.name} / Een doorlopend project</Eyebrow><h1>{p.title}<br /><em>{p.accent}</em></h1></div><div><p>{p.summary}</p><a className="text-link" href={p.url} target="_blank" rel="nofollow noopener noreferrer" aria-label={`Bekijk ${p.name} (opent in een nieuw tabblad)`}>Bekijk {p.name} <Arrow /></a></div></div>
-      <dl className="case-facts"><div><dt>Het platform</dt><dd>{p.name}</dd></div><div><dt>De uitwerking</dt><dd>Merk, website & rekentools</dd></div><div><dt>Daarna</dt><dd>Wekelijkse blogs, SEO & beheer</dd></div></dl>
-    </section>
-    <div className="wrap case-visual-cover"><WorkVisual kind={isWijzer?"brand":"watcher"} priority sizes="(max-width: 899px) 88vw, 800px"/></div>
-    <section className="wrap case-brief"><div><Eyebrow>Het vertrekpunt</Eyebrow><h2>{isWijzer?"Grip op je geld.":"Ruimte om te begrijpen."}<br/><em>Begint bij overzicht.</em></h2></div><p>{p.challenge}</p></section>
-    {isWijzer && <section className="wrap case-picture-story"><WorkVisual kind="editorial"/><div className="case-picture-copy"><Eyebrow>01 / Inhoud & ontwerp</Eyebrow><h2>Een vraag herkennen.<br/><em>Verder willen lezen.</em></h2><p>{p.choices[0][1]}</p><p>{p.choices[1][1]}</p><a className="text-link" href="/diensten/content">Zo verzorgen we de inhoud<Arrow/></a></div></section>}
-    <section className="wrap case-picture-story picture-reverse"><WorkVisual kind={isWijzer?"budget":"tools"}/><div className="case-picture-copy"><Eyebrow>{isWijzer?"02":"01"} / Van invoer naar inzicht</Eyebrow><h2>{p.toolTitle}</h2><p>{p.toolText}</p><ul>{(isWijzer?[p.choices[2]]:[p.choices[1],p.choices[2]]).map(([title,text])=><li key={title}><b>{title}</b>{text}</li>)}</ul><a className="text-link" href="/diensten/ai-automatisering">Tools die jouw werk eenvoudiger maken<Arrow/></a></div></section>
+      <div className="case-study-opening">
+        <div className="case-study-intro"><Eyebrow>Project / {p.name}</Eyebrow><h1>{story.heading}<br/><em>{story.accent}</em></h1><p>{story.intro}</p><a className="button" href="#opdracht">Bekijk de uitwerking <Arrow/></a></div>
+        <figure className="case-study-preview"><div className="case-study-preview-label"><span>{p.name}</span><span>Ontwerp in gebruik</span></div><img src={p.image} srcSet={`${p.image} ${p.imageSmallWidth}w, ${p.imageLarge} ${p.imageWidth}w`} sizes="(min-width: 1000px) 52vw, 90vw" width={p.imageWidth} height={p.imageHeight} alt={p.imageAlt} loading="eager" fetchPriority="high"/><figcaption>{story.imageCaption}</figcaption></figure>
+      </div>
+      <div className="case-study-summary"><p>{story.label}</p><a className="text-link" href={p.url} target="_blank" rel="nofollow noopener noreferrer" aria-label={`Bekijk de website van ${p.name} (opent in een nieuw tabblad)`}>Bekijk de website <Arrow/></a></div>
+    </div></section>
+    <nav className="wrap case-study-nav" aria-label="In deze case"><a href="#opdracht"><span>01</span> De opdracht</a><a href="#ontwerpkeuzes"><span>02</span> De keuzes</a><a href="#opgeleverd"><span>03</span> Wat er staat</a><a href="#na-de-bouw"><span>04</span> Het vervolg</a></nav>
+    <section className="wrap case-study-brief" id="opdracht"><div><Eyebrow>01 / De opdracht</Eyebrow><h2>{isWijzer?"Overzicht in een onderwerp met veel cijfers.":"Complexe berekeningen begrijpelijk maken."}</h2><p>{p.challenge}</p></div><dl><div><dt>Voor wie?</dt><dd>{story.audience}</dd></div><div><dt>De opgave</dt><dd>{story.assignment}</dd></div><div><dt>De rol van Sitesnit</dt><dd>{story.role}</dd></div></dl></section>
+    <section className="case-study-route" id="ontwerpkeuzes"><div className="wrap"><Eyebrow>02 / De gedachte achter het ontwerp</Eyebrow><h2>Lezen en rekenen.<br/><em>Een logische volgende stap.</em></h2><p>{story.bridge}</p><ol>{story.route.map((step,index)=><li key={step}><span>0{index+1}</span><strong>{step}</strong>{index<2&&<Arrow/>}</li>)}</ol></div></section>
+    {isWijzer && <section className="wrap case-picture-story"><WorkVisual kind="editorial"/><div className="case-picture-copy"><Eyebrow>Inhoud & ontwerp</Eyebrow><h2>Een vraag herkennen.<br/><em>Verder willen lezen.</em></h2><p>{p.choices[0][1]}</p><p>{p.choices[1][1]}</p><a className="text-link" href="/diensten/content">Zo verzorgen we de inhoud<Arrow/></a></div></section>}
+    <section className="wrap case-picture-story picture-reverse"><WorkVisual kind={isWijzer?"budget":"tools"}/><div className="case-picture-copy"><Eyebrow>Van invoer naar inzicht</Eyebrow><h2>{p.toolTitle}</h2><p>{p.toolText}</p><ul>{(isWijzer?[p.choices[2]]:[p.choices[1],p.choices[2]]).map(([title,text])=><li key={title}><b>{title}</b>{text}</li>)}</ul><a className="text-link" href="/diensten/formulieren-rekentools">Meer over formulieren en rekentools<Arrow/></a></div></section>
     <section className={`wrap case-mobile-story${isWijzer?"":" mobile-story-text"}`}>
       {isWijzer?<div className="case-phone"><ProjectPhoneScreen project="beurswijzer"/></div>:<div className="case-brand-note"><span>BEURSWATCHER</span><strong>Een eigen gezicht.<br/><em>Op ieder scherm.</em></strong><div className="watcher-palette" aria-label="Diepblauw, geel en gebroken wit"><i/><i/><i/></div></div>}
-      <div className="case-picture-copy"><Eyebrow>{isWijzer?"03":"02"} / Mobile first</Eyebrow><h2>Dezelfde identiteit.<br/><em>Een eigen indeling.</em></h2><p>{p.choices[3][1]}</p>{!isWijzer&&<p>{p.choices[0][1]}</p>}<a className="text-link" href="/diensten/webdesign">Meer over ons webdesign<Arrow/></a></div>
+      <div className="case-picture-copy"><Eyebrow>Ontworpen voor mobiel</Eyebrow><h2>Dezelfde identiteit.<br/><em>Een eigen indeling.</em></h2><p>{p.choices[3][1]}</p>{!isWijzer&&<p>{p.choices[0][1]}</p>}<a className="text-link" href="/diensten/webdesign">Meer over ons webdesign<Arrow/></a></div>
     </section>
-    <section className="case-continuity-band"><div className="wrap case-continuity-inner"><div><Eyebrow>Ook na de bouw</Eyebrow><h2>Een levend platform.<br /><em>Iedere week aandacht.</em></h2><p>{p.maintenance}</p></div><div className="case-maintenance-list"><a href="/diensten/content"><b>01 / Content</b>Iedere week een nieuw blog <Arrow /></a><a href="/diensten/seo"><b>02 / Vindbaarheid</b>SEO-basis en inhoud bijhouden <Arrow /></a><a href="/diensten/onderhoud-hosting"><b>03 / Beheer</b>Hosting en websiteonderhoud <Arrow /></a></div></div></section>
+    <section className="wrap case-study-outcome" id="opgeleverd"><Eyebrow>03 / Wat er staat</Eyebrow><h2>Van ontwerpkeuze<br/><em>naar een werkend onderdeel.</em></h2><div>{story.outcome.map(([title,text],index)=><article key={title}><span>0{index+1}</span><h3>{title}</h3><p>{text}</p></article>)}</div><p className="case-study-evidence">Deze case laat het gerealiseerde ontwerp en de functies zien. Bezoekcijfers en conversieresultaten zijn hier niet gemeten of onderbouwd.</p></section>
+    <section className="case-continuity-band" id="na-de-bouw"><div className="wrap case-continuity-inner"><div><Eyebrow>04 / Het vervolg</Eyebrow><h2>Een levend platform.<br /><em>Iedere week aandacht.</em></h2><p>{p.maintenance}</p></div><div className="case-maintenance-list"><a href="/diensten/content"><b>Content</b>Iedere week een nieuw blog <Arrow /></a><a href="/diensten/seo"><b>Vindbaarheid</b>SEO-basis en inhoud bijhouden <Arrow /></a><a href="/diensten/onderhoud-hosting"><b>Beheer</b>Hosting en websiteonderhoud <Arrow /></a></div></div></section>
     <section className="wrap case-next"><Eyebrow>Een vergelijkbaar idee?</Eyebrow><h2>Van jouw vraag.<br /><em>Naar een eigen oplossing.</em></h2><p>Een platform, rekentool of website die je verder wilt laten groeien? Bespreek wat je wilt maken én wat je daarna wilt uitbesteden.</p><a className="button" href={`/contact?project=${p.slug}`}>Bespreek jouw project <Arrow /></a></section>
   </div>;
 }

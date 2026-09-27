@@ -3,6 +3,7 @@ import {clientCases} from '../../portfolio-data';
 import {ClientCasePage} from '../../case-components';
 import {withPageMetadata,Breadcrumbs} from '../../seo';
 import '../../work-story.css';
+import '../../case-study.css';
 export function generateStaticParams(){return clientCases.map(p=>({slug:p.slug}));}
 export const dynamicParams=false;
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;if(!clientCases.some(p=>p.slug===slug))notFound();return withPageMetadata({},`/projecten/${slug}`);}

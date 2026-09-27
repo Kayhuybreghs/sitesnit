@@ -75,7 +75,7 @@ export const pageSeo: Record<string, PageSeo> = {
   },
   '/tools': {
     title: 'Gratis websitetools — check, ontwerp en vergelijk',
-    description: 'Check je website, maak een ontwerpvoorbeeld, verken de kosten of vergelijk offertes. Vijf gratis tools van Sitesnit om je websiteplannen concreet te maken.',
+    description: 'Check je website, maak een ontwerpvoorbeeld, verken de kosten of vergelijk offertes. Gratis tools van Sitesnit om je websiteplannen concreet te maken.',
   },
   '/tools/website-ontwerp-tool': {
     title: 'Ontwerp je eigen website — gratis interactief voorbeeld',

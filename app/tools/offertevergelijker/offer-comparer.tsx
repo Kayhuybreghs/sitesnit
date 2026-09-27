@@ -1,6 +1,7 @@
 "use client";
 import { ToolHelp as ReadingHelp } from "../tool-help";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import './offer-confirm.css';
 import { createToolEventTracker } from '../../../lib/analytics-events';
 import {
   emptyOffer,
@@ -56,6 +57,8 @@ function valid(data: unknown): data is Offer[] {
     )
   );
 }
+function validUndo(data:unknown):data is Offer[]|null {return data===null||valid(data);}
+function hasInput(offers:Offer[]){return offers.some(o=>JSON.stringify(o)!==JSON.stringify(emptyOffer(o.id,`Voorstel ${o.id.toUpperCase()}`)));}
 export default function OfferComparer() {
   const analytics = useRef(createToolEventTracker('offertevergelijker'));
   const [offers, setOffers, ready] = useToolDraft(
@@ -64,6 +67,15 @@ export default function OfferComparer() {
     valid,
   );
   const [active, setActive] = useState("a");
+  const [undo,setUndo] = useToolDraft<Offer[]|null>('sitesnit-offers-undo-v1',null,validUndo);
+  const dialog=useRef<HTMLDialogElement>(null);
+  const [replacement,setReplacement]=useState<{next:Offer[];reason:string;restore:boolean}|null>(null);
+  useEffect(()=>{if(replacement)dialog.current?.showModal();else dialog.current?.close();},[replacement]);
+  const applyReplacement=(next:Offer[],restore=false)=>{setUndo(restore?null:offers);setOffers(next);setActive('a');setReplacement(null);};
+  const replaceOffers=(next:Offer[],reason:string)=>{
+    if(hasInput(offers)){setReplacement({next,reason,restore:false});return;}
+    applyReplacement(next);
+  };
   const current = offers.find((o) => o.id === active) ?? offers[0];
   const results = offers.map((offer) => ({ offer, total: offerTotals(offer) }));
   const comparable = offersComparable(offers);
@@ -77,7 +89,7 @@ export default function OfferComparer() {
   };
   const summary = summarizeOffers(offers);
   const showExample = () => {
-    setOffers([
+    replaceOffers([
       {
         ...emptyOffer("a", "Voorbeeld A"),
         example: true,
@@ -112,11 +124,15 @@ export default function OfferComparer() {
           support: "yes",
         },
       },
-    ]);
-    setActive("a");
+    ],'Een fictief voorbeeld invullen?');
   };
   return (
     <div className="tool-workbench">
+      <dialog className="offer-confirm" ref={dialog} aria-labelledby="offer-confirm-title" onCancel={()=>setReplacement(null)}>
+        <h2 id="offer-confirm-title">{replacement?.reason}</h2>
+        <p>Je huidige invoer wordt vervangen. {replacement?.restore?'Dit zet je vorige voorstellen terug.':'Je kunt de laatste vervanging daarna ongedaan maken.'}</p>
+        <div><button type="button" className="button button-outline" onClick={()=>setReplacement(null)}>Annuleren, invoer behouden</button><button type="button" className="button" onClick={()=>replacement&&applyReplacement(replacement.next,replacement.restore)}>Ja, vervangen</button></div>
+      </dialog>
       <ToolLead
         eyebrow="Kiezen / Website-offertes"
         title="Twee voorstellen."
@@ -139,6 +155,7 @@ export default function OfferComparer() {
               Vul een voorbeeld in
             </button>
           </div>
+          {undo&&<p className="tool-example-note" role="status">Laatste vervanging ongedaan maken? <button type="button" className="text-link" onClick={()=>hasInput(offers)?setReplacement({next:undo,reason:'Vorige voorstellen terugzetten?',restore:true}):applyReplacement(undo,true)}>Vorige voorstellen terugzetten</button></p>}
           {example && (
             <p className="tool-example-note">
               Gestart met fictieve voorbeeldbedragen · controleer alle velden.{" "}
@@ -146,8 +163,7 @@ export default function OfferComparer() {
                 className="text-link"
                 type="button"
                 onClick={() => {
-                  setOffers(initial);
-                  setActive("a");
+                  replaceOffers(initial,'Beginnen met lege voorstellen?');
                 }}
               >
                 Begin met lege voorstellen
@@ -321,8 +337,7 @@ export default function OfferComparer() {
                 type="button"
                 className="text-link"
                 onClick={() => {
-                  setOffers(offers.filter((o) => o.id !== "c"));
-                  setActive("a");
+                  replaceOffers(offers.filter((o) => o.id !== "c"),'Het derde voorstel verwijderen?');
                 }}
               >
                 Verwijder derde voorstel

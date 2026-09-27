@@ -23,6 +23,7 @@ export default function Kosten() {
       <a className="button" href="#pakketten">Vergelijk de pakketten ↓</a><a className="text-link" href="/tools/website-kosten-berekenen">Help me kiezen <Arrow /></a>
     </PageHero>
     <section className="wrap" id="pakketten" aria-label="Websitepakketten">
+      <p>Elk pakket krijgt een eigen ontwerp voor jouw bedrijf. Het verschil zit in het aantal pagina’s, de inhoud en de afgesproken functies.</p>
       <div className="cost-packages">{site.packages.map((p,i)=><article className="cost-package" data-reveal key={p.id} id={p.id}>
         <div className="cost-package-top"><span>{p.pages}</span><b>0{i+1}</b></div>
         <h2>{p.name}</h2>

@@ -9,3 +9,6 @@
 .contact-care-disclosure{margin:22px 0;border:1px solid #c2cec1;border-radius:15px;background:#f1f4eb}.contact-care-disclosure>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:17px 19px;min-height:74px}.contact-care-disclosure>summary::-webkit-details-marker{display:none}.contact-care-disclosure>summary b{font-size:.95rem;font-weight:750}.contact-care-disclosure>summary small{display:block;font-size:.75rem;line-height:1.6;color:var(--muted);margin-top:3px}.care-disclosure-icon{font-size:1.5rem;line-height:1;transition:transform 160ms}.contact-care-disclosure[open] .care-disclosure-icon{transform:rotate(45deg)}.contact-care-disclosure .contact-care-choices{margin:0;border:0;padding-top:0;background:transparent}.contact-care-disclosure .contact-care-choices>p{font-size:.8rem}
 @media(prefers-reduced-motion:reduce){.care-disclosure-icon{transition:none}}
 @media(min-width:700px){.contact-care-choices{padding:22px}}
+
+.contact-form .contact-fields{border:0;padding:0;margin:0;min-width:0;display:contents}
+.contact-reference{overflow-wrap:anywhere}

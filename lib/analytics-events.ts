@@ -5,7 +5,9 @@ export type ToolId = typeof TOOL_IDS[number];
 export const ACTION_IDS = ['contact_open', 'prices_view', 'projects_view', 'tools_view', 'tool_open', 'discuss_result'] as const;
 export type ActionId = typeof ACTION_IDS[number];
 export type PublicAnalyticsEvent = { name: 'tool_start' | 'tool_complete'; tool_id: ToolId } |
-  { name: 'cta_click'; action_id: ActionId; tool_id?: ToolId };
+  { name: 'cta_click'; action_id: ActionId; tool_id?: ToolId } |
+  { name:'generate_lead'; form_id:'contact'|'tool_contact'; tool_id?:ToolId } |
+  { name:'contact_intent'; channel:'email'|'phone'|'whatsapp' };
 export const ANALYTICS_TOOL_PATHS: Record<string, ToolId> = {
   '/tools/website-check': 'websitecheck', '/tools/website-kosten-berekenen': 'prijscheck',
   '/tools/website-offerte-vergelijken': 'offertevergelijker', '/tools/automatiseringsplan': 'automatiseringsplan',
@@ -22,6 +24,11 @@ export function analyticsEventPayload(value: unknown): { name: PublicAnalyticsEv
   if (!value || typeof value !== 'object') return null;
   const event = value as Record<string, unknown>;
   const tool = typeof event.tool_id === 'string' && TOOL_IDS.includes(event.tool_id as ToolId) ? event.tool_id as ToolId : null;
+  if(event.name==='generate_lead'){
+    if(!['contact','tool_contact'].includes(String(event.form_id)) || (event.tool_id!==undefined&&!tool)) return null;
+    return {name:'generate_lead',params:{form_id:String(event.form_id),...(tool?{tool_id:tool}:{})}};
+  }
+  if(event.name==='contact_intent') return ['email','phone','whatsapp'].includes(String(event.channel)) ? {name:'contact_intent',params:{channel:String(event.channel)}} : null;
   if (event.name === 'tool_start' || event.name === 'tool_complete') {
     return tool ? { name: event.name, params: { tool_id: tool } } : null;
   }
@@ -59,6 +66,10 @@ export function createToolEventTracker(tool_id: ToolId) {
 export function publicCtaForLink(href: string, currentHref: string): PublicAnalyticsEvent | null {
   try {
     const current = new URL(currentHref), target = new URL(href, current);
+    const channel = target.protocol==='mailto:'&&target.pathname.toLowerCase()==='contact@sitesnit.nl' ? 'email' :
+      target.protocol==='tel:'&&target.pathname==='+31639430197' ? 'phone' :
+      target.origin==='https://wa.me'&&target.pathname==='/31639430197' ? 'whatsapp' : null;
+    if(channel) return {name:'contact_intent',channel};
     if (target.origin !== current.origin || !['http:', 'https:'].includes(target.protocol)) return null;
     const sourceTool = ANALYTICS_TOOL_PATHS[current.pathname];
     if (target.pathname === current.pathname && ['#ontwerp-bespreken', '#bespreken', '#audit-bespreken'].includes(target.hash)) {

@@ -24,6 +24,9 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+    ".vinext/**",
+    "reports/**",
+    "outputs/**",
     "out/**",
     "build/**",
     ".sites-runtime/**",

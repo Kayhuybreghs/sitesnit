@@ -1,3 +1,4 @@
+import { InlineArrow } from './inline-arrow';
 import { Project, site, euro } from "./site-data";
 import { grossPrice, minimumHostingYear } from '../lib/business';
 import { WebsitePrice } from './website-price';
@@ -56,7 +57,7 @@ export function HeroPanels() {
         </div>
         <div className="mock-nav">
           <b>vorm.</b>
-          <span>Collectie &nbsp; Verhaal &nbsp; Contact ↗</span>
+          <span>Collectie &nbsp; Verhaal &nbsp; Contact <InlineArrow /></span>
         </div>
         <div className="mock-hero">
           <span>GEMAAKT OM TE BLIJVEN</span>
@@ -74,7 +75,7 @@ export function HeroPanels() {
             alt="Conceptbeeld van een eiken designstoel met bordeaux bekleding"
             fetchPriority="high"
           />
-          <span className="mock-button">Ontdek de collectie ↗</span>
+          <span className="mock-button">Ontdek de collectie <InlineArrow /></span>
         </div>
         <div className="mock-footer">
           <span>
@@ -100,7 +101,7 @@ export function HeroPanels() {
           <br />
           <em>karakter.</em>
         </span>
-        <i>Ontdek meer ↗</i>
+        <i>Ontdek meer <InlineArrow /></i>
       </div>
       <span className="art-chip">Ook op mobiel. Helemaal raak.</span>
       <span className="art-label">Ontwerpconcept · geen klantopdracht</span>
@@ -119,7 +120,7 @@ export function ProjectMock({
       <div className="project-browser">
         <div className="project-top">
           <b>{project.name}</b>
-          <span>Ontdek &nbsp; Ons verhaal &nbsp; ↗</span>
+          <span>Ontdek &nbsp; Ons verhaal &nbsp; <InlineArrow /></span>
         </div>
         <div className="project-visual">
           <img
@@ -138,12 +139,12 @@ export function ProjectMock({
           <div className="project-type">
             <span>{project.category}</span>
             <p>{project.tagline}</p>
-            <i>Ontdek het verhaal ↗</i>
+            <i>Ontdek het verhaal <InlineArrow /></i>
           </div>
         </div>
         <div className="project-browser-bottom">
           <span>Een eigen verhaal, in elke vorm.</span>
-          <span>↗</span>
+          <span><InlineArrow /></span>
         </div>
       </div>
       <span className="scene-label">Concept</span>
@@ -193,7 +194,7 @@ export function PriceCards({ compact = false }: { compact?: boolean }) {
           <ul>
             {p.points.map((x) => (
               <li key={x}>
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true"><InlineArrow /></span>
                 {x}
               </li>
             ))}
@@ -211,7 +212,7 @@ export function PriceCards({ compact = false }: { compact?: boolean }) {
       ))}
       <div className="pricing-context">
         <span className="pricing-context-mark" aria-hidden="true">
-          ↗
+          <InlineArrow />
         </span>
         <p>
           <strong>Een groter idee? Maatwerk begint vanaf €2.750 excl. btw ({euro(grossPrice(2750))} incl.).</strong>

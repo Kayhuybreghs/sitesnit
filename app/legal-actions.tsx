@@ -1,5 +1,7 @@
 'use client';
+import { InlineArrow } from './inline-arrow';
+
 
 export function PrintDocument() {
-  return <button className="text-link legal-print" type="button" onClick={() => window.print()}>Bewaren of afdrukken ↗</button>;
+  return <button className="text-link legal-print" type="button" onClick={() => window.print()}>Bewaren of afdrukken <InlineArrow /></button>;
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import { InlineArrow } from '../../inline-arrow';
 import { useRef, useState, type FormEvent, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import '../hub-auth.css';
@@ -102,7 +103,7 @@ function IntegrationEditor({ siteId, integrations }: { siteId: string; integrati
 export function AdminPanel({sites,workItems,members,reports,integrations}:AdminPanelProps) {
   const [selectedSite, setSelectedSite] = useState(sites[0]?.id || '');
   const site = sites.find(value => value.id === selectedSite) || sites[0];
-  return <div className="hub-admin-panel"><SiteCreator onCreated={setSelectedSite}/>{site ? <><div className="hub-admin-site-switch"><label>Website beheren<select value={site.id} onChange={event => setSelectedSite(event.target.value)}>{sites.map(value => <option key={value.id} value={value.id}>{value.client_name} · {value.name}</option>)}</select></label><a className="hub-admin-preview" href={`/hub/site/${encodeURIComponent(site.id)}?preview=1`}>Bekijk als beheerder <span aria-hidden="true">↗</span></a><p>{site.origin}</p></div><div className="hub-admin-grid" key={site.id}><div><WorkEditor siteId={site.id} items={workItems.filter(value => value.site_id === site.id)}/><ReportEditor siteId={site.id} reports={reports.filter(value => value.site_id === site.id)}/></div><div><AccessEditor site={site} members={members.filter(value => value.client_id === site.client_id)}/><IntegrationEditor siteId={site.id} integrations={integrations.filter(value => value.site_id === site.id)}/></div></div></> : <div className="hub-notice"><strong>Begin met een klantwebsite.</strong><p>Daarna kun je toegang regelen, werkzaamheden vastleggen en meetbronnen aansluiten.</p></div>}</div>;
+  return <div className="hub-admin-panel"><SiteCreator onCreated={setSelectedSite}/>{site ? <><div className="hub-admin-site-switch"><label>Website beheren<select value={site.id} onChange={event => setSelectedSite(event.target.value)}>{sites.map(value => <option key={value.id} value={value.id}>{value.client_name} · {value.name}</option>)}</select></label><a className="hub-admin-preview" href={`/hub/site/${encodeURIComponent(site.id)}?preview=1`}>Bekijk als beheerder <span aria-hidden="true"><InlineArrow /></span></a><p>{site.origin}</p></div><div className="hub-admin-grid" key={site.id}><div><WorkEditor siteId={site.id} items={workItems.filter(value => value.site_id === site.id)}/><ReportEditor siteId={site.id} reports={reports.filter(value => value.site_id === site.id)}/></div><div><AccessEditor site={site} members={members.filter(value => value.client_id === site.client_id)}/><IntegrationEditor siteId={site.id} integrations={integrations.filter(value => value.site_id === site.id)}/></div></div></> : <div className="hub-notice"><strong>Begin met een klantwebsite.</strong><p>Daarna kun je toegang regelen, werkzaamheden vastleggen en meetbronnen aansluiten.</p></div>}</div>;
 }
 
 export default AdminPanel;

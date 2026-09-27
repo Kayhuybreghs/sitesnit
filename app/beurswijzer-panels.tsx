@@ -1,9 +1,10 @@
+import { InlineArrow } from './inline-arrow';
 import "./beurswijzer-panels.css";
 
 // Decorative, simplified reconstructions of the inspected Beurswijzer screenshots.
 // No inputs, links, event handlers or bitmap assets. The surrounding case supplies context.
 function PanelHeader({budget = false}: {budget?: boolean}) {
-  return <div className="bwp-navigation"><b><span>↗</span>beurswijzer</b><span>Ontdek　 Geld uitgelegd　 Rekentools　 <strong>{budget ? "Mijn budget" : "Inzichten"}</strong></span><i>☰</i></div>;
+  return <div className="bwp-navigation"><b><span><InlineArrow /></span>beurswijzer</b><span>Ontdek　 Geld uitgelegd　 Rekentools　 <strong>{budget ? "Mijn budget" : "Inzichten"}</strong></span><i>☰</i></div>;
 }
 
 export function BeurswijzerEditorialPanel() {

@@ -1,5 +1,6 @@
 "use client";
 /* eslint-disable react-hooks/set-state-in-effect -- Restore browser session data after server hydration; it is unavailable during the server render. */
+import { InlineArrow } from './inline-arrow';
 import { useCheckTools } from "../lib/webmcp";
 import { createToolEventTracker } from '../lib/analytics-events';
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -305,7 +306,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                   ]
               ).map((t) => (
                 <li key={t}>
-                  <span>↗</span>
+                  <span><InlineArrow /></span>
                   {t}
                 </li>
               ))}
@@ -937,7 +938,7 @@ function ScanStatus({
       </p>
       {scan.status === "failed" && (
         <button className="quiet-button" type="button" onClick={retry}>
-          Probeer de technische scan opnieuw ↗
+          Probeer de technische scan opnieuw <InlineArrow />
         </button>
       )}
       {expanded && scan.result && (

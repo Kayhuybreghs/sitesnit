@@ -1,4 +1,5 @@
 "use client";
+import { InlineArrow } from '../../inline-arrow';
 import { useState, useRef, type CSSProperties } from "react";
 import {
   designPlan,
@@ -82,7 +83,7 @@ export default function DesignPreview({
               onClick={() => go("home")}
             >
               {plan.name}
-              <span>↗</span>
+              <span><InlineArrow /></span>
             </button>
             <nav aria-label="Navigatie binnen je ontwerpvoorbeeld">
               {nav.map(([key, label]) => (
@@ -116,7 +117,7 @@ export default function DesignPreview({
                     onClick={() => go(target)}
                   >
                     {plan.action}
-                    <span>↗</span>
+                    <span><InlineArrow /></span>
                   </button>
                 </div>
                 <div
@@ -132,7 +133,7 @@ export default function DesignPreview({
                   <span className="ds-art-label">
                     Ruimte voor jouw eigen beeld
                   </span>
-                  <span className="ds-art-mark">↗</span>
+                  <span className="ds-art-mark"><InlineArrow /></span>
                 </div>
                 <div className="ds-hero-bottom">
                   <span>{plan.services.slice(0, 3).join(" / ")}</span>
@@ -142,7 +143,7 @@ export default function DesignPreview({
             )}
             {input.pages !== 'one' && view === 'home' && <section className="ds-intent-preview" aria-label="Voorbeeld van de vervolgstap">
               <span className="ds-kicker">{input.goal === 'work' ? 'Een eerste indruk van het werk' : input.goal === 'booking' ? 'Van kennismaking naar afspraak' : input.goal === 'shop' ? 'Ontdek de collectie' : 'Van jouw vraag naar een oplossing'}</span>
-              {input.goal === 'work' ? <div className="ds-intent-projects">{[1,2].map(n=><button type="button" key={n} onClick={()=>go('work')}><i aria-hidden="true">{n===1?'↗':'Aa'}</i><span>Eigen project {n} · voorbeeldplek</span></button>)}</div> : <div className="ds-intent-offers">{plan.services.slice(0,3).map((service,i)=><button type="button" key={`${service}-${i}`} onClick={()=>go(input.goal === 'booking' ? 'contact' : 'services')}><span>0{i+1}</span><strong>{service}</strong><span aria-hidden="true">↗</span></button>)}</div>}
+              {input.goal === 'work' ? <div className="ds-intent-projects">{[1,2].map(n=><button type="button" key={n} onClick={()=>go('work')}><i aria-hidden="true">{n===1?<InlineArrow />:'Aa'}</i><span>Eigen project {n} · voorbeeldplek</span></button>)}</div> : <div className="ds-intent-offers">{plan.services.slice(0,3).map((service,i)=><button type="button" key={`${service}-${i}`} onClick={()=>go(input.goal === 'booking' ? 'contact' : 'services')}><span>0{i+1}</span><strong>{service}</strong><span aria-hidden="true"><InlineArrow /></span></button>)}</div>}
             </section>}
             {show("services") && (
               <section className="ds-section" id="ds-services">
@@ -162,7 +163,7 @@ export default function DesignPreview({
                         wie het is en wat iemand kan verwachten.
                       </p>
                       <button type="button" onClick={() => go("contact")}>
-                        Bespreek je vraag ↗
+                        Bespreek je vraag <InlineArrow />
                       </button>
                     </article>
                   ))}
@@ -177,7 +178,7 @@ export default function DesignPreview({
                   {[1, 2].map((n) => (
                     <article key={n}>
                       <div className={`ds-project-art ds-project-${n}`}>
-                        <span>{n === 1 ? "Aa" : "↗"}</span>
+                        <span>{n === 1 ? "Aa" : <InlineArrow />}</span>
                         <i />
                         <b>Jouw eigen projectbeeld</b>
                       </div>
@@ -211,7 +212,7 @@ export default function DesignPreview({
                     type="button"
                     onClick={() => go("contact")}
                   >
-                    Maak kennis ↗
+                    Maak kennis <InlineArrow />
                   </button>
                 </div>
               </section>

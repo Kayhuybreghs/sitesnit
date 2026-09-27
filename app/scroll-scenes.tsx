@@ -1,3 +1,4 @@
+import { InlineArrow } from './inline-arrow';
 import { Arrow, Eyebrow } from "./ui";
 
 export function BuildStory() {
@@ -53,7 +54,7 @@ export function BuildStory() {
             <div className="fold-panel fold-top">
               <div className="fold-nav">
                 <b>jouw merk.</b>
-                <span>Ontdek &nbsp; Over &nbsp; Contact ↗</span>
+                <span>Ontdek &nbsp; Over &nbsp; Contact <InlineArrow /></span>
               </div>
               <small>VOOR MENSEN MET PLANNEN</small>
               <strong>
@@ -79,7 +80,7 @@ export function BuildStory() {
                   <br />
                   naar iets echts.
                 </b>
-                <span>Bekijk het project ↗</span>
+                <span>Bekijk het project <InlineArrow /></span>
               </div>
             </div>
             <div className="fold-panel fold-bottom">
@@ -87,13 +88,13 @@ export function BuildStory() {
                 <b>Jouw plannen?</b>
                 <span>Daar maken we graag ruimte voor.</span>
               </div>
-              <span className="fold-contact">Laten we praten ↗</span>
+              <span className="fold-contact">Laten we praten <InlineArrow /></span>
             </div>
           </div>
           <div className="fold-labels">
             <span>Verhaal</span>
             <span>Vertrouwen</span>
-            <span>Contact ↗</span>
+            <span>Contact <InlineArrow /></span>
           </div>
           <p className="fold-note">Schematisch webdesignvoorbeeld</p>
         </div>
@@ -172,7 +173,7 @@ export function Possibilities() {
                   </b>
                   <div className="route-window-bottom">
                     <span />
-                    <strong>Ontdek meer ↗</strong>
+                    <strong>Ontdek meer <InlineArrow /></strong>
                   </div>
                 </div>
               ) : r.visual === "search" ? (
@@ -190,7 +191,7 @@ export function Possibilities() {
                 </div>
               ) : (
                 <div className="automation-demo">
-                  <span>Aanvraag ontvangen ↗</span>
+                  <span>Aanvraag ontvangen <InlineArrow /></span>
                   <i>↓</i>
                   <span>Gegevens op de juiste plek</span>
                   <i>↓</i>
@@ -240,7 +241,7 @@ export function VisitorShape() {
         Een goed ontwerp wijst de weg.
       </small>
       <span className="visitor-arrow" aria-hidden="true">
-        ↗
+        <InlineArrow />
       </span>
     </div>
   );

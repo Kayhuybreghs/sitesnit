@@ -1,3 +1,4 @@
+import { InlineArrow } from '../inline-arrow';
 import { withPageMetadata, BreadcrumbData } from '../seo';
 import type { Metadata } from "next";
 import { Eyebrow, Arrow } from "../ui";
@@ -32,7 +33,7 @@ export default function ToolsPage() {
         <div className="tool-hub-art" aria-hidden="true">
           <div className="hub-art-toolbar">
             <span>Jouw volgende stap</span>
-            <b>↗</b>
+            <b><InlineArrow /></b>
           </div>
           <strong>
             Even proberen.
@@ -77,7 +78,7 @@ export default function ToolsPage() {
       </section>
       <section className="wrap tool-designer-feature" id="ontwerp-je-website">
         <div className="designer-feature-copy"><Eyebrow>05 / Ontwerp je website</Eyebrow><h2>Niet alleen bedenken.<br/><em>Ook alvast zien.</em></h2><p>Hoe kan jouw website eruitzien? Vertel wat je doet, kies een stijl en geef je idee kleur. Je krijgt een bewerkbaar voorbeeld met jouw inhoud.</p><ol><li><b>01</b><span>Zes keuzes over jouw bedrijf</span></li><li><b>02</b><span>Jouw voorbeeld bekijken en aanpassen</span></li><li><b>03</b><span>Bespreken hoe Sitesnit het kan bouwen</span></li></ol><a className="button" href="/tools/website-ontwerp-tool">Ontwerp jouw websitevoorbeeld <Arrow/></a><p className="small">Geen account nodig. Je kiest zelf of je je ontwerp meestuurt.</p></div>
-        <div className="designer-feature-art" aria-hidden="true"><span className="feature-art-tag">Voorbeeldrichting</span><div className="feature-palette"><i/><i/><i/><b>Aa</b></div><div className="feature-browser"><div><span>jouw bedrijf</span><b>↗</b></div><p>Jouw verhaal.<br/><strong>Een eigen gezicht.</strong></p><span className="feature-fake-button">Maak kennis ↗</span><div className="feature-browser-art"><i/><b>J</b></div><footer>Je aanbod <span>Je werk</span> Contact</footer></div><div className="feature-art-caption"><span>Jouw keuzes</span><b>↓</b><span>Ons vertrekpunt</span></div></div>
+        <div className="designer-feature-art" aria-hidden="true"><span className="feature-art-tag">Voorbeeldrichting</span><div className="feature-palette"><i/><i/><i/><b>Aa</b></div><div className="feature-browser"><div><span>jouw bedrijf</span><b><InlineArrow /></b></div><p>Jouw verhaal.<br/><strong>Een eigen gezicht.</strong></p><span className="feature-fake-button">Maak kennis <InlineArrow /></span><div className="feature-browser-art"><i/><b>J</b></div><footer>Je aanbod <span>Je werk</span> Contact</footer></div><div className="feature-art-caption"><span>Jouw keuzes</span><b>↓</b><span>Ons vertrekpunt</span></div></div>
       </section>
       <div className="wrap tool-workbench hub-contact-wrap"><ToolContact alwaysOpen summary="" id="bespreek-je-vraag" title="Wat wil jij met je website bereiken?" text="Een nieuwe website, een verbetering of een slimmer proces? Vertel kort wat je wilt bespreken. Bellen kan optioneel op afspraak: op werkdagen van 18:00 tot 21:30 of in het weekend." formTitle="Bespreek je plannen met Sitesnit" /></div>
     </div>

@@ -1,3 +1,4 @@
+import { InlineArrow } from '../../inline-arrow';
 import {getHubRuntime} from '../../../lib/hub/runtime';
 import {HubAuthForm} from '../auth-form';
 import {hubSession} from '../../../lib/hub/session';
@@ -17,7 +18,7 @@ export default async function Page(){
         <h2 id="hub-new-account">Nog geen account?</h2>
         <p>Heb je Sitesnit Hub afgesproken? Je ontvangt een persoonlijke uitnodiging, zodat je alleen toegang krijgt tot jouw websitegegevens. Een account aanmaken op zichzelf activeert geen abonnement.</p>
         <ol><li>Open je uitnodigingslink.</li><li>Kies zelf een wachtwoord.</li><li>Bevestig je e-mailadres en log in.</li></ol>
-        <a className="button" href="/hub/uitnodiging">Account aanmaken <span aria-hidden="true">↗</span></a>
+        <a className="button" href="/hub/uitnodiging">Account aanmaken <span aria-hidden="true"><InlineArrow /></span></a>
         <small>Daar lees je hoe je je uitnodiging gebruikt of aanvraagt.</small>
       </aside>
     </div>

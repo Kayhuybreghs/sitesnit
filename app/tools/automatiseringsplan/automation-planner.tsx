@@ -1,4 +1,5 @@
 "use client";
+import { InlineArrow } from '../../inline-arrow';
 import { ToolHelp as ReadingHelp } from "../tool-help";
 import { useRef, useState } from "react";
 import { createToolEventTracker } from '../../../lib/analytics-events';
@@ -232,7 +233,7 @@ export default function AutomationPlanner() {
             </fieldset>
           </div>
           <button className="button" type="submit">
-            Maak mijn procesplan ↗
+            Maak mijn procesplan <InlineArrow />
           </button>
         </form>
         {shown && (

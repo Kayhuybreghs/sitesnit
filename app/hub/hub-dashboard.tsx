@@ -1,3 +1,4 @@
+import { InlineArrow } from '../inline-arrow';
 import type { ReactNode } from 'react';
 import type { Period, ProviderResult } from '../../lib/hub/providers/common';
 import type { Ga4Data, Ga4Report } from '../../lib/hub/providers/ga4';
@@ -114,7 +115,7 @@ export function HubDashboard({ site, section, snapshots, workItems, uptime, isDe
   return <div className="hub-dashboard">
     {isDemo && <p className="hub-demo-banner"><strong>Fictieve demonstratie.</strong> Dit zijn voorbeeldgegevens, geen gekoppelde klantwebsite of echte prestaties.</p>}
     {preview && <nav className="hub-admin-return" aria-label="Beheerdersnavigatie"><a href="/hub">← Alle websites</a><span>Je bekijkt {site.name} als beheerder</span><a href="/hub/admin">Klanten & koppelingen</a><a href="/hub/admin/seo-audit">SEO-audits</a></nav>}
-    <header className="hub-heading"><div><p className="hub-kicker">Sitesnit Hub / {site.name}</p><h1>{title[0]}</h1><p>{title[1]}</p></div><div className="hub-site-label"><span aria-hidden="true">↗</span><div><strong>{site.name}</strong><span>{displayOrigin(site.origin)}</span></div></div></header>
+    <header className="hub-heading"><div><p className="hub-kicker">Sitesnit Hub / {site.name}</p><h1>{title[0]}</h1><p>{title[1]}</p></div><div className="hub-site-label"><span aria-hidden="true"><InlineArrow /></span><div><strong>{site.name}</strong><span>{displayOrigin(site.origin)}</span></div></div></header>
     <p className="hub-note">{isDemo ? 'Deze demo bevat uitsluitend fictieve cijfers.' : 'Je bekijkt het hierboven genoemde websitedossier.'} <a href={isDemo ? "/hub/demo/sitesnit" : "/hub"}>{isDemo ? 'Bekijk Sitesnit in de demo' : 'Andere website kiezen'}</a></p><nav className="hub-section-nav" aria-label="Onderdelen van je websiteoverzicht">{tabs.map(([id, label]) => <a key={id} href={`${id === 'overzicht' ? base : `${base}/${id}`}${preview ? '?preview=1' : ''}`} aria-current={section === id ? 'page' : undefined}>{label}</a>)}</nav>
     <div className="hub-content" id={isDemo ? 'hub-demo' : undefined}>
       {section === 'overzicht' && <><div className="hub-overview-stats"><Stat label="Bezoekers (GA4)" value={number(metric(ga?.totals, 'totalUsers'))} note="Unieke gebruikers in de geselecteerde periode"/><Stat label="Sessies" value={number(metric(ga?.totals, 'sessions'))} note="Gemeten bezoeken volgens GA4"/><Stat label="Klikken vanuit Google" value={number(searchTotal?.clicks)} note="Afzonderlijk Search Console-totaal"/></div><p className="hub-note">Bezoekersperiode: {periodLabel(ga?.totals?.period)} · alleen gemeten verkeer, geen schatting van bezoek zonder toestemming.</p><TrafficCharts daily={ga?.daily} monthly={ga?.monthly} stale={stale.ga4}/><div className="hub-two-columns"><GaBreakdown title="Google, Instagram en andere bronnen" label="Bron / medium" dimension="sessionSourceMedium" report={ga?.sources} stale={stale.ga4}/><WorkLog items={workItems} compact/></div><details className="hub-panel"><summary>Bronnen en meetmomenten van de totalen</summary><SourceMeta report={ga?.totals} source="ga4" stale={stale.ga4}/><SourceMeta report={search?.totals} source="search-console" stale={stale['search-console']}/></details><UptimePanel uptime={uptime}/></>}
@@ -122,7 +123,7 @@ export function HubDashboard({ site, section, snapshots, workItems, uptime, isDe
       {section === 'google' && <><SearchTotals data={search} stale={stale['search-console']}/><SearchRows title="Zoekopdrachten" label="Zoekopdracht" report={search?.queries} stale={stale['search-console']}/><SearchRows title="Pagina’s in Google" label="Pagina" report={search?.pages} stale={stale['search-console']}/></>}
       {section === 'status' && <><UptimePanel uptime={uptime}/><DeploymentsPanel report={snapshots.deployments} stale={stale.vercel}/></>}
       {section === 'werkzaamheden' && <WorkLog items={workItems}/>}
-    </div><footer className="hub-dashboard-footer"><p>Je leest gegevens per bron. Ontbrekende informatie blijft herkenbaar als onbekend.</p><a href="/contact?dienst=website-monitoring">Bespreek je website met Sitesnit <span aria-hidden="true">↗</span></a></footer>
+    </div><footer className="hub-dashboard-footer"><p>Je leest gegevens per bron. Ontbrekende informatie blijft herkenbaar als onbekend.</p><a href="/contact?dienst=website-monitoring">Bespreek je website met Sitesnit <span aria-hidden="true"><InlineArrow /></span></a></footer>
   </div>;
 }
 

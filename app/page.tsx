@@ -1,3 +1,4 @@
+import { InlineArrow } from './inline-arrow';
 import { withPageMetadata, PageData } from './seo';
 import { WorkingTogether } from "./studio-components";
 import { BuildStory, Possibilities } from "./scroll-scenes";
@@ -92,7 +93,7 @@ export default function Home() {
         <div className="personal-mark" aria-hidden="true">
           <span>site</span>
           <span>
-            snit<sup>↗</sup>
+            snit<sup><InlineArrow /></sup>
           </span>
         </div>
         <div>

@@ -1,4 +1,5 @@
 "use client";
+import { InlineArrow } from '../../inline-arrow';
 import { ToolHelp as ReadingHelp } from "../tool-help";
 import { useRef, useState } from "react";
 import { createToolEventTracker } from '../../../lib/analytics-events';
@@ -287,7 +288,7 @@ export default function WebsiteDesigner() {
                         <strong>{label}</strong>
                         <small>{detail}</small>
                       </span>
-                      <b aria-hidden="true">↗</b>
+                      <b aria-hidden="true"><InlineArrow /></b>
                     </label>
                   ))}
                 </fieldset>
@@ -379,7 +380,7 @@ export default function WebsiteDesigner() {
                         <strong>{label}</strong>
                         <small>{detail}</small>
                       </span>
-                      <b aria-hidden="true">↗</b>
+                      <b aria-hidden="true"><InlineArrow /></b>
                     </label>
                   ))}
                 </fieldset>
@@ -404,7 +405,7 @@ export default function WebsiteDesigner() {
                 ← Vorige
               </button>
               <button className="button" type="submit" disabled={!ready}>
-                {step === 5 ? "Bekijk mijn voorbeeld" : "Volgende"} ↗
+                {step === 5 ? "Bekijk mijn voorbeeld" : "Volgende"} <InlineArrow />
               </button>
             </div>
             <a href="#ontwerp-bespreken" className="tool-direct-contact">
@@ -464,7 +465,7 @@ export default function WebsiteDesigner() {
             >
               ← Keuzes aanpassen
             </button>
-            <a className="button" href="#ontwerp-bespreken">Bespreek ontwerp ↗</a>
+            <a className="button" href="#ontwerp-bespreken">Bespreek ontwerp <InlineArrow /></a>
           </nav>
           <div className="designer-controls">
             <div className="field">
@@ -574,7 +575,7 @@ export default function WebsiteDesigner() {
           </details>
           <div className="designer-next-step">
             <div><span className="eyebrow">Mooi begin. Nu jouw echte website.</span><h3>Wat wil je hiervan laten maken?</h3><p>We bespreken je ontwerpkeuzes, de inhoud en de functies die je nodig hebt. Jouw antwoorden staan klaar bij de aanvraag hieronder.</p></div>
-            <a className="button" href="#ontwerp-bespreken">Werk dit met Sitesnit uit ↗</a>
+            <a className="button" href="#ontwerp-bespreken">Werk dit met Sitesnit uit <InlineArrow /></a>
           </div>
           <details className="designer-brief print-summary">
             <summary><span>Bekijk je websiteplan <small>Je keuzes, teksten en open punten</small></span><span aria-hidden="true">+</span></summary>
@@ -654,7 +655,7 @@ export default function WebsiteDesigner() {
             </div>
             <ToolActions summary={summary} filename="mijn-websiteplan" print />
             <a className="text-link" href="/tools/website-kosten-berekenen">
-              Ook weten welk pakket bij je wensen past? Doe de prijscheck ↗
+              Ook weten welk pakket bij je wensen past? Doe de prijscheck <InlineArrow />
             </a>
             </div>
           </details>

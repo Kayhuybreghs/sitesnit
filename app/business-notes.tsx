@@ -1,3 +1,4 @@
+import { InlineArrow } from './inline-arrow';
 import {SocialIcon} from './social-icon';
 import { business, grossPrice, minimumHostingYear } from '../lib/business';
 import { euro } from './site-data';
@@ -10,7 +11,7 @@ export function BusinessNotes({ compact = false, websitePrice }: { compact?: boo
       <div><span className="business-note-label">Hosting bij je nieuwe website</span><strong className="business-note-value">Vanaf {euro(business.hostingMonthly)} <small>/ maand excl. btw</small></strong><span className="business-note-tax">{euro(grossPrice(business.hostingMonthly))} per maand inclusief 21% btw</span><p>Eerste looptijd: {business.hostingInitialMonths} maanden. Minimaal {euro(grossPrice(minimumHostingYear))} incl. btw voor het eerste hostingjaar, naast de bouwprijs. Daarna maandelijks opzegbaar.</p></div>
     </div>
     {websitePrice != null && <p className="business-note-total"><strong>Bouw + eerste hostingjaar: minimaal {euro(grossPrice(websitePrice + minimumHostingYear))} inclusief btw.</strong> Extra afgesproken functies of diensten komen daar afzonderlijk bij.</p>}
-    <div className="business-notes-bottom"><p>Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.</p><a href="/algemene-voorwaarden">Alle afspraken <span aria-hidden="true">↗</span></a></div>
+    <div className="business-notes-bottom"><p>Bouwprijzen staan exclusief én inclusief 21% btw vermeld. Technisch onderhoud en nieuwe inhoud kies je afzonderlijk.</p><a href="/algemene-voorwaarden">Alle afspraken <span aria-hidden="true"><InlineArrow /></span></a></div>
   </div>;
 }
 

@@ -8,19 +8,19 @@ Alle pakketten krijgen een eigen ontwerp. Omvang en functies bepalen het verschi
 
 | Pakket | Omvang | Excl. btw | Incl. btw | Pagina |
 |---|---|---:|---:|---|
-| Onepager | 1 pagina | **€ 895,00** | € 1.082,95 | [/kosten#onepager](https://www.sitesnit.nl/kosten#onepager) |
-| Website | 5 pagina’s | **€ 1.895,00** | € 2.292,95 | [/kosten#website](https://www.sitesnit.nl/kosten#website) |
-| Volledige vrijheid | Maatwerk | vanaf **€ 2.750,00** | vanaf € 3.327,50 | [/kosten#maatwerk](https://www.sitesnit.nl/kosten#maatwerk) |
+| Onepager op maat | 1 pagina | **€ 895,00** | € 1.082,95 | [/kosten#onepager](https://www.sitesnit.nl/kosten#onepager) |
+| Bedrijfswebsite — vijf pagina’s | 5 pagina’s | **€ 1.895,00** | € 2.292,95 | [/kosten#website](https://www.sitesnit.nl/kosten#website) |
+| Uitgebreid maatwerk | Maatwerk | vanaf **€ 2.750,00** | vanaf € 3.327,50 | [/kosten#maatwerk](https://www.sitesnit.nl/kosten#maatwerk) |
 
 60% voor de start en 40% bij afronding. Facturen binnen 14 dagen. Hosting hoort bij een nieuwe website: eerste looptijd 12 maanden, daarna maandelijks opzegbaar. Minimaal **€ 60,00 excl. btw** (€ 72,60 incl. btw) voor het eerste jaar boven op de bouwprijs. Technisch onderhoud en nieuwe inhoud zijn optioneel. Dit geldt niet automatisch voor iedere losse SEO-, content- of appopdracht.
 
 | Bouw + eerste hostingjaar | Excl. btw | Incl. btw |
 |---|---:|---:|
-| Onepager | **€ 955,00** | € 1.155,55 |
-| Website | **€ 1.955,00** | € 2.365,55 |
-| Volledige vrijheid | vanaf **€ 2.810,00** | vanaf € 3.400,10 |
+| Onepager op maat | **€ 955,00** | € 1.155,55 |
+| Bedrijfswebsite — vijf pagina’s | **€ 1.955,00** | € 2.365,55 |
+| Uitgebreid maatwerk | vanaf **€ 2.810,00** | vanaf € 3.400,10 |
 
-De genoemde gemiddelde maatwerkprojectprijs van €4.000 excl. / €4.840 incl. btw is een indicatie uit de bestaande code, geen vierde pakket of vast tarief.
+Voor uitgebreid maatwerk bepalen pagina’s, functies, koppelingen en inhoud het voorstel. Er wordt geen onbewezen gemiddelde projectprijs getoond.
 
 ## Hosting en onderhoud
 

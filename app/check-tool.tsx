@@ -3,6 +3,7 @@
 import { InlineArrow } from './inline-arrow';
 import { useCheckTools } from "../lib/webmcp";
 import { createToolEventTracker } from '../lib/analytics-events';
+import { isTechnicalResult, restoreCheckToolDraft } from '../lib/check-tool-draft';
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   websiteQuestions,
@@ -61,32 +62,18 @@ export default function CheckTool({ kind }: { kind: Kind }) {
   const scanNumber = useRef(0);
   useEffect(() => {
     try {
-      const data = JSON.parse(sessionStorage.getItem(storageKey) ?? "null");
+      const data = restoreCheckToolDraft(sessionStorage.getItem(storageKey), isWeb ? websiteQuestions : priceQuestions);
       if (data) {
-        setAnswers(data.answers ?? {});
-        setUrl(data.url ?? "");
-        setStep(Math.min(14, Math.max(0, data.step ?? 0)));
-        setStage(
-          ["intro", "questions", "url", "result"].includes(data.stage)
-            ? data.stage
-            : "intro",
-        );
-        if (data.scan)
-          setScan(
-            data.scan.status === "running"
-              ? {
-                  status: "failed",
-                  result: null,
-                  error:
-                    "De vorige scan is onderbroken. Je antwoorden zijn bewaard; probeer de technische analyse opnieuw.",
-                }
-              : data.scan,
-          );
+        setAnswers(data.answers);
+        setUrl(data.url);
+        setStep(data.step);
+        setStage(data.stage);
+        setScan(data.scan);
       }
     } catch {}
     setReady(true);
     return () => controller.current?.abort();
-  }, [storageKey]);
+  }, [storageKey, isWeb]);
   useEffect(() => {
     if (ready)
       try {
@@ -140,14 +127,15 @@ export default function CheckTool({ kind }: { kind: Kind }) {
         body: JSON.stringify({ url: value }),
         signal: c.signal,
       });
-      const data = (await response.json()) as {
-        result?: TechnicalResult;
-        error?: string;
-      };
+      const data: unknown = await response.json().catch(() => {
+        throw new Error('De scanner gaf geen leesbare uitkomst terug. Probeer de technische analyse opnieuw.');
+      });
       if (current !== scanNumber.current) return;
-      if (!response.ok || !data.result)
-        throw new Error(data.error ?? "De technische analyse is niet gelukt.");
-      setScan({ status: "complete", result: data.result, error: "" });
+      const payload = data && typeof data === 'object' && !Array.isArray(data) ? data as Record<string, unknown> : null;
+      const result = payload?.result;
+      if (!response.ok || !isTechnicalResult(result))
+        throw new Error(typeof payload?.error === 'string' ? payload.error : 'Er is geen complete technische meting ontvangen. Je antwoorden zijn bewaard; probeer de analyse opnieuw.');
+      setScan({ status: "complete", result, error: "" });
     } catch (e) {
       if (current === scanNumber.current && (e as Error).name !== "AbortError")
         setScan({
@@ -780,12 +768,10 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                   {price.packageId === "maatwerk" && (
                     <p className="custom-average">
                       <strong>
-                        Grotere maatwerkprojecten komen gemiddeld rond{" "}
-                        {euro(site.averageProjectCost)} exclusief btw uit ({euro(grossPrice(site.averageProjectCost))} inclusief btw).
+                        De uiteindelijke maatwerkprijs volgt uit de afgesproken omvang.
                       </strong>{" "}
-                      Dat is context, geen persoonlijke totaalprijs of
-                      bovengrens. De omvang en functies van jouw project bepalen
-                      het voorstel.
+                      Pagina’s, functies, koppelingen en inhoud bepalen het voorstel.
+                      De getoonde basis is geen persoonlijke totaalprijs of bovengrens.
                     </p>
                   )}
                   {price.pending.length > 0 && (

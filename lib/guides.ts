@@ -66,6 +66,14 @@ export const guides: Guide[] = [
         "paragraphs": [
           "Doorloop het formulier op je telefoon. Maak bewust een fout, herstel die en controleer of je tekst behouden blijft. Verstuur een herkenbare test en volg die tot in de echte ontvangst. Een groen vinkje in de browser is geen bewijs dat iemand de aanvraag heeft ontvangen.",
           "Noteer een verbeterpunt, voer dat uit en controleer opnieuw onder vergelijkbare omstandigheden. De websitecheck helpt je bevindingen ordenen; hij vervangt geen bezoekersonderzoek."
+        ],
+        "checklist": [
+          "Open op je telefoon de dienstenpagina waar een klant zou beginnen. Noteer de URL, datum en gebruikte browser.",
+          "Zoek de route naar contact en controleer of duidelijk blijft welke dienst je wilt bespreken.",
+          "Vul eigen testgegevens in, laat één verplicht veld leeg en herstel de fout. Controleer of de overige invoer behouden blijft.",
+          "Verstuur één herkenbare proefaanvraag en leg de bevestiging en eventuele referentie vast.",
+          "Controleer bij de ontvanger of diezelfde aanvraag is opgeslagen en ontvangen. Een verzonden melding, provideracceptatie en bezorging zijn verschillende controles.",
+          "Noteer per stap: verwacht resultaat, waargenomen resultaat, eventuele afwijking en resultaat van de hercontrole."
         ]
       }
     ],
@@ -303,7 +311,7 @@ export const guides: Guide[] = [
     "title": "Welke maandelijkse kosten heeft een website?",
     "description": "Maak onderscheid tussen hosting, domein, onderhoud, inhoud en externe software. Gebruik de kostenlijst om verplichte en optionele posten te controleren.",
     "group": "prijscheck",
-    "tool": "/tools/website-kosten-berekenen",
+    "tool": "/tools/website-offerte-vergelijken",
     "service": "/diensten/onderhoud-hosting",
     "audience": "Eigenaren die terugkerende kosten willen begrijpen",
     "outcome": "Een overzicht van verplichte en gekozen maand-/jaarposten maken.",
@@ -359,7 +367,8 @@ export const guides: Guide[] = [
         "heading": "Vergelijk ook de verplichting",
         "paragraphs": [
           "Een bedrag per maand kan voor een heel jaar worden gefactureerd. Noteer daarom betaalritme én contractduur. Kijk verder dan een tijdelijk actietarief en vraag wat daarna geldt.",
-          "Een gratis scan is geen onderhoudscontract. Een rapport beschrijft mogelijke problemen; het uitvoeren en controleren van herstel is werk. Neem die posten niet dubbel op als ze al in een duidelijke afspraak zijn opgenomen."
+          "Een gratis scan is geen onderhoudscontract. Een rapport beschrijft mogelijke problemen; het uitvoeren en controleren van herstel is werk. Neem die posten niet dubbel op als ze al in een duidelijke afspraak zijn opgenomen.",
+          "Rekenvoorbeeld met fictieve voorwaarden, geen Sitesnit-aanbod: bevat een bouwprijs al twaalf maanden hosting, dan blijven bij een vergelijking over 36 maanden nog 24 verlengmaanden over. Is het verlengtarief onbekend, dan blijft ook het volledige totaal onbekend. Tel de inbegrepen twaalf maanden niet nogmaals op en behandel de ontbrekende vervolgprijs niet als nul."
         ]
       }
     ],
@@ -376,7 +385,7 @@ export const guides: Guide[] = [
     "title": "Websiteonderhoud: waarvoor betaal je?",
     "description": "Vergelijk onderhoud op werkzaamheden, grenzen en terugkoppeling. Leer het verschil tussen hosting, signaleren en daadwerkelijk herstel.",
     "group": "prijscheck",
-    "tool": "/tools/website-kosten-berekenen",
+    "tool": "/tools/website-offerte-vergelijken",
     "service": "/diensten/onderhoud-hosting",
     "audience": "Eigenaren die onderhoudsvoorstellen vergelijken",
     "outcome": "Betalen voor herkenbaar werk in plaats van een onduidelijk maandlabel.",
@@ -439,7 +448,8 @@ export const guides: Guide[] = [
     "related": [
       "/maandelijkse-kosten-website",
       "/diensten/seo-onderhoud",
-      "/website-offerte-checklist"
+      "/website-offerte-checklist",
+      "/diensten/website-monitoring"
     ],
     "sources": []
   },
@@ -449,7 +459,7 @@ export const guides: Guide[] = [
     "title": "Een website-offerte aanvragen die echt iets zegt",
     "description": "Bereid je aanvraag voor met doelen, pagina’s, functies en open vragen. Gebruik de voorbeeldbriefing om voorstellen beter te kunnen vergelijken.",
     "group": "offertevergelijker",
-    "tool": "/tools/website-offerte-vergelijken",
+    "tool": "/tools/website-kosten-berekenen",
     "service": "/diensten/webdesign",
     "audience": "Ondernemers die een websitevoorstel aanvragen",
     "outcome": "Een bruikbare briefing maken zonder alle technische keuzes vooraf te weten.",
@@ -479,6 +489,19 @@ export const guides: Guide[] = [
         ]
       },
       {
+        "heading": "Fictief ingevuld voorbeeld van een korte briefing",
+        "paragraphs": [
+          "Voorbeeld ter voorbereiding, geen bestaande klantopdracht: een zelfstandig meubelmaker wil aanvragen voor kasten op maat ontvangen. De website moet bezoekers helpen het passende type kast te herkennen en een kennismaking aan te vragen."
+        ],
+        "checklist": [
+          "Pagina’s: een introductie, het aanbod, enkele projecten, de werkwijze en contact; de precieze indeling staat nog open.",
+          "Functies: een contactformulier met ruimte voor afmetingen en een korte vraag. Online bestellen is niet nodig.",
+          "Materiaal: eigen projectfoto’s en een bestaand logo zijn beschikbaar; de teksten moeten nog worden uitgewerkt.",
+          "Planning en budget: beide nog te bespreken. Eerst duidelijk maken wat in de eerste versie past.",
+          "Behouden: het huidige domein en de adressen van bestaande projectpagina’s waar dat mogelijk is."
+        ]
+      },
+      {
         "heading": "Vraag om een voorstel met grenzen",
         "paragraphs": [
           "Laat de aanbieder aantallen, paginatypes, functies en verantwoordelijkheden benoemen. Vraag hoe wijzigingen worden afgehandeld, welke kosten terugkeren en wat je bij overdracht ontvangt. Een offerte zonder die onderdelen is moeilijk naast een andere te leggen.",
@@ -489,7 +512,9 @@ export const guides: Guide[] = [
     "related": [
       "/website-offerte-checklist",
       "/website-structuur",
-      "/contact"
+      "/contact",
+      "/tools/website-ontwerp-tool",
+      "/tools/website-offerte-vergelijken"
     ],
     "sources": []
   },
@@ -553,7 +578,8 @@ export const guides: Guide[] = [
         "heading": "Leg onzekerheden terug bij de aanbieder",
         "paragraphs": [
           "Stuur een korte lijst van ontbrekende punten naar iedere aanbieder. Vraag hetzelfde, zodat een aanvulling vergelijkbaar blijft. Bewaar de versie waarop je besluit is gebaseerd.",
-          "De offertevergelijker helpt bedragen en afspraken naast elkaar zetten. Hij kiest geen winnaar en voorspelt niet welke aanbieder het beste werk levert. Bekijk ook passend werk en hoe duidelijk iemand je inhoudelijke vragen beantwoordt."
+          "De offertevergelijker helpt bedragen en afspraken naast elkaar zetten. Hij kiest geen winnaar en voorspelt niet welke aanbieder het beste werk levert. Bekijk ook passend werk en hoe duidelijk iemand je inhoudelijke vragen beantwoordt.",
+          "Sitesnit biedt zelf webdesign aan. Gebruik deze checklist daarom als hulpmiddel om je eigen vragen te stellen, ook aan mij. De checklist beoordeelt geen individuele aanbieder en is geen onafhankelijke ranglijst."
         ]
       }
     ],
@@ -933,7 +959,7 @@ export const guides: Guide[] = [
         "heading": "Van voorbeeld naar jouw richting",
         "paragraphs": [
           "In Ontwerp je website kies je inhoud, stijl en kleuren en bekijk je een bewerkbaar voorbeeld. Dat is een gespreksstart, geen gratis opgeleverde website. De uiteindelijke pagina’s en functies worden voor jouw opdracht uitgewerkt.",
-          "De andere merken in het projectenoverzicht zijn duidelijk gelabelde ontwerpconcepten. Ze laten mogelijkheden zien en worden niet als klantopdrachten of gemeten resultaten gepresenteerd."
+          "De gelinkte Beurswijzer- en Beurswatcher-cases laten bestaande uitwerkingen zien. De schematische beelden op deze uitlegpagina zijn herkenbaar als illustratie gelabeld. Gebruik de cases om ontwerpkeuzes te beoordelen; ze tonen geen gemeten conversiewinst."
         ]
       }
     ],
@@ -1064,7 +1090,7 @@ export const guides: Guide[] = [
       {
         "heading": "Gebruik een exacte URL, geen gok op basis van een zoekopdracht",
         "paragraphs": [
-          "Bekijk in je eigen Search Console-property de status van de betreffende URL. Een zoekopdracht met site: kan helpen bij een snelle indruk, maar is geen volledige inventaris van je geïndexeerde pagina’s.",
+          "Bekijk in je eigen Search Console-property de status van de betreffende URL. Een zoekopdracht met site: kan helpen bij een snelle indruk, maar is geen volledige inventaris van je geïndexeerde pagina’s. Heb je geen toegang tot de juiste property, noteer de Google-indexstatus dan als onbekend en vraag de beheerder om de URL-inspectie. De technische audit vervangt die ontbrekende informatie niet.",
           "Controleer of je dezelfde variant onderzoekt: http of https, met of zonder www en met het juiste pad. Een redirect of andere voorkeurs-URL kan verklaren waarom je oorspronkelijke adres niet afzonderlijk verschijnt."
         ]
       },
@@ -1086,7 +1112,8 @@ export const guides: Guide[] = [
     "related": [
       "/seo-audit-checklist",
       "/website-migratie-checklist",
-      "/seo-venlo"
+      "/seo-venlo",
+      "/tools/seo-audit/indexering-controleren"
     ],
     "sources": [
       "inspection",
@@ -1098,8 +1125,8 @@ export const guides: Guide[] = [
     "slug": "website-snelheid-testen",
     "title": "Website­snelheid testen: begrijp wat je meet",
     "description": "Lees een mobiele Lighthouse-meting met de juiste context. Ontdek het verschil tussen labdata en echte bezoekersdata en controleer verbeteringen eerlijk.",
-    "group": "websitecheck",
-    "tool": "/tools/website-check",
+    "group": "seo-audit",
+    "tool": "/tools/seo-audit",
     "service": "/diensten/seo-optimalisatie",
     "audience": "Ondernemers met een trage website of onduidelijke score",
     "outcome": "Een snelheidsresultaat correct interpreteren en een gerichte vervolgmeting kiezen.",
@@ -1158,8 +1185,8 @@ export const guides: Guide[] = [
       {
         "heading": "Je website bij Sitesnit laten bekijken",
         "paragraphs": [
-          "De bestaande websitecheck vraagt eerst naar je inhoud en klantpad en vraagt daarna je websiteadres voor Google Lighthouse. De technische uitkomst blijft gescheiden van je antwoorden. Bij een mislukte meting wordt geen score verzonnen.",
-          "Wil je alleen een losse snelheidsmeting, dan kun je ook rechtstreeks Google PageSpeed Insights gebruiken. Een uitgebreide automatische sitecrawl is hier niet als werkende extra tool beschikbaar."
+          "De gratis technische SEO-audit onderzoekt een begrensde HTML-steekproef en kan die aanvullen met een mobiele Lighthouse-meting van je startpagina. In het resultaat zie je welke pagina’s zijn onderzocht en welke meting wel of niet is afgerond. Een snelheidsbevinding op je startpagina geldt niet automatisch voor alle andere pagina’s.",
+          "Wil je ook je boodschap en route naar contact beoordelen, dan helpt de Websitecheck met inhoudelijke vragen en een aanvullende meting van één pagina. Voor een losse snelheidsmeting kun je rechtstreeks Google PageSpeed Insights gebruiken. Deze hulpmiddelen geven geen volledige browseranalyse van je hele website."
         ]
       }
     ],

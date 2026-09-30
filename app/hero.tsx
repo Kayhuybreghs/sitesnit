@@ -4,16 +4,16 @@ import { BeurswijzerEditorialPanel, BeurswijzerPlannerPanel } from "./beurswijze
 
 export function Hero() {
   return (
-    <section className="hero-journey" data-hero-journey aria-label="We build brands">
+    <section className="hero-journey" data-hero-journey aria-label="Websites op maat">
       <div className="hero-pin">
         <div className="hero-intro wrap">
           <div className="hero-intro-copy">
-            <Eyebrow>Sitesnit · Websites ontwerpen & bouwen</Eyebrow>
-            <h1><span>WE BUILD</span><span className="hero-brand-word">BRANDS<span className="hero-brand-dot">.</span></span></h1>
-            <p className="hero-intro-lead">Sitesnit ontwerpt en bouwt websites voor ondernemers in Limburg. Een herkenbaar merk, een helder verhaal en een logische route naar contact.</p>
+            <Eyebrow>Sitesnit · Webdesign vanuit Baarlo</Eyebrow>
+            <h1><span>Websites</span><span className="hero-brand-word">op maat<span className="hero-brand-dot">.</span></span></h1>
+            <p className="hero-intro-lead">Ik ontwerp en bouw websites voor ondernemers in Limburg. Met een eigen ontwerp, duidelijke pagina’s en een route naar contact die past bij jouw bedrijf.</p>
             <div className="actions">
-              <a className="button" href="/contact">Bouw met ons <Arrow /></a>
-              <a className="text-link" href="#werk">Ontdek Beurswijzer <Arrow /></a>
+              <a className="button" href="/contact?dienst=webdesign">Bespreek je website <Arrow /></a>
+              <a className="text-link" href="#werk">Bekijk mijn werk <Arrow /></a>
             </div>
             <p className="hero-intro-services">Strategie <span>/</span> Webdesign <span>/</span> Development</p>
           </div>

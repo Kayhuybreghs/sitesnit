@@ -14,7 +14,7 @@ let md='# Aanbod en prijzen van Sitesnit\n\nGecontroleerde codecatalogus, 27 sep
 for(const p of site.packages)md+=`| ${p.name} | ${p.pages} | ${p.id==='maatwerk'?'vanaf ':''}**${euro(p.price)}** | ${p.id==='maatwerk'?'vanaf ':''}${euro(grossPrice(p.price))} | ${link('/kosten#'+p.id)} |\n`;
 md+=`\n60% voor de start en 40% bij afronding. Facturen binnen ${business.paymentDays} dagen. Hosting hoort bij een nieuwe website: eerste looptijd 12 maanden, daarna maandelijks opzegbaar. Minimaal **${euro(minimumHostingYear)} excl. btw** (${euro(grossPrice(minimumHostingYear))} incl. btw) voor het eerste jaar boven op de bouwprijs. Technisch onderhoud en nieuwe inhoud zijn optioneel. Dit geldt niet automatisch voor iedere losse SEO-, content- of appopdracht.\n\n| Bouw + eerste hostingjaar | Excl. btw | Incl. btw |\n|---|---:|---:|\n`;
 for(const p of site.packages)md+=`| ${p.name} | ${p.id==='maatwerk'?'vanaf ':''}**${euro(p.price+minimumHostingYear)}** | ${p.id==='maatwerk'?'vanaf ':''}${euro(grossPrice(p.price+minimumHostingYear))} |\n`;
-md+='\nDe genoemde gemiddelde maatwerkprojectprijs van €4.000 excl. / €4.840 incl. btw is een indicatie uit de bestaande code, geen vierde pakket of vast tarief.\n';
+md+='\nVoor uitgebreid maatwerk bepalen pagina’s, functies, koppelingen en inhoud het voorstel. Er wordt geen onbewezen gemiddelde projectprijs getoond.\n';
 for(const [heading,plans,path] of [['Hosting en onderhoud',hostingPlans,'/diensten/onderhoud-hosting#maandpakketten'],['Blogs en content',blogPlans,'/diensten/content#maandpakketten']]){
  md+=`\n## ${heading}\n\n${link(path)}\n\n| Pakket | Per maand excl. btw | Per maand incl. btw | Inhoud |\n|---|---:|---:|---|\n`;
  for(const p of plans)md+=`| ${p.name} | **${euro(p.price)}** | ${euro(grossPrice(p.price))} | ${p.items.join('; ')} |\n`;
@@ -27,11 +27,11 @@ md+=`| Sitesnit Hub / website-monitoring | Betaalde aanvullende dienst; maandbed
 for(const path of ['/tools/website-check','/tools/website-kosten-berekenen','/tools/website-offerte-vergelijken','/tools/automatiseringsplan','/tools/website-ontwerp-tool','/tools/seo-audit'])md+=`- ${link(path)}\n`;
 md+='\nExterne software, appstorekosten, nieuwe functies en niet afgesproken werkzaamheden worden niet stilzwijgend inbegrepen. De websiteberekening is een oriëntatie, geen definitieve offerte.\n';
 await fs.mkdir('docs',{recursive:true});await fs.writeFile('docs/aanbod-en-prijzen.md',md);
-let map='# Publieke pagina’s: vraag en vervolgstap\n\nDeze inhoudelijke routekaart is geen claim over zoekvolumes of posities. De browser- en HTTP-resultaten staan afzonderlijk in reports/routes-na-herstel.json.\n\n| URL | Primaire vraag / intentie | Passende vervolgstap |\n|---|---|---|\n';
+let map='# Publieke pagina’s: vraag en vervolgstap\n\nDeze inhoudelijke routekaart beschrijft passende vervolgroutes, niet iedere aanwezige link of een gemeten conversie. Het is geen claim over zoekvolumes of posities. De actuele browser- en HTTP-resultaten staan in reports/improvement/implementation-status.md.\n\n| URL | Primaire vraag / intentie | Passende vervolgstap |\n|---|---|---|\n';
 for(const {path,intent} of routeCatalog){
  const guide=guides.find(g=>'/'+g.slug===path),audit=auditGuides.find(g=>'/tools/seo-audit/'+g.slug===path),service=services.find(s=>'/diensten/'+s.slug===path);
  let question=guide?.title||audit?.title||pageSeo[path]?.title||intent;
- let next=guide?.tool|| (audit?'/tools/seo-audit':service?service.contact:path.startsWith('/projecten/')?'/contact?project='+path.split('/').pop():path==='/kosten'?'/contact?pakket=website':path.startsWith('/tools/')?'/contact':path==='/contact'?'/privacy':path==='/diensten'?'/diensten/webdesign':path==='/projecten'?'/projecten/beurswijzer':path==='/diensten/website-monitoring'?'/contact?dienst=website-monitoring':'/contact');
+ let next=guide?.tool|| (audit?'/tools/seo-audit':service?service.contact:path.startsWith('/projecten/')?'/contact?project='+path.split('/').pop():path==='/kosten'?'/tools/website-kosten-berekenen':path.startsWith('/tools/')?'/contact':path==='/contact'?'/privacy':path==='/diensten'?'/diensten/webdesign':path==='/projecten'?'/projecten/beurswijzer':path==='/diensten/website-monitoring'?'/contact?dienst=website-monitoring':'/contact');
  if(['/privacy','/cookies','/algemene-voorwaarden'].includes(path))next='/contact';
  map+=`| ${link(path)} | ${question.replaceAll('|','/')} | ${link(next)} |\n`;
 }

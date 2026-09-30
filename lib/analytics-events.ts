@@ -6,7 +6,7 @@ export const ACTION_IDS = ['contact_open', 'prices_view', 'projects_view', 'tool
 export type ActionId = typeof ACTION_IDS[number];
 export type PublicAnalyticsEvent = { name: 'tool_start' | 'tool_complete'; tool_id: ToolId } |
   { name: 'cta_click'; action_id: ActionId; tool_id?: ToolId } |
-  { name:'generate_lead'; form_id:'contact'|'tool_contact'; tool_id?:ToolId } |
+  { name:'generate_lead'|'form_start'; form_id:'contact'|'tool_contact'; tool_id?:ToolId } |
   { name:'contact_intent'; channel:'email'|'phone'|'whatsapp' };
 export const ANALYTICS_TOOL_PATHS: Record<string, ToolId> = {
   '/tools/website-check': 'websitecheck', '/tools/website-kosten-berekenen': 'prijscheck',
@@ -24,9 +24,9 @@ export function analyticsEventPayload(value: unknown): { name: PublicAnalyticsEv
   if (!value || typeof value !== 'object') return null;
   const event = value as Record<string, unknown>;
   const tool = typeof event.tool_id === 'string' && TOOL_IDS.includes(event.tool_id as ToolId) ? event.tool_id as ToolId : null;
-  if(event.name==='generate_lead'){
+  if(event.name==='generate_lead'||event.name==='form_start'){
     if(!['contact','tool_contact'].includes(String(event.form_id)) || (event.tool_id!==undefined&&!tool)) return null;
-    return {name:'generate_lead',params:{form_id:String(event.form_id),...(tool?{tool_id:tool}:{})}};
+    return {name:event.name,params:{form_id:String(event.form_id),...(tool?{tool_id:tool}:{})}};
   }
   if(event.name==='contact_intent') return ['email','phone','whatsapp'].includes(String(event.channel)) ? {name:'contact_intent',params:{channel:String(event.channel)}} : null;
   if (event.name === 'tool_start' || event.name === 'tool_complete') {
@@ -42,9 +42,6 @@ export function trackPublicEvent(event: PublicAnalyticsEvent): boolean {
     if (!runtime || Date.now() >= runtime.expiresAt) return false;
     const payload = analyticsEventPayload(event);
     const href = runtime.href();
-    const pathname = new URL(href).pathname;
-    // Defense in depth even if a future caller accidentally includes a private path in publicPaths.
-    if (/^\/(hub|account|rapport|api|inloggen|registreren)(\/|$)/i.test(pathname)) return false;
     const page = safeAnalyticsPage(href, runtime.publicPaths);
     if (!payload || !page) return false;
     runtime.send(payload.name, { ...payload.params, ...page });
@@ -60,6 +57,16 @@ export function createToolEventTracker(tool_id: ToolId) {
     complete() { if (!completed) { completed = true; trackPublicEvent({name:'tool_complete', tool_id}); } },
     reset() { started = false; completed = false; },
   };
+}
+
+/** First meaningful form change only. Starting before consent is never replayed later. */
+export function createFormEventTracker(form_id: 'contact'|'tool_contact') {
+  let started = false;
+  return { start(tool_id?: ToolId) {
+    if (started) return;
+    started = true;
+    trackPublicEvent({ name: 'form_start', form_id, ...(tool_id ? {tool_id} : {}) });
+  } };
 }
 
 /** Fixed destinations only. Text, queries, form content and external destinations never become parameters. */

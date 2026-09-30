@@ -23,6 +23,11 @@ const readRuns = (name) => {
   return value;
 };
 const runsPerDevice = { mobile: readRuns('SEO_MOBILE_RUNS'), desktop: readRuns('SEO_DESKTOP_RUNS') };
+// Repeat representative templates while still observing every listed route.
+// With no selection, the existing per-device count applies to every route.
+const repeatRoutes = process.env.SEO_REPEAT_ROUTES ? process.env.SEO_REPEAT_ROUTES.split(',') : null;
+if (repeatRoutes?.some(route => !routes.includes(route))) throw Error('Repeated routes must be part of the measured route list.');
+const repetitions = (route, device) => repeatRoutes && !repeatRoutes.includes(route) ? 1 : runsPerDevice[device];
 const out = path.resolve('reports/lighthouse', phase);
 if (fs.existsSync(out) && fs.readdirSync(out).length) throw Error(`Refusing to overwrite existing phase ${phase}; choose a new phase.`);
 
@@ -113,7 +118,7 @@ const manifest = {
   sourceHash: sourceHash.digest('hex'),
   sourceNote: 'Only this measured Next.js build is represented. Earlier Vinext/Worker reports are historical and are not reused. Source edits after the build are not measured until rebuilt.',
   node: process.version,
-  sampling: { runsPerDevice, default: 'One mobile and one desktop observation per route; repeat selected uncertain routes in a new phase using SEO_MOBILE_RUNS / SEO_DESKTOP_RUNS.' },
+  sampling: { runsPerDevice, repeatRoutes, default: 'One mobile and one desktop observation per route; repeat selected representative routes using SEO_MOBILE_RUNS / SEO_DESKTOP_RUNS and optional SEO_REPEAT_ROUTES.' },
   environment: 'Windows laptop, headless Edge, isolated fresh browser profile per run; sequential simulated-throttling lab tests; no field INP',
   runs: [],
 };
@@ -123,7 +128,7 @@ const save = () => fs.writeFileSync(path.join(out, 'summary.json'), JSON.stringi
 save();
 for (const route of routes) {
   for (const device of ['mobile', 'desktop']) {
-    for (let run = 1; run <= runsPerDevice[device]; run++) {
+    for (let run = 1; run <= repetitions(route, device); run++) {
       const label = `${route === '/' ? 'home' : route.slice(1).replaceAll('/', '-')}-${device}-${run}`;
       let chrome;
       try {

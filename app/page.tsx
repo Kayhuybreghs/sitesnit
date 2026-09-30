@@ -10,6 +10,9 @@ import type { Metadata } from "next";
 import { RegionSection } from './region-section';
 import { JsonLd } from './seo';
 import { site } from './site-data';
+import { auditCapabilities } from '../lib/seo-audit/capabilities';
+import { CHECK_COUNT } from '../lib/seo-audit/check-catalog';
+import { HomeDirections } from './home-directions';
 export const metadata: Metadata = withPageMetadata({alternates: { canonical: "/" }}, '/');
 export default function Home() {
   return (
@@ -19,6 +22,7 @@ export default function Home() {
       <Hero />
       <HeroMotion />
       <FeaturedProject />
+      <HomeDirections />
       <BuildStory />
       <Possibilities />
       <section className="wrap tool-feature">
@@ -30,7 +34,7 @@ export default function Home() {
             <em>je website beter?</em>
           </h2>
           <p>
-            Laat maximaal 20 pagina’s onderzoeken op technische aandachtspunten,
+            Laat maximaal {auditCapabilities.maxPages} pagina’s onderzoeken op technische aandachtspunten,
             aangevuld met een mobiele Lighthouse-test van je startpagina.
             Bekijk het bewijs en ontdek wat je gericht kunt verbeteren.
           </p>
@@ -42,7 +46,7 @@ export default function Home() {
         <div className="question-preview">
           <span className="example-tag">Zo werkt de SEO-audit</span>
           <p className="question-counter">
-            100 <span>controlepunten</span>
+            {CHECK_COUNT} <span>controlepunten</span>
           </p>
           <h3>
             Van je websiteadres
@@ -82,9 +86,9 @@ export default function Home() {
           </div>
           <PriceCards compact />
           <div className="price-check-link">
-            <p>Nog niet zeker wat je nodig hebt?</p>
-            <a className="text-link" href="/tools">
-              Ontdek welke tool je verder helpt <Arrow />
+            <p>Nog niet zeker hoeveel pagina’s of functies je nodig hebt?</p>
+            <a className="text-link" href="/tools/website-kosten-berekenen">
+              Bereken wat bij jouw wensen past <Arrow />
             </a>
           </div>
         </div>

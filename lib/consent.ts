@@ -52,6 +52,8 @@ export function safeAnalyticsPage(href: string, publicPaths: readonly string[], 
   try {
     const url = new URL(href);
     if (!["http:", "https:"].includes(url.protocol) || !publicPaths.includes(url.pathname)) return null;
+    // Page views and custom events share this boundary, even if the catalog changes.
+    if (/^\/(hub|account|rapport|api|inloggen|registreren)(\/|$)/i.test(decodeURIComponent(url.pathname))) return null;
     return {
       page_location: url.origin + url.pathname,
       page_title: url.pathname === "/" ? "Sitesnit" : "Sitesnit · " + url.pathname,

@@ -1,6 +1,6 @@
 # Publieke pagina’s: vraag en vervolgstap
 
-Deze inhoudelijke routekaart is geen claim over zoekvolumes of posities. De browser- en HTTP-resultaten staan afzonderlijk in reports/routes-na-herstel.json.
+Deze inhoudelijke routekaart beschrijft passende vervolgroutes, niet iedere aanwezige link of een gemeten conversie. Het is geen claim over zoekvolumes of posities. De actuele browser- en HTTP-resultaten staan in reports/improvement/implementation-status.md.
 
 | URL | Primaire vraag / intentie | Passende vervolgstap |
 |---|---|---|
@@ -32,7 +32,7 @@ Deze inhoudelijke routekaart is geen claim over zoekvolumes of posities. De brow
 | [/projecten](https://www.sitesnit.nl/projecten) | Webdesignprojecten — Beurswijzer en Beurswatcher | [/projecten/beurswijzer](https://www.sitesnit.nl/projecten/beurswijzer) |
 | [/projecten/beurswijzer](https://www.sitesnit.nl/projecten/beurswijzer) | Beurswijzer — webdesign en interactieve budgetplanner | [/contact?project=beurswijzer](https://www.sitesnit.nl/contact?project=beurswijzer) |
 | [/projecten/beurswatcher](https://www.sitesnit.nl/projecten/beurswatcher) | Beurswatcher — webdesign en rendementcalculator | [/contact?project=beurswatcher](https://www.sitesnit.nl/contact?project=beurswatcher) |
-| [/kosten](https://www.sitesnit.nl/kosten) | Kosten website — pakketprijzen, btw en hosting | [/contact?pakket=website](https://www.sitesnit.nl/contact?pakket=website) |
+| [/kosten](https://www.sitesnit.nl/kosten) | Kosten website — pakketprijzen, btw en hosting | [/tools/website-kosten-berekenen](https://www.sitesnit.nl/tools/website-kosten-berekenen) |
 | [/webdesign-venlo](https://www.sitesnit.nl/webdesign-venlo) | Website laten maken in Venlo | [/contact](https://www.sitesnit.nl/contact) |
 | [/seo-venlo](https://www.sitesnit.nl/seo-venlo) | SEO voor bedrijven in Venlo — verbeteren vanuit Baarlo | [/contact](https://www.sitesnit.nl/contact) |
 | [/over-sitesnit](https://www.sitesnit.nl/over-sitesnit) | Kay — de jonge ondernemer achter Sitesnit in Baarlo | [/contact](https://www.sitesnit.nl/contact) |
@@ -50,9 +50,9 @@ Deze inhoudelijke routekaart is geen claim over zoekvolumes of posities. De brow
 | [/verouderde-website](https://www.sitesnit.nl/verouderde-website) | Is je website verouderd, of kan hij nog mee? | [/tools/website-check](https://www.sitesnit.nl/tools/website-check) |
 | [/website-niet-goed-op-mobiel](https://www.sitesnit.nl/website-niet-goed-op-mobiel) | Werkt je website niet goed op mobiel? | [/tools/website-check](https://www.sitesnit.nl/tools/website-check) |
 | [/wat-kost-een-website](https://www.sitesnit.nl/wat-kost-een-website) | Wat kost een website voor jouw bedrijf? | [/tools/website-kosten-berekenen](https://www.sitesnit.nl/tools/website-kosten-berekenen) |
-| [/maandelijkse-kosten-website](https://www.sitesnit.nl/maandelijkse-kosten-website) | Welke maandelijkse kosten heeft een website? | [/tools/website-kosten-berekenen](https://www.sitesnit.nl/tools/website-kosten-berekenen) |
-| [/website-onderhoud-kosten](https://www.sitesnit.nl/website-onderhoud-kosten) | Websiteonderhoud: waarvoor betaal je? | [/tools/website-kosten-berekenen](https://www.sitesnit.nl/tools/website-kosten-berekenen) |
-| [/website-offerte-aanvragen](https://www.sitesnit.nl/website-offerte-aanvragen) | Een website-offerte aanvragen die echt iets zegt | [/tools/website-offerte-vergelijken](https://www.sitesnit.nl/tools/website-offerte-vergelijken) |
+| [/maandelijkse-kosten-website](https://www.sitesnit.nl/maandelijkse-kosten-website) | Welke maandelijkse kosten heeft een website? | [/tools/website-offerte-vergelijken](https://www.sitesnit.nl/tools/website-offerte-vergelijken) |
+| [/website-onderhoud-kosten](https://www.sitesnit.nl/website-onderhoud-kosten) | Websiteonderhoud: waarvoor betaal je? | [/tools/website-offerte-vergelijken](https://www.sitesnit.nl/tools/website-offerte-vergelijken) |
+| [/website-offerte-aanvragen](https://www.sitesnit.nl/website-offerte-aanvragen) | Een website-offerte aanvragen die echt iets zegt | [/tools/website-kosten-berekenen](https://www.sitesnit.nl/tools/website-kosten-berekenen) |
 | [/website-offerte-checklist](https://www.sitesnit.nl/website-offerte-checklist) | Website-offertes vergelijken: de inhoud naast de prijs | [/tools/website-offerte-vergelijken](https://www.sitesnit.nl/tools/website-offerte-vergelijken) |
 | [/bedrijfsprocessen-automatiseren](https://www.sitesnit.nl/bedrijfsprocessen-automatiseren) | Welk bedrijfsproces kun je het beste automatiseren? | [/tools/automatiseringsplan](https://www.sitesnit.nl/tools/automatiseringsplan) |
 | [/website-koppelen-aan-crm](https://www.sitesnit.nl/website-koppelen-aan-crm) | Je website koppelen aan een CRM zonder losse eindjes | [/tools/automatiseringsplan](https://www.sitesnit.nl/tools/automatiseringsplan) |
@@ -61,7 +61,7 @@ Deze inhoudelijke routekaart is geen claim over zoekvolumes of posities. De brow
 | [/website-ontwerp-voorbeelden](https://www.sitesnit.nl/website-ontwerp-voorbeelden) | Website-ontwerpvoorbeelden: kijk naar de keuzes | [/tools/website-ontwerp-tool](https://www.sitesnit.nl/tools/website-ontwerp-tool) |
 | [/seo-audit-checklist](https://www.sitesnit.nl/seo-audit-checklist) | SEO-auditchecklist: van signaal naar onderbouwde actie | [/tools/seo-audit](https://www.sitesnit.nl/tools/seo-audit) |
 | [/website-niet-gevonden-google](https://www.sitesnit.nl/website-niet-gevonden-google) | Je website niet gevonden in Google: waar begin je? | [/tools/seo-audit](https://www.sitesnit.nl/tools/seo-audit) |
-| [/website-snelheid-testen](https://www.sitesnit.nl/website-snelheid-testen) | Website­snelheid testen: begrijp wat je meet | [/tools/website-check](https://www.sitesnit.nl/tools/website-check) |
+| [/website-snelheid-testen](https://www.sitesnit.nl/website-snelheid-testen) | Website­snelheid testen: begrijp wat je meet | [/tools/seo-audit](https://www.sitesnit.nl/tools/seo-audit) |
 | [/404-fouten-oplossen](https://www.sitesnit.nl/404-fouten-oplossen) | 404-fouten oplossen zonder alles door te sturen | [/tools/seo-audit](https://www.sitesnit.nl/tools/seo-audit) |
 | [/website-migratie-checklist](https://www.sitesnit.nl/website-migratie-checklist) | Website verhuizen: controle voor, tijdens en na de overstap | [/tools/seo-audit](https://www.sitesnit.nl/tools/seo-audit) |
 

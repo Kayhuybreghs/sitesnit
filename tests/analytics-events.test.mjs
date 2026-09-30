@@ -1,6 +1,6 @@
 import test, { afterEach } from 'node:test';
 import assert from 'node:assert/strict';
-import { analyticsEventPayload, createToolEventTracker, publicCtaForLink, setPublicAnalyticsRuntime, trackPublicEvent } from '../lib/analytics-events.ts';
+import { analyticsEventPayload, createFormEventTracker, createToolEventTracker, publicCtaForLink, setPublicAnalyticsRuntime, trackPublicEvent } from '../lib/analytics-events.ts';
 
 afterEach(() => setPublicAnalyticsRuntime(null));
 test('lead metadata is allowlisted and contact clicks remain contact intention only',()=>{
@@ -69,4 +69,16 @@ test('CTA mapping contains fixed IDs only, never link labels, queries, phone num
 test('analytics failure cannot break interaction', () => {
   setPublicAnalyticsRuntime({expiresAt:Date.now()+10000,href:()=> 'https://sitesnit.nl/contact',publicPaths:['/contact'],send:()=>{throw new Error('blocked script');}});
   assert.equal(trackPublicEvent({name:'cta_click',action_id:'contact_open'}),false);
+});
+
+test('form starts have fixed metadata, count once per form, and never replay pre-consent changes',()=>{
+  const beforeConsent=createFormEventTracker('contact');beforeConsent.start();
+  const events=setup('https://www.sitesnit.nl/contact?email=fixture');
+  beforeConsent.start();assert.equal(events.length,0);
+  const form=createFormEventTracker('contact');form.start();form.start();
+  assert.deepEqual(events.map(event=>event.name),['form_start']);
+  assert.deepEqual(analyticsEventPayload({name:'form_start',form_id:'tool_contact',tool_id:'seo_audit',nameInput:'private',requestId:'unique'}),{name:'form_start',params:{form_id:'tool_contact',tool_id:'seo_audit'}});
+  assert.equal(analyticsEventPayload({name:'form_start',form_id:'private free text'}),null);
+  assert.equal(analyticsEventPayload({name:'form_start',form_id:'contact',tool_id:'private'}),null);
+  createFormEventTracker('contact').start();assert.equal(events.length,2,'a genuinely new form can start separately');
 });

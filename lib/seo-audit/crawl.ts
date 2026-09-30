@@ -1,3 +1,5 @@
+import {auditCapabilities,auditScope} from './capabilities';
+import {uniqueAuditFindings} from './findings';
 import robotsParser from 'robots-parser';
 import {auditUrl,readPublicHtml,type AuditResponse} from './network';
 import {analyze,duplicateFindings,type AuditedPage,type Finding} from './analyze';
@@ -9,7 +11,7 @@ const bot='SitesnitAudit';
 export async function crawlSite(input:string,read:(url:string)=>Promise<AuditResponse>=readPublicHtml):Promise<AuditReport>{
  let start=auditUrl(input);const began=Date.now();
  const originalRead=read;
- read=async url=>{const remaining=50000-(Date.now()-began);if(remaining<=0)throw new Error('Crawlbudget bereikt.');let timer:ReturnType<typeof setTimeout>|undefined;try{return await Promise.race([originalRead(url),new Promise<never>((_,reject)=>{timer=setTimeout(()=>reject(new Error('Crawlbudget bereikt.')),remaining);})]);}finally{if(timer)clearTimeout(timer);}};
+ read=async url=>{const remaining=auditCapabilities.requestBudgetMs-(Date.now()-began);if(remaining<=0)throw new Error('Crawlbudget bereikt.');let timer:ReturnType<typeof setTimeout>|undefined;try{return await Promise.race([originalRead(url),new Promise<never>((_,reject)=>{timer=setTimeout(()=>reject(new Error('Crawlbudget bereikt.')),remaining);})]);}finally{if(timer)clearTimeout(timer);}};
  const pages:AuditedPage[]=[],notes:string[]=[];let skipped=0;const visited=new Set<string>(),discovered=new Set<string>();
  let robots=robotsParser(start.origin+'/robots.txt','');
  async function policy(url:URL){
@@ -35,7 +37,7 @@ export async function crawlSite(input:string,read:(url:string)=>Promise<AuditRes
  const queue=[...pages[0].links];queue.forEach(u=>discovered.add(u));discovered.add(start.href);
  const delay=Math.max(250,(robots.getCrawlDelay(bot)||0)*1000);
  if(delay>5000){notes.push('Deze website vraagt een lange crawl-pauze. Alleen het startadres is onderzocht.');queue.length=0;}
- while(queue.length&&pages.length<20&&Date.now()-began<45000){
+ while(queue.length&&pages.length<auditCapabilities.maxPages&&Date.now()-began<auditCapabilities.crawlBudgetMs){
   const url=queue.shift()!;if(visited.has(url))continue;visited.add(url);
   if(new URL(url).origin!==start.origin||robots.isAllowed(url,bot)===false||/\/(api|hub|admin|account|login|logout|cart|checkout)(\/|$)/i.test(new URL(url).pathname)){skipped++;continue;}
   await new Promise(resolve=>setTimeout(resolve,delay));
@@ -47,5 +49,5 @@ export async function crawlSite(input:string,read:(url:string)=>Promise<AuditRes
  for(const page of pages)for(const check of page.detailedChecks||[]){if(check.state!=='failed'||findings.some(f=>f.url===page.url&&f.code===check.id))continue;findings.push({code:check.id,priority:check.weight>=3?'hoog':'middel',title:check.title,url:page.url,evidence:check.evidence,why:'Deze controle heeft een concreet aandachtspunt in de ontvangen pagina gevonden. Bekijk het bewijs en de reikwijdte van de controle.',action:check.action});}
  for(const page of pages.filter(p=>p.status===404||p.status===410)){const sources=pages.filter(p=>p.links.includes(page.url));if(sources.length)findings.push({code:'broken-link',priority:'hoog',title:'Interne link naar een ontbrekende pagina',url:page.url,evidence:`HTTP ${page.status}; gevonden op ${sources.slice(0,3).map(p=>p.url).join(', ')}`,why:'Bezoekers volgen een verwijzing die nergens meer op uitkomt.',action:'Herstel de bestemming of wijzig/verwijder de verwijzende link.'});}
  const rank={hoog:0,middel:1,controle:2};findings.sort((a,b)=>rank[a.priority]-rank[b.priority]);
- return {version:2,origin:start.origin,checkedAt:new Date().toISOString(),pages,findings,discovered:discovered.size,skipped,limited:queue.length>0||skipped>0||delay>5000,notes:[...notes,'HTML-steekproef: maximaal 20 pagina’s, een domein en 45 seconden crawlbudget. Geen JavaScript-rendering van de crawl, backlinkdatabase, Google-indexcontrole of volledige schema-validatie. Een eventuele afzonderlijke mobiele Lighthouse-labtest geldt alleen voor de gemeten startpagina. Query-URLs, privé-routes en nofollow-links worden niet gevolgd.']};
+ return {version:2,origin:start.origin,checkedAt:new Date().toISOString(),pages,findings:uniqueAuditFindings(findings),discovered:discovered.size,skipped,limited:queue.length>0||skipped>0||delay>5000,notes:[...notes,auditScope]};
 }

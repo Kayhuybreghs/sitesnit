@@ -1,6 +1,6 @@
 import { accessToken, number, record, requestJson, result, text, validPeriod, type Period, type ProviderDependencies, type ProviderResult } from "./common";
 
-export const HUB_EVENTS = ["tool_start", "tool_complete", "cta_click"] as const;
+export const HUB_EVENTS = ["tool_start", "tool_complete", "cta_click", "form_start", "generate_lead", "contact_intent"] as const;
 export type Ga4Row = { dimensions: Record<string, string>; metrics: Record<string, number> };
 export type Ga4Report = { rows: Ga4Row[]; rowCount: number; subjectToThresholding: boolean; sampled: boolean; dataLossFromOtherRow: boolean };
 const reports = {

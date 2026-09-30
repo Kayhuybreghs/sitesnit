@@ -31,6 +31,8 @@ De eigenaar-ontvanger is vastgelegd in servercode. Een `CONTACT_NOTIFICATION_TO`
 
 ## Wat extern is gecontroleerd
 
+Update 27 september 2026: de contactmigratie, productievariabelen en ondertekende Resend-webhook zijn ingericht en gepubliceerd. Eén expliciet goedgekeurde TEST-aanvraag naar `contact@sitesnit.nl` heeft twee afzonderlijk afgeleverde berichten opgeleverd, ieder met één verzendpoging. Het live beheer toont beide afleverstatussen. Zie [het publicatierapport](productie-publicatie-2026-09-27.md). De daaropvolgende oudere alinea beschrijft de controle vóór deze release.
+
 Read-only in het Resend-account: sitesnit.nl staat Verified; Free-account met 100 mails per dag en 3.000 per maand; pay-as-you-go staat uit. Een historisch afgeleverd Hub-bericht bewijst niet dat deze nieuwe contactflow is afgeleverd. Geen mailboxinhoud, productie-secretwaarden of nieuwe contactbezorging zijn gecertificeerd. MX, Zoho, DNS en abonnement zijn niet gewijzigd.
 
 ## Budget en herstel

@@ -108,7 +108,7 @@ export const toolReading = [
     "id": "F3",
     "slug": "website-snelheid-testen",
     "title": "Website­snelheid testen: begrijp wat je meet",
-    "group": "websitecheck",
+    "group": "seo-audit",
     "outcome": "Een snelheidsresultaat correct interpreteren en een gerichte vervolgmeting kiezen."
   },
   {

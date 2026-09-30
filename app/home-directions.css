@@ -1,0 +1,13 @@
+.home-directions { padding-block: 72px; }
+.home-directions-heading { max-width: 660px; margin-bottom: 32px; }
+.home-directions-heading h2 { font-size: clamp(1.8rem,3vw,2.7rem); }
+.home-directions-links { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-block: 1px solid var(--line,#becfca); }
+.home-directions-links > a { display: flex; flex-direction: column; gap: 14px; padding: 28px; text-decoration: none; transition: background-color .18s; }
+.home-directions-links > a + a { border-left: 1px solid var(--line,#becfca); }
+.home-directions-links > a:hover, .home-directions-links > a:focus-visible { background: #e7ede1; }
+.home-directions-links > a > span { font-size: .74rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.home-directions-links h3 { font-size: 1.35rem; letter-spacing: -.025em; }
+.home-directions-links p { font-size: .94rem; margin: 0 0 12px; }
+.home-directions-links strong { margin-top: auto; font-size: .9rem; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+@media(max-width:700px) { .home-directions { padding-block: 48px; } .home-directions-links { grid-template-columns: 1fr; } .home-directions-links > a { padding: 24px 12px; } .home-directions-links > a + a { border-left: 0; border-top: 1px solid var(--line,#becfca); } }
+@media(prefers-reduced-motion:reduce) { .home-directions-links > a { transition: none; } }

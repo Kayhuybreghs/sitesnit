@@ -2,11 +2,11 @@ import type { Service } from './service-data';
 
 export const seoMaintenanceService: Service = {
   slug:'seo-onderhoud',anchor:'seo-onderhoud',name:'SEO-onderhoud',number:'14',tone:'green',group:'Vindbaarheid & inhoud',
-  title:'Verbeteren houdt niet op',accent:'bij een rapport.',
-  summary:'Bij SEO-onderhoud gaat het om werk aan je website: prioriteiten kiezen, afgesproken verbeteringen uitvoeren en controleren wat er is veranderd. De inzet bepalen we op basis van je website en de beschikbare informatie.',
+  title:'SEO-onderhoud met zicht',accent:'op het uitgevoerde werk.',
+  summary:'Wil je de technische SEO en bestaande inhoud niet steeds zelf nalopen? Bij SEO-onderhoud werk ik aan een afgesproken lijst met verbeteringen. Je ziet welke pagina’s zijn aangepast, hoe het werk is gecontroleerd en welke punten apart besproken moeten worden.',
   tags:['Bestaande pagina’s','Technische verbeteringen','Werklog'],
   introTitle:'Eerst een vertrekpunt.',introAccent:'Daarna gericht verder.',
-  intro:'We bekijken welke pagina’s belangrijk zijn, welke toegang beschikbaar is en wat al bekend is over zoekvragen en technische problemen. Daaruit maken we een afgebakende werklijst. Een gratis websitecheck kan aandachtspunten opleveren; het beoordelen, uitvoeren en controleren van verbeteringen is de dienst.',
+  intro:'We bekijken welke pagina’s belangrijk zijn, welke toegang beschikbaar is en wat al bekend is over zoekvragen en technische problemen. Daaruit maken we een afgebakende werklijst. Een scan geeft aandachtspunten; onderhoud is het beoordelen, aanpassen en hercontroleren dat daarop kan volgen. Hosting en bezoekersrapportages hebben hun eigen afspraken.',
   methods:[
     ['Prioriteren','We kiezen werk op basis van een aantoonbaar probleem, de betekenis voor bezoekers en de afgesproken ruimte. Een waarschuwing zonder context wordt niet automatisch een opdracht.'],
     ['Uitvoeren','Denk aan verduidelijking van een bestaande dienstenpagina, het herstellen van interne verwijzingen of een technisch probleem dat de werking hindert. De gekozen acties worden vooraf afgebakend.'],

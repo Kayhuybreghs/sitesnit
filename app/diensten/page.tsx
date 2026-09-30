@@ -12,7 +12,7 @@ export const metadata: Metadata = withPageMetadata({alternates:{canonical:"/dien
 
 export default function Diensten(){return <div className="services-story services-overview">
   <BreadcrumbData items={[{name:'Home',path:'/'},{name:'Diensten',path:'/diensten'}]} />
-  <section className="wrap service-opening"><Eyebrow>Diensten / Sitesnit</Eyebrow><h1>Wat heeft jouw<br/><em>bedrijf nodig?</em></h1><div className="service-opening-bottom"><p>Een website die duidelijk maakt wat je doet. Beter gevonden worden. Of minder tijd kwijt zijn aan terugkerend werk. Begin bij jouw vraag; hieronder zie je welke aanpak daarbij past en wat je kunt laten maken.</p><a className="text-link" href="#kies-je-vraag">Kies jouw vertrekpunt ↓</a></div></section>
+  <section className="wrap service-opening"><Eyebrow>Diensten / Sitesnit</Eyebrow><h1>Wat wil je aan je<br/><em>website laten doen?</em></h1><div className="service-opening-bottom"><p>Een nieuwe website, gerichte verbeteringen of beheer na de oplevering: begin bij wat je nodig hebt. Hieronder zie je wat ik met Sitesnit maak en uitvoer. Apps, klantomgevingen en koppelingen hebben een eigen route.</p><a className="text-link" href="#kies-je-vraag">Kies jouw vertrekpunt ↓</a></div></section>
   <nav className="wrap services-intent-nav" id="kies-je-vraag" aria-label="Kies wat je bedrijf nodig heeft">
     {[
       ['webdesign','Een nieuwe of betere website','Je aanbod uitleggen, aanvragen ontvangen of online verkopen.'],

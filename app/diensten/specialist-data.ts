@@ -3,10 +3,10 @@ import type { Service } from "./service-data";
 export const specialistServices: Service[] = [
   {
     slug:"seo-optimalisatie",anchor:"seo-optimalisatie",name:"SEO-optimalisatie",number:"01",tone:"green",group:"SEO & content",
-    title:"Een echte zoekvraag.",accent:"Een passend antwoord.",
-    summary:"Je wilt gevonden worden door mensen die zoeken naar wat jouw bedrijf doet. Daarvoor moeten inhoud, paginastructuur en techniek elkaar ondersteunen. We onderzoeken relevante zoekvragen en verbeteren de afgesproken pagina’s. Voor ondernemers in Venlo en Limburg nemen we het echte werkgebied mee.",
+    title:"Laat de SEO van je website",accent:"verbeteren.",
+    summary:"Wil je weten wat er technisch of inhoudelijk beter kan, en het daarna laten aanpassen? Ik onderzoek de afgesproken pagina’s en vertaal de bevindingen naar concreet werk. Na akkoord voer ik de wijzigingen uit en controleer ik de betrokken onderdelen opnieuw.",
     tags:["Zoekintentie","Technische SEO","Lokale vindbaarheid"],introTitle:"Van zoekvraag",introAccent:"naar een duidelijke route.",
-    intro:"SEO begint met weten welke informatie je klant nodig heeft. We brengen je aanbod, bestaande pagina’s en beschikbare zoekgegevens bij elkaar. Daaruit volgt een concrete lijst van inhoudelijke en technische verbeteringen, met een duidelijke prioriteit.",
+    intro:"Een onbedoelde indexeringsblokkade, een verkeerde interne verwijzing of ontbrekende uitleg op een dienstenpagina vraagt elk om ander werk. Ik maak duidelijk wat is vastgesteld, wat nog onderzoek vraagt en welke aanpassing daarbij past. Goede inhoud blijft behouden; niet iedere scannerwaarschuwing wordt automatisch een opdracht.",
     methods:[
       ["Welke vraag hoort op welke pagina?","We beginnen met je diensten, klanten en bestaande website. Welke vragen stellen mensen voordat ze contact opnemen? Welke informatie helpt hen kiezen? We brengen onderwerpen bij elkaar en bepalen welke pagina iedere vraag beantwoordt. Goede bestaande inhoud blijft bruikbaar. Waar uitleg ontbreekt, spreken we af wat wordt aangevuld. Zo krijgen diensten, praktische artikelen en voorbeelden elk een eigen rol."],
       ["Van losse tekst naar een duidelijke route","Een pagina moet meer doen dan een zoekterm noemen. We werken titels, koppen en teksten uit rond de vraag van de bezoeker. Voorbeelden geven context; interne links leiden naar relevante verdieping of contact. Jouw kennis vormt de inhoudelijke basis. We spreken af wie informatie aanlevert en controleert, zodat de tekst past bij wat je bedrijf werkelijk aanbiedt en uitvoert."],
@@ -17,7 +17,7 @@ export const specialistServices: Service[] = [
       ["Kunnen jullie mijn huidige website verbeteren?","We bekijken eerst hoe je website is opgebouwd en welke toegang beschikbaar is. Daarna bepalen we welke inhoudelijke en technische aanpassingen mogelijk zijn. Een volledige nieuwe website is daarvoor niet altijd nodig."],
       ["Wanneer zie ik verschil in Google?","Dat verschilt per website, onderwerp en concurrentie. Zoekmachines bepalen wanneer veranderingen worden verwerkt. We spreken af welk werk wordt uitgevoerd en gebruiken beschikbare gegevens om het vervolg te beoordelen. Een positie of termijn kunnen we niet garanderen."],
       ["Wat is het verschil met blogs en onderhoud?","SEO-optimalisatie richt zich op afgesproken inhoudelijke en technische verbeteringen. Blogpakketten leveren nieuwe artikelen. Het onderhoudspakket met SEO omvat doorlopende aanpassingen aan bestaande teksten en code. We maken duidelijk welke werkzaamheden je kiest."]
-    ],cta:"Bespreek je SEO",contact:"/contact?dienst=seo-optimalisatie",meta:"Laat je bestaande website verbeteren voor Google en je bezoekers. Sitesnit onderzoekt zoekvragen, teksten, interne links, techniek en lokale vindbaarheid."
+    ],cta:"Bespreek mijn verbeterpunten",contact:"/contact?dienst=seo-optimalisatie",meta:"Laat je bestaande website verbeteren voor Google en je bezoekers. Sitesnit onderzoekt zoekvragen, teksten, interne links, techniek en lokale vindbaarheid."
   },
   {
     slug:"formulieren-rekentools",anchor:"formulieren-rekentools",name:"Formulieren & rekentools",number:"02",tone:"blue",group:"Tools & automatisering",

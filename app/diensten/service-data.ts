@@ -21,9 +21,9 @@ export const services: Service[] = [
     "number": "01",
     "tone": "blue",
     "group": "Ontwerpen & bouwen",
-    "title": "Jouw verhaal.",
-    "accent": "Sterk gebouwd.",
-    "summary": "Van de eerste indruk tot het contactformulier: je website moet vertellen wie je bent en bezoekers verder helpen. Sitesnit verbindt je merk, teksten, beelden en techniek in een eigen ontwerp. Voor ondernemers in Venlo, omstreken en de rest van Limburg.",
+    "title": "Een website laten maken.",
+    "accent": "Voor jouw bedrijf.",
+    "summary": "Ik vertaal je aanbod en de vragen van je klanten naar een eigen website. We bepalen welke pagina’s en functies nodig zijn, werken het ontwerp uit en controleren de afgesproken werking vóór de oplevering. Een onepager, vijf pagina’s of uitgebreider maatwerk: de omvang volgt uit je plannen.",
     "tags": [
       "Onepager",
       "Bedrijfswebsite",
@@ -249,17 +249,17 @@ export const services: Service[] = [
     "number": "04",
     "tone": "green",
     "group": "Vindbaar & zichtbaar",
-    "title": "Laat je vinden.",
-    "accent": "Geef het juiste antwoord.",
-    "summary": "Mensen zoeken naar een oplossing, een specialist of een bedrijf in de buurt. We verbinden die zoekvragen met duidelijke pagina’s en een technische basis die zoekmachines kunnen begrijpen. Met Venlo en Limburg als werkgebied waar dat bij jouw bedrijf past.",
+    "title": "Je website beter", 
+    "accent": "vindbaar maken.",
+    "summary": "Een technische fout oplossen, dienstenpagina’s duidelijker uitwerken of je bestaande website blijven verbeteren: het zijn verschillende opdrachten. Ik kijk wat jouw website nodig heeft en maak de werkzaamheden vooraf concreet.",
     "tags": [
       "Zoekvragen",
       "Technische SEO",
       "Venlo & Limburg"
     ],
-    "introTitle": "Gevonden op een vraag.",
-    "introAccent": "Gekozen om je antwoord.",
-    "intro": "SEO zit in je hele website: in wat je uitlegt, hoe pagina’s samenhangen en of bezoekers gemakkelijk verder kunnen. We beginnen met je aanbod en de vragen van je klanten. Daarna kiezen we waar de meeste inhoudelijke verbetering nodig is.",
+    "introTitle": "Welke hulp past",
+    "introAccent": "bij jouw website?",
+    "intro": "Kies een eenmalige verbetering, doorlopend onderhoud, nieuwe inhoud of eerst een technische controle. Je kunt ook direct je situatie bespreken. Monitoring geeft inzicht in beschikbare cijfers; social media brengt je verhaal naar andere kanalen. Die diensten zijn afzonderlijk van het herstelwerk.",
     "methods": [
       [
         "Onderwerpen en zoekintentie",
@@ -325,33 +325,33 @@ export const services: Service[] = [
     "number": "05",
     "tone": "blue",
     "group": "Vindbaar & zichtbaar",
-    "title": "Jouw kennis.",
-    "accent": "Goed verwoord.",
-    "summary": "Heldere webteksten en blogs laten zien wat je weet en wat je voor klanten kunt betekenen. Wij verzorgen onderwerpenonderzoek, schrijven, SEO-opmaak en publicatie. Met 2 of 4 nieuwe blogs per maand blijft er aandacht voor je bedrijf, zonder dat jij steeds een artikel hoeft te maken.",
+    "title": "Webteksten en blogs.",
+    "accent": "Vanuit jouw vakkennis.",
+    "summary": "Je weet veel over je werk, maar dat staat niet vanzelf duidelijk op je website. Ik werk je aanbod en klantvragen uit tot webteksten of artikelen. Je levert de inhoudelijke basis; we spreken af welke tekst ik uitwerk en wanneer je die controleert.",
     "tags": [
       "2 of 4 blogs per maand",
       "Copywriting",
       "SEO-opmaak"
     ],
     "introTitle": "Jij runt je bedrijf.",
-    "introAccent": "Wij houden je verhaal bij.",
+    "introAccent": "Ik werk je verhaal uit.",
     "intro": "Je hoeft niet iedere week naar een leeg document te kijken. Samen bepalen we je aanbod, onderwerpen en toon. Daarna werken we vanuit een contentplanning. Jouw kennis gebruiken we voor de inhoud; schrijven, structureren en plaatsen kun je uit handen geven.",
     "methods": [
       [
-        "Een inhoudelijke planning",
+        "Onderwerpen kiezen",
         "Klantvragen, diensten en ontwikkelingen in je bedrijf vormen het vertrekpunt. We kiezen onderwerpen die elkaar aanvullen en aansluiten op pagina’s waarop bezoekers kunnen doorlezen of contact opnemen."
       ],
       [
-        "Teksten die echt over jou gaan",
-        "We schrijven webcopy, diensten- en productteksten of blogs op basis van je expertise en beschikbare bronnen. Begrijpelijke uitleg en concrete voorbeelden gaan voor algemene verkooppraatjes."
+        "Jouw kennis ophalen",
+        "Jij levert de feiten, klantvragen en voorbeelden die het werk concreet maken. Ik vraag door op de aanpak, keuzes en grenzen van je aanbod. Bestaande teksten en bronnen nemen we mee als ze nog kloppen; ontbrekende informatie vullen we niet met een verzonnen klantverhaal."
       ],
       [
-        "SEO meenemen in de uitwerking",
-        "Iedere afgesproken publicatie krijgt passende koppen, een paginatitel, beschrijving en relevante interne links. Afbeeldingen en bronnen krijgen aandacht. De inhoud wordt gecontroleerd op juistheid en aansluiting op je bedrijf."
+        "Schrijven en inhoudelijk controleren",
+        "Ik werk de tekst uit met uitleg en voorbeelden die passen bij de vraag van de lezer. Je controleert of de feiten, toon en beloften kloppen met jouw werk. Correcties en ontbrekende informatie bespreken we voordat de tekst wordt gepubliceerd."
       ],
       [
-        "Klaar voor publicatie",
-        "Je ontvangt de tekst voor inhoudelijke controle. Na jouw akkoord plannen we de publicatie, controleren we de links en bekijken we de pagina op mobiel. Correcties en eventuele aanvullende beelden stemmen we vooraf af."
+        "Opmaak en publicatie",
+        "Na jouw akkoord krijgt de tekst passende koppen, een paginatitel, beschrijving en relevante interne links. Afbeeldingen en bronnen krijgen hun afgesproken plek. Bij publicatie controleer ik de links en de pagina op mobiel. De planning en eventuele aanvullende beelden spreken we vooraf af."
       ]
     ],
     "optionsTitle": "Een goed ritme.",
@@ -481,9 +481,9 @@ export const services: Service[] = [
     "number": "07",
     "tone": "green",
     "group": "Beheren & vereenvoudigen",
-    "title": "Online is het begin.",
-    "accent": "Daarna blijven we zorgen.",
-    "summary": "Een website heeft ook na de lancering aandacht nodig. Kies alleen hosting, voeg technische controles en herstel toe, of laat ook je bestaande teksten en SEO bijhouden. Je ziet hieronder precies welke werkzaamheden bij ieder maandpakket horen.",
+    "title": "Hosting en onderhoud.",
+    "accent": "Dit laat je verzorgen.",
+    "summary": "Alleen je website online houden, de techniek laten controleren of ook bestaande inhoud laten verbeteren: het zijn verschillende werkzaamheden. Hieronder zie je wat de pakketten omvatten en welke afspraken nodig zijn bij het overnemen van een bestaande website.",
     "tags": [
       "Hosting",
       "Technisch onderhoud",

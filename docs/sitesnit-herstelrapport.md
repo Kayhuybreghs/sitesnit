@@ -1,5 +1,11 @@
 # Sitesnit: gericht herstel en actuele controle
 
+## Productie-update 27 september 2026
+
+De hieronder beschreven lokale oplevering is inmiddels gepubliceerd na expliciete toestemming. Commit `98d3d4bbe8a9d911b32f55819805418743914a2b` staat live op `https://www.sitesnit.nl`; Vercel en de GitHub-kwaliteitsworkflow zijn geslaagd. De laatste testset telt **168 geslaagde tests**, en de productiecontrole van **60 openbare routes** bevat geen fouten. De goedgekeurde TEST-aanvraag is duurzaam opgeslagen en beide bijbehorende mails zijn ieder eenmaal verstuurd en door de ondertekende Resend-webhook als `delivered` bevestigd. Ook zichtbaar gecontroleerd in het live aanvraagbeheer. Volledig bewijs, publicatiereferenties en beperkingen: [productie-publicatie-2026-09-27.md](productie-publicatie-2026-09-27.md).
+
+De onderstaande matrix en lokale testgeschiedenis beschrijven de stand vóór publicatie; de eerdere vermeldingen dat push, migratie en echte mailaflevering nog openstaan zijn hiermee achterhaald. Niet apart afgetekende controles blijven open.
+
 27 september 2026. Werkbranch `codex/contact-prijzen-herstel`, uitgangs-HEAD `9756e9c`. De werkboom bevatte veel bestaand werk dat niet in die commit zat. Het is behouden; de auditcommit `59e8390` is niet teruggezet. De actuele broncatalogus bevat 60 publieke routes, tegenover 59 in het historische register. De extra bestaande uitlegroute is geen reden geweest om routes te verwijderen.
 
 Bronnen: het volledige aangeleverde promptbestand, uitvoeringscontract en documenten onder `bronmateriaal/`. De latere uitdrukkelijke gebruikersvraag voegt verbetering van beide case-detailpagina’s en verdere uitwerking van `/diensten` toe. De homepagegrens blijft gelden. **Geen push, merge, productiepromotie, DNS- of abonnementswijziging uitgevoerd.**

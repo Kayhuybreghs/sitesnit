@@ -71,6 +71,22 @@ test("GA4 rejects unrelated events even if provider ignores requested filter", a
   assert.equal(actual.events.code, "invalid-response");
 });
 
+test("GA4 keeps stored inquiry events separate from tool use and contact intent without inventing missing rows", async () => {
+  const measured = [['tool_complete', '21'], ['form_start', '9'], ['generate_lead', '4'], ['contact_intent', '7']];
+  const actual = await fetchGa4({ propertyId: "1234", period }, deps(async (_url, init) => {
+    const body = JSON.parse(init.body);
+    if (body.dimensions[0]?.name !== 'eventName') return json(gaReport(body));
+    const allowed = body.dimensionFilter.filter.inListFilter.values;
+    for (const name of ['form_start', 'generate_lead', 'contact_intent']) assert.ok(allowed.includes(name));
+    assert.deepEqual(body.metrics, [{name:'eventCount'}], 'counts do not impersonate unique users or revenue');
+    return json(gaReport(body, {rowCount:measured.length, rows:measured.map(([name,count])=>({dimensionValues:[{value:name}],metricValues:[{value:count}]}))}));
+  }));
+  assert.equal(actual.events.state, 'ready');
+  assert.deepEqual(actual.events.data.rows.map(row=>[row.dimensions.eventName,row.metrics.eventCount]), measured.map(([name,count])=>[name,Number(count)]));
+  assert.equal(actual.events.data.rows.some(row=>row.dimensions.eventName==='cta_click'), false, 'an absent event is not fabricated as zero');
+  assert.equal(actual.events.data.rows.find(row=>row.dimensions.eventName==='generate_lead').metrics.eventCount, 4);
+});
+
 test("Missing credentials and empty successful data never become zero visitor totals", async () => {
   let called = false;
   const missing = await fetchGa4({ propertyId: "1234", period }, { ...deps(async () => { called = true; throw new Error("not expected"); }), getAccessToken: async () => null });

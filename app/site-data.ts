@@ -10,7 +10,7 @@ export const site = {
   packages: [
     {
       id: "onepager",
-      name: "Onepager",
+      name: "Onepager op maat",
       pages: "1 pagina",
       price: 895,
       description: "Je aanbod, verhaal en contact op een overzichtelijke pagina.",
@@ -22,7 +22,7 @@ export const site = {
     },
     {
       id: "website",
-      name: "Website",
+      name: "Bedrijfswebsite — vijf pagina’s",
       pages: "5 pagina’s",
       price: 1895,
       description: "Geef je diensten, bedrijf en werk elk de ruimte die ze nodig hebben.",
@@ -34,7 +34,7 @@ export const site = {
     },
     {
       id: "maatwerk",
-      name: "Volledige vrijheid",
+      name: "Uitgebreid maatwerk",
       pages: "Maatwerk",
       price: 2750,
       description: "Voor een website waarvan omvang of functies een eigen aanpak vragen.",

@@ -13,6 +13,7 @@ jobs:
       CONTACT_EMAIL_ENABLED: 'false'
       HUB_ENABLED: 'false'
       SITESNIT_LOCAL_SQLITE: 'true'
+      CONTACT_SCHEMA_RELEASE: '' # CI must never opt in to a production database migration.
       RATE_LIMIT_SECRET: 'ci-fixture-only-not-a-production-secret'
       VERCEL_ENV: 'production' # Indexability is tested with the exact production Host header.
       SEO_TEST_ORIGIN: 'http://127.0.0.1:5186'
@@ -25,18 +26,26 @@ jobs:
       - run: npm ci --include=dev --include=optional --no-audit --no-fund
       - run: npm run typecheck
       - run: npm run lint
-      - run: npm run test:all
-      - run: npm run build:vercel
+      - name: Logic, runtime, consent, auth and negative fixtures
+        run: npm run test:all
+      - name: Production build without release migrations
+        run: npm run build
       - name: Public routes, schema, redirects and security
         run: |
           node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 5186 > /tmp/sitesnit-next.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=false
           for attempt in $(seq 1 30); do
-            if curl -fsS http://127.0.0.1:5186/ > /dev/null; then break; fi
+            if curl -fsS http://127.0.0.1:5186/ > /dev/null; then ready=true; break; fi
             sleep 1
           done
+          if [ "$ready" != true ]; then cat /tmp/sitesnit-next.log; exit 1; fi
           npm run test:routes
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: route-validation
-          path: reports/routes-na-herstel.json
+          name: route-validation-${{ github.sha }}
+          path: |
+            reports/routes-na-herstel.json
+            /tmp/sitesnit-next.log

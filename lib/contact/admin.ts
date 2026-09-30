@@ -2,6 +2,7 @@ import {randomUUID} from 'node:crypto';
 import type {HubConnection} from '../hub/connection';
 import {ContactError} from './input';
 import type {OutboxTask} from './store';
+import { CONTACT_SAFE_RETRY_MS } from './limits';
 /** Verify the provider's immutable message before marking an uncertain send accepted. */
 export async function reconcileContactMail(connection:Pick<HubConnection,'db'|'transaction'>,userId:string,input:Record<string,unknown>,apiKey:string|undefined,request:typeof fetch=fetch){
   if(!apiKey||typeof input.taskId!=='string'||typeof input.providerId!=='string'||!/^[-\w]{1,100}$/.test(input.providerId))throw new ContactError('Vul een geldige provider-ID in en controleer de mailkoppeling.');
@@ -24,7 +25,7 @@ export async function recoverContactMail(connection:Pick<HubConnection,'transact
     if(!task) throw new ContactError('Verzendtaak niet gevonden.',404);
     if(task.state==='provider_accepted'||task.provider_id) throw new ContactError('Deze mail is al door de provider aangenomen. Hij wordt niet opnieuw verstuurd.',409);
     if(task.state==='processing'&&Number(task.lease_until)>now) throw new ContactError('Deze verzendtaak wordt al verwerkt.',409);
-    const expired=task.first_attempt_at!==null&&now-Number(task.first_attempt_at)>=23*3600000;
+    const expired=task.first_attempt_at!==null&&now-Number(task.first_attempt_at)>=CONTACT_SAFE_RETRY_MS;
     const manual=expired||task.state==='delivery_unknown'||task.state==='permanent_failed';
     if(input.action!=='retry'||(manual&&input.confirmedNotSent!==true)) throw new ContactError('Controleer eerst de providerlog en bevestig dat dit bericht niet is verstuurd.',409);
     const changed=await db.prepare("UPDATE contact_outbox SET state='pending',next_attempt_at=?,claim_id=NULL,lease_until=NULL,error_code=NULL,first_attempt_at=?,attempts=?,updated_at=? WHERE id=? AND state=? AND (lease_until IS NULL OR lease_until<=?) RETURNING id").bind(now,manual?null:task.first_attempt_at,manual?0:task.attempts,now,task.id,task.state,now).first();

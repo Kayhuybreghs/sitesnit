@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable react-hooks/set-state-in-effect -- Read browser-only URL and session context once after hydration. */
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { ANALYTICS_TOOL_PATHS, trackPublicEvent } from '../../lib/analytics-events';
+import { ANALYTICS_TOOL_PATHS, createFormEventTracker, trackPublicEvent } from '../../lib/analytics-events';
 import { contactServiceNames } from '../../lib/contact/options';
 import { Arrow } from "../ui";
 import { site } from "../site-data";
@@ -49,7 +49,6 @@ export default function ContactForm({
   const [packageId, setPackageId] = useState(selectedPackage);
   const [websiteValue, setWebsiteValue] = useState(website);
   const [savedSummary, setSummary] = useState("");
-  const summary = toolSummary ?? savedSummary;
   const [includeSummary, setIncludeSummary] = useState(false);
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
@@ -59,6 +58,8 @@ export default function ContactForm({
   const inFlight = useRef(false);
   const feedback = useRef<HTMLDivElement>(null);
   const [pending, setPending] = useState<Record<string,unknown>|null>(null);
+  const summary = pending ? String(pending.toolSummary ?? '') : toolSummary ?? savedSummary;
+  const formAnalytics = useRef(createFormEventTracker(embedded?'tool_contact':'contact'));
   const [receipt, setReceipt] = useState({reference:'',confirmation:'pending',localOnly:false});
   const [localPreview, setLocalPreview] = useState(false);
   const pendingKey = useCallback(() => `sitesnit-contact-pending:${location.pathname}:${embedded?'tool':'contact'}`, [embedded]);
@@ -76,7 +77,10 @@ export default function ContactForm({
     setId(crypto.randomUUID());
     try {
       const saved=JSON.parse(sessionStorage.getItem(pendingKey())??'null');
-      if(saved&&typeof saved.requestId==='string') {setPending(saved);setId(saved.requestId);}
+      if(saved&&typeof saved.requestId==='string') {
+        setPending(saved);setId(saved.requestId);
+        return; // Frozen retry context takes precedence over the current URL or tool defaults.
+      }
     } catch {}
     const p = new URLSearchParams(location.search);
     setService(Object.hasOwn(contactServiceNames,p.get('dienst')??'') ? p.get('dienst')! : '');
@@ -122,11 +126,19 @@ export default function ContactForm({
       } catch {}
   }, [embedded,pendingKey]);
   useEffect(() => {
-    if (embedded) setPackageId(selectedPackage);
-  }, [embedded, selectedPackage]);
+    if (embedded&&!pending) setPackageId(selectedPackage);
+  }, [embedded, selectedPackage,pending]);
   useEffect(() => {
-    if (embedded) setWebsiteValue(website);
-  }, [embedded, website]);
+    if (embedded&&!pending) setWebsiteValue(website);
+  }, [embedded, website,pending]);
+  useEffect(()=>{
+    if(!pending)return;
+    setWebsiteValue(String(pending.website??''));setPackageId(String(pending.packageId??''));
+    setService(String(pending.serviceId??''));setProjectContext(String(pending.project??''));setRhythm(String(pending.rhythm??''));
+    setCareInterests(Array.isArray(pending.careInterests)?pending.careInterests:[]);setMonthlyPlan(String(pending.monthlyPlan??''));
+    setAppointmentWanted(pending.appointment===true);setPreferredDay(String(pending.preferredDay??''));setPreferredTime(String(pending.preferredTime??''));
+    setIncludeSummary(pending.includeSummary===true);
+  },[pending]);
   useEffect(() => { if(error||status==='success') feedback.current?.focus(); }, [error,status]);
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -205,7 +217,14 @@ export default function ContactForm({
       </div>
     );
   return (
-    <form className="contact-form" onSubmit={submit} aria-busy={status==='sending'}>
+    <form className="contact-form" onSubmit={submit} aria-busy={status==='sending'} onChange={event=>{
+      const target=event.target;
+      if(target instanceof HTMLInputElement||target instanceof HTMLTextAreaElement||target instanceof HTMLSelectElement){
+        if(target.name==='companyCheck')return;
+        if(target instanceof HTMLInputElement&&target.type==='checkbox'?!target.checked:!target.value.trim())return;
+        formAnalytics.current.start(ANALYTICS_TOOL_PATHS[location.pathname]);
+      }
+    }}>
       <noscript><p className="no-js-note">Dit formulier heeft JavaScript nodig.{site.email && <> Mail je vraag naar <a href={`mailto:${site.email}`}>{site.email}</a>.</>}</p></noscript>
       <h2>{heading ?? (embedded ? "Bespreek je uitkomst" : "Bespreek je plannen")}</h2>
       {localPreview&&<aside className="context-box"><strong>Je bekijkt een lokale testversie</strong><p>Een aanvraag hier is geen aanvraag via de live website. In deze testomgeving kan mailverzending uitstaan. De melding na het versturen vertelt of een bevestiging naar de mailprovider is gestuurd.</p></aside>}
@@ -231,6 +250,16 @@ export default function ContactForm({
       )}
       <fieldset className="contact-fields" disabled={Boolean(pending)}>
       <legend className="sr-only">Je aanvraag</legend>
+      <div className="field">
+        <label htmlFor={fieldId('service')}>Waar gaat je vraag over?</label>
+        <select id={fieldId('service')} value={service} onChange={event=>{
+          setService(event.target.value);
+          if(event.target.value&&!['webdesign','webshops'].includes(event.target.value))setPackageId('');
+        }}>
+          <option value="">Samen bepalen</option>
+          {Object.entries(contactServiceNames).map(([value,label])=><option value={value} key={value}>{label}</option>)}
+        </select>
+      </div>
       <div className="form-row">
         <div className="field">
           <label htmlFor={fieldId("name")}>Je naam</label>
@@ -271,7 +300,7 @@ export default function ContactForm({
           maxLength={2000}
         />
       </div>
-      <div className="field">
+      {(!service||['webdesign','webshops'].includes(service)||packageId)&&<div className="field">
         <label htmlFor={fieldId("package")}>
           Websitepakket <small>(als dat al duidelijk is)</small>
         </label>
@@ -287,7 +316,7 @@ export default function ContactForm({
             </option>
           ))}
         </select>
-      </div>
+      </div>}
       <details className="contact-care-disclosure">
         <summary>
           <span>
@@ -355,6 +384,7 @@ export default function ContactForm({
           <input
             id={fieldId("phone")}
             name="phone"
+            defaultValue={pending?String(pending.phone??''):undefined}
             type="tel"
             autoComplete="tel"
             maxLength={40}

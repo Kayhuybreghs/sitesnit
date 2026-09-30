@@ -1,4 +1,5 @@
 import { InlineArrow } from '../../inline-arrow';
+import { auditCapabilities } from '../../../lib/seo-audit/capabilities';
 export function AuditIntro(){
  return <section className="audit-hero audit-hero-clear"><div className="wrap">
   <div className="audit-hero-copy"><span className="eyebrow">Gratis SEO-audit van je website</span>
@@ -6,7 +7,7 @@ export function AuditIntro(){
    <p>Vul je websiteadres in. Je krijgt een overzicht van technische problemen, de pagina’s waar ze voorkomen en wat je eraan kunt doen.</p>
    <a className="button audit-start-button" href="#audit-url">Start mijn gratis SEO-audit <span aria-hidden="true"><InlineArrow /></span></a>
    <span className="audit-start-hint">Je gaat direct naar het invoerveld hieronder.</span>
-   <ul className="audit-hero-facts"><li>Tot 20 pagina’s</li><li>Tot ongeveer 3 minuten</li><li>Geen account nodig</li></ul>
+   <ul className="audit-hero-facts"><li>Tot {auditCapabilities.maxPages} pagina’s</li><li>Tot ongeveer {auditCapabilities.clientTimeoutMs / 60000} minuten</li><li>Geen account nodig</li></ul>
   </div>
   <a className="audit-report-invite" href="#audit-url">
    <div className="audit-report-top"><span className="audit-mini-brand" aria-hidden="true">S<InlineArrow /></span><span>Jouw website doorgelicht</span><span className="audit-report-arrow" aria-hidden="true"><InlineArrow /></span></div>

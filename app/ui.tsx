@@ -179,6 +179,7 @@ export function ProjectCard({ project }: { project: Project }) {
   );
 }
 export function PriceCards({ compact = false }: { compact?: boolean }) {
+  const customPrice = site.packages.find(p => p.id === 'maatwerk')!.price;
   return (
     <div className={`pricing-menu ${compact ? "compact" : ""}`}>
       {site.packages.map((p, i) => (
@@ -215,11 +216,9 @@ export function PriceCards({ compact = false }: { compact?: boolean }) {
           <InlineArrow />
         </span>
         <p>
-          <strong>Een groter idee? Maatwerk begint vanaf €2.750 excl. btw ({euro(grossPrice(2750))} incl.).</strong>
+          <strong>Een groter idee? Maatwerk begint vanaf {euro(customPrice)} excl. btw ({euro(grossPrice(customPrice))} incl.).</strong>
           <br />
-          Grotere maatwerkprojecten komen gemiddeld rond{" "}
-          {euro(site.averageProjectCost)} excl. btw ({euro(grossPrice(site.averageProjectCost))} incl.) uit. Dat geeft context; jouw wensen
-          bepalen het voorstel.
+          De paginaomvang, gewenste functies, koppelingen en beschikbare inhoud bepalen het voorstel.
         </p>
         <a className="text-link" href="/tools/website-kosten-berekenen">
           Wat past bij jouw idee? <Arrow />

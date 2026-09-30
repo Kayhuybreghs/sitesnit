@@ -1,50 +1,130 @@
 import fs from 'node:fs/promises';
-import {parse} from 'parse5';
+import http from 'node:http';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
 import {routeCatalog} from '../lib/route-catalog.ts';
 import {pageSeo} from '../app/page-seo-data.ts';
 import {publicAssetPaths} from '../lib/public-asset-paths.ts';
-import http from 'node:http';
 import {toolRedirects} from '../lib/tool-routes.ts';
-const origin=process.env.SEO_TEST_ORIGIN||'http://127.0.0.1:5186';
-if(!['localhost','127.0.0.1'].includes(new URL(origin).hostname))throw new Error('Local fixture checks only.');
-const report=[],failures=[];
-// Node 24 fetch normalizes Host to the URL; http.request preserves the explicit
-// production-host fixture without touching DNS, hosts files or indexing policy.
-function get(path,production=false){return new Promise((resolve,reject)=>{
- const req=http.get(origin+path,{headers:production?{Host:'www.sitesnit.nl'}:{}},response=>{
-  const chunks=[];response.on('data',b=>chunks.push(b));response.on('end',()=>resolve(new Response(Buffer.concat(chunks),{status:response.statusCode,headers:response.headers})));
- });req.setTimeout(15000,()=>req.destroy(new Error('Route timeout')));req.on('error',reject);
-});}
-const attrs=n=>Object.fromEntries((n.attrs||[]).map(a=>[a.name,a.value]));
-const text=n=>(n.nodeName==='#text'?n.value:'')+(n.childNodes||[]).map(text).join('');
-function all(node,fn,result=[]){if(fn(node))result.push(node);for(const c of node.childNodes||[])all(c,fn,result);return result;}
-for(const {path} of routeCatalog){
- const start=Date.now();const response=await get(path,true);const html=await response.text(),root=parse(html);
- const h1=all(root,n=>n.tagName==='h1').map(text),links=all(root,n=>n.tagName==='a').map(attrs).map(a=>a.href||'');
- const canon=all(root,n=>n.tagName==='link'&&attrs(n).rel==='canonical').map(attrs)[0]?.href;
- const ld=all(root,n=>n.tagName==='script'&&attrs(n).type==='application/ld+json');let validLd=true;for(const n of ld)try{JSON.parse(text(n));}catch{validLd=false;}
- const row={path,status:response.status,h1,canonical:canon,title:all(root,n=>n.tagName==='title').map(text)[0],jsonLd:ld.length,validLd,internalLinks:links.filter(l=>l.startsWith('/')&&!l.startsWith('//')),anchors:all(root,n=>attrs(n).id).map(n=>attrs(n).id),images:all(root,n=>n.tagName==='img').map(attrs).map(a=>a.src),responseMs:Date.now()-start,description:all(root,n=>n.tagName==='meta'&&attrs(n).name==='description').map(attrs)[0]?.content,browserDesktop:'NOT_TESTED',browserMobile:'NOT_TESTED'};
- const robots=all(root,n=>n.tagName==='meta'&&attrs(n).name==='robots').map(attrs).map(a=>a.content).join(' ');
- if(response.status!==200||h1.length!==1||!canon?.startsWith('https://www.sitesnit.nl')||!validLd||/noindex/i.test(robots+' '+response.headers.get('x-robots-tag')))failures.push({path,reason:'status/h1/canonical/schema/robots',robots});
- if(!response.headers.get('content-security-policy')?.includes("'nonce-"))failures.push({path,reason:'Missing HTML nonce CSP'});
- report.push(row);
+import {crawlPublicRoutes, productionOrigin, readPage, validatePage, validateRedirect, validateSitemap} from './public-route-checks.mjs';
+import {filesBelow, inventoryAppPages, inventoryPublicAssets, validateRouteInventory} from './public-route-inventory.mjs';
+
+const root = fileURLToPath(new URL('../', import.meta.url));
+const origin = process.env.SEO_TEST_ORIGIN || 'http://127.0.0.1:5186';
+const originUrl = new URL(origin);
+if (originUrl.protocol !== 'http:' || !['localhost', '127.0.0.1'].includes(originUrl.hostname) || originUrl.username || originUrl.password || originUrl.pathname !== '/' || originUrl.search || originUrl.hash) throw new Error('Local HTTP fixture origin only.');
+const reportPath = process.env.SEO_TEST_REPORT || path.join(root, 'reports/routes-na-herstel.json');
+const paths = routeCatalog.map(item => item.path);
+const failures = [], edgeChecks = [];
+const checkedAt = new Date().toISOString();
+
+// Native HTTP preserves Host without using production DNS or making live requests.
+function request(route, production = true) {
+  if (!route.startsWith('/') || route.startsWith('//')) throw new Error('Expected local request path.');
+  return new Promise((resolve, reject) => {
+    const req = http.get(new URL(route, origin), {headers: production ? {Host: new URL(productionOrigin).host} : {}}, response => {
+      const chunks = [];
+      response.on('data', chunk => chunks.push(chunk));
+      response.on('end', () => resolve({status: response.statusCode, headers: response.headers, body: Buffer.concat(chunks).toString('utf8')}));
+      response.on('error', reject);
+    });
+    req.setTimeout(15000, () => req.destroy(new Error('Local route timeout')));
+    req.on('error', reject);
+  });
 }
-const pages=new Map(report.map(r=>[r.path,r]));
-for(const row of report){
- if(!row.title||!row.description||row.description!==pageSeo[row.path]?.description)failures.push({path:row.path,reason:'Missing or mismatching metadata'});
- for(const href of row.internalLinks){const url=new URL(href,origin),target=pages.get(url.pathname);if(target&&url.hash&&!target.anchors.includes(decodeURIComponent(url.hash.slice(1))))failures.push({path:row.path,href,reason:'Missing anchor'});}
+
+async function buildIdentity() {
+  try {
+    return {id: (await fs.readFile(path.join(root, '.next/BUILD_ID'), 'utf8')).trim(), entrySha256: createHash('sha256').update(await fs.readFile(path.join(root, '.next/server/app/page.js'))).digest('hex')};
+  } catch { return null; }
 }
-for(const path of [...new Set(report.flatMap(r=>r.images).filter(p=>p?.startsWith('/')))]){const r=await get(path);if(r.status!==200)failures.push({path,reason:'Image unavailable',status:r.status});}
-for(const redirect of toolRedirects){const r=await get(redirect.source);if(r.status!==308||new URL(r.headers.get('location'),origin).pathname!==redirect.destination)failures.push({path:redirect.source,reason:'Incorrect legacy redirect'});}
-for(const path of [...publicAssetPaths].slice(0,2)){
- const response=await fetch(origin+path);if(response.status!==200||response.headers.has('content-security-policy'))failures.push({path,reason:'Static asset still has HTML nonce policy or does not exist'});
+async function sourceIdentity() {
+  const hash = createHash('sha256');
+  const files = [...await filesBelow(path.join(root, 'app')), ...await filesBelow(path.join(root, 'lib')), ...await filesBelow(path.join(root, 'scripts')),
+    ...['proxy.ts', 'next.config.ts', 'package.json', 'package-lock.json'].map(file => path.join(root, file))];
+  for (const file of files.sort()) hash.update(path.relative(root, file)).update(await fs.readFile(file));
+  return hash.digest('hex');
 }
-for(const path of ['/projecten/not-a-real-case','/diensten/unknown-service','/about/not-a-real-image.jpg']){
- const response=await fetch(origin+path);if(response.status!==404||!response.headers.get('content-security-policy'))failures.push({path,reason:'Unknown paths must retain 404 and HTML protection'});
+function check(code, route, passed, expected, actual) {
+  const item = {code, path: route, expected, actual};
+  edgeChecks.push({...item, passed});
+  if (!passed) failures.push(item);
 }
-const sitemap=await get('/sitemap.xml',true);const xml=await sitemap.text();
-if(sitemap.status!==200||(xml.match(/<loc>/g)||[]).length!==routeCatalog.length)failures.push({path:'/sitemap.xml',reason:'Wrong sitemap entries'});
-const privatePage=await fetch(origin+'/hub/admin/aanvragen',{redirect:'manual'});
-if(![303,307].includes(privatePage.status)||!privatePage.headers.get('location')?.includes('/hub/login'))failures.push({path:'/hub/admin/aanvragen',reason:'Anonymous user not redirected to login'});
-await fs.mkdir('reports',{recursive:true});await fs.writeFile('reports/routes-na-herstel.json',JSON.stringify({checkedAt:new Date().toISOString(),environment:'local-production-build',routes:report,failures},null,2));
-console.log(`${report.length} public routes checked; ${failures.length} failures.`);if(failures.length){console.error(failures);process.exitCode=1;}
+
+const beforeBuild = await buildIdentity(), beforeSource = await sourceIdentity();
+const appPages = await inventoryAppPages(root), diskAssets = await inventoryPublicAssets(root);
+failures.push(...validateRouteInventory(appPages, paths, toolRedirects));
+check('asset-manifest', 'public/', JSON.stringify(diskAssets) === JSON.stringify([...publicAssetPaths].sort()), diskAssets, [...publicAssetPaths].sort());
+
+const result = await crawlPublicRoutes({paths, request, metadata: pageSeo, assetPaths: diskAssets});
+failures.push(...result.failures);
+for (const route of paths) {
+  const response = await request(route + '?utm_source=route-fixture&pakket=onepager');
+  const page = readPage(response.body, route + '?utm_source=route-fixture&pakket=onepager', response.headers);
+  failures.push(...validatePage(page, {status: response.status, headers: response.headers, requireNonce: true, expectedDescription: pageSeo[route]?.description}));
+  const preview = await request(route, false);
+  const previewPage = readPage(preview.body, route, preview.headers);
+  check('preview-noindex', route, /\bnoindex\b/i.test(previewPage.robots), 'preview noindex', previewPage.robots);
+}
+// Test intentional result noindex separately, while the plain and tracking variants above must remain indexable.
+for (const route of ['/tools/website-check', '/tools/website-kosten-berekenen']) {
+  const query = route + '?utm_source=route-fixture&resultaat=1&pakket=onepager';
+  const response = await request(query), page = readPage(response.body, query, response.headers);
+  const issues = validatePage(page, {status: response.status, headers: response.headers, requireNonce: true, expectedDescription: pageSeo[route]?.description});
+  failures.push(...issues);
+  edgeChecks.push({code: 'tool-result-variant', path: query, passed: issues.length === 0, expected: {status: 200, canonical: productionOrigin + route, robots: 'noindex'}, actual: {status: response.status, canonicals: page.canonicals, robots: page.robots}});
+}
+for (const redirect of toolRedirects) {
+  const response = await request(redirect.source);
+  failures.push(...validateRedirect(response, redirect));
+  const destination = await request(redirect.destination);
+  check('legacy-final-status', redirect.destination, destination.status === 200, 200, destination.status);
+}
+for (const route of ['/not-a-real-article', '/projecten/not-a-real-case', '/diensten/unknown-service', '/tools/not-a-real-tool', '/about/not-a-real-image.jpg', '/og/not-a-real-image.png', '/fonts/not-a-real-font.woff2', '/brand/not-a-real-image.png']) {
+  const response = await request(route);
+  check('unknown-404', route, response.status === 404, 404, response.status);
+  check('unknown-html-protection', route, Boolean(response.headers['content-security-policy']?.includes("'nonce-")), 'HTML nonce CSP', response.headers['content-security-policy']);
+}
+const sitemap = await request('/sitemap.xml');
+check('sitemap-response', '/sitemap.xml', sitemap.status === 200 && /xml/.test(sitemap.headers['content-type'] || ''), '200 XML', {status: sitemap.status, contentType: sitemap.headers['content-type']});
+const sitemapResult = validateSitemap(sitemap.body, paths);
+failures.push(...sitemapResult.failures);
+const previewSitemap = await request('/sitemap.xml', false);
+check('preview-sitemap', '/sitemap.xml', previewSitemap.status === 200 && !/<loc\s*>/.test(previewSitemap.body), 'empty preview sitemap', previewSitemap.status);
+for (const production of [true, false]) {
+  const robots = await request('/robots.txt', production);
+  check('robots-public-crawl', '/robots.txt', robots.status === 200 && !/^Disallow:\s*\/\s*$/m.test(robots.body), 'crawler can read public HTML/noindex', robots.body);
+  check('robots-sitemap', '/robots.txt', production ? robots.body.includes(`Sitemap: ${productionOrigin}/sitemap.xml`) : !/^Sitemap:/m.test(robots.body), production ? 'production sitemap' : 'no preview sitemap', robots.body);
+}
+const privatePage = await request('/hub/admin/aanvragen', false);
+check('anonymous-hub', '/hub/admin/aanvragen', [303, 307].includes(privatePage.status) && privatePage.headers.location?.includes('/hub/login'), 'login redirect', {status: privatePage.status, location: privatePage.headers.location});
+check('private-noindex', '/hub/admin/aanvragen', /\bnoindex\b/.test(privatePage.headers['x-robots-tag'] || ''), 'private noindex header', privatePage.headers['x-robots-tag']);
+
+const afterBuild = await buildIdentity(), afterSource = await sourceIdentity();
+check('stable-source-during-test', 'source', beforeSource === afterSource, beforeSource, afterSource);
+check('stable-production-build', '.next/BUILD_ID', Boolean(beforeBuild) && JSON.stringify(beforeBuild) === JSON.stringify(afterBuild), beforeBuild, afterBuild);
+const homepage = await request('/');
+const flight = [...homepage.body.matchAll(/self\.__next_f\.push\(\[1,("(?:\\.|[^"\\])*")\]\)/g)].map(match => { try {return JSON.parse(match[1]);} catch {return '';} }).join('');
+const servedBuildIds = [...new Set([...flight.matchAll(/"b"\s*:\s*"([A-Za-z0-9_-]{1,128})"/g)].map(match => match[1]))];
+check('served-build-identity', '/', Boolean(beforeBuild) && JSON.stringify(servedBuildIds) === JSON.stringify([beforeBuild.id]), beforeBuild?.id, servedBuildIds);
+
+const report = {
+  checkedAt, completedAt: new Date().toISOString(), environment: 'local-production-build', origin,
+  commit: process.env.GITHUB_SHA || null, sourceSha256: afterSource, build: afterBuild, servedBuildIds,
+  inventory: {appPages, catalogPaths: paths, sitemapUrls: sitemapResult.values, diskAssets},
+  ...result, edgeChecks, failures,
+  limits: [
+    'HTTP/HTML validation only; desktop/mobile layout, fragment landing, hydrated DOM and browser exceptions require separate browser evidence.',
+    'Dynamic-only anchors are reported for browser verification; no arbitrary missing-anchor allowlist is used.',
+    'External URLs are inventoried but not requested. Their reachability is not confirmed.',
+    'Schema syntax is checked; correspondence of business claims and visible content requires content review.',
+    'App Router static files are independently reconciled. Dynamic values come from the catalog and discovered links; unlinked dynamic values need content inventory review.',
+    'Build ID proves the served build and disk build agree and stayed stable. It is not an attestation that local source was used to produce that build.',
+    'No live deployment, production indexing, promotion gate, email delivery or private-data access is proven.',
+  ],
+};
+await fs.mkdir(path.dirname(reportPath), {recursive: true});
+await fs.writeFile(reportPath, JSON.stringify(report, null, 2) + '\n');
+console.log(`${result.routes.length} public HTML URLs, ${result.resources.length} resources, ${result.links.length} links; ${failures.length} failures. Report: ${reportPath}`);
+if (failures.length) { console.error(JSON.stringify(failures, null, 2)); process.exitCode = 1; }

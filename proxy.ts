@@ -42,4 +42,6 @@ export function proxy(request: NextRequest) {
   return rewritten;
 }
 
-export const config = { matcher: ['/((?!_next/static|_next/image|favicon.ico|brand/|images/|og/|fonts/).*)'] };
+// Only framework resources bypass this function. Public files use the exact
+// generated manifest above, so unknown filenames still receive HTML protection.
+export const config = { matcher: ['/((?!_next/static/|_next/image$).*)'] };

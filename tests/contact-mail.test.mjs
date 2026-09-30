@@ -128,3 +128,26 @@ test('manual reconciliation accepts only a matching provider message and never s
  assert.equal((await task(c,input.id)).state,'provider_accepted');
  assert.equal((await task(c,input.id)).attempts,0);
 });
+
+test('provider 429 preserves the saved lead and retries with the identical key and payload',async t=>{
+ const c=await fixture(t),input=await save(c),calls=[];
+ const request=async(url,init)=>{calls.push(init);return calls.length===1?new Response('fixture rate limit',{status:429}):accepted();};
+ await processContactTask(c,`${input.id}:owner`,config,{now,request});
+ assert.equal((await task(c,input.id)).error_code,'provider_rate_limit');
+ assert.equal((await c.db.prepare('SELECT COUNT(*) AS n FROM inquiries').first()).n,1);
+ await processContactTask(c,`${input.id}:owner`,config,{now:now+120000,request});
+ assert.equal(calls[0].body,calls[1].body);assert.equal(calls[0].headers['Idempotency-Key'],calls[1].headers['Idempotency-Key']);
+ assert.equal((await task(c,input.id)).state,'provider_accepted');
+});
+
+test('crash after provider acceptance keeps its persisted attempt and recovers one intended delivery',async t=>{
+ const c=await fixture(t),input=await save(c),calls=[],acceptedKeys=new Set();
+ const request=async(url,init)=>{calls.push(init);acceptedKeys.add(init.headers['Idempotency-Key']);return accepted();};
+ await c.executeSchema("CREATE TRIGGER fail_contact_finish BEFORE UPDATE ON contact_outbox WHEN NEW.state='provider_accepted' BEGIN SELECT RAISE(ABORT,'fixture process crash'); END;");
+ await assert.rejects(()=>processContactTask(c,`${input.id}:owner`,config,{now,request}));
+ assert.equal((await task(c,input.id)).first_attempt_at,now);assert.equal((await task(c,input.id)).state,'processing');
+ await c.executeSchema('DROP TRIGGER fail_contact_finish;');
+ await processContactTask(c,`${input.id}:owner`,config,{now:now+61000,request});
+ assert.equal(calls.length,2);assert.equal(acceptedKeys.size,1);assert.equal(calls[0].body,calls[1].body);
+ assert.equal((await task(c,input.id)).state,'provider_accepted');
+});

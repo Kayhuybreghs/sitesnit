@@ -248,3 +248,24 @@ test('optional MFA requires an explicit session-bound choice and cannot bypass a
 });
 
 test('own Sitesnit dossier is idempotent and adds no client grants or invented metrics',async()=>{const f=await fixture();try{const first=await ensureOwnHubSite(f.connection.db);const second=await ensureOwnHubSite(f.connection.db);assert.equal(first,second);assert.equal((await f.connection.db.prepare('SELECT COUNT(*) AS n FROM hub_sites WHERE id=?').bind(first).first()).n,1);assert.equal((await f.connection.db.prepare('SELECT COUNT(*) AS n FROM hub_memberships').first()).n,0);assert.equal((await f.connection.db.prepare('SELECT COUNT(*) AS n FROM hub_snapshots').first()).n,0);}finally{await f.connection.close();}});
+
+test('two verified clients stay isolated and revoked membership blocks an otherwise valid session',async()=>{
+  const f=await fixture();try{
+    const identities=[];
+    for(const client of ['a','b']){
+      const email=`isolated-${client}@example.test`,password='Fixture-isolation-password-6832';
+      const invitation=await issueInvitation(f.connection.db,email,client);
+      const signup=await f.request('sign-up/email',{email,password,name:`Fixture ${client}`},'',{'x-sitesnit-invitation':invitation});assert.equal(signup.status,200);
+      await f.auth.handler(new Request(f.mail.at(-1).text.match(/https:\/\/\S+/)[0]));
+      const login=await f.request('sign-in/email',{email,password});assert.equal(login.status,200);
+      const session=await f.auth.api.getSession({headers:new Headers({cookie:login.cookies})});
+      const user={...session.user,sessionId:session.session.id};identities.push(user);
+      assert.equal((await requireHubSite(f.connection.db,user,`site-${client}`)).id,`site-${client}`);
+      await assert.rejects(()=>requireHubSite(f.connection.db,user,`site-${client==='a'?'b':'a'}`));
+      await assert.rejects(()=>requireHubAdmin(f.connection.db,user));
+    }
+    await f.connection.db.prepare('DELETE FROM hub_memberships WHERE user_id=?').bind(identities[0].id).run();
+    await assert.rejects(()=>requireHubSite(f.connection.db,identities[0],'site-a'));
+    assert.equal((await requireHubSite(f.connection.db,identities[1],'site-b')).id,'site-b');
+  }finally{await f.connection.close();}
+});

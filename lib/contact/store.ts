@@ -3,12 +3,12 @@ import type { HubConnection } from '../hub/connection';
 import type { AppDatabase } from '../database-core';
 import { ContactError, contactReference, type ContactInput } from './input';
 import { contactMails } from './templates';
+import { CONTACT_MAIL_BUDGETS, CONTACT_SAFE_RETRY_MS } from './limits';
 
 type Connection = Pick<HubConnection,'db'|'transaction'>;
 export type MailState = 'pending'|'processing'|'provider_accepted'|'retryable_failed'|'permanent_failed'|'delivery_unknown';
 export type OutboxTask = { id:string; inquiry_id:string; kind:'owner'|'confirmation'; payload_json:string; state:MailState; provider_id:string|null; attempts:number; first_attempt_at:number|null; next_attempt_at:number; lease_until:number|null; claim_id:string|null; error_code:string|null; delivery_state:string|null; created_at:number };
 export type MailConfig = { enabled:boolean; apiKey?:string; from:string };
-const SAFE_RETRY_MS = 23 * 60 * 60 * 1000;
 const LEASE_MS = 60000;
 async function reserve(db:AppDatabase,key:string,limit:number,until:number) {
   const row=await db.prepare('INSERT INTO rate_limits(key,count,reset_at) VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET count=rate_limits.count+1 WHERE rate_limits.count<? RETURNING count').bind(key,until,limit).first();
@@ -39,7 +39,7 @@ class MailBudgetError extends Error {}
 async function reserveMailBudget(connection:Connection,now:number) {
   await connection.transaction(async db=>{
     const date=new Date(now).toISOString();
-    for(const [table,daily,monthly] of [['contact_mail_usage',60,1800],['hub_mail_usage',90,2800]] as const)
+    for(const {table,daily,monthly} of CONTACT_MAIL_BUDGETS)
       for(const [period,limit] of [[date.slice(0,10),daily],[date.slice(0,7),monthly]] as const){
         const row=await db.prepare(`INSERT INTO ${table}(period,count) VALUES(?,1) ON CONFLICT(period) DO UPDATE SET count=${table}.count+1 WHERE ${table}.count<? RETURNING count`).bind(period,limit).first();
         if(!row) throw new MailBudgetError();
@@ -53,7 +53,7 @@ export async function processContactTask(connection:Connection,id:string,config:
   async function finish(state:MailState,error:string|null,providerId:string|null=null,next=now+60000){
     await connection.db.prepare('UPDATE contact_outbox SET state=?,error_code=?,provider_id=COALESCE(?,provider_id),next_attempt_at=?,lease_until=NULL,claim_id=NULL,updated_at=? WHERE id=? AND claim_id=?').bind(state,error,providerId,next,now,id,claim).run();
   }
-  if(task.first_attempt_at!==null&&now-Number(task.first_attempt_at)>=SAFE_RETRY_MS){await finish('delivery_unknown','reconcile_required');return;}
+  if(task.first_attempt_at!==null&&now-Number(task.first_attempt_at)>=CONTACT_SAFE_RETRY_MS){await finish('delivery_unknown','reconcile_required');return;}
   if(!config.enabled||!config.apiKey||!config.from){await finish('retryable_failed','mail_not_configured',null,now+300000);return;}
   if(task.attempts>=5){await finish('delivery_unknown','retry_limit_review');return;}
   try {await reserveMailBudget(connection,now);} catch(error){if(error instanceof MailBudgetError){await finish('retryable_failed','mail_budget',null,now+3600000);return;}throw error;}

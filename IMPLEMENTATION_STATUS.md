@@ -1,3 +1,9 @@
+# Actuele opdracht — 30 september 2026
+
+Actueel eindrapport: [reports/improvement/eindrapport-2026-09-30.md](reports/improvement/eindrapport-2026-09-30.md). Tussenregister: [reports/improvement/implementation-status.md](reports/improvement/implementation-status.md). De onderstaande notities zijn historische overdrachten en geen bewijs van deze ronde. Deze ronde blijft lokaal; er is geen nieuwe productiepublicatie.
+
+---
+
 # Sitesnit masterprompt v2 — lokale voortgang 24 september 2026
 
 Actuele overdracht: `docs/hervatten-2026-09-24.md`. Bewijs: `docs/hub-verificatie-2026-09-24.md`. Eis-voor-eisrestpunten: `docs/masterprompt-v2-restpunten.md`.

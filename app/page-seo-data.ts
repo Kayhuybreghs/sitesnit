@@ -1,3 +1,4 @@
+import {auditCapabilities} from '../lib/seo-audit/capabilities';
 import {auditGuides} from '../lib/seo-audit/guides';
 import { services } from './diensten/service-data';
 import { clientCases } from './portfolio-data';
@@ -23,7 +24,7 @@ const serviceTitles: Record<string, string> = {
 };
 
 export const pageSeo: Record<string, PageSeo> = {
-  '/tools/seo-audit':{title:'Gratis SEO-audit — technische problemen per pagina',description:'Scan maximaal 20 pagina’s op noindex, kapotte links en metadata. Krijg bewijs en hersteladvies zonder vragenlijst of verplicht account.'},
+  '/tools/seo-audit':{title:'Gratis SEO-audit — technische problemen per pagina',description:`Scan maximaal ${auditCapabilities.maxPages} pagina’s op noindex, kapotte links en metadata. Krijg bewijs en hersteladvies zonder vragenlijst of verplicht account.`},
   ...Object.fromEntries(auditGuides.map(g=>[`/tools/seo-audit/${g.slug}`,{title:g.title,description:g.description}])),
   ...Object.fromEntries(guides.map(guide => [`/${guide.slug}`, {title:guide.title,description:guide.description}])),
   '/seo-venlo': { title:'SEO voor bedrijven in Venlo — verbeteren vanuit Baarlo', description:'Laat je vindbaarheid gericht verbeteren door Sitesnit vanuit Baarlo. Bespreek technische problemen, dienstenpagina’s en doorlopend SEO-werk voor je bedrijf in Venlo.' },

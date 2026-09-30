@@ -1,5 +1,6 @@
 import type { Answers } from "./questions";
 import { grossPrice } from "./business";
+import { site } from '../app/site-data';
 const priceLabel = (net: number) => new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR", maximumFractionDigits: 2 }).format(net);
 export type PriceResult = {
   route: string;
@@ -72,14 +73,17 @@ export function calculatePrice(a: Answers): PriceResult {
       summary:
         "Voor verbeterwerk aan een bestaande website is nog geen bedrag vastgesteld. Eerst beoordelen we wat er nodig is.",
     };
-  const basis = custom ? 2750 : a.pages === "five" ? 1895 : 895;
   const id = custom ? "maatwerk" : a.pages === "five" ? "website" : "onepager";
+  const selectedPackage = site.packages.find(p => p.id === id)!;
+  const basis = selectedPackage.price;
   if (custom)
     pending.push(
       "De precieze omvang en uitvoering van het maatwerk; daarmee bepalen we de bovengrens",
     );
-  if (a.pages === "unknown")
-    pending.push(`Bij vijf pagina’s geldt ${priceLabel(1895)} exclusief btw (${priceLabel(grossPrice(1895))} inclusief btw) als bouwprijs; hosting komt daar apart bij`);
+  if (a.pages === "unknown") {
+    const fivePagePrice = site.packages.find(p => p.id === 'website')!.price;
+    pending.push(`Bij vijf pagina’s geldt ${priceLabel(fivePagePrice)} exclusief btw (${priceLabel(grossPrice(fivePagePrice))} inclusief btw) als bouwprijs; hosting komt daar apart bij`);
+  }
   const fixed =
     !custom &&
     pending.length === 0 &&
@@ -87,14 +91,12 @@ export function calculatePrice(a: Answers): PriceResult {
     a.situation !== "improve";
   return {
     route: custom
-      ? "Volledige vrijheid"
+      ? selectedPackage.name
       : a.pages === "unknown"
         ? "Eerst je omvang bepalen"
         : a.situation === "improve"
           ? "Eerst je bestaande website bekijken"
-          : a.pages === "five"
-            ? "Website — 5 pagina’s"
-            : "Onepager — 1 pagina",
+          : selectedPackage.name,
     packageId: a.situation === "improve" ? "" : id,
     basis: a.situation === "improve" ? null : basis,
     fixed,

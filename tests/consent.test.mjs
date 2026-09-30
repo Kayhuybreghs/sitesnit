@@ -67,6 +67,13 @@ test("configuration turns off automatic page views, advertising and long-lived r
   for (const name of ["user_id", "user_data", "email", "form_data"]) assert.equal(name in config, false);
 });
 
+test("private page views remain excluded even when a route catalog accidentally includes them", () => {
+  for (const path of ["/hub", "/hub/admin", "/account/scans/fixture", "/rapport/fixture", "/api/contact", "/inloggen", "/registreren", "/HUB/admin", "/%68ub/admin"]) {
+    assert.equal(safeAnalyticsPage(`https://www.sitesnit.nl${path}?token=fixture`, [path]), null, path);
+  }
+  assert.ok(safeAnalyticsPage("https://www.sitesnit.nl/diensten/website-monitoring", ["/diensten/website-monitoring"]));
+});
+
 test("withdrawal targets only analytics cookies and all applicable host/parent domains", () => {
   assert.deepEqual(analyticsCookieNames("_ga=abc; _ga_123=test; session=keep; _gid=x; _gat_test=x; _gac_a=x; consent=keep; _garden=keep"), ["_ga", "_ga_123", "_gid", "_gat_test", "_gac_a"]);
   assert.deepEqual(cookieDomains("www.sitesnit.nl"), ["www.sitesnit.nl", ".www.sitesnit.nl", "sitesnit.nl", ".sitesnit.nl"]);

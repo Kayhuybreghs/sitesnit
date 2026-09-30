@@ -1,5 +1,6 @@
+import {auditCapabilities} from '../../lib/seo-audit/capabilities';
 export const toolCatalog = [
-  {slug:"seo-audit",href:"/tools/seo-audit",name:"SEO-audit",label:"Techniek per pagina",description:"Laat maximaal 20 pagina’s doorlopen op noindex, kapotte links en metadata. Bekijk bewijs en hersteladvies zonder vragenlijst.",action:"Start je SEO-audit",type:"Beoordelen",tone:"blue",number:"06"},
+  {slug:"seo-audit",href:"/tools/seo-audit",name:"SEO-audit",label:"Techniek per pagina",description:`Laat maximaal ${auditCapabilities.maxPages} pagina’s doorlopen op noindex, kapotte links en metadata. Bekijk bewijs en hersteladvies zonder vragenlijst.`,action:"Start je SEO-audit",type:"Beoordelen",tone:"blue",number:"06"},
   {
     slug: "ontwerp-je-website",
     href: "/tools/website-ontwerp-tool",

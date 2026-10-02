@@ -1,10 +1,14 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { Arrow } from "./ui";
 import { toolCatalog } from "./tools/tool-catalog";
 import { BrandLogo } from './brand-logo';
+const subscribeToHydration = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
 export function Navigation() {
+  const ready = useSyncExternalStore(subscribeToHydration, clientReady, serverReady);
   const [open, setOpen] = useState(false);
   const path = usePathname();
   const dialog = useRef<HTMLDialogElement>(null);
@@ -65,6 +69,7 @@ export function Navigation() {
             aria-label="Menu openen"
             aria-haspopup="dialog"
             aria-expanded={open}
+            disabled={!ready}
             onClick={() => setOpen(true)}
           >
             <span />

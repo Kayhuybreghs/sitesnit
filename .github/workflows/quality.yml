@@ -16,6 +16,7 @@ jobs:
       GA4_MEASUREMENT_ID: 'G-FIXTURE123'
       GA4_PRIVACY_CONFIGURED: 'true'
       NEXT_TELEMETRY_DISABLED: '1'
+      CHROME_PATH: /usr/bin/google-chrome
       SITESNIT_LOCAL_SQLITE: 'true'
       CONTACT_SCHEMA_RELEASE: '' # CI must never opt in to a production database migration.
       RATE_LIMIT_SECRET: 'ci-fixture-only-not-a-production-secret'
@@ -52,10 +53,12 @@ jobs:
           done
           if [ "$ready" != true ]; then cat /tmp/sitesnit-next.log; exit 1; fi
           npm run test:routes
+          test -x "$CHROME_PATH"
+          "$CHROME_PATH" --version
+          node scripts/test-performance.mjs ci-smoke / /tools/website-check
           node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs scripts/test-content-render.mjs
           node scripts/test-browser-suite.mjs
           npm run test:portfolio
-          node scripts/test-performance.mjs ci-smoke / /tools/website-check
       - uses: actions/upload-artifact@v4
         if: always()
         with:

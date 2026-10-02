@@ -8,6 +8,7 @@ import lighthouse from 'lighthouse';
 import desktop from 'lighthouse/core/config/desktop-config.js';
 import { launch } from 'chrome-launcher';
 import {chromium} from 'playwright';
+const chromePath = process.env.CHROME_PATH || process.env.CHROME_BIN || chromium.executablePath();
 
 const phase = process.argv[2] || 'next-final';
 if (!/^[a-z0-9-]+$/.test(phase)) throw Error('Use a plain phase name.');
@@ -120,7 +121,8 @@ const manifest = {
   sourceNote: 'Only this measured Next.js build is represented. Earlier Vinext/Worker reports are historical and are not reused. Source edits after the build are not measured until rebuilt.',
   node: process.version,
   sampling: { runsPerDevice, repeatRoutes, default: 'One mobile and one desktop observation per route; repeat selected representative routes using SEO_MOBILE_RUNS / SEO_DESKTOP_RUNS and optional SEO_REPEAT_ROUTES.' },
-  environment: 'Windows laptop, headless Edge, isolated fresh browser profile per run; sequential simulated-throttling lab tests; no field INP',
+  environment: `${process.platform}; headless browser, isolated fresh profile per run; sequential simulated-throttling lab tests; no field INP`,
+  browserSelection: process.env.CHROME_PATH ? 'Explicit CHROME_PATH' : process.env.CHROME_BIN ? 'Installed runner CHROME_BIN' : 'Pinned Playwright Chromium',
   runs: [],
 };
 const metrics = ['first-contentful-paint', 'largest-contentful-paint', 'cumulative-layout-shift', 'total-blocking-time', 'speed-index', 'server-response-time'];
@@ -135,7 +137,7 @@ for (const route of routes) {
       try {
         if (fs.readFileSync(buildIdFile, 'utf8').trim() !== buildId) throw Error('Build changed during measurement. Use a new phase after rebuilding.');
         chrome = await launch({
-          chromePath: process.env.CHROME_PATH || chromium.executablePath(),
+          chromePath,
           chromeFlags: ['--headless', '--no-first-run', '--disable-extensions'], logLevel: 'silent',
         });
         const result = await lighthouse(origin + route, {

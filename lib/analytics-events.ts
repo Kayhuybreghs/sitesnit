@@ -1,6 +1,6 @@
 import { safeAnalyticsPage, type AnalyticsPage } from './consent';
 
-export const TOOL_IDS = ['websitecheck', 'prijscheck', 'offertevergelijker', 'automatiseringsplan', 'ontwerp_website', 'seo_audit'] as const;
+export const TOOL_IDS = ['websitecheck', 'prijscheck', 'offertevergelijker', 'automatiseringsplan', 'ontwerp_website', 'seo_audit', 'snelheidstest'] as const;
 export type ToolId = typeof TOOL_IDS[number];
 export const ACTION_IDS = ['contact_open', 'prices_view', 'projects_view', 'tools_view', 'tool_open', 'discuss_result'] as const;
 export type ActionId = typeof ACTION_IDS[number];
@@ -9,6 +9,7 @@ export type PublicAnalyticsEvent = { name: 'tool_start' | 'tool_complete'; tool_
   { name:'generate_lead'|'form_start'; form_id:'contact'|'tool_contact'; tool_id?:ToolId } |
   { name:'contact_intent'; channel:'email'|'phone'|'whatsapp' };
 export const ANALYTICS_TOOL_PATHS: Record<string, ToolId> = {
+  '/tools/snelheidstest':'snelheidstest',
   '/tools/website-check': 'websitecheck', '/tools/website-kosten-berekenen': 'prijscheck',
   '/tools/website-offerte-vergelijken': 'offertevergelijker', '/tools/automatiseringsplan': 'automatiseringsplan',
   '/tools/website-ontwerp-tool': 'ontwerp_website', '/tools/seo-audit':'seo_audit',

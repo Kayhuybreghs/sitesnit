@@ -1,6 +1,6 @@
+import {browserType,launchOptions} from './browser-runtime.mjs';
 /** Real UI -> real contact POST -> isolated SQLite -> fake provider. Never live mail. */
 import assert from 'node:assert/strict';
-import {createRequire} from 'node:module';
 import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {randomUUID} from 'node:crypto';
@@ -9,12 +9,12 @@ const base=new URL(process.argv[2]||'http://127.0.0.1:5190');
 assert.ok(base.protocol==='http:'&&['127.0.0.1','localhost','[::1]'].includes(base.hostname),'loopback HTTP only');
 const profiles={'390':{width:390,height:844},'1440':{width:1440,height:900}},profile=process.argv[3]||'390';
 assert.ok(Object.hasOwn(profiles,profile),'viewport must be 390 or 1440');
-const output=resolve('reports/improvement/contact-privacy',`chain-${profile}`);mkdirSync(output,{recursive:true});
+const output=resolve((process.env.BROWSER_REPORT_ROOT || 'reports/improvement') + '/contact-privacy',`chain-${profile}`);mkdirSync(output,{recursive:true});
 const report={startedAt:new Date().toISOString(),origin:base.origin,viewport:profiles[profile],checks:[],limitations:['Production-built UI and actual POST handler are exercised, but the browser request is bridged to an in-process handler. SQLite is in memory and provider responses are synthetic. This does not prove Vercel transport, production database or email delivery.']};
 report.buildId=readFileSync('.next/BUILD_ID','utf8').trim();
-const require=createRequire(import.meta.url),{chromium}=require('C:/Users/Gebruiker/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+
 const f=await createContactChainFixture(base.origin);
-const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const browser=await browserType.launch(launchOptions);
 const context=await browser.newContext({viewport:profiles[profile]});const bodies=[],errors=[];let loseFirstResponse=true;
 try{
   await context.addInitScript(()=>localStorage.setItem('sitesnit-cookie-consent-v1',JSON.stringify({version:1,analytics:false,decidedAt:Date.now(),measurementId:'G-FIXTURE123'})));

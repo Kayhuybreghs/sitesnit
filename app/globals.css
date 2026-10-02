@@ -1951,3 +1951,6 @@ button:hover > .arrow {
 .logo .sitesnit-symbol{display:block;width:52px;height:52px;object-fit:contain}.footer-social-links a{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:10px 16px;border-radius:12px;border:1px solid #789c95;text-decoration:none;transition:background 180ms ease}.footer-social-links a:hover{background:#ffffff18}.footer-social-links svg{flex-shrink:0}.studio-footer .footer-directory{padding-top:48px}@media(max-width:600px){.logo .sitesnit-symbol{width:46px;height:46px}}
 
 .contact-social-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}.contact-social-links a{display:inline-flex;align-items:center;gap:10px;min-height:46px;border:1px solid #9eb8b0;padding:10px 16px;border-radius:12px;text-decoration:none}.contact-social-links a:hover{background:#e4ece7}
+
+/* Contextual prose links only; no change to hero or button styling. */
+.inline-context-link{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}.inline-context-link:hover{text-decoration-thickness:2px}

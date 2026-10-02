@@ -89,7 +89,9 @@ node scripts/test-performance.mjs after
 
 Het script gebruikt de aanwezige lokale Lighthouse-installatie en Edge. `CHROME_PATH` en `SEO_TEST_ORIGIN` zijn configureerbaar; het weigert een niet-lokale testhost en overschrijft bestaande runbestanden niet. Voor herhalen gebruik je een unieke fasenaam en geef je de gewenste routes expliciet mee, inclusief `/webdesign-venlo`. De contactverificatie leest alleen de daarvoor aangemaakte lokale testaanvraag; geen testleads naar productie sturen.
 
-De vastgelegde kwaliteitsruntime staat in `.sites-runtime/quality/node_modules` (Lighthouse 13.4.1 en chrome-launcher). `node scripts/summarize-performance.mjs` maakt na voltooide before/after-rondes `reports/lighthouse/comparison.md` en `comparison.json`. De OG-bronnen staan onder `../sitesnit-support/og-assets`; de vier renderers bewaren hun eigen composities en fonts. `scripts/prepare-social-images.py` integreert de beoordeelde PNG's zonder verliescompressie en vernieuwt de routekoppeling en het manifest.
+Lighthouse, chrome-launcher en Playwright staan versiegebonden in `package.json` en `package-lock.json`. Installeer de browserbinaries expliciet met `node node_modules/playwright/cli.js install chromium webkit` (CI ook systeemdependencies). De lokale metingen staan per afzonderlijke ronde onder `reports/lighthouse/`.
+
+De actuele OG-metadata komt uit `scripts/social-images-source.json`. `node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs scripts/prepare-social-images.mjs --output .sites-runtime/og-review-NIEUW` valideert alle huidige routes en verpakt de al beoordeelde PNG-bestanden uit `public/og/` in een nieuwe geïsoleerde map. Bestaande outputmappen worden geweigerd. De Python-wrapper doet hetzelfde. Dit is geen opdracht om oude conceptbeelden uit supportmappen terug te kopiëren. Beoordeel metadata en beelden vóór overname; `test:portfolio` draait twee afzonderlijke generatorproeven en controleert actuele bron en build. `prepare-assets.py` controleert alleen de gebruikte lokale fonts, zonder download of conceptbeeldgeneratie.
 
 ## D. Lighthouse — werkelijke resultaten
 

@@ -52,15 +52,3 @@ export const euro = (n: number) =>
     currency: "EUR",
     maximumFractionDigits: 2,
   }).format(n);
-export type Project = {
-  slug: string;
-  name: string;
-  category: string;
-  theme: string;
-  image: string;
-  tagline: string;
-  summary: string;
-  challenge: string;
-  choices: string[];
-};
-export const projects: Project[] = [];

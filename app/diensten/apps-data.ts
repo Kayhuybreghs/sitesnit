@@ -30,7 +30,7 @@ export const appsService: Service = {
     ],
     [
       'De juiste informatie voor de juiste gebruiker',
-      'Een klant ziet eigen gegevens; een medewerker heeft andere taken en toegang. We leggen de gebruikersrollen vast en controleren toegangsrechten bij het opvragen en wijzigen van informatie. Als de app samenwerkt met je website, planning of andere software, onderzoeken we welke koppelingen mogelijk zijn. We spreken af welke bron leidend is en hoe wijzigingen worden verwerkt. Persoonsgegevens, bewaartermijnen en het beheren van accounts krijgen daarbij een concrete plek.',
+      'Een klant ziet eigen gegevens. Een medewerker heeft andere taken en toegang. We leggen de gebruikersrollen vast en controleren toegangsrechten bij het opvragen en wijzigen van informatie. Als de app samenwerkt met je website, planning of andere software, onderzoeken we welke koppelingen mogelijk zijn. We spreken af welke bron leidend is en hoe wijzigingen worden verwerkt. Persoonsgegevens, bewaartermijnen en het beheren van accounts krijgen daarbij een concrete plek.',
     ],
     [
       'Testen, indienen en blijven onderhouden',
@@ -51,7 +51,7 @@ export const appsService: Service = {
     ],
     [
       'Komt mijn app automatisch in de App Store en Google Play?',
-      'De ontwikkeling en het indienen van een app zijn afzonderlijke stappen. We spreken af via welk ontwikkelaarsaccount de app wordt gepubliceerd en wie welke gegevens aanlevert. Voor indiening bereiden we de vereiste informatie en controles voor. Apple en Google beslissen zelf over toelating. Bij vragen of een afwijzing bekijken we wat aangepast moet worden; goedkeuring of een vaste publicatiedatum kunnen we niet garanderen.',
+      'De ontwikkeling en het indienen van een app zijn afzonderlijke stappen. We spreken af via welk ontwikkelaarsaccount de app wordt gepubliceerd en wie welke gegevens aanlevert. Voor indiening bereiden we de vereiste informatie en controles voor. Apple en Google beslissen zelf over toelating. Bij vragen of een afwijzing bekijken we wat aangepast moet worden. Goedkeuring of een vaste publicatiedatum kunnen we niet garanderen.',
     ],
     [
       'Kunnen klanten inloggen en gegevens uit mijn bestaande software gebruiken?',

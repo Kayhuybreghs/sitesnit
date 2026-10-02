@@ -58,19 +58,19 @@ const origin = process.argv[2] || "http://127.0.0.1:5184";
     await page.goto(origin + "/projecten", { waitUntil: "networkidle" });
     await page
       .getByRole("link", {
-        name: "Bekijk het project Atelier Vorm",
+        name: "Bekijk het project Beurswijzer",
         exact: true,
       })
       .first()
       .click();
-    await page.waitForURL("**/projecten/atelier-vorm");
+    await page.waitForURL("**/projecten/beurswijzer");
     await page
       .getByRole("link", { name: "Plan een belafspraak", exact: true })
       .last()
       .click();
     await page.waitForURL("**/contact");
     await page.goBack();
-    assert.ok(page.url().endsWith("/projecten/atelier-vorm"));
+    assert.ok(page.url().endsWith("/projecten/beurswijzer"));
     await page.goto(origin + "/kosten");
     await page
       .getByRole("link", { name: "Bespreek je website", exact: true })

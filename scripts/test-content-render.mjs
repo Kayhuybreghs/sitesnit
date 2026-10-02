@@ -2,16 +2,21 @@ import fs from 'node:fs/promises';
 import { services } from '../app/diensten/service-data.ts';
 import { site, euro } from '../app/site-data.ts';
 import { guides } from '../lib/guides.ts';
+import {speedGuides,speedQuestions} from '../lib/speed-guides.ts';
 import { contactServiceNames } from '../lib/contact/options.ts';
-import { inspectRenderedContent, renderedMainParagraphs } from './content-render-contract.mjs';
+import { inspectRenderedContent } from './content-render-contract.mjs';
 
 const phase = process.argv[2] || 'after';
 if (!['before','after'].includes(phase)) throw new Error('Expected before or after');
 const base = `reports/improvement/content-review/${phase}`;
 const records = [];
+const origin=process.env.SEO_TEST_ORIGIN;
+if(origin&&!['127.0.0.1','localhost'].includes(new URL(origin).hostname))throw Error('Content tests only use loopback');
+const output=process.env.BROWSER_REPORT_ROOT||'reports/improvement';
+await fs.mkdir(`${output}/content-review`,{recursive:true});
 async function check(route, contract) {
   const name = route === '/' ? 'home' : route.slice(1).replaceAll('/','__');
-  const html = await fs.readFile(`${base}/${name}.html`, 'utf8');
+  const html = origin ? await (await fetch(origin+route)).text() : await fs.readFile(`${base}/${name}.html`, 'utf8');
   const issues = inspectRenderedContent(html, contract);
   records.push({route, issues, status: issues.length ? 'fail' : 'pass'});
 }
@@ -20,6 +25,8 @@ for (const service of services) await check(`/diensten/${service.slug}`, {
   ...(['seo','seo-optimalisatie','seo-onderhoud'].includes(service.slug) ? {discoveryHref:'/tools/seo-audit'} : {}),
 });
 if (phase === 'after') {
+  await check('/tools/snelheidstest',{requiredText:speedQuestions.flat(),requiredLinks:['/tools/seo-audit',...speedGuides.map(g=>`/tools/snelheidstest/${g.slug}`)]});
+  for(const g of speedGuides)await check(`/tools/snelheidstest/${g.slug}`,{requiredText:[g.answer,...g.questions.flat()],requiredLinks:['/tools/snelheidstest#snelheid-meten',g.source]});
   for (const guide of guides) {
     const service = guide.service.slice('/diensten/'.length);
     if (!Object.hasOwn(contactServiceNames, service)) throw new Error(`Unsupported service context: ${guide.slug}: ${service}`);
@@ -36,14 +43,13 @@ if (phase === 'after') {
   await check('/website-levert-geen-aanvragen-op', {requiredText:['Noteer per stap: verwacht resultaat, waargenomen resultaat, eventuele afwijking en resultaat van de hercontrole.']});
   await check('/website-niet-gevonden-google', {requiredText:['noteer de Google-indexstatus dan als onbekend']});
   await check('/tools/seo-audit/rapport-naar-actie', {requiredText:['Het aantal meldingen is daarom geen aantal afzonderlijke reparaties of werkuren.','aan je eigen ontwikkelaar geven']});
-  const baseline = JSON.parse(await fs.readFile('reports/improvement/content-review/before/manifest.json', 'utf8'));
-  for (const slug of ['beurswijzer','beurswatcher']) {
-    const original = baseline.records.find(record=>record.route===`/projecten/${slug}`);
-    const originalHtml = await fs.readFile(`reports/improvement/content-review/${original.htmlFile}`, 'utf8');
-    await check(`/projecten/${slug}`, {requiredText:renderedMainParagraphs(originalHtml), requiredLinks:[`/contact?project=${slug}`]});
-  }
+  const baseline = JSON.parse(await fs.readFile('tests/fixtures/case-paragraphs.json', 'utf8'));
+  for (const slug of ['beurswijzer','beurswatcher']) await check(`/projecten/${slug}`, {requiredText:baseline[slug], requiredLinks:[`/contact?project=${slug}`]});
+  await check('/seo-venlo',{requiredText:['Zo maak je een dienst concreter'],forbiddenText:['Lokaal zonder plaatsnamenlijst']});
+  await check('/webdesign-venlo',{requiredText:site.packages.map(p=>euro(p.price))});
+
 }
 const report={checkedAt:new Date().toISOString(),phase,scope:'Received local main HTML; browser visibility tested separately.',records,failures:records.filter(item=>item.issues.length).length};
-await fs.writeFile(`reports/improvement/content-review/${phase}-render-check.json`, JSON.stringify(report,null,2));
+await fs.writeFile(`${output}/content-review/${phase}-render-check.json`, JSON.stringify(report,null,2));
 console.log(JSON.stringify({phase,checks:records.length,failures:report.failures},null,2));
 process.exitCode = phase === 'after' && report.failures ? 1 : 0;

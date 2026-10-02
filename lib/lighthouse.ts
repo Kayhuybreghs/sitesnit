@@ -246,13 +246,14 @@ function evidence(details: AuditDetails | undefined): string[] {
 export function normalizeLighthouse(
   input: unknown,
   requestedUrl: string,
+  expectedDevice: 'mobile' | 'desktop' = 'mobile',
 ): TechnicalResult {
   const data = input as PageSpeedResponse;
   const lhr = data?.lighthouseResult;
   if (!lhr || lhr.runtimeError)
     throw new Error("Lighthouse kon deze pagina niet volledig onderzoeken.");
-  if (lhr.configSettings?.formFactor !== "mobile")
-    throw new Error("De ontvangen analyse is geen mobiele meting.");
+  if (lhr.configSettings?.formFactor !== expectedDevice)
+    throw new Error("Het apparaat van de ontvangen analyse komt niet overeen met de aanvraag.");
   const fetchTime = lhr.fetchTime ?? data.analysisUTCTimestamp;
   if (!fetchTime || !Number.isFinite(Date.parse(fetchTime)))
     throw new Error('Het meetmoment ontbreekt in de ontvangen analyse.');

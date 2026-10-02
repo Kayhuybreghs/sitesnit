@@ -5,7 +5,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 
-const expectedKeys = ['PAGESPEED_API_KEY', 'DATABASE_URL', 'CRON_SECRET', 'RATE_LIMIT_SECRET'];
+const expectedKeys = ['PAGESPEED_API_KEY', 'DATABASE_URL', 'CRON_SECRET', 'RATE_LIMIT_SECRET', 'RESEND_API_KEY', 'HUB_AUTH_SECRET', 'HUB_PROVIDER_CREDENTIALS'];
 function variants(value) {
   return [...new Set([value, JSON.stringify(value).slice(1, -1), encodeURIComponent(value), Buffer.from(value).toString('base64')])];
 }

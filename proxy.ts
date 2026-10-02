@@ -1,7 +1,6 @@
 import {publicAssetPaths} from './lib/public-asset-paths';
 import { NextResponse, type NextRequest } from 'next/server';
 import { services } from './app/diensten/service-data';
-import { projects } from './app/site-data';
 import { clientCases } from './app/portfolio-data';
 import { indexingAllowed, privatePath } from './lib/seo-policy';
 import { publicServicePages } from './lib/public-service-pages';
@@ -9,7 +8,7 @@ import { contentSecurityPolicy } from './lib/security-headers';
 
 const allowed = {
   diensten: new Set([...services.map(item => item.slug), ...Object.values(publicServicePages).map(item => item.slug)]),
-  projecten: new Set([...projects, ...clientCases].map(item => item.slug)),
+  projecten: new Set<string>(clientCases.map(item => item.slug)),
 };
 
 // Next 16.3 can emit a client-only error shell for unknown dynamic slugs.

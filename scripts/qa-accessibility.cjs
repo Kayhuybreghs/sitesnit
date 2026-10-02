@@ -45,7 +45,7 @@ const fs = require("node:fs");
       "/",
       "/diensten",
       "/projecten",
-      "/projecten/atelier-vorm",
+      "/projecten/beurswijzer",
       "/kosten",
       "/over-sitesnit",
       "/contact",

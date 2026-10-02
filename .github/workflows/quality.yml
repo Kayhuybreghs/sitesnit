@@ -8,10 +8,14 @@ permissions:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 55
     env:
       CONTACT_EMAIL_ENABLED: 'false'
       HUB_ENABLED: 'false'
+      HUB_EMAIL_ENABLED: 'false'
+      GA4_MEASUREMENT_ID: 'G-FIXTURE123'
+      GA4_PRIVACY_CONFIGURED: 'true'
+      NEXT_TELEMETRY_DISABLED: '1'
       SITESNIT_LOCAL_SQLITE: 'true'
       CONTACT_SCHEMA_RELEASE: '' # CI must never opt in to a production database migration.
       RATE_LIMIT_SECRET: 'ci-fixture-only-not-a-production-secret'
@@ -24,15 +28,21 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --include=dev --include=optional --no-audit --no-fund
+      - name: Install pinned browser binaries and system dependencies
+        run: node node_modules/playwright/cli.js install --with-deps chromium webkit
       - run: npm run typecheck
       - run: npm run lint
       - name: Logic, runtime, consent, auth and negative fixtures
         run: npm run test:all
       - name: Production build without release migrations
         run: npm run build
-      - name: Public routes, schema, redirects and security
+      - name: Client bundle secret controls
         run: |
-          node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 5186 > /tmp/sitesnit-next.log 2>&1 &
+          node scripts/check-client-secrets.mjs --self-test
+          node scripts/check-client-secrets.mjs
+      - name: Public routes, complete browser stories and visible content
+        run: |
+          node --require ./scripts/fixture-network.cjs node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 5186 > /tmp/sitesnit-next.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           ready=false
@@ -42,6 +52,10 @@ jobs:
           done
           if [ "$ready" != true ]; then cat /tmp/sitesnit-next.log; exit 1; fi
           npm run test:routes
+          node --experimental-strip-types --import ./scripts/typescript-test-loader.mjs scripts/test-content-render.mjs
+          node scripts/test-browser-suite.mjs
+          npm run test:portfolio
+          node scripts/test-performance.mjs ci-smoke / /tools/website-check
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -49,3 +63,8 @@ jobs:
           path: |
             reports/routes-na-herstel.json
             /tmp/sitesnit-next.log
+            reports/improvement/browser-ci
+            reports/improvement/portfolio-2026-10-01
+            reports/lighthouse/ci-smoke
+            reports/seo/client-secrets-*.json
+          retention-days: 14

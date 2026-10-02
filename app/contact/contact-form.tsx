@@ -185,7 +185,7 @@ export default function ContactForm({
         }
       } catch {}
     } catch (e) {
-      setError(e instanceof Error&&e.name!=='TimeoutError'&&e.name!=='TypeError'?e.message:'De verbinding is onderbroken. Probeer dezelfde aanvraag opnieuw; die wordt niet dubbel opgeslagen.');
+      setError(e instanceof Error&&e.name!=='TimeoutError'&&e.name!=='TypeError'?e.message:'De verbinding is onderbroken. Probeer dezelfde aanvraag opnieuw. Die wordt niet dubbel opgeslagen.');
       setStatus("idle");
     } finally {inFlight.current=false;}
   }
@@ -336,7 +336,7 @@ export default function ContactForm({
         <fieldset className="contact-care-choices">
           <legend className="sr-only">Extra diensten om te bespreken</legend>
           <p>
-            Hosting hoort bij een nieuwe website. Extra onderhoud, blogs of social media kun je hier vrijblijvend bespreken; dit is geen bestelling.
+            Hosting hoort bij een nieuwe website. Extra onderhoud, blogs of social media kun je hier vrijblijvend bespreken. Dit is geen bestelling.
           </p>
           {careChoices.map((choice) => (
             <div key={choice.id} className="contact-care-choice">
@@ -422,7 +422,7 @@ export default function ContactForm({
           <legend>Wanneer komt bellen uit?</legend>
           <p>
             Op werkdagen tussen 18:00 en 21:30. In het weekend kan het de hele
-            dag. We bevestigen samen een moment; dit is nog geen reservering.
+            dag. We bevestigen samen een moment. Dit is nog geen reservering.
           </p>
           <div className="form-row">
             <div className="field">

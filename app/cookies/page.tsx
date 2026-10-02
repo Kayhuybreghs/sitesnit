@@ -55,7 +55,7 @@ export default function Cookies() {
           <dt>Websitecheck en prijscheck</dt>
           <dd>De sessiesleutels sitesnit-websitecheck-v3 en sitesnit-prijscheck-v3 bewaren je stap, antwoorden en eventuele scanuitkomst in deze browser. Daardoor kun je teruggaan en antwoorden aanpassen.</dd>
           <dt>Overige tools</dt>
-          <dd>sitesnit-designer-v1 bewaart je ontwerpkeuzes, sitesnit-offers-v1 de ingevoerde offertevergelijking en sitesnit-automation-v1 je automatiseringsplan. Deze gegevens blijven in sessieopslag; ze worden niet automatisch naar Sitesnit verstuurd.</dd>
+          <dd>sitesnit-designer-v1 bewaart je ontwerpkeuzes, sitesnit-offers-v1 de ingevoerde offertevergelijking en sitesnit-automation-v1 je automatiseringsplan. Deze gegevens blijven in sessieopslag. Ze worden niet automatisch naar Sitesnit verstuurd.</dd>
           <dt>Een uitkomst meenemen naar contact</dt>
           <dd>sitesnit-context-v1 bewaart tijdelijk het overzicht dat je vanuit een tool naar het contactformulier meeneemt. Je kunt daar kiezen of je het meestuurt. Na een geslaagde aanvraag wordt deze overdrachtsopslag verwijderd. De oorspronkelijke toolvoortgang kan blijven staan totdat je die reset.</dd>
         </dl>

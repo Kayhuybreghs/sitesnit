@@ -52,7 +52,7 @@ export default function Terms() {
       <section id="betaling">
         <h2>3. Prijs en betaling</h2>
         <p>{paymentSummary} De aanbetaling wordt verrekend met de projectprijs. Het resterende deel wordt gefactureerd nadat het afgesproken werk is afgerond en je gelegenheid hebt gekregen dit te beoordelen. De betaaltermijn is {business.paymentDays} dagen na de factuurdatum. Het voorstel vermeldt wanneer publicatie en overdracht plaatsvinden.</p>
-        <p>De consumentenbedragen hieronder zijn inclusief 21% btw. De zakelijke bedragen exclusief btw staan erbij. Hosting is bij een nieuwe website verplicht gedurende het eerste jaar; daarom vermelden we ook de minimale totale investering voor bouw en dat hostingjaar.</p>
+        <p>De consumentenbedragen hieronder zijn inclusief 21% btw. De zakelijke bedragen exclusief btw staan erbij. Hosting is bij een nieuwe website verplicht gedurende het eerste jaar. Daarom vermelden we ook de minimale totale investering voor bouw en dat hostingjaar.</p>
         <dl>
           {site.packages.map((item) => (
             <div key={item.id}>
@@ -78,8 +78,8 @@ export default function Terms() {
 
       <section id="hosting">
         <h2>5. Hosting en doorlopende diensten</h2>
-        <p>{hostingSummary} Een gekozen onderhoudspakket dat hosting bevat vervangt de basishosting; die wordt niet dubbel berekend. De eerste termijn begint op de afgesproken datum waarop de website op de hosting beschikbaar wordt gesteld. Het voorstel vermeldt het pakket, die startdatum en de factureringswijze.</p>
-        <p>Basishosting stelt de website online beschikbaar. Nieuwe inhoud, wijzigingen, technisch onderhoud, mailboxen, domeinregistratie en betaalde externe koppelingen zijn alleen inbegrepen als dat bij het gekozen pakket staat. Afspraken over back-ups, herstel, capaciteit en ondersteuning leggen we vooraf vast. De minimumprijs geldt voor de beschreven basishosting; bijzondere technische eisen kunnen een ander, vooraf afgesproken pakket vragen.</p>
+        <p>{hostingSummary} Een gekozen onderhoudspakket dat hosting bevat vervangt de basishosting. Die wordt niet dubbel berekend. De eerste termijn begint op de afgesproken datum waarop de website op de hosting beschikbaar wordt gesteld. Het voorstel vermeldt het pakket, die startdatum en de factureringswijze.</p>
+        <p>Basishosting stelt de website online beschikbaar. Nieuwe inhoud, wijzigingen, technisch onderhoud, mailboxen, domeinregistratie en betaalde externe koppelingen zijn alleen inbegrepen als dat bij het gekozen pakket staat. Afspraken over back-ups, herstel, capaciteit en ondersteuning leggen we vooraf vast. De minimumprijs geldt voor de beschreven basishosting. Bijzondere technische eisen kunnen een ander, vooraf afgesproken pakket vragen.</p>
         <p>Na de eerste twaalf maanden loopt hosting door voor onbepaalde tijd. Daarna kun je op ieder moment opzeggen met een maand opzegtermijn. Je kunt tijdens het eerste jaar al aangeven dat hosting op de einddatum moet stoppen. Opzeggen kan via het <a href="/contact">contactformulier</a> of via de contactroute uit je opdrachtbevestiging. Een opzegging hoeft geen reden te bevatten.</p>
         <p>De afgesproken hostingprijs blijft gelijk tijdens de eerste twaalf maanden, behalve als een wettelijk gewijzigde belasting moet worden toegepast. Daarna kan Sitesnit de prijs aanpassen bij aantoonbaar gewijzigde kosten van hosting of noodzakelijke externe dienstverlening. Sitesnit legt de reden, nieuwe prijs en ingangsdatum ten minste een maand vooraf uit. De verhoging wordt niet vaker dan eenmaal per twaalf maanden doorgevoerd. Je kunt bij zo’n wijziging kosteloos opzeggen voor de ingangsdatum, zodat je de hogere prijs niet hoeft te betalen.</p>
         <p>Bij beëindiging stemmen we export, overdracht en het einde van de hosting af. Je krijgt gelegenheid beschikbare klantgegevens tijdig over te nemen. Na de einddatum kan de website offline gaan. Vooraf betaalde perioden na de geldige einddatum worden naar rato verrekend. Aanvullend verhuiswerk dat niet onder onze wettelijke of overeengekomen overdrachtsplichten valt, wordt alleen na prijsafspraak uitgevoerd.</p>
@@ -122,7 +122,7 @@ export default function Terms() {
 
       <section id="consumenten">
         <h2>11. Bedenktijd voor consumenten</h2>
-        <p>Een consument handelt buiten beroep of bedrijf. Op deze website vraag je vrijblijvend informatie of een gesprek aan; je sluit hier geen aankoop af. Bij een latere overeenkomst op afstand krijg je vooraf informatie over de volledige prijs, uitvoering, bedenktijd en opzegging, samen met een modelformulier voor herroeping.</p>
+        <p>Een consument handelt buiten beroep of bedrijf. Op deze website vraag je vrijblijvend informatie of een gesprek aan. Je sluit hier geen aankoop af. Bij een latere overeenkomst op afstand krijg je vooraf informatie over de volledige prijs, uitvoering, bedenktijd en opzegging, samen met een modelformulier voor herroeping.</p>
         <p>Waar het wettelijke herroepingsrecht geldt, kun je een dienstenovereenkomst zonder reden herroepen tot veertien dagen na de dag waarop deze is gesloten. Stuur daarvoor voor afloop van de termijn een duidelijke verklaring via het <a href="/contact">contactformulier</a>, de contactroute in je opdrachtbevestiging of per post aan het adres hieronder. Noem je naam, welke opdracht je herroept en hoe we de ontvangst kunnen bevestigen. Het modelformulier gebruiken is niet verplicht.</p>
         <p>Sitesnit start binnen die periode alleen na je uitdrukkelijke verzoek. Als je daarna herroept, kan uitsluitend de wettelijk toegestane evenredige vergoeding voor het al uitgevoerde deel gelden, mits je daarover vooraf correct bent geïnformeerd. Het herroepingsrecht vervalt na volledige uitvoering alleen wanneer je vooraf uitdrukkelijk hebt ingestemd met die uitvoering én hebt erkend dat je daardoor je herroepingsrecht verliest. Een website op maat betekent niet automatisch dat bedenktijd vervalt.</p>
         <p>Een verschuldigde terugbetaling na herroeping volgt binnen veertien dagen na je herroepingsbericht via hetzelfde betaalmiddel, tenzij je uitdrukkelijk met een andere kosteloze manier instemt. Dwingende consumentenrechten gaan altijd voor. Het toepasselijke Nederlandse recht ontneemt je geen bescherming waarop je volgens dwingend recht van je woonland recht hebt. Een geschil kan worden voorgelegd aan de volgens de wet bevoegde rechter.</p>
@@ -131,7 +131,7 @@ export default function Terms() {
       <section id="contact">
         <h2>12. Contact en versie</h2>
         <BusinessIdentity />
-        <p>Vragen over een opdracht kun je via het <a href="/contact">contactformulier</a> doorgeven. Vermeld waar je vraag over gaat; deel geen wachtwoorden of betaalgegevens.</p>
+        <p>Vragen over een opdracht kun je via het <a href="/contact">contactformulier</a> doorgeven. Vermeld waar je vraag over gaat. Deel geen wachtwoorden of betaalgegevens.</p>
         <p>Een belafspraak is mogelijk op werkdagen tussen 18.00 en 21.30 uur of in het weekend. Een voorkeursdag en tijd doorgeven is optioneel. Het moment is pas een afspraak wanneer het is bevestigd.</p>
         <p>Versie {business.termsVersion}. Bewaar de voorwaarden die je bij jouw voorstel ontvangt.</p>
       </section>

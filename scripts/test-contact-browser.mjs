@@ -1,10 +1,9 @@
+import {browserType,launchOptions,browserLabel} from './browser-runtime.mjs';
 /** Loopback-only browser regression. Contact HTTP and Google scripts are fixtures; no mail or database writes. */
 import assert from 'node:assert/strict';
-import {createRequire} from 'node:module';
 import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
-const require=createRequire(import.meta.url);
-const {chromium}=require('C:/Users/Gebruiker/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+
 const base=new URL(process.argv[2]||'http://127.0.0.1:5189');
 if(base.protocol!=='http:'||!['127.0.0.1','localhost','[::1]'].includes(base.hostname))throw Error('Loopback HTTP only.');
 // Explicit allowlist keeps evidence paths predictable and prevents accidental huge viewports.
@@ -13,10 +12,10 @@ const viewportKey=process.argv[3]??process.env.CONTACT_TEST_VIEWPORT??'390';
 const profiles={'390':{name:'mobile-390',width:390,height:844},'1440':{name:'desktop-1440',width:1440,height:900}};
 if(!Object.hasOwn(profiles,viewportKey))throw Error('CONTACT_TEST_VIEWPORT / third argument must be 390 or 1440.');
 const profile=profiles[viewportKey];
-const output=resolve('reports/improvement/contact-privacy',profile.name);mkdirSync(output,{recursive:true});
-const report={startedAt:new Date().toISOString(),origin:base.origin,profile:profile.name,viewport:{width:profile.width,height:profile.height},browser:'Headless Microsoft Edge via Playwright',checks:[],screenshots:[],limitations:['Contact API responses and Google script are intercepted. No database writes, mail, provider delivery or external GA4 receipt tested.']};
+const output=resolve((process.env.BROWSER_REPORT_ROOT || 'reports/improvement') + '/contact-privacy',profile.name);mkdirSync(output,{recursive:true});
+const report={startedAt:new Date().toISOString(),origin:base.origin,profile:profile.name,viewport:{width:profile.width,height:profile.height},browser:browserLabel,checks:[],screenshots:[],limitations:['Contact API responses and Google script are intercepted. No database writes, mail, provider delivery or external GA4 receipt tested.']};
 report.buildId=readFileSync('.next/BUILD_ID','utf8').trim();
-const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const browser=await browserType.launch(launchOptions);
 const consentKey='sitesnit-cookie-consent-v1',measurementId='G-FIXTURE123';
 async function fixture(choice,{blockAnalytics=false}={}){
   const context=await browser.newContext({viewport:report.viewport}),events=[],calls=[],errors=[];let reply='success',scriptRequests=0;

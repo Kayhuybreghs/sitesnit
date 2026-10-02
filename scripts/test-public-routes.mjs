@@ -3,6 +3,8 @@ import http from 'node:http';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {analyzeReachability} from './route-reachability.mjs';
+import {retiredReferences,retiredCaseIds,retiredAssetPaths} from './portfolio-contract.mjs';
 import {routeCatalog} from '../lib/route-catalog.ts';
 import {pageSeo} from '../app/page-seo-data.ts';
 import {publicAssetPaths} from '../lib/public-asset-paths.ts';
@@ -58,7 +60,10 @@ failures.push(...validateRouteInventory(appPages, paths, toolRedirects));
 check('asset-manifest', 'public/', JSON.stringify(diskAssets) === JSON.stringify([...publicAssetPaths].sort()), diskAssets, [...publicAssetPaths].sort());
 
 const result = await crawlPublicRoutes({paths, request, metadata: pageSeo, assetPaths: diskAssets});
-failures.push(...result.failures);
+const reachability=analyzeReachability(paths,result.links);
+failures.push(...result.failures,...reachability.failures);
+for (const route of paths) {const response=await request(route);check('no-retired-public-content',route,!retiredReferences(response.body),'no retired identities in HTML/RSC','HTML scanned');}
+for(const id of retiredCaseIds) for(const suffix of ['','?source=retired-check']) {const route='/projecten/'+id+suffix;const response=await request(route);check('retired-case-404',route,response.status===404,404,response.status);}
 for (const route of paths) {
   const response = await request(route + '?utm_source=route-fixture&pakket=onepager');
   const page = readPage(response.body, route + '?utm_source=route-fixture&pakket=onepager', response.headers);
@@ -81,11 +86,12 @@ for (const redirect of toolRedirects) {
   const destination = await request(redirect.destination);
   check('legacy-final-status', redirect.destination, destination.status === 200, 200, destination.status);
 }
-for (const route of ['/not-a-real-article', '/projecten/not-a-real-case', '/diensten/unknown-service', '/tools/not-a-real-tool', '/about/not-a-real-image.jpg', '/og/not-a-real-image.png', '/fonts/not-a-real-font.woff2', '/brand/not-a-real-image.png']) {
+for (const route of ['/not-a-real-article', '/projecten/not-a-real-case', '/diensten/unknown-service', '/tools/not-a-real-tool', '/tools/snelheidstest/not-a-real-guide', '/about/not-a-real-image.jpg', '/og/not-a-real-image.png', '/fonts/not-a-real-font.woff2', '/brand/not-a-real-image.png']) {
   const response = await request(route);
   check('unknown-404', route, response.status === 404, 404, response.status);
   check('unknown-html-protection', route, Boolean(response.headers['content-security-policy']?.includes("'nonce-")), 'HTML nonce CSP', response.headers['content-security-policy']);
 }
+for(const asset of retiredAssetPaths){const response=await request(asset);check('retired-asset-404',asset,response.status===404,404,response.status);}
 const sitemap = await request('/sitemap.xml');
 check('sitemap-response', '/sitemap.xml', sitemap.status === 200 && /xml/.test(sitemap.headers['content-type'] || ''), '200 XML', {status: sitemap.status, contentType: sitemap.headers['content-type']});
 const sitemapResult = validateSitemap(sitemap.body, paths);
@@ -113,7 +119,7 @@ const report = {
   checkedAt, completedAt: new Date().toISOString(), environment: 'local-production-build', origin,
   commit: process.env.GITHUB_SHA || null, sourceSha256: afterSource, build: afterBuild, servedBuildIds,
   inventory: {appPages, catalogPaths: paths, sitemapUrls: sitemapResult.values, diskAssets},
-  ...result, edgeChecks, failures,
+  ...result, reachability, edgeChecks, failures,
   limits: [
     'HTTP/HTML validation only; desktop/mobile layout, fragment landing, hydrated DOM and browser exceptions require separate browser evidence.',
     'Dynamic-only anchors are reported for browser verification; no arbitrary missing-anchor allowlist is used.',

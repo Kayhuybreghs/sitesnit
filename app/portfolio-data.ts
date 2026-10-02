@@ -13,11 +13,11 @@ export const clientCases = [
     choices: [
       ["Een herkenbare richting", "Groen, een rustige basis en duidelijke typografie verbinden de homepage, artikelen en tools. De inhoud krijgt een duidelijke volgorde, met contactpunten en vervolgstappen die bij het onderwerp passen."],
       ["Van uitleg naar zelf doen", "Artikelen geven context. De budgetplanner brengt inkomsten, uitgaven, reserveringen en doelen samen. Zo sluit de tool aan op de vragen die de redactionele inhoud oproept."],
-      ["Ruimte voor vergelijken", "De gebruiker kan scenario’s onderzoeken en zelf ingevulde offertes vergelijken. De demo rekent met voorbeeldgegevens; een koppeling met actuele aanbiedersdata is een afzonderlijke mogelijke uitbreiding."],
+      ["Ruimte voor vergelijken", "De gebruiker kan scenario’s onderzoeken en zelf ingevulde offertes vergelijken. De demo rekent met voorbeeldgegevens. Een koppeling met actuele aanbiedersdata is een afzonderlijke mogelijke uitbreiding."],
       ["Een eigen mobiele indeling", "De website wordt op een telefoon opnieuw ingedeeld. Navigatie, leesbare tekst en de routes naar inzicht en budget blijven dichtbij."]
     ],
     toolTitle: "Je maand en je toekomst. In een overzicht.",
-    toolText: "De budgetplanner maakt maandruimte en langetermijnkeuzes zichtbaar. Vaste rekenregels verwerken de invoer; grafieken laten zien wat andere aannames betekenen. Het is een voorbeeld van een maatwerktool die informatie bruikbaar maakt.",
+    toolText: "De budgetplanner maakt maandruimte en langetermijnkeuzes zichtbaar. Vaste rekenregels verwerken de invoer. Grafieken laten zien wat andere aannames betekenen. Het is een voorbeeld van een maatwerktool die informatie bruikbaar maakt.",
     maintenance: "Voor Beurswijzer verzorgen we iedere week een nieuw blog, de SEO-basis, websiteonderhoud en hosting. De redactionele planning, technische basis en verdere ontwikkeling blijven zo verbonden.",
     meta: "Beurswijzer-case van Sitesnit: webdesign, mobiele budgetplanner en interactieve grafieken. Met wekelijkse blogs, SEO-basis, onderhoud en hosting."
   },

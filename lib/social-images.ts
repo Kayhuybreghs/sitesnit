@@ -1,13 +1,173 @@
-import {auditGuides} from './seo-audit/guides';
-// Reviewed static sharing assets. See scripts/render-final-og.cjs for final legal and price images.
-import { guides } from './guides';
+// Generated from scripts/social-images-source.json by prepare-social-images.mjs.
 export const socialImages: Record<string, { url: string; width: number; height: number; alt: string }> = {
-  '/tools/seo-audit':{url:'/og/seo-audit.png',width:1200,height:630,alt:'Sitesnit SEO-audit: van URL naar concrete verbeterpunten'},
-  ...Object.fromEntries(auditGuides.map(g=>[`/tools/seo-audit/${g.slug}`,{url:`/og/audit-${g.slug}.png`,width:1200,height:630,alt:`Sitesnit — ${g.title}`} ])),
-  ...Object.fromEntries(guides.map(guide=>[`/${guide.slug}`,{url:`/og/guides/${guide.slug}.png`,width:1200,height:630,alt:`Sitesnit — ${guide.title}`} ])),
-  '/seo-venlo': {url:'/og/guides/seo-venlo.png',width:1200,height:630,alt:'SEO voor bedrijven in Venlo: vanuit Baarlo gericht werken aan inhoud en techniek'},
-  '/diensten/seo-onderhoud': {url:'/og/guides/seo-onderhoud.png',width:1200,height:630,alt:'SEO-onderhoud: prioriteiten kiezen, verbeteringen uitvoeren en opnieuw controleren'},
-  '/diensten/website-monitoring': {url:'/og/website-monitoring.png',width:1200,height:630,alt:'Sitesnit Hub: bezoekers, Google en werkzaamheden overzichtelijk bij elkaar, met bron en meetmoment'},
+  "/tools/seo-audit": {
+    "url": "/og/seo-audit.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit SEO-audit: van URL naar concrete verbeterpunten"
+  },
+  "/tools/seo-audit/indexering-controleren": {
+    "url": "/og/audit-indexering-controleren.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Indexering controleren: wat vertelt een crawl?"
+  },
+  "/tools/seo-audit/interne-links-controleren": {
+    "url": "/og/audit-interne-links-controleren.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Interne links controleren zonder blind te redirecten"
+  },
+  "/tools/seo-audit/canonical-controleren": {
+    "url": "/og/audit-canonical-controleren.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Canonicals controleren: kies de juiste hoofdversie"
+  },
+  "/tools/seo-audit/dubbele-metadata": {
+    "url": "/og/audit-dubbele-metadata.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Dubbele titels en descriptions beoordelen"
+  },
+  "/tools/seo-audit/afbeeldingen-en-alttekst": {
+    "url": "/og/audit-afbeeldingen-en-alttekst.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Altteksten controleren zonder decoratie te beschrijven"
+  },
+  "/tools/seo-audit/rapport-naar-actie": {
+    "url": "/og/audit-rapport-naar-actie.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Van SEO-audit naar een haalbaar verbeterplan"
+  },
+  "/website-levert-geen-aanvragen-op": {
+    "url": "/og/guides/website-levert-geen-aanvragen-op.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Waarom levert je website geen aanvragen op?"
+  },
+  "/verouderde-website": {
+    "url": "/og/guides/verouderde-website.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Is je website verouderd, of kan hij nog mee?"
+  },
+  "/website-niet-goed-op-mobiel": {
+    "url": "/og/guides/website-niet-goed-op-mobiel.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Werkt je website niet goed op mobiel?"
+  },
+  "/wat-kost-een-website": {
+    "url": "/og/guides/wat-kost-een-website.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Wat kost een website voor jouw bedrijf?"
+  },
+  "/maandelijkse-kosten-website": {
+    "url": "/og/guides/maandelijkse-kosten-website.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Welke maandelijkse kosten heeft een website?"
+  },
+  "/website-onderhoud-kosten": {
+    "url": "/og/guides/website-onderhoud-kosten.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Websiteonderhoud: waarvoor betaal je?"
+  },
+  "/website-offerte-aanvragen": {
+    "url": "/og/guides/website-offerte-aanvragen.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Een website-offerte aanvragen die echt iets zegt"
+  },
+  "/website-offerte-checklist": {
+    "url": "/og/guides/website-offerte-checklist.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Website-offertes vergelijken: de inhoud naast de prijs"
+  },
+  "/bedrijfsprocessen-automatiseren": {
+    "url": "/og/guides/bedrijfsprocessen-automatiseren.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Welk bedrijfsproces kun je het beste automatiseren?"
+  },
+  "/website-koppelen-aan-crm": {
+    "url": "/og/guides/website-koppelen-aan-crm.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Je website koppelen aan een CRM zonder losse eindjes"
+  },
+  "/afspraken-plannen-via-website": {
+    "url": "/og/guides/afspraken-plannen-via-website.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Afspraken plannen via je website: wat moet er kloppen?"
+  },
+  "/website-structuur": {
+    "url": "/og/guides/website-structuur.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Een websitestructuur die past bij je bezoekers"
+  },
+  "/website-ontwerp-voorbeelden": {
+    "url": "/og/guides/website-ontwerp-voorbeelden.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Website-ontwerpvoorbeelden: kijk naar de keuzes"
+  },
+  "/seo-audit-checklist": {
+    "url": "/og/guides/seo-audit-checklist.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: SEO-auditchecklist: van signaal naar onderbouwde actie"
+  },
+  "/website-niet-gevonden-google": {
+    "url": "/og/guides/website-niet-gevonden-google.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Je website niet gevonden in Google: waar begin je?"
+  },
+  "/website-snelheid-testen": {
+    "url": "/og/guides/website-snelheid-testen.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Website­snelheid testen: begrijp wat je meet"
+  },
+  "/404-fouten-oplossen": {
+    "url": "/og/guides/404-fouten-oplossen.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: 404-fouten oplossen zonder alles door te sturen"
+  },
+  "/website-migratie-checklist": {
+    "url": "/og/guides/website-migratie-checklist.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Website verhuizen: controle voor, tijdens en na de overstap"
+  },
+  "/seo-venlo": {
+    "url": "/og/guides/seo-venlo.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "SEO voor bedrijven in Venlo: vanuit Baarlo gericht werken aan inhoud en techniek"
+  },
+  "/diensten/seo-onderhoud": {
+    "url": "/og/guides/seo-onderhoud.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "SEO-onderhoud: prioriteiten kiezen, verbeteringen uitvoeren en opnieuw controleren"
+  },
+  "/diensten/website-monitoring": {
+    "url": "/og/website-monitoring.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit Hub: bezoekers, Google en werkzaamheden overzichtelijk bij elkaar, met bron en meetmoment"
+  },
   "/diensten": {
     "url": "/og/diensten.png",
     "width": 1200,
@@ -30,7 +190,7 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "url": "/og/over-sitesnit.png",
     "width": 1200,
     "height": 630,
-    "alt": "Kay, de maker achter Sitesnit in Baarlo, met mascotte Nova — jouw verhaal, een eigen plek online"
+    "alt": "Kay, de maker achter Sitesnit in Baarlo, met mascotte Nova: jouw verhaal, een eigen plek online"
   },
   "/projecten": {
     "url": "/og/projecten.png",
@@ -162,7 +322,7 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "url": "/og.png",
     "width": 1200,
     "height": 630,
-    "alt": "Sitesnit — websites met een eigen gezicht. Webdesign, SEO en AI vanuit Baarlo."
+    "alt": "Sitesnit: websites met een eigen gezicht. Webdesign, SEO en AI vanuit Baarlo."
   },
   "/projecten/beurswijzer": {
     "url": "/og/beurswijzer.png",
@@ -199,5 +359,29 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "width": 1200,
     "height": 630,
     "alt": "Webapps door Sitesnit: een schematisch portaal met inloggen, gebruikersrollen en gedeelde projecttaken, duidelijk gelabeld als voorbeeld."
+  },
+  "/tools/snelheidstest": {
+    "url": "/og/speed-snelheidstest.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Meet de laadsnelheid van je pagina"
+  },
+  "/tools/snelheidstest/pagespeed-score": {
+    "url": "/og/speed-pagespeed-score.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Wat zegt je PageSpeed-score?"
+  },
+  "/tools/snelheidstest/mobiel-desktop": {
+    "url": "/og/speed-mobiel-desktop.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Waarom is je mobiele website trager?"
+  },
+  "/tools/snelheidstest/core-web-vitals": {
+    "url": "/og/speed-core-web-vitals.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: Core Web Vitals en je snelheidstest"
   }
 };

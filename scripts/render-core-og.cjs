@@ -11,7 +11,6 @@ const box=(style,...children)=>h('div',{style:{display:'flex',...style}},...chil
 const text=(value,style={})=>box({fontSize:24,lineHeight:1.25,whiteSpace:'pre-wrap',...style},value);
 const svg=(children,style={})=>h('svg',{viewBox:'0 0 500 400',width:500,height:400,style},...children);
 const line=(d,color=ink,width=5)=>h('path',{d,fill:'none',stroke:color,strokeWidth:width,strokeLinecap:'round',strokeLinejoin:'round'});
-const rect=(x,y,w,ht,fill,rx=15)=>h('rect',{x,y,width:w,height:ht,fill,rx});
 const circle=(cx,cy,r,fill)=>h('circle',{cx,cy,r,fill});
 const shell=(label,content,tone=paper)=>box({width:1200,height:630,background:tone,color:ink,fontFamily:'Manrope',position:'relative',overflow:'hidden'},
   text('Sitesnit',{position:'absolute',left:54,top:36,fontWeight:800,fontSize:26,letterSpacing:-1}),
@@ -60,26 +59,7 @@ const cards={
       text('KIJK\nVERDER.',{position:'absolute',left:38,top:36,fontSize:59,fontWeight:800,color:'#f2ce34',lineHeight:1.1}),
       svg([line('M-20 320C100 318 150 120 235 228S365 50 470 75','#f2ce34',9),circle(470,75,14,'#f2ce34')],{position:'absolute',left:0,top:178,width:420,height:210})),
   ]),
-  'atelier-vorm':shell('ONTWERPCONCEPT / ATELIER VORM',[
-    headline(['Rust in vorm.','Karakter in detail.'],54,139,62),
-    label('Een denkbeeldig interieurmerk.',58,321),
-    box({position:'absolute',left:713,top:99,width:433,height:437,background:'#e1cfb9',borderRadius:'200px 200px 28px 28px'},
-      svg([h('ellipse',{cx:260,cy:357,rx:130,ry:18,fill:'#bfaa92'}),line('M151 324L173 205H333L354 324','#77563e',14),h('path',{d:'M145 190C143 125 153 74 210 68H295C349 77 359 120 352 190Z',fill:'#89684c'}),h('rect',{x:150,y:186,width:205,height:43,rx:14,fill:'#5e4735'}),line('M166 206L141 359M339 207L365 359','#503c2c',13)],{position:'absolute',left:9,top:21,width:420,height:386})),
-    box({position:'absolute',left:60,top:416,width:390,height:4,background:'#ad8e6b'}),
-  ]),
-  'studio-matcha':shell('ONTWERPCONCEPT / STUDIO MATCHA',[
-    headline(['Een frisse blik.','Een eigen ritme.'],54,150,64),
-    label('Een denkbeeldige matchabar.',58,328),
-    box({position:'absolute',left:770,top:124,width:342,height:342,background:'#dae8a7',borderRadius:171}),
-    svg([h('path',{d:'M140 100H350L321 342H171Z',fill:'#f8fae7',stroke:ink,strokeWidth:4}),h('path',{d:'M148 174H342L321 342H171Z',fill:'#7f9b58'}),h('ellipse',{cx:245,cy:176,rx:95,ry:17,fill:'#b9d58a'}),line('M238 49L266 238',ink,10),h('ellipse',{cx:244,cy:100,rx:105,ry:16,fill:'#e8eed4',stroke:ink,strokeWidth:4})],{position:'absolute',left:716,top:112,width:424,height:376,transform:'rotate(9deg)'}),
-    text('m.',{position:'absolute',left:79,top:399,fontSize:72,fontWeight:800,color:'#759550'}),
-  ]),
-  'buiten-gewoon':shell('ONTWERPCONCEPT / BUITEN GEWOON',[
-    headline(['Ruimte om','verder te kijken.'],54,142,66),
-    label('Een denkbeeldige architectuurstudio.',58,323),
-    svg([circle(380,88,49,'#d6e2b4'),h('path',{d:'M60 325V134L249 45L436 138V325Z',fill:'#d6ded3'}),h('path',{d:'M249 45V325H437V137Z',fill:'#aac0b8'}),line('M60 325V134L249 45L436 138V325M249 45V325',ink,4),rect(96,172,116,153,paper,0),rect(287,154,52,97,paper,0),rect(363,189,48,62,paper,0),line('M20 326H474',ink,4)],{position:'absolute',left:664,top:122,width:490,height:390}),
-    box({position:'absolute',left:60,top:422,width:170,height:7,background:ink}),
-  ]),
+
 };
 (async()=>{
   const manifest=[];

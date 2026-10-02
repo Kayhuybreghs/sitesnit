@@ -1,18 +1,16 @@
+import {browserType,launchOptions,browserLabel} from './browser-runtime.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { pathToFileURL } from 'node:url';
 
-const runtime = process.env.CONTENT_PLAYWRIGHT || path.join(process.env.USERPROFILE || '', '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs');
-const { chromium } = await import(pathToFileURL(runtime));
 const origin = process.env.CONTENT_ORIGIN || 'http://127.0.0.1:5189';
-const root = path.resolve('reports/improvement/content-review/browser', process.env.CONTENT_PROBE === 'true' ? 'probe' : '.');
+const root = path.resolve((process.env.BROWSER_REPORT_ROOT || 'reports/improvement') + '/content-review/browser', process.env.CONTENT_PROBE === 'true' ? 'probe' : '.');
 await fs.mkdir(root, {recursive:true});
-const routes = process.env.CONTENT_ROUTES?.split(',') || ['/diensten','/diensten/webdesign','/diensten/webdesign/pakketten','/kosten','/diensten/seo','/diensten/seo-optimalisatie','/diensten/seo-onderhoud','/diensten/content','/diensten/onderhoud-hosting','/seo-venlo','/webdesign-venlo','/contact','/diensten/webapps','/diensten/social-media','/diensten/ai-automatisering','/website-levert-geen-aanvragen-op','/maandelijkse-kosten-website','/website-onderhoud-kosten','/website-offerte-aanvragen','/website-niet-gevonden-google','/website-snelheid-testen'];
+const routes = process.env.CONTENT_ROUTES?.split(',') || ['/tools/snelheidstest','/tools/snelheidstest/pagespeed-score','/tools/snelheidstest/mobiel-desktop','/tools/snelheidstest/core-web-vitals','/website-structuur','/website-offerte-checklist','/diensten/formulieren-rekentools','/projecten','/projecten/beurswijzer','/projecten/beurswatcher','/diensten','/diensten/webdesign','/diensten/webdesign/pakketten','/kosten','/diensten/seo','/diensten/seo-optimalisatie','/diensten/seo-onderhoud','/diensten/content','/diensten/onderhoud-hosting','/seo-venlo','/webdesign-venlo','/contact','/diensten/webapps','/diensten/social-media','/diensten/ai-automatisering','/website-levert-geen-aanvragen-op','/maandelijkse-kosten-website','/website-onderhoud-kosten','/website-offerte-aanvragen','/website-niet-gevonden-google','/website-snelheid-testen'];
 if(!['127.0.0.1','localhost'].includes(new URL(origin).hostname)||routes.some(route=>!/^\/[a-z0-9/-]*$/.test(route)))throw Error('Local public routes only.');
-const widths=process.env.CONTENT_WIDTHS?.split(',').map(Number)||[360,390,768,1440];
-if(widths.some(width=>![360,390,768,1440].includes(width)))throw Error('Unsupported viewport.');
-const browser = await chromium.launch({headless:true, executablePath: process.env.CONTENT_BROWSER || 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
-const result = {createdAt:new Date().toISOString(),origin,mode:'Headless Edge emulation, reduced motion for content inspection; no physical device, no hero validation, no submitted forms.',records:[],navigations:[]};
+const widths=process.env.CONTENT_WIDTHS?.split(',').map(Number)||[320,360,390,768,1440];
+if(widths.some(width=>![320,360,390,768,1440].includes(width)))throw Error('Unsupported viewport.');
+const browser = await browserType.launch(launchOptions);
+const result = {createdAt:new Date().toISOString(),origin,mode:browserLabel + '; reduced motion content inspection; no submitted forms',records:[],navigations:[]};
 result.buildId=(await fs.readFile('.next/BUILD_ID','utf8')).trim();
 try {
   for (const width of widths) {
@@ -27,7 +25,9 @@ try {
       const necessary=page.getByRole('button',{name:'Alleen noodzakelijk',exact:true});
       if(await necessary.isVisible())await necessary.click();
       const measurement=await page.locator('main').evaluate(main=>({h1:main.querySelector('h1')?.textContent,viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,mainWidth:main.scrollWidth}));
-      const record={route,width,status:response.status(),...measurement,overflow:measurement.documentWidth>width+1,errors,screenshots:[]};
+      const inlineLinks=await page.locator('main .inline-context-link').evaluateAll(links=>links.map(link=>({text:link.textContent,href:link.getAttribute('href'),display:getComputedStyle(link).display,decoration:getComputedStyle(link).textDecorationLine})));
+      const record={route,width,inlineLinks,status:response.status(),...measurement,overflow:measurement.documentWidth>width+1,errors,screenshots:[]};
+      if(['/website-structuur','/website-offerte-checklist','/website-onderhoud-kosten','/seo-venlo','/diensten/webdesign','/diensten/formulieren-rekentools'].includes(route)&&(!inlineLinks.length||inlineLinks.some(link=>!link.decoration.includes('underline'))))errors.push('Expected readable contextual prose link missing');
       if(record.overflow) record.overflowElements=await page.locator('main').evaluate(main=>[...main.querySelectorAll('*')].map(node=>{const rect=node.getBoundingClientRect();return {tag:node.tagName,class:node.className,text:node.textContent?.slice(0,70),left:rect.left,right:rect.right,width:rect.width};}).filter(rect=>rect.right>innerWidth+1||rect.left < -1).slice(0,35));
       if ([390,1440].includes(width)) {
         const name=route.slice(1).replaceAll('/','__');
@@ -42,6 +42,23 @@ try {
           record.detailsVisible=await target.isVisible();
         }
         if (['/diensten/seo-optimalisatie','/diensten/seo-onderhoud'].includes(route)) {
+          if(route==='/diensten/seo-onderhoud'){
+            const log=page.locator('.break-seo-onderhoud');
+            if(await log.count()!==1)errors.push('Expected exactly one existing maintenance worklog');
+            else{
+              await log.scrollIntoViewIfNeeded();record.worklogText=await log.innerText();
+              if(!/demonstratie/i.test(record.worklogText)||!record.worklogText.includes('Hercontrole'))errors.push('Worklog context incomplete');
+              await log.locator('a').focus();record.worklogKeyboard=await log.locator('a').evaluate(link=>link===document.activeElement);
+              await page.evaluate(()=>document.documentElement.style.fontSize='200%');
+              await log.scrollIntoViewIfNeeded();
+              record.worklogZoomOverflow=await log.evaluate(node=>node.scrollWidth>node.clientWidth+1||document.documentElement.scrollWidth>innerWidth+1);
+              record.worklogZoomClippedText=await log.evaluate(root=>[...root.querySelectorAll('p,strong,h3,dt,dd,a')].filter(node=>node.scrollWidth>node.clientWidth+1).map(node=>node.textContent));
+              if(record.worklogZoomOverflow||!record.worklogKeyboard)errors.push('Worklog zoom or keyboard issue');
+              if(record.worklogZoomClippedText.length)errors.push('Worklog text clipped at 200%');
+              await log.screenshot({path:path.join(root,`seo-worklog-${width}-zoom.png`)});
+              await page.evaluate(()=>document.documentElement.style.fontSize='');
+            }
+          }
           const discovery=page.locator('.service-tool-discovery');await discovery.scrollIntoViewIfNeeded();
           const screenshot=path.join(root,`${name}-${width}-tool.png`);await discovery.screenshot({path:screenshot});record.screenshots.push(path.basename(screenshot));
           record.toolBlockVisible=await discovery.isVisible();

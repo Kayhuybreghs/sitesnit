@@ -7,5 +7,5 @@ export const contentSources: Record<string, {name: string; url: string; checked:
   lighthouse: {name:'Chrome: Lighthouse-snelheidsscores',url:'https://developer.chrome.com/docs/lighthouse/performance/performance-scoring',checked:'2026-09-22',supports:'Weighted lab score and measurement variability; score is not a specific diagnosis.'},
   labfield: {name:'web.dev: labgegevens en bezoekersgegevens',url:'https://web.dev/articles/lab-and-field-data-differences',checked:'2026-09-22',supports:'Lab vs field test conditions and interpretation; no interchangeable metrics.'},
   http: {name:'Google: HTTP-statuscodes',url:'https://developers.google.com/crawling/docs/troubleshooting/http-status-codes',checked:'2026-09-22',supports:'404/410 represent missing content; successful HTTP response does not guarantee indexing.'},
-  pagespeed: {name:'Google PageSpeed Insights gebruiken',url:'https://pagespeed.web.dev/',checked:'2026-09-22',supports:'External standalone page speed tool; not a Sitesnit account or crawl.'},
+  pagespeed: {name:'Google: de PageSpeed Insights API',url:'https://developers.google.com/speed/docs/insights/v5/get-started',checked:'2026-10-01',supports:'Page-level Lighthouse via API; automated requests, key and quota; field-data availability is separate.'},
 };

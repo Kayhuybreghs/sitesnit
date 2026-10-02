@@ -4,9 +4,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import lighthouse from '../.sites-runtime/quality/node_modules/lighthouse/core/index.js';
-import desktop from '../.sites-runtime/quality/node_modules/lighthouse/core/config/desktop-config.js';
-import { launch } from '../.sites-runtime/quality/node_modules/chrome-launcher/dist/index.js';
+import lighthouse from 'lighthouse';
+import desktop from 'lighthouse/core/config/desktop-config.js';
+import { launch } from 'chrome-launcher';
+import {chromium} from 'playwright';
 
 const phase = process.argv[2] || 'next-final';
 if (!/^[a-z0-9-]+$/.test(phase)) throw Error('Use a plain phase name.');
@@ -134,7 +135,7 @@ for (const route of routes) {
       try {
         if (fs.readFileSync(buildIdFile, 'utf8').trim() !== buildId) throw Error('Build changed during measurement. Use a new phase after rebuilding.');
         chrome = await launch({
-          chromePath: process.env.CHROME_PATH || 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
+          chromePath: process.env.CHROME_PATH || chromium.executablePath(),
           chromeFlags: ['--headless', '--no-first-run', '--disable-extensions'], logLevel: 'silent',
         });
         const result = await lighthouse(origin + route, {

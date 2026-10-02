@@ -59,7 +59,7 @@ export default function ToolsPage() {
       <section className="wrap tool-hub-list" id="alle-tools">
         <div className="hub-section-title">
           <h2>Waar wil je beginnen?</h2>
-          <p>Zes hulpmiddelen, ieder met een eigen taak.</p>
+          <p>Zeven hulpmiddelen, ieder met een eigen taak.</p>
         </div>
         <nav className="tool-category-links" aria-label="Kies je vraag">{toolGroups.map(group => <a key={group.id} href={`#${group.id}`}>{group.title}<Arrow /></a>)}</nav>
         {toolGroups.map((group, index) => <section className="tool-category" id={group.id} key={group.id}>

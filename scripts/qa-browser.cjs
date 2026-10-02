@@ -21,9 +21,9 @@ const origin = process.argv[2] ?? "http://127.0.0.1:5184";
     "/",
     "/diensten",
     "/projecten",
-    "/projecten/atelier-vorm",
-    "/projecten/studio-matcha",
-    "/projecten/buiten-gewoon",
+    "/projecten/beurswijzer",
+    "/projecten/beurswatcher",
+    "/projecten/beurswatcher",
     "/kosten",
     "/over-sitesnit",
     "/contact",
@@ -64,7 +64,7 @@ const origin = process.argv[2] ?? "http://127.0.0.1:5184";
         ((width === 390 || width === 1440) &&
           [
             "/kosten",
-            "/projecten/atelier-vorm",
+            "/projecten/beurswijzer",
             "/prijscheck",
             "/websitecheck",
             "/contact",

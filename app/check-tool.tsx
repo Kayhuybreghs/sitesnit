@@ -134,7 +134,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
       const payload = data && typeof data === 'object' && !Array.isArray(data) ? data as Record<string, unknown> : null;
       const result = payload?.result;
       if (!response.ok || !isTechnicalResult(result))
-        throw new Error(typeof payload?.error === 'string' ? payload.error : 'Er is geen complete technische meting ontvangen. Je antwoorden zijn bewaard; probeer de analyse opnieuw.');
+        throw new Error(typeof payload?.error === 'string' ? payload.error : 'Er is geen complete technische meting ontvangen. Je antwoorden zijn bewaard. Probeer de analyse opnieuw.');
       setScan({ status: "complete", result, error: "" });
     } catch (e) {
       if (current === scanNumber.current && (e as Error).name !== "AbortError")
@@ -316,7 +316,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                 <p>De 15 vragen brengen je pagina’s, inhoud, functies en koppelingen in kaart. De bouwprijs voor een passende onepager is {euro(site.packages[0].price)} exclusief btw ({euro(grossPrice(site.packages[0].price))} inclusief btw). Bij vijf pagina’s is dat {euro(site.packages[1].price)} exclusief btw ({euro(grossPrice(site.packages[1].price))} inclusief btw). Responsive ontwerp en een standaardcontactformulier maken je aanvraag niet automatisch maatwerk.</p>
                 <p>Extra omvang of bijzondere functies kunnen een maatwerkroute vragen. De bouwprijs begint dan bij {euro(site.packages[2].price)} exclusief btw ({euro(grossPrice(site.packages[2].price))} inclusief btw). Je ziet welke wensen daarvoor de reden zijn en welke keuzes nog nodig zijn om een prijs af te spreken. Je budget verandert het tarief voor dezelfde wensen niet.</p>
                 <p>{hostingSummary} {paymentSummary}</p>
-                <p>Je kunt antwoorden aanpassen en je websiteplan onder het resultaat meenemen naar een belaanvraag. De uitkomst helpt je kiezen; de precieze werkzaamheden worden in een voorstel vastgelegd. <a href="/kosten">Bekijk ook direct alle websitepakketten.</a></p>
+                <p>Je kunt antwoorden aanpassen en je websiteplan onder het resultaat meenemen naar een belaanvraag. De uitkomst helpt je kiezen. De precieze werkzaamheden worden in een voorstel vastgelegd. <a href="/kosten">Bekijk ook direct alle websitepakketten.</a></p>
               </>}
             </details>
           </div>
@@ -363,7 +363,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
             </button>
             <p className="form-note">
               {isWeb
-                ? "Je URL wordt gedeeld met Google; je antwoorden niet. "
+                ? "Je URL wordt gedeeld met Google. Je antwoorden blijven hier. "
                 : ""}
               <a href="/privacy">Over je gegevens</a>
             </p>
@@ -457,7 +457,7 @@ export default function CheckTool({ kind }: { kind: Kind }) {
                 </div>
                 <p className="small">
                   Alleen de URL gaat naar Google. Je antwoorden blijven bewaard.
-                  De scan kan ongeveer een minuut duren; je inhoudelijke
+                  De scan kan ongeveer een minuut duren. Je inhoudelijke
                   uitkomst is meteen beschikbaar.
                 </p>
                 {error && (

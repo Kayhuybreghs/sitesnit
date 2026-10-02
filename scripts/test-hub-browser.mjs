@@ -1,6 +1,6 @@
+import {browserType,launchOptions} from './browser-runtime.mjs';
 /** Frozen Next build + separate synthetic databases. No original runtime storage or live APIs. */
 import assert from 'node:assert/strict';
-import {createRequire} from 'node:module';
 import {cpSync,copyFileSync,mkdirSync,readFileSync,symlinkSync,writeFileSync} from 'node:fs';
 import {resolve,join,relative,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -37,7 +37,7 @@ for(const name of ['package.json','next.config.ts'])copyFileSync(join(root,name)
 mkdirSync(join(fixture,'lib'));copyFileSync(join(root,'lib/tool-routes.ts'),join(fixture,'lib/tool-routes.ts'));
 const secret=randomBytes(32).toString('hex');
 writeFileSync(join(fixture,'.sites-runtime/hub-local.json'),JSON.stringify({enabled:true,secret}));
-const output=join(root,'reports/improvement/contact-privacy',`hub-${width}`);mkdirSync(output,{recursive:true});
+const output=resolve(root,process.env.BROWSER_REPORT_ROOT || 'reports/improvement','contact-privacy',`hub-${width}`);mkdirSync(output,{recursive:true});
 const report={startedAt:new Date().toISOString(),buildId,viewport:{width,height:width===390?844:900},checks:[],
   isolation:{build:'Separate copy; shared build is not mutated',storage:'Two new SQLite files below a fresh fixture directory',mail:'Disabled in server; account verification messages captured only in memory',providers:'No external credentials; browser and server fetch deny external destinations'},
   limitations:['Real production-built SSR and browser history are tested with synthetic accounts. Sessions are created through real Better Auth in the fixture, not through the browser login UI. No production transport, provider delivery or live client data is tested.','This is Chromium/Edge history coverage, not a physical Safari or all-browser BFCache certification.']};
@@ -93,7 +93,7 @@ try{
   writeFileSync(join(fixture,'fixture-network.cjs'),`const originalFetch=globalThis.fetch;globalThis.fetch=(input,init)=>{const u=new URL(typeof input==='string'||input instanceof URL?input:input.url);if(!['127.0.0.1','localhost','[::1]'].includes(u.hostname))throw new Error('Isolated Hub fixture blocked outbound fetch');return originalFetch(input,init);};\n`);
   const env={};for(const key of ['PATH','Path','SystemRoot','SYSTEMROOT','WINDIR','TEMP','TMP','USERPROFILE','COMSPEC'])if(process.env[key])env[key]=process.env[key];
   Object.assign(env,{NODE_ENV:'production',NEXT_TELEMETRY_DISABLED:'1',HUB_ENABLED:'false',HUB_EMAIL_ENABLED:'false',CONTACT_EMAIL_ENABLED:'false',SITESNIT_LOCAL_SQLITE:'true',RATE_LIMIT_SECRET:'isolated-hub-browser-rate-limit-2026',GA4_MEASUREMENT_ID:'',GA4_PRIVACY_CONFIGURED:'false'});
-  server=spawn(process.execPath,['--require',join(fixture,'fixture-network.cjs'),join(root,'node_modules/next/dist/bin/next'),'start','--hostname','127.0.0.1','--port',String(port)],{cwd:fixture,env,windowsHide:true,stdio:['ignore','pipe','pipe']});
+  server=spawn(process.execPath,['--require',join(root,'scripts/fixture-network.cjs'),'--require',join(fixture,'fixture-network.cjs'),join(root,'node_modules/next/dist/bin/next'),'start','--hostname','127.0.0.1','--port',String(port)],{cwd:fixture,env,windowsHide:true,stdio:['ignore','pipe','pipe']});
   for(const stream of [server.stdout,server.stderr])stream.on('data',chunk=>{serverLog+=chunk.toString();});
   for(let attempt=0;attempt<80;attempt++){
     if(server.exitCode!==null)throw new Error(`Isolated server exited: ${server.exitCode}`);
@@ -107,8 +107,8 @@ try{
     report.checks.push({name:'Isolated server reads only its synthetic SQLite runtime',status:'passed'});
     report.status='prepared';
   }else{
-    const require=createRequire(import.meta.url),{chromium}=require('C:/Users/Gebruiker/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
-    browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+    
+    browser=await browserType.launch(launchOptions);
     const pages={};
     for(const id of ['anonymous','a','b','admin']){
       const context=await browser.newContext({viewport:report.viewport});contexts.push(context);

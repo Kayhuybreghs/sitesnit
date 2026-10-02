@@ -1,3 +1,4 @@
+import {browserType,launchOptions} from './browser-runtime.mjs';
 /** Loopback-only UI verification. No form submission, API execution or external network.
  * Run serially: node scripts/test-navigation-browser.mjs http://127.0.0.1:5188
  * Optional: --width=360|390|768|1440 --only=navigation|cookies|regions
@@ -6,7 +7,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {pathToFileURL} from 'node:url';
 
 const args=process.argv.slice(2);
 const base=new URL(args.find(arg=>!arg.startsWith('--'))||'http://127.0.0.1:5188');
@@ -16,7 +16,7 @@ const selectedWidth=option('width'),only=option('only');
 const widths=selectedWidth?[Number(selectedWidth)]:[360,390,768,1440];
 if(widths.some(width=>![360,390,768,1440].includes(width)))throw Error('Unsupported --width.');
 if(only&&!['navigation','cookies','regions'].includes(only))throw Error('Unsupported --only.');
-const output=path.resolve('reports/improvement/navigation-browser');
+const output=path.resolve((process.env.BROWSER_REPORT_ROOT || 'reports/improvement') + '/navigation-browser');
 await fs.mkdir(output,{recursive:true});
 const suffix=`${only?'-'+only:''}${selectedWidth?'-'+selectedWidth:''}`;
 const reportPath=path.join(output,`report${suffix}.json`);
@@ -29,9 +29,7 @@ const report={status:'not-completed',startedAt:new Date().toISOString(),origin:b
 const save=()=>fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n');
 report.buildId=(await fs.readFile('.next/BUILD_ID','utf8')).trim();
 await save();
-const runtime=process.env.CONTENT_PLAYWRIGHT||path.join(process.env.USERPROFILE||'','.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs');
-const {chromium}=await import(pathToFileURL(runtime));
-const browser=await chromium.launch({headless:true,executablePath:process.env.CONTENT_BROWSER||'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const browser=await browserType.launch(launchOptions);
 
 async function open(page,route){
   const response=await page.goto(base.origin+route,{waitUntil:'networkidle',timeout:60000});
@@ -68,7 +66,8 @@ async function navigation(page,width){
     await trigger.tap();await menu.waitFor({state:'visible'});
     assert.equal(await trigger.getAttribute('aria-expanded'),'true');
     const tools=menu.locator('.mobile-tool-links a');
-    assert.equal(await tools.count(),7,'Overview plus the six real tools must be available in the mobile menu.');
+    assert.equal(await tools.count(),8,'Overview plus all seven real tools must be available in the mobile menu.');
+    assert.equal(await tools.filter({hasText:'Snelheidstest'}).count(),1);
     assert.equal(await menu.evaluate(node=>node.contains(document.activeElement)),true,'Dialog must receive focus.');
     const focusable=menu.locator('a[href],button:not(:disabled)');
     await focusable.last().focus();await page.keyboard.press('Tab');
@@ -90,7 +89,8 @@ async function navigation(page,width){
   }
   const menu=page.locator('.desktop-nav details.tools-menu'),summary=menu.locator('summary');
   await summary.tap();assert.equal(await menu.evaluate(node=>node.open),true,'Touch opens desktop submenu without hover.');
-  assert.equal(await menu.locator('a').count(),7);
+  assert.equal(await menu.locator('a').count(),8);
+  assert.equal(await menu.locator('a[href="/tools/snelheidstest"]').count(),1);
   const screenshot=await capture(page,'desktop-tools-menu',width);
   await page.keyboard.press('Escape');assert.equal(await menu.evaluate(node=>node.open),false);await waitFocus(summary);
   await page.keyboard.press('Enter');assert.equal(await menu.evaluate(node=>node.open),true);

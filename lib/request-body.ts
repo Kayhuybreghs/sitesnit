@@ -1,6 +1,7 @@
 /** Limit bytes while reading, including chunked requests without Content-Length. */
 export class RequestBodyError extends Error {
-  constructor(message: string, public readonly status: 400 | 403 | 413) { super(message); this.name = 'RequestBodyError'; }
+  public readonly status: 400 | 403 | 413;
+  constructor(message: string, status: 400 | 403 | 413) { super(message); this.status = status; this.name = 'RequestBodyError'; }
 }
 export async function readTextBody(request: Request, max: number) {
   if (Number(request.headers.get('content-length') ?? 0) > max)

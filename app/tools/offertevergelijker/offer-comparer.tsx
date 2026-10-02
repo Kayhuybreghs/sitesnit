@@ -139,7 +139,7 @@ export default function OfferComparer() {
         accent="Een helder verschil."
       >
         Vergelijk wat je krijgt én wat je betaalt. Vul de bedragen uit je
-        offertes in. Onbekende kosten blijven herkenbaar; je krijgt geen
+        offertes in. Onbekende kosten blijven herkenbaar. Je krijgt geen
         automatische winnaar.
       </ToolLead>
       <div className="wrap tool-workspace offer-workspace">
@@ -207,7 +207,7 @@ export default function OfferComparer() {
           </div>
           <p className="field-help">
             Vul ieder totaal een keer in. Zit hosting al in het maandbedrag? Tel
-            het niet nogmaals mee. Vul 0 in als er geen kosten zijn; laat
+            het niet nogmaals mee. Vul 0 in als er geen kosten zijn. Laat
             onbekende bedragen leeg.
           </p>
           <div className="offer-money-fields">

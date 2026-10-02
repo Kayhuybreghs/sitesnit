@@ -1,4 +1,4 @@
-export type GuideSection = { heading: string; paragraphs?: string[]; checklist?: string[]; table?: { headers: string[]; rows: string[][] } };
+export type GuideSection = { heading: string; paragraphs?: string[]; links?: {phrase:string;href:string}[]; checklist?: string[]; table?: { headers: string[]; rows: string[][] } };
 export type Guide = { id: string; slug: string; title: string; description: string; group: string; tool: string; service: string; audience: string; outcome: string; unique: string; intro: string; widget?: string; sections: GuideSection[]; related: string[]; sources: string[] };
 /** Editorial drafts are reviewed separately; this data never asserts owner approval. */
 export const guides: Guide[] = [
@@ -12,13 +12,13 @@ export const guides: Guide[] = [
     "service": "/diensten/webdesign",
     "audience": "Ondernemers met bezoekers maar weinig aanvragen",
     "outcome": "Een eerste oorzaak kiezen op basis van signalen, voordat je een redesign bestelt.",
-    "unique": "Diagnosevolgorde plus voor/na-dienstentekst; geen beloofde conversiewinst.",
+    "unique": "Diagnosevolgorde plus voor/na-dienstentekst. Geen beloofde conversiewinst.",
     "intro": "Weinig aanvragen betekenen niet automatisch dat je ontwerp verkeerd is. Misschien komen er nauwelijks passende bezoekers. Misschien begrijpen ze je aanbod niet, of komt een verstuurd formulier niet aan. Begin bij het punt waar je iets kunt vaststellen.",
     "sections": [
       {
         "heading": "Begin bij bezoek, niet bij de kleur van je knop",
         "paragraphs": [
-          "Kijk naar een periode die bij je bedrijf past: een drukke week zegt weinig als klanten maanden nadenken. Gebruik je beschikbare bezoekersgegevens én je ontvangen aanvragen. Tel telefoontjes of mails alleen mee als je die werkelijk kunt herleiden; vul ontbrekende metingen niet in met aannames.",
+          "Kijk naar een periode die bij je bedrijf past: een drukke week zegt weinig als klanten maanden nadenken. Gebruik je beschikbare bezoekersgegevens én je ontvangen aanvragen. Tel telefoontjes of mails alleen mee als je die werkelijk kunt herleiden. Vul ontbrekende metingen niet in met aannames.",
           "Open vervolgens de pagina waarop mensen binnenkomen. Een bezoeker uit een zoekopdracht over reparaties verwacht een ander antwoord dan iemand die je bedrijfsnaam zoekt. Controleer of de pagina juist die vraag behandelt. Zonder bezoekersdata kun je de route wel beoordelen, maar nog niet zeggen hoeveel mensen erop afhaken."
         ]
       },
@@ -65,7 +65,7 @@ export const guides: Guide[] = [
         "heading": "Test de hele aanvraag",
         "paragraphs": [
           "Doorloop het formulier op je telefoon. Maak bewust een fout, herstel die en controleer of je tekst behouden blijft. Verstuur een herkenbare test en volg die tot in de echte ontvangst. Een groen vinkje in de browser is geen bewijs dat iemand de aanvraag heeft ontvangen.",
-          "Noteer een verbeterpunt, voer dat uit en controleer opnieuw onder vergelijkbare omstandigheden. De websitecheck helpt je bevindingen ordenen; hij vervangt geen bezoekersonderzoek."
+          "Noteer een verbeterpunt, voer dat uit en controleer opnieuw onder vergelijkbare omstandigheden. De websitecheck helpt je bevindingen ordenen. Hij vervangt geen bezoekersonderzoek."
         ],
         "checklist": [
           "Open op je telefoon de dienstenpagina waar een klant zou beginnen. Noteer de URL, datum en gebruikte browser.",
@@ -115,7 +115,7 @@ export const guides: Guide[] = [
           "rows": [
             [
               "Behouden",
-              "Aanbod en contactroute kloppen; alleen kleine details storen",
+              "Aanbod en contactroute kloppen. Alleen kleine details storen",
               "Werkende pagina’s en bestaande inhoud"
             ],
             [
@@ -125,7 +125,7 @@ export const guides: Guide[] = [
             ],
             [
               "Gefaseerd vernieuwen",
-              "Een belangrijk deel moet anders; de rest blijft bruikbaar",
+              "Een belangrijk deel moet anders. De rest blijft bruikbaar",
               "Samenhang, beheer en overgang tussen oud en nieuw"
             ],
             [
@@ -223,7 +223,7 @@ export const guides: Guide[] = [
         "heading": "Van klacht naar een bruikbare reparatie",
         "paragraphs": [
           "‘Mobiel is slecht’ is lastig op te lossen. ‘Op deze URL bedekt de vaste chatknop het verzenden zodra mijn toetsenbord openstaat’ kun je gericht reproduceren. Vermeld toestel, browser en stappen, zonder privé-invoer op een screenshot.",
-          "Controleer de reparatie met dezelfde stappen en kijk daarna of het menu en omliggende onderdelen nog werken. De websitecheck combineert je eigen bevindingen met een technische labmeting; een labmeting beoordeelt niet de volledige ervaring van jouw bezoekers."
+          "Controleer de reparatie met dezelfde stappen en kijk daarna of het menu en omliggende onderdelen nog werken. De websitecheck combineert je eigen bevindingen met een technische labmeting. Een labmeting beoordeelt niet de volledige ervaring van jouw bezoekers."
         ]
       }
     ],
@@ -293,7 +293,7 @@ export const guides: Guide[] = [
         "heading": "Vergelijk het hele voorstel",
         "paragraphs": [
           "Zet bouw, hosting, inhoud, aanvullende software en later werk los van elkaar. Bij Sitesnit betaal je 60% voor de start en 40% bij afronding van de afgesproken opdracht. Bekijk bij de pakketten ook het eerste hostingjaar.",
-          "Gebruik de prijscheck voor je wensen en de kostenpagina voor de actuele pakketbedragen. Bewaar het voorstel met de afgesproken scope; een uitkomst van een verkennende tool is geen bestelling."
+          "Gebruik de prijscheck voor je wensen en de kostenpagina voor de actuele pakketbedragen. Bewaar het voorstel met de afgesproken scope. Een uitkomst van een verkennende tool is geen bestelling."
         ]
       }
     ],
@@ -323,7 +323,7 @@ export const guides: Guide[] = [
         "heading": "Hosting is niet hetzelfde als onderhoud",
         "paragraphs": [
           "Hosting houdt de website beschikbaar op een server. Technisch onderhoud is het werk aan bijvoorbeeld updates of een storing. Nieuwe teksten en campagnes zijn weer ander werk. Een maandbedrag kan meerdere zaken bevatten, maar dat moet dan wel worden uitgelegd.",
-          "Bij een nieuwe Sitesnit-website hoort hosting met een eerste looptijd van twaalf maanden. Daarna loopt hosting door en is deze maandelijks opzegbaar. De actuele minimumbedragen staan hieronder; inhoud en technisch onderhoud kies je afzonderlijk."
+          "Bij een nieuwe Sitesnit-website hoort hosting met een eerste looptijd van twaalf maanden. Daarna loopt hosting door en is deze maandelijks opzegbaar. De actuele minimumbedragen staan hieronder. Inhoud en technisch onderhoud kies je afzonderlijk."
         ]
       },
       {
@@ -367,7 +367,7 @@ export const guides: Guide[] = [
         "heading": "Vergelijk ook de verplichting",
         "paragraphs": [
           "Een bedrag per maand kan voor een heel jaar worden gefactureerd. Noteer daarom betaalritme én contractduur. Kijk verder dan een tijdelijk actietarief en vraag wat daarna geldt.",
-          "Een gratis scan is geen onderhoudscontract. Een rapport beschrijft mogelijke problemen; het uitvoeren en controleren van herstel is werk. Neem die posten niet dubbel op als ze al in een duidelijke afspraak zijn opgenomen.",
+          "Een gratis scan is geen onderhoudscontract. Een rapport beschrijft mogelijke problemen. Het uitvoeren en controleren van herstel is werk. Neem die posten niet dubbel op als ze al in een duidelijke afspraak zijn opgenomen.",
           "Rekenvoorbeeld met fictieve voorwaarden, geen Sitesnit-aanbod: bevat een bouwprijs al twaalf maanden hosting, dan blijven bij een vergelijking over 36 maanden nog 24 verlengmaanden over. Is het verlengtarief onbekend, dan blijft ook het volledige totaal onbekend. Tel de inbegrepen twaalf maanden niet nogmaals op en behandel de ontbrekende vervolgprijs niet als nul."
         ]
       }
@@ -440,6 +440,7 @@ export const guides: Guide[] = [
           "Welke wijzigingen, storingen of externe licenties vallen erbuiten?",
           "Hoe krijg ik terugkoppeling en hoe regelen we overdracht bij stoppen?"
         ],
+        "links": [{"phrase": "SEO-onderhoud", "href": "/diensten/seo-onderhoud"}],
         "paragraphs": [
           "Voor doorlopende vindbaarheidsverbeteringen kun je SEO-onderhoud bespreken. Voor algemene hosting en technisch beheer zijn er bestaande onderhoudspakketten op de hostingpagina. We bekijken eerst wat daarin al is opgenomen, zodat een losse opdracht niet hetzelfde werk opnieuw rekent. Een bestaande website nemen we pas over nadat de technische staat en toegang zijn beoordeeld."
         ]
@@ -494,9 +495,9 @@ export const guides: Guide[] = [
           "Voorbeeld ter voorbereiding, geen bestaande klantopdracht: een zelfstandig meubelmaker wil aanvragen voor kasten op maat ontvangen. De website moet bezoekers helpen het passende type kast te herkennen en een kennismaking aan te vragen."
         ],
         "checklist": [
-          "Pagina’s: een introductie, het aanbod, enkele projecten, de werkwijze en contact; de precieze indeling staat nog open.",
+          "Pagina’s: een introductie, het aanbod, enkele projecten, de werkwijze en contact. De precieze indeling staat nog open.",
           "Functies: een contactformulier met ruimte voor afmetingen en een korte vraag. Online bestellen is niet nodig.",
-          "Materiaal: eigen projectfoto’s en een bestaand logo zijn beschikbaar; de teksten moeten nog worden uitgewerkt.",
+          "Materiaal: eigen projectfoto’s en een bestaand logo zijn beschikbaar. De teksten moeten nog worden uitgewerkt.",
           "Planning en budget: beide nog te bespreken. Eerst duidelijk maken wat in de eerste versie past.",
           "Behouden: het huidige domein en de adressen van bestaande projectpagina’s waar dat mogelijk is."
         ]
@@ -576,6 +577,7 @@ export const guides: Guide[] = [
       },
       {
         "heading": "Leg onzekerheden terug bij de aanbieder",
+        "links": [{"phrase": "offertevergelijker", "href": "/tools/website-offerte-vergelijken"}],
         "paragraphs": [
           "Stuur een korte lijst van ontbrekende punten naar iedere aanbieder. Vraag hetzelfde, zodat een aanvulling vergelijkbaar blijft. Bewaar de versie waarop je besluit is gebaseerd.",
           "De offertevergelijker helpt bedragen en afspraken naast elkaar zetten. Hij kiest geen winnaar en voorspelt niet welke aanbieder het beste werk levert. Bekijk ook passend werk en hoe duidelijk iemand je inhoudelijke vragen beantwoordt.",
@@ -674,7 +676,7 @@ export const guides: Guide[] = [
     "service": "/diensten/ai-koppelingen",
     "audience": "Bedrijven die aanvragen in een CRM willen verwerken",
     "outcome": "Een controleerbare gegevensstroom beschrijven met fouten en eigenaarschap.",
-    "unique": "Veldmapping en fout-/retryroute; geen belofte dat elk CRM koppelbaar is.",
+    "unique": "Veldmapping en fout-/retryroute. Geen belofte dat elk CRM koppelbaar is.",
     "intro": "Een formulier doorsturen is de eerste stap. De echte vraag is of de juiste aanvraag bij het juiste contact en de juiste medewerker terechtkomt, ook als een systeem even niet bereikbaar is.",
     "sections": [
       {
@@ -689,7 +691,7 @@ export const guides: Guide[] = [
             [
               "E-mailadres",
               "Contact.email",
-              "Formaat controleren; niet blind als unieke persoon behandelen"
+              "Formaat controleren. Niet blind als unieke persoon behandelen"
             ],
             [
               "Bedrijfsnaam",
@@ -704,7 +706,7 @@ export const guides: Guide[] = [
             [
               "Toelichting",
               "Aanvraag.omschrijving",
-              "Lengte begrenzen; gevoelige informatie beperken"
+              "Lengte begrenzen. Gevoelige informatie beperken"
             ],
             [
               "Marketingkeuze",
@@ -790,7 +792,7 @@ export const guides: Guide[] = [
         "heading": "Beschikbaarheid is meer dan een agenda",
         "paragraphs": [
           "Leg afspraakduur, voorbereidingstijd, buffers en uitzonderingsdagen vast. Geef de tijdzone duidelijk aan als bezoekers buiten Nederland kunnen zitten. Houd rekening met zomer- en wintertijd in plaats van tijden alleen als losse tekst te bewaren.",
-          "Twee bezoekers kunnen hetzelfde slot tegelijk kiezen. De server moet bepalen wie werkelijk reserveert; een knop die in een browser verdwijnt voorkomt geen dubbele boeking."
+          "Twee bezoekers kunnen hetzelfde slot tegelijk kiezen. De server moet bepalen wie werkelijk reserveert. Een knop die in een browser verdwijnt voorkomt geen dubbele boeking."
         ]
       },
       {
@@ -832,7 +834,7 @@ export const guides: Guide[] = [
     "audience": "Bedrijven die hun pagina-indeling voorbereiden",
     "outcome": "Een sitemap maken met een duidelijke taak per pagina.",
     "unique": "Drie verschillende sitetrees plus criteria voor splitsen en samenvoegen.",
-    "intro": "Een menu is geen lijst van alles wat je bedrijf weet. Het helpt je bezoeker de juiste uitleg, een passend voorbeeld en een volgende stap vinden. Begin met die taken; de vormgeving komt daarna.",
+    "intro": "Een menu is geen lijst van alles wat je bedrijf weet. Het helpt je bezoeker de juiste uitleg, een passend voorbeeld en een volgende stap vinden. Begin met die taken. De vormgeving komt daarna.",
     "sections": [
       {
         "heading": "Drie bedrijven hebben niet dezelfde indeling nodig",
@@ -868,7 +870,7 @@ export const guides: Guide[] = [
         "heading": "Wanneer splits je een pagina?",
         "paragraphs": [
           "Splits wanneer bezoekers andere informatie nodig hebben om te kiezen. Twee diensten met een andere doelgroep, aanpak of vervolgstap verdienen vaak een eigen plek. Alleen een andere zoekterm of plaatsnaam is geen inhoudelijk verschil.",
-          "Voeg samen als pagina’s dezelfde uitleg geven en bezoekers moeten raden welke ze nodig hebben. Houd belangrijke bestaande URLs bij een verandering in het oog; een menu aanpassen is niet hetzelfde als een adres veilig verhuizen."
+          "Voeg samen als pagina’s dezelfde uitleg geven en bezoekers moeten raden welke ze nodig hebben. Houd belangrijke bestaande URLs bij een verandering in het oog. Een menu aanpassen is niet hetzelfde als een adres veilig verhuizen."
         ]
       },
       {
@@ -886,8 +888,9 @@ export const guides: Guide[] = [
       },
       {
         "heading": "Structuur en ontwerp versterken elkaar",
+        "links": [{"phrase": "Beurswijzer-case", "href": "/projecten/beurswijzer"}],
         "paragraphs": [
-          "Een paginastructuur beschrijft wat waar hoort. Het ontwerp bepaalt hoe tekst, beeld en actie zichtbaar worden. Gebruik het ontwerpvoorbeeld om voorkeuren te onderzoeken; beoordeel het niet als een kant-en-klare website.",
+          "Een paginastructuur beschrijft wat waar hoort. Het ontwerp bepaalt hoe tekst, beeld en actie zichtbaar worden. Gebruik het ontwerpvoorbeeld om voorkeuren te onderzoeken. Beoordeel het niet als een kant-en-klare website.",
           "De Beurswijzer-case laat zien hoe uitleg en rekentools binnen een platform samenkomen. Gebruik de keuzes als inspiratie, niet als reden om dezelfde indeling voor ieder bedrijf te kopiëren."
         ]
       }
@@ -959,7 +962,7 @@ export const guides: Guide[] = [
         "heading": "Van voorbeeld naar jouw richting",
         "paragraphs": [
           "In Ontwerp je website kies je inhoud, stijl en kleuren en bekijk je een bewerkbaar voorbeeld. Dat is een gespreksstart, geen gratis opgeleverde website. De uiteindelijke pagina’s en functies worden voor jouw opdracht uitgewerkt.",
-          "De gelinkte Beurswijzer- en Beurswatcher-cases laten bestaande uitwerkingen zien. De schematische beelden op deze uitlegpagina zijn herkenbaar als illustratie gelabeld. Gebruik de cases om ontwerpkeuzes te beoordelen; ze tonen geen gemeten conversiewinst."
+          "De gelinkte Beurswijzer- en Beurswatcher-cases laten bestaande uitwerkingen zien. De schematische beelden op deze uitlegpagina zijn herkenbaar als illustratie gelabeld. Gebruik de cases om ontwerpkeuzes te beoordelen. Ze tonen geen gemeten conversiewinst."
         ]
       }
     ],
@@ -988,7 +991,7 @@ export const guides: Guide[] = [
         "heading": "Begin met toegang en bestemming",
         "paragraphs": [
           "Controleer eerst of de bedoelde publieke pagina bereikbaar is en de juiste inhoud geeft. Kijk vervolgens naar indexeringsinstructies en de gekozen voorkeurs-URL. Een bewust afgeschermde testomgeving hoeft juist niet in zoekresultaten te staan.",
-          "Een noindex-instructie is dus niet overal een fout. Bij een publiek toegankelijke pagina moet een crawler de instructie kunnen lezen. Noindex is geen toegangsbeveiliging: privé- en klantomgevingen blijven achter een echte login. Een technische scan kent niet altijd de bedoeling van een pagina; dat vraagt beoordeling."
+          "Een noindex-instructie is dus niet overal een fout. Bij een publiek toegankelijke pagina moet een crawler de instructie kunnen lezen. Noindex is geen toegangsbeveiliging: privé- en klantomgevingen blijven achter een echte login. Een technische scan kent niet altijd de bedoeling van een pagina. Dat vraagt beoordeling."
         ]
       },
       {
@@ -1034,7 +1037,7 @@ export const guides: Guide[] = [
         "heading": "Een vragencheck en een audit vullen elkaar aan",
         "paragraphs": [
           "De websitecheck combineert jouw inhoudelijke antwoorden met een mobiele Lighthouse-meting van de opgegeven pagina. Dat is geen crawl van je hele website en geen volledige beoordeling van vindbaarheid.",
-          "Gebruik de lijst hieronder zelfstandig of neem concrete bevindingen mee naar een gesprek over SEO-optimalisatie. Voor teksten, doelgroep en bewijs blijft inhoudelijk werk nodig; een technische score kan dat niet overnemen."
+          "Gebruik de lijst hieronder zelfstandig of neem concrete bevindingen mee naar een gesprek over SEO-optimalisatie. Voor teksten, doelgroep en bewijs blijft inhoudelijk werk nodig. Een technische score kan dat niet overnemen."
         ]
       }
     ],
@@ -1126,11 +1129,11 @@ export const guides: Guide[] = [
     "title": "Website­snelheid testen: begrijp wat je meet",
     "description": "Lees een mobiele Lighthouse-meting met de juiste context. Ontdek het verschil tussen labdata en echte bezoekersdata en controleer verbeteringen eerlijk.",
     "group": "seo-audit",
-    "tool": "/tools/seo-audit",
+    "tool": "/tools/snelheidstest",
     "service": "/diensten/seo-optimalisatie",
     "audience": "Ondernemers met een trage website of onduidelijke score",
     "outcome": "Een snelheidsresultaat correct interpreteren en een gerichte vervolgmeting kiezen.",
-    "unique": "Gelabeld labvoorbeeld; geen tweede scanner of extra scanquota.",
+    "unique": "Meetplan met gelabeld labvoorbeeld en verwijzing naar de losse snelheidstest.",
     "intro": "Een snelheidsscore is een samenvatting van een test, geen verklaring van iedere vertraging. Kijk naar de onderzochte pagina, omstandigheden en onderliggende bevindingen voordat je iets aanpast.",
     "sections": [
       {
@@ -1167,7 +1170,7 @@ export const guides: Guide[] = [
         "heading": "Voorbeeld: zoek de oorzaak niet alleen in het cijfer",
         "paragraphs": [
           "Fictief leesvoorbeeld, geen scan van jouw website: een rapport toont een trage weergave van het grootste element. Dat zegt nog niet dat je foto’s de oorzaak zijn. Het betreffende element en de bijbehorende audits kunnen bijvoorbeeld wijzen op late ontdekking van het beeld of wachten op andere bestanden.",
-          "Begin bij de vastgestelde audit. Leg vast wat je wijzigt en waarom. Een kleinere afbeelding helpt niet bij iedere vertraging; het weghalen van noodzakelijke inhoud om een score te verhogen kan de pagina minder bruikbaar maken."
+          "Begin bij de vastgestelde audit. Leg vast wat je wijzigt en waarom. Een kleinere afbeelding helpt niet bij iedere vertraging. Het weghalen van noodzakelijke inhoud om een score te verhogen kan de pagina minder bruikbaar maken."
         ]
       },
       {
@@ -1184,9 +1187,10 @@ export const guides: Guide[] = [
       },
       {
         "heading": "Je website bij Sitesnit laten bekijken",
+        "links": [{"phrase":"Sitesnit-snelheidstest","href":"/tools/snelheidstest"}],
         "paragraphs": [
           "De gratis technische SEO-audit onderzoekt een begrensde HTML-steekproef en kan die aanvullen met een mobiele Lighthouse-meting van je startpagina. In het resultaat zie je welke pagina’s zijn onderzocht en welke meting wel of niet is afgerond. Een snelheidsbevinding op je startpagina geldt niet automatisch voor alle andere pagina’s.",
-          "Wil je ook je boodschap en route naar contact beoordelen, dan helpt de Websitecheck met inhoudelijke vragen en een aanvullende meting van één pagina. Voor een losse snelheidsmeting kun je rechtstreeks Google PageSpeed Insights gebruiken. Deze hulpmiddelen geven geen volledige browseranalyse van je hele website."
+          "Wil je ook je boodschap en route naar contact beoordelen, dan helpt de Websitecheck met inhoudelijke vragen en een aanvullende meting van één pagina. Met de Sitesnit-snelheidstest meet je één pagina op mobiel of desktop en bekijk je het resultaat hier. Deze hulpmiddelen geven geen volledige browseranalyse van je hele website."
         ]
       }
     ],
@@ -1295,14 +1299,14 @@ export const guides: Guide[] = [
     "service": "/diensten/webdesign",
     "audience": "Bedrijven die website, domein of platform veranderen",
     "outcome": "Een uitvoerbare verhuislijst met oude en nieuwe bestemmingen maken.",
-    "unique": "Driefasenplan plus downloadbare URL-mapping; geen schijn-acceptatiescan.",
+    "unique": "Driefasenplan plus downloadbare URL-mapping. Geen schijn-acceptatiescan.",
     "intro": "Een nieuw ontwerp kan klaar zijn terwijl de verhuizing nog niet goed is voorbereid. Bezoekers, zoekmachines, formulieren en koppelingen moeten hun weg naar de juiste nieuwe bestemming vinden.",
     "widget": "migration",
     "sections": [
       {
         "heading": "Voor de overstap: maak de bestemming expliciet",
         "paragraphs": [
-          "Verzamel bestaande pagina’s, belangrijke bestanden en bekende verwijzingen. Noteer per adres of de inhoud blijft, verhuist, wordt samengevoegd of bewust verdwijnt. Bewaar ook relevante teksten en meetinstellingen; een screenshot van de homepage is geen volledige inventaris.",
+          "Verzamel bestaande pagina’s, belangrijke bestanden en bekende verwijzingen. Noteer per adres of de inhoud blijft, verhuist, wordt samengevoegd of bewust verdwijnt. Bewaar ook relevante teksten en meetinstellingen. Een screenshot van de homepage is geen volledige inventaris.",
           "Test de nieuwe site in een afgeschermde omgeving. Leg vast hoe die afscherming bij livegang wordt gewijzigd, zonder de testomgeving zelf openbaar te maken. Controleer formulieren met eigen testgegevens."
         ]
       },
@@ -1330,7 +1334,7 @@ export const guides: Guide[] = [
       {
         "heading": "Wat een checklist niet kan aftekenen",
         "paragraphs": [
-          "Deze lijst organiseert het werk; hij voert geen automatische acceptatietest of juridische controle uit. De websitecheck kan aanvullend een pagina technisch meten en je inhoudelijke aandachtspunten ordenen.",
+          "Deze lijst organiseert het werk. Hij voert geen automatische acceptatietest of juridische controle uit. De websitecheck kan aanvullend een pagina technisch meten en je inhoudelijke aandachtspunten ordenen.",
           "Bij een Sitesnit-opdracht spreken we af welke inhoud, functies en adressen bij de migratie horen. Geef in je aanvraag aan of het domein blijft en welke bestaande functies absoluut moeten blijven werken."
         ]
       }

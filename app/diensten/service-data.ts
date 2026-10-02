@@ -35,11 +35,11 @@ export const services: Service[] = [
     "methods": [
       [
         "Een duidelijk verhaal",
-        "We ordenen je aanbod en bepalen de route door je website: van een heldere introductie naar diensten, voorbeelden en contact. Bestaande teksten gebruiken we waar ze goed werken; nieuwe copy stemmen we apart af."
+        "We ordenen je aanbod en bepalen de route door je website: van een heldere introductie naar diensten, voorbeelden en contact. Bestaande teksten gebruiken we waar ze goed werken. Nieuwe copy stemmen we apart af."
       ],
       [
         "Een herkenbaar merk",
-        "Logo, kleurenpalet en typografie vormen een geheel. Heb je nog geen huisstijl, dan kunnen we die ontwikkelen. Voor eigen bedrijfsfoto’s en video werken we met een externe partner; opdracht en kosten stemmen we vooraf af."
+        "Logo, kleurenpalet en typografie vormen een geheel. Heb je nog geen huisstijl, dan kunnen we die ontwikkelen. Voor eigen bedrijfsfoto’s en video werken we met een externe partner. Opdracht en kosten stemmen we vooraf af."
       ],
       [
         "Mobiel als vertrekpunt",
@@ -151,7 +151,7 @@ export const services: Service[] = [
     "faqs": [
       [
         "Valt een webshop onder de vijfpaginawebsite?",
-        "Een webshop vraagt om product-, bestel- en betaalfuncties. Daarom bepalen we de scope en investering afzonderlijk; het aantal gewone pagina’s alleen zegt te weinig."
+        "Een webshop vraagt om product-, bestel- en betaalfuncties. Daarom bepalen we de scope en investering afzonderlijk. Het aantal gewone pagina’s alleen zegt te weinig."
       ],
       [
         "Kunnen productteksten en beelden worden verzorgd?",
@@ -259,11 +259,11 @@ export const services: Service[] = [
     ],
     "introTitle": "Welke hulp past",
     "introAccent": "bij jouw website?",
-    "intro": "Kies een eenmalige verbetering, doorlopend onderhoud, nieuwe inhoud of eerst een technische controle. Je kunt ook direct je situatie bespreken. Monitoring geeft inzicht in beschikbare cijfers; social media brengt je verhaal naar andere kanalen. Die diensten zijn afzonderlijk van het herstelwerk.",
+    "intro": "Kies een eenmalige verbetering, doorlopend onderhoud, nieuwe inhoud of eerst een technische controle. Je kunt ook direct je situatie bespreken. Monitoring geeft inzicht in beschikbare cijfers. Social media brengt je verhaal naar andere kanalen. Die diensten zijn afzonderlijk van het herstelwerk.",
     "methods": [
       [
         "Onderwerpen en zoekintentie",
-        "We bepalen welke vragen bij jouw diensten passen en welke pagina daarop antwoord geeft. Een dienst, een praktisch blog en een case hebben elk hun eigen rol; we voorkomen dat ze allemaal hetzelfde vertellen."
+        "We bepalen welke vragen bij jouw diensten passen en welke pagina daarop antwoord geeft. Een dienst, een praktisch blog en een case hebben elk hun eigen rol. We voorkomen dat ze allemaal hetzelfde vertellen."
       ],
       [
         "Pagina’s die inhoud hebben",
@@ -327,7 +327,7 @@ export const services: Service[] = [
     "group": "Vindbaar & zichtbaar",
     "title": "Webteksten en blogs.",
     "accent": "Vanuit jouw vakkennis.",
-    "summary": "Je weet veel over je werk, maar dat staat niet vanzelf duidelijk op je website. Ik werk je aanbod en klantvragen uit tot webteksten of artikelen. Je levert de inhoudelijke basis; we spreken af welke tekst ik uitwerk en wanneer je die controleert.",
+    "summary": "Je weet veel over je werk, maar dat staat niet vanzelf duidelijk op je website. Ik werk je aanbod en klantvragen uit tot webteksten of artikelen. Je levert de inhoudelijke basis. We spreken af welke tekst ik uitwerk en wanneer je die controleert.",
     "tags": [
       "2 of 4 blogs per maand",
       "Copywriting",
@@ -335,7 +335,7 @@ export const services: Service[] = [
     ],
     "introTitle": "Jij runt je bedrijf.",
     "introAccent": "Ik werk je verhaal uit.",
-    "intro": "Je hoeft niet iedere week naar een leeg document te kijken. Samen bepalen we je aanbod, onderwerpen en toon. Daarna werken we vanuit een contentplanning. Jouw kennis gebruiken we voor de inhoud; schrijven, structureren en plaatsen kun je uit handen geven.",
+    "intro": "Je hoeft niet iedere week naar een leeg document te kijken. Samen bepalen we je aanbod, onderwerpen en toon. Daarna werken we vanuit een contentplanning. Jouw kennis gebruiken we voor de inhoud. Schrijven, structureren en plaatsen kun je uit handen geven.",
     "methods": [
       [
         "Onderwerpen kiezen",
@@ -343,7 +343,7 @@ export const services: Service[] = [
       ],
       [
         "Jouw kennis ophalen",
-        "Jij levert de feiten, klantvragen en voorbeelden die het werk concreet maken. Ik vraag door op de aanpak, keuzes en grenzen van je aanbod. Bestaande teksten en bronnen nemen we mee als ze nog kloppen; ontbrekende informatie vullen we niet met een verzonnen klantverhaal."
+        "Jij levert de feiten, klantvragen en voorbeelden die het werk concreet maken. Ik vraag door op de aanpak, keuzes en grenzen van je aanbod. Bestaande teksten en bronnen nemen we mee als ze nog kloppen. Ontbrekende informatie vullen we niet met een verzonnen klantverhaal."
       ],
       [
         "Schrijven en inhoudelijk controleren",
@@ -419,7 +419,7 @@ export const services: Service[] = [
       ],
       [
         "Content en formats maken",
-        "We maken dezelfde basiscontent passend voor je gekozen platforms: tekst, beeldselectie en vorm sluiten aan op je merk en het kanaal. Eigen foto’s en video geven het verhaal inhoud; aanvullende productie via een externe partner stemmen we apart af."
+        "We maken dezelfde basiscontent passend voor je gekozen platforms: tekst, beeldselectie en vorm sluiten aan op je merk en het kanaal. Eigen foto’s en video geven het verhaal inhoud. Aanvullende productie via een externe partner stemmen we apart af."
       ],
       [
         "Een overzichtelijke planning",
@@ -503,7 +503,7 @@ export const services: Service[] = [
       ],
       [
         "Inhoud actueel houden",
-        "Met Hosting, onderhoud & SEO verbeteren we doorlopend de SEO-basis. We scherpen bestaande teksten aan en werken de code waar nodig bij, zodat je website technisch en inhoudelijk actueel blijft. Nieuwe blogartikelen kies je apart; ze krijgen eigen onderwerpen, onderzoek en publicatie."
+        "Met Hosting, onderhoud & SEO verbeteren we doorlopend de SEO-basis. We scherpen bestaande teksten aan en werken de code waar nodig bij, zodat je website technisch en inhoudelijk actueel blijft. Nieuwe blogartikelen kies je apart. Ze krijgen eigen onderwerpen, onderzoek en publicatie."
       ],
       [
         "Duidelijke maandafspraken",
@@ -539,7 +539,7 @@ export const services: Service[] = [
       ],
       [
         "Wat is de maandprijs?",
-        "Hosting begint bij €5 exclusief btw (€6,05 inclusief btw) per maand. Hosting met onderhoud kost €29,99 exclusief btw (€36,29 inclusief btw); met onderhoud en SEO €69,99 exclusief btw (€84,69 inclusief btw). Hosting heeft een eerste looptijd van twaalf maanden en is daarna maandelijks opzegbaar. Nieuwe blogs en socialmediacontent zijn aparte pakketten."
+        "Hosting begint bij €5 exclusief btw (€6,05 inclusief btw) per maand. Hosting met onderhoud kost €29,99 exclusief btw (€36,29 inclusief btw). Met onderhoud en SEO €69,99 exclusief btw (€84,69 inclusief btw). Hosting heeft een eerste looptijd van twaalf maanden en is daarna maandelijks opzegbaar. Nieuwe blogs en socialmediacontent zijn aparte pakketten."
       ],
       [
         "Is alles onbeperkt inbegrepen?",
@@ -591,7 +591,7 @@ export const services: Service[] = [
     "options": [
       [
         "Interactieve rekentools",
-        "Zoals Beurswatcher: inleg, looptijd, rendement en inflatie worden doorgerekend naar een grafiek. Vaste rekenregels bepalen de cijfers; een eventuele AI-uitleg gebruikt die gecontroleerde uitkomst.",
+        "Zoals Beurswatcher: inleg, looptijd, rendement en inflatie worden doorgerekend naar een grafiek. Vaste rekenregels bepalen de cijfers. Een eventuele AI-uitleg gebruikt die gecontroleerde uitkomst.",
         "Bekijk de Beurswatcher-case",
         "/projecten/beurswatcher"
       ],

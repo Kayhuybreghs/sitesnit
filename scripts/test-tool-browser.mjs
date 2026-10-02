@@ -1,15 +1,14 @@
+import {browserType,launchOptions,browserLabel} from './browser-runtime.mjs';
 /** Loopback-only UI fixtures. No real contact request, audit, Lighthouse call or analytics event leaves the browser. */
 import assert from 'node:assert/strict';
-import {createRequire} from 'node:module';
 import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {websiteQuestions, priceQuestions} from '../lib/questions.ts';
 import {exampleAudit} from '../lib/seo-audit/example.ts';
-const require = createRequire(import.meta.url);
-const {chromium} = require('C:/Users/Gebruiker/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+
 const base = new URL(process.argv[2] || 'http://127.0.0.1:5189');
 if (base.protocol !== 'http:' || !['127.0.0.1', 'localhost'].includes(base.hostname)) throw Error('Loopback HTTP only.');
-const output = resolve('reports/improvement/tool-flows');
+const output = resolve((process.env.BROWSER_REPORT_ROOT || 'reports/improvement') + '/tool-flows');
 mkdirSync(output, {recursive: true});
 const only = process.argv.find(value => value.startsWith('--only='))?.slice(7);
 const selectedWidth = process.argv.find(value => value.startsWith('--width='))?.slice(8);
@@ -18,12 +17,12 @@ if (only && !names.includes(only)) throw Error('Unknown --only tool name.');
 if (selectedWidth && !['1440', '390'].includes(selectedWidth)) throw Error('--width must be 1440 or 390.');
 const widths = selectedWidth ? [Number(selectedWidth)] : [1440, 390];
 const reportName = `browser-regression${only ? '-' + only : ''}${selectedWidth ? '-' + selectedWidth : ''}.json`;
-const report = {status: 'not-completed', startedAt: new Date().toISOString(), origin: base.origin, browser: 'Headless Microsoft Edge via Playwright', widths, only: only || null, checks: [], errors: [], limitations: ['All scan/contact/event APIs are fixtures. No external scans, mail, database writes or production requests.', 'Selected viewport emulation: desktop 1440×1000 and/or mobile 390×844; no physical phone, Safari or assistive-technology session.']};
+const report = {status: 'not-completed', startedAt: new Date().toISOString(), origin: base.origin, browser: browserLabel, widths, only: only || null, checks: [], errors: [], limitations: ['All scan/contact/event APIs are fixtures. No external scans, mail, database writes or production requests.', 'Selected viewport emulation: desktop 1440×1000 and/or mobile 390×844; no physical phone, Safari or assistive-technology session.']};
 report.buildId=readFileSync('.next/BUILD_ID','utf8').trim();
 writeFileSync(resolve(output, reportName), JSON.stringify(report, null, 2) + '\n');
 const lab = {requestedUrl: 'https://example.com/', finalUrl: 'https://example.com/', fetchTime: '2026-09-27T12:00:00Z', version: 'fixture', categories: ['performance', 'accessibility', 'best-practices', 'seo'].map(id => ({id, title: `Fixture ${id}`, score: 80})), metrics: [{id: 'largest-contentful-paint', title: 'Fixture LCP', displayValue: '2,0 s', score: .8}], findings: [], passed: [], audits: [], warnings: ['Geïsoleerde browserfixture, geen uitgevoerde scan.']};
 const audit = {...structuredClone(exampleAudit), version: 2, lab: null, labError: 'Fixture: mobiele labtest niet beschikbaar.', labChecks: [], pages: exampleAudit.pages.map((page, index) => ({...page, detailedChecks: [{id: 'http', title: 'HTTP-respons', category: 'Bereikbaarheid', source: 'HTML', state: index === 2 ? 'failed' : 'passed', weight: 3, evidence: `Fixture HTTP ${page.status}`, action: 'Controleer deze fictieve status.'}]}))};
-const browser = await chromium.launch({headless: true, executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const browser = await browserType.launch(launchOptions);
 
 async function fixture(width) {
   const context = await browser.newContext({viewport: {width, height: width === 390 ? 844 : 1000}, acceptDownloads: true, reducedMotion: 'reduce'});

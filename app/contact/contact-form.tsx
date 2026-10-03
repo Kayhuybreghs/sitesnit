@@ -202,7 +202,9 @@ export default function ContactForm({
       });
       const body = (await response.json()) as {ok?:boolean;error?:string;id?:string;reference?:string;mail?:{confirmation?:string};localOnly?:boolean};
       if (!response.ok || !body.ok || body.id!==payload.requestId || !body.reference){
-        if([400,403,413,429].includes(response.status)){
+        // A rejected retry cannot disprove storage of an earlier unanswered attempt.
+        // Only a first, definitely rejected submission may become editable again.
+        if(!pending&&[400,403,413,429].includes(response.status)){
           setPending(null);try{sessionStorage.removeItem(pendingKey());}catch{}
         }
         throw new Error(body.error ?? "Je aanvraag is niet verzonden.");

@@ -9,6 +9,33 @@ export const metadata = withPageMetadata({}, '/diensten/website-monitoring');
 function HubDemo() {
   return <div className="hub-demo-window" aria-label="Fictief voorbeeld van Sitesnit Hub"><header><strong>sitesnit / hub</strong><span className="hub-badge is-warning">Fictieve demo</span></header><p>Zo kunnen cijfers en werkzaamheden naast elkaar staan.</p><div className="hub-demo-numbers"><div><span>Voorbeeld · GA4-gebruikers</span><strong>248</strong><span>Afzonderlijk periodetotaal</span></div><div><span>Voorbeeld · Google-klikken</span><strong>73</strong><span>Search Console-totaal</span></div><div><span>Voorbeeld · uitgevoerde taken</span><strong>3</strong><span>Vastgelegd werk</span></div></div><div className="hub-demo-line"><i aria-hidden="true"/><span><strong>Bron en periode blijven zichtbaar.</strong><br/>Een ontbrekende koppeling krijgt een eigen melding.</span></div><p className="hub-demo-disclaimer">Alle getallen zijn verzonnen om de indeling te laten zien. Geen echte klantdata, live koppeling of toegezegd resultaat.</p></div>;
 }
+const monitoringQuestions:{question:string;answer:string;link?:{label:string;href:string}}[] = [
+  {
+    "question": "Kan ik zomaar een website toevoegen?",
+    "answer": "De Hub is een klantomgeving op uitnodiging. We koppelen toegang aan de website waarvoor je bevoegd bent. Alleen een domeinnaam invullen of een gratis check uitvoeren geeft geen toegang tot een klantdossier."
+  },
+  {
+    "question": "Is dit een volledige SEO-audit?",
+    "answer": "Nee. De Hub brengt beschikbare bronnen en werkzaamheden bij elkaar. Voor een eerste controle van technische SEO-signalen kun je de gratis SEO-audit gebruiken. Dat is geen volledige menselijke SEO-analyse. Onderzoek en herstel spreken we afzonderlijk af.",
+    "link": {
+      "label": "Controleer je technische SEO",
+      "href": "/tools/seo-audit"
+    }
+  },
+  {
+    "question": "Zijn bezoekers, klikken en aanvragen hetzelfde?",
+    "answer": "Nee. Een bezoeker kan meerdere sessies en handelingen hebben. Search Console meet klikken vanuit Google. Een klik op contact of een tooluitkomst bewijst niet dat er een aanvraag is ontvangen. We houden die begrippen uit elkaar."
+  },
+  {
+    "question": "Wordt alles automatisch opgelost?",
+    "answer": "Een meting kan aanleiding geven om iets te onderzoeken. Herstel, inhoudswerk en nieuwe functies worden uitgevoerd binnen een afgesproken opdracht. Het werklog laat vastgelegde acties zien, geen automatisch gegenereerde beloften."
+  },
+  {
+    "question": "Wat als ik nog geen Analytics of Search Console gebruik?",
+    "answer": "Dan kijken we eerst wat er aanwezig is en welke inrichting past. Zonder gekoppelde bron wordt dat onderdeel als niet beschikbaar getoond. Analytics-metingen op de Sitesnit-website starten alleen na expliciete toestemming."
+  }
+];
+
 export default function WebsiteMonitoring() {
   const service = publicServicePages['/diensten/website-monitoring'];
   return <div className="hub-service"><Breadcrumbs items={[{name:'Home',path:'/'},{name:'Diensten',path:'/diensten'},{name:'Sitesnit Hub',path:'/diensten/website-monitoring'}]}/>
@@ -21,12 +48,6 @@ export default function WebsiteMonitoring() {
     ].map(([n,title,text,note])=><article key={n}><span>{n} / In je overzicht</span><h3>{title}</h3><p>{text}</p><p className="hub-note">{note}</p></article>)}</div></section>
     <section className="wrap hub-service-section hub-service-split"><div><Eyebrow>Van inzicht naar een volgende stap</Eyebrow><h2>Een signaal zien.<br/>Gericht iets verbeteren.</h2><p>Een dashboard laat zien wat de aangesloten bronnen melden. Het verklaart niet vanzelf waarom iets verandert en voert geen wijzigingen aan je website uit.</p><p>Wil je dat Sitesnit verbeteringen onderzoekt en uitvoert? Dan spreken we de werkzaamheden apart af. Bestaande hosting- en onderhoudsafspraken nemen we eerst mee, zodat hetzelfde werk niet dubbel wordt afgesproken.</p><div className="hub-service-actions"><a className="text-link" href="/diensten/seo-onderhoud">SEO-onderhoud bekijken <Arrow/></a><a className="text-link" href="/diensten/onderhoud-hosting">Hosting & onderhoud <Arrow/></a></div></div><ol className="hub-service-list"><li><b>01</b><div><strong>We bepalen wat je wilt weten.</strong><br/>Jouw website, vragen en beschikbare accounts vormen het vertrekpunt.</div></li><li><b>02</b><div><strong>De juiste bronnen krijgen toegang.</strong><br/>Alleen na toestemming en met passende rechten. Ontbrekende koppelingen blijven herkenbaar.</div></li><li><b>03</b><div><strong>Je bekijkt jouw eigen omgeving.</strong><br/>Je krijgt een uitnodiging voor de website waarvoor je toegang hebt. Een gratis toolresultaat geeft geen toegang tot klantgegevens.</div></li><li><b>04</b><div><strong>We maken het vervolg concreet.</strong><br/>Welke vraag vraagt onderzoek, welk werk staat al in je afspraak en wat bespreken we aanvullend?</div></li></ol></section>
     <section className="wrap hub-service-note"><Eyebrow>Helder over wat je ziet</Eyebrow><h2>Een bron ontbreekt?<br/>Dan zie je dat ook.</h2><p>Bij ieder onderdeel horen bron, meetperiode en ophaalmoment. Eerdere gegevens blijven als verouderd herkenbaar. Als een meting niet beschikbaar is, vullen we geen cijfers in om het overzicht compleet te laten lijken.</p><p>Sitesnit Hub is een aanvullende klantdienst tegen een maandbedrag. We spreken de prijs, inrichting en beschikbare koppelingen vooraf af. Onderzoek en herstelwerk spreken we afzonderlijk af. Er hoort geen onbeperkte monitoring of beschikbaarheidsgarantie bij.</p><a className="button" href="/contact?dienst=website-monitoring">Wat past bij jouw website? <Arrow/></a></section>
-    <section className="wrap hub-service-section"><Eyebrow>Goed om te weten</Eyebrow><h2>Over toegang, cijfers en onderhoud.</h2><div className="hub-service-faq">{[
-      ['Kan ik zomaar een website toevoegen?','De Hub is een klantomgeving op uitnodiging. We koppelen toegang aan de website waarvoor je bevoegd bent. Alleen een domeinnaam invullen of een gratis check uitvoeren geeft geen toegang tot een klantdossier.'],
-      ['Is dit een volledige SEO-audit?','Nee. De Hub brengt beschikbare bronnen en werkzaamheden bij elkaar. Een technische audit en het oplossen van bevindingen zijn afzonderlijke werkzaamheden. Wil je eerst zelf verkennen, dan kun je de websitecheck gebruiken.'],
-      ['Zijn bezoekers, klikken en aanvragen hetzelfde?','Nee. Een bezoeker kan meerdere sessies en handelingen hebben. Search Console meet klikken vanuit Google. Een klik op contact of een tooluitkomst bewijst niet dat er een aanvraag is ontvangen. We houden die begrippen uit elkaar.'],
-      ['Wordt alles automatisch opgelost?','Een meting kan aanleiding geven om iets te onderzoeken. Herstel, inhoudswerk en nieuwe functies worden uitgevoerd binnen een afgesproken opdracht. Het werklog laat vastgelegde acties zien, geen automatisch gegenereerde beloften.'],
-      ['Wat als ik nog geen Analytics of Search Console gebruik?','Dan kijken we eerst wat er aanwezig is en welke inrichting past. Zonder gekoppelde bron wordt dat onderdeel als niet beschikbaar getoond. Analytics-metingen op de Sitesnit-website starten alleen na expliciete toestemming.'],
-    ].map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div><div className="hub-service-actions"><a className="text-link" href="/tools/website-check">Eerst zelf je website bekijken <Arrow/></a><a className="text-link" href="/hub/login">Al uitgenodigd? Naar de Hub <Arrow/></a></div></section><Cta title="Meer zicht op je website." accent="Een duidelijker vervolg."/>
+    <section className="wrap hub-service-section"><Eyebrow>Goed om te weten</Eyebrow><h2>Over toegang, cijfers en onderhoud.</h2><div className="hub-service-faq">{monitoringQuestions.map(({question,answer,link})=><details key={question}><summary>{question}</summary><p>{answer}</p>{link&&<a className="text-link" href={link.href}>{link.label}<Arrow/></a>}</details>)}</div><div className="hub-service-actions"><a className="text-link" href="/tools/website-check">Beoordeel de duidelijkheid en het gebruik van je website <Arrow/></a><a className="text-link" href="/hub/login">Al uitgenodigd? Naar de Hub <Arrow/></a></div></section><Cta title="Meer zicht op je website." accent="Een duidelijker vervolg."/>
   </div>;
 }

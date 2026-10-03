@@ -150,3 +150,7 @@
 @media(prefers-reduced-motion:reduce){.overview-flow li:nth-child(n){transform:none;opacity:1}}
 
 
+/* Scope to the work index; the homepage uses its existing hero styles. */
+.portfolio-opening, .portfolio-feature-copy,
+main:has(>.portfolio-opening) .cta-row { overflow-wrap: anywhere; }
+.portfolio-feature-grid > *, main:has(>.portfolio-opening) .cta-row h2 { min-width: 0; }

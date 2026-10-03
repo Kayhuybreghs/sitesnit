@@ -383,5 +383,11 @@ export const socialImages: Record<string, { url: string; width: number; height: 
     "width": 1200,
     "height": 630,
     "alt": "Sitesnit: Core Web Vitals en je snelheidstest"
+  },
+  "/sitemap": {
+    "url": "/og.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sitesnit: websites met een eigen gezicht. Webdesign, SEO en AI vanuit Baarlo."
   }
 };

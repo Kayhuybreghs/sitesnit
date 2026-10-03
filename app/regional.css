@@ -73,3 +73,7 @@
   .regional-questions > div { grid-template-columns:1fr 1fr; gap:34px 60px; }
 }
 @media(prefers-reduced-motion:reduce){.regional-sketch-front{transform:rotate(-5deg)}.regional-sketch-back{transform:translate(18px,-4px) rotate(8deg)}.regional-sketch-detail{transform:rotate(5deg)}.regional-process ol:before{transform:none}}
+/* The regional illustration keeps its words inside the panel at enlarged text sizes. */
+.regional-hero-art { overflow-wrap: anywhere; }
+#prijzen-venlo, .regional-collaboration, .regional-sketch-content { overflow-wrap: anywhere; }
+.regional-collaboration > * { min-width: 0; }

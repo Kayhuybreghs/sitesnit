@@ -12,7 +12,7 @@ export const seoFacts = { origin: site.origin, base: site.base, packages: site.p
 export const releaseRoutes = [
   '/tools/snelheidstest',...speedGuides.map(g=>`/tools/snelheidstest/${g.slug}`),
   '/tools/seo-audit',...auditGuides.map(g=>`/tools/seo-audit/${g.slug}`),
-  '/', '/diensten', ...services.map(s => `/diensten/${s.slug}`), ...Object.keys(publicServicePages),
+  '/', '/sitemap', '/diensten', ...services.map(s => `/diensten/${s.slug}`), ...Object.keys(publicServicePages),
   '/diensten/webdesign/pakketten', '/projecten', ...clientCases.map(p => `/projecten/${p.slug}`),
   '/kosten', '/webdesign-venlo', '/seo-venlo', '/over-sitesnit', '/contact', '/tools/website-check', '/tools/website-kosten-berekenen',
   '/tools', '/tools/website-ontwerp-tool', '/tools/website-offerte-vergelijken', '/tools/automatiseringsplan', '/privacy', '/cookies', '/algemene-voorwaarden',

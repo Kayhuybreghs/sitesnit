@@ -37,7 +37,7 @@ if (phase === 'after') {
     packages, forbiddenText:['gemiddeld rond'],
   });
   await check('/diensten/seo-optimalisatie', {requiredLinks:['/tools/seo-audit','/tools/seo-audit/rapport-naar-actie','/diensten/seo-onderhoud','/contact?dienst=seo-optimalisatie']});
-  await check('/diensten/seo-onderhoud', {requiredText:['Wat kost SEO-onderhoud?','zodat je niet dubbel betaalt'],requiredLinks:['/diensten/onderhoud-hosting#maandpakketten','/website-onderhoud-kosten','/diensten/website-monitoring','/contact?dienst=seo-onderhoud']});
+  await check('/diensten/seo-onderhoud', {requiredText:['De afgesproken inzet en prioriteiten','We bekijken eerst welke werkzaamheden daarin al zijn opgenomen.','Aanvullend werk krijgt alleen een eigen afspraak voor taken buiten die dekking.'],requiredLinks:['/diensten/onderhoud-hosting#maandpakketten','/website-onderhoud-kosten','/diensten/website-monitoring','/contact?dienst=seo-onderhoud']});
   await check('/seo-venlo', {requiredLinks:['/tools/seo-audit','/diensten/seo-optimalisatie','/diensten/seo-onderhoud','/contact?dienst=seo']});
   await check('/diensten/webdesign/pakketten', {requiredLinks:site.packages.map(plan=>`/contact?dienst=webdesign&pakket=${plan.id}`)});
   await check('/website-levert-geen-aanvragen-op', {requiredText:['Noteer per stap: verwacht resultaat, waargenomen resultaat, eventuele afwijking en resultaat van de hercontrole.']});

@@ -5,7 +5,7 @@ export const toolGroups = [
 ] as const;
 
 export const toolInputs: Record<string, {input: string; output: string}> = {
-  snelheidstest:{input:'Eén openbaar pagina-adres en je keuze voor mobiel of desktop.',output:'Een prestatiescore, vijf laadmetingen en bevindingen uit Lighthouse.'},
+  snelheidstest:{input:'Eén openbaar pagina-adres en je keuze voor mobiel, desktop of Beide vergelijken.',output:'Per apparaat de ontvangen prestatiescore, laadmetingen en bevindingen uit Lighthouse.'},
   'seo-audit':{input:'Een openbaar HTTPS-adres. Geen vragenlijst.',output:'Een begrensde crawl met concrete technische bevindingen per URL.'},
   prijscheck: { input: '15 antwoorden over inhoud, functies en omvang.', output: 'Een passende pakketbasis, je wensen en keuzes om af te stemmen.' },
   'ontwerp-je-website': { input: 'Je bedrijfsverhaal, stijlvoorkeuren en kleuren.', output: 'Een aanpasbaar ontwerpvoorbeeld als vertrekpunt voor het gesprek.' },

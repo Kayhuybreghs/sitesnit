@@ -1329,3 +1329,7 @@ em {
     transform: none !important;
   }
 }
+
+/* BuildStory only: a schematic work card within the existing folded website. */
+.build-story .fold-middle .fold-project-sketch{display:flex;align-items:center;justify-content:center;gap:0;padding:22px 16px;min-height:170px;min-width:0;background:#d9e3d1;border-bottom:10px solid #b8c7b2}.build-story .fold-project-sketch i{display:block;width:32%;height:98px;background:#faf7ec;border:1px solid #658072;box-shadow:inset -4px 0 #d5dcca}.build-story .fold-project-sketch i:first-child{background:repeating-linear-gradient(to bottom,#faf7ec 0,#faf7ec 30px,#658072 31px,#faf7ec 32px)}.build-story .fold-project-sketch i:last-child{height:118px}
+@media(max-width:767px){.build-story .fold-middle .fold-project-sketch{min-height:150px;padding:20px 12px}.build-story .fold-project-sketch i{height:90px}.build-story .fold-project-sketch i:last-child{height:110px}}

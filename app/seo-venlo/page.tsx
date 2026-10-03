@@ -2,6 +2,7 @@ import { Breadcrumbs, withPageMetadata, JsonLd } from '../seo';
 import { Arrow, Eyebrow, Cta } from '../ui';
 import { site } from '../site-data';
 import '../guides.css';
+import '../guide-refinements.css';
 export const metadata=withPageMetadata({},'/seo-venlo');
 
 export default function Page(){return <article className="guide-page">

@@ -56,37 +56,29 @@ export function BuildStory() {
                 <b>jouw merk.</b>
                 <span>Ontdek &nbsp; Over &nbsp; Contact <InlineArrow /></span>
               </div>
-              <small>VOOR MENSEN MET PLANNEN</small>
+              <small>INTERIEUR OP MAAT</small>
               <strong>
-                Een goed verhaal.
+                Ruimte die werkt.
                 <br />
-                <em>Helemaal van jou.</em>
+                <em>Voor jou gemaakt.</em>
               </strong>
             </div>
             <div className="fold-panel fold-middle">
-              <img
-                  src="/projects/beurswijzer/growth-640.webp"
-                  srcSet="/projects/beurswijzer/growth-640.webp 640w, /projects/beurswijzer/growth.webp 1185w"
-                  sizes="(max-width: 767px) 40vw, (max-width: 1000px) 18vw, 240px"
-                width="640"
-                height="335"
-                loading="lazy"
-                alt=""
-              />
+              <div className="fold-project-sketch"><i/><i/><i/></div>
               <div>
-                <small>WERK DAT VOOR ZICH SPREEKT</small>
+                <small>EEN PASSENDE INDELING</small>
                 <b>
-                  Van idee
+                  Een kast.
                   <br />
-                  naar iets echts.
+                  Op maat.
                 </b>
-                <span>Bekijk het project <InlineArrow /></span>
+                <span>Bekijk de aanpak <InlineArrow /></span>
               </div>
             </div>
             <div className="fold-panel fold-bottom">
               <div>
-                <b>Jouw plannen?</b>
-                <span>Daar maken we graag ruimte voor.</span>
+                <b>Jouw ruimte?</b>
+                <span>Vertel wat je nodig hebt.</span>
               </div>
               <span className="fold-contact">Laten we praten <InlineArrow /></span>
             </div>

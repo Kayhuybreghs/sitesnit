@@ -57,3 +57,7 @@
   .pricing-route-action .price-tax, .pricing-route-action .price-total { margin:0; }
   .pricing-route-action .button { margin-top:8px; }
 }
+
+/* Keep long Dutch terms and storage keys readable when text is enlarged. */
+.legal-page .legal-copy{overflow-wrap:anywhere}
+

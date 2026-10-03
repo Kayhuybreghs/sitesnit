@@ -61,7 +61,8 @@ check('asset-manifest', 'public/', JSON.stringify(diskAssets) === JSON.stringify
 
 const result = await crawlPublicRoutes({paths, request, metadata: pageSeo, assetPaths: diskAssets});
 const reachability=analyzeReachability(paths,result.links);
-failures.push(...result.failures,...reachability.failures);
+const reachabilityWithoutSitemap=analyzeReachability(paths.filter(path=>path!=='/sitemap'),result.links);
+failures.push(...result.failures,...reachability.failures,...reachabilityWithoutSitemap.failures.map(f=>({...f,graph:'without-sitemap'})));
 for (const route of paths) {const response=await request(route);check('no-retired-public-content',route,!retiredReferences(response.body),'no retired identities in HTML/RSC','HTML scanned');}
 for(const id of retiredCaseIds) for(const suffix of ['','?source=retired-check']) {const route='/projecten/'+id+suffix;const response=await request(route);check('retired-case-404',route,response.status===404,404,response.status);}
 for (const route of paths) {
@@ -119,7 +120,7 @@ const report = {
   checkedAt, completedAt: new Date().toISOString(), environment: 'local-production-build', origin,
   commit: process.env.GITHUB_SHA || null, sourceSha256: afterSource, build: afterBuild, servedBuildIds,
   inventory: {appPages, catalogPaths: paths, sitemapUrls: sitemapResult.values, diskAssets},
-  ...result, reachability, edgeChecks, failures,
+  ...result, reachability, reachabilityWithoutSitemap, edgeChecks, failures,
   limits: [
     'HTTP/HTML validation only; desktop/mobile layout, fragment landing, hydrated DOM and browser exceptions require separate browser evidence.',
     'Dynamic-only anchors are reported for browser verification; no arbitrary missing-anchor allowlist is used.',

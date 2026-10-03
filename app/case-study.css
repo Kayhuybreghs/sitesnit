@@ -62,3 +62,7 @@
 @media(min-width:760px){.case-study-brief{grid-template-columns:1fr 1fr;gap:55px}.case-study-route ol{grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}.case-study-route li{align-items:start;grid-template-columns:22px 1fr}.case-study-route li>svg{grid-column:2}.case-study-outcome>div{grid-template-columns:repeat(3,minmax(0,1fr))}.case-study-preview{padding:24px}.case-study-outcome article{padding:24px}.case-study-preview-label{font-size:.8rem}.case-study-route,.case-study-outcome{padding-block:65px}}
 @media(min-width:1000px){.case-study-opening{grid-template-columns:.95fr 1.2fr;gap:55px;padding-block:15px 20px}.case-study-intro h1{font-size:clamp(3rem,4.4vw,4.8rem)}.case-study-preview{padding:22px;transform:rotate(1deg)}.case-study-preview figcaption{font-size:.82rem}.case-study-preview-label{padding-bottom:18px}.case-study-summary{margin-top:32px}.case-study-brief{gap:100px;padding-block:85px}.case-study-hero .back-link{margin-bottom:30px}.case-study-nav{gap:45px}.case-study-outcome article{padding:30px}.case-study-route ol{margin-top:42px}.case-study-route li>strong{font-size:1.18rem}}
 @media(prefers-reduced-motion:reduce){.case-study-preview{animation:none;transform:none}}
+/* Preserve the case layout while allowing enlarged headings to wrap. */
+.case-study { overflow-wrap: anywhere; }
+.case-study :is(.case-study-opening,.case-study-brief,.case-study-outcome)>*,
+.case-study .case-study-outcome article { min-width: 0; }

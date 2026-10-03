@@ -16,7 +16,7 @@ test('missing, invalid and mismatched reports never produce a replacement score'
 });
 test('request validation prevents invalid URLs, private inputs, cross-origin calls and unknown device before provider access',async()=>{
  let calls=0;const options={limit:async()=>{calls++;return true;},transport:async()=>{throw Error('Must not fetch');},key:''};
- for(const body of [{url:'http://localhost',device:'mobile'},{url:'https://example.com/?token=private',device:'mobile'},{url:'https://example.com/',device:'tablet'},{url:5,device:'mobile'}])assert.equal((await speedTestResponse(request(body),options)).status,400);
+ for(const body of [{url:'http://localhost',device:'mobile'},{url:'http://192.168.1.2',device:'mobile'},{url:'https://name:secret@example.com/',device:'mobile'},{url:'https://example.com/?token=private',device:'mobile'},{url:'https://example.com/',device:'tablet'},{url:5,device:'mobile'}])assert.equal((await speedTestResponse(request(body),options)).status,400);
  assert.equal((await speedTestResponse(request(undefined,'https://other.invalid'),options)).status,403);assert.equal(calls,0);
 });
 test('provider calls stay fixed, use the selected device and optional server key, and preserve errors as errors',async()=>{
@@ -29,3 +29,6 @@ test('provider calls stay fixed, use the selected device and optional server key
  const broken=await speedTestResponse(request(),{key:'',limit:async()=>true,transport:async()=>Response.json({})});assert.equal(broken.status,502);
  const timeout=await speedTestResponse(request(),{key:'',limit:async()=>true,transport:async()=>{throw new DOMException('Synthetic','TimeoutError');}});assert.match((await timeout.json()).error,/duurde te lang/);
 });
+
+import {speedResultMatches,speedReportText} from '../lib/speed-report.ts';
+test('report identity and export preserve source evidence and previous-state warnings',()=>{const report=normalizeSpeedResult(speedFixture(),'https://example.com/','mobile');assert.ok(speedResultMatches(report,'example.com','mobile'));for(const value of [{...report,requestedUrl:'https://other.example.com/'},{...report,finalUrl:'http://localhost/'},{...report,device:'desktop'}])assert.equal(speedResultMatches(value,'https://example.com/','mobile'),false);const text=speedReportText(report.requestedUrl,{mobile:{status:'error',result:report}});assert.match(text,/Eerdere meting/);assert.match(text,/Desktop\nGeen meting beschikbaar/);assert.match(text,/<script/);assert.match(text,/2026-10-01T10:00:00Z/);});

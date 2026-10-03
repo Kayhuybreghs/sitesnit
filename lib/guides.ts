@@ -1,5 +1,5 @@
 export type GuideSection = { heading: string; paragraphs?: string[]; links?: {phrase:string;href:string}[]; checklist?: string[]; table?: { headers: string[]; rows: string[][] } };
-export type Guide = { id: string; slug: string; title: string; description: string; group: string; tool: string; service: string; audience: string; outcome: string; unique: string; intro: string; widget?: string; sections: GuideSection[]; related: string[]; sources: string[] };
+export type Guide = { id: string; slug: string; title: string; description: string; group: string; tool: string; toolLabel: string; service: string; serviceLabel: string; audience: string; outcome: string; unique: string; intro: string; widget?: string; maintenancePrices?: boolean; sections: GuideSection[]; related: string[]; sources: string[] };
 /** Editorial drafts are reviewed separately; this data never asserts owner approval. */
 export const guides: Guide[] = [
   {
@@ -64,7 +64,6 @@ export const guides: Guide[] = [
       {
         "heading": "Test de hele aanvraag",
         "paragraphs": [
-          "Doorloop het formulier op je telefoon. Maak bewust een fout, herstel die en controleer of je tekst behouden blijft. Verstuur een herkenbare test en volg die tot in de echte ontvangst. Een groen vinkje in de browser is geen bewijs dat iemand de aanvraag heeft ontvangen.",
           "Noteer een verbeterpunt, voer dat uit en controleer opnieuw onder vergelijkbare omstandigheden. De websitecheck helpt je bevindingen ordenen. Hij vervangt geen bezoekersonderzoek."
         ],
         "checklist": [
@@ -82,7 +81,9 @@ export const guides: Guide[] = [
       "/verouderde-website",
       "/projecten/beurswijzer"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Onderzoek je boodschap en contactroute",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "A2",
@@ -158,7 +159,9 @@ export const guides: Guide[] = [
     ],
     "sources": [
       "migration"
-    ]
+    ],
+    "toolLabel": "Beoordeel wat je website nog goed doet",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "A3",
@@ -232,7 +235,9 @@ export const guides: Guide[] = [
       "/website-snelheid-testen",
       "/projecten/beurswatcher"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Breng je mobiele knelpunten in kaart",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "B1",
@@ -303,7 +308,9 @@ export const guides: Guide[] = [
       "/website-offerte-checklist",
       "/maandelijkse-kosten-website"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Bereken je passende websitepakket",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "B2",
@@ -377,11 +384,14 @@ export const guides: Guide[] = [
       "/kosten",
       "/website-offerte-checklist"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Vergelijk je bekende websitekosten",
+    "serviceLabel": "Bekijk hosting en onderhoud"
   },
   {
     "id": "B3",
     "slug": "website-onderhoud-kosten",
+    "maintenancePrices": true,
     "title": "Websiteonderhoud: waarvoor betaal je?",
     "description": "Vergelijk onderhoud op werkzaamheden, grenzen en terugkoppeling. Leer het verschil tussen hosting, signaleren en daadwerkelijk herstel.",
     "group": "prijscheck",
@@ -440,7 +450,12 @@ export const guides: Guide[] = [
           "Welke wijzigingen, storingen of externe licenties vallen erbuiten?",
           "Hoe krijg ik terugkoppeling en hoe regelen we overdracht bij stoppen?"
         ],
-        "links": [{"phrase": "SEO-onderhoud", "href": "/diensten/seo-onderhoud"}],
+        "links": [
+          {
+            "phrase": "SEO-onderhoud",
+            "href": "/diensten/seo-onderhoud"
+          }
+        ],
         "paragraphs": [
           "Voor doorlopende vindbaarheidsverbeteringen kun je SEO-onderhoud bespreken. Voor algemene hosting en technisch beheer zijn er bestaande onderhoudspakketten op de hostingpagina. We bekijken eerst wat daarin al is opgenomen, zodat een losse opdracht niet hetzelfde werk opnieuw rekent. Een bestaande website nemen we pas over nadat de technische staat en toegang zijn beoordeeld."
         ]
@@ -452,7 +467,9 @@ export const guides: Guide[] = [
       "/website-offerte-checklist",
       "/diensten/website-monitoring"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Vergelijk onderhoud en kosten in je offertes",
+    "serviceLabel": "Bekijk hosting en onderhoud"
   },
   {
     "id": "C1",
@@ -517,7 +534,9 @@ export const guides: Guide[] = [
       "/tools/website-ontwerp-tool",
       "/tools/website-offerte-vergelijken"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Maak je websiteplan met de prijscheck",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "C2",
@@ -577,7 +596,12 @@ export const guides: Guide[] = [
       },
       {
         "heading": "Leg onzekerheden terug bij de aanbieder",
-        "links": [{"phrase": "offertevergelijker", "href": "/tools/website-offerte-vergelijken"}],
+        "links": [
+          {
+            "phrase": "offertevergelijker",
+            "href": "/tools/website-offerte-vergelijken"
+          }
+        ],
         "paragraphs": [
           "Stuur een korte lijst van ontbrekende punten naar iedere aanbieder. Vraag hetzelfde, zodat een aanvulling vergelijkbaar blijft. Bewaar de versie waarop je besluit is gebaseerd.",
           "De offertevergelijker helpt bedragen en afspraken naast elkaar zetten. Hij kiest geen winnaar en voorspelt niet welke aanbieder het beste werk levert. Bekijk ook passend werk en hoe duidelijk iemand je inhoudelijke vragen beantwoordt.",
@@ -590,7 +614,9 @@ export const guides: Guide[] = [
       "/maandelijkse-kosten-website",
       "/projecten"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Vergelijk twee of drie website-offertes",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "D1",
@@ -664,7 +690,9 @@ export const guides: Guide[] = [
       "/afspraken-plannen-via-website",
       "/diensten/ai-koppelingen"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Maak je automatiseringsplan",
+    "serviceLabel": "Bekijk tools en automatisering"
   },
   {
     "id": "D2",
@@ -746,7 +774,9 @@ export const guides: Guide[] = [
       "/website-offerte-aanvragen",
       "/diensten/formulieren-rekentools"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Beschrijf je gegevensstroom in het procesplan",
+    "serviceLabel": "Bekijk AI en softwarekoppelingen"
   },
   {
     "id": "D3",
@@ -821,7 +851,9 @@ export const guides: Guide[] = [
       "/website-koppelen-aan-crm",
       "/contact"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Werk je afspraakproces uit",
+    "serviceLabel": "Bekijk formulieren en rekentools"
   },
   {
     "id": "E1",
@@ -888,7 +920,12 @@ export const guides: Guide[] = [
       },
       {
         "heading": "Structuur en ontwerp versterken elkaar",
-        "links": [{"phrase": "Beurswijzer-case", "href": "/projecten/beurswijzer"}],
+        "links": [
+          {
+            "phrase": "Beurswijzer-case",
+            "href": "/projecten/beurswijzer"
+          }
+        ],
         "paragraphs": [
           "Een paginastructuur beschrijft wat waar hoort. Het ontwerp bepaalt hoe tekst, beeld en actie zichtbaar worden. Gebruik het ontwerpvoorbeeld om voorkeuren te onderzoeken. Beoordeel het niet als een kant-en-klare website.",
           "De Beurswijzer-case laat zien hoe uitleg en rekentools binnen een platform samenkomen. Gebruik de keuzes als inspiratie, niet als reden om dezelfde indeling voor ieder bedrijf te kopiëren."
@@ -901,7 +938,9 @@ export const guides: Guide[] = [
       "/wat-kost-een-website"
     ],
     "sources": [],
-    "widget": "structures"
+    "widget": "structures",
+    "toolLabel": "Verken je indeling met een websitevoorbeeld",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "E2",
@@ -971,7 +1010,9 @@ export const guides: Guide[] = [
       "/projecten/beurswatcher",
       "/projecten"
     ],
-    "sources": []
+    "sources": [],
+    "toolLabel": "Maak je eigen websitevoorbeeld",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   },
   {
     "id": "F1",
@@ -1048,7 +1089,9 @@ export const guides: Guide[] = [
     ],
     "sources": [
       "robots"
-    ]
+    ],
+    "toolLabel": "Onderzoek je website met de SEO-audit",
+    "serviceLabel": "Bekijk SEO-optimalisatie"
   },
   {
     "id": "F2",
@@ -1121,7 +1164,9 @@ export const guides: Guide[] = [
     "sources": [
       "inspection",
       "traffic"
-    ]
+    ],
+    "toolLabel": "Controleer je technische indexeringssignalen",
+    "serviceLabel": "Bekijk SEO-optimalisatie"
   },
   {
     "id": "F3",
@@ -1187,10 +1232,15 @@ export const guides: Guide[] = [
       },
       {
         "heading": "Je website bij Sitesnit laten bekijken",
-        "links": [{"phrase":"Sitesnit-snelheidstest","href":"/tools/snelheidstest"}],
+        "links": [
+          {
+            "phrase": "Sitesnit-snelheidstest",
+            "href": "/tools/snelheidstest"
+          }
+        ],
         "paragraphs": [
           "De gratis technische SEO-audit onderzoekt een begrensde HTML-steekproef en kan die aanvullen met een mobiele Lighthouse-meting van je startpagina. In het resultaat zie je welke pagina’s zijn onderzocht en welke meting wel of niet is afgerond. Een snelheidsbevinding op je startpagina geldt niet automatisch voor alle andere pagina’s.",
-          "Wil je ook je boodschap en route naar contact beoordelen, dan helpt de Websitecheck met inhoudelijke vragen en een aanvullende meting van één pagina. Met de Sitesnit-snelheidstest meet je één pagina op mobiel of desktop en bekijk je het resultaat hier. Deze hulpmiddelen geven geen volledige browseranalyse van je hele website."
+          "Wil je ook je boodschap en route naar contact beoordelen, dan helpt de Websitecheck met inhoudelijke vragen en een aanvullende meting van één pagina. Met de Sitesnit-snelheidstest meet je één pagina op mobiel, desktop of beide en bekijk je afzonderlijke resultaten. Deze hulpmiddelen geven geen volledige browseranalyse van je hele website."
         ]
       }
     ],
@@ -1204,7 +1254,9 @@ export const guides: Guide[] = [
       "labfield",
       "pagespeed"
     ],
-    "widget": "lab-example"
+    "widget": "lab-example",
+    "toolLabel": "Meet je pagina op mobiel en desktop",
+    "serviceLabel": "Bekijk SEO-optimalisatie"
   },
   {
     "id": "F4",
@@ -1287,7 +1339,9 @@ export const guides: Guide[] = [
     "sources": [
       "http",
       "migration"
-    ]
+    ],
+    "toolLabel": "Zoek kapotte interne links met de SEO-audit",
+    "serviceLabel": "Bekijk SEO-optimalisatie"
   },
   {
     "id": "F5",
@@ -1346,6 +1400,8 @@ export const guides: Guide[] = [
     ],
     "sources": [
       "migration"
-    ]
+    ],
+    "toolLabel": "Controleer je verhuisde website met de SEO-audit",
+    "serviceLabel": "Bekijk de aanpak voor webdesign"
   }
 ];

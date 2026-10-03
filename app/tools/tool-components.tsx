@@ -1,9 +1,14 @@
 "use client";
 /* eslint-disable react-hooks/set-state-in-effect -- Session drafts can only be restored after hydration. */
 import { useEffect, useState } from "react";
-import ContactForm from "../contact/contact-form";
+import dynamic from "next/dynamic";
 import { Arrow, Eyebrow } from "../ui";
 import { ANALYTICS_TOOL_PATHS, trackPublicEvent } from '../../lib/analytics-events';
+// Closed result forms do not need the contact code during the first page load.
+// Always-open forms still render on the server; collapsing keeps an opened form mounted.
+const ContactForm = dynamic(() => import("../contact/contact-form"), {
+  loading: () => <p role="status">Contactformulier laden…</p>,
+});
 export const money = (cents: number | null) =>
   cents === null
     ? "—"

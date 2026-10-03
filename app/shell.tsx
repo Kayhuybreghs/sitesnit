@@ -145,10 +145,20 @@ export function Motion() {
       if (media.matches) return;
       const elements = [...document.querySelectorAll(".section-head,.project-card,.process>div,.personal-strip,.tool-feature,.cta-row,.together-steps>li,.service-method>li,[data-reveal]")];
       if (!elements.length && !document.querySelector('[data-scroll-scene]')) return;
+      const pending = new Set<Element>(elements);
       const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
+        // Use the browser's existing intersection measurement rather than force
+        // a synchronous document layout during hydration on every public page.
+        if (pending.delete(entry.target)) {
+          if (entry.boundingClientRect.top <= innerHeight) {
+            reveal.unobserve(entry.target);
+            return;
+          }
+          entry.target.classList.add("reveal");
+        }
         if (entry.isIntersecting) { entry.target.classList.add("seen"); reveal.unobserve(entry.target); }
       }), { threshold: .12 });
-      elements.filter(el => el.getBoundingClientRect().top > innerHeight).forEach(el => { el.classList.add("reveal"); reveal.observe(el); });
+      elements.forEach(el => reveal.observe(el));
       const scenes = [...document.querySelectorAll<HTMLElement>("[data-scroll-scene]")].map(scene => ({
         scene, target: scene.querySelector("[data-scene-target],.fold-stage,.route-art") ?? scene,
         delayed: scene.matches('.route-chapter,.service-visual,[data-scroll-scene="unfold"]'), previous: "", nearby: false,

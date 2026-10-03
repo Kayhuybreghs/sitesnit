@@ -1,0 +1,2 @@
+# This byte-for-byte export fixture must match browser-generated LF on every OS.
+tests/fixtures/speed-rich-full-report.txt text eol=lf

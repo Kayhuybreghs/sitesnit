@@ -91,17 +91,10 @@
   },
   "type": "module",
   "overrides": {
-    "miniflare": {
-      "sharp": "0.35.4",
-      "undici": "7.29.1",
-      "ws": "8.21.0"
-    },
-    "@cloudflare/vite-plugin": {
-      "ws": "8.21.0"
-    },
-    "vinext": {
-      "image-size": "2.0.3"
-    },
+    "sharp@^0.34.5": "0.35.4",
+    "undici@7.24.8": "7.29.1",
+    "ws@8.18.0": "8.21.0",
+    "image-size@2.0.2": "2.0.3",
     "esbuild@0.27.3": "0.28.2"
   }
 }

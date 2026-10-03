@@ -22,10 +22,13 @@ import { euro, site } from "./site-data";
 import { grossPrice, hostingSummary, minimumHostingYear, paymentSummary } from "../lib/business";
 import { BusinessNotes } from "./business-notes";
 import { ToolHelp as ReadingHelp } from "./tools/tool-help";
-import ContactForm from "./contact/contact-form";
+import dynamic from "next/dynamic";
 import "./tools.css";
 import "./tool-direction.css";
 import "./expansion.css";
+const ContactForm = dynamic(() => import("./contact/contact-form"), {
+  loading: () => <p role="status">Contactformulier laden…</p>,
+});
 type Kind = "websitecheck" | "prijscheck";
 type Stage = "intro" | "questions" | "url" | "result";
 type Scan = {

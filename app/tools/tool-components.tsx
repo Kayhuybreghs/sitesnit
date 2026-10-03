@@ -1,9 +1,14 @@
 "use client";
 /* eslint-disable react-hooks/set-state-in-effect -- Session drafts can only be restored after hydration. */
 import { useEffect, useState } from "react";
-import ContactForm from "../contact/contact-form";
+import dynamic from "next/dynamic";
 import { Arrow, Eyebrow } from "../ui";
 import { ANALYTICS_TOOL_PATHS, trackPublicEvent } from '../../lib/analytics-events';
+// Closed result forms do not need the contact code during the first page load.
+// Always-open forms still render on the server; collapsing keeps an opened form mounted.
+const ContactForm = dynamic(() => import("../contact/contact-form"), {
+  loading: () => <p role="status">Contactformulier laden…</p>,
+});
 export const money = (cents: number | null) =>
   cents === null
     ? "—"
@@ -66,10 +71,14 @@ export function ToolActions({
   summary,
   filename,
   print = false,
+  copyLabel = "Kopieer tekst",
+  downloadLabel = "Bewaar je overzicht",
 }: {
   summary: string;
   filename: string;
   print?: boolean;
+  copyLabel?: string;
+  downloadLabel?: string;
 }) {
   const [status, setStatus] = useState("");
   function download() {
@@ -99,10 +108,10 @@ export function ToolActions({
           type="button"
           onClick={download}
         >
-          Bewaar je overzicht <Arrow />
+          {downloadLabel} <Arrow />
         </button>
         <button className="text-link" type="button" onClick={copy}>
-          Kopieer tekst
+          {copyLabel}
         </button>
         {print && (
           <button
@@ -125,6 +134,12 @@ export function ToolContact({
   id = "bespreken",
   alwaysOpen = false,
   formTitle,
+  buttonLabel = "Bespreek mijn uitkomst",
+  website = "",
+  selectedService = "",
+  summaryNotice,
+  summaryUnavailable,
+  summaryPreviewLabel,
 }: {
   summary: string;
   title?: string;
@@ -132,6 +147,12 @@ export function ToolContact({
   id?: string;
   alwaysOpen?: boolean;
   formTitle?: string;
+  buttonLabel?: string;
+  website?: string;
+  selectedService?: string;
+  summaryNotice?: string;
+  summaryUnavailable?: string;
+  summaryPreviewLabel?: string;
 }) {
   const [open, setOpen] = useState(alwaysOpen),
     [mounted, setMounted] = useState(alwaysOpen);
@@ -155,13 +176,13 @@ export function ToolContact({
             setOpen(!open);
           }}
         >
-          {open ? "Aanvraag inklappen" : "Bespreek mijn uitkomst"}
+          {open ? "Aanvraag inklappen" : buttonLabel}
           <Arrow />
         </button>}
       </div>
       {mounted && (
         <div id={`${id}-form`} hidden={!open} className="tool-contact-form">
-          <ContactForm embedded toolSummary={summary} heading={formTitle} />
+          <ContactForm embedded toolSummary={summary} heading={formTitle} website={website} selectedService={selectedService} summaryNotice={summaryNotice} summaryUnavailable={summaryUnavailable} summaryPreviewLabel={summaryPreviewLabel} />
         </div>
       )}
     </section>

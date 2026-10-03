@@ -335,15 +335,15 @@ export const services: Service[] = [
     ],
     "introTitle": "Jij runt je bedrijf.",
     "introAccent": "Ik werk je verhaal uit.",
-    "intro": "Je hoeft niet iedere week naar een leeg document te kijken. Samen bepalen we je aanbod, onderwerpen en toon. Daarna werken we vanuit een contentplanning. Jouw kennis gebruiken we voor de inhoud. Schrijven, structureren en plaatsen kun je uit handen geven.",
+    "intro": "Een artikel moet een klantvraag beantwoorden; een dienstenpagina moet duidelijk maken wat je aanbiedt. Hieronder zie je hoe jouw vakkennis een gecontroleerde tekst en een bruikbare pagina wordt.",
     "methods": [
       [
         "Onderwerpen kiezen",
-        "Klantvragen, diensten en ontwikkelingen in je bedrijf vormen het vertrekpunt. We kiezen onderwerpen die elkaar aanvullen en aansluiten op pagina’s waarop bezoekers kunnen doorlezen of contact opnemen."
+        "Klantvragen, diensten en ontwikkelingen in je bedrijf vormen het vertrekpunt. We kiezen onderwerpen die elkaar aanvullen en aansluiten op pagina’s waarop bezoekers kunnen doorlezen of contact opnemen. We stemmen de toon en contentplanning af, inclusief de momenten waarop jouw input en feedback nodig zijn."
       ],
       [
         "Jouw kennis ophalen",
-        "Jij levert de feiten, klantvragen en voorbeelden die het werk concreet maken. Ik vraag door op de aanpak, keuzes en grenzen van je aanbod. Bestaande teksten en bronnen nemen we mee als ze nog kloppen. Ontbrekende informatie vullen we niet met een verzonnen klantverhaal."
+        "Jij levert de feiten, klantvragen en voorbeelden die het werk concreet maken. Ik vraag door op de aanpak, keuzes en grenzen van je aanbod. Bestaande teksten en bronnen nemen we mee als ze nog kloppen. Ontbrekende informatie vullen we niet met een verzonnen klantverhaal. Ook beschikbare beelden lever je aan; aanvullende foto- of videoproductie bespreken we apart."
       ],
       [
         "Schrijven en inhoudelijk controleren",
@@ -351,7 +351,7 @@ export const services: Service[] = [
       ],
       [
         "Opmaak en publicatie",
-        "Na jouw akkoord krijgt de tekst passende koppen, een paginatitel, beschrijving en relevante interne links. Afbeeldingen en bronnen krijgen hun afgesproken plek. Bij publicatie controleer ik de links en de pagina op mobiel. De planning en eventuele aanvullende beelden spreken we vooraf af."
+        "Na jouw akkoord krijgt de tekst passende koppen, een paginatitel, beschrijving en relevante interne links. Afbeeldingen en bronnen krijgen hun afgesproken plek. Bij publicatie controleer ik de links en de pagina op mobiel. De afgesproken blogs verschijnen verdeeld over de maand."
       ]
     ],
     "optionsTitle": "Een goed ritme.",
@@ -378,16 +378,8 @@ export const services: Service[] = [
     ],
     "faqs": [
       [
-        "Kan ik het hele blogonderhoud uitbesteden?",
-        "Ja. Beide blogpakketten omvatten onderwerpenonderzoek, schrijven, SEO-opmaak en publicatie. We spreken vooraf af wanneer jouw inhoudelijke controle nodig is en welke informatie of beelden je aanlevert."
-      ],
-      [
         "Is vaker publiceren altijd beter voor SEO?",
         "De inhoud moet nuttig zijn voor je bezoekers. Twee of vier blogs per maand is een werkritme, geen garantie op hogere posities. We kiezen onderwerpen die iets toevoegen en verbinden ze met je bestaande diensten en artikelen."
-      ],
-      [
-        "Wat kost content per maand?",
-        "Twee blogs per maand kosten €175 exclusief btw (€211,75 inclusief btw). Vier blogs kosten €325 exclusief btw (€393,25 inclusief btw), €30,25 inclusief btw voordeliger dan twee keer het kleinere pakket. Eenmalige webteksten of aanvullende foto- en videoproductie bespreken we apart."
       ]
     ],
     "cta": "Bespreek je content",
@@ -415,15 +407,15 @@ export const services: Service[] = [
     "methods": [
       [
         "Kanaal en doel bepalen",
-        "We bekijken waar je klanten zitten en wat je wilt vertellen. Meer uitleg, je werk laten zien of mensen naar een dienst leiden vraagt om verschillende berichten."
+        "We bekijken waar je klanten zitten en wat je wilt vertellen. Meer uitleg, je werk laten zien of mensen naar een dienst leiden vraagt om verschillende berichten. LinkedIn kan ruimte geven aan zakelijke uitleg; op Instagram of Facebook passen we de presentatie aan de gekozen inhoud aan."
       ],
       [
         "Content en formats maken",
-        "We maken dezelfde basiscontent passend voor je gekozen platforms: tekst, beeldselectie en vorm sluiten aan op je merk en het kanaal. Eigen foto’s en video geven het verhaal inhoud. Aanvullende productie via een externe partner stemmen we apart af."
+        "Jij deelt nieuws, projecten en beschikbare beelden. We maken daarvan basisposts met tekst, beeldselectie en vorm die aansluiten op je merk en de gekozen platforms. Eigen foto’s en video geven het verhaal inhoud. Aanvullende productie via een externe partner stemmen we apart af."
       ],
       [
-        "Een overzichtelijke planning",
-        "We spreken frequentie, kanalen en het moment van goedkeuren af. Vanuit de planning kunnen berichten worden klaargezet en gepubliceerd, zodat jij niet iedere dag in de agenda hoeft te duiken."
+        "Goedkeuren en laten plaatsen",
+        "We spreken frequentie, kanalen en het moment van jouw controle af. Met de afgesproken toegang zetten we de berichten klaar en publiceren we ze volgens die planning. Nieuwe ontwikkelingen in je bedrijf geef je door, zodat de inhoud actueel blijft."
       ],
       [
         "Verbinden met je website",
@@ -454,16 +446,8 @@ export const services: Service[] = [
     ],
     "faqs": [
       [
-        "Moet ik zelf nog berichten plaatsen?",
-        "Wij plaatsen de afgesproken berichten op je gekozen platforms. We stemmen de planning, je controle en toegang vooraf af. Nieuwe ontwikkelingen in je bedrijf geef je door zodat de inhoud actueel blijft."
-      ],
-      [
         "Beantwoorden jullie ook reacties en privéberichten?",
         "Dat is een afzonderlijke afspraak. Content maken en publiceren betekent niet automatisch dat klantenservice, reacties, advertentiebeheer of privéberichten worden overgenomen."
-      ],
-      [
-        "Wat kost socialmediaonderhoud?",
-        "Het aantal basisposts en het aantal platforms bepalen de maandprijs. Vier posts op een platform kosten €149 exclusief btw (€180,29 inclusief btw) per maand. Alle combinaties staan in het prijzenoverzicht op deze pagina. Dezelfde basisposts worden aangepast voor elk gekozen platform."
       ],
       [
         "Zijn vier posts op drie platforms twaalf verschillende onderwerpen?",
@@ -491,23 +475,19 @@ export const services: Service[] = [
     ],
     "introTitle": "Een goede basis.",
     "introAccent": "Ook na de oplevering.",
-    "intro": "Niet ieder bedrijf heeft hetzelfde onderhoud nodig. Een compacte bedrijfswebsite vraagt iets anders dan een platform met rekentools of een webshop met koppelingen. Daarom leggen we vast wat wordt beheerd, hoe je wijzigingen doorgeeft en welke terugkerende werkzaamheden bij je voorstel horen.",
+    "intro": "Een compacte bedrijfswebsite vraagt iets anders dan een platform met rekentools of een webshop met koppelingen. De pakketten hierboven bepalen de terugkerende dekking. Hieronder staan de afspraken die nodig zijn om het beheer passend over te nemen.",
     "methods": [
       [
-        "Hosting en bereikbaarheid",
-        "We richten de afgesproken hosting, domeinverbinding en beveiligde bereikbaarheid in. Eigenaarschap, toegang en eventuele externe diensten worden vastgelegd, zodat duidelijk is waar je website draait."
+        "Overname en inrichting",
+        "Bij een bestaande website bekijken we eerst de huidige opbouw, hosting en beschikbare toegang. Een verhuizing of herstel van achterstallige problemen kan vooraf extra werk vragen. Eenmalige inrichting en dat herstel stemmen we apart af. We richten de afgesproken hosting, domeinverbinding en beveiligde bereikbaarheid in."
       ],
       [
-        "Technische aandacht",
-        "Bij de onderhoudspakketten controleren we maandelijks de snelheid en technische fouten. We herstellen technische fouten binnen je bestaande website. Nieuwe functies of grotere uitbreidingen krijgen een afzonderlijke afspraak."
+        "Toegang en wijzigingen doorgeven",
+        "Jij deelt je huidige website en beschikbare toegang. We leggen eigenaarschap, de betrokken externe diensten en de manier waarop je wijzigingen doorgeeft vast. Zo weet je waar de website draait en wat Sitesnit beheert."
       ],
       [
-        "Inhoud actueel houden",
-        "Met Hosting, onderhoud & SEO verbeteren we doorlopend de SEO-basis. We scherpen bestaande teksten aan en werken de code waar nodig bij, zodat je website technisch en inhoudelijk actueel blijft. Nieuwe blogartikelen kies je apart. Ze krijgen eigen onderwerpen, onderzoek en publicatie."
-      ],
-      [
-        "Duidelijke maandafspraken",
-        "Hosting, technisch werk, content en eventuele externe abonnementen worden apart inzichtelijk gemaakt. Zo weet je welke taken terugkomen en welke grotere aanpassing een nieuw voorstel vraagt."
+        "Werk naast het gekozen pakket",
+        "Hosting, technisch werk, content en externe abonnementen maken we afzonderlijk inzichtelijk. Nieuwe blogs en socialmediacontent hebben eigen pakketten; nieuwe functies en grotere uitbreidingen krijgen een eigen voorstel. Je kunt later bespreken of meer beheer past. De afgesproken ruimte voor wijzigingen is begrensd."
       ]
     ],
     "optionsTitle": "Kies wat jij",
@@ -534,12 +514,8 @@ export const services: Service[] = [
     ],
     "faqs": [
       [
-        "Kan onderhoud bij een bestaande website?",
-        "We bekijken eerst hoe de website is gebouwd, waar hij draait en welke toegang beschikbaar is. Daarna kunnen we aangeven welk beheer mogelijk is en of er eerst werk nodig is om de basis op orde te brengen."
-      ],
-      [
-        "Wat is de maandprijs?",
-        "Hosting begint bij €5 exclusief btw (€6,05 inclusief btw) per maand. Hosting met onderhoud kost €29,99 exclusief btw (€36,29 inclusief btw). Met onderhoud en SEO €69,99 exclusief btw (€84,69 inclusief btw). Hosting heeft een eerste looptijd van twaalf maanden en is daarna maandelijks opzegbaar. Nieuwe blogs en socialmediacontent zijn aparte pakketten."
+        "Welke looptijd heeft hosting?",
+        "Hosting heeft een eerste looptijd van twaalf maanden en is daarna maandelijks opzegbaar. De maandbedragen en de minimale kosten voor het eerste hostingjaar staan bij de pakketten hierboven."
       ],
       [
         "Is alles onbeperkt inbegrepen?",

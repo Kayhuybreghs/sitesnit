@@ -1,0 +1,193 @@
+Sitesnit — meetrapport snelheid
+Aangevraagde pagina: https://example.com/
+Bron: Google PageSpeed Insights / Lighthouse (labtest).
+
+Mobiel
+Ontvangen meting.
+Aangevraagd: https://example.com/
+Eindadres: https://example.com/
+Meetmoment: 2026-10-03T10:00:00Z
+Lighthouse: fixture
+Prestaties: 62/100
+first-contentful-paint: 1,5 s
+largest-contentful-paint: 3,1 s
+total-blocking-time: 340 ms
+cumulative-layout-shift: 0,04
+speed-index: 3,8 s
+Beperking: Geïsoleerde testdata. Geen echte meting.
+Synthetische controle 1
+Gevonden: Synthetische controle 1: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-0-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-0-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-0-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 2
+Gevonden: Synthetische controle 2: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-1-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-1-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-1-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 3
+Gevonden: Synthetische controle 3: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-2-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-2-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-2-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 4
+Gevonden: Synthetische controle 4: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-3-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-3-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-3-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 5
+Gevonden: Synthetische controle 5: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-4-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-4-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-4-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 6
+Gevonden: Synthetische controle 6: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-5-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-5-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-5-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 7
+Gevonden: Synthetische controle 7: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-6-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-6-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-6-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 8
+Gevonden: Synthetische controle 8: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-7-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-7-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-7-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 9
+Gevonden: Synthetische controle 9: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-8-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-8-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-8-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 10
+Gevonden: Synthetische controle 10: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-9-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-9-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-9-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 11
+Gevonden: Synthetische controle 11: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/mobile-10-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-10-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/mobile-10-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Geslaagde controle: Tekst wordt gecomprimeerd
+De tekstbestanden zijn in deze fixture gecomprimeerd.
+https://example.com/site.css
+
+Desktop
+Ontvangen meting.
+Aangevraagd: https://example.com/
+Eindadres: https://example.com/
+Meetmoment: 2026-10-03T10:01:00Z
+Lighthouse: fixture
+Prestaties: 94/100
+first-contentful-paint: 1,5 s
+largest-contentful-paint: 3,1 s
+total-blocking-time: 340 ms
+cumulative-layout-shift: 0,04
+speed-index: 3,8 s
+Beperking: Geïsoleerde testdata. Geen echte meting.
+Synthetische controle 1
+Gevonden: Synthetische controle 1: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-0-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-0-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-0-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 2
+Gevonden: Synthetische controle 2: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-1-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-1-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-1-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 3
+Gevonden: Synthetische controle 3: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-2-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-2-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-2-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 4
+Gevonden: Synthetische controle 4: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-3-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-3-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-3-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 5
+Gevonden: Synthetische controle 5: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-4-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-4-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-4-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 6
+Gevonden: Synthetische controle 6: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-5-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-5-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-5-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 7
+Gevonden: Synthetische controle 7: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-6-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-6-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-6-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 8
+Gevonden: Synthetische controle 8: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-7-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-7-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-7-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 9
+Gevonden: Synthetische controle 9: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-8-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-8-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-8-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 10
+Gevonden: Synthetische controle 10: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-9-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-9-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-9-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Synthetische controle 11
+Gevonden: Synthetische controle 11: Ontvangen fixturebewijs
+Lighthouse heeft bij deze controle een aandachtspunt vastgesteld.
+Controle: Controleer de genoemde onderdelen in deze audit en laat de benodigde aanpassing gericht beoordelen.
+https://example.com/assets/desktop-10-0.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 0 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-10-1.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 1 — 20 kB mogelijke besparing
+https://example.com/assets/desktop-10-2.js — <script data-fixture="🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel 🧪 rijke bewijsregel "></script> — Een synthetisch element; geen vastgestelde oorzaak bij een klant. — Fixture detail 2 — 20 kB mogelijke besparing
+Geslaagde controle: Tekst wordt gecomprimeerd
+De tekstbestanden zijn in deze fixture gecomprimeerd.
+https://example.com/site.css
+
+Afzonderlijke meetomstandigheden en tijdstippen; geen gemiddelde score, geen oordeel over Core Web Vitals bij echte bezoekers.

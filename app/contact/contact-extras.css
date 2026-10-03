@@ -12,3 +12,8 @@
 
 .contact-form .contact-fields{border:0;padding:0;margin:0;min-width:0;display:contents}
 .contact-reference{overflow-wrap:anywhere}
+
+/* Keep the contact route and long care choices inside narrow, enlarged-text layouts. */
+.contact-refined .contact-copy{min-width:0;overflow-wrap:anywhere}
+.contact-form{min-width:0}
+.contact-care-choice label>span{min-width:0;overflow-wrap:anywhere}

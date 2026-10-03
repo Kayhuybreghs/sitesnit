@@ -1,0 +1,18 @@
+.website-overview{padding-bottom:80px;overflow-wrap:anywhere}
+.overview-intro{padding-block:45px 28px}
+.overview-intro h1{font-size:clamp(36px,5.4vw,72px);line-height:1.05;letter-spacing:-.055em;max-width:14ch;margin:18px 0 24px}
+.overview-intro p{max-width:66ch;font-size:18px;line-height:1.6}
+.overview-jumps{display:flex;flex-wrap:wrap;gap:8px 24px;padding-bottom:34px}
+.overview-jumps a,.overview-tree a,.overview-end a{text-decoration:underline;text-underline-offset:.2em}
+.overview-jumps a{display:inline-flex;align-items:center;min-height:44px}
+.overview-tree section{border-top:1px solid var(--line);padding-block:32px;scroll-margin-top:105px}
+.overview-tree h2{font-size:clamp(27px,3vw,40px);line-height:1.15;letter-spacing:-.035em;margin:0 0 20px}
+.overview-tree h3{font-size:18px;margin:18px 0 8px}
+.overview-tree ul{list-style:none;padding:0;margin:0}
+.overview-tree li a{display:block;padding:12px 0;line-height:1.45;min-height:44px;width:fit-content;max-width:100%}
+.overview-tree li ul{padding-left:20px;border-left:1px solid var(--line);margin:0 0 14px 2px;font-size:.94em}
+.overview-topics{display:grid;gap:10px 50px}
+.overview-topics>*{min-width:0}
+.overview-end{border-top:1px solid var(--line);padding-top:30px;line-height:1.7}
+.website-overview a:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+@media(min-width:768px){.overview-topics{grid-template-columns:repeat(2,minmax(0,1fr))}}

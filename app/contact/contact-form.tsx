@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { ANALYTICS_TOOL_PATHS, createFormEventTracker, trackPublicEvent } from '../../lib/analytics-events';
 import { contactServiceNames } from '../../lib/contact/options';
+import { contactSizeIssue } from '../../lib/contact/request-size';
 import { Arrow } from "../ui";
 import { site } from "../site-data";
 import "../tool-direction.css";
@@ -34,17 +35,25 @@ const monthlyPlans: Record<string, string> = {
 export default function ContactForm({
   toolSummary,
   selectedPackage = "",
+  selectedService = "",
   website = "",
   embedded = false,
   heading,
   introduction,
+  summaryNotice,
+  summaryUnavailable,
+  summaryPreviewLabel,
 }: {
   toolSummary?: string;
   selectedPackage?: string;
+  selectedService?: string;
   website?: string;
   embedded?: boolean;
   heading?: string;
   introduction?: string;
+  summaryNotice?: string;
+  summaryUnavailable?: string;
+  summaryPreviewLabel?: string;
 } = {}) {
   const [packageId, setPackageId] = useState(selectedPackage);
   const [websiteValue, setWebsiteValue] = useState(website);
@@ -57,13 +66,18 @@ export default function ContactForm({
   const fieldId = (name:string) => `${uid}-${name}`;
   const inFlight = useRef(false);
   const feedback = useRef<HTMLDivElement>(null);
+  const form = useRef<HTMLFormElement>(null);
   const [pending, setPending] = useState<Record<string,unknown>|null>(null);
+  const [recoveredInputs, setRecoveredInputs] = useState<Record<string,unknown>|null>(null);
+  const pendingSizeIssue = pending ? contactSizeIssue(pending) : null;
+  const inputDefaults = pending ?? recoveredInputs;
   const summary = pending ? String(pending.toolSummary ?? '') : toolSummary ?? savedSummary;
+  const unavailable = pending ? '' : summaryUnavailable;
   const formAnalytics = useRef(createFormEventTracker(embedded?'tool_contact':'contact'));
   const [receipt, setReceipt] = useState({reference:'',confirmation:'pending',localOnly:false});
   const [localPreview, setLocalPreview] = useState(false);
   const pendingKey = useCallback(() => `sitesnit-contact-pending:${location.pathname}:${embedded?'tool':'contact'}`, [embedded]);
-  const [service, setService] = useState("");
+  const [service, setService] = useState(Object.hasOwn(contactServiceNames,selectedService) ? selectedService : "");
   const [projectContext, setProjectContext] = useState("");
   const [rhythm, setRhythm] = useState("");
   const [careInterests, setCareInterests] = useState<string[]>([]);
@@ -83,7 +97,7 @@ export default function ContactForm({
       }
     } catch {}
     const p = new URLSearchParams(location.search);
-    setService(Object.hasOwn(contactServiceNames,p.get('dienst')??'') ? p.get('dienst')! : '');
+    setService(Object.hasOwn(contactServiceNames,p.get('dienst')??'') ? p.get('dienst')! : Object.hasOwn(contactServiceNames,selectedService) ? selectedService : '');
     if (!embedded) {
       const chosenPlan = p.get("maandpakket") ?? "";
       const chosenService = p.get("dienst") ?? "";
@@ -124,13 +138,13 @@ export default function ContactForm({
         );
         if (c && typeof c.summary === "string") setSummary(c.summary);
       } catch {}
-  }, [embedded,pendingKey]);
+  }, [embedded,pendingKey,selectedService]);
   useEffect(() => {
-    if (embedded&&!pending) setPackageId(selectedPackage);
-  }, [embedded, selectedPackage,pending]);
+    if (embedded&&!pending&&!recoveredInputs) setPackageId(selectedPackage);
+  }, [embedded, selectedPackage,pending,recoveredInputs]);
   useEffect(() => {
-    if (embedded&&!pending) setWebsiteValue(website);
-  }, [embedded, website,pending]);
+    if (embedded&&!pending&&!recoveredInputs) setWebsiteValue(website);
+  }, [embedded, website,pending,recoveredInputs]);
   useEffect(()=>{
     if(!pending)return;
     setWebsiteValue(String(pending.website??''));setPackageId(String(pending.packageId??''));
@@ -140,6 +154,22 @@ export default function ContactForm({
     setIncludeSummary(pending.includeSummary===true);
   },[pending]);
   useEffect(() => { if(error||status==='success') feedback.current?.focus(); }, [error,status]);
+  useEffect(() => {
+    if(recoveredInputs&&!pending) form.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus();
+  }, [recoveredInputs,pending]);
+  function recoverOversizedPending() {
+    if(!pending || !contactSizeIssue(pending) || inFlight.current) return;
+    // The server rejects these exact size violations before storage. A valid unknown retry
+    // never reaches this action. Keep the old browser copy until the next submitted payload
+    // replaces it, so reloading during preparation still recovers the original visitor input.
+    setRecoveredInputs(pending);
+    setPending(null);
+    setId(crypto.randomUUID());
+    setSummary('');
+    setIncludeSummary(false);
+    setError('');
+    setStatus('idle');
+  }
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if(inFlight.current) return;
@@ -153,21 +183,28 @@ export default function ContactForm({
       serviceId:service,sourcePage:location.pathname,formId:embedded?'tool_contact':'contact',
       project:projectContext.toLowerCase(),rhythm,careInterests,
       monthlyPlan:careInterests.includes(monthlyPlans[monthlyPlan])?monthlyPlan:'',
-      appointment:appointmentWanted,preferredDay,preferredTime,includeSummary,
-      toolSummary:includeSummary?summary:'',
+      appointment:appointmentWanted,preferredDay,preferredTime,includeSummary:includeSummary&&!unavailable,
+      toolSummary:includeSummary&&!unavailable?summary:'',
     };
+    const encodedPayload=JSON.stringify(payload);
+    if(contactSizeIssue(payload,encodedPayload)){
+      setError('Deze aanvraag past niet binnen de maximale berichtgrootte. Zet het meesturen van het overzicht uit of pas zelf je invoer aan. Je vraag is niet ingekort en er is niets verstuurd.');
+      setStatus('idle');inFlight.current=false;return;
+    }
     setPending(payload);
-    try {sessionStorage.setItem(pendingKey(),JSON.stringify(payload));} catch {}
+    try {sessionStorage.setItem(pendingKey(),encodedPayload);} catch {}
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: encodedPayload,
         signal: AbortSignal.timeout(25000),
       });
       const body = (await response.json()) as {ok?:boolean;error?:string;id?:string;reference?:string;mail?:{confirmation?:string};localOnly?:boolean};
       if (!response.ok || !body.ok || body.id!==payload.requestId || !body.reference){
-        if([400,403,413,429].includes(response.status)){
+        // A rejected retry cannot disprove storage of an earlier unanswered attempt.
+        // Only a first, definitely rejected submission may become editable again.
+        if(!pending&&[400,403,413,429].includes(response.status)){
           setPending(null);try{sessionStorage.removeItem(pendingKey());}catch{}
         }
         throw new Error(body.error ?? "Je aanvraag is niet verzonden.");
@@ -217,7 +254,7 @@ export default function ContactForm({
       </div>
     );
   return (
-    <form className="contact-form" onSubmit={submit} aria-busy={status==='sending'} onChange={event=>{
+    <form className="contact-form" ref={form} onSubmit={submit} aria-busy={status==='sending'} onChange={event=>{
       const target=event.target;
       if(target instanceof HTMLInputElement||target instanceof HTMLTextAreaElement||target instanceof HTMLSelectElement){
         if(target.name==='companyCheck')return;
@@ -266,7 +303,7 @@ export default function ContactForm({
           <input
             id={fieldId("name")}
             name="name"
-            defaultValue={pending ? String(pending.name) : undefined}
+            defaultValue={inputDefaults ? String(inputDefaults.name ?? '') : undefined}
             autoComplete="name"
             required
             minLength={2}
@@ -278,7 +315,7 @@ export default function ContactForm({
           <input
             id={fieldId("email")}
             name="email"
-            defaultValue={pending ? String(pending.email) : undefined}
+            defaultValue={inputDefaults ? String(inputDefaults.email ?? '') : undefined}
             type="email"
             autoComplete="email"
             required
@@ -384,7 +421,7 @@ export default function ContactForm({
           <input
             id={fieldId("phone")}
             name="phone"
-            defaultValue={pending?String(pending.phone??''):undefined}
+            defaultValue={inputDefaults?String(inputDefaults.phone??''):undefined}
             type="tel"
             autoComplete="tel"
             maxLength={40}
@@ -396,7 +433,7 @@ export default function ContactForm({
         <textarea
           id={fieldId("message")}
           name="message"
-          defaultValue={pending ? String(pending.message) : undefined}
+          defaultValue={inputDefaults ? String(inputDefaults.message ?? '') : undefined}
           required
           minLength={10}
           maxLength={3000}
@@ -480,9 +517,10 @@ export default function ContactForm({
       {summary && (
         <div className="context-box">
           <details>
-            <summary>Je overzicht bekijken</summary>
+            <summary>{summaryPreviewLabel??'Je overzicht bekijken'}</summary>
             <pre>{summary}</pre>
           </details>
+          {summaryNotice&&<p>{summaryNotice}</p>}
           <label className="check-consent">
             <input
               type="checkbox"
@@ -493,6 +531,7 @@ export default function ContactForm({
           </label>
         </div>
       )}
+      {unavailable&&<p className="context-box" role="status">{unavailable}</p>}
       <div className="hp-field" aria-hidden="true">
         <label htmlFor={fieldId("companyCheck")}>Laat dit veld leeg</label>
         <input
@@ -503,7 +542,15 @@ export default function ContactForm({
         />
       </div>
       </fieldset>
-      {pending && <div className="context-box"><strong>Deze aanvraag wordt gecontroleerd</strong><p>We versturen bij opnieuw proberen exact dezelfde gegevens. Zo ontstaat geen dubbele aanvraag.</p><details><summary>Je verzendpoging bekijken</summary><p>{String(pending.name)} · {String(pending.email)}</p><pre>{String(pending.message)}</pre></details></div>}
+      {pending && <div className="context-box">
+        <strong>{pendingSizeIssue?'Je oude verzendpoging is te groot':'Deze aanvraag wordt gecontroleerd'}</strong>
+        {pendingSizeIssue?<>
+          <p>{pendingSizeIssue==='summary'?'Het rapport in deze oudere poging is te lang.':'Deze oudere poging bevat meer gegevens dan zijn toegestaan.'} De server kan deze poging daardoor niet opslaan. Bereid je aanvraag opnieuw voor: je naam, e-mailadres, eigen vraag en keuzes blijven staan. Het oude rapport gaat niet mee. Je kunt zelf een nieuw beschikbaar overzicht kiezen.</p>
+          <button className="button" type="button" onClick={recoverOversizedPending} disabled={status==='sending'}>Bereid mijn aanvraag opnieuw voor <Arrow /></button>
+        </>:<p>We versturen bij opnieuw proberen exact dezelfde gegevens. Zo ontstaat geen dubbele aanvraag.</p>}
+        <details><summary>Je verzendpoging bekijken</summary><p>{String(pending.name)} · {String(pending.email)}</p><pre>{String(pending.message)}</pre></details>
+      </div>}
+      {recoveredInputs&&!pending&&<p className="context-box" role="status">Je aanvraag staat opnieuw klaar. Je eigen invoer is behouden en je kunt die aanpassen. Er is nog niets opnieuw verstuurd. Het oude rapport is niet geselecteerd; wil je een beschikbaar overzicht meesturen, bekijk het dan en vink die keuze aan.</p>}
       {error && (
         <div className="error-box" role="alert" ref={feedback} tabIndex={-1}>
           {error}
@@ -511,10 +558,10 @@ export default function ContactForm({
       )}
       <button
         className="button"
-        disabled={status === "sending" || !id}
+        disabled={status === "sending" || !id || Boolean(pendingSizeIssue)}
         type="submit"
       >
-        {status === "sending" ? "Aanvraag versturen…" : pending ? "Controleer en probeer opnieuw" : "Verstuur je aanvraag"}
+        {status === "sending" ? "Aanvraag versturen…" : pending ? "Controleer en probeer opnieuw" : unavailable ? "Verstuur je aanvraag zonder rapport" : "Verstuur je aanvraag"}
         <Arrow />
       </button>
       <p className="form-note">

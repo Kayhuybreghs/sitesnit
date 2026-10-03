@@ -302,6 +302,12 @@ export default function AutomationPlanner() {
                   De genoemde systemen zijn nog niet onderzocht op
                   toegangsrechten of beschikbare koppelingen.
                 </p>
+                <p>
+                  Wil je dit plan laten uitvoeren? Bekijk hoe we{' '}
+                  <a className="inline-context-link" href="/diensten/ai-koppelingen">
+                    softwarekoppelingen en controle uitwerken
+                  </a>.
+                </p>
               </div>
             </div>
             {!plan.invalid && (

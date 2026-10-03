@@ -1,6 +1,6 @@
 import {auditCapabilities} from '../../lib/seo-audit/capabilities';
 export const toolCatalog = [
-  {slug:'snelheidstest',href:'/tools/snelheidstest',name:'Website snelheidstest',label:'Laden, reageren en stabiliteit',description:'Meet één pagina op mobiel of desktop. Bekijk de Lighthouse-score, laadmetingen en concrete bevindingen zonder vragenlijst.',action:'Test je paginasnelheid',type:'Beoordelen',tone:'green',number:'07'},
+  {slug:'snelheidstest',href:'/tools/snelheidstest',name:'Website snelheidstest',label:'Laden, reageren en stabiliteit',description:'Meet één pagina op mobiel, desktop of vergelijk beide. Bekijk de Lighthouse-score, laadmetingen en concrete bevindingen zonder vragenlijst.',action:'Test je paginasnelheid',type:'Beoordelen',tone:'green',number:'07'},
   {slug:"seo-audit",href:"/tools/seo-audit",name:"SEO-audit",label:"Techniek per pagina",description:`Laat maximaal ${auditCapabilities.maxPages} pagina’s doorlopen op noindex, kapotte links en metadata. Bekijk bewijs en hersteladvies zonder vragenlijst.`,action:"Start je SEO-audit",type:"Beoordelen",tone:"blue",number:"06"},
   {
     slug: "ontwerp-je-website",

@@ -37,6 +37,7 @@ function mountDepth() {
   let snapProgress = true;
   let motionVisible = false;
   const previousValues = new Map<string, string>();
+  const fontsReady = document.fonts.ready;
   root.classList.add("depth-enabled");
 
   const schedule = () => {
@@ -56,10 +57,14 @@ function mountDepth() {
         layoutDirty = false;
         // Measure the actual copy and cue instead of reserving an arbitrary 150px.
         // Short windows and enlarged text still get the fully readable static layout.
-        const headerHeight = document.querySelector<HTMLElement>(".header")?.offsetHeight ?? 0;
-        const introTop = intro?.offsetTop ?? 0;
-        const cueSpace = (cue?.offsetHeight ?? 44) + 16;
-        immersive = desktop.matches && Boolean(intro && introTop + intro.offsetHeight + headerHeight + cueSpace <= innerHeight);
+        let headerHeight = 0;
+        immersive = false;
+        if (desktop.matches && intro) {
+          headerHeight = document.querySelector<HTMLElement>(".header")?.offsetHeight ?? 0;
+          const introTop = intro.offsetTop;
+          const cueSpace = (cue?.offsetHeight ?? 44) + 16;
+          immersive = introTop + intro.offsetHeight + headerHeight + cueSpace <= innerHeight;
+        }
         compact = innerWidth < 900;
         snapProgress = true;
         hero?.classList.toggle("is-immersive", immersive);
@@ -170,7 +175,7 @@ function mountDepth() {
   finePointer.addEventListener("change", resetPointers);
   document.addEventListener("visibilitychange", resetPointers);
   document.addEventListener("focusin", update);
-  document.fonts.ready.then(() => { if (!disposed) resize(); });
+  fontsReady.then(() => { if (!disposed) resize(); });
   schedule();
 
   return () => {

@@ -3,6 +3,7 @@ import { site } from '../../app/site-data';
 import { contactServiceNames } from './options';
 import { routeCatalog } from '../route-catalog';
 import { ANALYTICS_TOOL_PATHS } from '../analytics-events';
+import { CONTACT_SUMMARY_MAX_LENGTH } from './limits';
 
 export class ContactError extends Error {
   status: number;
@@ -50,7 +51,7 @@ export function parseContact(b: Record<string, unknown>) {
   const project = choice(b.project, ['beurswijzer','beurswatcher']);
   const rhythm = choice(b.rhythm, ['2 blogs per maand','4 blogs per maand','Iedere week','Eens per twee weken']);
   if (b.includeSummary !== undefined && typeof b.includeSummary !== 'boolean') throw new ContactError('Controleer de toestemming voor je tooloverzicht.');
-  const toolSummary = b.includeSummary === true ? string(b.toolSummary, 12000) : '';
+  const toolSummary = b.includeSummary === true ? string(b.toolSummary, CONTACT_SUMMARY_MAX_LENGTH) : '';
   const payload = { name,email,message,website,phone,packageId,serviceId,sourcePage,formId,toolId,appointment,preferredDay,preferredTime,careInterests:[...new Set(care)].sort() as string[],monthlyPlan,project,rhythm,toolSummary };
   return { id: id.toLowerCase(), ...payload, hash: createHash('sha256').update(JSON.stringify(payload)).digest('hex') };
 }

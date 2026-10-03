@@ -25,6 +25,7 @@ const serviceTitles: Record<string, string> = {
 };
 
 export const pageSeo: Record<string, PageSeo> = {
+  '/sitemap':{title:'Websiteoverzicht | Sitesnit',description:'Vind diensten, gratis tools, praktische uitleg en projecten van Sitesnit. Alle openbare pagina’s overzichtelijk per onderwerp bij elkaar.'},
   '/tools/snelheidstest':{title:'Gratis website snelheidstest voor mobiel en desktop',description:'Test de snelheid van één pagina met Lighthouse. Bekijk je prestatiescore, laadtijden, verspringingen en concrete bevindingen direct bij Sitesnit.'},
   ...Object.fromEntries(speedGuides.map(g=>[`/tools/snelheidstest/${g.slug}`,{title:g.title,description:g.description}])),
   '/tools/seo-audit':{title:'Gratis SEO-audit: technische problemen per pagina',description:`Scan maximaal ${auditCapabilities.maxPages} pagina’s op noindex, kapotte links en metadata. Krijg bewijs en hersteladvies zonder vragenlijst of verplicht account.`},

@@ -14,7 +14,7 @@ export function SiteFooter() {
         <nav aria-label="Ontdek Sitesnit"><h2>Blijven groeien</h2><a href="/diensten/content">Content & blogs</a><a href="/diensten/social-media">Social media</a><a href="/diensten/onderhoud-hosting">Onderhoud & hosting</a><a href="/diensten/website-monitoring">Website-monitoring · Sitesnit Hub</a><a href="/projecten">Projecten & cases</a><a href="/over-sitesnit">Over Sitesnit</a></nav>
         <nav aria-label="Jouw volgende stap"><h2>Jouw volgende stap</h2><a href="/contact">Bespreek je plannen</a><a href="/kosten">Kosten & pakketten</a><a href="/tools">Alle tools & checks</a><a href="/tools/website-kosten-berekenen">Prijscheck & websiteplan</a><a href="/tools/website-check">Websitecheck</a><a href="/hub/login">Inloggen op Sitesnit Hub</a></nav>
       </div>
-      <div className="footer-signoff"><span>© {new Date().getFullYear()} Sitesnit</span><span>Met aandacht. Tot in de laatste klik.</span><a href="/privacy">Privacy</a><a href="/algemene-voorwaarden">Voorwaarden</a><a href="/cookies">Cookies</a><CookieSettingsButton /></div>
+      <div className="footer-signoff"><span>© {new Date().getFullYear()} Sitesnit</span><span>Met aandacht. Tot in de laatste klik.</span><a href="/privacy">Privacy</a><a href="/algemene-voorwaarden">Voorwaarden</a><a href="/cookies">Cookies</a><a href="/sitemap">Websiteoverzicht</a><CookieSettingsButton /></div>
     </div>
   </footer>;
 }

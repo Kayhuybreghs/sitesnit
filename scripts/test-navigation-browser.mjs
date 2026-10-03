@@ -81,11 +81,24 @@ async function navigation(page,width){
     await menu.getByRole('button',{name:'Menu sluiten',exact:true}).tap();
     await menu.waitFor({state:'hidden'});await waitFocus(trigger);
     await trigger.tap();await menu.waitFor({state:'visible'});
+    // Deliver a real native close event after reopening to reproduce queued-event timing.
+    await menu.evaluate(node=>{
+      window.__heldNavigationClose=null;
+      node.addEventListener('close',event=>{event.stopImmediatePropagation();window.__heldNavigationClose=event;},{capture:true,once:true});
+    });
+    await page.keyboard.press('Escape');await menu.waitFor({state:'hidden'});
+    await page.waitForFunction(()=>Boolean(window.__heldNavigationClose));
+    await trigger.focus();await page.keyboard.press('Enter');await menu.waitFor({state:'visible'});
+    await menu.evaluate(node=>{const event=window.__heldNavigationClose;delete window.__heldNavigationClose;node.dispatchEvent(event);});
+    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+    assert.equal(await menu.isVisible(),true,'A queued close event must not close a reopened menu.');
+    assert.equal(await trigger.getAttribute('aria-expanded'),'true');
+    assert.equal(await page.evaluate(()=>document.body.style.overflow),'hidden');
     await menu.locator('a[href="/tools/website-kosten-berekenen"]').tap();
     await page.waitForURL(base.origin+'/tools/website-kosten-berekenen');
     await menu.waitFor({state:'hidden'});
     assert.equal(await page.evaluate(()=>document.body.style.overflow),'','Closing navigation restores page scroll.');
-    return {mode:'mobile dialog; tools appear as direct links, not a nested hover menu',touchToolNavigation:'/tools/website-kosten-berekenen',keyboard:['Tab wrap','Shift+Tab wrap','Escape focus return','Enter opens'],screenshot};
+    return {mode:'mobile dialog; tools appear as direct links, not a nested hover menu',touchToolNavigation:'/tools/website-kosten-berekenen',keyboard:['Tab wrap','Shift+Tab wrap','Escape focus return','Enter opens'],queuedCloseAfterReopen:true,screenshot};
   }
   const menu=page.locator('.desktop-nav details.tools-menu'),summary=menu.locator('summary');
   await summary.tap();assert.equal(await menu.evaluate(node=>node.open),true,'Touch opens desktop submenu without hover.');

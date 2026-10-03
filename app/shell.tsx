@@ -100,6 +100,8 @@ export function Navigation() {
         }}
         onCancel={() => setOpen(false)}
         onClose={() => {
+          // A queued close event can arrive after the dialog has reopened.
+          if (dialog.current?.open) return;
           setOpen(false);
           trigger.current?.focus();
         }}

@@ -88,9 +88,9 @@ function ContactDock() {
 
   return <>
     <div className="contact-dock" data-visible={visible} inert={!visible} aria-label="Snel contact opnemen">
-      <span className="contact-dock-copy"><strong>Even overleggen?</strong><span>Stuur je vraag of plan een belafspraak</span></span>
-      <button type="button" className="contact-dock-email" onClick={e => open("email", e.currentTarget)} aria-haspopup="dialog"><ContactIcon />E-mail</button>
-      <button type="button" className="contact-dock-call" onClick={e => open("call", e.currentTarget)} aria-haspopup="dialog"><ContactIcon call />Belafspraak</button>
+      <span className="contact-dock-copy"><strong>Even contact</strong><span>E-mail of belafspraak</span></span>
+      <button type="button" className="contact-dock-email" onClick={e => open("email", e.currentTarget)} aria-label="E-mail" aria-haspopup="dialog"><ContactIcon /><span className="contact-dock-label">E-mail</span></button>
+      <button type="button" className="contact-dock-call" onClick={e => open("call", e.currentTarget)} aria-label="Belafspraak" aria-haspopup="dialog"><ContactIcon call /><span className="contact-dock-label">Belafspraak</span></button>
     </div>
     <dialog ref={dialog} className="quick-contact" data-closing={closing} aria-labelledby={titleId} aria-describedby={descriptionId}
       onCancel={e => { e.preventDefault(); close(); }}

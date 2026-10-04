@@ -129,10 +129,10 @@ try{for(const width of [390,1440]){
  await page.getByLabel('Je naam',{exact:true}).fill('SYNTHETISCHE speedproef');
  await page.getByLabel('Je e-mailadres',{exact:true}).fill('speed-visitor-'+width+'@example.invalid');
  assert.equal(await page.getByLabel('Bestaande website').inputValue(),'https://example.com/');
- assert.equal(await page.getByLabel('Waar gaat je vraag over?').inputValue(),'seo-optimalisatie');
+ assert.equal(await page.getByLabel('Wat wil je laten doen?').inputValue(),'seo-optimalisatie');
  await page.getByLabel('Waar gaat je vraag over?').selectOption('seo');
  assert.equal(await page.getByLabel('Waar gaat je vraag over?').inputValue(),'seo');
- await page.getByLabel('Waar gaat je vraag over?').selectOption('seo-optimalisatie');
+ await page.getByLabel('Wat wil je laten doen?').selectOption('seo-optimalisatie');
  await page.getByLabel('Vertel kort over je plannen').fill('Dit is een lokale fixtureaanvraag over de twee labmetingen.');
  const summaryChoice=page.getByLabel('Stuur mijn antwoorden en uitkomst mee met deze aanvraag.');
  assert.equal(await summaryChoice.isChecked(),false);

@@ -66,11 +66,12 @@ try{
   const f=await fixture('allow');
   try{
     await open(f);
-    assert.equal(await f.page.getByRole('combobox',{name:'Waar gaat je vraag over?'}).inputValue(),'seo-optimalisatie');
+    assert.equal(await f.page.getByRole('combobox',{name:'Wat wil je laten doen?'}).inputValue(),'seo-optimalisatie');
     assert.equal(await f.page.getByLabel('Websitepakket').count(),0);
     await f.page.getByRole('combobox',{name:'Waar gaat je vraag over?'}).selectOption('webdesign');
     assert.equal(await f.page.getByLabel('Websitepakket').count(),1);
-    await f.page.getByRole('combobox',{name:'Waar gaat je vraag over?'}).selectOption('seo-optimalisatie');
+    await f.page.getByRole('combobox',{name:'Waar gaat je vraag over?'}).selectOption('seo');
+    await f.page.getByRole('combobox',{name:'Wat wil je laten doen?'}).selectOption('seo-optimalisatie');
     await f.page.getByRole('button',{name:'Verstuur je aanvraag'}).click();
     assert.equal(f.calls.length,0,'native invalid inputs must never reach the server');
     await fill(f.page);
@@ -85,7 +86,7 @@ try{
     const frozen=JSON.parse(f.calls[0]);
     assert.equal(f.events.filter(event=>event[0]==='event'&&event[1]==='generate_lead').length,0,'no success event for a missing response');
     await open(f,'?dienst=branding');
-    assert.equal(await f.page.getByRole('combobox',{name:'Waar gaat je vraag over?'}).inputValue(),'seo-optimalisatie');
+    assert.equal(await f.page.getByRole('combobox',{name:'Wat wil je laten doen?'}).inputValue(),'seo-optimalisatie');
     assert.equal(await f.page.getByLabel('Je naam',{exact:true}).inputValue(),frozen.name);
     assert.equal(await f.page.getByLabel('Je e-mailadres',{exact:true}).inputValue(),frozen.email);
     assert.equal(await f.page.getByLabel('Bestaande website').inputValue(),frozen.website);

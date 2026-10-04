@@ -20,7 +20,7 @@ export async function POST(request:Request){
     const localOnly=!process.env.VERCEL&&process.env.SITESNIT_LOCAL_SQLITE==='true';
     return json({ok:true,...saved,mail,localOnly});
   } catch(error){
-    if(error instanceof RequestBodyError||error instanceof ContactError) return json({error:error.message},error.status);
+    if(error instanceof RequestBodyError||error instanceof ContactError) return json({error:error.message,...(error instanceof ContactError&&error.code?{code:error.code}:{})},error.status);
     console.error('Contact storage not confirmed',{requestId});
     return json({error:'We konden de opslag niet bevestigen. Je invoer blijft staan. Probeer dezelfde aanvraag opnieuw; deze wordt niet dubbel opgeslagen.'},503);
   }

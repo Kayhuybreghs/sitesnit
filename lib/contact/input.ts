@@ -7,7 +7,8 @@ import { CONTACT_SUMMARY_MAX_LENGTH } from './limits';
 
 export class ContactError extends Error {
   status: number;
-  constructor(message: string, status = 400) { super(message); this.status = status; }
+  code?: string;
+  constructor(message: string, status = 400, code?: string) { super(message); this.status = status; this.code = code; }
 }
 const days = ['Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag','Zondag'];
 export const contactServices = contactServiceNames;
@@ -25,7 +26,7 @@ function choice(value: unknown, options: readonly string[]) {
   return v;
 }
 export function parseContact(b: Record<string, unknown>) {
-  if (b.companyCheck) throw new ContactError('De aanvraag kon niet worden verwerkt.');
+  if (b.companyCheck) throw new ContactError('De formuliercontrole ging mis. Je gegevens zijn behouden. Probeer je aanvraag nogmaals te versturen.', 400, 'contact_verification');
   const id = string(b.requestId, 36);
   if (!/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(id)) throw new ContactError('Vernieuw het formulier en probeer opnieuw.');
   const name = string(b.name, 100, 2), email = string(b.email, 254, 3).toLowerCase();

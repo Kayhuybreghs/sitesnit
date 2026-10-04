@@ -12,6 +12,7 @@ import { CookieConsent } from './cookie-consent';
 import { routeCatalog } from '../lib/route-catalog';
 import { business } from '../lib/business';
 import { Navigation, Motion } from "./shell";
+import { FloatingContact } from "./floating-contact";
 import { SiteFooter } from "./site-footer";
 import { site } from "./site-data";
 import { canIndexRequest } from './seo';
@@ -45,6 +46,7 @@ export default async function RootLayout({
         <Navigation />
         <main id="main">{children}</main>
         <SiteFooter />
+        <FloatingContact publicPaths={routeCatalog.map(route => route.path)} />
 
         <Motion />
         <CookieConsent measurementId={runtime().GA4_MEASUREMENT_ID} privacyConfigurationVerified={runtime().GA4_PRIVACY_CONFIGURED === 'true'} publicPaths={routeCatalog.map(route => route.path)} />

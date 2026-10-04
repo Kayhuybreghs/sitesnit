@@ -51,6 +51,8 @@ export default function ContactForm({
   summaryUnavailable,
   summaryPreviewLabel,
   anchorId,
+  compact = false,
+  contactMode,
 }: {
   toolSummary?: string;
   selectedPackage?: string;
@@ -63,6 +65,8 @@ export default function ContactForm({
   summaryUnavailable?: string;
   summaryPreviewLabel?: string;
   anchorId?: string;
+  compact?: boolean;
+  contactMode?: "email" | "call";
 } = {}) {
   const [packageId, setPackageId] = useState(selectedPackage);
   const [websiteValue, setWebsiteValue] = useState(website);
@@ -85,7 +89,7 @@ export default function ContactForm({
   const formAnalytics = useRef(createFormEventTracker(embedded?'tool_contact':'contact'));
   const [receipt, setReceipt] = useState({reference:'',confirmation:'pending',localOnly:false});
   const [localPreview, setLocalPreview] = useState(false);
-  const pendingKey = useCallback(() => `sitesnit-contact-pending:${location.pathname}:${embedded?'tool':'contact'}`, [embedded]);
+  const pendingKey = useCallback(() => `sitesnit-contact-pending:${compact?'floating':location.pathname}:${embedded?'tool':'contact'}`, [embedded,compact]);
   const [service, setService] = useState(Object.hasOwn(contactServiceNames,selectedService) ? selectedService : "");
   const serviceGroup = serviceGroups.find(group => group.services.includes(service));
   function chooseService(value: string) {
@@ -96,9 +100,22 @@ export default function ContactForm({
   const [rhythm, setRhythm] = useState("");
   const [careInterests, setCareInterests] = useState<string[]>([]);
   const [monthlyPlan, setMonthlyPlan] = useState("");
-  const [appointmentWanted, setAppointmentWanted] = useState(false);
+  const [appointmentWanted, setAppointmentWanted] = useState(contactMode === "call");
+  const previousContactMode = useRef(contactMode);
+  useEffect(() => {
+    if (previousContactMode.current === contactMode) return;
+    previousContactMode.current = contactMode;
+    if (!pending && status !== "sending" && contactMode) setAppointmentWanted(contactMode === "call");
+  }, [contactMode, pending, status]);
   const [preferredDay, setPreferredDay] = useState("");
   const [preferredTime, setPreferredTime] = useState("");
+  const timeInput = useRef<HTMLInputElement>(null);
+  function updatePreferredTime(input: HTMLInputElement) {
+    const value = input.value;
+    const invalid = value && (!/^([01]\d|2[0-3]):[0-5]\d$/.test(value) || value < input.min || value > input.max);
+    input.setCustomValidity(invalid ? `Kies een tijd tussen ${input.min} en ${input.max}.` : "");
+    setPreferredTime(value);
+  }
   const weekend = preferredDay === "Zaterdag" || preferredDay === "Zondag";
   useEffect(() => {
     setLocalPreview(['localhost','127.0.0.1','[::1]'].includes(location.hostname));
@@ -110,6 +127,7 @@ export default function ContactForm({
         return; // Frozen retry context takes precedence over the current URL or tool defaults.
       }
     } catch {}
+    if (compact) return; // The quick form has its own draft and no implicit tool/report consent.
     const p = new URLSearchParams(location.search);
     setService(Object.hasOwn(contactServiceNames,p.get('dienst')??'') ? p.get('dienst')! : Object.hasOwn(contactServiceNames,selectedService) ? selectedService : '');
     if (!embedded) {
@@ -152,7 +170,7 @@ export default function ContactForm({
         );
         if (c && typeof c.summary === "string") setSummary(c.summary);
       } catch {}
-  }, [embedded,pendingKey,selectedService]);
+  }, [compact,embedded,pendingKey,selectedService]);
   useEffect(() => {
     if (embedded&&!pending&&!recoveredInputs) setPackageId(selectedPackage);
   }, [embedded, selectedPackage,pending,recoveredInputs]);
@@ -281,13 +299,13 @@ export default function ContactForm({
       }
     }}>
       <noscript><p className="no-js-note">Dit formulier heeft JavaScript nodig.{site.email && <> Mail je vraag naar <a href={`mailto:${site.email}`}>{site.email}</a>.</>}</p></noscript>
-      <h2 id={anchorId} tabIndex={anchorId ? -1 : undefined}>{heading ?? (embedded ? "Bespreek je uitkomst" : "Bespreek je plannen")}</h2>
+      {!compact && <h2 id={anchorId} tabIndex={anchorId ? -1 : undefined}>{heading ?? (embedded ? "Bespreek je uitkomst" : "Bespreek je plannen")}</h2>}
       {localPreview&&<aside className="context-box"><strong>Je bekijkt een lokale testversie</strong><p>Een aanvraag hier is geen aanvraag via de live website. In deze testomgeving kan mailverzending uitstaan. De melding na het versturen vertelt of een bevestiging naar de mailprovider is gestuurd.</p></aside>}
-      <p>
+      {!compact && <p>
         {introduction ?? (embedded
           ? "Vertel wat je wilt bespreken. Wil je bellen? Kies dan hieronder optioneel een voorkeursdag. We stemmen het moment per e-mail af."
           : "Laat je gegevens en een korte toelichting achter. Dan hebben we een goed vertrekpunt voor ons gesprek.")}
-      </p>
+      </p>}
       {service && (
         <p className="service-interest">
           Je aanvraag gaat over <strong>{contactServiceNames[service]}</strong>.
@@ -305,7 +323,7 @@ export default function ContactForm({
       )}
       <fieldset className="contact-fields" disabled={Boolean(pending)}>
       <legend className="sr-only">Je aanvraag</legend>
-      <div className="field">
+      {!compact && <><div className="field">
         <label htmlFor={fieldId('service')}>Waar gaat je vraag over?</label>
         <select id={fieldId('service')} value={serviceGroup?.id ?? ''} onChange={event=>chooseService(event.target.value)}>
           <option value="">Samen bepalen</option>
@@ -317,7 +335,7 @@ export default function ContactForm({
         <select id={fieldId('service-detail')} value={service} onChange={event=>chooseService(event.target.value)}>
           {serviceGroup.services.map(value=><option value={value} key={value}>{({ webdesign: 'Website maken of vernieuwen', apps: 'iPhone- of Android-app', 'website-monitoring': 'Website-monitoring' } as Record<string, string>)[value] ?? contactServiceNames[value]}</option>)}
         </select>
-      </div>}
+      </div>}</>}
       <div className="form-row">
         <div className="field">
           <label htmlFor={fieldId("name")}>Je naam</label>
@@ -360,7 +378,7 @@ export default function ContactForm({
           }
         />
       </div>
-      <div className="field">
+      {!compact && <div className="field">
         <label htmlFor={fieldId("website")}>
           Bestaande website <small>(optioneel)</small>
         </label>
@@ -373,8 +391,8 @@ export default function ContactForm({
           onChange={(e) => setWebsiteValue(e.target.value)}
           maxLength={2000}
         />
-      </div>
-      {(!service||['webdesign','webshops'].includes(service)||packageId)&&<div className="field">
+      </div>}
+      {!compact&&(!service||['webdesign','webshops'].includes(service)||packageId)&&<div className="field">
         <label htmlFor={fieldId("package")}>
           Websitepakket <small>(als dat al duidelijk is)</small>
         </label>
@@ -391,7 +409,7 @@ export default function ContactForm({
           ))}
         </select>
       </div>}
-      <details className="contact-care-disclosure">
+      {!compact && <details className="contact-care-disclosure">
         <summary>
           <span>
             <b>Ook laten verzorgen?</b>
@@ -449,17 +467,19 @@ export default function ContactForm({
             </div>
           ))}
         </fieldset>
-      </details>
+      </details>}
       <div className="form-row">
         <div className="field">
           <label htmlFor={fieldId("phone")}>
-            Telefoonnummer <small>(optioneel)</small>
+            Telefoonnummer {!(compact && appointmentWanted) && <small>(optioneel)</small>}
           </label>
           <input
             id={fieldId("phone")}
             name="phone"
             defaultValue={inputDefaults?String(inputDefaults.phone??''):undefined}
             type="tel"
+            required={compact && appointmentWanted}
+            minLength={compact && appointmentWanted ? 6 : undefined}
             autoComplete="tel"
             maxLength={40}
           />
@@ -492,6 +512,7 @@ export default function ContactForm({
                 onChange={(event) => {
                   setPreferredDay(event.target.value);
                   setPreferredTime("");
+                  timeInput.current?.setCustomValidity("");
                 }}
               >
                 <option value="">Samen een dag afstemmen</option>
@@ -513,6 +534,7 @@ export default function ContactForm({
                 Voorkeurstijd <small>(optioneel)</small>
               </label>
               <input
+                ref={timeInput}
                 type="time"
                 id={fieldId("preferredTime")}
                 name="preferredTime"
@@ -520,8 +542,8 @@ export default function ContactForm({
                 max={weekend ? "23:59" : "21:30"}
                 value={preferredTime}
                 disabled={!preferredDay}
-                onInput={(event) => setPreferredTime(event.currentTarget.value)}
-                onChange={(event) => setPreferredTime(event.target.value)}
+                onInput={(event) => updatePreferredTime(event.currentTarget)}
+                onChange={(event) => updatePreferredTime(event.currentTarget)}
                 aria-describedby={fieldId("call-time-window")}
               />
             </div>

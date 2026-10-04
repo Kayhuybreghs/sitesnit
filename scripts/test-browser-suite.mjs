@@ -17,6 +17,7 @@ run('test-speed-browser.mjs',[origin]);
 run('test-speed-contact-browser.mjs',[],{SEO_TEST_ORIGIN:origin,BROWSER_REPORT_ROOT:resolve(out,'speed-contact')});
 run('test-contact-recovery-browser.mjs',[],{SEO_TEST_ORIGIN:origin});
 run('test-contact-pending-rejections-browser.mjs',[],{SEO_TEST_ORIGIN:origin});
+run('test-contact-choice-browser.mjs',[],{SEO_TEST_ORIGIN:origin});
 run('test-sitemap-browser.mjs',[],{SEO_TEST_ORIGIN:origin,BROWSER_REPORT_ROOT:resolve(out,'sitemap')});
 run('test-case-layout.mjs',[origin]);
 run('test-hero-regression.mjs',['after',origin]);

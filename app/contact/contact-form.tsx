@@ -8,6 +8,13 @@ import { Arrow } from "../ui";
 import { site } from "../site-data";
 import "../tool-direction.css";
 import "./contact-extras.css";
+const serviceGroups = [
+  { id: 'webdesign', label: 'Website, webshop of app', services: ['webdesign', 'webshops', 'webapps', 'apps', 'formulieren-rekentools'] },
+  { id: 'seo', label: 'Vindbaarheid in Google', services: ['seo', 'seo-optimalisatie', 'seo-onderhoud'] },
+  { id: 'branding', label: 'Merk, tekst of social media', services: ['branding', 'content', 'social-media'] },
+  { id: 'onderhoud-hosting', label: 'Onderhoud en monitoring', services: ['onderhoud-hosting', 'website-monitoring'] },
+  { id: 'ai', label: 'AI en koppelingen', services: ['ai', 'ai-automatisering', 'ai-koppelingen'] },
+];
 const careChoices = [
   {
     id: "onderhoud-hosting",
@@ -80,6 +87,11 @@ export default function ContactForm({
   const [localPreview, setLocalPreview] = useState(false);
   const pendingKey = useCallback(() => `sitesnit-contact-pending:${location.pathname}:${embedded?'tool':'contact'}`, [embedded]);
   const [service, setService] = useState(Object.hasOwn(contactServiceNames,selectedService) ? selectedService : "");
+  const serviceGroup = serviceGroups.find(group => group.services.includes(service));
+  function chooseService(value: string) {
+    setService(value);
+    if (value && !['webdesign', 'webshops'].includes(value)) setPackageId('');
+  }
   const [projectContext, setProjectContext] = useState("");
   const [rhythm, setRhythm] = useState("");
   const [careInterests, setCareInterests] = useState<string[]>([]);
@@ -181,7 +193,7 @@ export default function ContactForm({
     const fd = new FormData(e.currentTarget);
     const payload=pending??{
       name:fd.get('name'),email:fd.get('email'),website:websiteValue,phone:fd.get('phone'),
-      message:fd.get('message'),companyCheck:fd.get('companyCheck'),requestId:id,packageId,
+      message:fd.get('message'),companyCheck:fd.get('contact_extra'),requestId:id,packageId,
       serviceId:service,sourcePage:location.pathname,formId:embedded?'tool_contact':'contact',
       project:projectContext.toLowerCase(),rhythm,careInterests,
       monthlyPlan:careInterests.includes(monthlyPlans[monthlyPlan])?monthlyPlan:'',
@@ -202,12 +214,16 @@ export default function ContactForm({
         body: encodedPayload,
         signal: AbortSignal.timeout(25000),
       });
-      const body = (await response.json()) as {ok?:boolean;error?:string;id?:string;reference?:string;mail?:{confirmation?:string};localOnly?:boolean};
+      const body = (await response.json()) as {ok?:boolean;error?:string;code?:string;id?:string;reference?:string;mail?:{confirmation?:string};localOnly?:boolean};
       if (!response.ok || !body.ok || body.id!==payload.requestId || !body.reference){
         // A rejected retry cannot disprove storage of an earlier unanswered attempt.
         // Only a first, definitely rejected submission may become editable again.
         if(!pending&&[400,403,413,429].includes(response.status)){
           setPending(null);try{sessionStorage.removeItem(pendingKey());}catch{}
+          if (response.status === 400 && body.code === 'contact_verification') {
+            const check = form.current?.querySelector<HTMLInputElement>('[name="contact_extra"]');
+            if (check) check.value = '';
+          }
         }
         throw new Error(body.error ?? "Je aanvraag is niet verzonden.");
       }
@@ -259,7 +275,7 @@ export default function ContactForm({
     <form className="contact-form" ref={form} onSubmit={submit} aria-busy={status==='sending'} onChange={event=>{
       const target=event.target;
       if(target instanceof HTMLInputElement||target instanceof HTMLTextAreaElement||target instanceof HTMLSelectElement){
-        if(target.name==='companyCheck')return;
+        if(target.name==='contact_extra')return;
         if(target instanceof HTMLInputElement&&target.type==='checkbox'?!target.checked:!target.value.trim())return;
         formAnalytics.current.start(ANALYTICS_TOOL_PATHS[location.pathname]);
       }
@@ -291,14 +307,17 @@ export default function ContactForm({
       <legend className="sr-only">Je aanvraag</legend>
       <div className="field">
         <label htmlFor={fieldId('service')}>Waar gaat je vraag over?</label>
-        <select id={fieldId('service')} value={service} onChange={event=>{
-          setService(event.target.value);
-          if(event.target.value&&!['webdesign','webshops'].includes(event.target.value))setPackageId('');
-        }}>
+        <select id={fieldId('service')} value={serviceGroup?.id ?? ''} onChange={event=>chooseService(event.target.value)}>
           <option value="">Samen bepalen</option>
-          {Object.entries(contactServiceNames).map(([value,label])=><option value={value} key={value}>{label}</option>)}
+          {serviceGroups.map(group=><option value={group.id} key={group.id}>{group.label}</option>)}
         </select>
       </div>
+      {serviceGroup && <div className="field">
+        <label htmlFor={fieldId('service-detail')}>Wat wil je laten doen?</label>
+        <select id={fieldId('service-detail')} value={service} onChange={event=>chooseService(event.target.value)}>
+          {serviceGroup.services.map(value=><option value={value} key={value}>{({ webdesign: 'Website maken of vernieuwen', apps: 'iPhone- of Android-app', 'website-monitoring': 'Website-monitoring' } as Record<string, string>)[value] ?? contactServiceNames[value]}</option>)}
+        </select>
+      </div>}
       <div className="form-row">
         <div className="field">
           <label htmlFor={fieldId("name")}>Je naam</label>
@@ -534,11 +553,13 @@ export default function ContactForm({
         </div>
       )}
       {unavailable&&<p className="context-box" role="status">{unavailable}</p>}
-      <div className="hp-field" aria-hidden="true">
-        <label htmlFor={fieldId("companyCheck")}>Laat dit veld leeg</label>
+      <div className="hp-field" aria-hidden="true" hidden inert>
+        <label htmlFor={fieldId("contact_extra")}>Laat dit veld leeg</label>
         <input
-          id={fieldId("companyCheck")}
-          name="companyCheck"
+          id={fieldId("contact_extra")}
+          name="contact_extra"
+          data-lpignore="true"
+          data-1p-ignore="true"
           tabIndex={-1}
           autoComplete="off"
         />

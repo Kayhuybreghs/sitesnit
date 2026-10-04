@@ -131,6 +131,12 @@
 
 /* A concrete route from the first conversation to delivery. */
 .together-section { background: #edf0e5; border-radius: 30px; }
+/* Give the homepage process its own shape between the audit and packages. */
+.tool-feature + .together-section {
+  margin: clamp(28px, 4vw, 56px) clamp(12px, 2vw, 28px);
+  border-radius: clamp(40px, 6vw, 80px) 24px clamp(40px, 6vw, 80px) 24px;
+}
+.tool-feature + .together-section + .pricing-section { background: transparent; }
 .together-grid { display: grid; gap: 35px; }
 .together-copy > p:not(.eyebrow) { margin: 22px 0 26px; max-width: 540px; }
 .together-copy small { display: block; font-size: .875rem; margin-top: 15px; color: var(--muted); }

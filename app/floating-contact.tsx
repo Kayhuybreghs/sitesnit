@@ -36,11 +36,19 @@ function ContactDock() {
   const descriptionId = useId();
 
   useEffect(() => {
-    const update = () => setVisible(window.scrollY > Math.min(window.innerHeight * .55, 460));
+    let footerVisible = false;
+    const update = () => setVisible(!footerVisible && window.scrollY > Math.min(window.innerHeight * .55, 460));
+    const footer = document.querySelector("footer");
+    const observer = new IntersectionObserver(([entry]) => {
+      footerVisible = entry.isIntersecting;
+      update();
+    });
+    if (footer) observer.observe(footer);
     update();
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     return () => {
+      observer.disconnect();
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
       if (timer.current) clearTimeout(timer.current);

@@ -35,7 +35,7 @@ export const services: Service[] = [
     "methods": [
       [
         "Een duidelijk verhaal",
-        "We ordenen je aanbod en bepalen de route door je website: van een heldere introductie naar diensten, voorbeelden en contact. Bestaande teksten gebruiken we waar ze goed werken. Nieuwe copy stemmen we apart af."
+        "We ordenen je aanbod en bepalen de route door je website: van een heldere introductie naar diensten, voorbeelden en contact. Bestaande teksten gebruiken we waar ze goed werken. De teksten voor de afgesproken pagina’s schrijf ik op basis van jouw bedrijfsinformatie."
       ],
       [
         "Een herkenbaar merk",
@@ -75,7 +75,7 @@ export const services: Service[] = [
     "faqs": [
       [
         "Wat hoort bij een websitepakket?",
-        "Het afgesproken aantal pagina’s en de inhoud, vormgeving en functies uit je voorstel. We leggen vast wie teksten en beelden verzorgt en welke werkzaamheden na oplevering doorgaan. Een logo, fotoshoot, webshop of koppeling is niet automatisch bij ieder pakket inbegrepen."
+        "Copywriting voor de afgesproken websitepagina’s is inbegrepen. Jij levert informatie over je bedrijf, aanbod en doelgroep. Ik werk die uit tot de websiteteksten. De pagina’s, functies en opleverafspraken leggen we vooraf vast. Ook de technische SEO-basis hoort erbij: paginatitels en descriptions, headingstructuur, canonicals, indexeringsinstellingen, sitemap en interne links. Een afzonderlijk SEO-traject of doorlopend onderhoud valt daar niet automatisch onder. Wil je na oplevering zelf teksten en foto’s aanpassen? Een CMS is mogelijk tegen eenmalige inrichtingskosten en een maandelijkse meerprijs; de toegang en werkzaamheden spreken we vooraf af. Een logo, fotoshoot, webshop of koppeling is niet automatisch bij ieder pakket inbegrepen."
       ],
       [
         "Kan ik mijn huidige website laten vernieuwen?",

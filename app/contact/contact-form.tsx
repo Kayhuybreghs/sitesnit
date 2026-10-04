@@ -43,6 +43,7 @@ export default function ContactForm({
   summaryNotice,
   summaryUnavailable,
   summaryPreviewLabel,
+  anchorId,
 }: {
   toolSummary?: string;
   selectedPackage?: string;
@@ -54,6 +55,7 @@ export default function ContactForm({
   summaryNotice?: string;
   summaryUnavailable?: string;
   summaryPreviewLabel?: string;
+  anchorId?: string;
 } = {}) {
   const [packageId, setPackageId] = useState(selectedPackage);
   const [websiteValue, setWebsiteValue] = useState(website);
@@ -263,7 +265,7 @@ export default function ContactForm({
       }
     }}>
       <noscript><p className="no-js-note">Dit formulier heeft JavaScript nodig.{site.email && <> Mail je vraag naar <a href={`mailto:${site.email}`}>{site.email}</a>.</>}</p></noscript>
-      <h2>{heading ?? (embedded ? "Bespreek je uitkomst" : "Bespreek je plannen")}</h2>
+      <h2 id={anchorId} tabIndex={anchorId ? -1 : undefined}>{heading ?? (embedded ? "Bespreek je uitkomst" : "Bespreek je plannen")}</h2>
       {localPreview&&<aside className="context-box"><strong>Je bekijkt een lokale testversie</strong><p>Een aanvraag hier is geen aanvraag via de live website. In deze testomgeving kan mailverzending uitstaan. De melding na het versturen vertelt of een bevestiging naar de mailprovider is gestuurd.</p></aside>}
       <p>
         {introduction ?? (embedded
@@ -322,6 +324,22 @@ export default function ContactForm({
             maxLength={254}
           />
         </div>
+      </div>
+      <div className="field">
+        <label htmlFor={fieldId("message")}>Vertel kort over je plannen</label>
+        <textarea
+          id={fieldId("message")}
+          name="message"
+          defaultValue={inputDefaults ? String(inputDefaults.message ?? '') : undefined}
+          required
+          minLength={10}
+          maxLength={3000}
+          placeholder={
+            embedded
+              ? "Wat wil je graag bespreken of verbeteren? Je overzicht staat hieronder al klaar."
+              : "Wat doet je bedrijf en wat wil je bereiken?"
+          }
+        />
       </div>
       <div className="field">
         <label htmlFor={fieldId("website")}>
@@ -427,22 +445,6 @@ export default function ContactForm({
             maxLength={40}
           />
         </div>
-      </div>
-      <div className="field">
-        <label htmlFor={fieldId("message")}>Vertel kort over je plannen</label>
-        <textarea
-          id={fieldId("message")}
-          name="message"
-          defaultValue={inputDefaults ? String(inputDefaults.message ?? '') : undefined}
-          required
-          minLength={10}
-          maxLength={3000}
-          placeholder={
-            embedded
-              ? "Wat wil je graag bespreken of verbeteren? Je overzicht staat hieronder al klaar."
-              : "Wat doet je bedrijf en wat wil je bereiken?"
-          }
-        />
       </div>
       <label className="check-consent">
         <input
